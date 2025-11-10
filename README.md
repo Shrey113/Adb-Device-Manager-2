@@ -272,5 +272,5 @@ The **App Mode** brings seamless call handling, notification control, and high-q
 
 <div align="center">
   <p>© 2025 Android ADB Multi-Device Manager Team — Built by <strong>Shrey113</strong></p>
-  <p><a href="https://github.com/Shrey113/Adb-Device-Manager">🔗 View on GitHub</a></p>
+  <p><a href="https://github.com/Shrey113/Adb-Device-Manager-2">🔗 View on GitHub</a></p>
 </div>
