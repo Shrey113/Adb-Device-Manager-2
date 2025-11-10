@@ -10,8 +10,6 @@ inno_setup_sources.iss.txt
 # 🐍 Helper scripts (optional)
 set.py
 
-# 🖼️ Large media folders
-images/
 # (Ignores all images, icons, mp4s, etc.)
 
 # 🧪 Logs or temp files
