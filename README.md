@@ -47,7 +47,7 @@ Both modes can run **independently or simultaneously**, allowing flexible contro
 <table>
   <tr>
     <td width="60%">
-      <img src="https://github.com/user-attachments/assets/e7362a38-15b3-4678-a6c3-8ff490edc48f" width="100%" />
+      <img src="https://github.com/user-attachments/assets/a68d832a-9d74-4c92-b4e3-a7469b628738" width="100%" />
     </td>
     <td width="50%">
       <h3>Dual Mode System — ADB Mode & App Mode</h3>
@@ -58,7 +58,7 @@ Both modes can run **independently or simultaneously**, allowing flexible contro
 
 ## ✨ Key Functional Diagram
 
-![Integration Diagram](https://github.com/user-attachments/assets/b61b18ac-ae33-4fa6-b325-3652aea732c6)
+![Integration Diagram](https://github.com/user-attachments/assets/fcb8da07-73f7-4f0a-92c2-9a0560686f36)
 
 ---
 ## ⚡ ADB Mode — Developer & Power Control
@@ -73,7 +73,7 @@ It unlocks real-time mirroring, input handling, audio streaming, and multi-app c
 <table>
  <tr>
   <td width="40%">
-    <img src="https://github.com/user-attachments/assets/ab8996ee-821d-4ecf-8c29-86cf60f2c332" width="100%" alt="Desktop Mode Preview" />
+    <img src="https://github.com/user-attachments/assets/77b2a31c-5271-4c08-834a-139eeb065dd9" width="100%" alt="Desktop Mode Preview" />
   </td>
   <td width="60%">
     <h3>🖥️ Desktop & Virtual Display Mode</h3>
@@ -89,7 +89,7 @@ It unlocks real-time mirroring, input handling, audio streaming, and multi-app c
 </tr>
   <tr>
     <td width="40%">
-      <img src="https://github.com/user-attachments/assets/1daf116b-c8bd-4fa4-8727-eaa88badff3a" width="100%" alt="Screen Cast Preview" />
+      <img src="https://github.com/user-attachments/assets/2ee9564c-8e86-4271-92cc-2f336900bf61" width="100%" alt="Screen Cast Preview" />
     </td>
     <td width="60%">
       <h3>📲 Screen Cast (Powered by scrcpy)</h3>
@@ -107,7 +107,7 @@ It unlocks real-time mirroring, input handling, audio streaming, and multi-app c
 
   <tr>
     <td width="40%">
-      <img src="https://github.com/user-attachments/assets/9d571260-a4c6-4940-af90-be0b43862c19" width="100%" alt="Audio Cast Preview" />
+      <img src="https://github.com/user-attachments/assets/7f42e808-2be7-4911-9dad-f6e553baaaea" width="100%" alt="Audio Cast Preview" />
     </td>
     <td width="60%">
       <h3>🔊 Audio Cast (Real-Time Streaming)</h3>
@@ -125,7 +125,7 @@ It unlocks real-time mirroring, input handling, audio streaming, and multi-app c
 
   <tr>
     <td width="40%">
-      <img src="https://github.com/user-attachments/assets/decb3947-ede3-4c75-ae0f-c6168b3704da" width="100%" alt="Smart Feedback Console" />
+      <img src="https://github.com/user-attachments/assets/a78a2309-aea9-493b-887b-3114dbfde4ee" width="100%" alt="Smart Feedback Console" />
     </td>
     <td width="60%">
       <h3>🧠 Smart Feedback & Developer Console</h3>
