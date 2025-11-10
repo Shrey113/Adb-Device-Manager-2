@@ -1,0 +1,82 @@
+:root {
+  --primary-color: #0bc77a; /* Change to green from section_1.css */
+  --primary-dark: #001e13; /* Darker green */
+  --secondary-color: #0bc77a; /* Teal for success changed to green */
+  --accent-color: #78909C; /* Lighter blue-gray for accents */
+  --text-light: #ffffff;
+  --text-dark: #212121; /* Dark text */
+  --text-secondary: #616161; /* Medium text */
+  --text-muted: #9E9E9E; /* Light text */
+  --gray-light: #FAFAFA; /* Very light gray background */
+  --gray-medium: #e0e0e0;
+  --gray-dark: #9e9e9e;
+  --success-color: #0bc77a; /* Changed to green */
+  --error-color: #D32F2F; /* Darker red for errors */
+  --warning-color: #FF9800;
+  --card-background: #FFFFFF; /* Pure white for cards */
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 10px 20px rgba(0, 0, 0, 0.1);
+  --radius: 8px;
+  --transition: all 0.3s ease;
+  --main-background: #000e09; /* Dark background from section_1 */
+  /* Legacy variable mappings for compatibility */
+  --white: var(--text-light);
+  --light-gray: var(--gray-light);
+  --medium-gray: var(--gray-medium);
+  --dark-gray: var(--text-secondary);
+  --text-color: var(--text-dark);
+  --border-radius: var(--radius);
+  --box-shadow: var(--shadow);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--text-light);
+  background-color: var(--main-background);
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Animated wave lines - from section_1.css */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 800px;
+  background: radial-gradient(ellipse at top, rgba(11, 199, 121, 0.482), transparent 70%);
+  z-index: -1;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  top: -150px;
+  left: 0;
+  right: 0;
+  height: 70%;
+  background-image: url("data:image/svg+xml,%3Csvg width='1440' height='500' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%230bc77a' stroke-width='1' opacity='0.2'%3E%3Cpath d='M0 150 C200 100, 400 200, 600 150 C800 100, 1000 200, 1200 150 C1400 100, 1600 180, 1800 150' /%3E%3Cpath d='M0 200 C200 150, 400 250, 600 200 C800 150, 1000 250, 1200 200 C1400 150, 1600 230, 1800 200' /%3E%3Cpath d='M0 250 C200 200, 400 300, 600 250 C800 200, 1000 300, 1200 250 C1400 200, 1600 280, 1800 250' /%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 3600px auto;
+  animation: flowingLines 20s linear infinite;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+@keyframes flowingLines {
+  0% {
+      background-position: 0 0;
+  }
+  100% {
+      background-position: -1800px 0;
+  }
+}

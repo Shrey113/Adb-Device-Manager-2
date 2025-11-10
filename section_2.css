@@ -1,0 +1,220 @@
+/* Base styles */
+#section2 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+#section2 {
+    color: #ffffff;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+#section2 .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Features Section */
+#section2 .features {
+    padding: 80px 0;
+    text-align: center;
+}
+
+#section2 .features-header {
+    margin-bottom: 60px;
+}
+
+#section2 .icon-container {
+    display: inline-flex;
+    width: 80px;
+    height: 80px;
+    background-color: rgba(11, 199, 122, 0.05);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: 0 8px 24px rgba(11, 199, 122, 0.08);
+}
+
+#section2 .icon-container i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#section2 .shield-icon {
+    width: 40px;
+    height: 40px;
+    opacity: 0.8;
+}
+
+#section2 .tagline {
+    color: #0bc77a;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+#section2 h2 {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+#section2 .subtitle {
+    font-size: 18px;
+    opacity: 0.8;
+    line-height: 1.5;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#section2 .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+#section2 .feature-card {
+    text-align: left;
+    background-color: rgba(15, 45, 35, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+#section2 .feature-card:hover {
+    box-shadow: 0 12px 28px rgba(11, 199, 122, 0.15);
+}
+
+#section2 .feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    background-color: rgba(11, 199, 122, 0.1);
+}
+
+#section2 .feature-icon img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.9;
+}
+
+#section2 .feature-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+#section2 .feature-card p {
+    font-size: 14px;
+    opacity: 0.8;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* MOBILE RESPONSIVE STYLES */
+
+/* Tablets and medium devices */
+@media (max-width: 991px) {
+    #section2 .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    #section2 h2 {
+        font-size: 36px;
+    }
+    
+    #section2 .subtitle {
+        font-size: 16px;
+        max-width: 90%;
+    }
+    
+    #section2 .features {
+        padding: 60px 0;
+    }
+    
+    #section2 .features-header {
+        margin-bottom: 40px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 767px) {
+    #section2 .features {
+        padding: 40px 0;
+    }
+    
+    #section2 h2 {
+        font-size: 28px;
+    }
+    
+    #section2 .subtitle {
+        font-size: 14px;
+    }
+    
+    #section2 .icon-container {
+        width: 60px;
+        height: 60px;
+    }
+    
+    #section2 .icon-container i {
+        font-size: 32px !important;
+    }
+    
+    #section2 .feature-card {
+        padding: 20px;
+    }
+    
+    #section2 .feature-card h3 {
+        font-size: 16px;
+    }
+    
+    #section2 .feature-card p {
+        font-size: 13px;
+    }
+    
+    #section2 .features-header {
+        margin-bottom: 30px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    #section2 .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    #section2 h2 {
+        font-size: 24px;
+    }
+    
+    #section2 .subtitle {
+        font-size: 13px;
+        padding: 0 10px;
+    }
+    
+    #section2 .feature-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    #section2 .feature-icon i {
+        font-size: 24px !important;
+    }
+}
