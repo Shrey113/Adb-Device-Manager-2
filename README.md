@@ -10,8 +10,6 @@
   [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](#)
 </div>
 
-<br>
-
 ## 🚀 Quick Start
 
 Follow these simple steps to get started with **ADB Device Manager** — connect, control, and sync your devices instantly.
