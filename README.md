@@ -32,8 +32,6 @@ Follow these simple steps to get started with **ADB Device Manager** — connect
 
 ---
 
-💡 **Tip:** For best performance, ensure both your Android and Windows devices are connected to the same Wi-Fi network.
-
 <br>
 
 ## 🚀 Overview
