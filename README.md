@@ -17,11 +17,11 @@
 ## 🚀 Quick Start
 
 1. 🔽 **Download Now**  
-   • **Windows:** [Download 🔗](https://shrey113.github.io/Adb-Device-Manager/windows_download.html)  
-   • **Android:** [Download 🔗](https://shrey113.github.io/Adb-Device-Manager/android_download.html)
+   • **Windows:** [Download 🔗](https://github.com/Shrey113/Adb-Device-Manager-2/windows_download.html)  
+   • **Android:** [Download 🔗](https://github.com/Shrey113/Adb-Device-Manager-2/android_download.html)
 
 2. 🌐 **Official Website**  
-   • [Visit Now](https://shrey113.github.io/Adb-Device-Manager/)
+   • [Visit Now](https://github.com/Shrey113/Adb-Device-Manager-2/)
 
 3. 🎥 **Video Demo**  
    • [Watch Demo on LinkedIn](https://www.linkedin.com/posts/shrey-patel-207440318_adb-android-windowsintegration-activity-7313307027542278145-VUYt)

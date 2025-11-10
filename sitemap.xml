@@ -3,7 +3,7 @@
 
   <!-- 🏠 Main Homepage -->
   <url>
-    <loc>https://shrey113.github.io/Adb-Device-Manager/</loc>
+    <loc>https://github.com/Shrey113/Adb-Device-Manager-2/</loc>
     <lastmod>2025-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
 
   <!-- 📥 Download Page -->
   <url>
-    <loc>https://shrey113.github.io/Adb-Device-Manager/download.html</loc>
+    <loc>https://github.com/Shrey113/Adb-Device-Manager-2/download.html</loc>
     <lastmod>2025-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -19,7 +19,7 @@
 
   <!-- 🧭 Installation Guide -->
   <url>
-    <loc>https://shrey113.github.io/Adb-Device-Manager/installation_guide.html</loc>
+    <loc>https://github.com/Shrey113/Adb-Device-Manager-2/installation_guide.html</loc>
     <lastmod>2025-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
