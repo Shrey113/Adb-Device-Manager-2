@@ -1,5 +1,3 @@
-# Android Device Management for Windows
-
 <div align="center">
   <img src="images/app_png.png" alt="Android ADB Multi-Device Manager Logo" width="250"/>
 
@@ -16,51 +14,84 @@
 
 ## 🚀 Quick Start
 
-1. 🔽 **Download Now**  
-   • **Windows:** [Download 🔗](https://shrey113.github.io/Adb-Device-Manager-2/windows_download.html)  
-   • **Android:** [Download 🔗](https://shrey113.github.io/Adb-Device-Manager-2/android_download.html)
+Follow these simple steps to get started with **ADB Device Manager** — connect, control, and sync your devices instantly.
 
-2. 🌐 **Official Website**  
-   • [Visit Now](https://shrey113.github.io/Adb-Device-Manager-2/)
+---
 
-3. 🎥 **Video Demo**  
-   • [Watch Demo on LinkedIn](https://www.linkedin.com/posts/shrey-patel-207440318_adb-android-windowsintegration-activity-7313307027542278145-VUYt)
+### 🔽 Download Now
+- **Windows:** [Download](https://shrey113.github.io/Adb-Device-Manager-2/windows_download.html)  
+- **Android:** [Download](https://shrey113.github.io/Adb-Device-Manager-2/android_download.html)
+
+### 🌐 Official Website
+- Visit the main project site for setup guides, updates, and full documentation.  
+  [Open Website →](https://shrey113.github.io/Adb-Device-Manager-2/)
+
+### 🎥 Video Demo
+- See ADB Device Manager in action — live screen control, call handling, and real-time sync.  
+  [Watch Demo on LinkedIn →](https://www.linkedin.com/posts/shrey-patel-207440318_adb-android-windowsintegration-activity-7313307027542278145-VUYt)
+
+---
+
+💡 **Tip:** For best performance, ensure both your Android and Windows devices are connected to the same Wi-Fi network.
 
 <br>
 
-## 🔍 Overview
+## 🚀 Overview
 
-**ADB Device Manager** is a cross-platform tool that connects Android and Windows in a **dual control environment**, providing seamless management and real-time synchronization between devices.
+**ADB Device Manager** connects Android and Windows into a single, real-time control system.  
+It offers two dynamic modes — **ADB Mode** for advanced control and **App Mode** for communication — both designed to work independently or together for a seamless dual experience.
 
-The system operates in **two distinct modes:**
+<br/>
 
-### 🧩 ADB Mode
-ADB Mode provides deep-level control using ADB and scrcpy. It’s ideal for developers, testers, and advanced users who want complete access to their Android device directly from their Windows system.
+### 🧩 ADB Mode — Developer & Power Control
 
-### ⚙️ App Mode
-App Mode offers a modern, user-friendly interface for real-time communication, calls, notifications, and media synchronization — all without complex setup.
+Built for developers, testers, and power users who need deep Android access via ADB and scrcpy.
 
-Both modes can run **independently or simultaneously**, allowing flexible control over how you interact with your devices.
+**Highlights**
+- Screen mirroring with real-time input (USB & Wi-Fi)
+- Audio streaming with low latency
+- Virtual Android desktop for multi-window control
+- Smart ADB terminal with instant logs
+- Device performance and diagnostics panel
+
+> Ideal for testing, debugging, and automation workflows.
+
+<br/>
+
+### ⚙️ App Mode — Communication & Real-Time Sync
+
+Focused on user interaction and daily productivity — no setup complexity.
+
+**Highlights**
+- Call management from Windows
+- Notification mirroring with replies
+- Media playback control (Spotify, YouTube, etc.)
+- Contact and SMS access
+- Windows tray, context menu, and shortcut integration
+
+> Perfect for smooth, connected Android–Windows control.
+
+<br/>
+
+### 🌐 Dual Mode Integration
+
+Switch between ADB Mode for system-level control and App Mode for live communication and interaction.  
+Together, they create a powerful ecosystem for total Android and Windows integration.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/a68d832a-9d74-4c92-b4e3-a7469b628738" width="70%" alt="Dual Mode Diagram"/>
+</div>
 
 ---
-
-<table>
-  <tr>
-    <td width="60%">
-      <img src="https://github.com/user-attachments/assets/a68d832a-9d74-4c92-b4e3-a7469b628738" width="100%" />
-    </td>
-    <td width="50%">
-      <h3>Dual Mode System — ADB Mode & App Mode</h3>
-      <p>Switch between ADB Mode for system-level control and App Mode for live communication and interaction. Together, they create a powerful ecosystem for total Android and Windows integration.</p>
-    </td>
-  </tr>
-</table>
 
 ## ✨ Key Functional Diagram
 
-![Integration Diagram](https://github.com/user-attachments/assets/fcb8da07-73f7-4f0a-92c2-9a0560686f36)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/fcb8da07-73f7-4f0a-92c2-9a0560686f36" width="70%" alt="Dual Mode Diagram"/>
+</div>
 
 ---
+
 ## ⚡ ADB Mode — Developer & Power Control
 
 The **ADB Mode** of _ADB Device Manager_ provides advanced Android-to-Windows control for developers, testers, and power users.  
@@ -71,22 +102,23 @@ It unlocks real-time mirroring, input handling, audio streaming, and multi-app c
 ---
 
 <table>
- <tr>
-  <td width="40%">
-    <img src="https://github.com/user-attachments/assets/77b2a31c-5271-4c08-834a-139eeb065dd9" width="100%" alt="Desktop Mode Preview" />
-  </td>
-  <td width="60%">
-    <h3>🖥️ Desktop & Virtual Display Mode</h3>
-    <p>
-      Transform your Android device into a full desktop experience on Windows — powered by <strong>scrcpy’s virtual display</strong>.  
-      Open, mirror, and control multiple Android apps at the same time, each running in its own window for true multitasking.
-    </p>
-    <ul>
-      <li>Launch and control <strong>two or more Android apps</strong> simultaneously on Windows</li>
-      <li>Extend virtual Android windows across <strong>multiple monitors</strong> for a true desktop workspace</li>
-    </ul>
-  </td>
-</tr>
+  <tr>
+    <td width="40%">
+      <img src="https://github.com/user-attachments/assets/77b2a31c-5271-4c08-834a-139eeb065dd9" width="100%" alt="Desktop Mode Preview" />
+    </td>
+    <td width="60%">
+      <h3>🖥️ Desktop & Virtual Display Mode</h3>
+      <p>
+        Transform your Android device into a full desktop experience on Windows — powered by <strong>scrcpy’s virtual display</strong>.  
+        Open, mirror, and control multiple Android apps at the same time, each running in its own window for true multitasking.
+      </p>
+      <ul>
+        <li>Launch and control <strong>two or more Android apps</strong> simultaneously on Windows</li>
+        <li>Extend virtual Android windows across <strong>multiple monitors</strong> for a true desktop workspace</li>
+      </ul>
+    </td>
+  </tr>
+
   <tr>
     <td width="40%">
       <img src="https://github.com/user-attachments/assets/2ee9564c-8e86-4271-92cc-2f336900bf61" width="100%" alt="Screen Cast Preview" />
@@ -153,11 +185,13 @@ The **App Mode** brings seamless call handling, notification control, and high-q
 <table>
   <tr>
     <td width="40%">
-      <img src="images/ohter features/Media Control Panel.png" width="100%" />
+      <img src="https://github.com/user-attachments/assets/e5d5f503-6886-472e-b69a-77f69ddeabac" width="100%" />
     </td>
     <td width="60%">
       <h3>🎵 Advanced Media Control Center</h3>
-      <p>Control all your device’s audio and media sessions directly from Windows — with instant playback, pause, volume, and track management.</p>
+      <p>
+        Control all your device’s audio and media sessions directly from Windows — with instant playback, pause, volume, and track management.
+      </p>
       <ul>
         <li>Universal control for Spotify, YouTube, Netflix, etc.</li>
         <li>Equalizer-based audio adjustment</li>
@@ -169,11 +203,13 @@ The **App Mode** brings seamless call handling, notification control, and high-q
 
   <tr>
     <td width="40%">
-      <img src="https://github.com/user-attachments/assets/2e901a81-6397-402b-96ac-70c599477632" width="100%" />
+      <img src="https://github.com/user-attachments/assets/13ba3b68-ddfe-4625-b939-27a741d58298" width="100%" />
     </td>
     <td width="60%">
       <h3>🔔 Real-Time Call & Notification Manager</h3>
-      <p>Access and respond to Android notifications and calls directly from Windows — in real-time, without switching devices.</p>
+      <p>
+        Access and respond to Android notifications and calls directly from Windows — in real-time, without switching devices.
+      </p>
       <ul>
         <li>Instant call alerts and controls</li>
         <li>Notification mirroring and quick replies</li>
@@ -181,18 +217,6 @@ The **App Mode** brings seamless call handling, notification control, and high-q
       </ul>
     </td>
   </tr>
-  <tr>
-    <td width="40%">
-      <img src="https://github.com/user-attachments/assets/9565cb63-8b83-476e-b905-0e4c31ec7cbf" width="100%" />
-    </td>
-    <td width="60%">
-      <h3>SMS Manager</h3>
-      <p></p>
-      <ul>
-      </ul>
-    </td>
-  </tr>
-
 </table>
 
 ---
@@ -202,11 +226,13 @@ The **App Mode** brings seamless call handling, notification control, and high-q
 <table>
   <tr>
     <td width="40%">
-      <img src="https://github.com/user-attachments/assets/7d5434a0-05c4-46a7-ba97-e996cf2c34b2" width="100%" />
+      <img src="https://github.com/user-attachments/assets/c72be8a2-8bc5-46d2-a3c4-cab895e57d23" width="100%" />
     </td>
     <td width="60%">
       <h3>🎙️ Voice Command Assistant</h3>
-      <p>Control your Android device using natural language commands powered by AI. Manage calls, files, or apps through voice.</p>
+      <p>
+        Control your Android device using natural language commands powered by AI. Manage calls, files, or apps through voice.
+      </p>
       <ul>
         <li>Conversational multi-language voice assistant</li>
         <li>Customizable voice macros</li>
@@ -214,13 +240,16 @@ The **App Mode** brings seamless call handling, notification control, and high-q
       </ul>
     </td>
   </tr>
+
   <tr>
     <td width="40%">
-      <img src="https://github.com/user-attachments/assets/bc4d0ab8-5a34-41bc-88c8-3167011b944b" width="100%" />
+      <img src="https://github.com/user-attachments/assets/4e2bcb26-0efc-4e44-a667-170ed5cd39ca" width="100%" />
     </td>
     <td width="60%">
       <h3>⌨️ Intelligent ADB Terminal</h3>
-      <p>An AI-enhanced terminal that simplifies ADB operations with predictive commands, syntax correction, and contextual help.</p>
+      <p>
+        An AI-enhanced terminal that simplifies ADB operations with predictive commands, syntax correction, and contextual help.
+      </p>
       <ul>
         <li>Real-time ADB feedback and logs</li>
         <li>Command suggestions and macro support</li>
