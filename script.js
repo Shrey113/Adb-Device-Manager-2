@@ -262,37 +262,3 @@ document.addEventListener("DOMContentLoaded", () => {
     deviceScreen.classList.add("on-main-screen");
   }
 });
-
-document.addEventListener("DOMContentLoaded", function () {
-  const menuToggle = document.querySelector(".mobile-menu-toggle");
-  const cta = document.querySelector("#section1 .cta");
-
-  if (menuToggle && cta) {
-    menuToggle.addEventListener("click", function () {
-      cta.classList.toggle("active");
-      // Change icon based on menu state
-      const icon = menuToggle.querySelector("i");
-      if (cta.classList.contains("active")) {
-        icon.classList.remove("bi-list");
-        icon.classList.add("bi-x-lg");
-      } else {
-        icon.classList.remove("bi-x-lg");
-        icon.classList.add("bi-list");
-      }
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener("click", function (e) {
-      if (
-        !cta.contains(e.target) &&
-        !menuToggle.contains(e.target) &&
-        cta.classList.contains("active")
-      ) {
-        cta.classList.remove("active");
-        const icon = menuToggle.querySelector("i");
-        icon.classList.remove("bi-x-lg");
-        icon.classList.add("bi-list");
-      }
-    });
-  }
-});

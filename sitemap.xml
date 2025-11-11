@@ -17,12 +17,5 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- 🧭 Installation Guide -->
-  <url>
-    <loc>https://shrey113.github.io/Adb-Device-Manager-2/installation_guide.html</loc>
-    <lastmod>2025-11-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
 
 </urlset>

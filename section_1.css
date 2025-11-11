@@ -63,11 +63,6 @@
     padding-top: 10px;
 }
 
-#section1 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 #section1 .logo {
     display: flex;
@@ -226,22 +221,6 @@
     font-size: 16px;
     font-weight: 500;
     opacity: 0.9;
-}
-
-#section1 .arrow-icon, .more-icon {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    font-size: 16px;
-    transition: all 0.2s;
-}
-
-#section1 .arrow-icon:hover, .more-icon:hover {
-    background-color: rgba(11, 199, 122, 0.2);
 }
 
 #section1 .card-content {
@@ -1227,23 +1206,7 @@
 .app-screen.active {
     z-index: 10;
 }
-.mobile-menu-toggle {
-    display: none;
-    cursor: pointer;
-    padding: 30px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    transition: background-color 0.2s ease;
-}
-.mobile-menu-toggle:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
 
-.mobile-menu-toggle i{
-    font-size: 25px;
-    color: #ffffff;
-    transition: color 0.2s ease;
-}
 /* MOBILE RESPONSIVE STYLES */
 
 /* Larger mobile and tablet devices */
@@ -1290,10 +1253,6 @@
 @media (max-width: 767px) {
     #section1 .clients {
         display: none;
-    }
-    #section1 .navbar {
-        flex-direction: column;
-        gap: 15px;
     }
     
     #section1 .hero {
@@ -1347,14 +1306,6 @@
         padding: 10px 15px;
     }
 
-    /* Mobile menu toggle */
-    .mobile-menu-toggle {
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 1001;
-    }
     
     #section1 .cta {
         display: flex;

@@ -1,141 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Download ADB Device Manager</title>
+
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
   <style>
-    .download-options {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
+    :root {
+      --primary-color: #0bc77a;
+      --text-light: #e8f5f0;
+      --radius: 18px;
+      --transition: all 0.3s ease;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: linear-gradient(120deg, #071b14, #0a2c20, #072015);
+      color: white;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* Animated gradient background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 50%, rgba(11, 199, 122, 0.15), transparent 60%),
+        radial-gradient(circle at 70% 30%, rgba(11, 199, 122, 0.1), transparent 60%);
+      animation: move-bg 12s infinite alternate ease-in-out;
+      z-index: 0;
+    }
+
+    @keyframes move-bg {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      100% {
+        transform: translate(10px, -10px) scale(1.05);
+      }
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      padding: 15px 25px;
+      background: rgba(10, 30, 21, 0.4);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+
+    header .launch-btn {
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 30px;
+      padding: 10px 22px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    header .launch-btn:hover {
+      background-color: rgba(11, 199, 122, 0.1);
+      border-color: rgba(11, 199, 122, 0.3);
+      box-shadow: 0 0 10px rgba(11, 199, 122, 0.3);
+    }
+
+    .page-header {
+      padding: 150px 20px 80px;
+      text-align: center;
       position: relative;
       z-index: 1;
     }
-    
+
+    .page-header h1 {
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      background: linear-gradient(90deg, #ffffff, #0bc77a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 15px;
+    }
+
+    .page-header p {
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.85;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .download-section {
+      padding: 40px 20px 100px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .download-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      justify-items: center;
+    }
+
     .download-card {
       background: rgba(15, 45, 35, 0.5);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: var(--radius);
-      padding: 40px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      padding: 40px 30px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
       text-align: center;
       transition: var(--transition);
-      position: relative;
       overflow: hidden;
-      height: 100%;
+      width: 100%;
+      max-width: 420px;
       backdrop-filter: blur(10px);
     }
-    
+
     .download-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(11, 199, 122, 0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(11, 199, 122, 0.25);
     }
-    
-    .download-card:before {
+
+    .download-card::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 5px;
+      height: 4px;
       background: var(--primary-color);
     }
-    
+
     .platform-icon {
       font-size: 4rem;
       color: var(--primary-color);
       margin-bottom: 20px;
       transition: var(--transition);
     }
-    
+
     .download-card:hover .platform-icon {
       transform: scale(1.1);
-      color: #0bc77a;
-    }
-    
-    .platform-name {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      color: var(--text-light);
-    }
-    
-    .platform-details {
-      margin-bottom: 30px;
-      color: var(--text-light);
-      opacity: 0.8;
-    }
-    
-    .download-card ul {
-      text-align: left;
-      margin-bottom: 30px;
-      padding-left: 20px;
-    }
-    
-    .download-card ul li {
-      margin-bottom: 10px;
-      list-style-type: none;
-      position: relative;
-      padding-left: 25px;
-      color: var(--text-light);
-      opacity: 0.8;
-    }
-    
-    .download-card ul li:before {
-      content: "\f058";
-      font-family: "bootstrap-icons";
-      position: absolute;
-      left: 0;
-      color: var(--primary-color);
+      color: #0ef28f;
     }
 
-    .system-requirements {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      opacity: 0.7;
-      margin-top: 15px;
+    .platform-name {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 10px;
     }
-    
-    .page-header {
-      padding: 100px 0 60px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .page-header h1 {
-      margin-bottom: 20px;
-      font-size: 3rem;
-      position: relative;
-      display: inline-block;
-      background: linear-gradient(90deg, #ffffff, #0bc77a);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    
-    .page-header p {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 1.2rem;
-      opacity: 0.8;
+
+    .platform-details {
+      opacity: 0.85;
+      margin-bottom: 25px;
     }
 
     .download-btn {
       display: inline-block;
-      padding: 14px 28px;
+      padding: 14px 30px;
       background: linear-gradient(90deg, #0bc77a, #09b46e);
       color: #0a1e15;
       border-radius: 30px;
-      font-weight: 500;
+      font-weight: 600;
       transition: var(--transition);
-      margin-top: 20px;
       box-shadow: 0 4px 15px rgba(11, 199, 122, 0.25);
       border: none;
       cursor: pointer;
@@ -143,327 +189,99 @@
 
     .download-btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(11, 199, 122, 0.35);
+      box-shadow: 0 8px 25px rgba(11, 199, 122, 0.35);
     }
 
     .download-btn i {
       margin-right: 8px;
     }
 
-    .requirements {
-      padding: 80px 0;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .requirements h2 {
-      position: relative;
-      padding-bottom: 15px;
-    }
-    
-    .requirements h2:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 3px;
-      background-color: var(--primary-color);
-    }
-
-    .requirements-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      margin-top: 40px;
-    }
-
-    .requirement-card {
-      background-color: rgba(15, 45, 35, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: var(--radius);
-      padding: 30px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(10px);
-    }
-    
-    .requirement-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(11, 199, 122, 0.15);
-    }
-    
-    .requirement-card:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: var(--primary-color);
-      opacity: 0;
-      transition: var(--transition);
-    }
-    
-    .requirement-card:hover:before {
-      opacity: 1;
-    }
-
-    .requirement-card h3 {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-    }
-
-    .requirement-card ul {
-      padding-left: 20px;
-    }
-
-    .requirement-card li {
-      margin-bottom: 10px;
-      list-style-type: none;
-      position: relative;
-      padding-left: 25px;
-      color: var(--text-light);
-      opacity: 0.8;
-    }
-    
-    .requirement-card li:before {
-      content: "\f058";
-      font-family: "bootstrap-icons";
-      position: absolute;
-      left: 0;
-      color: var(--primary-color);
-    }
-    
-    /* Scroll animations */
+    /* Animations */
     .fade-in {
       opacity: 0;
     }
-    
+
     .slide-up {
-      transform: translateY(50px);
+      transform: translateY(40px);
       opacity: 0;
     }
-    
+
     .scale-in {
-      transform: scale(0.8);
+      transform: scale(0.9);
       opacity: 0;
     }
 
-    header .launch-btn{
-      background-color: transparent;
-      color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 30px;
-      padding: 10px 20px;
-      cursor: pointer;
-    }
-    header .launch-btn:hover{
-      background-color: rgba(11, 199, 122, 0.1);
-      border-color: rgba(11, 199, 122, 0.3);
-      box-shadow: 0 0 15px rgba(11, 199, 122, 0.2);
-    }
-
+    /* Responsive */
     @media (max-width: 768px) {
-      .requirements-grid {
-        grid-template-columns: 1fr;
+      .page-header {
+        padding: 130px 20px 60px;
+      }
+
+      .download-card {
+        padding: 30px 20px;
       }
     }
   </style>
 </head>
+
 <body>
-  <header style="background: transparent;border: none;box-shadow: none;backdrop-filter: none;padding-left: 10px;">
-    
+  <header>
     <button class="launch-btn" onclick="window.location.href='index.html'">
-      <i class="bi bi-arrow-left" onclick="window.location.href='index.html'"></i> &nbsp; Home
+      <i class="bi bi-arrow-left"></i>&nbsp; Home
     </button>
-   
-</header>
+  </header>
 
   <section class="page-header">
-    <div class="container">
-      <h1 class="slide-up">Download ADB Device Manager</h1>
-      <p class="subtitle slide-up">Choose the version that's right for you and start managing your Android devices with ease</p>
-    </div>
+    <h1 class="slide-up">Download ADB Device Manager</h1>
+    <p class="slide-up">Choose the version that’s right for you and start managing your Android devices with ease.</p>
   </section>
 
   <section class="download-section">
-    <div class="container">
-      <div class="download-options">
-        <div class="download-card scale-in">
-          <div class="platform-icon">
-            <i class="bi bi-windows"></i>
-          </div>
-          <h3 class="platform-name">Windows</h3>
-          <p class="platform-details">For Windows 10/11 (64-bit)</p>
-          <ul>
-            <li>Complete ADB toolset included</li>
-            <li>Optimized for desktop usage</li>
-            <li>Multiple device management</li>
-          </ul>
-          <a href="https://shrey113.github.io/Adb-Device-Manager-2/releases/latest/download/adb_devices.exe" class="download-btn" onclick="window.location.href='windows_download.html'; return false;">
-            <i class="bi bi-download"></i> Download for Windows
-          </a>
-          <p class="system-requirements">Version 1.0.0 • 500 MB+</p>
-        </div>
-        
-        <div class="download-card scale-in">
-          <div class="platform-icon">
-            <i class="bi bi-android2"></i>
-          </div>
-          <h3 class="platform-name">Android (APK)</h3>
-          <p class="platform-details">For Android 8.0+ devices</p>
-          <ul>
-            <li>Direct device control</li>
-            <li>No Root access required</li>
-            <li>OTG device management</li>
-          </ul>
-          <a href="https://shrey113.github.io/Adb-Device-Manager-2/releases/latest/download/installer_NotificationEvent.apk" class="download-btn" onclick="window.location.href='android_download.html'; return false;" id="android-download-btn">
-            <i class="bi bi-download"></i> Download APK
-          </a>
-          <p class="system-requirements">Version 0.9.5 • 12.3 MB</p>
-        </div>
+    <div class="download-options">
+      <div class="download-card scale-in">
+        <div class="platform-icon"><i class="bi bi-windows"></i></div>
+        <h3 class="platform-name">Windows</h3>
+        <p class="platform-details">For Windows 10/11 (64-bit)</p>
+        <a href="/windows_download.html" class="download-btn" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-download"></i> Download for Windows
+        </a>
+        <p class="system-requirements">Version 1.0.0 • 500 MB+</p>
+      </div>
+
+      <div class="download-card scale-in">
+        <div class="platform-icon"><i class="bi bi-android2"></i></div>
+        <h3 class="platform-name">Android (APK)</h3>
+        <p class="platform-details">For Android 8.0+ devices</p>
+        <a href="/android_download.html" class="download-btn" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-download"></i> Download APK
+        </a>
+        <p class="system-requirements">Version 0.9.5 • 12.3 MB</p>
       </div>
     </div>
   </section>
 
-  <section class="requirements">
-    <div class="container">
-      <h2 class="slide-up">System Requirements</h2>
-      <div class="requirements-grid">
-        <div class="requirement-card scale-in">
-          <h3>Windows Requirements</h3>
-          <ul>
-            <li>Windows 10 or Windows 11 (64-bit)</li>
-            <li>4 GB RAM (8 GB recommended)</li>
-            <li>100 MB free disk space</li>
-            <li>USB port or Wi-Fi capability for device connection</li>
-            <li>Administrator privileges for installation</li>
-          </ul>
-        </div>
-        <div class="requirement-card scale-in">
-          <h3>Android Requirements</h3>
-          <ul>
-            <li>Android 9.0 or higher</li>
-            <li>Minimum 3 GB RAM</li>
-            <li>100 MB free storage space</li>
-            <li>USB OTG support (for connecting other devices)</li>
-            <li>Developer options enabled</li>
-            <li>NO Root access supported (for advanced features)</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta">
-    <div class="container">
-      <h2 class="slide-up">Need help with installation?</h2>
-      <p class="slide-up">Check out our guides and documentation for installation instructions and troubleshooting.</p>
-      <a href="installation.html" class="download-btn slide-up">View Installation Guide</a>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <div class="logo">
-            <div class="app-icon">
-              <img src="images/app_png.png" alt="ADB Manager" style="width: 24px; height: 24px;">
-            </div>
-            <div class="logo-text">ADB Manager</div>
-          </div>
-        </div>
-        
-        <div class="footer-links">
-          <a href="#" class="social-link">
-            <i class="bi bi-discord" style="font-size: 24px;"></i>
-          </a>
-          <a href="#" class="social-link">
-            <i class="bi bi-instagram" style="font-size: 24px;"></i>
-          </a>
-          <a href="#" class="social-link">
-            <i class="bi bi-youtube" style="font-size: 24px;"></i>
-          </a>
-          <a href="#" class="social-link">
-            <i class="bi bi-github" style="font-size: 24px;"></i>
-          </a>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <div class="copyright">
-          <i class="bi bi-c-circle"></i> 2025 Android ADB Multi-Device Manager Team. All rights reserved.
-        </div>
-      </div>
-    </div>
-  </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Register ScrollTrigger with GSAP
+    document.addEventListener("DOMContentLoaded", () => {
       gsap.registerPlugin(ScrollTrigger);
-      
-      // Navbar animations
-      gsap.to('.fade-in', {
-        opacity: 1,
-        duration: 1,
-        stagger: 0.2,
-        ease: 'power2.out'
-      });
-      
-      // Hero animations
-      gsap.to('.slide-up', {
+
+      gsap.to(".slide-up", {
         y: 0,
         opacity: 1,
         duration: 1,
         stagger: 0.2,
-        ease: 'power2.out'
+        ease: "power2.out"
       });
-      
-      // Cards animations
-      gsap.to('.scale-in', {
+
+      gsap.to(".scale-in", {
         scale: 1,
         opacity: 1,
         duration: 0.8,
-        stagger: 0.1,
-        ease: 'back.out(1.7)'
-      });
-      
-      // Section animations with ScrollTrigger
-      gsap.utils.toArray('section').forEach((section, i) => {
-        // Section header animations
-        gsap.to(section.querySelectorAll('.slide-up'), {
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 80%'
-          },
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          stagger: 0.2,
-          ease: 'power2.out'
-        });
-        
-        // Section content animations
-        gsap.to(section.querySelectorAll('.scale-in'), {
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 70%'
-          },
-          scale: 1,
-          opacity: 1,
-          duration: 0.8,
-          stagger: 0.1,
-          ease: 'back.out(1.7)'
-        });
+        stagger: 0.15,
+        ease: "back.out(1.6)"
       });
     });
   </script>
 </body>
-</html> 
+
+</html>
