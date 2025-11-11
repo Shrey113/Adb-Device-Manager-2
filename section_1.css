@@ -1362,3 +1362,136 @@
         padding: 10px 0;
     }
 }
+
+
+
+/*  */
+/*  */
+/*  */
+/*  */
+
+/* --- Modal Styling (Dark Frosted Theme) --- */
+#section1 .download-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+  will-change: opacity;
+}
+
+#section1 .modal-content {
+  background: rgba(0, 30, 19, 0.8);
+  border: 1px solid rgba(11, 199, 122, 0.3);
+  border-radius: 16px;
+  padding: 40px 30px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s ease;
+  position: relative;
+  will-change: transform ;
+}
+
+#section1 .modal-content h2 {
+  color: #0bc77a;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+#section1 .platform-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+#section1 .platform-btn {
+  border: 1.5px solid rgba(11, 199, 122, 0.5);
+  background: rgba(11, 199, 122, 0.08);
+  padding: 14px 20px;
+  border-radius: 12px;
+  width: 130px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #e8fef3;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(11, 199, 122, 0.15);
+}
+
+#section1 .platform-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+#section1 .platform-btn.android {
+  border-color: rgba(11, 199, 122, 0.7);
+}
+
+#section1 .platform-btn.windows {
+  border-color: rgba(11, 199, 122, 0.5);
+}
+
+#section1 .platform-btn:hover {
+  background: rgba(11, 199, 122, 0.25);
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(11, 199, 122, 0.3);
+}
+
+#section1 .platform-btn:hover img {
+  filter: brightness(0) invert(1);
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px);}
+  to { transform: translateY(0);}
+}
+
+/* --- Responsive --- */
+@media (max-width: 480px) {
+  #section1 .platform-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #section1 .platform-btn {
+    width: 100%;
+  }
+}
+
+/* --- Close Button (Top Right "X") --- */
+#section1 .close-btn {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: transparent;
+  color: #0bc77a;
+  border: none;
+  font-size: 28px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  line-height: 1;
+}
+
+#section1 .close-btn:hover {
+  color: #11e88d;
+  transform: scale(1.15);
+}

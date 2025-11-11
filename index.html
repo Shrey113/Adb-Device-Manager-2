@@ -143,23 +143,48 @@
     <link rel="stylesheet" href="section_3.css" />
     <link rel="stylesheet" href="section_4.css" />
     <link rel="stylesheet" href="section_5.css" />
-</head>
 
+</head>
 <body>
     <!-- Section containers -->
     <div id="section1" class="section-container">
         
-        <section class="hero">
-            <div class="container">
-                <h1 class="slide-up">Android Device Management for Windows</h1>
-                <p class="subtitle slide-up">Control multiple Android devices from your Windows PC with our powerful
-                    management tool.</p>
-                    
-                <div class="hero-cta slide-up">
-                    <button class="launch-btn" onclick="window.location.href='download.html'">Download Now</button>
-                </div>
-            </div>
-        </section>
+<section class="hero">
+  <div class="container">
+    <h1 class="slide-up">Android Device Management for Windows</h1>
+    <p class="subtitle slide-up">
+      Control multiple Android devices from your Windows PC with our powerful management tool.
+    </p>
+
+    <div class="hero-cta slide-up">
+      <button class="launch-btn" onclick="showDownloadOptions()">Download Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- Modal for Download Options -->
+<div id="download-modal" class="download-modal">
+  <div class="modal-content">
+    <button class="close-btn" onclick="closeDownloadModal()">×</button>
+    <h2>Select Your Platform</h2>
+    <div class="platform-buttons">
+      <button class="platform-btn android" onclick="goToDownload('android')">
+        <img src="https://cdn-icons-png.flaticon.com/512/226/226770.png" alt="Android">
+        Android
+      </button>
+      <button class="platform-btn windows" onclick="goToDownload('windows')">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732221.png" alt="Windows">
+        Windows
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 
         <section class="dashboard">
             <div class="container">
@@ -197,16 +222,6 @@
                                     </div>
                                 </div>
 
-                                <div class="app-nav-buttons">
-                                    <button class="app-button back-button" data-target="main"><i
-                                            class="bi bi-arrow-left"></i></button>
-                                    <button class="app-button beta-button" data-target="beta"></button>
-                                    <button class="app-button discover-windows-button"
-                                        onclick="window.location.href='/download.html'"></button>
-                                    <button class="app-button profile-button" data-target="profile"></button>
-                                    <button class="app-button windows-discover-button"
-                                        data-target="windows-connect"></button>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -794,5 +809,36 @@
 
 <!-- ⚙️ Script Loading Optimization -->
 <script defer src="./script.js"></script>
+
+<script>
+function showDownloadOptions() {
+  const modal = document.getElementById('download-modal');
+  modal.style.display = 'flex';
+
+  // Allow closing when clicking outside the modal content
+  modal.addEventListener('click', handleOutsideClick);
+}
+
+function handleOutsideClick(event) {
+  const modalContent = document.querySelector('#download-modal .modal-content');
+  if (!modalContent.contains(event.target)) {
+    closeDownloadModal();
+  }
+}
+
+function closeDownloadModal() {
+  const modal = document.getElementById('download-modal');
+  modal.style.display = 'none';
+  modal.removeEventListener('click', handleOutsideClick); // Clean up
+}
+// ✅ Open in new tab instead of same tab
+function goToDownload(platform) {
+  if (platform === 'android') {
+    window.open('android_download.html', '_blank');
+  } else if (platform === 'windows') {
+    window.open('windows_download.html', '_blank');
+  }
+}
+</script>
 
 </html>
