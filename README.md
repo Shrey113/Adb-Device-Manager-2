@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="images/app_png.png" alt="Android ADB Multi-Device Manager Logo" width="250"/>
+  <img src="images/app_png.webp" alt="Android ADB Multi-Device Manager Logo" width="250"/>
 
   <br><br><br>
 
