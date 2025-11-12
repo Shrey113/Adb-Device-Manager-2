@@ -82,6 +82,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 24px;
+      font-size: 28px !important;
 }
 #section3 .ai-circle {
     width: 72px;

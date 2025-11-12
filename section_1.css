@@ -1211,6 +1211,12 @@
 
 /* Larger mobile and tablet devices */
 @media (max-width: 991px) {
+    #section1 {
+        padding: 10px 25px;
+    }
+    #section1 .dashboard-grid {
+          gap: 30px 20px;
+    }
     #section1 .hero h1 {
         font-size: 36px;
     }
@@ -1251,6 +1257,9 @@
 
 /* Mobile devices */
 @media (max-width: 767px) {
+    #section1 {
+        padding: 10px 25px;
+    }
     #section1 .clients {
         display: none;
     }

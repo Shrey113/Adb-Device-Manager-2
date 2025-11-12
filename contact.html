@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — ADB Device Manager</title>
+  <meta name="description" content="Contact the developer of ADB Device Manager — GitHub profile, repo, and issue tracker." />
+  <link rel="canonical" href="https://shrey113.github.io/Adb-Device-Manager-2/contact.html" />
+
+  <!-- Theme + Icons -->
+  <link href="./style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+</head>
+
+
+  <style>
+    :root {
+      --bg-1: #00150e;
+      --bg-2: #000b07;
+      --glass: rgba(255,255,255,0.03);
+      --accent: #0bc77a;
+      --accent-2: #3ddc84;
+      --muted: #cdeee0;
+      --radius: 14px;
+      --shadow-1: 0 10px 30px rgba(0,0,0,0.45);
+    }
+
+    /* Top header consistent with site */
+    .top-bar {
+      position: fixed;
+      left: 24px;
+      right: 24px;
+      top: 16px;
+      z-index: 60;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .top-bar button {
+      background: transparent;
+      border: none;
+      color: var(--accent);
+      font-size: 22px;
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 8px;
+    }
+    .top-bar img { width:40px; height:40px; border-radius:10px; box-shadow: 0 6px 18px rgba(0,0,0,0.45); }
+    .top-bar h1 { margin:0; font-size: clamp(18px,2.2vw,24px); color:#fff; font-weight:700; }
+
+    /* Center panel */
+    .wrap {
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:10;
+      position:relative;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 980px;
+      display:grid;
+      grid-template-columns: 360px 1fr;
+      gap: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));
+      border: 1px solid rgba(11,199,121,0.08);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow-1);
+      backdrop-filter: blur(8px) saturate(120%);
+      position: relative;
+      overflow: hidden;
+      animation: pop 0.6s cubic-bezier(.2,.9,.2,1);
+    }
+    @keyframes pop { from { opacity:0; transform: translateY(18px) scale(0.995);} to { opacity:1; transform:none;} }
+
+    /* left developer box */
+    .dev {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:16px;
+      padding: 8px;
+    }
+    .avatar {
+      width:128px; height:128px; border-radius:20px; overflow:hidden;
+      background: linear-gradient(135deg,var(--accent) 0%, var(--accent-2) 100%);
+      display:flex; align-items:center; justify-content:center;
+      box-shadow: 0 10px 30px rgba(11,199,121,0.12);
+    }
+    .avatar img { width:100%; height:100%; object-fit:cover; display:block; }
+    .dev h2 { margin:0; font-size:20px; color:#fff; font-weight:700; text-align:center; }
+    .dev .meta { color:var(--muted); font-size:0.95rem; text-align:center; max-width:260px; }
+
+    /* right column content */
+    .content { display:flex; flex-direction:column; gap:18px; }
+    .content h3 { margin:0; font-size:1.2rem; color:var(--accent); font-weight:700; }
+    .content p { margin:0; color:var(--muted); font-size:0.98rem; line-height:1.6; }
+
+    /* links list */
+    .links { display:flex; flex-direction:column; gap:10px; margin-top:6px; }
+    .link {
+      display:flex; align-items:center; gap:12px;
+      padding:12px 14px;
+      border-radius:12px;
+      background: rgba(255, 255, 255, 0.051);
+      border: 1px solid rgba(255,255,255,0.02);
+      color: var(--accent-2);
+      text-decoration:none;
+      font-weight:600;
+      transition: transform .16s ease, box-shadow .16s ease, background .16s;
+    }
+    .link i { font-size:18px; color:var(--accent-2); min-width:20px; text-align:center; }
+    .link:hover { box-shadow: 0 10px 30px rgba(11,199,121,0.06); background: rgba(11, 199, 121, 0.16); }
+
+    /* contact form (simple email via mailto) */
+    .form {
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top:6px;
+    }
+    .form input, .form textarea {
+      width:100%; padding:12px 14px; border-radius:10px; border:1px solid rgba(255,255,255,0.04);
+      background: rgba(0,0,0,0.25); color:#fff; font-size:0.95rem;
+      resize:none;
+    }
+    .form textarea { grid-column: 1 / -1; min-height:110px; }
+    .actions { display:flex; gap:10px; justify-content:flex-end; align-items:center; margin-top:8px; }
+    .btn {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #062615; font-weight:700; padding:10px 14px; border-radius:10px; border:none; cursor:pointer;
+      box-shadow: 0 8px 24px rgba(11,199,121,0.12);
+      transition: transform .12s ease;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn.secondary {
+      background: transparent; color: var(--muted); border: 1px solid rgba(255,255,255,0.04);
+      box-shadow:none; font-weight:600;
+    }
+
+    /* footer */
+    .foot { margin-top:18px; text-align:center; color: rgba(255,255,255,0.35); font-size:0.9rem; }
+
+    /* Responsive */
+    @media (max-width: 920px) {
+      .card { grid-template-columns: 1fr; padding:20px; max-width:720px; }
+      .dev { flex-direction:row; gap:16px; align-items:center; }
+      .avatar { width:86px; height:86px; border-radius:12px; }
+      .form { grid-template-columns:1fr; }
+      .actions { justify-content:flex-start; }
+    }
+
+    @media (max-width:480px) {
+      .wrap { padding: 70px 14px 70px; }
+      .top-bar { left: 12px; right: 12px; }
+      .avatar { width:72px; height:72px; }
+      .content h3 { font-size:1.05rem; }
+    }
+  </style>
+  
+<body>
+  <!-- Header -->
+  <div class="top-bar" role="banner" aria-label="top navigation">
+    <button aria-label="Go back" onclick="history.back()">
+      <i class="bi bi-arrow-left-circle"></i>
+    </button>
+    <img src="images/app_png.png" alt="ADB Device Manager" />
+    <h1>Contact</h1>
+  </div>
+
+  <div class="wrap">
+    <article class="card" role="main" aria-labelledby="contact-title">
+      <!-- left developer card -->
+      <div class="dev" aria-hidden="false">
+        <div class="avatar" aria-hidden="true">
+          <!-- replace with your avatar or keep logo -->
+          <img src="images/profile.png" alt="Shrey Patel" onerror="this.style.display='block';this.src='images/app_png.png'"/>
+        </div>
+
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <h2 id="contact-title">Shrey Patel</h2>
+          <div class="meta">Creator • ADB Device Manager<br/></div>
+        </div>
+
+                <!-- links -->
+        <nav class="links" aria-label="Project links">
+          <a class="link" href="https://github.com/Shrey113" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-github"></i>
+            Developer — Shrey113
+          </a>
+
+          <a class="link" href="https://github.com/Shrey113/Adb-Device-Manager-2" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-box-arrow-up-right"></i>
+            Official Repository
+          </a>
+
+          <a class="link" href="https://github.com/Shrey113/Adb-Device-Manager-2/issues" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-bug"></i>
+            Report an Issue or Bug
+          </a>
+        </nav>
+
+      </div>
+
+      <!-- right content -->
+      <div class="content" role="region" aria-label="Contact links and form">
+        <div>
+          <h3>Get in touch</h3>
+          <p>If you have questions, feedback, or issues — choose a quick link below or send a short message.  
+             Repo, issues, and profile are on GitHub.</p>
+        </div>
+
+
+        <!-- simple contact form (opens mail client) -->
+        <form id="contactForm" class="form" onsubmit="return sendMail(event)" aria-label="Send message">
+          <input type="text" id="name" name="name" placeholder="Your name" aria-label="Your name" required />
+          <input type="email" id="email" name="email" placeholder="Your email" aria-label="Your email" required />
+          <textarea id="message" name="message" placeholder="Short message" aria-label="Message" required></textarea>
+
+          <div class="actions">
+            <button type="submit" class="btn">Send message</button>
+          </div>
+        </form>
+
+        <div class="foot">© 2025 ADB Device Manager — Built by Shrey113</div>
+      </div>
+    </article>
+  </div>
+
+  <script>
+    // form -> open mailto with prefilled values
+function sendMail(e) {
+  e.preventDefault();
+
+  // get the input elements
+  const nameInput = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+  const msgInput = document.getElementById('message');
+
+  // get their values
+  const name = encodeURIComponent(nameInput.value.trim());
+  const email = encodeURIComponent(emailInput.value.trim());
+  const msg = encodeURIComponent(msgInput.value.trim());
+
+  const subject = encodeURIComponent('Contact from website — ' + nameInput.value);
+  const body = encodeURIComponent(`Name: ${nameInput.value}\nEmail: ${emailInput.value}\n\nMessage:\n${msgInput.value}`);
+
+  // const mailto = `mailto:shreyp518@gmail.com?subject=${subject}&body=${body}`;
+
+  // open mail client
+  // window.location.href = mailto;
+
+  // ✅ now clear the inputs properly
+  nameInput.value = '';
+  emailInput.value = '';
+  msgInput.value = '';
+
+  return false;
+}
+
+  </script>
+</body>
+</html>

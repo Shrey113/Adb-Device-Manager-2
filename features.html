@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features — ADB Device Manager</title>
+  <meta name="description" content="ADB Device Manager — ADB Mode and App Mode for Android–Windows integration. Screen mirroring, audio streaming, calls, files, and more." />
+  <link rel="canonical" href="https://shrey113.github.io/Adb-Device-Manager-2/features.html" />
+
+  <!-- 🌿 Global Styles -->
+  <link href="./style.css" rel="stylesheet" />
+  <link href="./section_3.css" rel="stylesheet" />
+
+  <!-- 📦 Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+ <style>
+  /* 🌿 Base Layout */
+  body {
+    background: var(--main-background, #000e09);
+    color: var(--text-light, #fff);
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* 🔝 Header */
+  .top-bar {
+    position: fixed;
+    top: 18px;
+    left: 4%;
+    right: 4%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+  }
+
+  .top-bar i {
+    font-size: 24px;
+    color: #0bc77a;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  .top-bar i:hover {
+    transform: scale(1.12);
+  }
+
+  .top-bar img {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+
+  .top-bar h1 {
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+  }
+
+  /* 🧩 Section Adjustments */
+  #section3 {
+    padding-top: clamp(80px, 10vw, 110px);
+  }
+
+  .tools-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 10px;
+  }
+
+  .tools-header h2 {
+    color: #0bc77a;
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+
+  .tools-header p {
+    color: #d2fbe3;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.6;
+  }
+
+
+  /* 🟢 Group Titles */
+  .group-title {
+    grid-column: 1 / -1;
+    text-align: left;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    color: #0bc77a;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(11, 199, 121, 0.25);
+    text-shadow: 0 0 10px rgba(11, 199, 121, 0.3);
+  }
+
+  /* 📱 Responsive Adjustments */
+  @media (max-width: 991px) {
+    .top-bar {
+      left: 25px;
+      right: 25px;
+      top: 15px;
+    }
+
+    .top-bar img {
+      width: 34px;
+      height: 34px;
+    }
+
+    .group-title {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .top-bar {
+      justify-content: flex-start;
+      gap: 8px;
+    }
+
+    .tools-header {
+      margin-bottom: 30px;
+    }
+
+    .tools-header h2 {
+      font-size: 1.5rem;
+    }
+
+    .tools-header p {
+      font-size: 0.9rem;
+      padding: 0 15px;
+    }
+
+    .tools-header .sub_data {
+      display: none;
+    }
+
+    .group-title {
+      font-size: 1.1rem;
+      margin-top: 30px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .top-bar {
+      gap: 6px;
+      left: 20px;
+      right: 20px;
+    }
+
+    .top-bar i {
+      font-size: 22px;
+    }
+
+    .top-bar img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .top-bar h1 {
+      font-size: 1.1rem;
+    }
+
+    .tools-header h2 {
+      font-size: 1.3rem;
+    }
+
+    .group-title {
+      text-align: center;
+      font-size: 1rem;
+    }
+  }
+</style>
+
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="top-bar">
+    <i class="bi bi-arrow-left-circle" onclick="history.back()"></i>
+    <img src="images/app_png.png" alt="ADB Device Manager Logo" />
+    <h1>Features</h1>
+  </div>
+
+  <!-- Features Section -->
+  <div id="section3" class="section-container">
+    <section class="tools">
+      <div class="container">
+        <div class="tools-header">
+          <h2>All your Android tools in one place</h2>
+          <p>
+            Two complementary modes: <strong>ADB Mode</strong> for advanced control and <strong>App Mode</strong> for wireless sync.<br>
+           <div class="sub_data"> Explore the full feature set that connects Android and Windows like never before.</div>
+          </p>
+        </div>
+
+        <div class="tools-grid">
+          
+          <!-- 🧩 Group 1: ADB Mode -->
+          <div class="group-title">• ADB Mode (Developer & Power Tools)</div>
+
+          <div class="tool-card">
+            <div class="tool-icon"><i class="bi bi-display"></i></div>
+            <h3>Screen Mirroring</h3>
+            <p>Mirror your Android display on Windows using <b>scrcpy</b> with real-time low-latency performance.</p>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-icon"><i class="bi bi-volume-up"></i></div>
+            <h3>Audio Cast</h3>
+            <p>Stream Android system audio directly to Windows with selectable low-latency or high-fidelity modes.</p>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-icon"><i class="bi bi-keyboard"></i></div>
+            <h3>Input Control</h3>
+            <p>Send PC keyboard and mouse input to your Android device for testing, automation, and remote control.</p>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-icon"><i class="bi bi-window"></i></div>
+            <h3>Desktop Mode</h3>
+            <p>Run multiple Android apps side by side in resizable desktop windows — a true multi-app environment.</p>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-icon"><i class="bi bi-sliders"></i></div>
+            <h3>ADB Console</h3>
+            <p>Execute advanced ADB commands with real-time feedback, performance stats, and live terminal logs.</p>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-icon"><i class="bi bi-file-earmark-arrow-up"></i></div>
+            <h3>APK Installer</h3>
+            <p>Install, uninstall, and manage Android APKs directly from your desktop — no cables or commands needed.</p>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-icon"><i class="bi bi-camera-video"></i></div>
+            <h3>Camera Stream</h3>
+            <p>View your Android camera feed remotely on Windows for live monitoring and testing.</p>
+          </div>
+
+          <!-- 📱 Group 2: App Mode -->
+          <div class="group-title">• App Mode (Smart Wireless Tools)</div>
+
+          <div class="tool-card">
+            <div class="tool-icon"><i class="bi bi-music-note-beamed"></i></div>
+            <h3>Media Control</h3>
+            <p>Control playback for Spotify, YouTube, or system media apps directly from Windows.</p>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-icon"><i class="bi bi-bell"></i></div>
+            <h3>Notification Center</h3>
+            <p>Receive and reply to Android notifications instantly — right from your desktop.</p>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-icon"><i class="bi bi-telephone"></i></div>
+            <h3>Call Management</h3>
+            <p>Handle calls and check call history seamlessly through your connected Android device.</p>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-icon"><i class="bi bi-chat-text"></i></div>
+            <h3>Messages (SMS)</h3>
+            <p>Send, read, and manage text messages on your PC without switching devices.</p>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-icon"><i class="bi bi-people"></i></div>
+            <h3>Contacts</h3>
+            <p>Access your Android contact list, initiate calls, or send messages right from your desktop.</p>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-icon"><i class="bi bi-folder2-open"></i></div>
+            <h3>File Manager</h3>
+            <p>Browse, upload, and share files wirelessly between Android and Windows in real-time.</p>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-icon"><i class="bi bi-image"></i></div>
+            <h3>Photo Gallery</h3>
+            <p>Preview and transfer Android photos with full-resolution thumbnails and quick share options.</p>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-icon"><i class="bi bi-cloud-arrow-up"></i></div>
+            <h3>File Share</h3>
+            <p>Share files instantly between Android and Windows using secure, local Wi-Fi connections.</p>
+          </div>
+
+          <!-- ⚙️ Group 3: Other Tools -->
+          <div class="group-title">• Other Tools & Enhancements</div>
+
+          <div class="tool-card">
+            <div class="tool-icon"><i class="bi bi-mic"></i></div>
+            <h3>Voice Assistant</h3>
+            <p>Issue natural voice commands to control calls, media, or system actions hands-free.</p>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-icon"><i class="bi bi-chat-dots"></i></div>
+            <h3>Smart Feedback</h3>
+            <p>Real-time diagnostics, error resolution, and ADB command recommendations.</p>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-icon"><i class="bi bi-shield-lock-fill"></i></div>
+            <h3>Full Compatibility</h3>
+            <p>Supports Android 5.0+ devices — no root required, optimized for performance and security.</p>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-icon"><i class="bi bi-plus-lg"></i></div>
+            <h3>Continuous Updates</h3>
+            <p>New features and improvements are continuously added to enhance connectivity and stability.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

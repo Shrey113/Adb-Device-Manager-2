@@ -14,7 +14,6 @@
 
 Follow these simple steps to get started with **ADB Device Manager** — connect, control, and sync your devices instantly.
 
----
 
 ### 🔽 Download Now
 - **Windows:** [Download](https://shrey113.github.io/Adb-Device-Manager-2/windows_download.html)  
@@ -28,9 +27,10 @@ Follow these simple steps to get started with **ADB Device Manager** — connect
 - See ADB Device Manager in action — live screen control, call handling, and real-time sync.  
   [Watch Demo on LinkedIn →](https://www.linkedin.com/posts/shrey-patel-207440318_adb-android-windowsintegration-activity-7313307027542278145-VUYt)
 
----
 
 <br>
+
+---
 
 ## 🚀 Overview
 
@@ -38,47 +38,6 @@ Follow these simple steps to get started with **ADB Device Manager** — connect
 It offers two dynamic modes — **ADB Mode** for advanced control and **App Mode** for communication — both designed to work independently or together for a seamless dual experience.
 
 <br/>
-
-### 🧩 ADB Mode — Developer & Power Control
-
-Built for developers, testers, and power users who need deep Android access via ADB and scrcpy.
-
-**Highlights**
-- Screen mirroring with real-time input (USB & Wi-Fi)
-- Audio streaming with low latency
-- Virtual Android desktop for multi-window control
-- Smart ADB terminal with instant logs
-- Device performance and diagnostics panel
-
-> Ideal for testing, debugging, and automation workflows.
-
-<br/>
-
-### ⚙️ App Mode — Communication & Real-Time Sync
-
-Focused on user interaction and daily productivity — no setup complexity.
-
-**Highlights**
-- Call management from Windows
-- Notification mirroring with replies
-- Media playback control (Spotify, YouTube, etc.)
-- Contact and SMS access
-- Windows tray, context menu, and shortcut integration
-
-> Perfect for smooth, connected Android–Windows control.
-
-<br/>
-
-### 🌐 Dual Mode Integration
-
-Switch between ADB Mode for system-level control and App Mode for live communication and interaction.  
-Together, they create a powerful ecosystem for total Android and Windows integration.
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/a68d832a-9d74-4c92-b4e3-a7469b628738" width="70%" alt="Dual Mode Diagram"/>
-</div>
-
----
 
 ## ✨ Key Functional Diagram
 
@@ -88,14 +47,56 @@ Together, they create a powerful ecosystem for total Android and Windows integra
 
 ---
 
-## ⚡ ADB Mode — Developer & Power Control
+## 🌐 Dual Mode Integration
 
-The **ADB Mode** of _ADB Device Manager_ provides advanced Android-to-Windows control for developers, testers, and power users.  
-It unlocks real-time mirroring, input handling, audio streaming, and multi-app control — all in one integrated interface.
+Switch seamlessly between **ADB Mode** for system-level control and **App Mode** for real-time communication.  
+Together, they form a complete Android ↔ Windows integration ecosystem.
 
-> 🔧 Designed for professionals who need **precise control, fast response**, and **multi-device synchronization** between Android and Windows.
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 🧩 ADB Mode — Developer & Power Control
+
+Built for **developers, testers, and advanced users** needing deep Android access via ADB and scrcpy.
+
+- Screen mirroring with real-time input *(USB & Wi-Fi)*
+- Audio streaming with ultra-low latency
+- Virtual Android desktop (multi-window control)
+- Smart ADB terminal with instant logs
+- Device performance & diagnostics panel
+
+> Ideal for testing, debugging, and automation workflows.
+
+</td>
+<td width="50%" valign="top">
+
+### ⚙️ App Mode — Communication & Real-Time Sync
+
+Focused on **everyday users and productivity** — simple, wireless, and instant.
+
+- Call management directly from Windows
+- Notification mirroring with quick replies
+- Media playback control *(Spotify, YouTube, etc.)*
+- Contact & SMS access
+- Windows tray, context menu & shortcut integration
+
+> Perfect for smooth, connected Android–Windows control.
+
+</td>
+</tr>
+</table>
+
+<br>
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/a68d832a-9d74-4c92-b4e3-a7469b628738" width="70%" alt="Dual Mode Diagram"/>
+</div>
+
 
 ---
+
+## ⚡ ADB Mode — Developer & Power Control
 
 <table>
   <tr>
@@ -106,7 +107,6 @@ It unlocks real-time mirroring, input handling, audio streaming, and multi-app c
       <h3>🖥️ Desktop & Virtual Display Mode</h3>
       <p>
         Transform your Android device into a full desktop experience on Windows — powered by <strong>scrcpy’s virtual display</strong>.  
-        Open, mirror, and control multiple Android apps at the same time, each running in its own window for true multitasking.
       </p>
       <ul>
         <li>Launch and control <strong>two or more Android apps</strong> simultaneously on Windows</li>
@@ -128,7 +128,6 @@ It unlocks real-time mirroring, input handling, audio streaming, and multi-app c
       <ul>
         <li>Optimized scrcpy engine for smooth 60 FPS playback</li>
         <li>Dynamic resolution and bitrate adjustment</li>
-        <li>Ideal for live demos, app testing, and presentations</li>
       </ul>
     </td>
   </tr>
@@ -145,7 +144,6 @@ It unlocks real-time mirroring, input handling, audio streaming, and multi-app c
       </p>
       <ul>
         <li>High-fidelity, low-latency sound playback</li>
-        <li>Auto device detection and connection recovery</li>
         <li>Perfect sync with mirrored screen output</li>
       </ul>
     </td>
@@ -163,10 +161,7 @@ It unlocks real-time mirroring, input handling, audio streaming, and multi-app c
       </p>
       <ul>
         <li>Live ADB command execution with instant feedback</li>
-        <li>Detailed logs for every connected Android device</li>
         <li>Smart suggestions for commonly used ADB commands</li>
-        <li>Performance tracking for CPU, network, and connection state</li>
-        <li>Built-in diagnostics and error auto-resolution</li>
       </ul>
     </td>
   </tr>
@@ -175,8 +170,6 @@ It unlocks real-time mirroring, input handling, audio streaming, and multi-app c
 ---
 
 ## 🎧 App Mode — Real-Time Communication & Media Control
-
-The **App Mode** brings seamless call handling, notification control, and high-quality media streaming directly into your desktop environment.
 
 <table>
   <tr>

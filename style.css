@@ -55,6 +55,7 @@ body::before {
   height: 800px;
   background: radial-gradient(ellipse at top, rgba(11, 199, 121, 0.482), transparent 70%);
   z-index: -1;
+  max-height: 100vh;
 }
 
 body::after {

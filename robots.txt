@@ -1,0 +1,18 @@
+<!-- ✅ robots.txt (create file in repo root) -->
+User-agent: *
+Allow: /
+Sitemap: https://shrey113.github.io/Adb-Device-Manager-2/sitemap.xml
+
+<!-- ✅ sitemap.xml (create in repo root) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://shrey113.github.io/Adb-Device-Manager-2/</loc></url>
+  <url><loc>https://shrey113.github.io/Adb-Device-Manager-2/download.html</loc></url>
+  <url><loc>https://shrey113.github.io/Adb-Device-Manager-2/features.html</loc></url>
+</urlset>
+
+<!-- ✅ Add rel=canonical for primary domain -->
+<link rel="canonical" href="https://shrey113.github.io/Adb-Device-Manager-2/">
+
+<!-- ✅ Add hreflang -->
+<link rel="alternate" hreflang="en-IN" href="https://shrey113.github.io/Adb-Device-Manager-2/" />

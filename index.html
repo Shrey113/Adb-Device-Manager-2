@@ -20,7 +20,8 @@
     <meta name="description"
         content="ADB Device Manager lets you control, mirror, and manage Android devices from Windows using ADB Mode and App Mode. Access real-time calls, notifications, file manager, desktop multi-window, media control, and Audio Copy Cast with stunning performance." />
     <meta name="keywords"
-        content="ADB Device Manager, Android control for Windows, screen mirroring, ADB Mode, App Mode, audio cast, scrcpy, file manager, real-time notifications, Flutter, Python, Kotlin, Zeroconf, Windows integration" />
+        content="ADB Device Manager, Android to PC, ADB control, scrcpy alternative, Android Windows integration, Shrey113" />
+
     <meta name="author" content="Shrey113" />
     <meta name="publisher" content="ADB Device Manager" />
     <meta name="application-name" content="ADB Device Manager" />
@@ -140,45 +141,45 @@
     <!-- Section Styles -->
     <link rel="stylesheet" href="section_1.css" />
     <link rel="stylesheet" href="section_2.css" />
-    <link rel="stylesheet" href="section_3.css" />
     <link rel="stylesheet" href="section_4.css" />
     <link rel="stylesheet" href="section_5.css" />
 
 </head>
+
 <body>
     <!-- Section containers -->
     <div id="section1" class="section-container">
-        
-<section class="hero">
-  <div class="container">
-    <h1 class="slide-up">Android Device Management for Windows</h1>
-    <p class="subtitle slide-up">
-      Control multiple Android devices from your Windows PC with our powerful management tool.
-    </p>
 
-    <div class="hero-cta slide-up">
-      <button class="launch-btn" onclick="showDownloadOptions()">Download Now</button>
-    </div>
-  </div>
-</section>
+        <section class="hero">
+            <div class="container">
+                <h1 class="slide-up">Android Device Management for Windows</h1>
+                <p class="subtitle slide-up">
+                    Control multiple Android devices from your Windows PC with our powerful management tool.
+                </p>
 
-<!-- Modal for Download Options -->
-<div id="download-modal" class="download-modal">
-  <div class="modal-content">
-    <button class="close-btn" onclick="closeDownloadModal()">×</button>
-    <h2>Select Your Platform</h2>
-    <div class="platform-buttons">
-      <button class="platform-btn android" onclick="goToDownload('android')">
-        <img src="https://cdn-icons-png.flaticon.com/512/226/226770.png" alt="Android">
-        Android
-      </button>
-      <button class="platform-btn windows" onclick="goToDownload('windows')">
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732221.png" alt="Windows">
-        Windows
-      </button>
-    </div>
-  </div>
-</div>
+                <div class="hero-cta slide-up">
+                    <button class="launch-btn" onclick="showDownloadOptions()">Download Now</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal for Download Options -->
+        <div id="download-modal" class="download-modal">
+            <div class="modal-content">
+                <button class="close-btn" onclick="closeDownloadModal()">×</button>
+                <h2>Select Your Platform</h2>
+                <div class="platform-buttons">
+                    <button class="platform-btn android" onclick="goToDownload('android')">
+                        <img src="https://cdn-icons-png.flaticon.com/512/226/226770.png" alt="Android">
+                        Android
+                    </button>
+                    <button class="platform-btn windows" onclick="goToDownload('windows')">
+                        <img src="https://cdn-icons-png.flaticon.com/512/732/732221.png" alt="Windows">
+                        Windows
+                    </button>
+                </div>
+            </div>
+        </div>
 
 
 
@@ -282,7 +283,7 @@
                             <div class="more-icon">⋮</div>
                         </div>
                         <div class="card-content">
-                            <div class="metric">1K+</div>
+                            <div class="metric">1.1K+</div>
                             <div class="percentage positive">+15.7%</div>
                         </div>
                     </div>
@@ -388,80 +389,6 @@
                         <p>View and respond to all Android notifications directly from your Windows desktop. Never miss
                             an important message again.</p>
                     </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <div id="section3" class="section-container">
-        <section class="tools">
-            <div class="container">
-                <div class="tools-header">
-                    <h2 class="slide-up">All your Android tools<br>in one place</h2>
-                    <p class="subtitle slide-up">Our app provides powerful ADB functionality and multi-device
-                        management,<br>helping you work more efficiently with Android devices on Windows.</p>
-                </div>
-
-                <div class="tools-grid">
-                    <!-- AI for absolute security card -->
-                    <div class="tool-card guarantee-card scale-in">
-                        <div class="tool-icon"
-                            style="background: linear-gradient(135deg, #0bc77a 0%, #3DDC84 100%); box-shadow: 0 2px 12px rgba(61,220,132,0.15);">
-                            <i class="bi bi-cpu" style="font-size: 32px; color: #fff;"></i>
-                        </div>
-                        <h3>AI-Powered Controls</h3>
-                        <p>Our platform utilizes intelligent voice commands and smart terminal features with ADB command
-                            prediction.</p>
-                    </div>
-
-                    <!-- Security Guarantee card -->
-                    <div class="tool-card guarantee-card scale-in">
-                        <div class="tool-icon"
-                            style="background: linear-gradient(135deg, #0bc77a 0%, #3DDC84 100%); box-shadow: 0 2px 12px rgba(61,220,132,0.15);">
-                            <i class="bi bi-shield-lock-fill" style="font-size: 32px; color: #fff;"></i>
-                        </div>
-                        <h3>Full Compatibility</h3>
-                        <p>Works with all Android devices version 5.0 and higher.</p>
-                    </div>
-                    <!-- React faster card with speedometer -->
-                    <div class="tool-card guarantee-card scale-in">
-                        <div class="tool-icon"
-                            style="background: linear-gradient(135deg, #0bc77a 0%, #3DDC84 100%); box-shadow: 0 2px 12px rgba(61,220,132,0.15);">
-                            <i class="bi bi-bluetooth" style="font-size: 32px; color: #fff;"></i>
-                        </div>
-                        <h3>Bluetooth Audio Connector</h3>
-                        <p>Route your Android device's audio through your Windows PC with low-latency transmission.</p>
-                    </div>
-
-                    <!-- Instant threat alerts card -->
-                    <div class="tool-card guarantee-card scale-in">
-                        <div class="tool-icon"
-                            style="background: linear-gradient(135deg, #0bc77a 0%, #3DDC84 100%); box-shadow: 0 2px 12px rgba(61,220,132,0.15);">
-                            <i class="bi bi-folder2-open" style="font-size: 48px; color: #fff;"></i>
-                        </div>
-                        <h3>File System Management</h3>
-                        <p>Complete access to your Android device file system with drag & drop file transfers between
-                            Windows and Android.</p>
-                    </div>
-                    <!-- Military-grade encryption card -->
-                    <div class="tool-card guarantee-card scale-in">
-                        <div class="tool-icon"
-                            style="background: linear-gradient(135deg, #0bc77a 0%, #3DDC84 100%); box-shadow: 0 2px 12px rgba(61,220,132,0.15);">
-                            <i class="bi bi-chat-dots" style="font-size: 40px; color: #fff;"></i>
-                        </div>
-                        <h3>Smart Feedback System</h3>
-                        <p>Get intelligent ADB command suggestions and real-time feedback on your device operations.</p>
-                    </div>
-                    <!-- Other features card -->
-                    <div class="tool-card guarantee-card scale-in">
-                        <div class="tool-icon"
-                            style="background: linear-gradient(135deg, #0bc77a 0%, #3DDC84 100%); box-shadow: 0 2px 12px rgba(61,220,132,0.15);">
-                            <i class="bi bi-plus-lg" style="font-size: 40px; color: #fff;"></i>
-                        </div>
-                        <h3>Other Features</h3>
-                        <p>We are constantly adding new features to our app to make your experience better.</p>
-                    </div>
-
                 </div>
             </div>
         </section>
@@ -708,26 +635,35 @@
                         <div class="footer-column">
                             <h4><i class="fas fa-cube"></i> Product</h4>
                             <ul>
-                                <li><a href="#"><i class="fas fa-list"></i> Features</a></li>
-                                <li><a href="#"><i class="fas fa-plug"></i> Integrations</a></li>
-                                <li><a href="#"><i class="fas fa-tag"></i> Pricing</a></li>
+                                <li>
+                                    <a href="features.html">
+                                        <i class="fas fa-list"></i> Features
+                                    </a>
+                                </li>
+                                <li><a href="#section5"><i class="fas fa-tag"></i> Pricing</a></li>
                             </ul>
                         </div>
 
                         <div class="footer-column">
                             <h4><i class="fas fa-building"></i> Company</h4>
                             <ul>
-                                <li><a href="#"><i class="fas fa-users"></i> Our team</a></li>
-                                <li><a href="#"><i class="fas fa-heart"></i> Our values</a></li>
-                                <li><a href="#"><i class="fas fa-rss"></i> Blog</a></li>
+                                <li><a href="#section2"><i class="fas fa-heart"></i> Our values</a></li>
+                                <li><a href="#section4"><i class="fas fa-rss"></i> Blog</a></li>
                             </ul>
                         </div>
 
                         <div class="footer-column">
                             <h4><i class="fas fa-book"></i> Resources</h4>
                             <ul>
-                                <li><a href="#"><i class="fas fa-download"></i> Downloads</a></li>
-                                <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+                                <li onclick="showDownloadOptions()">
+                                    <i class="fas fa-download"></i> Downloads
+                                </li>
+                                <li>
+                                    <a href="contact.html">
+                                        <i class="fas fa-envelope"></i> Contact
+                                    </a>
+                                </li>
+
                             </ul>
                         </div>
                     </div>
@@ -738,16 +674,15 @@
                         <i class="bi bi-c-circle"></i> 2025 Android ADB Multi-Device Manager Team. All rights reserved.
                     </div>
                     <div class="social-links">
-                        <a href="#" class="social-link">
-                            <i class="bi bi-discord" style="font-size: 24px; color: #3DDC84;"></i>
-                        </a>
-                        <a href="#" class="social-link">
+                        <a class="link" href="https://www.instagram.com/shrey11_/" target="_blank"
+                            rel="noopener noreferrer">
                             <i class="bi bi-instagram" style="font-size: 24px; color: #3DDC84;"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a class="link" href="https://www.youtube.com/@shreypatel.1818" target="_blank"
+                            rel="noopener noreferrer">
                             <i class="bi bi-youtube" style="font-size: 24px; color: #3DDC84;"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a class="link" href="https://github.com/Shrey113" target="_blank" rel="noopener noreferrer">
                             <i class="bi bi-github" style="font-size: 24px; color: #3DDC84;"></i>
                         </a>
                     </div>
@@ -811,34 +746,34 @@
 <script defer src="./script.js"></script>
 
 <script>
-function showDownloadOptions() {
-  const modal = document.getElementById('download-modal');
-  modal.style.display = 'flex';
+    function showDownloadOptions() {
+        const modal = document.getElementById('download-modal');
+        modal.style.display = 'flex';
 
-  // Allow closing when clicking outside the modal content
-  modal.addEventListener('click', handleOutsideClick);
-}
+        // Allow closing when clicking outside the modal content
+        modal.addEventListener('click', handleOutsideClick);
+    }
 
-function handleOutsideClick(event) {
-  const modalContent = document.querySelector('#download-modal .modal-content');
-  if (!modalContent.contains(event.target)) {
-    closeDownloadModal();
-  }
-}
+    function handleOutsideClick(event) {
+        const modalContent = document.querySelector('#download-modal .modal-content');
+        if (!modalContent.contains(event.target)) {
+            closeDownloadModal();
+        }
+    }
 
-function closeDownloadModal() {
-  const modal = document.getElementById('download-modal');
-  modal.style.display = 'none';
-  modal.removeEventListener('click', handleOutsideClick); // Clean up
-}
-// ✅ Open in new tab instead of same tab
-function goToDownload(platform) {
-  if (platform === 'android') {
-    window.open('android_download.html', '_blank');
-  } else if (platform === 'windows') {
-    window.open('windows_download.html', '_blank');
-  }
-}
+    function closeDownloadModal() {
+        const modal = document.getElementById('download-modal');
+        modal.style.display = 'none';
+        modal.removeEventListener('click', handleOutsideClick); // Clean up
+    }
+    // ✅ Open in new tab instead of same tab
+    function goToDownload(platform) {
+        if (platform === 'android') {
+            window.open('android_download.html', '_blank');
+        } else if (platform === 'windows') {
+            window.open('windows_download.html', '_blank');
+        }
+    }
 </script>
 
 </html>
