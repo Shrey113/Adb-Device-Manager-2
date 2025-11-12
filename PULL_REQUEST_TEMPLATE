@@ -1,0 +1,60 @@
+# 🧠 Pull Request — ADB Device Manager 2
+
+## 📋 Summary
+<!-- Briefly describe what this PR does -->
+_Example: Added multi-device ADB pairing support for Windows build._
+
+---
+
+## 🧩 Type of Change
+<!-- Check the type that applies -->
+- [ ] 🐛 Bug Fix  
+- [ ] ✨ New Feature  
+- [ ] 🧹 Code Refactor  
+- [ ] 🎨 UI/UX Update  
+- [ ] 🧾 Documentation Update  
+- [ ] 🧪 Test / Build Improvement  
+
+---
+
+## 🧱 Related Issue(s)
+<!-- Link any relevant issues -->
+Fixes # (issue number)
+
+---
+
+## ⚙️ Changes Introduced
+<!-- Describe what’s been modified -->
+- Added new `AudioRouter` sync logic for Android <-> Windows  
+- Improved `Scrcpy_Control_Service` state handling  
+- Updated UI icons and animations for feature cards  
+
+---
+
+## 🧪 How to Test
+<!-- Step-by-step testing instructions -->
+1. Run `flutter run -d windows`  
+2. Connect Android device via USB or Wi-Fi  
+3. Verify that ADB and App Mode toggle correctly  
+4. Confirm new tool icons and status indicators appear as expected  
+
+---
+
+## 📸 Screenshots / Demo (if applicable)
+<!-- Add before/after images or screen recordings -->
+_Add screenshots here_
+
+---
+
+## ✅ Checklist
+- [ ] My code follows the project’s [Code of Conduct](./CODE_OF_CONDUCT.md)  
+- [ ] I’ve tested my changes on Windows and Android  
+- [ ] I’ve updated the documentation where necessary  
+- [ ] I’ve added meaningful commit messages  
+- [ ] My PR title follows the format: `type: short description`
+
+---
+
+## 💬 Additional Notes
+<!-- Any extra context, discussions, or TODOs -->
+_None_
