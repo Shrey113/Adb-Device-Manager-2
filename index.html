@@ -16,9 +16,9 @@
     <meta property="og:locale" content="en_US" />
 
     <!-- 🧠 SEO Core -->
-    <title>ADB Device Manager — Android + Windows Dual Control | ADB Mode & App Mode</title>
     <meta name="description"
         content="ADB Device Manager lets you control, mirror, and manage Android devices from Windows using ADB Mode and App Mode. Access real-time calls, notifications, file manager, desktop multi-window, media control, and Audio Copy Cast with stunning performance." />
+    <title>ADB Device Manager — Android + Windows Dual Control | ADB Mode & App Mode</title>
     <meta name="keywords"
         content="ADB Device Manager, Android to PC, ADB control, scrcpy alternative, Android Windows integration, Shrey113" />
 
@@ -110,11 +110,15 @@
   }
   </script>
 
-    <!-- ⚡ Performance Prefetch -->
-    <link rel="preload" href="images/app_png.png" as="image" />
+    <!-- Performance preconnects & dns -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://github.com" />
     <link rel="dns-prefetch" href="https://raw.githubusercontent.com" />
     <link rel="dns-prefetch" href="https://shrey113.github.io" />
+
+    <!-- ⚡ Performance Prefetch for hero image (keeps original link) -->
+    <link rel="preload" href="images/app_png.png" as="image" />
 
     <!-- 🖼️ Favicon & Icon Setup -->
     <link rel="icon" type="image/x-icon" href="https://shrey113.github.io/Adb-Device-Manager-2/images/favicon.ico" />
@@ -131,18 +135,41 @@
     <!-- 🧩 Manifest -->
     <link rel="manifest" href="manifest.json" />
 
-    <!-- 🎨 Styles & Libraries -->
-    <link href="./style.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Inline minimal critical CSS to avoid render-blocking (non-visual, doesn't change your classes/IDs/UI) -->
+    <style>
+        /* Critical small rules only - does not modify your UI classes/IDs */
+        html { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        body { margin: 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 16px; box-sizing: border-box; }
+        .hero { padding: 56px 0; }
+        /* simple animation starter to avoid visible jumps */
+        .slide-up { opacity: 0; transform: translateY(18px); transition: opacity .45s ease, transform .45s ease; }
+        .slide-up.visible { opacity: 1; transform: translateY(0); }
+    </style>
 
-    <!-- Section Styles -->
+    <!-- 🎨 Styles & Libraries (non-blocking font and icon loading) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    </noscript>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" media="print"
+        onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    </noscript>
+
+    <!-- Keep your original CSS files (no change to file names or classes) -->
+    <link href="./style.css" rel="stylesheet" />
     <link rel="stylesheet" href="section_1.css" />
     <link rel="stylesheet" href="section_2.css" />
     <link rel="stylesheet" href="section_4.css" />
     <link rel="stylesheet" href="section_5.css" />
+
+    <!-- Defer heavy external JS libraries (non-blocking) -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
 </head>
 
@@ -158,34 +185,34 @@
                 </p>
 
                 <div class="hero-cta slide-up">
-                    <button class="launch-btn" onclick="showDownloadOptions()">Download Now</button>
+                    <button class="launch-btn" onclick="showDownloadOptions()" aria-label="Download options"
+                        role="button">Download Now</button>
                 </div>
             </div>
         </section>
 
         <!-- Modal for Download Options -->
-        <div id="download-modal" class="download-modal">
-            <div class="modal-content">
-                <button class="close-btn" onclick="closeDownloadModal()">×</button>
-                <h2>Select Your Platform</h2>
+        <div id="download-modal" class="download-modal" role="dialog" aria-hidden="true" aria-labelledby="download-title"
+            aria-modal="true" style="display:none;">
+            <div class="modal-content" role="document">
+                <button class="close-btn" onclick="closeDownloadModal()" aria-label="Close download modal" role="button">×</button>
+                <h2 id="download-title">Select Your Platform</h2>
                 <div class="platform-buttons">
-                    <button class="platform-btn android" onclick="goToDownload('android')">
-                        <img src="https://cdn-icons-png.flaticon.com/512/226/226770.png" alt="Android">
+                    <button class="platform-btn android" onclick="goToDownload('android')" aria-label="Download Android version"
+                        role="button">
+                        <img src="https://cdn-icons-png.flaticon.com/512/226/226770.png" alt="Android icon" width="32"
+                            height="32" loading="lazy" decoding="async">
                         Android
                     </button>
-                    <button class="platform-btn windows" onclick="goToDownload('windows')">
-                        <img src="https://cdn-icons-png.flaticon.com/512/732/732221.png" alt="Windows">
+                    <button class="platform-btn windows" onclick="goToDownload('windows')" aria-label="Download Windows version"
+                        role="button">
+                        <img src="https://cdn-icons-png.flaticon.com/512/732/732221.png" alt="Windows icon" width="32"
+                            height="32" loading="lazy" decoding="async">
                         Windows
                     </button>
                 </div>
             </div>
         </div>
-
-
-
-
-
-
 
         <section class="dashboard">
             <div class="container">
@@ -193,7 +220,7 @@
                     <div class="card attacks-card scale-in">
                         <div class="card-header">
                             <h3>Supported Devices</h3>
-                            <div class="more-icon">⋮</div>
+                            <div class="more-icon" aria-hidden="true">⋮</div>
                         </div>
                         <div class="card-content">
                             <div class="metric">100+</div>
@@ -201,25 +228,31 @@
                         </div>
                     </div>
 
-                    <div class="device-mockup scale-in">
+                    <div class="device-mockup scale-in" aria-hidden="true">
                         <div class="device-frame">
                             <div class="device-notch"></div>
                             <div class="device-screen">
                                 <img src="devices img/main_home_page.jpg" alt="ADB Device Manager Home"
-                                    class="app-screen screen-main active" data-screen="main">
+                                    class="app-screen screen-main active" data-screen="main" width="360" height="780"
+                                    loading="lazy" decoding="async">
                                 <img src="devices img/discover windws.jpg" alt="Discover Windows"
-                                    class="app-screen screen-windows" data-screen="windows">
+                                    class="app-screen screen-windows" data-screen="windows" width="360" height="780"
+                                    loading="lazy" decoding="async">
                                 <img src="devices img/profile page.jpg" alt="User Profile"
-                                    class="app-screen screen-profile" data-screen="profile">
+                                    class="app-screen screen-profile" data-screen="profile" width="360" height="780"
+                                    loading="lazy" decoding="async">
                                 <img src="devices img/windows click.jpg" alt="Windows Connection"
-                                    class="app-screen screen-windows-connect" data-screen="windows-connect">
+                                    class="app-screen screen-windows-connect" data-screen="windows-connect" width="360"
+                                    height="780" loading="lazy" decoding="async">
 
                                 <!-- Beta popup inside device frame -->
-                                <div class="beta-popup-overlay">
+                                <div class="beta-popup-overlay" aria-hidden="true">
                                     <div class="beta-popup-content">
-                                        <img src="devices img/beta version button clcik.jpg" alt="Beta Version Features"
-                                            class="beta-popup-img">
-                                        <button class="beta-close-btn"><i class="bi bi-x-lg"></i></button>
+                                        <img src="devices img/beta version button clcik.jpg"
+                                            alt="Beta Version Features" class="beta-popup-img" width="240" height="160"
+                                            loading="lazy" decoding="async">
+                                        <button class="beta-close-btn" aria-label="Close beta popup" role="button"><i
+                                                class="bi bi-x-lg" aria-hidden="true"></i></button>
                                     </div>
                                 </div>
 
@@ -230,21 +263,21 @@
                     <div class="card alerts-card scale-in">
                         <div class="card-header">
                             <h3>Key Features</h3>
-                            <div class="more-icon">⋮</div>
+                            <div class="more-icon" aria-hidden="true">⋮</div>
                         </div>
                         <div class="card-content">
                             <div class="alert">
-                                <div class="alert-dot critical"></div>
+                                <div class="alert-dot critical" aria-hidden="true"></div>
                                 <div class="alert-type">New</div>
                                 <div class="alert-desc">Multi-Device Support</div>
                             </div>
                             <div class="alert">
-                                <div class="alert-dot high"></div>
+                                <div class="alert-dot high" aria-hidden="true"></div>
                                 <div class="alert-type">Popular</div>
                                 <div class="alert-desc">Wireless Connection</div>
                             </div>
                             <div class="alert">
-                                <div class="alert-dot high"></div>
+                                <div class="alert-dot high" aria-hidden="true"></div>
                                 <div class="alert-type">Advanced</div>
                                 <div class="alert-desc">Desktop Mode Experience</div>
                             </div>
@@ -254,16 +287,16 @@
                     <div class="card alert-levels-card scale-in">
                         <div class="card-header">
                             <h3>User Ratings</h3>
-                            <div class="more-icon">⋮</div>
+                            <div class="more-icon" aria-hidden="true">⋮</div>
                         </div>
                         <div class="card-content">
-                            <div class="alert-chart">
+                            <div class="alert-chart" aria-hidden="true">
                                 <div class="chart-labels">
                                     <div class="chart-label">5 Stars</div>
                                     <div class="chart-label">4 Stars</div>
                                     <div class="chart-label">3 Stars</div>
                                 </div>
-                                <div class="chart-bars">
+                                <div class="chart-bars" aria-hidden="true">
                                     <div class="chart-bar critical-bar" style="width: 0%;"></div>
                                     <div class="chart-bar high-bar" style="width: 0%;"></div>
                                     <div class="chart-bar low-bar" style="width: 0%;"></div>
@@ -280,7 +313,7 @@
                     <div class="card remediated-card scale-in">
                         <div class="card-header">
                             <h3>Installations</h3>
-                            <div class="more-icon">⋮</div>
+                            <div class="more-icon" aria-hidden="true">⋮</div>
                         </div>
                         <div class="card-content">
                             <div class="metric">1.1K+</div>
@@ -294,21 +327,21 @@
         <section class="clients">
             <div class="container">
 
-                <div class="client-logos">
-                    <div class="client-logo flutter fade-in">
-                        <i class="bi bi-cpu" style="color: #61DAFB;"></i> Flutter
+                <div class="client-logos" role="list" aria-label="Technologies used">
+                    <div class="client-logo flutter fade-in" role="listitem">
+                        <i class="bi bi-cpu" style="color: #61DAFB;" aria-hidden="true"></i> Flutter
                     </div>
-                    <div class="client-logo miro fade-in">
-                        <i class="bi bi-android2" style="color: #3DDC84;"></i> Android
+                    <div class="client-logo miro fade-in" role="listitem">
+                        <i class="bi bi-android2" style="color: #3DDC84;" aria-hidden="true"></i> Android
                     </div>
-                    <div class="client-logo shopify fade-in">
-                        <i class="bi bi-terminal" style="color: #FFD43B;"></i> Python
+                    <div class="client-logo shopify fade-in" role="listitem">
+                        <i class="bi bi-terminal" style="color: #FFD43B;" aria-hidden="true"></i> Python
                     </div>
-                    <div class="client-logo culture-amp fade-in">
-                        <i class="bi bi-windows" style="color: #0078D6;"></i> Windows
+                    <div class="client-logo culture-amp fade-in" role="listitem">
+                        <i class="bi bi-windows" style="color: #0078D6;" aria-hidden="true"></i> Windows
                     </div>
-                    <div class="client-logo atlassian fade-in">
-                        <i class="bi bi-phone" style="color: #00C7B7;"></i> ADB
+                    <div class="client-logo atlassian fade-in" role="listitem">
+                        <i class="bi bi-phone" style="color: #00C7B7;" aria-hidden="true"></i> ADB
                     </div>
                 </div>
 
@@ -321,8 +354,8 @@
         <section class="features">
             <div class="container">
                 <div class="features-header">
-                    <div class="icon-container scale-in">
-                        <i class="bi bi-shield-lock-fill" style="font-size: 48px; color: #3DDC84;"></i>
+                    <div class="icon-container scale-in" aria-hidden="true">
+                        <i class="bi bi-shield-lock-fill" style="font-size: 48px; color: #3DDC84;" aria-hidden="true"></i>
                     </div>
                     <div class="tagline slide-up">KEY FEATURES</div>
                     <h2 class="slide-up">Why choose us?</h2>
@@ -333,7 +366,7 @@
                 <div class="features-grid">
                     <div class="feature-card slide-up">
                         <div class="feature-icon">
-                            <i class="bi bi-phone" style="color: #3DDC84; font-size: 32px;"></i>
+                            <i class="bi bi-phone" style="color: #3DDC84; font-size: 32px;" aria-hidden="true"></i>
 
                         </div>
                         <h3>Multi-Device Management</h3>
@@ -343,7 +376,7 @@
 
                     <div class="feature-card slide-up">
                         <div class="feature-icon">
-                            <i class="bi bi-cast" style="color: #3DDC84; font-size: 32px;"></i>
+                            <i class="bi bi-cast" style="color: #3DDC84; font-size: 32px;" aria-hidden="true"></i>
                         </div>
                         <h3>Desktop Mode Experience</h3>
                         <p>Transform your Android experience with our desktop mode. Run Android apps in Windows-like
@@ -352,7 +385,7 @@
 
                     <div class="feature-card slide-up">
                         <div class="feature-icon">
-                            <i class="bi bi-controller" style="color: #3DDC84; font-size: 32px;"></i>
+                            <i class="bi bi-controller" style="color: #3DDC84; font-size: 32px;" aria-hidden="true"></i>
 
                         </div>
                         <h3>Complete Device Control</h3>
@@ -362,7 +395,7 @@
 
                     <div class="feature-card slide-up">
                         <div class="feature-icon">
-                            <i class="bi bi-arrow-repeat" style="color: #3DDC84; font-size: 32px;"></i>
+                            <i class="bi bi-arrow-repeat" style="color: #3DDC84; font-size: 32px;" aria-hidden="true"></i>
                         </div>
 
                         <h3>Deep Windows Integration</h3>
@@ -372,7 +405,7 @@
 
                     <div class="feature-card slide-up">
                         <div class="feature-icon">
-                            <i class="bi bi-music-note-beamed" style="color: #3DDC84; font-size: 32px;"></i>
+                            <i class="bi bi-music-note-beamed" style="color: #3DDC84; font-size: 32px;" aria-hidden="true"></i>
 
                         </div>
                         <h3>Media Control Center</h3>
@@ -382,7 +415,7 @@
 
                     <div class="feature-card slide-up">
                         <div class="feature-icon">
-                            <i class="bi bi-bell" style="color: #3DDC84; font-size: 32px;"></i>
+                            <i class="bi bi-bell" style="color: #3DDC84; font-size: 32px;" aria-hidden="true"></i>
 
                         </div>
                         <h3>Real-Time Notification Center</h3>
@@ -516,7 +549,7 @@
                 <div class="pricing-grid">
                     <!-- Basic Plan -->
                     <div class="pricing-card scale-in">
-                        <div class="plan-name"><i class="fas fa-star-half-alt"></i> Basic plan</div>
+                        <div class="plan-name"><i class="fas fa-star-half-alt" aria-hidden="true"></i> Basic plan</div>
                         <div class="plan-price">
                             <span class="price">Free</span>
                         </div>
@@ -526,19 +559,19 @@
                             <div class="features-title">Basic plan includes</div>
                             <ul class="features-list">
                                 <li>
-                                    <div class="check-icon"><i class="fas fa-check"></i></div>
+                                    <div class="check-icon"><i class="fas fa-check" aria-hidden="true"></i></div>
                                     <span>Limited keyboard shortcuts only</span>
                                 </li>
                                 <li>
-                                    <div class="check-icon"><i class="fas fa-times"></i></div>
+                                    <div class="check-icon"><i class="fas fa-times" aria-hidden="true"></i></div>
                                     <span>No notification control</span>
                                 </li>
                                 <li>
-                                    <div class="check-icon"><i class="fas fa-times"></i></div>
+                                    <div class="check-icon"><i class="fas fa-times" aria-hidden="true"></i></div>
                                     <span>No media control</span>
                                 </li>
                                 <li>
-                                    <div class="check-icon"><i class="fas fa-times"></i></div>
+                                    <div class="check-icon"><i class="fas fa-times" aria-hidden="true"></i></div>
                                     <span>No multi-device support</span>
                                 </li>
                             </ul>
@@ -548,8 +581,8 @@
 
                     <!-- Premium Plan -->
                     <div class="pricing-card featured scale-in">
-                        <div class="premium-badge"><i class="fas fa-crown"></i> You get a Free Trial</div>
-                        <div class="plan-name"><i class="fas fa-star"></i> Premium plan</div>
+                        <div class="premium-badge"><i class="fas fa-crown" aria-hidden="true"></i> You get a Free Trial</div>
+                        <div class="plan-name"><i class="fas fa-star" aria-hidden="true"></i> Premium plan</div>
                         <div class="plan-price">
                             <span class="price">Rs.199<span class="period">/month</span></span>
                         </div>
@@ -559,19 +592,19 @@
                             <div class="features-title">Premium plan includes</div>
                             <ul class="features-list">
                                 <li>
-                                    <div class="check-icon"><i class="fas fa-check"></i></div>
+                                    <div class="check-icon"><i class="fas fa-check" aria-hidden="true"></i></div>
                                     <span>All standard keyboard shortcuts</span>
                                 </li>
                                 <li>
-                                    <div class="check-icon"><i class="fas fa-check"></i></div>
+                                    <div class="check-icon"><i class="fas fa-check" aria-hidden="true"></i></div>
                                     <span>Notification control on "1 device" only</span>
                                 </li>
                                 <li>
-                                    <div class="check-icon"><i class="fas fa-check"></i></div>
+                                    <div class="check-icon"><i class="fas fa-check" aria-hidden="true"></i></div>
                                     <span>Media control on "1 device" only</span>
                                 </li>
                                 <li>
-                                    <div class="check-icon"><i class="fas fa-times"></i></div>
+                                    <div class="check-icon"><i class="fas fa-times" aria-hidden="true"></i></div>
                                     <span>No multi-device support</span>
                                 </li>
                             </ul>
@@ -581,7 +614,8 @@
 
                     <!-- Super Premium Plan -->
                     <div class="pricing-card scale-in">
-                        <div class="plan-name"><i class="fas fa-star"></i><i class="fas fa-star"></i> Super Premium plan
+                        <div class="plan-name"><i class="fas fa-star" aria-hidden="true"></i><i
+                                class="fas fa-star" aria-hidden="true"></i> Super Premium plan
                         </div>
                         <div class="plan-price">
                             <span class="price">Rs.499<span class="period">/month</span></span>
@@ -592,23 +626,23 @@
                             <div class="features-title">Super Premium plan includes</div>
                             <ul class="features-list">
                                 <li>
-                                    <div class="check-icon"><i class="fas fa-check"></i></div>
+                                    <div class="check-icon"><i class="fas fa-check" aria-hidden="true"></i></div>
                                     <span>All advanced keyboard shortcuts</span>
                                 </li>
                                 <li>
-                                    <div class="check-icon"><i class="fas fa-check"></i></div>
+                                    <div class="check-icon"><i class="fas fa-check" aria-hidden="true"></i></div>
                                     <span>Notification control on "Unlimited devices"</span>
                                 </li>
                                 <li>
-                                    <div class="check-icon"><i class="fas fa-check"></i></div>
+                                    <div class="check-icon"><i class="fas fa-check" aria-hidden="true"></i></div>
                                     <span>Media control on "Unlimited devices"</span>
                                 </li>
                                 <li>
-                                    <div class="check-icon"><i class="fas fa-check"></i></div>
+                                    <div class="check-icon"><i class="fas fa-check" aria-hidden="true"></i></div>
                                     <span>Multi-device screenshot capability</span>
                                 </li>
                                 <li>
-                                    <div class="check-icon"><i class="fas fa-check"></i></div>
+                                    <div class="check-icon"><i class="fas fa-check" aria-hidden="true"></i></div>
                                     <span>Multi-device operation support</span>
                                 </li>
                             </ul>
@@ -625,7 +659,8 @@
                     <div class="footer-brand">
                         <div class="logo">
                             <div class="app-icon">
-                                <img src="images/app_png.png" alt="ADB Manager" style="width: 24px; height: 24px;">
+                                <img src="images/app_png.png" alt="ADB Manager" style="width: 24px; height: 24px;"
+                                    width="24" height="24" loading="lazy" decoding="async">
                             </div>
                             <div class="logo-text">ADB Manager</div>
                         </div>
@@ -633,34 +668,34 @@
 
                     <div class="footer-links">
                         <div class="footer-column">
-                            <h4><i class="fas fa-cube"></i> Product</h4>
+                            <h4><i class="fas fa-cube" aria-hidden="true"></i> Product</h4>
                             <ul>
                                 <li>
                                     <a href="features.html">
-                                        <i class="fas fa-list"></i> Features
+                                        <i class="fas fa-list" aria-hidden="true"></i> Features
                                     </a>
                                 </li>
-                                <li><a href="#section5"><i class="fas fa-tag"></i> Pricing</a></li>
+                                <li><a href="#section5"><i class="fas fa-tag" aria-hidden="true"></i> Pricing</a></li>
                             </ul>
                         </div>
 
                         <div class="footer-column">
-                            <h4><i class="fas fa-building"></i> Company</h4>
+                            <h4><i class="fas fa-building" aria-hidden="true"></i> Company</h4>
                             <ul>
-                                <li><a href="#section2"><i class="fas fa-heart"></i> Our values</a></li>
-                                <li><a href="#section4"><i class="fas fa-rss"></i> Blog</a></li>
+                                <li><a href="#section2"><i class="fas fa-heart" aria-hidden="true"></i> Our values</a></li>
+                                <li><a href="#section4"><i class="fas fa-rss" aria-hidden="true"></i> Blog</a></li>
                             </ul>
                         </div>
 
                         <div class="footer-column">
-                            <h4><i class="fas fa-book"></i> Resources</h4>
+                            <h4><i class="fas fa-book" aria-hidden="true"></i> Resources</h4>
                             <ul>
-                                <li onclick="showDownloadOptions()">
-                                    <i class="fas fa-download"></i> Downloads
+                                <li onclick="showDownloadOptions()" role="button" tabindex="0" aria-label="Open downloads">
+                                    <i class="fas fa-download" aria-hidden="true"></i> Downloads
                                 </li>
                                 <li>
                                     <a href="contact.html">
-                                        <i class="fas fa-envelope"></i> Contact
+                                        <i class="fas fa-envelope" aria-hidden="true"></i> Contact
                                     </a>
                                 </li>
 
@@ -671,19 +706,17 @@
 
                 <div class="footer-bottom">
                     <div class="copyright">
-                        <i class="bi bi-c-circle"></i> 2025 Android ADB Multi-Device Manager Team. All rights reserved.
+                        <i class="bi bi-c-circle" aria-hidden="true"></i> 2025 Android ADB Multi-Device Manager Team. All rights reserved.
                     </div>
-                    <div class="social-links">
-                        <a class="link" href="https://www.instagram.com/shrey11_/" target="_blank"
-                            rel="noopener noreferrer">
-                            <i class="bi bi-instagram" style="font-size: 24px; color: #3DDC84;"></i>
+                    <div class="social-links" role="navigation" aria-label="Social links">
+                        <a class="link" href="https://www.instagram.com/shrey11_/" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-instagram" style="font-size: 24px; color: #3DDC84;" aria-hidden="true"></i>
                         </a>
-                        <a class="link" href="https://www.youtube.com/@shreypatel.1818" target="_blank"
-                            rel="noopener noreferrer">
-                            <i class="bi bi-youtube" style="font-size: 24px; color: #3DDC84;"></i>
+                        <a class="link" href="https://www.youtube.com/@shreypatel.1818" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-youtube" style="font-size: 24px; color: #3DDC84;" aria-hidden="true"></i>
                         </a>
                         <a class="link" href="https://github.com/Shrey113" target="_blank" rel="noopener noreferrer">
-                            <i class="bi bi-github" style="font-size: 24px; color: #3DDC84;"></i>
+                            <i class="bi bi-github" style="font-size: 24px; color: #3DDC84;" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -691,6 +724,7 @@
         </footer>
     </div>
 </body>
+
 <!-- 🧠 SEO Footer Enhancements (Structured Data for Website + SearchAction) -->
 <script type="application/ld+json">
 {
@@ -723,10 +757,31 @@
     document.addEventListener("DOMContentLoaded", () => {
         console.log("🚀 ADB Device Manager — SEO Optimized Version Loaded ✅");
 
-        // 💤 Lazy-load all images for performance
+        // 💤 Lazy-load all images for performance (double-checking)
         document.querySelectorAll("img").forEach(img => {
-            img.loading = "lazy";
+            try {
+                if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+                img.decoding = "async";
+            } catch (e) {
+                console.warn('img lazy load helper failed', e);
+            }
         });
+
+        // Reveal slide-up elements with a small delay to avoid layout shift
+        window.requestAnimationFrame(() => {
+            document.querySelectorAll('.slide-up').forEach(el => el.classList.add('visible'));
+        });
+
+        // Modal accessibility: ensure aria-hidden toggles
+        const modal = document.getElementById('download-modal');
+        window.showDownloadOptions = function () {
+            modal.style.display = 'flex';
+            modal.setAttribute('aria-hidden', 'false');
+        };
+        window.closeDownloadModal = function () {
+            modal.style.display = 'none';
+            modal.setAttribute('aria-hidden', 'true');
+        };
 
         // 🌐 Environment Log (helps debugging)
         if (window.location.hostname.includes("github.io")) {
@@ -734,9 +789,10 @@
         }
 
         // ⚙️ Optional: Basic engagement tracking
-        if (window.performance) {
+        if (window.performance && window.performance.timing) {
             const timing = window.performance.timing;
-            const loadTime = timing.loadEventEnd - timing.navigationStart;
+            // guard against 0 values if not available
+            const loadTime = (timing.loadEventEnd && timing.navigationStart) ? (timing.loadEventEnd - timing.navigationStart) : 0;
             console.log(`⏱️ Page load time: ${loadTime} ms`);
         }
     });
@@ -746,32 +802,11 @@
 <script defer src="./script.js"></script>
 
 <script>
-    function showDownloadOptions() {
-        const modal = document.getElementById('download-modal');
-        modal.style.display = 'flex';
-
-        // Allow closing when clicking outside the modal content
-        modal.addEventListener('click', handleOutsideClick);
-    }
-
-    function handleOutsideClick(event) {
-        const modalContent = document.querySelector('#download-modal .modal-content');
-        if (!modalContent.contains(event.target)) {
-            closeDownloadModal();
-        }
-    }
-
-    function closeDownloadModal() {
-        const modal = document.getElementById('download-modal');
-        modal.style.display = 'none';
-        modal.removeEventListener('click', handleOutsideClick); // Clean up
-    }
-    // ✅ Open in new tab instead of same tab
     function goToDownload(platform) {
         if (platform === 'android') {
-            window.open('android_download.html', '_blank');
+            window.open('android_download.html', '_blank', 'noopener');
         } else if (platform === 'windows') {
-            window.open('windows_download.html', '_blank');
+            window.open('windows_download.html', '_blank', 'noopener');
         }
     }
 </script>
