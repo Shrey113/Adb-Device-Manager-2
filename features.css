@@ -1,0 +1,568 @@
+/* ============================================
+   FULL CLEAN CSS — Purple Theme (uses your :root)
+   Drop this entire file into features.css
+   ============================================ */
+
+/* ----- Your provided variables (exactly) ----- */
+:root {
+    /* Base */
+    --color-bg: #f7f6f9;
+    --color-text: #1a1a2e;
+
+    /* Brand / Primary */
+    --color-primary: #6366f1;
+    --color-primary-light: #8b5cf6;
+    --color-primary-bg: #f0f4ff;
+    --color-primary-bg-2: #dee5fb;
+
+    /* Neutral Grays */
+    --color-gray-50: #f8fafc;
+    --color-gray-100: #f1f5f9;
+    --color-gray-200: #e2e8f0;
+    --color-gray-300: #cbd5e1;
+    --color-gray-400: #94a3b8;
+    --color-gray-500: #64748b;
+    --color-gray-600: #475569;
+
+    /* Shadows */
+    --shadow-light: rgba(0, 0, 0, 0.04);
+    --shadow-medium: rgba(0, 0, 0, 0.06);
+    --shadow-primary: rgba(99, 102, 241, 0.15);
+}
+
+/* ===== Basic reset ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== Page basics ===== */
+body {
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.45;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* ===== Layout container ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== Global typographic rules (consistent titles & spacing) ===== */
+h1,
+h2,
+h3 {
+    font-weight: 800;
+    color: var(--color-text);
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    color: var(--color-gray-600);
+}
+
+/* Section spacing — consistent across page */
+section {
+    padding: 60px 0;
+}
+
+/* ===== Header area ===== */
+.header-section {
+    text-align: center;
+    padding: 56px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.main-title {
+    font-size: 46px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--color-text);
+    line-height: 1.05;
+    text-align: center;
+}
+
+/* Button row */
+.btn-row {
+    display: inline-flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+.btn.black {
+    background: #000;
+    color: #fff;
+}
+
+.btn.black:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px var(--shadow-medium);
+}
+
+.btn.gray {
+    background: var(--color-gray-100);
+    color: var(--color-text);
+}
+
+.btn.gray:hover {
+    transform: translateY(-2px);
+}
+
+/* small link under header */
+.view-devices {
+    color: var(--color-primary);
+    font-size: 14px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+/* ===== Full image wrapper ===== */
+.image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 18px 40px;
+}
+
+.full-image {
+    width: 100%;
+    max-width: 1400px;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px var(--shadow-light);
+}
+
+/* ===== Section titles (consistent look) ===== */
+.section-title,
+.section-title-blue {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    letter-spacing: -0.4px;
+}
+
+/* Slight variant for smaller headings */
+.section-sub {
+    text-align: center;
+    color: var(--color-gray-500);
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+/* ===== Feature cards (two-column) ===== */
+.features-section {
+    padding: 60px 20px 80px;
+    background: var(--color-primary-bg);
+}
+
+.feature-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: stretch;
+    margin-bottom: 28px;
+}
+
+/* Card */
+.feature-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 36px 40px;
+    box-shadow: 0 8px 30px var(--shadow-light);
+    align-items: center;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    min-height: 260px;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 50px var(--shadow-medium);
+}
+
+/* Text content inside card */
+.feature-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.card-title {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--color-text);
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+}
+
+.card-copy {
+    font-size: 15px;
+    color: var(--color-gray-600);
+    line-height: 1.7;
+}
+
+/* Media side */
+.feature-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: transform 0.28s ease;
+}
+
+.feature-card:hover .card-image {
+    transform: scale(1.02);
+}
+
+/* ===== Cross-device interaction section ===== */
+.cross-device-section {
+    padding: 60px 20px 80px;
+    background: transparent;
+}
+
+.interaction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.interaction-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.5));
+    border-radius: 20px;
+    padding: 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+    border: 1px solid rgba(99, 102, 241, 0.06);
+    box-shadow: 0 12px 40px var(--shadow-primary);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.interaction-card:hover {
+    transform: translateY(-6px);
+}
+
+.interaction-label {
+    display: inline-block;
+    color: var(--color-primary-light);
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.interaction-title {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.interaction-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-gray-600);
+}
+
+.Cross_device_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Cross_device_img img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* ===== Content sync section ===== */
+.content-sync-section {
+    padding: 60px 20px 80px;
+}
+
+.sync-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.sync-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 36px;
+    box-shadow: 0 12px 40px var(--shadow-light);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sync-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px var(--shadow-medium);
+}
+
+.sync-card-title {
+    color: var(--color-primary);
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.sync-card-desc {
+    font-size: 15px;
+    color: var(--color-gray-600);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.Sync_device_img {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Sync_device_img img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* ===== Multi-app preview specifics (consistent sizes) ===== */
+.multi-app-section {
+    width: 100%;
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.multi-app-top {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+}
+
+.multi-app-top h2 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    color: var(--color-text);
+}
+
+.multi-app-top p {
+    font-size: 17px;
+    line-height: 1.6;
+    opacity: 0.9;
+    color: var(--color-gray-600);
+}
+
+/* bottom visual area */
+.multi-app-bottom {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.multi-app-visual {
+    width: 80%;
+    max-width: 1350px;
+    position: relative;
+}
+
+.multi-app-bg {
+    width: 100%;
+    border-radius: 16px;
+    display: block;
+    box-shadow: 0 12px 40px var(--shadow-light);
+}
+
+/* phone floating windows */
+.phone-app {
+    position: absolute;
+    width: 16%;
+    border-radius: 12px;
+    top: 10%;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* precise positions */
+.phone-app-1 {
+    left: 20%;
+}
+
+.phone-app-2 {
+    left: 43%;
+}
+
+.phone-app-3 {
+    left: 66%;
+}
+
+/* ===== Responsive behavior ===== */
+@media (max-width: 980px) {
+    .main-title {
+        font-size: 36px;
+    }
+
+    .section-title,
+    .section-title-blue {
+        font-size: 32px;
+        margin-bottom: 32px;
+    }
+
+    .feature-card {
+        grid-template-columns: 1fr;
+        padding: 28px;
+        min-height: auto;
+    }
+
+    .interaction-card {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+
+    .sync-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .multi-app-top h2 {
+        font-size: 32px;
+    }
+
+    .phone-app {
+        width: 20%;
+        top: 8%;
+    }
+}
+
+@media (max-width: 520px) {
+    .main-title {
+        font-size: 28px;
+    }
+
+    .btn {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .features-section {
+        padding: 40px 12px 60px;
+    }
+
+    .feature-card,
+    .sync-card,
+    .interaction-card {
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 22px;
+    }
+
+    .section-title {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    .multi-app-top h2 {
+        font-size: 26px;
+    }
+
+    .phone-app {
+        width: 26%;
+        top: 6%;
+        left: auto;
+        right: auto;
+    }
+
+    .multi-app-visual {
+        width: 100%;
+    }
+}
+
+/* ===== Small utility tweaks ===== */
+.center {
+    text-align: center;
+}
+
+.mt-8 {
+    margin-top: 8px;
+}
+
+.mb-8 {
+    margin-bottom: 8px;
+}
+
+.hidden {
+    display: none !important;
+}

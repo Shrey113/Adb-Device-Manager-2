@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========================= CORE META (SEO + MOBILE) ========================== -->
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO Description -->
+    <meta name="description"
+        content="ADB Device Manager Documentation — Complete guide to ADB Mode, App Mode, screen mirroring, notifications sync, desktop multi-window, file manager, and cross-device connectivity.">
+
+    <!-- Keywords -->
+    <meta name="keywords"
+        content="ADB documentation, ADB Device Manager guide, Android to PC guide, screen mirroring docs, ADB Mode tutorial, App Mode tutorial, file manager guide, Windows Android integration docs">
+
+    <meta name="author" content="ADB Device Manager">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://shrey113.github.io/Adb-Device-Manager-2/docs">
+
+    <!-- ========================= TITLE ========================== -->
+    <title>ADB Device Manager — Official Documentation & User Guide</title>
+
+    <!-- ========================= OPEN GRAPH (SOCIAL SHARE) ========================== -->
+    <meta property="og:title" content="ADB Device Manager — Documentation & User Guide">
+    <meta property="og:description"
+        content="Full documentation for ADB Device Manager including setup guide, features, ADB Mode, App Mode, screen mirroring, notifications sync, media control and more.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://shrey113.github.io/Adb-Device-Manager-2/docs">
+    <meta property="og:image" content="https://shrey113.github.io/Adb-Device-Manager-2/images/app_png.webp">
+    <meta property="og:site_name" content="ADB Device Manager">
+
+    <!-- ========================= TWITTER CARD ========================== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ADB Device Manager — Documentation">
+    <meta name="twitter:description"
+        content="Explore ADB Device Manager Documentation — Setup guide, features, and troubleshooting.">
+    <meta name="twitter:image" content="https://shrey113.github.io/Adb-Device-Manager-2/images/app_png.webp">
+
+    <!-- ========================= STRUCTURED DATA (Docs Page) ========================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "ADB Device Manager — Official Documentation",
+      "description": "Complete documentation for ADB Device Manager including features, ADB Mode, App Mode, screen mirroring, notifications, multi-window, and Windows integration.",
+      "author": {
+        "@type": "Organization",
+        "name": "ADB Device Manager"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ADB Device Manager",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://shrey113.github.io/Adb-Device-Manager-2/images/app_png.webp"
+        }
+      },
+      "mainEntityOfPage": "https://shrey113.github.io/Adb-Device-Manager-2/docs"
+    }
+    </script>
+
+    <!-- ========================= FAVICONS ========================== -->
+    <link rel="icon" href="images/app_png.webp">
+    <link rel="apple-touch-icon" href="images/app_png.webp">
+
+    <!-- ========================= PERFORMANCE (DNS + PRECONNECT) ========================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- ========================= FONTS ========================== -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet">
+    </noscript>
+
+    <!-- ========================= STYLES ========================== -->
+    <link rel="stylesheet" href="Docs.css">
+    <link rel="stylesheet" href="head.css">
+</head>
+
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo">
+                    <img src="images/app_png.webp" class="logo-icon" alt="">
+                    <span class="logo-text">ADB Device Manager</span>
+                </div>
+            </div>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="features.html" class="nav-link">Features</a>
+                <a href="#" class="nav-link active">Docs</a>
+                <a href="support.html" class="nav-link">Support</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="docs-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <h3 class="sidebar-title">Documentation</h3>
+
+                <div class="nav-section">
+                    <a href="#cross-device" class="nav-section-link">Cross-Device</a>
+                    <ul class="nav-subsection">
+                        <li><a href="#wireless-screen-mirroring">Wireless Screen Mirroring</a></li>
+                        <li><a href="#real-time-audio-streaming">Real-Time Audio Streaming</a></li>
+                        <li><a href="#keyboard-mouse-control">Keyboard & Mouse Control</a></li>
+                        <li><a href="#remote-camera-access">Remote Camera Access</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <a href="#desktop-mode" class="nav-section-link">Desktop Mode</a>
+                    <ul class="nav-subsection">
+                        <li><a href="#multi-app-running">Multi-App Running</a></li>
+                        <li><a href="#independent-audio-channels">Independent Audio Channels</a></li>
+                        <li><a href="#virtual-system-cloning">Virtual System Cloning</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <a href="#app-synchronization" class="nav-section-link">App Synchronization</a>
+                    <ul class="nav-subsection">
+                        <li><a href="#cross-device-notifications">Cross-Device Notifications</a></li>
+                        <li><a href="#synchronized-media-playback">Synchronized Media Playback</a></li>
+                        <li><a href="#universal-file-manager">Universal File Manager</a></li>
+                        <li><a href="#contacts-call-history-sync">Contacts & Call History Sync</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-section">
+                    <a href="#windows-integration" class="nav-section-link">Windows Integration</a>
+                    <ul class="nav-subsection">
+                        <li><a href="#bluetooth-audio-streaming">Bluetooth Audio Streaming</a></li>
+                        <li><a href="#seamless-file-sharing">Seamless File Sharing</a></li>
+                        <li><a href="#smart-screen-search">Smart Screen Search</a></li>
+                        <li><a href="#custom-keyboard-shortcuts">Custom Keyboard Shortcuts</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Documentation Content -->
+        <main class="docs-content">
+            <article class="intro-section">
+                <h1>ADB Device Manager Documentation</h1>
+                <p class="intro-text">
+                    Welcome to the comprehensive documentation for ADB Device Manager. This guide covers all features
+                    and capabilities, helping you unlock the full potential of cross-device Android management.
+                </p>
+            </article>
+
+            <!-- Cross-Device Section -->
+            <section id="cross-device" class="doc-section">
+                <h2 class="section-title">
+                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="3" width="9" height="13" rx="1.5" stroke="currentColor" stroke-width="2" />
+                        <rect x="13" y="5" width="9" height="16" rx="1.5" stroke="currentColor" stroke-width="2" />
+                        <path d="M6 19L6 19.01M17 18L17 18.01" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" />
+                    </svg>
+                    Cross-Device Connectivity
+                </h2>
+                <p class="section-intro">
+                    Connect and control your Android devices seamlessly across multiple platforms. Experience true
+                    device convergence with real-time screen sharing, audio streaming, and unified input control.
+                </p>
+
+                <div id="wireless-screen-mirroring" class="feature-detail">
+                    <h3>Wireless Screen Mirroring</h3>
+                    <p>
+                        Cast your Android device's screen to any compatible device wirelessly without cables or complex
+                        setup.
+                        Enjoy high-quality, low-latency screen mirroring perfect for presentations, gaming, or media
+                        consumption.
+                        The technology automatically adjusts resolution and frame rate based on network conditions to
+                        ensure smooth performance.
+                    </p>
+
+                    <img src="images/Cross-Device/Screen Mirroring.png" class="feature-image" alt="">
+                </div>
+
+                <div id="real-time-audio-streaming" class="feature-detail">
+                    <h3>Real-Time Audio Streaming</h3>
+                    <p>
+                        Stream audio from your Android device to connected devices in real-time with minimal latency.
+                        Perfect for listening to music, podcasts, or watching videos on larger speakers or displays.
+                        Supports high-quality audio codecs and automatic synchronization to prevent audio drift.
+                    </p>
+
+                    <img src="images/Cross-Device/Audio Streaming.png" class="feature-image" alt="">
+                </div>
+
+                <div id="keyboard-mouse-control" class="feature-detail">
+                    <h3>Keyboard & Mouse Control</h3>
+                    <p>
+                        Control your Android device using your PC's keyboard and mouse for enhanced productivity.
+                        Type faster, navigate more precisely, and work more efficiently with familiar desktop
+                        peripherals.
+                        Full support for keyboard shortcuts, multi-touch gestures, and right-click context menus.
+                    </p>
+
+                    <img src="images/Cross-Device/Keyboard & Mouse Control.png" class="feature-image" alt="">
+                </div>
+
+                <div id="remote-camera-access" class="feature-detail">
+                    <h3>Remote Camera Access</h3>
+                    <p>
+                        Access and utilize your Android device's camera remotely from any connected device.
+                        Perfect for video conferencing, security monitoring, or using your phone as a high-quality
+                        webcam.
+                        Supports both front and rear cameras with full control over zoom, focus, and flash settings.
+                    </p>
+
+                    <img src="images/Cross-Device/Remote Camera Access.png" class="feature-image" alt="">
+                </div>
+            </section>
+
+            <!-- Desktop Mode Section -->
+            <section id="desktop-mode" class="doc-section">
+                <h2 class="section-title">
+                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" />
+                        <path d="M8 21H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M12 17V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    Desktop Mode
+                </h2>
+                <p class="section-intro">
+                    Transform your Android device into a full desktop experience. Run multiple apps simultaneously,
+                    manage independent audio streams, and create isolated system environments for enhanced productivity.
+                </p>
+
+                <div id="multi-app-running" class="feature-detail">
+                    <h3>Multi-App Running</h3>
+                    <p>
+                        Run multiple Android applications simultaneously in separate windows, just like on a desktop
+                        computer.
+                        Resize, minimize, and arrange app windows freely for optimal multitasking workflow.
+                        Each app runs independently with full functionality, allowing you to work across multiple
+                        applications seamlessly.
+                    </p>
+
+                    <img src="images/Desktop Mode/Multi-App Running.png" class="feature-image" alt="">
+                </div>
+
+                <div id="independent-audio-channels" class="feature-detail">
+                    <h3>Independent Audio Channels</h3>
+                    <p>
+                        Each running application has its own independent audio stream that can be controlled separately.
+                        Adjust volume levels per app, mute specific applications, or route audio to different output
+                        devices.
+                        Perfect for managing multiple media sources or keeping work and entertainment audio separate.
+                    </p>
+
+                    <img src="images/Desktop Mode/Independent Audio Channels.png" class="feature-image" alt="">
+                </div>
+
+                <div id="virtual-system-cloning" class="feature-detail">
+                    <h3>Virtual System Cloning</h3>
+                    <p>
+                        Create isolated virtual Android environments within your device for complete separation of data
+                        and apps.
+                        Run multiple instances of the same app with different accounts or configurations simultaneously.
+                        Ideal for testing, privacy, or maintaining separate work and personal profiles with complete
+                        isolation.
+                    </p>
+                </div>
+            </section>
+
+            <!-- App Synchronization Section -->
+            <section id="app-synchronization" class="doc-section">
+                <h2 class="section-title">
+                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M21 3V9H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                    App Synchronization
+                </h2>
+                <p class="section-intro">
+                    Keep your data, notifications, and media synchronized across all connected devices.
+                    Experience seamless continuity as you switch between devices without missing a beat.
+                </p>
+
+                <div id="cross-device-notifications" class="feature-detail"
+                    style="display: grid; grid-template-columns: 1fr 1fr;">
+
+                    <div class="data">
+                        <h3>Cross-Device Notifications</h3>
+                        <p>
+                            Receive and manage notifications from your Android device on all connected devices in
+                            real-time.
+                            Reply to messages, dismiss notifications, or take action directly from your PC or tablet.
+                            Smart filtering ensures you only see relevant notifications on each device based on your
+                            preferences.
+                        </p>
+                    </div>
+                    <img src="images/App Synchronization/Cross-Device Notifications.png" height="400px" alt="">
+                </div>
+
+                <div id="synchronized-media-playback" class="feature-detail"
+                    style="display: grid; grid-template-columns: 1fr 1fr;">
+                    <div class="data">
+                        <h3>Synchronized Media Playback</h3>
+                        <p>
+                            Control media playback across all your devices from any connected device seamlessly.
+                            Start playing music on your phone and continue on your PC without interruption.
+                            Full playback controls including play, pause, skip, and volume are synchronized in
+                            real-time.
+                        </p>
+                    </div>
+                    <img src="images/App Synchronization/Synchronized Media Playback.png" height="500px" alt="">
+                </div>
+
+                <div id="universal-file-manager" class="feature-detail">
+                    <h3>Universal File Manager</h3>
+                    <p>
+                        Access, browse, and manage files across all connected devices from a single unified interface.
+                        Transfer files between devices with simple drag-and-drop operations at high speeds.
+                        Supports all file types with preview capabilities and advanced search across all connected
+                        storage.
+                    </p>
+                    <img src="images/App Synchronization/Universal File Manager.png" class="feature-image" alt="">
+                </div>
+
+                <div id="contacts-call-history-sync" class="feature-detail">
+                    <h3>Contacts & Call History Sync</h3>
+                    <p>
+                        Keep your contacts and call history synchronized across all devices automatically and securely.
+                        Make and receive calls from any connected device with full access to your contact list.
+                        Call history is updated in real-time, ensuring you never miss important communication details.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Windows Integration Section -->
+            <section id="windows-integration" class="doc-section">
+                <h2 class="section-title">
+                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 3L10 3.5V11.5L3 12V3Z" stroke="currentColor" stroke-width="2"
+                            stroke-linejoin="round" />
+                        <path d="M11 3.5L21 4.5V11.5L11 12.5V3.5Z" stroke="currentColor" stroke-width="2"
+                            stroke-linejoin="round" />
+                        <path d="M3 13L10 12.5V20.5L3 21V13Z" stroke="currentColor" stroke-width="2"
+                            stroke-linejoin="round" />
+                        <path d="M11 12.5L21 11.5V19.5L11 20.5V12.5Z" stroke="currentColor" stroke-width="2"
+                            stroke-linejoin="round" />
+                    </svg>
+                    Windows Integration
+                </h2>
+                <p class="section-intro">
+                    Deep integration with Windows operating system for enhanced productivity and seamless workflow.
+                    Access advanced features designed specifically for Windows users.
+                </p>
+
+                <div id="bluetooth-audio-streaming" class="feature-detail">
+                    <h3>Bluetooth Audio Streaming</h3>
+                    <p>
+                        Stream audio from your Android device to Windows via Bluetooth with high-quality codec support.
+                        Automatically connects to paired devices and manages audio routing intelligently.
+                        Low-latency streaming ensures perfect synchronization for videos and games.
+                    </p>
+                    <img src="images/Windows Integration/Bluetooth Audio Streaming.png" width="500px" alt="">
+                </div>
+
+                <div id="seamless-file-sharing" class="feature-detail"
+                    style="display: grid; grid-template-columns: 1fr 1fr;">
+                    <div class="data">
+                        <h3>Seamless File Sharing</h3>
+                        <p>
+                            Share files between your Android device and Windows PC effortlessly with drag-and-drop
+                            simplicity.
+                            No size limits, no compression - transfer files at maximum speed over your local network.
+                            Automatic file type detection and smart organization keep your transfers organized.
+                        </p>
+                    </div>
+                    <img src="images/Windows Integration/Seamless File Sharing.png" width="500px" alt="">
+                </div>
+
+                <div id="smart-screen-search" class="feature-detail">
+                    <h3>Smart Screen Search</h3>
+                    <p>
+                        Search for text, images, or content directly from your Android screen using Google's powerful
+                        search.
+                        Select any text or image on your device and instantly search for it without typing.
+                        Integrated with Windows search for unified results across all your devices and local files.
+                    </p>
+                </div>
+
+                <div id="custom-keyboard-shortcuts" class="feature-detail">
+                    <h3>Custom Keyboard Shortcuts</h3>
+                    <p>
+                        Create personalized keyboard shortcuts for common Android actions and app launches from Windows.
+                        Boost productivity by triggering Android functions without switching devices or using the mouse.
+                        Fully customizable with support for complex key combinations and macro sequences.
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <!-- Smooth Scroll Script -->
+    <script>
+        // Smooth scroll and highlight on navigation
+        document.addEventListener('DOMContentLoaded', function () {
+            // Handle hash navigation on page load
+            if (window.location.hash) {
+                setTimeout(() => {
+                    const element = document.querySelector(window.location.hash);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        element.classList.add('highlight');
+                        setTimeout(() => element.classList.remove('highlight'), 2000);
+                    }
+                }, 100);
+            }
+
+            // Handle all anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                        // Add highlight effect
+                        targetElement.classList.add('highlight');
+                        setTimeout(() => targetElement.classList.remove('highlight'), 2000);
+
+                        // Update URL hash
+                        history.pushState(null, null, targetId);
+                    }
+                });
+            });
+
+            // Active navigation highlighting
+            const sections = document.querySelectorAll('.doc-section, .feature-detail');
+            const navLinks = document.querySelectorAll('.sidebar-nav a');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= sectionTop - 200) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

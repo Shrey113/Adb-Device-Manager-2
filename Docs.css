@@ -1,0 +1,344 @@
+/* ===================================
+   CSS Reset & Base Styles
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #f7f6f9;
+    color: #1a1a2e;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ===================================
+   Documentation Container
+   =================================== */
+.docs-container {
+    display: flex;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-top: 80px;
+    min-height: 100vh;
+}
+
+/* ===================================
+   Sidebar Navigation
+   =================================== */
+.sidebar {
+    position: sticky;
+    top: 0;
+    width: 280px;
+    height: 100vh;
+    padding: 2rem 1rem;
+    overflow-y: auto;
+    background: #ffffff;
+    border-right: 1px solid #e2e8f0;
+    flex-shrink: 0;
+}
+
+
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.sidebar-title {
+    color: #1a1a2e;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-section {
+    margin-bottom: 1.5rem;
+}
+
+.nav-section-link {
+    display: block;
+    color: #1a1a2e;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+.nav-section-link:hover,
+.nav-section-link.active {
+    background: #f0f4ff;
+    color: #6366f1;
+}
+
+.nav-subsection {
+    list-style: none;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    border-left: 2px solid #e2e8f0;
+}
+
+.nav-subsection li {
+    margin-bottom: 0.5rem;
+}
+
+.nav-subsection a {
+    display: block;
+    color: #64748b;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.nav-subsection a:hover,
+.nav-subsection a.active {
+    color: #6366f1;
+    background: #dee5fb;
+}
+
+/* ===================================
+   Main Documentation Content
+   =================================== */
+.docs-content {
+    flex: 1;
+    padding: 2rem 3rem;
+    max-width: 1200px;
+}
+
+.intro-section {
+    margin-bottom: 3rem;
+}
+
+.intro-section h1 {
+    font-size: 2.5rem;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.8;
+}
+
+/* ===================================
+   Documentation Sections
+   =================================== */
+.doc-section {
+    margin-bottom: 4rem;
+    padding: 2.5rem;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+
+.doc-section.highlight {
+    background: #f0f4ff;
+    border-color: #c7d2fe;
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.15);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2rem;
+    color: #1a1a2e;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.section-icon {
+    width: 36px;
+    height: 36px;
+    color: #6366f1;
+}
+
+.section-intro {
+    font-size: 1.05rem;
+    color: #475569;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    padding-left: 3rem;
+}
+
+/* ===================================
+   Feature Details
+   =================================== */
+.feature-detail {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: 12px;
+    border-left: 3px solid #6366f1;
+    transition: all 0.3s ease;
+}
+
+.feature-detail:hover {
+    background: #f0f4ff;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.1);
+}
+
+.feature-detail.highlight {
+    background: #f0f4ff;
+    border-left-color: #8b5cf6;
+    box-shadow: 0 6px 25px rgba(99, 102, 241, 0.2);
+    animation: pulse 1s ease-in-out;
+}
+
+.feature-image {
+    width: 100%;
+    height: auto;
+    margin-top: 1.2rem;
+    border-radius: 14px;
+
+    /* Modern frame */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: #ffffff;
+    padding: 8px;
+
+    /* Soft depth */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+    /* Smooth interaction */
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.95;
+    }
+}
+
+.feature-detail h3 {
+    font-size: 1.4rem;
+    color: #1a1a2e;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
+.feature-detail p {
+    color: #475569;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+
+/* ===================================
+   Responsive Design
+   =================================== */
+@media (max-width: 1024px) {
+
+    .docs-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .intro-section h1 {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 950px) {
+    .sidebar {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0 1rem;
+    }
+
+    .nav {
+        gap: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .logo-text {
+        display: none;
+    }
+
+    .docs-content {
+        padding: 1.5rem 1rem;
+    }
+
+    .intro-section h1 {
+        font-size: 1.75rem;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-intro {
+        padding-left: 0;
+    }
+
+    .feature-detail h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===================================
+   Utility Classes
+   =================================== */
+.text-gradient {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.code {
+    background: #f0f4ff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    color: #6366f1;
+    font-size: 0.9em;
+}

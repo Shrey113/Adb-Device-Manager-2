@@ -1,393 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Features — ADB Device Manager</title>
-  <meta name="description" content="ADB Device Manager — ADB Mode and App Mode for Android–Windows integration. Screen mirroring, audio streaming, calls, files, and more." />
-  <link rel="canonical" href="https://shrey113.github.io/Adb-Device-Manager-2/features.html" />
+  <!-- =========================
+         CORE META (SEO + MOBILE)
+    ========================== -->
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Primary SEO Description -->
+  <meta name="description"
+    content="Explore all features of O+ Connect (ADB Device Manager) — ADB Mode, App Mode, screen mirroring, desktop multi-window, notifications sync, file manager, media control, and audio cast.">
 
-  <!-- 📦 Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <!-- Keywords -->
+  <meta name="keywords"
+    content="O+ Connect features, ADB Device Manager features, Android to PC features, screen mirroring, notifications sync, ADB mode, app mode features, file manager, desktop mode">
 
- <style>
-  /* 🌿 Base Layout */
-  :root{--primary-color:#0bc77a;--primary-dark:#001e13;--secondary-color:#0bc77a;--accent-color:#78909C;--text-light:#ffffff;--text-dark:#212121;--text-secondary:#616161;--text-muted:#9E9E9E;--gray-light:#FAFAFA;--gray-medium:#e0e0e0;--gray-dark:#9e9e9e;--success-color:#0bc77a;--error-color:#D32F2F;--warning-color:#FF9800;--card-background:#FFFFFF;--shadow:0 4px 6px rgba(0, 0, 0, 0.1);--shadow-hover:0 10px 20px rgba(0, 0, 0, 0.1);--radius:8px;--transition:all 0.3s ease;--main-background:#000e09;--white:var(--text-light);--light-gray:var(--gray-light);--medium-gray:var(--gray-medium);--dark-gray:var(--text-secondary);--text-color:var(--text-dark);--border-radius:var(--radius);--box-shadow:var(--shadow)}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,sans-serif;line-height:1.6;color:var(--text-light);background-color:var(--main-background);position:relative;overflow-x:hidden;min-height:100vh}
-body::before{content:'';position:absolute;top:0;left:0;right:0;height:800px;background:radial-gradient(ellipse at top,rgba(11,199,121,.482),transparent 70%);z-index:-1;max-height:100vh}
-body::after{content:'';position:absolute;top:-150px;left:0;right:0;height:70%;background-image:url("data:image/svg+xml,%3Csvg width='1440' height='500' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%230bc77a' stroke-width='1' opacity='0.2'%3E%3Cpath d='M0 150 C200 100, 400 200, 600 150 C800 100, 1000 200, 1200 150 C1400 100, 1600 180, 1800 150' /%3E%3Cpath d='M0 200 C200 150, 400 250, 600 200 C800 150, 1000 250, 1200 200 C1400 150, 1600 230, 1800 200' /%3E%3Cpath d='M0 250 C200 200, 400 300, 600 250 C800 200, 1000 300, 1200 250 C1400 200, 1600 280, 1800 250' /%3E%3C/g%3E%3C/svg%3E");background-repeat:repeat-x;background-size:3600px auto;animation:flowingLines 20s linear infinite;opacity:.5;z-index:-1}
-@keyframes flowingLines{
-0%{background-position:0 0}
-100%{background-position:-1800px 0}
-}
-  body {
-    background: var(--main-background, #000e09);
-    color: var(--text-light, #fff);
-    margin: 0;
-    font-family: "Inter", sans-serif;
-    overflow-x: hidden;
-  }
+  <meta name="author" content="O+ Connect / ADB Device Manager">
+  <meta name="robots" content="index, follow">
 
-  /* 🔝 Header */
-  .top-bar {
-    position: fixed;
-    top: 18px;
-    left: 4%;
-    right: 4%;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    z-index: 1000;
-  }
+  <!-- Canonical -->
+  <link rel="canonical" href="https://shrey113.github.io/Adb-Device-Manager-2/features">
 
-  .top-bar i {
-    font-size: 24px;
-    color: #0bc77a;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-  }
+  <!-- =========================
+         PAGE TITLE
+    ========================== -->
+  <title>O+ Connect — Full Feature List & Capabilities</title>
 
-  .top-bar i:hover {
-    transform: scale(1.12);
-  }
+  <!-- =========================
+         OPEN GRAPH (SOCIAL SHARE)
+    ========================== -->
+  <meta property="og:title" content="O+ Connect — Complete Features Overview">
+  <meta property="og:description"
+    content="See all O+ Connect features including ADB Mode, App Mode, screen control, notifications, multi-window, media management, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shrey113.github.io/Adb-Device-Manager-2/features">
+  <meta property="og:image" content="https://shrey113.github.io/Adb-Device-Manager-2/images/app_png.webp">
+  <meta property="og:site_name" content="O+ Connect">
 
-  .top-bar img {
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
-  }
+  <!-- =========================
+         TWITTER CARD
+    ========================== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="O+ Connect — Features">
+  <meta name="twitter:description"
+    content="Advanced dual-mode Android management: ADB Mode, App Mode, file manager, mirroring, notifications, media control and more.">
+  <meta name="twitter:image" content="https://shrey113.github.io/Adb-Device-Manager-2/images/app_png.webp">
 
-  .top-bar h1 {
-    font-size: clamp(1.1rem, 2vw, 1.6rem);
-    font-weight: 600;
-    color: #ffffff;
-    letter-spacing: 0.5px;
-  }
-
-  /* 🧩 Section Adjustments */
-  #section3 {
-    padding-top: clamp(80px, 10vw, 110px);
-  }
-
-  .tools-header {
-    text-align: center;
-    margin-bottom: 40px;
-    padding: 0 10px;
-  }
-
-  .tools-header h2 {
-    color: #0bc77a;
-    font-size: clamp(1.4rem, 3vw, 2.2rem);
-    font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: 10px;
-  }
-
-  .tools-header p {
-    color: #d2fbe3;
-    font-size: clamp(0.9rem, 2vw, 1rem);
-    line-height: 1.6;
-  }
-
-
-  /* 🟢 Group Titles */
-  .group-title {
-    grid-column: 1 / -1;
-    text-align: left;
-    margin-top: 40px;
-    margin-bottom: 25px;
-    color: #0bc77a;
-    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-    font-weight: 700;
-    letter-spacing: 0.4px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid rgba(11, 199, 121, 0.25);
-    text-shadow: 0 0 10px rgba(11, 199, 121, 0.3);
-  }
-
-  /* 📱 Responsive Adjustments */
-  @media (max-width: 991px) {
-    .top-bar {
-      left: 25px;
-      right: 25px;
-      top: 15px;
+  <!-- =========================
+         STRUCTURED DATA — Feature List
+    ========================== -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "O+ Connect Feature List",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "ADB Mode — Screen Mirroring & Control" },
+        { "@type": "ListItem", "position": 2, "name": "App Mode — Calls & Notifications Sync" },
+        { "@type": "ListItem", "position": 3, "name": "Desktop Multi-Window Launcher" },
+        { "@type": "ListItem", "position": 4, "name": "File Manager — Drag & Drop Transfers" },
+        { "@type": "ListItem", "position": 5, "name": "Media Control — Play / Pause / Seek" },
+        { "@type": "ListItem", "position": 6, "name": "Audio Cast — Stream Android Audio to PC" }
+      ]
     }
+    </script>
 
-    .top-bar img {
-      width: 34px;
-      height: 34px;
-    }
+  <!-- =========================
+         FAVICONS
+    ========================== -->
+  <link rel="icon" href="images/app_png.webp">
+  <link rel="apple-touch-icon" href="images/app_png.webp">
 
-    .group-title {
-      text-align: center;
-    }
-  }
+  <!-- =========================
+         PERFORMANCE
+    ========================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  @media (max-width: 767px) {
-    .top-bar {
-      justify-content: flex-start;
-      gap: 8px;
-    }
+  <!-- Google Font (non-blocking) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"
+    media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </noscript>
 
-    .tools-header {
-      margin-bottom: 30px;
-    }
-
-    .tools-header h2 {
-      font-size: 1.5rem;
-    }
-
-    .tools-header p {
-      font-size: 0.9rem;
-      padding: 0 15px;
-    }
-
-    .tools-header .sub_data {
-      display: none;
-    }
-
-    .group-title {
-      font-size: 1.1rem;
-      margin-top: 30px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .top-bar {
-      gap: 6px;
-      left: 20px;
-      right: 20px;
-    }
-
-    .top-bar i {
-      font-size: 22px;
-    }
-
-    .top-bar img {
-      width: 30px;
-      height: 30px;
-    }
-
-    .top-bar h1 {
-      font-size: 1.1rem;
-    }
-
-    .tools-header h2 {
-      font-size: 1.3rem;
-    }
-
-    .group-title {
-      text-align: center;
-      font-size: 1rem;
-    }
-  }
-  #section3 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
-#section3 body{background-color:#0a1e15;color:#fff;background-size:cover;min-height:100vh}
-#section3 .container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
-#section3 .tools{padding:80px 0;text-align:center}
-#section3 .tools-header{margin-bottom:60px}
-#section3 .tagline{color:#0bc77a;font-size:14px;font-weight:600;letter-spacing:1px;margin-bottom:12px}
-#section3 h2{font-size:42px;font-weight:600;margin-bottom:16px}
-#section3 .subtitle{font-size:18px;opacity:.8;line-height:1.5;max-width:650px;margin:0 auto}
-#section3 .tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
-#section3 .tool-card{background:linear-gradient(135deg,#10291e 0,#183c2b 100%);border:1px solid rgba(61,220,132,.1);border-radius:18px;padding:28px 24px 24px 24px;text-align:left;position:relative;overflow:hidden;display:flex;flex-direction:column;height:280px;box-shadow:0 12px 28px rgba(0,0,0,.25);transition:box-shadow .2s,transform .2s}
-#section3 .tool-card:hover{box-shadow:0 15px 35px rgba(61,220,132,.18);transform:translateY(-4px) scale(1.02)}
-#section3 .alert-notification,#section3 .encryption-icon,#section3 .phone-mockup,#section3 .speedometer,#section3 .tool-icon,#section3 .tool-image{display:flex;align-items:center;justify-content:center;margin-bottom:24px;font-size:28px!important}
-#section3 .ai-circle{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#3ddc84 0,#0bc77a 100%);box-shadow:0 4px 24px rgba(61,220,132,.12)}
-#section3 .encryption-icon,#section3 .tool-icon{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,#0bc77a 0,#3ddc84 100%);box-shadow:0 8px 24px rgba(61,220,132,.25)}
-#section3 .alert-notification{height:56px;border-radius:12px;background:linear-gradient(135deg,#0bc77a 0,#3ddc84 100%);box-shadow:0 8px 24px rgba(61,220,132,.25)}
-#section3 .phone-mockup,#section3 .speedometer{height:64px;background:0 0}
-#section3 .tool-card h3{font-size:22px;font-weight:700;margin-bottom:10px;color:#fff}
-#section3 .tool-card p{font-size:15px;opacity:.85;line-height:1.6;color:#d2fbe3}
-#section3 .percentage{font-size:32px;font-weight:700;color:#3ddc84;margin-bottom:10px}
-#section3 .ai-card{background:linear-gradient(to right,#0bc77a,#085036);grid-column:1;grid-row:1/span 2}
-#section3 .phone-mockup{width:100%;height:100%;background-color:#000}
-#section3 .phone-image{width:100%;height:100%;object-fit:cover;opacity:0}
-#section3 .speed-card{grid-column:1;grid-row:3}
-#section3 .speedometer{width:150px;height:150px;margin-bottom:20px;background-color:#000}
-#section3 .speedometer-image{width:100%;height:100%;object-fit:cover;opacity:0}
-#section3 .monitoring-card{grid-column:2;grid-row:4}
-#section3 .alerts-card{grid-column:3;grid-row:1/span 2}
-#section3 .notification-image{width:100%;height:100%;object-fit:cover;opacity:0}
-#section3 .encryption-card{grid-column:3;grid-row:3/span 2}
-#section3 .encryption-image{width:100%;height:100%;object-fit:cover;opacity:0}
-@media (max-width:991px){
-#section3 .tools{padding:60px 0}
-#section3 h2{font-size:36px}
-#section3 .subtitle{font-size:16px;max-width:90%}
-#section3 .tools-grid{grid-template-columns:repeat(2,1fr);gap:15px}
-#section3 .ai-card,#section3 .alerts-card,#section3 .encryption-card,#section3 .monitoring-card,#section3 .speed-card{grid-column:auto;grid-row:auto}
-#section3 .tool-card{height:auto;min-height:250px}
-#section3 .tools-header{margin-bottom:40px}
-}
-@media (max-width:767px){
-#section3 .tools{padding:40px 0}
-#section3 h2{font-size:28px}
-#section3 .subtitle{font-size:14px}
-}
-#section3 .tool-card{padding:20px;min-height:220px}
-#section3 .tool-card h3{font-size:18px}
-#section3 .tool-card p{font-size:14px}
-#section3 .encryption-icon,#section3 .tool-icon{width:48px;height:48px}
-#section3 .tool-icon i{font-size:24px!important}
-#section3 .tools-header{margin-bottom:30px}
-#section3 h2{font-size:24px}
-#section3 .subtitle{font-size:13px;padding:0 10px}
-#section3 .tool-card{min-height:200px}
-</style>
-
+  <!-- =========================
+         STYLES
+    ========================== -->
+  <link rel="stylesheet" href="features.css">
+  <link rel="stylesheet" href="head.css">
 </head>
 
+
 <body>
+
   <!-- Header -->
-  <div class="top-bar">
-    <i class="bi bi-arrow-left-circle" onclick="history.back()"></i>
-    <img src="images/app_png.webp" alt="ADB Device Manager Logo" />
-    <h1>Features</h1>
-  </div>
-
-  <!-- Features Section -->
-  <div id="section3" class="section-container">
-    <section class="tools">
-      <div class="container">
-        <div class="tools-header">
-          <h2>All your Android tools in one place</h2>
-          <p>
-            Two complementary modes: <strong>ADB Mode</strong> for advanced control and <strong>App Mode</strong> for wireless sync.<br>
-           <div class="sub_data"> Explore the full feature set that connects Android and Windows like never before.</div>
-          </p>
-        </div>
-
-        <div class="tools-grid">
-          
-          <!-- 🧩 Group 1: ADB Mode -->
-          <div class="group-title">• ADB Mode (Developer & Power Tools)</div>
-
-          <div class="tool-card">
-            <div class="tool-icon"><i class="bi bi-display"></i></div>
-            <h3>Screen Mirroring</h3>
-            <p>Mirror your Android display on Windows using <b>scrcpy</b> with real-time low-latency performance.</p>
-          </div>
-
-          <div class="tool-card">
-            <div class="tool-icon"><i class="bi bi-volume-up"></i></div>
-            <h3>Audio Cast</h3>
-            <p>Stream Android system audio directly to Windows with selectable low-latency or high-fidelity modes.</p>
-          </div>
-
-          <div class="tool-card">
-            <div class="tool-icon"><i class="bi bi-keyboard"></i></div>
-            <h3>Input Control</h3>
-            <p>Send PC keyboard and mouse input to your Android device for testing, automation, and remote control.</p>
-          </div>
-
-          <div class="tool-card">
-            <div class="tool-icon"><i class="bi bi-window"></i></div>
-            <h3>Desktop Mode</h3>
-            <p>Run multiple Android apps side by side in resizable desktop windows — a true multi-app environment.</p>
-          </div>
-
-          <div class="tool-card">
-            <div class="tool-icon"><i class="bi bi-sliders"></i></div>
-            <h3>ADB Console</h3>
-            <p>Execute advanced ADB commands with real-time feedback, performance stats, and live terminal logs.</p>
-          </div>
-
-          <div class="tool-card">
-            <div class="tool-icon"><i class="bi bi-file-earmark-arrow-up"></i></div>
-            <h3>APK Installer</h3>
-            <p>Install, uninstall, and manage Android APKs directly from your desktop — no cables or commands needed.</p>
-          </div>
-
-          <div class="tool-card">
-            <div class="tool-icon"><i class="bi bi-camera-video"></i></div>
-            <h3>Camera Stream</h3>
-            <p>View your Android camera feed remotely on Windows for live monitoring and testing.</p>
-          </div>
-
-          <!-- 📱 Group 2: App Mode -->
-          <div class="group-title">• App Mode (Smart Wireless Tools)</div>
-
-          <div class="tool-card">
-            <div class="tool-icon"><i class="bi bi-music-note-beamed"></i></div>
-            <h3>Media Control</h3>
-            <p>Control playback for Spotify, YouTube, or system media apps directly from Windows.</p>
-          </div>
-
-          <div class="tool-card">
-            <div class="tool-icon"><i class="bi bi-bell"></i></div>
-            <h3>Notification Center</h3>
-            <p>Receive and reply to Android notifications instantly — right from your desktop.</p>
-          </div>
-
-          <div class="tool-card">
-            <div class="tool-icon"><i class="bi bi-telephone"></i></div>
-            <h3>Call Management</h3>
-            <p>Handle calls and check call history seamlessly through your connected Android device.</p>
-          </div>
-
-          <div class="tool-card">
-            <div class="tool-icon"><i class="bi bi-chat-text"></i></div>
-            <h3>Messages (SMS)</h3>
-            <p>Send, read, and manage text messages on your PC without switching devices.</p>
-          </div>
-
-          <div class="tool-card">
-            <div class="tool-icon"><i class="bi bi-people"></i></div>
-            <h3>Contacts</h3>
-            <p>Access your Android contact list, initiate calls, or send messages right from your desktop.</p>
-          </div>
-
-          <div class="tool-card">
-            <div class="tool-icon"><i class="bi bi-folder2-open"></i></div>
-            <h3>File Manager</h3>
-            <p>Browse, upload, and share files wirelessly between Android and Windows in real-time.</p>
-          </div>
-
-          <div class="tool-card">
-            <div class="tool-icon"><i class="bi bi-image"></i></div>
-            <h3>Photo Gallery</h3>
-            <p>Preview and transfer Android photos with full-resolution thumbnails and quick share options.</p>
-          </div>
-
-          <div class="tool-card">
-            <div class="tool-icon"><i class="bi bi-cloud-arrow-up"></i></div>
-            <h3>File Share</h3>
-            <p>Share files instantly between Android and Windows using secure, local Wi-Fi connections.</p>
-          </div>
-
-          <!-- ⚙️ Group 3: Other Tools -->
-          <div class="group-title">• Other Tools & Enhancements</div>
-
-          <div class="tool-card">
-            <div class="tool-icon"><i class="bi bi-mic"></i></div>
-            <h3>Voice Assistant</h3>
-            <p>Issue natural voice commands to control calls, media, or system actions hands-free.</p>
-          </div>
-
-          <div class="tool-card">
-            <div class="tool-icon"><i class="bi bi-chat-dots"></i></div>
-            <h3>Smart Feedback</h3>
-            <p>Real-time diagnostics, error resolution, and ADB command recommendations.</p>
-          </div>
-
-          <div class="tool-card">
-            <div class="tool-icon"><i class="bi bi-shield-lock-fill"></i></div>
-            <h3>Full Compatibility</h3>
-            <p>Supports Android 5.0+ devices — no root required, optimized for performance and security.</p>
-          </div>
-
-          <div class="tool-card">
-            <div class="tool-icon"><i class="bi bi-plus-lg"></i></div>
-            <h3>Continuous Updates</h3>
-            <p>New features and improvements are continuously added to enhance connectivity and stability.</p>
-          </div>
-
+  <header class="header">
+    <div class="header-container">
+      <div class="logo">
+        <div class="logo">
+          <img src="images/app_png.webp" class="logo-icon" alt="">
+          <span class="logo-text">ADB Device Manager</span>
         </div>
       </div>
-    </section>
+
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="#" class="nav-link active">Features</a>
+        <a href="docs.html" class="nav-link">Docs</a>
+        <a href="support.html" class="nav-link">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Header (kept as div per your request) -->
+  <div class="header-section">
+    <br>
+    <br>
+    <h1 class="main-title">Work from anywhere</h1>
+
+    <div class="btn-row">
+      <a href="#" class="btn black">Download for Windows</a>
+      <a href="#" class="btn gray">Download for Android</a>
+    </div>
+
+    <p class="view-devices">View supported devices ›</p>
   </div>
+
+  <!-- The single full tall screenshot (your placeholder) -->
+  <div class="image-wrapper">
+    <img src="images/features/features_main.png" class="full-image" alt="Full features screenshot">
+  </div>
+
+  <!-- ================================
+      MULTI-APP PREVIEW SECTION
+================================ -->
+  <section class="multi-app-section">
+
+    <!-- TOP TEXT -->
+    <div class="multi-app-top">
+      <h2>Open multiple apps at the same time</h2>
+      <p>
+        Multitask with up to 3 phone apps directly on your PC.
+        Browse, chat, and manage your device with full flexibility and speed.
+      </p>
+    </div>
+
+    <!-- BOTTOM IMAGE PREVIEW -->
+    <div class="multi-app-bottom">
+
+      <div class="multi-app-visual">
+        <img src="images/features/window screen.png" class="multi-app-bg" alt="Windows Screen">
+
+        <img src="images/features/phone App 1.png" class="phone-app phone-app-1" alt="">
+        <img src="images/features/phone App 2.png" class="phone-app phone-app-2" alt="">
+        <img src="images/features/phone App 3.png" class="phone-app phone-app-3" alt="">
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ===== File management section ===== -->
+  <section class="features-section">
+    <div class="container">
+      <h2 class="section-title">File management</h2>
+
+      <div class="feature-row">
+        <!-- Card 1: Text (left) + Image (right) -->
+        <div class="feature-card">
+          <div class="feature-text">
+            <span class="eyebrow">Cross-device file management</span>
+            <h3 class="card-title">Access phone/tablet files from your PC</h3>
+            <p class="card-copy">
+              Search, view, edit, and manage all files on your phone or tablet directly from your PC for greater
+              productivity. Open, move or copy files between devices without switching screens.
+            </p>
+          </div>
+          <div class="feature-media">
+            <img src="images/features/File management 1.png" alt="File management preview" class="card-image">
+          </div>
+        </div>
+
+        <!-- Card 2: Image (left) + Text (right) -->
+        <div class="feature-card">
+          <div class="feature-media">
+            <img src="images/features/File management 2.png" alt="Remote file management preview" class="card-image">
+          </div>
+          <div class="feature-text">
+            <span class="eyebrow">Remote file management</span>
+            <h3 class="card-title">Access PC files from your phone/tablet</h3>
+            <p class="card-copy">
+              Access your Mac or PC files from My Files on your phone/tablet — even while you're away from your
+              computer. Keep important documents at your fingertips and quickly share or preview them on mobile.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Cross-device interactions section ===== -->
+  <section class="cross-device-section">
+    <div class="container">
+      <h2 class="section-title-blue">Cross-device interactions</h2>
+
+      <div class="interaction-grid">
+        <!-- Screencast Card -->
+        <div class="interaction-card">
+          <div class="interaction-content">
+            <span class="interaction-label">Screencast</span>
+            <h3 class="interaction-title">Control your phone from your PC</h3>
+            <p class="interaction-desc">Cast your phone screen to your PC or use your phone apps on it.</p>
+          </div>
+          <div class="Cross_device_img">
+            <img src="images/features/Cross-device 1.png" alt="Remote file management preview" class="card-image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Content sync section ===== -->
+  <section class="content-sync-section">
+    <div class="container">
+      <h2 class="section-title-blue">Content sync</h2>
+
+      <div class="sync-grid">
+        <!-- Sync Notifications Card -->
+        <div class="sync-card">
+          <h3 class="sync-card-title">Sync notifications</h3>
+          <p class="sync-card-desc">Receive phone notifications, calls, and verification codes on your PC, so you never
+            miss anything important.</p>
+          <div class="Sync_device_img">
+            <img src="images/features/Sync-device 1.png" alt="Remote file management preview" class="card-image">
+          </div>
+        </div>
+
+        <!-- Sync Clipboards Card -->
+        <div class="sync-card">
+          <h3 class="sync-card-title">Sync clipboards</h3>
+          <p class="sync-card-desc">Sync clipboard content across devices for quick and easy pasting.</p>
+          <div class="Sync_device_img">
+            <img src="images/features/Sync-device 2.png" alt="Remote file management preview" class="card-image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ======================================================
+     GENERAL REVEAL (scroll down → show, scroll up → hide)
+  ====================================================== */
+  gsap.utils.toArray(".reveal").forEach((el) => {
+    gsap.fromTo(el,
+      { opacity: 0, y: 60 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+          end: "bottom 40%",
+          scrub: true,       // <— smooth reversible scroll animation
+        }
+      }
+    );
+  });
+  /* ======================================================
+     MULTI-APP PREVIEW — FAST SEQUENCE, SHORT SCROLL RANGE
+  ====================================================== */
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".multi-app-bottom",
+      start: "top 80%",   // animation begins early
+      end: "top 20%",     // short range → fast complete
+      scrub: 0.2,         // smooth but quick
+    }
+  });
+
+  // Background (quick pop-in)
+  tl.fromTo(".multi-app-bg",
+    { opacity: 0, y: 25, scale: 0.97 },
+    { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: "power1.out" }
+  );
+
+  // Phone App 1
+  tl.fromTo(".phone-app-1",
+    { opacity: 0, y: 20, scale: 0.95 },
+    { opacity: 1, y: 0, scale: 1, duration: 0.32, ease: "power1.out" },
+    "-=0.15"
+  );
+
+  // Phone App 2
+  tl.fromTo(".phone-app-2",
+    { opacity: 0, y: 20, scale: 0.95 },
+    { opacity: 1, y: 0, scale: 1, duration: 0.32, ease: "power1.out" },
+    "-=0.2"
+  );
+
+  // Phone App 3
+  tl.fromTo(".phone-app-3",
+    { opacity: 0, y: 20, scale: 0.95 },
+    { opacity: 1, y: 0, scale: 1, duration: 0.32, ease: "power1.out" },
+    "-=0.2"
+  );
+
+
+  /* ======================================================
+     FEATURE CARDS (left/right depending on index)
+  ====================================================== */
+  gsap.utils.toArray(".feature-card").forEach((card, index) => {
+    gsap.fromTo(card,
+      {
+        opacity: 0,
+        x: index % 2 === 0 ? -80 : 80
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: card,
+          start: "top 85%",
+          end: "bottom 40%",
+          scrub: true,     // reversible
+        }
+      }
+    );
+  });
+
+  /* ======================================================
+     GRID ITEMS (fade up reversible)
+  ====================================================== */
+  gsap.utils.toArray(".interaction-card, .sync-card").forEach((item) => {
+    gsap.fromTo(item,
+      { opacity: 0, y: 60 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: item,
+          start: "top 85%",
+          end: "bottom 40%",
+          scrub: true,    // reversible
+        }
+      }
+    );
+  });
+</script>
+
+
+<script>
+  let lastScroll = 0;
+  const header = document.querySelector(".header");
+
+  window.addEventListener("scroll", () => {
+    const current = window.pageYOffset;
+
+    if (current > lastScroll) {
+      // scrolling DOWN → hide
+      header.classList.remove("show");
+      header.classList.add("hide");
+    } else {
+      // scrolling UP → show
+      header.classList.remove("hide");
+      header.classList.add("show");
+    }
+
+    lastScroll = current;
+  });
+</script>
+
 </html>

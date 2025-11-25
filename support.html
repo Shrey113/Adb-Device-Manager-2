@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========================= CORE META (SEO + MOBILE) ========================== -->
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Description -->
+    <meta name="description"
+        content="Need help with ADB Device Manager? Visit our support page for troubleshooting, FAQs, setup guides, and direct assistance for ADB Mode, App Mode, mirroring, notifications, and connection issues.">
+
+    <!-- SEO Keywords -->
+    <meta name="keywords"
+        content="ADB Device Manager support, ADB help, troubleshooting, connection issues, screen mirroring fix, Android to PC help, Windows integration support, app mode support">
+
+    <meta name="author" content="ADB Device Manager">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://shrey113.github.io/Adb-Device-Manager-2/support">
+
+    <!-- ========================= PAGE TITLE ========================== -->
+    <title>ADB Device Manager — Support & Troubleshooting</title>
+
+    <!-- ========================= OPEN GRAPH (SOCIAL SHARE) ========================== -->
+    <meta property="og:title" content="ADB Device Manager — Support & Help Center">
+    <meta property="og:description"
+        content="Find support for ADB Device Manager including setup help, troubleshooting, FAQs, and connection fixes.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shrey113.github.io/Adb-Device-Manager-2/support">
+    <meta property="og:image" content="https://shrey113.github.io/Adb-Device-Manager-2/images/app_png.webp">
+    <meta property="og:site_name" content="ADB Device Manager">
+
+    <!-- ========================= TWITTER CARD ========================== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ADB Device Manager — Support Page">
+    <meta name="twitter:description"
+        content="Get help with setup, ADB Mode, App Mode, mirroring, notifications, and Windows connectivity.">
+    <meta name="twitter:image" content="https://shrey113.github.io/Adb-Device-Manager-2/images/app_png.webp">
+
+    <!-- ========================= STRUCTURED DATA — SUPPORT ========================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I connect my Android device?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ADB Device Manager connects via ADB Mode or App Mode. Follow the setup instructions in the app to pair your device."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is screen mirroring not working?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Make sure USB debugging is enabled and the device is trusted. Check the troubleshooting section for more fixes."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- ========================= FAVICONS ========================== -->
+    <link rel="icon" href="images/app_png.webp">
+    <link rel="apple-touch-icon" href="images/app_png.webp">
+
+    <!-- ========================= PERFORMANCE IMPROVEMENTS ========================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Font (non-blocking) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- ========================= STYLES ========================== -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="head.css">
+
+
+
+    <style>
+        body {
+            background: #f7f6f9;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .support-section {
+            flex: 1;
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .support-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .support-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #1f2937 0%, #4b5563 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .support-subtitle {
+            font-size: 1.2rem;
+            color: #6b7280;
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 100%;
+        }
+
+        .support-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .support-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.15);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-desc {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        .footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo">
+                    <img src="images/app_png.webp" class="logo-icon" alt="">
+                    <span class="logo-text">ADB Device Manager</span>
+                </div>
+            </div>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="features.html" class="nav-link">Features</a>
+                <a href="docs.html" class="nav-link">Docs</a>
+                <a href="#" class="nav-link active">Support</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Support Content -->
+    <main class="support-section">
+        <div class="support-header">
+            <h1 class="support-title">Support & Community</h1>
+            <p class="support-subtitle">Get help, report issues, and connect with the developer.</p>
+        </div>
+
+        <div class="support-grid">
+            <!-- Repository Card -->
+            <a href="https://github.com/Shrey113/Adb-Device-Manager-2" target="_blank" class="support-card">
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
+                    </svg>
+                </div>
+                <h3 class="card-title">GitHub Repository</h3>
+                <p class="card-desc">Explore the source code, contribute, and stay updated with the latest development.
+                </p>
+            </a>
+
+            <!-- Issues Card -->
+            <a href="https://github.com/Shrey113/Adb-Device-Manager-2/issues" target="_blank" class="support-card">
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                </div>
+                <h3 class="card-title">Report an Issue</h3>
+                <p class="card-desc">Found a bug? Have a feature request? Open an issue on GitHub to let us know.</p>
+            </a>
+
+            <!-- Developer Card -->
+            <a href="https://github.com/Shrey113/" target="_blank" class="support-card">
+                <div class="card-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <h3 class="card-title">Developer Profile</h3>
+                <p class="card-desc">Check out other projects and contributions by the developer.</p>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Adb Device Manager. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

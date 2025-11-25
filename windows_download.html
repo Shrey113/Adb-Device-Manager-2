@@ -2,427 +2,147 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Download — ADB Device Manager for Windows</title>
+  <!-- =========================
+         CORE META (SEO + MOBILE)
+    ========================== -->
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <!-- SEO Description -->
+  <meta name="description"
+    content="Download ADB Device Manager for Windows. Control Android with ADB Mode, mirror the screen, manage files, sync notifications, and use desktop multi-window.">
 
-  <style>
-    :root {
-      --bg: #061213;
-      --card: rgba(255, 255, 255, 0.04);
-      --primary: #06c77b;
-      --accent: #0bc77a;
-      --muted: rgba(255, 255, 255, 0.75);
-      --radius: 14px;
-      --transition: 200ms cubic-bezier(.2, .9, .3, 1);
-    }
+  <meta name="keywords"
+    content="ADB Device Manager Windows download, scrcpy alternative Windows, Android to PC app, ADB tool for Windows, screen mirroring Windows">
 
-    * {
-      box-sizing: border-box;
-    }
+  <meta name="author" content="ADB Device Manager">
+  <meta name="robots" content="index, follow">
 
-    html,
-    body {
-      margin: 0;
-      height: 100%;
-      font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
-      color: #eafaf0;
-      background: #041314;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
+  <!-- Canonical -->
+  <link rel="canonical" href="https://shrey113.github.io/Adb-Device-Manager-2/download-windows">
 
-    .wrap {
-      width: 100%;
-      max-width: 960px;
-      display: grid;
-      grid-template-columns: 420px 1fr;
-      gap: 28px;
-      align-items: center;
-    }
+  <!-- =========================
+         PAGE TITLE
+    ========================== -->
+  <title>Download ADB Device Manager — Windows (EXE)</title>
 
-    .card {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      border-radius: var(--radius);
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
-      padding: 28px;
-    }
+  <!-- =========================
+         OPEN GRAPH
+    ========================== -->
+  <meta property="og:title" content="Download ADB Device Manager — Windows">
+  <meta property="og:description"
+    content="Download the Windows version of ADB Device Manager. Includes ADB Mode, screen mirroring, file manager, notifications, multi-window & more.">
+  <meta property="og:url" content="https://shrey113.github.io/Adb-Device-Manager-2/download-windows">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://shrey113.github.io/Adb-Device-Manager-2/images/app_png.webp">
+  <meta property="og:site_name" content="ADB Device Manager">
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 12px;
-    }
+  <!-- =========================
+         TWITTER CARD
+    ========================== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Download ADB Device Manager — Windows">
+  <meta name="twitter:description"
+    content="Download the latest Windows EXE for ADB Device Manager and start controlling your Android device.">
+  <meta name="twitter:image" content="https://shrey113.github.io/Adb-Device-Manager-2/images/app_png.webp">
 
-    .brand .app-icon {
-      width: 58px;
-      height: 58px;
-      border-radius: 12px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(180deg, #082923, #053227);
+  <!-- =========================
+         STRUCTURED DATA
+    ========================== -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "ADB Device Manager (Windows)",
+      "operatingSystem": "Windows",
+      "applicationCategory": "Utility",
+      "downloadUrl": "https://shrey113.github.io/Adb-Device-Manager-2/download-windows",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
     }
+    </script>
 
-    .brand img {
-      width: 48px;
-      height: 48px;
-      border-radius: 8px;
-    }
+  <!-- =========================
+         FAVICONS
+    ========================== -->
+  <link rel="icon" href="images/app_png.webp">
+  <link rel="apple-touch-icon" href="images/app_png.webp">
 
-    .brand h1 {
-      margin: 0;
-      font-size: 1.25rem;
-    }
+  <!-- =========================
+         PERFORMANCE + FONTS
+    ========================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    .brand p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"
+    media="print" onload="this.media='all'">
 
-    .platform {
-      text-align: center;
-      margin-top: 12px;
-    }
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </noscript>
 
-    .platform i {
-      font-size: 64px;
-      color: var(--primary);
-    }
-
-    .platform h2 {
-      margin: 10px 0 4px;
-    }
-
-    .platform p {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    ul.features {
-      margin-top: 10px;
-      padding-left: 0;
-    }
-
-    ul.features li {
-      list-style: none;
-      margin: 8px 0;
-      color: var(--muted);
-      padding-left: 26px;
-      position: relative;
-    }
-
-    ul.features li:before {
-      content: "\f058";
-      font-family: "bootstrap-icons";
-      position: absolute;
-      left: 0;
-      color: var(--primary);
-    }
-
-    .actions h3 {
-      margin-top: 0;
-    }
-
-    .controls {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .btn {
-      border: 0;
-      border-radius: 12px;
-      cursor: pointer;
-      padding: 12px 18px;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: var(--transition);
-    }
-
-    .btn-primary {
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      color: #042216;
-    }
-
-    .btn-ghost {
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: var(--muted);
-    }
-
-    .btn-danger {
-      background: transparent;
-      border: 1px solid rgba(255, 80, 80, 0.15);
-      color: #ffb7b7;
-    }
-
-    .btn:disabled {
-      opacity: .55;
-      cursor: not-allowed;
-    }
-
-    .progress-wrap {
-      margin-top: 10px;
-      display: none;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .progress {
-      height: 12px;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.04);
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .progress i {
-      display: block;
-      height: 100%;
-      width: 0;
-      background: linear-gradient(90deg, var(--primary), var(--accent));
-      transition: width 400ms;
-    }
-
-    .progress-text {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .manual {
-      margin-top: 10px;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .manual a {
-      color: var(--primary);
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    #overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.65);
-      backdrop-filter: blur(6px);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 999;
-    }
-
-    .guide {
-      width: 95%;
-      max-width: 940px;
-      height: 88vh;
-      background: #041513;
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      border-radius: 12px;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 340px 1fr;
-    }
-
-    .guide .left {
-      padding: 22px;
-      background: linear-gradient(180deg, rgba(11, 199, 122, 0.03), transparent);
-    }
-
-    .guide .left h4 {
-      margin-top: 0;
-    }
-
-    .guide iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-      background: white;
-    }
-
-    .close-overlay {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: rgba(0, 0, 0, 0.4);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      padding: 8px;
-      border-radius: 10px;
-      color: var(--muted);
-      cursor: pointer;
-    }
-
-    
-    @media(max-width:880px) {
-      .wrap {
-        grid-template-columns: 1fr;
-      }
-
-      .card.actions {
-        order: -1;
-      }
-      .Info_Section{
-        display: none;
-      }
-         html,
-      body {
-        padding: 12px;
-      }
-      .brand h1 {
-      margin: 0;
-      font-size: 1rem;
-    }
-     .brand p {
-      margin: 0;
-      display: none;
-    }
-    }
-  </style>
+  <!-- Style -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
+<style>
+  body {
+    background: #f7f6f9;
+    height: 100vh;
+    overflow: hidden;
+  }
+</style>
+
 <body>
-  <div class="wrap">
+  <!-- Video Background -->
+  <video class="video-background" autoplay muted playsinline>
+    <source src="images/index_main_page.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-    <!-- Download Actions (first on mobile) -->
-    <aside class="card actions">
-      <div class="brand">
-        <div class="app-icon"><img src="images/app_png.webp" alt="ADB Manager"></div>
-        <div>
-          <h1>ADB Device Manager</h1>
-          <p>Windows Desktop Companion</p>
+  <!-- Content Overlay -->
+  <div class="content-overlay">
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section class="hero-section download-hero">
+        <div class="hero-content">
+          <!-- Main Text and Buttons -->
+          <article class="hero-text">
+            <h1 class="hero-title">Download for Windows</h1>
+            <h2 class="hero-subtitle">Get started with Adb Device Manager</h2>
+            <p class="hero-description">Latest version for Windows 10/11 (64-bit)</p>
+
+            <!-- Download Button -->
+            <div class="cta-buttons">
+              <a href="https://github.com/Shrey113/Adb-Device-Manager-2/releases/latest/download/adb_devices.exe"
+                class="btn btn-primary" aria-label="Download for Windows">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2" />
+                  <path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <span>Download .exe</span>
+                <svg class="download-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 5v12m0 0l-4-4m4 4l4-4M5 19h14" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <a href="index.html" class="btn btn-secondary" aria-label="Go Back Home">
+                <span>Back to Home</span>
+              </a>
+            </div>
+            <br>
+
+            <div class="download-info">
+              <p>Version: Latest | Size: ~15MB</p>
+            </div>
+          </article>
         </div>
-      </div>
-
-      <h3>Ready to install?</h3>
-      <p>Click <b>Start Download</b> below to get the Windows version.</p>
-
-      <div class="controls">
-        <button id="startBtn" class="btn btn-primary"><i class="bi bi-download"></i>Start Download</button>
-      </div>
-
-      <div class="progress-wrap" id="progressWrap">
-        <div class="progress-text"><span id="progressLabel">Waiting to start</span><span id="progressPct">0%</span>
-        </div>
-        <div class="progress"><i id="progressBar"></i></div>
-      </div>
-
-      <div class="manual">Manual link:
-        <a id="manualDownload" href="#" target="_blank">Download EXE</a>
-      </div>
-
-      <p style="font-size:0.85rem;color:var(--muted);margin-top:12px;">Version 1.0.0 • ~500 MB • Windows 10/11 (64-bit)
-      </p>
-    </aside>
-
-    <!-- Info Section -->
-    <section class="card Info_Section">
-      <div class="platform">
-        <i class="bi bi-windows"></i>
-        <h2>Windows App</h2>
-        <p>Seamlessly connect with your Android device via ADB over Wi-Fi.</p>
-      </div>
-
-      <ul class="features">
-        <li>Fast device discovery & pairing</li>
-        <li>File transfer, notifications & media control</li>
-        <li>Automatic startup in background</li>
-        <li>Compatible with all ADB devices</li>
-      </ul>
-    </section>
+      </section>
+    </main>
 
   </div>
-
-  <!-- Overlay guide -->
-  <div id="overlay">
-    <div class="guide">
-      <button class="close-overlay" id="closeOverlay"><i class="bi bi-x-lg"></i></button>
-      <div class="left">
-        <h4>Installation Steps</h4>
-        <ul>
-          <li>Locate <b>adb_devices.exe</b> in your Downloads folder.</li>
-          <li>Right-click → Run as Administrator.</li>
-          <li>Allow Windows Defender prompt (if shown).</li>
-          <li>Finish setup and launch the app.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-<script>
-(function () {
-  // ✅ Direct GitHub .exe link
-  const DOWNLOAD_URL =
-    "https://github.com/Shrey113/Adb-Device-Manager-2/releases/latest/download/adb_devices.exe";
-
-  const startBtn = document.getElementById('startBtn');
-  const progressWrap = document.getElementById('progressWrap');
-  const progressBar = document.getElementById('progressBar');
-  const progressLabel = document.getElementById('progressLabel');
-  const progressPct = document.getElementById('progressPct');
-  const manualDownload = document.getElementById('manualDownload');
-
-  manualDownload.href = DOWNLOAD_URL;
-
-  let timer = null;
-  let pct = 0;
-  let running = false;
-
-  function setProgress(v) {
-    progressBar.style.width = v + '%';
-    progressPct.textContent = v + '%';
-  }
-
-  function startProgress() {
-    running = true;
-    pct = 0;
-    progressWrap.style.display = 'flex';
-    startBtn.disabled = true;
-    progressLabel.textContent = 'Starting download...';
-    const duration = 1000; // simulate ~1s progress
-    const startTime = Date.now();
-    timer = setInterval(() => {
-      const elapsed = Date.now() - startTime;
-      pct = Math.min(100, Math.round((elapsed / duration) * 100));
-      setProgress(pct);
-      if (pct >= 100) {
-        clearInterval(timer);
-        progressLabel.textContent = 'Download started!';
-        running = false;
-        // auto-hide after 1s
-        setTimeout(() => {
-          progressWrap.style.display = 'none';
-          startBtn.disabled = false;
-        }, 1200);
-      } else {
-        progressLabel.textContent = 'Downloading...';
-      }
-    }, 50);
-  }
-
-  // ✅ Open download in new tab for smoother Android behavior
-  startBtn.onclick = () => {
-    window.open(DOWNLOAD_URL, "_blank"); // opens in new tab, triggers auto-download
-    startProgress();
-  };
-})();
-</script>
-
-
 </body>
 
 </html>
