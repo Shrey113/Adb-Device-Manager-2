@@ -46,6 +46,27 @@ It offers two dynamic modes — **ADB Mode** for advanced control and **App Mode
 </div>
 
 ---
+## ✨ Android Dex (Early Build)
+
+First step towards a full **desktop-style Android experience** inside ADB Devices Manager — fast, smooth, and inspired by Samsung Dex.
+
+![git_hub_3](https://github.com/user-attachments/assets/f11902ec-57e9-41e2-b9a6-1e71b8d8d23e)
+
+---
+
+
+### ✅ Android Dex Mode
+- Auto-installs android_clone.apk
+- Gestures + nav keys + media events
+- Full keyboard & mouse
+
+---
+
+## ⚡ Performance Modes
+● Fast — H.264, ~60 FPS, low latency  
+● Normal — Balanced, ~90 FPS  
+● High — H.265, ~120 FPS, high quality
+
 
 ## 🌐 Dual Mode Integration
 
