@@ -90,10 +90,142 @@
 .nav-link.active::after {
     content: '';
     position: absolute;
-    bottom: -8px;
+    bottom: 0px;
     left: 0;
     right: 0;
     height: 2px;
     background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 100%);
     border-radius: 2px;
+}
+
+/* ===================================
+   Mobile Responsive Header
+   =================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .header-container {
+        padding: 0 1.5rem;
+    }
+
+    .nav {
+        gap: 1.5rem;
+    }
+}
+
+/* Mobile Landscape */
+@media (max-width: 768px) {
+    .header {
+        padding: 0.875rem 0;
+    }
+
+    .header-container {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .logo-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .nav {
+        gap: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+
+    .logo-text {
+        display: none;
+    }
+}
+
+/* Mobile Portrait */
+@media (max-width: 640px) {
+    .header {
+        padding: 0.75rem 0;
+    }
+
+    .header-container {
+        padding: 0 0.875rem;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .logo-icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .nav {
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
+
+    .nav-link {
+        font-size: 0.85rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 480px) {
+    .header {
+        padding: 0.625rem 0;
+    }
+
+    .header-container {
+        padding: 0 0.75rem;
+    }
+
+    .logo {
+        font-size: 0.95rem;
+    }
+
+    .logo-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .nav {
+        gap: 0.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.4rem;
+    }
+}
+
+/* Very Small Mobile */
+@media (max-width: 360px) {
+    .logo {
+        font-size: 0.9rem;
+    }
+
+    .logo-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    .nav-link {
+        font-size: 0.75rem;
+    }
+}
+
+/* Touch Device Optimization */
+@media (hover: none) and (pointer: coarse) {
+    .nav-link {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
