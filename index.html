@@ -63,7 +63,7 @@
       "publisher": {
         "@type": "Organization",
         "name": "ADB Device Manager",
-        "logo": "https://shrey113.github.io/Adb-Device-Manager-2/images/app_png.png",
+        "logo": "https://shrey113.github.io/Adb-Device-Manager-2/images/app_webp.webp",
         "url": "https://shrey113.github.io/Adb-Device-Manager-2/"
       },
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -90,7 +90,7 @@
       "@type": "Organization",
       "name": "ADB Device Manager",
       "url": "https://shrey113.github.io/Adb-Device-Manager-2/",
-      "logo": "https://shrey113.github.io/Adb-Device-Manager-2/images/app_png.png",
+      "logo": "https://shrey113.github.io/Adb-Device-Manager-2/images/app_webp.webp",
       "sameAs": ["https://github.com/Shrey113/Adb-Device-Manager-2"]
     }
     </script>
@@ -106,11 +106,13 @@
     <link rel="preload" href="images/app_png.png" as="image">
 
     <!-- ======================== ICONS ========================= -->
-    <link rel="icon" type="image/png" href="images/app_png.png">
-    <link rel="apple-touch-icon" href="images/app_png.png">
-    <meta name="application-name" content="ADB Device Manager">
-    <meta name="msapplication-TileImage" content="images/app_png.png">
-    <meta name="msapplication-TileColor" content="#00BFA5">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <link rel="apple-touch-icon" href="images/app_png_100.png">
+
+    <link rel="preload" href="images/app_webp_100.webp" as="image">
+
 
     <!-- ======================== FONTS & STYLES (NON-BLOCKING) ========================= -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"
@@ -194,26 +196,41 @@
                 </div>
 
 
-
                 <div class="device-float device-1">
-                    <img src="assets/devices_1.png" alt="device">
+                    <picture>
+                        <source srcset="assets/devices_1_100.webp" type="image/webp">
+                        <img src="assets/devices_1_400.webp" alt="device" width="105" height="105" loading="lazy">
+                    </picture>
                 </div>
 
                 <div class="device-float device-2">
-                    <img src="assets/devices_2.png" alt="device">
+                    <picture>
+                        <source srcset="assets/devices_2_100.webp" type="image/webp">
+                        <img src="assets/devices_2_400.webp" alt="device" width="105" height="105" loading="lazy">
+                    </picture>
                 </div>
 
                 <div class="device-float device-3">
-                    <img src="assets/devices_3.png" alt="device">
+                    <picture>
+                        <source srcset="assets/devices_3_100.webp" type="image/webp">
+                        <img src="assets/devices_3_400.webp" alt="device" width="105" height="105" loading="lazy">
+                    </picture>
                 </div>
 
                 <div class="device-float device-4">
-                    <img src="assets/devices_4.png" alt="device">
+                    <picture>
+                        <source srcset="assets/devices_4_100.webp" type="image/webp">
+                        <img src="assets/devices_4_400.webp" alt="device" width="105" height="105" loading="lazy">
+                    </picture>
                 </div>
 
                 <div class="device-float device-5">
-                    <img src="assets/devices_5.png" alt="device">
+                    <picture>
+                        <source srcset="assets/devices_5_100.webp" type="image/webp">
+                        <img src="assets/devices_5_400.webp" alt="device" width="105" height="105" loading="lazy">
+                    </picture>
                 </div>
+
 
 
             </section>
@@ -496,7 +513,12 @@
 
             <nav class="nav">
                 <div class="logo">
-                    <img src="images/app_png.png" class="logo-icon" alt="">
+                    <picture>
+                        <source srcset="images/app_logo_50.webp" type="image/webp">
+                        <img src="images/app_logo_200.webp" class="logo-icon" alt="ADB Device Manager" width="49"
+                            height="49" loading="lazy">
+                    </picture>
+
                 </div>
                 <p>&copy; 2025 Adb Device Manager. All rights reserved.</p>
                 <a href="features.html" class="nav-link active">Features</a>
@@ -524,7 +546,7 @@
     "url": "https://github.com/Shrey113",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://shrey113.github.io/Adb-Device-Manager-2/images/app_png.png"
+      "url": "https://shrey113.github.io/Adb-Device-Manager-2/images/app_webp.webp"
     }
   },
   "potentialAction": {
