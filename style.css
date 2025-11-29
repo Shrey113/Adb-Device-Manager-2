@@ -137,9 +137,9 @@ body {
 
 .hero-description {
     font-size: clamp(1rem, 2vw, 1.3rem);
-    color: #6b7280;
+    color: #202020;
     margin-bottom: 3rem;
-    font-weight: 400;
+    font-weight: 450;
     line-height: 1.6;
 }
 
