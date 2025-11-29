@@ -656,3 +656,159 @@ body {
         -webkit-tap-highlight-color: rgba(99, 102, 241, 0.1);
     }
 }
+
+
+/* Device Floating Animation */
+/* Device Floating Animation */
+/* Device Floating Animation */
+
+.hero-section {
+    position: relative;
+}
+
+/* ✨ Intro Animation */
+@keyframes deviceIntro {
+    0% {
+        opacity: 0;
+        transform: translateY(25px) scale(0.92) rotate(var(--rot));
+        filter: blur(6px);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateY(0px) scale(1.02) rotate(var(--rot));
+        filter: blur(0px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1) rotate(var(--rot));
+    }
+}
+
+/* ♾️ Soft Floating Infinite Animation */
+@keyframes deviceFloat {
+    0% {
+        transform: translateY(0px) rotate(var(--rot));
+    }
+
+    50% {
+        transform: translateY(-6px) rotate(calc(var(--rot) + 1deg));
+    }
+
+    100% {
+        transform: translateY(0px) rotate(var(--rot));
+    }
+}
+
+/* Base style */
+.device-float {
+    position: absolute;
+    width: 60px;
+    border-radius: 20px;
+    overflow: hidden;
+
+    opacity: 0;
+
+    /* Run intro animation */
+    animation:
+        deviceIntro 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+        deviceFloat 4.5s ease-in-out infinite;
+
+    animation-composition: add;
+    /* modern browsers combine both animations smoothly */
+
+    /* only for mobile */
+    display: none;
+}
+
+.device-float img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Positions with rotation vars */
+.device-1 {
+    top: 5%;
+    left: 5%;
+    --rot: -5deg;
+    z-index: 3;
+    animation-delay: 0s;
+}
+
+.device-2 {
+    top: 35%;
+    right: 3%;
+    --rot: 8deg;
+    z-index: 2;
+    animation-delay: 0.20s;
+}
+
+.device-3 {
+    top: 30%;
+    left: 10%;
+    --rot: 3deg;
+    z-index: 4;
+    animation-delay: 0.4s;
+}
+
+.device-4 {
+    bottom: 8%;
+    right: 12%;
+    --rot: -4deg;
+    z-index: 3;
+    animation-delay: 0.60s;
+}
+
+.device-5 {
+    bottom: 5%;
+    left: 15%;
+    --rot: -4deg;
+    z-index: 3;
+    animation-delay: 0.80s;
+}
+
+/* only for Mobile */
+@media (max-width: 768px) {
+    .device-float {
+        display: block;
+    }
+}
+
+@media (max-width: 450px) {
+    .device-float {
+        display: block;
+    }
+
+    .device-1 {
+        top: 5%;
+        left: 9%;
+        --rot: -5deg;
+    }
+
+    .device-2 {
+        top: 25%;
+        right: 3%;
+        --rot: 8deg;
+    }
+
+    .device-3 {
+        top: 28%;
+        left: 3%;
+        --rot: 3deg;
+    }
+
+    .device-4 {
+        bottom: 3%;
+        right: 12%;
+        --rot: -4deg;
+    }
+
+    .device-5 {
+        bottom: 9%;
+        left: 15%;
+        --rot: -4deg;
+    }
+}
