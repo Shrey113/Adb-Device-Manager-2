@@ -63,7 +63,11 @@
       "publisher": {
         "@type": "Organization",
         "name": "ADB Device Manager",
-        "logo": "https://shrey113.github.io/Adb-Device-Manager-2/images/app_webp.webp",
+       "logo": {
+        "@type": "ImageObject",
+        "url": "https://shrey113.github.io/Adb-Device-Manager-2/images/app_webp.webp"
+        }
+
         "url": "https://shrey113.github.io/Adb-Device-Manager-2/"
       },
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -103,7 +107,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="preload" href="images/app_png.png" as="image">
 
     <!-- ======================== ICONS ========================= -->
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -514,8 +517,8 @@
             <nav class="nav">
                 <div class="logo">
                     <picture>
-                        <source srcset="images/app_logo_50.webp" type="image/webp">
-                        <img src="images/app_logo_200.webp" class="logo-icon" alt="ADB Device Manager" width="49"
+                        <source srcset="images/app_webp_50.webp" type="image/webp">
+                        <img src="images/app_webp_200.webp" class="logo-icon" alt="ADB Device Manager" width="49"
                             height="49" loading="lazy">
                     </picture>
 
