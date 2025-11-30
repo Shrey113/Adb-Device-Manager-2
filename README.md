@@ -59,13 +59,10 @@ First step towards a full **desktop-style Android experience** inside ADB Device
 - Auto-installs android_clone.apk
 - Gestures + nav keys + media events
 - Full keyboard & mouse
-
----
-
-## ⚡ Performance Modes
-● Fast — H.264, ~60 FPS, low latency  
-● Normal — Balanced, ~90 FPS  
-● High — H.265, ~120 FPS, high quality
+- Performance Modes
+  ● Fast — H.264, ~60 FPS, low latency  
+  ● Normal — Balanced, ~90 FPS  
+  ● High — H.265, ~120 FPS, high quality
 
 
 ## 🌐 Dual Mode Integration
