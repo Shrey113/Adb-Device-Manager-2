@@ -260,6 +260,26 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  // --- FIX 1: Mobile browser height & layout issues ---
+  document.body.style.minHeight = "100vh";
+  document.documentElement.style.scrollBehavior = "smooth";
+
+  // --- FIX 2: GSAP ScrollTrigger Android bug patch ---
+  gsap.registerPlugin(ScrollTrigger);
+
+  ScrollTrigger.config({
+    ignoreMobileResize: true,    // prevents Android from breaking triggers
+    autoRefreshEvents: "visibilitychange,DOMContentLoaded,load,resize"
+  });
+
+  // --- FIX 3: Force refresh after page fully loads ---
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 200);
+  });
+</script>
 
 <script>
   gsap.registerPlugin(ScrollTrigger);

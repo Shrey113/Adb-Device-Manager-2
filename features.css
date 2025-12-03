@@ -741,7 +741,9 @@ section {
     }
 
     .phone-app {
-        width: 28%;
+           top: 8%;
+        width: 16%;
+        border-radius: 1px;
     }
 }
 
@@ -778,7 +780,8 @@ section {
     }
 
     .phone-app {
-        width: 30%;
+        top: 8%;
+        width: 15%;
     }
 }
 
@@ -816,4 +819,10 @@ section {
 
 .hidden {
     display: none !important;
+}
+/* for all scrren fix */
+html, body {
+  overflow-x: hidden;
+  height: auto !important;
+  min-height: 100%;
 }
