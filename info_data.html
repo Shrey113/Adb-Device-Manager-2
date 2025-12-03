@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intro Video Tutorial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* ========== Base ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ========== Container Layout ========== */
+.container {
+  display: flex;
+  width: 90%;
+  height: 90vh;
+  background: rgba(15, 15, 15, 0.9);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ========== Sidebar ========== */
+.sidebar {
+  width: 25%;
+  background: #000;
+  padding: 40px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+/* --- Scrollable Box --- */
+.sidebar-box {
+  position: relative;
+  background: #080808;
+  border-radius: 16px;
+  padding: 20px 25px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+/* --- Vertical Dots --- */
+.nav-track {
+  position: absolute;
+  left: 10px;
+  top: 15%;
+  bottom: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-dots div {
+  width: 6px;
+  height: 8px;
+  margin-bottom: 5px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+  transition: height 0.3s, background 0.3s;
+  cursor: pointer;
+}
+
+.nav-dots div.active {
+  background: #fff;
+  height: 45px;
+}
+
+/* --- Scrollable Titles --- */
+.video-titles {
+  list-style: none;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.3) transparent;
+  padding-left: 20px;
+  margin-top: 20px;
+}
+
+.video-titles li {
+  padding: 12px 0;
+  font-size: 1rem;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+  line-height: 1.5;
+}
+
+.video-titles li.active {
+  font-weight: 700;
+  color: #fff;
+}
+
+/* --- Scrollbar Customization --- */
+.video-titles::-webkit-scrollbar {
+  width: 6px;
+}
+.video-titles::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #999, #666);
+  border-radius: 10px;
+}
+.video-titles::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ========== Main Video Section ========== */
+.main-video {
+  flex: 1;
+  position: relative;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
+
+/* ========== Video Controls ========== */
+.video-controls {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding: 8px 25px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+}
+
+/* --- Play Button --- */
+.play-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  margin-right: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+.play-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.08);
+}
+
+/* --- Progress + Time --- */
+#progressBar {
+  flex: 1;
+  margin: 0 10px;
+  accent-color: white;
+}
+
+#currentTime, #totalTime {
+  font-size: 14px;
+  color: #ddd;
+}
+
+</style>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="sidebar-box">
+        <div class="nav-track">
+          <div class="nav-dots" id="navDots"></div>
+        </div>
+
+        <ul class="video-titles" id="videoTitles"></ul>
+      </div>
+    </aside>
+
+    <main class="main-video">
+      <video id="videoPlayer" autoplay muted playsinline></video>
+
+      <div class="video-controls">
+        <button id="playPauseBtn" class="play-btn">
+          <span id="playIcon">⏸</span>
+        </button>
+
+        <span id="currentTime">00:00</span>
+        <input type="range" id="progressBar" value="0" min="0" step="0.1">
+        <span id="totalTime">00:00</span>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+<script>
+    const videos = [
+  { src: "videos/test_1.mp4", title: "1. How to Add New Devices" },
+  { src: "videos/test_2.mp4", title: "2. How to Turn On USB Debugging" },
+  { src: "videos/test_3.mp4", title: "3. How to Connect via ADB" },
+  { src: "videos/test_4.mp4", title: "4. How to Connect via App Mode" }
+];
+
+const videoPlayer = document.getElementById("videoPlayer");
+const titlesContainer = document.getElementById("videoTitles");
+const dotsContainer = document.getElementById("navDots");
+const progressBar = document.getElementById("progressBar");
+const currentTimeEl = document.getElementById("currentTime");
+const totalTimeEl = document.getElementById("totalTime");
+const playPauseBtn = document.getElementById("playPauseBtn");
+const playIcon = document.getElementById("playIcon");
+
+let currentIndex = 0;
+
+// Create sidebar items
+videos.forEach((video, index) => {
+  const li = document.createElement("li");
+  li.textContent = video.title;
+  li.addEventListener("click", () => switchVideo(index));
+  titlesContainer.appendChild(li);
+
+  const dot = document.createElement("div");
+  dot.addEventListener("click", () => switchVideo(index));
+  dotsContainer.appendChild(dot);
+});
+
+function switchVideo(index) {
+  currentIndex = index;
+  videoPlayer.src = videos[index].src;
+  videoPlayer.play();
+  updateActive();
+  playIcon.textContent = "⏸"; // Reset to pause
+}
+
+function updateActive() {
+  document.querySelectorAll(".video-titles li").forEach((el, i) => {
+    el.classList.toggle("active", i === currentIndex);
+  });
+  document.querySelectorAll(".nav-dots div").forEach((el, i) => {
+    el.classList.toggle("active", i === currentIndex);
+  });
+}
+
+function formatTime(seconds) {
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60);
+  return `${m}:${s.toString().padStart(2, "0")}`;
+}
+
+// Video time tracking
+videoPlayer.addEventListener("loadedmetadata", () => {
+  totalTimeEl.textContent = formatTime(videoPlayer.duration);
+});
+
+videoPlayer.addEventListener("timeupdate", () => {
+  progressBar.value = (videoPlayer.currentTime / videoPlayer.duration) * 100;
+  currentTimeEl.textContent = formatTime(videoPlayer.currentTime);
+});
+
+videoPlayer.addEventListener("ended", () => {
+  currentIndex = (currentIndex + 1) % videos.length;
+  switchVideo(currentIndex);
+});
+
+// Progress bar seek
+progressBar.addEventListener("input", (e) => {
+  const newTime = (e.target.value / 100) * videoPlayer.duration;
+  videoPlayer.currentTime = newTime;
+});
+
+// Play / Pause toggle via button
+playPauseBtn.addEventListener("click", (e) => {
+  e.stopPropagation(); // Prevent click conflict
+  togglePlayPause();
+});
+
+// Click on video to toggle play/pause
+videoPlayer.addEventListener("click", togglePlayPause);
+
+function togglePlayPause() {
+  if (videoPlayer.paused) {
+    videoPlayer.play();
+    playIcon.textContent = "⏸";
+  } else {
+    videoPlayer.pause();
+    playIcon.textContent = "▶️";
+  }
+}
+
+// Initialize
+switchVideo(0);
+
+</script>
+</html>
