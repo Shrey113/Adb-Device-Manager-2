@@ -112,7 +112,12 @@
 
     <link rel="apple-touch-icon" href="images/app_png_100.png">
 
-    <link rel="preload" href="images/app_webp_100.webp" as="image">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/shrey113/Adb-Device-Manager-2@latest/images/app_webp_100.webp"
+        as="image">
+    <link rel="preload" href="https://cdn.jsdelivr.net/gh/shrey113/Adb-Device-Manager-2@latest/images/app_banner.webp"
+        as="image">
+
+
 
 
     <!-- ======================== FONTS & STYLES (NON-BLOCKING) ========================= -->
@@ -904,8 +909,8 @@
 
 <body>
     <!-- Video Background -->
-    <video class="video-background" autoplay muted playsinline>
-        <source src="https://cdn.jsdelivr.net/gh/shrey113/Adb-Device-Manager-2/images/index_main_page.mp4"
+    <video class="video-background" autoplay muted playsinline preload="metadata">
+        <source src="https://cdn.jsdelivr.net/gh/shrey113/Adb-Device-Manager-2@latest/images/index_main_page.mp4"
             type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -1304,9 +1309,11 @@
             <nav class="nav">
                 <div class="logo">
                     <picture>
-                        <source srcset="images/app_webp_50.webp" type="image/webp">
-                        <img src="images/app_webp_100.webp" class="logo-icon" alt="ADB Device Manager" width="49"
-                            height="49" loading="lazy">
+                        <source
+                            srcset="https://cdn.jsdelivr.net/gh/shrey113/Adb-Device-Manager-2@latest/images/app_webp_50.webp"
+                            type="image/webp">
+                        <img src="https://cdn.jsdelivr.net/gh/shrey113/Adb-Device-Manager-2@latest/images/app_webp_100.webp"
+                            class="logo-icon" alt="ADB Device Manager" width="49" height="49" loading="lazy">
                     </picture>
 
                 </div>
