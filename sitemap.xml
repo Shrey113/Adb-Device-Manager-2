@@ -1,21 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- 🏠 Main Homepage -->
   <url>
     <loc>https://shrey113.github.io/Adb-Device-Manager-2/</loc>
-    <lastmod>2025-11-09</lastmod>
+    <lastmod>2025-12-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- 📥 Download Page -->
+  <!-- ✨ Features Page -->
   <url>
-    <loc>https://shrey113.github.io/Adb-Device-Manager-2/download.html</loc>
-    <lastmod>2025-11-09</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://shrey113.github.io/Adb-Device-Manager-2/features.html</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 📚 Documentation Page -->
+  <url>
+    <loc>https://shrey113.github.io/Adb-Device-Manager-2/Docs.html</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 🤖 Android Download Page -->
+  <url>
+    <loc>https://shrey113.github.io/Adb-Device-Manager-2/android_download.html</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
+  <!-- 🪟 Windows Download Page -->
+  <url>
+    <loc>https://shrey113.github.io/Adb-Device-Manager-2/windows_download.html</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 🆘 Support Page -->
+  <url>
+    <loc>https://shrey113.github.io/Adb-Device-Manager-2/support.html</loc>
+    <lastmod>2025-12-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 
 </urlset>
