@@ -126,786 +126,11 @@
 
 
 
-
+    <link rel="stylesheet" href="style.css">
 
     <!-- Title -->
     <title>ADB Device Manager — Android + Windows Dual Control</title>
 </head>
-
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box
-    }
-
-    body {
-        width: 100%;
-        min-height: 100vh;
-        overflow-x: hidden;
-        overflow-y: auto;
-        background: #f7f6f9;
-        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
-    }
-
-    .video-background {
-        position: absolute;
-        top: -3%;
-        left: 0;
-        width: 100%;
-        object-fit: cover;
-        z-index: 0
-    }
-
-    .nav {
-        display: flex;
-        gap: 2rem;
-        align-items: center
-    }
-
-    .nav-link {
-        text-decoration: none;
-        color: #1f2937;
-        font-weight: 500;
-        font-size: .95rem;
-        transition: all .3s ease;
-        position: relative
-    }
-
-    .nav-link::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: linear-gradient(135deg, #6366f1 0, #8b5cf6 100%);
-        transition: width .3s ease
-    }
-
-    .nav-link:hover {
-        color: #6366f1
-    }
-
-    .nav-link:hover::after {
-        width: 100%
-    }
-
-    .logo {
-        display: flex;
-        align-items: center;
-        gap: .75rem;
-        color: #1a1a2e;
-        font-weight: 700;
-        font-size: 1.25rem
-    }
-
-    .logo-icon {
-        width: 38px;
-        height: 38px;
-        color: #6366f1
-    }
-
-    .content-overlay {
-        position: relative;
-        width: 100%;
-        min-height: 100vh;
-        z-index: 10;
-        display: flex;
-        flex-direction: column
-    }
-
-    .main-content {
-        flex: 1;
-        display: flex;
-        flex-direction: column
-    }
-
-    .hero-section {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 4rem 2rem;
-        min-height: calc(100vh - 100px)
-    }
-
-    .hero-content {
-        width: 100%;
-        max-width: 1000px;
-        margin: 0 auto
-    }
-
-    .hero-text {
-        text-align: center;
-        z-index: 20;
-        animation: fadeInUp .8s ease-out backwards
-    }
-
-    .hero-title {
-        font-size: clamp(3rem, 7vw, 5rem);
-        font-weight: 800;
-        line-height: 1.2;
-        margin-bottom: 1rem;
-        background: linear-gradient(135deg, #1f2937 0, #4b5563 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        letter-spacing: -.04em;
-        text-shadow: 0 4px 20px #0000001a
-    }
-
-    .hero-subtitle {
-        font-size: clamp(1.5rem, 3vw, 2.5rem);
-        color: #374151;
-        margin-bottom: 1rem;
-        font-weight: 600;
-        letter-spacing: -.02em
-    }
-
-    .hero-description {
-        font-size: clamp(1rem, 2vw, 1.3rem);
-        color: #202020;
-        margin-bottom: 3rem;
-        font-weight: 450;
-        line-height: 1.6
-    }
-
-    .cta-buttons {
-        display: flex;
-        gap: 1.5rem;
-        justify-content: center;
-        flex-wrap: wrap;
-        animation: fadeInUp 1s ease-out .3s backwards
-    }
-
-    .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: .75rem;
-        padding: 1.1rem 2.5rem;
-        border-radius: 14px;
-        font-size: 1rem;
-        font-weight: 600;
-        text-decoration: none;
-        transition: all .3s ease;
-        border: 2px solid transparent;
-        cursor: pointer;
-        position: relative;
-        overflow: hidden
-    }
-
-    .btn::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        border-radius: 50%;
-        background: #ffffff40;
-        transform: translate(-50%, -50%);
-        transition: width .6s ease, height .6s ease
-    }
-
-    .btn:hover::before {
-        width: 350px;
-        height: 350px
-    }
-
-    .btn-icon,
-    .download-icon {
-        width: 22px;
-        height: 22px;
-        z-index: 1;
-        position: relative
-    }
-
-    .btn span {
-        z-index: 1;
-        position: relative
-    }
-
-    .btn-primary {
-        background: linear-gradient(135deg, #6366f1 0, #8b5cf6 100%);
-        color: #fff;
-        box-shadow: 0 10px 30px #6366f14d
-    }
-
-    .btn-primary:hover {
-        box-shadow: 0 15px 40px #6366f166
-    }
-
-    .btn-secondary {
-        background: #ffffffe6;
-        color: #1f2937;
-        border-color: #6366f133;
-        box-shadow: 0 8px 24px #0000001a
-    }
-
-    .btn-secondary:hover {
-        box-shadow: 0 12px 32px #00000026;
-        border-color: #6366f1
-    }
-
-    .features-section {
-        padding: 4rem 2rem 6rem;
-        background: 0 0
-    }
-
-    .features-container {
-        max-width: 1400px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2rem;
-        animation: fadeInUp 1.2s ease-out .6s backwards
-    }
-
-    .feature-card {
-        background: #ffffffbf;
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-radius: 20px;
-        padding: 2rem;
-        border: 1px solid #ffffff80;
-        box-shadow: 0 8px 32px #0000001a;
-        transition: all .4s ease;
-        position: relative;
-        overflow: hidden
-    }
-
-    .feature-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: linear-gradient(135deg, #6366f1 0, #8b5cf6 100%);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform .4s ease
-    }
-
-    .feature-card:hover::before {
-        transform: scaleX(1)
-    }
-
-    .feature-card:hover {
-        box-shadow: 0 16px 48px #6366f133;
-        background: #ffffffd9
-    }
-
-    .feature-icon {
-        width: 56px;
-        height: 56px;
-        margin-bottom: 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(135deg, #6366f1 0, #8b5cf6 100%);
-        border-radius: 14px;
-        box-shadow: 0 4px 16px #6366f14d;
-        transition: all .4s ease
-    }
-
-    .feature-card:hover .feature-icon {
-        transform: scale(1.1) rotate(5deg);
-        box-shadow: 0 8px 24px #6366f166
-    }
-
-    .feature-icon svg {
-        width: 28px;
-        height: 28px;
-        color: #fff
-    }
-
-    .feature-title {
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: #1f2937;
-        margin-bottom: 1.25rem;
-        letter-spacing: -.02em
-    }
-
-    .feature-list {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem
-    }
-
-    .feature-list li {
-        display: flex;
-        align-items: flex-start;
-        gap: .75rem;
-        color: #4b5563;
-        font-size: .95rem;
-        line-height: 1.6;
-        transition: all .3s ease
-    }
-
-    .feature-list li:hover {
-        color: #1f2937;
-        transform: translateX(4px)
-    }
-
-    .list-icon {
-        width: 20px;
-        height: 20px;
-        flex-shrink: 0;
-        color: #6366f1;
-        margin-top: 2px
-    }
-
-    .footer {
-        padding: 2rem;
-        text-align: center;
-        background: #ffffffb3;
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-top: 1px solid #00000014;
-        color: #6b7280;
-        font-size: .9rem
-    }
-
-    @keyframes fadeInUp {
-        0% {
-            opacity: 0;
-            transform: translateY(60px)
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0)
-        }
-    }
-
-    @keyframes slideDown {
-        0% {
-            opacity: 0;
-            transform: translateY(-20px)
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0)
-        }
-    }
-
-    @media (max-width:1100px) {
-        .video-background {
-            top: -3%
-        }
-    }
-
-    @media (max-width:900px) {
-        .video-background {
-            top: 4%
-        }
-    }
-
-    @media (max-width:1024px) {
-        .hero-section {
-            padding: 3.5rem 2rem
-        }
-
-        .features-container {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.75rem
-        }
-
-        .footer {
-            padding: 1.75rem
-        }
-    }
-
-    @media (max-width:768px) {
-        .header {
-            padding: 1rem 1.25rem
-        }
-
-        .nav {
-            gap: 1rem;
-            flex-wrap: wrap
-        }
-
-        .nav-link {
-            font-size: .85rem;
-            padding: .5rem
-        }
-
-        .hero-section {
-            padding: 2.5rem 1.5rem;
-            min-height: calc(100vh - 70px)
-        }
-
-        .hero-title {
-            font-size: clamp(2rem, 8vw, 3.5rem);
-            margin-bottom: .75rem
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.25rem, 4vw, 2rem);
-            margin-bottom: .75rem
-        }
-
-        .hero-description {
-            font-size: clamp(.95rem, 2.5vw, 1.15rem);
-            margin-bottom: 2rem
-        }
-
-        .features-section {
-            padding: 2.5rem 1.25rem 3.5rem
-        }
-
-        .features-container {
-            grid-template-columns: 1fr;
-            gap: 1.5rem
-        }
-
-        .feature-card {
-            padding: 1.75rem
-        }
-
-        .feature-title {
-            font-size: 1.25rem
-        }
-
-        .feature-list li {
-            font-size: .9rem
-        }
-
-        .cta-buttons {
-            flex-direction: column;
-            gap: 1rem;
-            width: 100%
-        }
-
-        .video-background {
-            display: none
-        }
-
-        .btn {
-            width: 100%;
-            justify-content: center;
-            padding: 1rem 2rem;
-            font-size: .95rem
-        }
-
-        .footer {
-            padding: 1.5rem;
-            font-size: .85rem
-        }
-
-        .nav p {
-            font-size: .85rem
-        }
-    }
-
-    @media (max-width:640px) {
-        .logo-icon {
-            width: 32px;
-            height: 32px
-        }
-
-        .hero-section {
-            padding: 2rem 1.25rem
-        }
-
-        .feature-card {
-            padding: 1.5rem
-        }
-
-        .feature-icon {
-            width: 48px;
-            height: 48px;
-            margin-bottom: 1.25rem
-        }
-
-        .feature-icon svg {
-            width: 24px;
-            height: 24px
-        }
-
-        .btn {
-            padding: .9rem 1.75rem
-        }
-
-        .btn-icon,
-        .download-icon {
-            width: 20px;
-            height: 20px
-        }
-    }
-
-    @media (max-width:480px) {
-        .nav {
-            gap: .75rem
-        }
-
-        .nav-link {
-            font-size: .8rem;
-            padding: .4rem
-        }
-
-        .logo {
-            font-size: 1.1rem
-        }
-
-        .logo-icon {
-            width: 28px;
-            height: 28px
-        }
-
-        .hero-section {
-            padding: 1.75rem 1rem
-        }
-
-        .hero-title {
-            font-size: clamp(1.75rem, 7vw, 2.5rem)
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.1rem, 3.5vw, 1.5rem)
-        }
-
-        .hero-description {
-            font-size: clamp(.9rem, 2.5vw, 1rem);
-            margin-bottom: 1.75rem
-        }
-
-        .features-section {
-            padding: 2rem 1rem 3rem
-        }
-
-        .feature-card {
-            padding: 1.25rem
-        }
-
-        .feature-title {
-            font-size: 1.15rem;
-            margin-bottom: 1rem
-        }
-
-        .feature-list {
-            gap: .85rem
-        }
-
-        .feature-list li {
-            font-size: .85rem
-        }
-
-        .list-icon {
-            width: 18px;
-            height: 18px
-        }
-
-        .btn {
-            padding: .85rem 1.5rem;
-            font-size: .9rem;
-            gap: .6rem
-        }
-
-        .btn-icon,
-        .download-icon {
-            width: 18px;
-            height: 18px
-        }
-
-        .footer {
-            padding: 1.25rem 1rem;
-            font-size: .8rem
-        }
-
-        .nav p {
-            font-size: .8rem
-        }
-    }
-
-    @media (max-width:360px) {
-        .hero-title {
-            font-size: 1.5rem
-        }
-
-        .hero-subtitle {
-            font-size: 1rem
-        }
-
-        .hero-description {
-            font-size: .85rem
-        }
-
-        .feature-title {
-            font-size: 1rem
-        }
-
-        .feature-list li {
-            font-size: .8rem
-        }
-
-        .btn {
-            padding: .75rem 1.25rem;
-            font-size: .85rem
-        }
-    }
-
-    @media (hover:none) and (pointer:coarse) {
-        .btn {
-            min-height: 48px;
-            padding: 1rem 2rem
-        }
-
-        .nav-link {
-            min-height: 44px;
-            display: flex;
-            align-items: center
-        }
-
-        .feature-card {
-            cursor: pointer;
-            -webkit-tap-highlight-color: #6366f11a
-        }
-    }
-
-    .hero-section {
-        position: relative
-    }
-
-    @keyframes deviceIntro {
-        0% {
-            opacity: 0;
-            transform: translateY(25px) scale(.92) rotate(var(--rot));
-            filter: blur(6px)
-        }
-
-        70% {
-            opacity: 1;
-            transform: translateY(0) scale(1.02) rotate(var(--rot));
-            filter: blur(0)
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0) scale(1) rotate(var(--rot))
-        }
-    }
-
-    @keyframes deviceFloat {
-        0% {
-            transform: translateY(0) rotate(var(--rot))
-        }
-
-        50% {
-            transform: translateY(-6px) rotate(calc(var(--rot) + 1deg))
-        }
-
-        to {
-            transform: translateY(0) rotate(var(--rot))
-        }
-    }
-
-    .device-float {
-        position: absolute;
-        width: 60px;
-        border-radius: 20px;
-        overflow: hidden;
-        opacity: 0;
-        animation: deviceIntro .9s cubic-bezier(.4, 0, .2, 1) forwards, deviceFloat 4.5s ease-in-out infinite;
-        animation-composition: add;
-        display: none
-    }
-
-    .device-float img {
-        width: 100%;
-        height: auto;
-        display: block;
-        object-fit: cover
-    }
-
-    .device-1 {
-        top: 5%;
-        left: 5%;
-        --rot: -5deg;
-        z-index: 3;
-        animation-delay: 0s
-    }
-
-    .device-2 {
-        top: 35%;
-        right: 3%;
-        --rot: 8deg;
-        z-index: 2;
-        animation-delay: .2s
-    }
-
-    .device-3 {
-        top: 30%;
-        left: 10%;
-        --rot: 3deg;
-        z-index: 4;
-        animation-delay: .4s
-    }
-
-    .device-4 {
-        bottom: 8%;
-        right: 12%;
-        --rot: -4deg;
-        z-index: 3;
-        animation-delay: .6s
-    }
-
-    .device-5 {
-        bottom: 5%;
-        left: 15%;
-        --rot: -4deg;
-        z-index: 3;
-        animation-delay: .8s
-    }
-
-    @media (max-width:768px) {
-        .device-float {
-            display: block
-        }
-    }
-
-    @media (max-width:450px) {
-        .device-float {
-            display: block
-        }
-
-        .device-1 {
-            top: 5%;
-            left: 9%;
-            --rot: -5deg
-        }
-
-        .device-2 {
-            top: 25%;
-            right: 3%;
-            --rot: 8deg
-        }
-
-        .device-3 {
-            top: 28%;
-            left: 3%;
-            --rot: 3deg
-        }
-
-        .device-4 {
-            bottom: 3%;
-            right: 12%;
-            --rot: -4deg
-        }
-
-        .device-5 {
-            bottom: 9%;
-            left: 15%;
-            --rot: -4deg
-        }
-    }
-</style>
 
 <body>
     <!-- Video Background -->
@@ -1034,73 +259,55 @@
             <section class="features-section" id="features">
                 <div class="features-container">
 
-                    <!-- Feature Card 1: Cross-Device Connectivity -->
-                    <article class="feature-card" onclick="window.location.href='Docs.html#cross-device'"
+                    <!-- VIP Feature Card: Android Dex (Special Premium Card) -->
+                    <article class="feature-card vip-card" onclick="window.location.href='Docs.html#android-dex'"
                         style="cursor: pointer;">
-                        <div class="feature-icon">
+                        <div class="feature-icon vip-icon">
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="2" y="3" width="9" height="13" rx="1.5" stroke="currentColor"
+                                <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor"
                                     stroke-width="2" />
-                                <rect x="13" y="5" width="9" height="16" rx="1.5" stroke="currentColor"
-                                    stroke-width="2" />
-                                <path d="M6 19L6 19.01M17 18L17 18.01" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" />
-                                <path d="M11 8L13 8M11 11L13 11" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" />
+                                <path d="M8 21H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <path d="M12 17V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <rect x="5" y="6" width="5" height="4" rx="0.5" stroke="currentColor"
+                                    stroke-width="1.5" />
+                                <rect x="11" y="6" width="8" height="4" rx="0.5" stroke="currentColor"
+                                    stroke-width="1.5" />
+                                <path d="M5 12H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                                <circle cx="7" cy="14" r="1" fill="currentColor" />
+                                <circle cx="10" cy="14" r="1" fill="currentColor" />
+                                <circle cx="13" cy="14" r="1" fill="currentColor" />
                             </svg>
                         </div>
-                        <h3 class="feature-title">Cross-Device</h3>
+                        <h3 class="feature-title">Android Dex</h3>
+                        <p class="vip-description">Transform your phone into a full desktop experience <br>(Samsung
+                            DeX-style)</p>
                         <ul class="feature-list">
                             <li>
-                                <svg class="list-icon" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor"
-                                        stroke-width="2" />
-                                    <path d="M8 21H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                                    <path d="M12 17V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                                    <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" />
-                                    <path d="M9 10L15 10" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" />
-                                </svg>
-                                <span>Wireless Screen Mirroring</span>
-                            </li>
-                            <li>
-                                <svg class="list-icon" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 3C7.03 3 3 7.03 3 12C3 16.97 7.03 21 12 21C16.97 21 21 16.97 21 12"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                                    <path d="M8 12L12 8L16 12" stroke="currentColor" stroke-width="2"
+                                <svg class="list-icon" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5"
                                         stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M12 8V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                                 </svg>
-                                <span>Real-Time Audio Streaming</span>
+                                <span>Virtual Display (1080p - 4K)</span>
                             </li>
                             <li>
-                                <svg class="list-icon" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="2" y="4" width="20" height="5" rx="1" stroke="currentColor"
-                                        stroke-width="2" />
-                                    <path d="M6 15L6 19M10 15L10 19M14 15L14 19M18 15L18 19" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" />
-                                    <circle cx="19" cy="17" r="2" stroke="currentColor" stroke-width="2" />
+                                <svg class="list-icon" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
-                                <span>Keyboard & Mouse Control</span>
+                                <span>3 Performance Modes (60-120 FPS)</span>
                             </li>
                             <li>
-                                <svg class="list-icon" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" />
-                                    <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" />
-                                    <path d="M12 3V7M12 17V21M3 12H7M17 12H21" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" />
+                                <svg class="list-icon" viewBox="0 0 24 24" fill="none">
+                                    <path d="M20 6L9 17L4 12" stroke="currentColor" stroke-width="2.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
-                                <span>Remote Camera Access</span>
+                                <span>Full Keyboard & Mouse Support</span>
                             </li>
                         </ul>
                     </article>
 
-                    <!-- Feature Card 2: Desktop Mode -->
-                    <article class="feature-card" onclick="window.location.href='Docs.html#desktop-mode'"
+                    <!-- Feature Card 2: Device Projection & Control -->
+                    <article class="feature-card" onclick="window.location.href='Docs.html#projection-control'"
                         style="cursor: pointer;">
                         <div class="feature-icon">
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1108,128 +315,81 @@
                                     stroke-width="2" />
                                 <path d="M8 21H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                                 <path d="M12 17V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                                <rect x="5" y="6" width="6" height="5" rx="1" stroke="currentColor"
-                                    stroke-width="1.5" />
-                                <rect x="13" y="6" width="6" height="5" rx="1" stroke="currentColor"
-                                    stroke-width="1.5" />
-                                <rect x="5" y="12" width="6" height="3" rx="0.5" stroke="currentColor"
-                                    stroke-width="1.5" />
+                                <path d="M7 8L10 11L7 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
                             </svg>
                         </div>
-                        <h3 class="feature-title">Desktop Mode</h3>
+                        <h3 class="feature-title">Device Projection</h3>
                         <ul class="feature-list">
                             <li>
-                                <svg class="list-icon" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="3" y="5" width="8" height="7" rx="1" stroke="currentColor"
+                                <svg class="list-icon" viewBox="0 0 24 24" fill="none">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor"
                                         stroke-width="2" />
-                                    <rect x="13" y="5" width="8" height="7" rx="1" stroke="currentColor"
-                                        stroke-width="2" />
-                                    <rect x="3" y="14" width="8" height="7" rx="1" stroke="currentColor"
-                                        stroke-width="2" />
-                                    <rect x="13" y="14" width="8" height="7" rx="1" stroke="currentColor"
-                                        stroke-width="2" />
+                                    <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" />
                                 </svg>
-                                <span>Multi-App Running</span>
+                                <span>Screen Mirroring</span>
                             </li>
                             <li>
-                                <svg class="list-icon" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M3 9C3 7.34315 4.34315 6 6 6H18C19.6569 6 21 7.34315 21 9V15C21 16.6569 19.6569 18 18 18H6C4.34315 18 3 16.6569 3 15V9Z"
-                                        stroke="currentColor" stroke-width="2" />
-                                    <path d="M8 10L10 12L8 14M12 14H16" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                    <circle cx="18" cy="9" r="1.5" fill="currentColor" />
+                                <svg class="list-icon" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 3C7.03 3 3 7.03 3 12C3 16.97 7.03 21 12 21C16.97 21 21 16.97 21 12"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M12 8V16M8 12H16" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
                                 </svg>
-                                <span>Independent Audio Channels</span>
+                                <span>Audio Streaming</span>
                             </li>
                             <li>
-                                <svg class="list-icon" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor"
+                                <svg class="list-icon" viewBox="0 0 24 24" fill="none">
+                                    <rect x="2" y="4" width="20" height="5" rx="1" stroke="currentColor"
                                         stroke-width="2" />
-                                    <path d="M4 10H20M10 4V20" stroke="currentColor" stroke-width="2" />
-                                    <circle cx="7" cy="7" r="1" fill="currentColor" />
-                                    <circle cx="14" cy="7" r="1" fill="currentColor" />
-                                    <circle cx="7" cy="14" r="1" fill="currentColor" />
-                                    <circle cx="14" cy="14" r="1" fill="currentColor" />
+                                    <path d="M6 15V19M10 15V19M14 15V19M18 15V19" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
                                 </svg>
-                                <span>Virtual System Cloning</span>
+                                <span>Keyboard & Mouse Control</span>
                             </li>
                         </ul>
                     </article>
 
-                    <!-- Feature Card 3: App Synchronization -->
-                    <article class="feature-card" onclick="window.location.href='Docs.html#app-synchronization'"
+                    <!-- Feature Card 3: Companion Services -->
+                    <article class="feature-card" onclick="window.location.href='Docs.html#companion-services'"
                         style="cursor: pointer;">
                         <div class="feature-icon">
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3"
-                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                                <path d="M21 3V9H15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <path d="M21 9C19.5 6.5 16.5 4.5 13 4" stroke="currentColor" stroke-width="2"
+                                <rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor"
+                                    stroke-width="2" />
+                                <circle cx="12" cy="18" r="1" fill="currentColor" />
+                                <path d="M9 6H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <path d="M12 9V13M10 11H14" stroke="currentColor" stroke-width="1.5"
                                     stroke-linecap="round" />
-                                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" />
                             </svg>
                         </div>
-                        <h3 class="feature-title">App Synchronization</h3>
+                        <h3 class="feature-title">Companion Services</h3>
                         <ul class="feature-list">
                             <li>
-                                <svg class="list-icon" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M18 8C19.6569 8 21 6.65685 21 5C21 3.34315 19.6569 2 18 2C16.3431 2 15 3.34315 15 5C15 6.65685 16.3431 8 18 8Z"
-                                        stroke="currentColor" stroke-width="2" />
-                                    <path
-                                        d="M6 15C7.65685 15 9 13.6569 9 12C9 10.3431 7.65685 9 6 9C4.34315 9 3 10.3431 3 12C3 13.6569 4.34315 15 6 15Z"
-                                        stroke="currentColor" stroke-width="2" />
-                                    <path
-                                        d="M18 22C19.6569 22 21 20.6569 21 19C21 17.3431 19.6569 16 18 16C16.3431 16 15 17.3431 15 19C15 20.6569 16.3431 22 18 22Z"
-                                        stroke="currentColor" stroke-width="2" />
-                                    <path d="M8.5 13.5L15.5 17.5M8.5 10.5L15.5 6.5" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" />
-                                </svg>
-                                <span>Cross-Device Notifications</span>
-                            </li>
-                            <li>
-                                <svg class="list-icon" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
+                                <svg class="list-icon" viewBox="0 0 24 24" fill="none">
                                     <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" />
-                                    <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M16 6L18 4M8 6L6 4" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" />
+                                    <path d="M10 9L14 12L10 15" fill="currentColor" />
                                 </svg>
-                                <span>Synchronized Media Playback</span>
+                                <span>Music Control</span>
                             </li>
                             <li>
-                                <svg class="list-icon" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M13 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V9L13 2Z"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M13 2V9H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M9 13H15M9 17H15" stroke="currentColor" stroke-width="2"
+                                <svg class="list-icon" viewBox="0 0 24 24" fill="none">
+                                    <path d="M18 8A6 6 0 1 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" stroke="currentColor"
+                                        stroke-width="2" />
+                                    <path d="M13.73 21a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2"
                                         stroke-linecap="round" />
                                 </svg>
-                                <span>Universal File Manager</span>
+                                <span>Notification Center</span>
                             </li>
                             <li>
-                                <svg class="list-icon" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M22 16.92V17C22 17.5304 21.7893 18.0391 21.4142 18.4142C21.0391 18.7893 20.5304 19 20 19H4C3.46957 19 2.96086 18.7893 2.58579 18.4142C2.21071 18.0391 2 17.5304 2 17V16.92"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M7 12L12 17L17 12M12 3V17" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
+                                <svg class="list-icon" viewBox="0 0 24 24" fill="none">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor"
+                                        stroke-width="2" />
+                                    <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor" />
+                                    <path d="M21 15L16 10L5 21" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
                                 </svg>
-                                <span>Contacts & Call History Sync</span>
+                                <span>Photo Gallery & Files</span>
                             </li>
                         </ul>
                     </article>
@@ -1252,53 +412,34 @@
                         <h3 class="feature-title">Windows Integration</h3>
                         <ul class="feature-list">
                             <li>
-                                <svg class="list-icon" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"
-                                        stroke-linejoin="round" />
-                                    <path d="M2 17L12 22L22 17M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                    <circle cx="17" cy="9" r="2" stroke="currentColor" stroke-width="2" />
-                                </svg>
-                                <span>Bluetooth Audio Streaming</span>
-                            </li>
-                            <li>
-                                <svg class="list-icon" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
+                                <svg class="list-icon" viewBox="0 0 24 24" fill="none">
                                     <path
                                         d="M13 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V9L13 2Z"
                                         stroke="currentColor" stroke-width="2" />
                                     <path d="M13 2V9H20" stroke="currentColor" stroke-width="2" />
-                                    <path d="M12 11L16 15M16 11L12 15" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" />
                                 </svg>
-                                <span>Seamless File Sharing</span>
+                                <span>File Sharing System</span>
                             </li>
                             <li>
-                                <svg class="list-icon" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
+                                <svg class="list-icon" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"
+                                        stroke-linejoin="round" />
+                                    <path d="M2 17L12 22L22 17M2 12L12 17L22 12" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                                <span>Bluetooth Audio Streaming</span>
+                            </li>
+                            <li>
+                                <svg class="list-icon" viewBox="0 0 24 24" fill="none">
                                     <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" />
                                     <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2"
                                         stroke-linecap="round" />
-                                    <path d="M11 8V11L13 13" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" />
                                 </svg>
-                                <span>Smart Screen Search</span>
-                            </li>
-                            <li>
-                                <svg class="list-icon" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="2" y="4" width="20" height="5" rx="1" stroke="currentColor"
-                                        stroke-width="2" />
-                                    <path d="M6 15V19M10 15V19M14 15V19M18 15V19" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" />
-                                    <path d="M8 4V1M16 4V1" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" />
-                                </svg>
-                                <span>Custom Keyboard Shortcuts</span>
+                                <span>Device Finder</span>
                             </li>
                         </ul>
                     </article>
+
                 </div>
             </section>
         </main>

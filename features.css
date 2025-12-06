@@ -741,7 +741,7 @@ section {
     }
 
     .phone-app {
-           top: 8%;
+        top: 8%;
         width: 16%;
         border-radius: 1px;
     }
@@ -820,9 +820,523 @@ section {
 .hidden {
     display: none !important;
 }
-/* for all scrren fix */
-html, body {
-  overflow-x: hidden;
-  height: auto !important;
-  min-height: 100%;
+
+/* for all screen fix */
+html,
+body {
+    overflow-x: hidden;
+    height: auto !important;
+    min-height: 100%;
+}
+
+/* =========================================
+   ANDROID DEX SECTION — VIP PREMIUM STYLING
+   ========================================= */
+.dex-section {
+    padding: 80px 20px;
+    background: linear-gradient(145deg, #fffef9 0%, #fefcf3 50%, #fef9e7 100%);
+    position: relative;
+    text-align: center;
+}
+
+.section-title-gold {
+    text-align: center;
+    color: #5c4a1f;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.dex-subtitle {
+    color: #6b5a2e;
+    font-size: 17px;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.dex-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dex-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 8px 24px rgba(180, 140, 40, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dex-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(180, 140, 40, 0.15);
+}
+
+.dex-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #d4af37 0%, #c9a227 100%);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(180, 140, 40, 0.3);
+}
+
+.dex-icon svg {
+    width: 28px;
+    height: 28px;
+    color: #fff;
+}
+
+.dex-card h3 {
+    color: #5c4a1f;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.dex-card p {
+    color: #6b5a2e;
+    font-size: 14px;
+    line-height: 1.55;
+    margin-bottom: 14px;
+}
+
+.dex-mode-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dex-mode-badge.adb {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: #fff;
+}
+
+/* =========================================
+   MODE & HOTKEY BADGES
+   ========================================= */
+.feature-badges {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.mode-badge {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 14px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mode-badge.adb {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: #fff;
+}
+
+.mode-badge.app {
+    background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
+    color: #fff;
+}
+
+.mode-badge.windows {
+    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+    color: #fff;
+}
+
+.hotkey-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 12px;
+    background: #1f2937;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: monospace;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.hotkey-badge::before {
+    content: "⌨";
+    font-size: 12px;
+}
+
+/* =========================================
+   AUDIO VISUAL PLACEHOLDER
+   ========================================= */
+.audio-visual {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 8px;
+    height: 120px;
+    padding: 20px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border-radius: 16px;
+}
+
+.audio-wave {
+    width: 12px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 6px;
+    animation: audioWave 1.2s ease-in-out infinite;
+}
+
+.audio-wave:nth-child(1) {
+    height: 40%;
+    animation-delay: 0s;
+}
+
+.audio-wave:nth-child(2) {
+    height: 70%;
+    animation-delay: 0.15s;
+}
+
+.audio-wave:nth-child(3) {
+    height: 100%;
+    animation-delay: 0.3s;
+}
+
+.audio-wave:nth-child(4) {
+    height: 60%;
+    animation-delay: 0.45s;
+}
+
+.audio-wave:nth-child(5) {
+    height: 80%;
+    animation-delay: 0.6s;
+}
+
+@keyframes audioWave {
+
+    0%,
+    100% {
+        transform: scaleY(0.5);
+    }
+
+    50% {
+        transform: scaleY(1);
+    }
+}
+
+/* Music Control Visual */
+.music-control-visual {
+    background: linear-gradient(145deg, #f1f5f9, #e2e8f0);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+}
+
+.album-art {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 16px;
+    background: linear-gradient(135deg, #a855f7 0%, #8b5cf6 100%);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.3);
+}
+
+.music-info {
+    margin-bottom: 16px;
+}
+
+.music-title {
+    width: 70%;
+    height: 14px;
+    background: #94a3b8;
+    border-radius: 4px;
+    margin: 0 auto 8px;
+}
+
+.music-artist {
+    width: 50%;
+    height: 10px;
+    background: #cbd5e1;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+
+.music-controls {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.control-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 50%;
+    font-size: 14px;
+    color: #6366f1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.control-btn.play {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: #fff;
+    font-size: 18px;
+}
+
+/* =========================================
+   NOTIFICATION VISUAL PLACEHOLDER
+   ========================================= */
+.notification-visual {
+    background: linear-gradient(145deg, #f1f5f9, #e2e8f0);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.notif-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    padding: 12px 14px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.notif-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    flex-shrink: 0;
+}
+
+.notif-icon.purple {
+    background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
+}
+
+.notif-icon.green {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+}
+
+.notif-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.notif-title {
+    width: 70%;
+    height: 12px;
+    background: #64748b;
+    border-radius: 3px;
+}
+
+.notif-text {
+    width: 90%;
+    height: 8px;
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+/* =========================================
+   DEVICE OPERATIONS GRID
+   ========================================= */
+.ops-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.ops-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ops-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(99, 102, 241, 0.12);
+}
+
+.ops-icon {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+}
+
+.ops-icon svg {
+    width: 26px;
+    height: 26px;
+    color: #fff;
+}
+
+.ops-icon.camera {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.ops-icon.contacts {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.ops-icon.calls {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.ops-icon.sms {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.ops-icon.installer {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.ops-icon.gallery {
+    background: linear-gradient(135deg, #ec4899, #db2777);
+}
+
+.ops-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 10px;
+}
+
+.ops-card p {
+    font-size: 14px;
+    color: var(--color-gray-600);
+    line-height: 1.55;
+    margin-bottom: 14px;
+}
+
+/* =========================================
+   WINDOWS INTEGRATION SECTION
+   ========================================= */
+.sync-grid.three-col {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.windows-card {
+    text-align: center;
+}
+
+.windows-icon {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+}
+
+.windows-icon svg {
+    width: 26px;
+    height: 26px;
+    color: #fff;
+}
+
+.beta-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+/* =========================================
+   RESPONSIVE FOR NEW SECTIONS
+   ========================================= */
+@media (max-width: 1024px) {
+    .dex-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-title-gold {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .dex-grid,
+    .ops-grid,
+    .sync-grid.three-col {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title-gold {
+        font-size: 30px;
+    }
+
+    .dex-subtitle {
+        font-size: 15px;
+    }
+
+    .dex-section {
+        padding: 60px 16px;
+    }
+}
+
+@media (max-width: 640px) {
+    .section-title-gold {
+        font-size: 26px;
+    }
+
+    .dex-card,
+    .ops-card {
+        padding: 22px 18px;
+    }
+
+    .dex-icon,
+    .ops-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .dex-icon svg,
+    .ops-icon svg {
+        width: 24px;
+        height: 24px;
+    }
 }

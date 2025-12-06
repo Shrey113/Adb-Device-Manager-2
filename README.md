@@ -52,7 +52,7 @@ First step towards a full **desktop-style Android experience** inside ADB Device
 
 ![git_hub_3](https://github.com/user-attachments/assets/f11902ec-57e9-41e2-b9a6-1e71b8d8d23e)
 
-### About Android Dex Mode
+### About Android Dex
 - Auto-installs android_clone.apk
 - Gestures + nav keys + media events
 - Full keyboard & mouse

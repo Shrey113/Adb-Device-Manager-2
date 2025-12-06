@@ -46,7 +46,6 @@ body {
     flex-shrink: 0;
 }
 
-
 .sidebar::-webkit-scrollbar {
     width: 6px;
 }
@@ -81,7 +80,7 @@ body {
     color: #1a1a2e;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.95rem;
     padding: 0.5rem 0.75rem;
     border-radius: 8px;
     transition: all 0.3s ease;
@@ -102,15 +101,15 @@ body {
 }
 
 .nav-subsection li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .nav-subsection a {
     display: block;
     color: #64748b;
     text-decoration: none;
-    font-size: 0.9rem;
-    padding: 0.4rem 0.75rem;
+    font-size: 0.85rem;
+    padding: 0.35rem 0.75rem;
     border-radius: 6px;
     transition: all 0.3s ease;
 }
@@ -119,6 +118,17 @@ body {
 .nav-subsection a.active {
     color: #6366f1;
     background: #dee5fb;
+}
+
+.nav-subsection a.nav-gold {
+    color: #b8860b;
+    font-weight: 600;
+    background: #fef3c77c;
+}
+
+.nav-subsection a.nav-gold:hover {
+    color: #996515;
+    background: #fff1b7;
 }
 
 /* ===================================
@@ -131,7 +141,7 @@ body {
 }
 
 .intro-section {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
 }
 
 .intro-section h1 {
@@ -142,17 +152,122 @@ body {
 }
 
 .intro-text {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     color: #475569;
     line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* ===================================
+   Mode Legend
+   =================================== */
+.mode-legend {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 1.25rem 1.75rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.875rem;
+    color: #475569;
+}
+
+/* ===================================
+   Mode Badges
+   =================================== */
+.mode-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3rem 0.7rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.mode-badge.adb {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.mode-badge.app {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
+}
+
+.mode-badge.hybrid {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+}
+
+.mode-badge.beta {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+    animation: betaPulse 2s ease-in-out infinite;
+}
+
+@keyframes betaPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.85;
+    }
+}
+
+.mode-badge.windows {
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(14, 165, 233, 0.3);
+}
+
+/* ===================================
+   Hotkey Badge
+   =================================== */
+.hotkey-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.65rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Consolas', monospace;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: #e2e8f0;
+    border: 1px solid #475569;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.hotkey-badge::before {
+    content: "⌨";
+    font-size: 0.8rem;
 }
 
 /* ===================================
    Documentation Sections
    =================================== */
 .doc-section {
-    margin-bottom: 4rem;
-    padding: 2.5rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
     background: #ffffff;
     border-radius: 16px;
     border: 1px solid #e2e8f0;
@@ -169,43 +284,44 @@ body {
 .section-title {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    font-size: 2rem;
+    gap: 0.85rem;
+    font-size: 1.6rem;
     color: #1a1a2e;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     font-weight: 700;
 }
 
 .section-icon {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     color: #6366f1;
+    flex-shrink: 0;
 }
 
 .section-intro {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: #475569;
-    margin-bottom: 2rem;
-    line-height: 1.8;
-    padding-left: 3rem;
+    margin-bottom: 1.75rem;
+    line-height: 1.7;
+    padding-left: 2.75rem;
 }
 
 /* ===================================
-   Feature Details
+   Feature Details with Header
    =================================== */
 .feature-detail {
-    margin-bottom: 2.5rem;
-    padding: 1.5rem;
+    margin-bottom: 1.25rem;
+    padding: 1.25rem 1.5rem;
     background: #f8fafc;
-    border-radius: 12px;
-    border-left: 3px solid #6366f1;
+    border-radius: 8px;
+    border-left: 2px solid #6366f1;
     transition: all 0.3s ease;
 }
 
-.feature-detail:hover {
-    background: #f0f4ff;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.1);
+.feature-detail:last-child {
+    margin-bottom: 0;
 }
+
 
 .feature-detail.highlight {
     background: #f0f4ff;
@@ -214,24 +330,163 @@ body {
     animation: pulse 1s ease-in-out;
 }
 
-.feature-image {
-    width: 100%;
-    height: auto;
-    margin-top: 1.2rem;
-    border-radius: 14px;
-
-    /* Modern frame */
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    background: #ffffff;
-    padding: 8px;
-
-    /* Soft depth */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-
-    /* Smooth interaction */
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+/* Feature Header with Title & Badges */
+.feature-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.65rem;
+    flex-wrap: wrap;
 }
 
+.feature-header h3 {
+    font-size: 1.15rem;
+    color: #1a1a2e;
+    font-weight: 600;
+    margin: 0;
+}
+
+.feature-badges {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.feature-detail p {
+    color: #475569;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Feature Images */
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-top: 1.25rem;
+}
+
+.feature-image {
+    max-height: 400px;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    padding: 6px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+}
+
+.feature-image:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-image img {
+    width: 100%;
+}
+
+/* Expand Button on Image Hover */
+.image-expand-btn {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    background: rgba(99, 102, 241, 0.9);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.image-expand-btn svg {
+    width: 20px;
+    height: 20px;
+    color: #fff;
+}
+
+.image-wrapper:hover .image-expand-btn {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.image-expand-btn:hover {
+    background: rgba(99, 102, 241, 1);
+    transform: scale(1.1);
+}
+
+/* ===================================
+   Fullscreen Lightbox Overlay
+   =================================== */
+#image-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    cursor: pointer;
+}
+
+#image-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    cursor: default;
+}
+
+#image-lightbox.active .lightbox-img {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    background: #ef4444;
+    border: none;
+    border-radius: 50%;
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+    z-index: 10000;
+}
+
+.lightbox-close:hover {
+    background: #dc2626;
+    transform: scale(1.1) rotate(90deg);
+}
 
 
 @keyframes pulse {
@@ -246,25 +501,10 @@ body {
     }
 }
 
-.feature-detail h3 {
-    font-size: 1.4rem;
-    color: #1a1a2e;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-}
-
-.feature-detail p {
-    color: #475569;
-    line-height: 1.8;
-    font-size: 1rem;
-}
-
-
 /* ===================================
    Responsive Design
    =================================== */
 @media (max-width: 1024px) {
-
     .docs-content {
         padding: 2rem 1.5rem;
     }
@@ -274,7 +514,11 @@ body {
     }
 
     .section-title {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+    }
+
+    .mode-legend {
+        gap: 1rem;
     }
 }
 
@@ -310,17 +554,62 @@ body {
     }
 
     .section-title {
-        font-size: 1.4rem;
+        font-size: 1.25rem;
         flex-direction: column;
         align-items: flex-start;
+        gap: 0.5rem;
     }
 
     .section-intro {
         padding-left: 0;
     }
 
-    .feature-detail h3 {
-        font-size: 1.2rem;
+    .feature-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+    }
+
+    .feature-header h3 {
+        font-size: 1.05rem;
+    }
+
+    .feature-badges {
+        width: 100%;
+    }
+
+    .mode-legend {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1rem 1.25rem;
+    }
+
+    .doc-section {
+        padding: 1.5rem 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-detail {
+        padding: 1rem;
+    }
+
+    .feature-header h3 {
+        font-size: 1rem;
+    }
+
+    .mode-badge {
+        font-size: 0.65rem;
+        padding: 0.25rem 0.6rem;
+    }
+
+    .hotkey-badge {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .feature-image {
+        max-width: 100%;
     }
 }
 
