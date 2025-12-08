@@ -1,0 +1,231 @@
+/* ===================================
+   Base Reset
+=================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #f7f6f9;
+    color: #1a1a2e;
+    line-height: 1.6;
+}
+
+/* ===================================
+   Documentation Layout
+=================================== */
+.docs-container {
+    display: flex;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-top: 80px;
+}
+
+.docs-content {
+    flex: 1;
+    padding: 2rem 3rem;
+}
+
+/* ===================================
+   Sections
+=================================== */
+.doc-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    transition: 0.3s ease;
+}
+
+.doc-section.highlight {
+    background: #f0f4ff;
+    border-color: #c7d2fe;
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.15);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.section-icon {
+    width: 32px;
+    height: 32px;
+    color: #6366f1;
+}
+
+.section-intro {
+    font-size: 1rem;
+    color: #475569;
+    margin-bottom: 1.75rem;
+    padding-left: 2.75rem;
+}
+
+/* ===================================
+   Feature Boxes
+=================================== */
+.feature-detail {
+    margin-bottom: 1.25rem;
+    padding: 1.25rem 1.5rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-left: 2px solid #6366f1;
+    transition: 0.3s ease;
+}
+
+.feature-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.65rem;
+}
+
+.feature-header h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.feature-detail.highlight {
+    background: #f0f4ff;
+    border-left-color: #8b5cf6;
+    box-shadow: 0 6px 25px rgba(99, 102, 241, 0.2);
+}
+
+/* ===================================
+   Alert Boxes
+=================================== */
+.alert-box {
+    display: flex;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    border-left: 4px solid;
+    margin: 1.25rem 0;
+}
+
+.alert-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.alert-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.alert-text {
+    font-size: 0.875rem;
+}
+
+/* Warning */
+.alert-box.warning {
+    background: #fef3c7;
+    border-left-color: #f59e0b;
+    color: #92400e;
+}
+
+/* Tip */
+.alert-box.tip {
+    background: #dcfce7;
+    border-left-color: #22c55e;
+    color: #166534;
+}
+
+/* Info */
+.alert-box.info {
+    background: #dbeafe;
+    border-left-color: #3b82f6;
+    color: #1e40af;
+}
+
+/* Error */
+.alert-box.error {
+    background: #fee2e2;
+    border-left-color: #ef4444;
+    color: #991b1b;
+}
+
+/* ===================================
+   Code Blocks
+=================================== */
+.code-block {
+    position: relative;
+    background: #1e293b;
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.code-block code {
+    color: #e2e8f0;
+    font-family: 'Consolas', monospace;
+    font-size: 0.875rem;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    padding: 0.45rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.copy-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* ===================================
+   Responsive
+=================================== */
+@media (max-width: 768px) {
+    .docs-content {
+        padding: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-intro {
+        padding-left: 0;
+    }
+
+    .feature-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .doc-section {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .feature-detail {
+        padding: 1rem;
+    }
+
+    .alert-box {
+        flex-direction: column;
+    }
+}

@@ -171,7 +171,9 @@
                     <a href="#troubleshooting" class="nav-section-link">🔧 Help & Support</a>
                     <ul class="nav-subsection">
                         <li><a href="#troubleshooting">Troubleshooting</a></li>
+                        <li><a href="#known-limitations">Known Limitations</a></li>
                         <li><a href="#security-privacy">Security & Privacy</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
             </nav>
@@ -188,26 +190,6 @@
                     app).
                     Some features support both modes for flexibility.
                 </p>
-
-                <!-- Mode Legend -->
-                <div class="mode-legend">
-                    <div class="legend-item">
-                        <span class="mode-badge adb">ADB</span>
-                        <span>Requires USB Debugging</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="mode-badge app">APP</span>
-                        <span>Requires Companion App</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="mode-badge hybrid">ADB + APP</span>
-                        <span>Works with Both</span>
-                    </div>
-                    <div class="legend-item">
-                        <span class="mode-badge beta">Windows APP</span>
-                        <span>For Windows functionality</span>
-                    </div>
-                </div>
             </article>
 
             <!-- ===================== QUICK START GUIDE ===================== -->
@@ -297,7 +279,6 @@
                 <!-- Visual Architecture Diagram -->
                 <div class="architecture-diagram">
                     <div class="arch-layer">
-                        <span class="arch-layer-label">Windows</span>
                         <div class="arch-components">
                             <div class="arch-box windows">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -306,8 +287,8 @@
                                 </svg>
                                 Windows App (Flutter)
                             </div>
-                            <div class="arch-box bridge">Scrcpy Backend</div>
-                            <div class="arch-box bridge">ADB Bridge</div>
+                            <div class="arch-box bridge">Scrcpy Command</div>
+                            <div class="arch-box bridge">ADB Command</div>
                         </div>
                     </div>
 
@@ -318,7 +299,6 @@
                     </div>
 
                     <div class="arch-layer">
-                        <span class="arch-layer-label">Communication</span>
                         <div class="arch-components">
                             <div class="arch-box protocol">TCP/WebSocket</div>
                             <div class="arch-box protocol">Zeroconf/mDNS</div>
@@ -333,7 +313,6 @@
                     </div>
 
                     <div class="arch-layer">
-                        <span class="arch-layer-label">Android</span>
                         <div class="arch-components">
                             <div class="arch-box android">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -342,8 +321,8 @@
                                 </svg>
                                 Companion App (Flutter)
                             </div>
-                            <div class="arch-box android">Accessibility Service</div>
-                            <div class="arch-box android">Notification Listener</div>
+                            <div class="arch-box android">ADB Listener (TCP/Protocol)</div>
+                            <div class="arch-box android">APP Listener (API & WebSocket) </div>
                         </div>
                     </div>
                 </div>
@@ -396,7 +375,33 @@
                             set.</p>
                     </div>
                 </div>
+
             </section>
+
+
+            <!-- Mode Legend -->
+            <div class="mode-legend">
+                <div class="legend-item">
+                    <span class="mode-badge adb">ADB</span>
+                    <span>Requires USB Debugging</span>
+                </div>
+                <div class="legend-item">
+                    <span class="mode-badge app">APP</span>
+                    <span>Requires Companion App</span>
+                </div>
+                <div class="legend-item">
+                    <span class="mode-badge hybrid">ADB + APP</span>
+                    <span>Works with Both</span>
+                </div>
+                <div class="legend-item">
+                    <span class="mode-badge beta">Windows APP</span>
+                    <span>For Windows functionality</span>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
 
             <!-- ===================== SECTION 1: Device Projection & Interactive Control ===================== -->
             <section id="projection-control" class="doc-section">
@@ -777,6 +782,70 @@
                 </h2>
                 <p class="section-subtitle">Solutions for the most common problems users encounter</p>
 
+
+                <!-- Brand-Specific Issues -->
+                <h3 style="font-size: 1.15rem; color: #1a1a2e; margin: 2rem 0 1rem 0;">📱 Brand-Specific Known Issues
+                </h3>
+                <div class="brand-issues">
+                    <div class="brand-card">
+                        <h5>Samsung</h5>
+                        <p>DeX mode may conflict with screen mirroring. Disable Samsung DeX before using ADB mirroring.
+                        </p>
+                    </div>
+                    <div class="brand-card">
+                        <h5>Xiaomi / MIUI</h5>
+                        <p>Enable "USB Debugging (Security settings)" and "Install via USB" in Developer Options.</p>
+                    </div>
+                    <div class="brand-card">
+                        <h5>Vivo / Oppo / Realme</h5>
+                        <p>Disable aggressive battery optimization. Add app to "Background consumption management
+                            whitelist".</p>
+                    </div>
+                    <div class="brand-card">
+                        <h5>OnePlus</h5>
+                        <p>Enable "Disable Permission Monitoring" in Developer Options for smoother experience.</p>
+                    </div>
+                    <div class="brand-card">
+                        <h5>Huawei / Honor</h5>
+                        <p>Allow "Protected Apps" in battery settings. HDB mode may be required for some features.</p>
+                    </div>
+                    <div class="brand-card">
+                        <h5>Nothing Phone</h5>
+                        <p>Works well with stock Android. Ensure Developer Options are properly enabled.</p>
+                    </div>
+                </div>
+
+                <br>
+
+
+
+                <!-- Android 14+ Restrictions -->
+                <div class="error-card info">
+                    <div class="error-header">
+                        <div class="error-title">
+                            <span class="error-icon">ℹ️</span>
+                            Android 14+ Restricted Settings
+                        </div>
+                        <div class="error-tags">
+                            <span class="error-tag">Android 14</span>
+                            <span class="error-tag">Security</span>
+                        </div>
+                    </div>
+                    <p class="error-cause">
+                        Android 14 and newer versions restrict sideloaded apps from accessing sensitive permissions like
+                        Accessibility and Notification Listener directly.
+                    </p>
+                    <div class="error-solution">
+                        <h5>✓ Solution</h5>
+                        <ul>
+                            <li>Go to <strong>Settings → Apps → [App Name] → ⋮ menu → Allow restricted settings</strong>
+                            </li>
+                            <li>Re-open the app and grant the required permissions</li>
+                            <li>If using ADB install, the restriction may not apply</li>
+                        </ul>
+                    </div>
+                </div>
+
                 <!-- ADB Connection Issues -->
                 <div class="error-card">
                     <div class="error-header">
@@ -834,34 +903,6 @@
                     </div>
                 </div>
 
-                <!-- Scrcpy Launch Error -->
-                <div class="error-card">
-                    <div class="error-header">
-                        <div class="error-title">
-                            <span class="error-icon">❌</span>
-                            Scrcpy Failed to Start
-                        </div>
-                        <div class="error-tags">
-                            <span class="error-tag">Screen Mirroring</span>
-                            <span class="error-tag">Scrcpy</span>
-                        </div>
-                    </div>
-                    <p class="error-cause">
-                        Screen mirroring failed to launch. This can happen if scrcpy binaries are missing,
-                        the device doesn't support the required codec, or there's a port conflict.
-                    </p>
-                    <div class="error-solution">
-                        <h5>✓ Solution</h5>
-                        <ul>
-                            <li>Ensure <strong>scrcpy</strong> folder exists in the application directory</li>
-                            <li>Update to the latest version of ADB Device Manager</li>
-                            <li>Close other apps that might be using video encoding (OBS, Discord, etc.)</li>
-                            <li>Try reducing video quality in settings</li>
-                            <li>Install <strong>Microsoft Visual C++ Redistributable</strong> if missing</li>
-                        </ul>
-                    </div>
-                </div>
-
                 <!-- Permission Issues -->
                 <div class="error-card warning">
                     <div class="error-header">
@@ -891,64 +932,7 @@
                     </div>
                 </div>
 
-                <!-- Android 14+ Restrictions -->
-                <div class="error-card info">
-                    <div class="error-header">
-                        <div class="error-title">
-                            <span class="error-icon">ℹ️</span>
-                            Android 14+ Restricted Settings
-                        </div>
-                        <div class="error-tags">
-                            <span class="error-tag">Android 14</span>
-                            <span class="error-tag">Security</span>
-                        </div>
-                    </div>
-                    <p class="error-cause">
-                        Android 14 and newer versions restrict sideloaded apps from accessing sensitive permissions like
-                        Accessibility and Notification Listener directly.
-                    </p>
-                    <div class="error-solution">
-                        <h5>✓ Solution</h5>
-                        <ul>
-                            <li>Go to <strong>Settings → Apps → [App Name] → ⋮ menu → Allow restricted settings</strong>
-                            </li>
-                            <li>Re-open the app and grant the required permissions</li>
-                            <li>If using ADB install, the restriction may not apply</li>
-                        </ul>
-                    </div>
-                </div>
 
-                <!-- Brand-Specific Issues -->
-                <h3 style="font-size: 1.15rem; color: #1a1a2e; margin: 2rem 0 1rem 0;">📱 Brand-Specific Known Issues
-                </h3>
-                <div class="brand-issues">
-                    <div class="brand-card">
-                        <h5>Samsung</h5>
-                        <p>DeX mode may conflict with screen mirroring. Disable Samsung DeX before using ADB mirroring.
-                        </p>
-                    </div>
-                    <div class="brand-card">
-                        <h5>Xiaomi / MIUI</h5>
-                        <p>Enable "USB Debugging (Security settings)" and "Install via USB" in Developer Options.</p>
-                    </div>
-                    <div class="brand-card">
-                        <h5>Vivo / Oppo / Realme</h5>
-                        <p>Disable aggressive battery optimization. Add app to "Background consumption management
-                            whitelist".</p>
-                    </div>
-                    <div class="brand-card">
-                        <h5>OnePlus</h5>
-                        <p>Enable "Disable Permission Monitoring" in Developer Options for smoother experience.</p>
-                    </div>
-                    <div class="brand-card">
-                        <h5>Huawei / Honor</h5>
-                        <p>Allow "Protected Apps" in battery settings. HDB mode may be required for some features.</p>
-                    </div>
-                    <div class="brand-card">
-                        <h5>Nothing Phone</h5>
-                        <p>Works well with stock Android. Ensure Developer Options are properly enabled.</p>
-                    </div>
-                </div>
 
                 <!-- Warning Alert -->
                 <div class="alert-box warning" style="margin-top: 2rem;">
@@ -965,6 +949,102 @@
                                 href="support.html" style="color: inherit; text-decoration: underline;">Support page</a>
                             to report issues or request help from our community.</p>
                     </div>
+                </div>
+            </section>
+
+            <!-- ===================== KNOWN LIMITATIONS SECTION ===================== -->
+            <section id="known-limitations" class="doc-section">
+                <h2 class="section-title">
+                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    Known Limitations
+                </h2>
+                <p class="section-intro">We believe in transparency. Here are the current limitations you should be
+                    aware of.</p>
+
+                <div class="feature-detail">
+                    <div class="feature-header">
+                        <h3>🔒 Android 14+ Background Restrictions</h3>
+                    </div>
+                    <p>
+                        Android 14 and newer versions impose stricter background process limitations. Sideloaded apps
+                        may require
+                        manual permission grants via "Allow restricted settings". Some real-time features may be
+                        affected when
+                        the companion app is in background.
+                    </p>
+                </div>
+
+                <div class="feature-detail">
+                    <div class="feature-header">
+                        <h3>🔊 Audio Mirroring Delay</h3>
+                    </div>
+                    <p>
+                        Audio mirroring may have a slight delay (50-200ms) especially over Wi-Fi. This is inherent to
+                        the streaming
+                        process. For synchronization-critical tasks, use USB connection which provides lower latency.
+                    </p>
+                </div>
+
+                <div class="feature-detail">
+                    <div class="feature-header">
+                        <h3>📱 SMS Access Varies by Brand</h3>
+                    </div>
+                    <p>
+                        Some Android manufacturers (especially Xiaomi MIUI, Samsung One UI) restrict SMS access to
+                        system apps.
+                        ADB extraction works on most devices, but APP Mode SMS sync may be limited on certain brands.
+                    </p>
+                </div>
+
+                <div class="feature-detail">
+                    <div class="feature-header">
+                        <h3>🖼️ Multi-Window Behavior</h3>
+                    </div>
+                    <p>
+                        Multi-window display behavior varies significantly between Android versions and OEM
+                        implementations.
+                        Split-screen and freeform modes may not be supported on all devices. Best experience is on
+                        Android 12+.
+                    </p>
+                </div>
+
+                <div class="feature-detail">
+                    <div class="feature-header">
+                        <h3>📶 Wi-Fi Stability</h3>
+                    </div>
+                    <p>
+                        Wireless connections depend on your network quality. Unstable Wi-Fi, router issues, or network
+                        congestion
+                        can cause disconnections. For the most stable experience, use USB connection or ensure a strong
+                        Wi-Fi signal.
+                    </p>
+                </div>
+
+                <div class="feature-detail">
+                    <div class="feature-header">
+                        <h3>🔔 Notification Actions Limited</h3>
+                    </div>
+                    <p>
+                        While you can view and dismiss notifications, interactive notification actions (like "Reply" or
+                        "Mark as read")
+                        may not work on all apps due to Android security restrictions on third-party notification
+                        listeners.
+                    </p>
+                </div>
+
+                <div class="feature-detail">
+                    <div class="feature-header">
+                        <h3>🎮 Hardware Codec Support</h3>
+                    </div>
+                    <p>
+                        Screen mirroring uses hardware video encoding. Some older devices or devices with limited codec
+                        support may
+                        experience reduced frame rates or quality. scrcpy falls back to software encoding when needed.
+                    </p>
                 </div>
             </section>
 
@@ -1017,47 +1097,106 @@
                         <p>Communication happens directly between your Android device and Windows PC using TCP/WebSocket
                             over your local network.</p>
                     </div>
-
-                    <div class="security-card">
-                        <div class="card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M12 6v6l4 2"></path>
-                            </svg>
-                        </div>
-                        <h4>Open Source Tooling</h4>
-                        <p>We use trusted open-source tools like scrcpy and ADB. You can verify exactly what commands
-                            are being executed on your device.</p>
-                    </div>
                 </div>
 
                 <!-- Permissions Explanation Table -->
                 <div class="permissions-table">
                     <h4>📋 Why We Need These Permissions</h4>
+                    <!-- Notifications -->
                     <div class="permission-item">
                         <span class="permission-name">Notification Access</span>
-                        <span class="permission-reason">To sync and display your phone notifications on PC</span>
+                        <span class="permission-reason">To sync and show your phone notifications on your PC.</span>
                     </div>
+
+                    <!-- Calls -->
                     <div class="permission-item">
-                        <span class="permission-name">Accessibility Service</span>
-                        <span class="permission-reason">For gesture controls and app interaction automation</span>
+                        <span class="permission-name">Phone & Call Controls</span>
+                        <span class="permission-reason">Lets the app detect incoming calls, show caller info, and allow
+                            call answer/decline actions from the PC.</span>
                     </div>
+
+                    <!-- Contacts -->
                     <div class="permission-item">
-                        <span class="permission-name">Contacts & Call Logs</span>
-                        <span class="permission-reason">To display contacts and call history in the app</span>
+                        <span class="permission-name">Contacts Access</span>
+                        <span class="permission-reason">Shows your saved contacts for call logs, SMS display, and
+                            communication features.</span>
                     </div>
+
+                    <!-- SMS -->
                     <div class="permission-item">
-                        <span class="permission-name">SMS Messages</span>
-                        <span class="permission-reason">To view and manage text messages from your PC</span>
+                        <span class="permission-name">SMS Access</span>
+                        <span class="permission-reason">To view, send, and sync text messages between your phone and
+                            Windows.</span>
                     </div>
+
+                    <!-- Storage / Files -->
                     <div class="permission-item">
                         <span class="permission-name">Storage Access</span>
-                        <span class="permission-reason">For file transfer functionality between devices</span>
+                        <span class="permission-reason">Enables fast file transfer between your Android device and
+                            Windows.</span>
                     </div>
+
+                    <!-- Special File Management -->
+                    <div class="permission-item">
+                        <span class="permission-name">Manage All Files (Android 11+)</span>
+                        <span class="permission-reason">Needed for full file-explorer functionality and unrestricted
+                            media access.</span>
+                    </div>
+
+                    <!-- Camera -->
                     <div class="permission-item">
                         <span class="permission-name">Camera Access</span>
-                        <span class="permission-reason">For remote camera streaming to Windows</span>
+                        <span class="permission-reason">For QR code pairing and optional remote camera streaming.</span>
                     </div>
+
+                    <!-- Media & Music -->
+                    <div class="permission-item">
+                        <span class="permission-name">Media Control</span>
+                        <span class="permission-reason">Allows Windows to control your phone’s music playback.</span>
+                    </div>
+
+                    <!-- Wallpaper -->
+                    <div class="permission-item">
+                        <span class="permission-name">Wallpaper Access</span>
+                        <span class="permission-reason">To fetch or set wallpapers during personalization
+                            features.</span>
+                    </div>
+
+                    <!-- Audio -->
+                    <div class="permission-item">
+                        <span class="permission-name">Audio Recording</span>
+                        <span class="permission-reason">Required for features like screen/audio streaming and
+                            voice-related tools.</span>
+                    </div>
+
+                    <!-- Projection -->
+                    <div class="permission-item">
+                        <span class="permission-name">Screen Casting</span>
+                        <span class="permission-reason">Used for screen sharing, screen mirroring, and display
+                            capture.</span>
+                    </div>
+
+                    <!-- Multicast / Network -->
+                    <div class="permission-item">
+                        <span class="permission-name">Local Network Discovery</span>
+                        <span class="permission-reason">Helps your phone auto-detect the Windows app on the same
+                            WiFi.</span>
+                    </div>
+
+                    <!-- Boot Start -->
+                    <div class="permission-item">
+                        <span class="permission-name">Auto-Start on Boot</span>
+                        <span class="permission-reason">Ensures the app reconnects to Windows automatically after
+                            restarting the phone.</span>
+                    </div>
+
+                    <!-- Battery -->
+                    <div class="permission-item">
+                        <span class="permission-name">Battery Optimization Ignore</span>
+                        <span class="permission-reason">Prevents the app from being killed in the background for stable
+                            connection.</span>
+                    </div>
+
                 </div>
 
                 <!-- Privacy Commitment Alert -->
@@ -1075,6 +1214,112 @@
                     </div>
                 </div>
             </section>
+
+            <!-- ===================== FAQ SECTION ===================== -->
+            <section id="faq" class="doc-section">
+                <h2 class="section-title">
+                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    Frequently Asked Questions
+                </h2>
+                <p class="section-intro">Quick answers to the most common questions.</p>
+
+                <div class="feature-detail">
+                    <div class="feature-header">
+                        <h3>Why does audio sometimes lag during mirroring?</h3>
+                    </div>
+                    <p>
+                        Audio streaming involves encoding on the phone, transmitting over USB/Wi-Fi, and decoding on
+                        Windows.
+                        Network latency, encoding overhead, and buffer settings all contribute to delay. Try using USB
+                        for lower latency,
+                        or adjust the audio buffer in settings if available.
+                    </p>
+                </div>
+
+                <div class="feature-detail">
+                    <div class="feature-header">
+                        <h3>Why does my wireless connection keep disconnecting?</h3>
+                    </div>
+                    <p>
+                        Wireless ADB connections can drop due to: unstable Wi-Fi, phone going to sleep, battery
+                        optimization killing
+                        the app, or network changes. Disable battery optimization for the companion app and keep your
+                        phone's
+                        "Stay awake while charging" option enabled in Developer Options.
+                    </p>
+                </div>
+
+                <div class="feature-detail">
+                    <div class="feature-header">
+                        <h3>Why aren't my notifications showing on PC?</h3>
+                    </div>
+                    <p>
+                        Check that Notification Access permission is granted in Android Settings → Apps → Special Access
+                        → Notification Access.
+                        On Android 14+, you may also need to "Allow restricted settings" for the companion app. Ensure
+                        the app is
+                        not being killed by battery optimization.
+                    </p>
+                </div>
+
+                <div class="feature-detail">
+                    <div class="feature-header">
+                        <h3>Why does APP Mode require so many permissions?</h3>
+                    </div>
+                    <p>
+                        APP Mode provides deep integration: notifications require Notification Listener, automation
+                        features use
+                        Accessibility Service, file transfer needs Storage access, etc. Each permission directly maps to
+                        a feature.
+                        We only request what's needed for functionality — no data is collected or sent anywhere.
+                    </p>
+                </div>
+
+                <div class="feature-detail">
+                    <div class="feature-header">
+                        <h3>Why does scrcpy ask for confirmation on my phone?</h3>
+                    </div>
+                    <p>
+                        This is an Android security feature. When ADB tries to access screen capture or audio, Android
+                        shows a
+                        permission dialog. This is normal and expected — simply accept to allow mirroring. The prompt
+                        may appear
+                        each time you start mirroring on some devices.
+                    </p>
+                </div>
+
+                <div class="feature-detail">
+                    <div class="feature-header">
+                        <h3>Can I use this app without the companion Android app?</h3>
+                    </div>
+                    <p>
+                        Yes! ADB Mode features (screen mirroring, audio, APK install, camera) work with just USB
+                        Debugging enabled —
+                        no companion app needed. The companion app is only required for APP Mode features like
+                        notifications,
+                        media control, and real-time file sync.
+                    </p>
+                </div>
+
+                <div class="feature-detail">
+                    <div class="feature-header">
+                        <h3>Is my data safe? Where does it go?</h3>
+                    </div>
+                    <p>
+                        All data stays completely local. Communication happens directly between your Android device and
+                        your Windows PC
+                        over your local network or USB. There is no cloud, no external servers, no accounts, and no data
+                        collection.
+                        See our <a href="#security-privacy" style="color: #6366f1;">Security & Privacy</a> section for
+                        details.
+                    </p>
+                </div>
+            </section>
+
         </main>
     </div>
 
@@ -1115,7 +1360,7 @@
             });
 
             // Active navigation highlighting
-            const sections = document.querySelectorAll('.doc-section, .feature-detail');
+            const sections = document.querySelectorAll('section, .feature-detail');
             const navLinks = document.querySelectorAll('.sidebar-nav a');
 
             window.addEventListener('scroll', () => {
@@ -1212,74 +1457,6 @@
             });
         })();
 
-        // ==================== COPY TO CLIPBOARD FOR CODE ====================
-        (function () {
-            // Add copy functionality to inline code elements
-            document.querySelectorAll('.code').forEach(codeEl => {
-                codeEl.style.cursor = 'pointer';
-                codeEl.setAttribute('title', 'Click to copy');
-
-                codeEl.addEventListener('click', async function () {
-                    try {
-                        await navigator.clipboard.writeText(this.textContent);
-                        const originalText = this.textContent;
-                        const originalBg = this.style.background;
-
-                        this.textContent = '✓ Copied!';
-                        this.style.background = '#dcfce7';
-                        this.style.color = '#16a34a';
-
-                        setTimeout(() => {
-                            this.textContent = originalText;
-                            this.style.background = originalBg || '#f0f4ff';
-                            this.style.color = '#6366f1';
-                        }, 1500);
-                    } catch (err) {
-                        console.error('Failed to copy:', err);
-                    }
-                });
-            });
-
-            // Add copy buttons to code blocks
-            document.querySelectorAll('.code-block').forEach(block => {
-                const copyBtn = document.createElement('button');
-                copyBtn.className = 'copy-btn';
-                copyBtn.innerHTML = `
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                    </svg>
-                `;
-                copyBtn.setAttribute('aria-label', 'Copy to clipboard');
-                block.appendChild(copyBtn);
-
-                copyBtn.addEventListener('click', async function () {
-                    const code = block.querySelector('code');
-                    if (code) {
-                        try {
-                            await navigator.clipboard.writeText(code.textContent);
-                            this.classList.add('copied');
-                            this.innerHTML = `
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="20 6 9 17 4 12"></polyline>
-                                </svg>
-                            `;
-                            setTimeout(() => {
-                                this.classList.remove('copied');
-                                this.innerHTML = `
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                                    </svg>
-                                `;
-                            }, 2000);
-                        } catch (err) {
-                            console.error('Failed to copy:', err);
-                        }
-                    }
-                });
-            });
-        })();
     </script>
 </body>
 

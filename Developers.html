@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========================= CORE META (SEO + MOBILE) ========================== -->
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO Description -->
+    <meta name="description"
+        content="ADB Device Manager Documentation — Complete guide to ADB Mode, App Mode, screen mirroring, notifications sync, desktop multi-window, file manager, and cross-device connectivity.">
+
+    <!-- Keywords -->
+    <meta name="keywords"
+        content="ADB documentation, ADB Device Manager guide, Android to PC guide, screen mirroring docs, ADB Mode tutorial, App Mode tutorial, file manager guide, Windows Android integration docs">
+
+    <meta name="author" content="ADB Device Manager">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://shrey113.github.io/Adb-Device-Manager-2/docs">
+
+    <!-- ========================= TITLE ========================== -->
+    <title>ADB Device Manager — Official Documentation & User Guide</title>
+
+    <!-- ========================= OPEN GRAPH (SOCIAL SHARE) ========================== -->
+    <meta property="og:title" content="ADB Device Manager — Documentation & User Guide">
+    <meta property="og:description"
+        content="Full documentation for ADB Device Manager including setup guide, features, ADB Mode, App Mode, screen mirroring, notifications sync, media control and more.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://shrey113.github.io/Adb-Device-Manager-2/docs">
+    <meta property="og:image" content="https://shrey113.github.io/Adb-Device-Manager-2/images/app_png.png">
+    <meta property="og:site_name" content="ADB Device Manager">
+
+    <!-- ========================= TWITTER CARD ========================== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ADB Device Manager — Documentation">
+    <meta name="twitter:description"
+        content="Explore ADB Device Manager Documentation — Setup guide, features, and troubleshooting.">
+    <meta name="twitter:image" content="https://shrey113.github.io/Adb-Device-Manager-2/images/app_png.png">
+
+    <!-- ========================= STRUCTURED DATA (Docs Page) ========================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "ADB Device Manager — Official Documentation",
+      "description": "Complete documentation for ADB Device Manager including features, ADB Mode, App Mode, screen mirroring, notifications, multi-window, and Windows integration.",
+      "author": {
+        "@type": "Organization",
+        "name": "ADB Device Manager"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ADB Device Manager",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://shrey113.github.io/Adb-Device-Manager-2/images/app_png.png"
+        }
+      },
+      "mainEntityOfPage": "https://shrey113.github.io/Adb-Device-Manager-2/docs"
+    }
+    </script>
+
+    <!-- ========================= FAVICONS ========================== -->
+    <link rel="icon" href="images/app_png.png">
+    <link rel="apple-touch-icon" href="images/app_png.png">
+
+    <!-- ========================= PERFORMANCE (DNS + PRECONNECT) ========================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- ========================= FONTS ========================== -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet">
+    </noscript>
+
+    <!-- ========================= STYLES ========================== -->
+    <link rel="stylesheet" href="Developers.css">
+    <link rel="stylesheet" href="head.css">
+</head>
+
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <picture>
+                    <source srcset="images/app_webp_50.webp" type="image/webp">
+                    <img src="images/app_webp_100.webp" class="logo-icon" alt="ADB Device Manager" width="49"
+                        height="49" loading="lazy">
+                </picture>
+
+                <span class="logo-text">ADB Device Manager</span>
+            </div>
+
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="features.html" class="nav-link">Features</a>
+                <a href="#" class="nav-link active">Docs</a>
+                <a href="support.html" class="nav-link">Support</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Documentation Content -->
+    <div class="docs-container">
+
+        <!-- Main Documentation Content -->
+        <main class="docs-content">
+            <!-- ===================== DEVELOPER / CONTRIBUTION SECTION ===================== -->
+            <section id="developer" class="doc-section">
+                <h2 class="section-title">
+                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                    For Developers
+                </h2>
+                <p class="section-intro">Want to contribute or build from source? Here's everything you need to know.
+                </p>
+
+                <!-- Contribution Guide -->
+                <div id="contribution-guide" class="feature-detail">
+                    <div class="feature-header">
+                        <h3>🤝 Contribution Guide</h3>
+                    </div>
+                    <p>
+                        We welcome contributions from the community! Whether it's bug fixes, new features, or
+                        documentation
+                        improvements, your help makes this project better for everyone.
+                    </p>
+
+                    <h4 style="margin-top: 1.5rem; margin-bottom: 0.75rem; color: #1a1a2e; font-size: 1rem;">📁 Project
+                        Structure</h4>
+                    <div class="code-block">
+                        <code>Adb-Device-Manager-2/
+├── windows_app/          # Windows Flutter application
+│   ├── lib/              # Dart source code
+│   ├── assets/           # Images, fonts, resources
+│   └── pubspec.yaml      # Flutter dependencies
+├── android_app/          # Android companion app
+│   ├── app/src/main/     # Kotlin/Java source
+│   └── build.gradle      # Android build config
+├── scrcpy/               # Scrcpy binaries & wrapper
+├── docs/                 # Documentation website
+└── README.md</code>
+                    </div>
+
+                    <h4 style="margin-top: 1.5rem; margin-bottom: 0.75rem; color: #1a1a2e; font-size: 1rem;">🛠️
+                        Building the Windows App</h4>
+                    <div class="code-block">
+                        <code># Prerequisites: Flutter SDK, Visual Studio 2022
+git clone https://github.com/Shrey113/Adb-Device-Manager-2.git
+cd Adb-Device-Manager-2/windows_app
+flutter pub get
+flutter build windows --release</code>
+                    </div>
+
+                    <h4 style="margin-top: 1.5rem; margin-bottom: 0.75rem; color: #1a1a2e; font-size: 1rem;">📱 Building
+                        the Android Companion App</h4>
+                    <div class="code-block">
+                        <code># Prerequisites: Android Studio, Android SDK
+cd Adb-Device-Manager-2/android_app
+./gradlew assembleRelease
+# APK output: app/build/outputs/apk/release/</code>
+                    </div>
+
+                    <h4 style="margin-top: 1.5rem; margin-bottom: 0.75rem; color: #1a1a2e; font-size: 1rem;">✨ How to
+                        Contribute</h4>
+                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem; color: #475569; line-height: 1.8;">
+                        <li><strong>Fork</strong> the repository on GitHub</li>
+                        <li>Create a <strong>feature branch</strong>: <code
+                                class="code">git checkout -b feature/amazing-feature</code></li>
+                        <li>Make your changes and <strong>commit</strong>: <code
+                                class="code">git commit -m "Add amazing feature"</code></li>
+                        <li><strong>Push</strong> to your branch: <code
+                                class="code">git push origin feature/amazing-feature</code></li>
+                        <li>Open a <strong>Pull Request</strong> with a clear description of changes</li>
+                    </ul>
+
+                    <div class="alert-box info" style="margin-top: 1.5rem;">
+                        <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 16v-4M12 8h.01"></path>
+                        </svg>
+                        <div class="alert-content">
+                            <div class="alert-title">📜 License</div>
+                            <p class="alert-text">This project is open source. Please review the LICENSE file in the
+                                repository
+                                for terms of use, modification, and distribution rights.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Version Changelog -->
+                <div id="changelog" class="feature-detail">
+                    <div class="feature-header">
+                        <h3>📋 Version Changelog</h3>
+                    </div>
+                    <p style="margin-bottom: 1.5rem;">Track the evolution of ADB Device Manager with our release
+                        history.</p>
+
+                    <!-- Version 2.0 -->
+                    <div
+                        style="background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem; border-left: 4px solid #22c55e;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+                            <h4 style="color: #166534; font-size: 1.1rem; margin: 0;">v2.0.0 — Major Release</h4>
+                            <span
+                                style="background: #22c55e; color: white; padding: 0.25rem 0.75rem; border-radius: 50px; font-size: 0.75rem; font-weight: 600;">LATEST</span>
+                        </div>
+                        <p style="color: #15803d; font-size: 0.85rem; margin-bottom: 0.5rem;">December 2024</p>
+                        <ul
+                            style="margin: 0; padding-left: 1.25rem; color: #166534; font-size: 0.9rem; line-height: 1.7;">
+                            <li>Complete UI redesign with modern Flutter framework</li>
+                            <li>New Android Dex mode with virtual display support</li>
+                            <li>Multi-app running with independent audio channels</li>
+                            <li>Enhanced notification center with real-time sync</li>
+                            <li>Improved wireless ADB pairing</li>
+                            <li>QR-based file sharing system</li>
+                        </ul>
+                    </div>
+
+                    <!-- Version 1.5 -->
+                    <div
+                        style="background: #f8fafc; border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem; border-left: 4px solid #94a3b8;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+                            <h4 style="color: #334155; font-size: 1.1rem; margin: 0;">v1.5.0 — Feature Update</h4>
+                        </div>
+                        <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 0.5rem;">September 2024</p>
+                        <ul
+                            style="margin: 0; padding-left: 1.25rem; color: #475569; font-size: 0.9rem; line-height: 1.7;">
+                            <li>Added Bluetooth audio streaming to Windows</li>
+                            <li>Device finder with Zeroconf discovery</li>
+                            <li>Screen text recognition (OCR) with web search</li>
+                            <li>Performance optimizations for mirroring</li>
+                        </ul>
+                    </div>
+
+                    <!-- Version 1.0 -->
+                    <div
+                        style="background: #f8fafc; border-radius: 12px; padding: 1.25rem; margin-bottom: 1rem; border-left: 4px solid #94a3b8;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+                            <h4 style="color: #334155; font-size: 1.1rem; margin: 0;">v1.0.0 — Initial Release</h4>
+                        </div>
+                        <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 0.5rem;">June 2024</p>
+                        <ul
+                            style="margin: 0; padding-left: 1.25rem; color: #475569; font-size: 0.9rem; line-height: 1.7;">
+                            <li>Core screen mirroring with scrcpy</li>
+                            <li>Audio mirroring support</li>
+                            <li>File manager and APK installer</li>
+                            <li>Basic notification sync</li>
+                            <li>Contacts, SMS, and call history access</li>
+                        </ul>
+                    </div>
+
+                    <div class="alert-box tip" style="margin-top: 1.5rem;">
+                        <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 16v-4M12 8h.01"></path>
+                        </svg>
+                        <div class="alert-content">
+                            <div class="alert-title">🔔 Stay Updated</div>
+                            <p class="alert-text">Watch our <a href="https://github.com/Shrey113/Adb-Device-Manager-2"
+                                    target="_blank" style="color: inherit; text-decoration: underline;">GitHub
+                                    repository</a>
+                                to get notified about new releases and updates!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+        // Smooth scroll and highlight on navigation
+        document.addEventListener('DOMContentLoaded', function () {
+            // Handle hash navigation on page load
+            if (window.location.hash) {
+                setTimeout(() => {
+                    const element = document.querySelector(window.location.hash);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        element.classList.add('highlight');
+                        setTimeout(() => element.classList.remove('highlight'), 2000);
+                    }
+                }, 100);
+            }
+
+            // Handle all anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                        // Add highlight effect
+                        targetElement.classList.add('highlight');
+                        setTimeout(() => targetElement.classList.remove('highlight'), 2000);
+
+                        // Update URL hash
+                        history.pushState(null, null, targetId);
+                    }
+                });
+            });
+
+            // Active navigation highlighting
+            const sections = document.querySelectorAll('section, .feature-detail');
+            const navLinks = document.querySelectorAll('.sidebar-nav a');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= sectionTop - 200) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // ==================== COPY TO CLIPBOARD FOR CODE ====================
+        (function () {
+            // Add copy functionality to inline code elements
+            document.querySelectorAll('.code').forEach(codeEl => {
+                codeEl.style.cursor = 'pointer';
+                codeEl.setAttribute('title', 'Click to copy');
+
+                codeEl.addEventListener('click', async function () {
+                    try {
+                        await navigator.clipboard.writeText(this.textContent);
+                        const originalText = this.textContent;
+                        const originalBg = this.style.background;
+
+                        this.textContent = '✓ Copied!';
+                        this.style.background = '#dcfce7';
+                        this.style.color = '#16a34a';
+
+                        setTimeout(() => {
+                            this.textContent = originalText;
+                            this.style.background = originalBg || '#f0f4ff';
+                            this.style.color = '#6366f1';
+                        }, 1500);
+                    } catch (err) {
+                        console.error('Failed to copy:', err);
+                    }
+                });
+            });
+
+            // Add copy buttons to code blocks
+            document.querySelectorAll('.code-block').forEach(block => {
+                const copyBtn = document.createElement('button');
+                copyBtn.className = 'copy-btn';
+                copyBtn.innerHTML = `
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                `;
+                copyBtn.setAttribute('aria-label', 'Copy to clipboard');
+                block.appendChild(copyBtn);
+
+                copyBtn.addEventListener('click', async function () {
+                    const code = block.querySelector('code');
+                    if (code) {
+                        try {
+                            await navigator.clipboard.writeText(code.textContent);
+                            this.classList.add('copied');
+                            this.innerHTML = `
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            `;
+                            setTimeout(() => {
+                                this.classList.remove('copied');
+                                this.innerHTML = `
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                `;
+                            }, 2000);
+                        } catch (err) {
+                            console.error('Failed to copy:', err);
+                        }
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+
+</html>

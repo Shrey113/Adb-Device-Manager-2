@@ -692,7 +692,7 @@ body {
 
 .quick-step:hover {
     background: rgba(255, 255, 255, 0.25);
-    transform: translateY(-3px);
+    cursor: pointer;
 }
 
 .step-number {
@@ -756,6 +756,8 @@ body {
 .architecture-diagram {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 1.5rem;
     margin-bottom: 2rem;
 }
@@ -765,16 +767,6 @@ body {
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
-}
-
-.arch-layer-label {
-    width: 120px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    color: #64748b;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    flex-shrink: 0;
 }
 
 .arch-components {
@@ -794,10 +786,6 @@ body {
     gap: 0.5rem;
     transition: all 0.3s ease;
     cursor: default;
-}
-
-.arch-box:hover {
-    transform: translateY(-2px);
 }
 
 .arch-box.windows {
@@ -963,7 +951,6 @@ body {
 
 .security-card:hover {
     background: rgba(255, 255, 255, 0.12);
-    transform: translateY(-3px);
 }
 
 .security-card .card-icon {
@@ -1356,56 +1343,6 @@ body {
 }
 
 /* ===================================
-   Code Block with Copy Button
-   =================================== */
-.code-block {
-    position: relative;
-    background: #1e293b;
-    border-radius: 12px;
-    padding: 1.25rem 1.5rem;
-    margin: 1rem 0;
-    overflow-x: auto;
-}
-
-.code-block code {
-    color: #e2e8f0;
-    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Consolas', monospace;
-    font-size: 0.875rem;
-    line-height: 1.6;
-}
-
-.code-block .copy-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    border-radius: 6px;
-    padding: 0.5rem;
-    cursor: pointer;
-    color: #94a3b8;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.code-block .copy-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: #fff;
-}
-
-.code-block .copy-btn.copied {
-    background: #22c55e;
-    color: #fff;
-}
-
-.code-block .copy-btn svg {
-    width: 18px;
-    height: 18px;
-}
-
-/* ===================================
    Responsive Updates for New Sections
    =================================== */
 @media (max-width: 768px) {
@@ -1436,11 +1373,6 @@ body {
     .arch-layer {
         flex-direction: column;
         align-items: flex-start;
-    }
-
-    .arch-layer-label {
-        width: 100%;
-        margin-bottom: 0.5rem;
     }
 
     .dual-mode-grid {
