@@ -115,6 +115,15 @@
             <nav class="sidebar-nav">
                 <h3 class="sidebar-title">Documentation</h3>
 
+                <!-- Getting Started Section -->
+                <div class="nav-section">
+                    <a href="#quick-start" class="nav-section-link">🚀 Getting Started</a>
+                    <ul class="nav-subsection">
+                        <li><a href="#quick-start">Quick Start Guide</a></li>
+                        <li><a href="#architecture">How It Works</a></li>
+                    </ul>
+                </div>
+
                 <div class="nav-section">
                     <a href="#projection-control" class="nav-section-link">Device Projection & Control</a>
                     <ul class="nav-subsection">
@@ -146,6 +155,7 @@
                         <li><a href="#sms-messages">SMS Messages</a></li>
                     </ul>
                 </div>
+
                 <div class="nav-section">
                     <a href="#windows-integration" class="nav-section-link">Windows Integration</a>
                     <ul class="nav-subsection">
@@ -153,6 +163,15 @@
                         <li><a href="#bluetooth-pairing">Bluetooth Pairing</a></li>
                         <li><a href="#screen-text-web-search">Screen Text Web Search</a></li>
                         <li><a href="#device-finder">Device Finder</a></li>
+                    </ul>
+                </div>
+
+                <!-- Help & Support Section -->
+                <div class="nav-section">
+                    <a href="#troubleshooting" class="nav-section-link">🔧 Help & Support</a>
+                    <ul class="nav-subsection">
+                        <li><a href="#troubleshooting">Troubleshooting</a></li>
+                        <li><a href="#security-privacy">Security & Privacy</a></li>
                     </ul>
                 </div>
             </nav>
@@ -190,6 +209,194 @@
                     </div>
                 </div>
             </article>
+
+            <!-- ===================== QUICK START GUIDE ===================== -->
+            <section id="quick-start" class="quick-start-section">
+                <h2>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                    Quick Start Guide
+                </h2>
+                <p class="section-subtitle">Get up and running in just 6 simple steps</p>
+
+                <div class="quick-start-steps">
+                    <div class="quick-step">
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <h4>Install Windows App</h4>
+                            <p>Download and install ADB Device Manager on your Windows PC from the official download
+                                page.</p>
+                        </div>
+                    </div>
+
+                    <div class="quick-step">
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <h4>Install Android Companion App</h4>
+                            <p>Install the companion app on your Android device for APP Mode features like notifications
+                                and media control.</p>
+                        </div>
+                    </div>
+
+                    <div class="quick-step">
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <h4>Enable USB Debugging</h4>
+                            <p>Go to Settings → Developer Options → Enable USB Debugging on your Android device.</p>
+                        </div>
+                    </div>
+
+                    <div class="quick-step">
+                        <span class="step-number">4</span>
+                        <div class="step-content">
+                            <h4>Connect Your Device</h4>
+                            <p>Connect via USB cable or use Wireless ADB pairing. For Wi-Fi, ensure both devices are on
+                                the same network.</p>
+                        </div>
+                    </div>
+
+                    <div class="quick-step">
+                        <span class="step-number">5</span>
+                        <div class="step-content">
+                            <h4>Grant Permissions</h4>
+                            <p>Accept the "Allow USB Debugging" prompt on your phone and grant required permissions in
+                                the companion app.</p>
+                        </div>
+                    </div>
+
+                    <div class="quick-step">
+                        <span class="step-number">6</span>
+                        <div class="step-content">
+                            <h4>Start Using Features</h4>
+                            <p>Start screen mirroring, sync notifications, control media, and access all features from
+                                your Windows PC!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== ARCHITECTURE OVERVIEW ===================== -->
+            <section id="architecture" class="architecture-section">
+                <h2>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                        <path d="M10 6.5H14M17.5 10V14M10 17.5H14M6.5 10V14"></path>
+                    </svg>
+                    How It Works — Architecture Overview
+                </h2>
+                <p class="architecture-intro">
+                    ADB Device Manager uses a layered architecture to provide seamless connectivity between your Windows
+                    PC and Android devices.
+                    Understanding how the components work together will help you get the most out of the application.
+                </p>
+
+                <!-- Visual Architecture Diagram -->
+                <div class="architecture-diagram">
+                    <div class="arch-layer">
+                        <span class="arch-layer-label">Windows</span>
+                        <div class="arch-components">
+                            <div class="arch-box windows">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801" />
+                                </svg>
+                                Windows App (Flutter)
+                            </div>
+                            <div class="arch-box bridge">Scrcpy Backend</div>
+                            <div class="arch-box bridge">ADB Bridge</div>
+                        </div>
+                    </div>
+
+                    <div class="arch-connector">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12l7 7 7-7" />
+                        </svg>
+                    </div>
+
+                    <div class="arch-layer">
+                        <span class="arch-layer-label">Communication</span>
+                        <div class="arch-components">
+                            <div class="arch-box protocol">TCP/WebSocket</div>
+                            <div class="arch-box protocol">Zeroconf/mDNS</div>
+                            <div class="arch-box protocol">USB/ADB Protocol</div>
+                        </div>
+                    </div>
+
+                    <div class="arch-connector">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12l7 7 7-7" />
+                        </svg>
+                    </div>
+
+                    <div class="arch-layer">
+                        <span class="arch-layer-label">Android</span>
+                        <div class="arch-components">
+                            <div class="arch-box android">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24c-2.86-1.21-6.08-1.21-8.94 0L5.65 5.67c-.19-.29-.58-.38-.87-.2-.28.18-.37.54-.22.83L6.4 9.48C3.3 11.25 1.28 14.44 1 18h22c-.28-3.56-2.3-6.75-5.4-8.52zM7 15.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25zm10 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z" />
+                                </svg>
+                                Companion App (Flutter)
+                            </div>
+                            <div class="arch-box android">Accessibility Service</div>
+                            <div class="arch-box android">Notification Listener</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dual Mode Explanation -->
+                <h3 style="font-size: 1.25rem; color: #1a1a2e; margin-bottom: 1rem; margin-top: 2rem;">Understanding the
+                    Dual Mode System</h3>
+                <div class="dual-mode-grid">
+                    <div class="mode-card adb-mode">
+                        <h4>
+                            <span class="mode-badge adb">ADB</span>
+                            ADB Mode
+                        </h4>
+                        <ul>
+                            <li>Requires USB Debugging enabled</li>
+                            <li>Works over USB or Wireless ADB</li>
+                            <li>Uses scrcpy for screen mirroring</li>
+                            <li>Direct system-level access</li>
+                            <li>No companion app needed</li>
+                            <li>Best for: Screen mirroring, APK install, camera</li>
+                        </ul>
+                    </div>
+
+                    <div class="mode-card app-mode">
+                        <h4>
+                            <span class="mode-badge app">APP</span>
+                            APP Mode
+                        </h4>
+                        <ul>
+                            <li>Requires Companion App installed</li>
+                            <li>Works over Wi-Fi/LAN connection</li>
+                            <li>Real-time data synchronization</li>
+                            <li>Uses Android APIs for data access</li>
+                            <li>Auto-discovery via Zeroconf</li>
+                            <li>Best for: Notifications, media, files, contacts</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Info Alert -->
+                <div class="alert-box tip">
+                    <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 16v-4M12 8h.01"></path>
+                    </svg>
+                    <div class="alert-content">
+                        <div class="alert-title">💡 Pro Tip</div>
+                        <p class="alert-text">For the best experience, use both modes together! ADB Mode for screen
+                            mirroring and APP Mode for notifications and media control gives you the complete feature
+                            set.</p>
+                    </div>
+                </div>
+            </section>
 
             <!-- ===================== SECTION 1: Device Projection & Interactive Control ===================== -->
             <section id="projection-control" class="doc-section">
@@ -557,6 +764,317 @@
                     </p>
                 </div>
             </section>
+
+            <!-- ===================== TROUBLESHOOTING SECTION ===================== -->
+            <section id="troubleshooting" class="troubleshooting-section">
+                <h2>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                        <path d="M12 17h.01"></path>
+                    </svg>
+                    Troubleshooting & Common Issues
+                </h2>
+                <p class="section-subtitle">Solutions for the most common problems users encounter</p>
+
+                <!-- ADB Connection Issues -->
+                <div class="error-card">
+                    <div class="error-header">
+                        <div class="error-title">
+                            <span class="error-icon">❌</span>
+                            ADB Device Not Detected
+                        </div>
+                        <div class="error-tags">
+                            <span class="error-tag">ADB Mode</span>
+                            <span class="error-tag">Connection</span>
+                        </div>
+                    </div>
+                    <p class="error-cause">
+                        Your Windows PC cannot see the connected Android device. This usually happens when USB Debugging
+                        is disabled,
+                        the USB cable is faulty, or proper drivers are not installed.
+                    </p>
+                    <div class="error-solution">
+                        <h5>✓ Solution</h5>
+                        <ul>
+                            <li>Enable <strong>USB Debugging</strong> in Developer Options on your Android device</li>
+                            <li>Try a different USB cable (use data cables, not charge-only)</li>
+                            <li>Install <strong>Google USB Driver</strong> or your phone manufacturer's USB drivers</li>
+                            <li>Run <code class="code">adb devices</code> in terminal to verify connection</li>
+                            <li>Revoke USB debugging authorizations and re-authorize</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Wireless Pairing Failure -->
+                <div class="error-card warning">
+                    <div class="error-header">
+                        <div class="error-title">
+                            <span class="error-icon">⚠️</span>
+                            Wireless ADB Pairing Failed
+                        </div>
+                        <div class="error-tags">
+                            <span class="error-tag">Wi-Fi</span>
+                            <span class="error-tag">Pairing</span>
+                        </div>
+                    </div>
+                    <p class="error-cause">
+                        Wireless pairing requires Android 11+ and both devices must be on the same Wi-Fi network.
+                        Firewall settings or network isolation can block the connection.
+                    </p>
+                    <div class="error-solution">
+                        <h5>✓ Solution</h5>
+                        <ul>
+                            <li>Ensure both PC and phone are on the <strong>same Wi-Fi network</strong></li>
+                            <li>Enable <strong>Wireless debugging</strong> in Developer Options</li>
+                            <li>Disable Windows Firewall temporarily or add ADB to allowed apps</li>
+                            <li>Disable "AP isolation" or "Client isolation" in your router settings</li>
+                            <li>Try using the IP address and port shown on your phone</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Scrcpy Launch Error -->
+                <div class="error-card">
+                    <div class="error-header">
+                        <div class="error-title">
+                            <span class="error-icon">❌</span>
+                            Scrcpy Failed to Start
+                        </div>
+                        <div class="error-tags">
+                            <span class="error-tag">Screen Mirroring</span>
+                            <span class="error-tag">Scrcpy</span>
+                        </div>
+                    </div>
+                    <p class="error-cause">
+                        Screen mirroring failed to launch. This can happen if scrcpy binaries are missing,
+                        the device doesn't support the required codec, or there's a port conflict.
+                    </p>
+                    <div class="error-solution">
+                        <h5>✓ Solution</h5>
+                        <ul>
+                            <li>Ensure <strong>scrcpy</strong> folder exists in the application directory</li>
+                            <li>Update to the latest version of ADB Device Manager</li>
+                            <li>Close other apps that might be using video encoding (OBS, Discord, etc.)</li>
+                            <li>Try reducing video quality in settings</li>
+                            <li>Install <strong>Microsoft Visual C++ Redistributable</strong> if missing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Permission Issues -->
+                <div class="error-card warning">
+                    <div class="error-header">
+                        <div class="error-title">
+                            <span class="error-icon">⚠️</span>
+                            Companion App Permissions Not Working
+                        </div>
+                        <div class="error-tags">
+                            <span class="error-tag">APP Mode</span>
+                            <span class="error-tag">Permissions</span>
+                        </div>
+                    </div>
+                    <p class="error-cause">
+                        Some features like Notification Access or Accessibility Service are not working because the
+                        required
+                        permissions were not granted or were disabled by the system.
+                    </p>
+                    <div class="error-solution">
+                        <h5>✓ Solution</h5>
+                        <ul>
+                            <li>Go to <strong>Settings → Apps → Special Access</strong> on your phone</li>
+                            <li>Enable <strong>Notification Access</strong> for the companion app</li>
+                            <li>Enable <strong>Accessibility Service</strong> if required</li>
+                            <li>Disable battery optimization for the companion app</li>
+                            <li>On Android 14+, grant "Restricted Settings" access manually</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Android 14+ Restrictions -->
+                <div class="error-card info">
+                    <div class="error-header">
+                        <div class="error-title">
+                            <span class="error-icon">ℹ️</span>
+                            Android 14+ Restricted Settings
+                        </div>
+                        <div class="error-tags">
+                            <span class="error-tag">Android 14</span>
+                            <span class="error-tag">Security</span>
+                        </div>
+                    </div>
+                    <p class="error-cause">
+                        Android 14 and newer versions restrict sideloaded apps from accessing sensitive permissions like
+                        Accessibility and Notification Listener directly.
+                    </p>
+                    <div class="error-solution">
+                        <h5>✓ Solution</h5>
+                        <ul>
+                            <li>Go to <strong>Settings → Apps → [App Name] → ⋮ menu → Allow restricted settings</strong>
+                            </li>
+                            <li>Re-open the app and grant the required permissions</li>
+                            <li>If using ADB install, the restriction may not apply</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Brand-Specific Issues -->
+                <h3 style="font-size: 1.15rem; color: #1a1a2e; margin: 2rem 0 1rem 0;">📱 Brand-Specific Known Issues
+                </h3>
+                <div class="brand-issues">
+                    <div class="brand-card">
+                        <h5>Samsung</h5>
+                        <p>DeX mode may conflict with screen mirroring. Disable Samsung DeX before using ADB mirroring.
+                        </p>
+                    </div>
+                    <div class="brand-card">
+                        <h5>Xiaomi / MIUI</h5>
+                        <p>Enable "USB Debugging (Security settings)" and "Install via USB" in Developer Options.</p>
+                    </div>
+                    <div class="brand-card">
+                        <h5>Vivo / Oppo / Realme</h5>
+                        <p>Disable aggressive battery optimization. Add app to "Background consumption management
+                            whitelist".</p>
+                    </div>
+                    <div class="brand-card">
+                        <h5>OnePlus</h5>
+                        <p>Enable "Disable Permission Monitoring" in Developer Options for smoother experience.</p>
+                    </div>
+                    <div class="brand-card">
+                        <h5>Huawei / Honor</h5>
+                        <p>Allow "Protected Apps" in battery settings. HDB mode may be required for some features.</p>
+                    </div>
+                    <div class="brand-card">
+                        <h5>Nothing Phone</h5>
+                        <p>Works well with stock Android. Ensure Developer Options are properly enabled.</p>
+                    </div>
+                </div>
+
+                <!-- Warning Alert -->
+                <div class="alert-box warning" style="margin-top: 2rem;">
+                    <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                        </path>
+                        <line x1="12" y1="9" x2="12" y2="13"></line>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                    <div class="alert-content">
+                        <div class="alert-title">⚠️ Still Having Issues?</div>
+                        <p class="alert-text">If you're still experiencing problems, please visit our <a
+                                href="support.html" style="color: inherit; text-decoration: underline;">Support page</a>
+                            to report issues or request help from our community.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===================== SECURITY & PRIVACY SECTION ===================== -->
+            <section id="security-privacy" class="security-section">
+                <h2>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        <path d="M9 12l2 2 4-4"></path>
+                    </svg>
+                    Security & Privacy
+                </h2>
+                <p class="section-subtitle">Your data stays with you. Here's how we protect your privacy.</p>
+
+                <div class="security-grid">
+                    <div class="security-card">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                        </div>
+                        <h4>100% Local Storage</h4>
+                        <p>All your data stays on your devices. We never upload contacts, messages, notifications, or
+                            any personal information to external servers.</p>
+                    </div>
+
+                    <div class="security-card">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                                <line x1="6" y1="1" x2="6" y2="4"></line>
+                                <line x1="10" y1="1" x2="10" y2="4"></line>
+                                <line x1="14" y1="1" x2="14" y2="4"></line>
+                            </svg>
+                        </div>
+                        <h4>No Cloud Required</h4>
+                        <p>The app works entirely over your local network (LAN/Wi-Fi). There's no cloud service, no
+                            account creation, and no data harvesting.</p>
+                    </div>
+
+                    <div class="security-card">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                        </div>
+                        <h4>Direct Device-to-PC</h4>
+                        <p>Communication happens directly between your Android device and Windows PC using TCP/WebSocket
+                            over your local network.</p>
+                    </div>
+
+                    <div class="security-card">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 6v6l4 2"></path>
+                            </svg>
+                        </div>
+                        <h4>Open Source Tooling</h4>
+                        <p>We use trusted open-source tools like scrcpy and ADB. You can verify exactly what commands
+                            are being executed on your device.</p>
+                    </div>
+                </div>
+
+                <!-- Permissions Explanation Table -->
+                <div class="permissions-table">
+                    <h4>📋 Why We Need These Permissions</h4>
+                    <div class="permission-item">
+                        <span class="permission-name">Notification Access</span>
+                        <span class="permission-reason">To sync and display your phone notifications on PC</span>
+                    </div>
+                    <div class="permission-item">
+                        <span class="permission-name">Accessibility Service</span>
+                        <span class="permission-reason">For gesture controls and app interaction automation</span>
+                    </div>
+                    <div class="permission-item">
+                        <span class="permission-name">Contacts & Call Logs</span>
+                        <span class="permission-reason">To display contacts and call history in the app</span>
+                    </div>
+                    <div class="permission-item">
+                        <span class="permission-name">SMS Messages</span>
+                        <span class="permission-reason">To view and manage text messages from your PC</span>
+                    </div>
+                    <div class="permission-item">
+                        <span class="permission-name">Storage Access</span>
+                        <span class="permission-reason">For file transfer functionality between devices</span>
+                    </div>
+                    <div class="permission-item">
+                        <span class="permission-name">Camera Access</span>
+                        <span class="permission-reason">For remote camera streaming to Windows</span>
+                    </div>
+                </div>
+
+                <!-- Privacy Commitment Alert -->
+                <div class="alert-box tip"
+                    style="margin-top: 2rem; background: rgba(34, 197, 94, 0.1); border-left-color: #22c55e;">
+                    <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <div class="alert-content">
+                        <div class="alert-title" style="color: #fff;">✓ Our Privacy Commitment</div>
+                        <p class="alert-text" style="color: rgba(255,255,255,0.85);">We will <strong>never</strong>
+                            sell, share, or monetize your personal data. ADB Device Manager is designed as a
+                            productivity tool that respects your privacy completely.</p>
+                    </div>
+                </div>
+            </section>
         </main>
     </div>
 
@@ -690,6 +1208,75 @@
                 expandBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
                     openLightbox(img.src);
+                });
+            });
+        })();
+
+        // ==================== COPY TO CLIPBOARD FOR CODE ====================
+        (function () {
+            // Add copy functionality to inline code elements
+            document.querySelectorAll('.code').forEach(codeEl => {
+                codeEl.style.cursor = 'pointer';
+                codeEl.setAttribute('title', 'Click to copy');
+
+                codeEl.addEventListener('click', async function () {
+                    try {
+                        await navigator.clipboard.writeText(this.textContent);
+                        const originalText = this.textContent;
+                        const originalBg = this.style.background;
+
+                        this.textContent = '✓ Copied!';
+                        this.style.background = '#dcfce7';
+                        this.style.color = '#16a34a';
+
+                        setTimeout(() => {
+                            this.textContent = originalText;
+                            this.style.background = originalBg || '#f0f4ff';
+                            this.style.color = '#6366f1';
+                        }, 1500);
+                    } catch (err) {
+                        console.error('Failed to copy:', err);
+                    }
+                });
+            });
+
+            // Add copy buttons to code blocks
+            document.querySelectorAll('.code-block').forEach(block => {
+                const copyBtn = document.createElement('button');
+                copyBtn.className = 'copy-btn';
+                copyBtn.innerHTML = `
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                `;
+                copyBtn.setAttribute('aria-label', 'Copy to clipboard');
+                block.appendChild(copyBtn);
+
+                copyBtn.addEventListener('click', async function () {
+                    const code = block.querySelector('code');
+                    if (code) {
+                        try {
+                            await navigator.clipboard.writeText(code.textContent);
+                            this.classList.add('copied');
+                            this.innerHTML = `
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            `;
+                            setTimeout(() => {
+                                this.classList.remove('copied');
+                                this.innerHTML = `
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                    </svg>
+                                `;
+                            }, 2000);
+                        } catch (err) {
+                            console.error('Failed to copy:', err);
+                        }
+                    }
                 });
             });
         })();
