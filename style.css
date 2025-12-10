@@ -281,6 +281,19 @@ body {
     background: linear-gradient(145deg, #fffef9 0%, #fefbf0 40%, #fef7e0 100%);
 }
 
+.links {
+    color: #3b82f6;
+    /* Tailwind link blue */
+    font-weight: 600;
+    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s ease;
+}
+
+.links:hover {
+    opacity: 0.75;
+}
 
 .vip-icon {
     background: linear-gradient(145deg, #d4af37 0%, #c9a227 50%, #a68523 100%) !important;

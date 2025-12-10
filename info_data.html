@@ -1,316 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Intro Video Tutorial</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="info_data.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+    }
+  </style>
 </head>
-<style>
-    /* ========== Base ========== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  background: #000;
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* ========== Container Layout ========== */
-.container {
-  display: flex;
-  width: 90%;
-  height: 90vh;
-  background: rgba(15, 15, 15, 0.9);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
-}
-
-/* ========== Sidebar ========== */
-.sidebar {
-  width: 25%;
-  background: #000;
-  padding: 40px 25px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-}
-
-/* --- Scrollable Box --- */
-.sidebar-box {
-  position: relative;
-  background: #080808;
-  border-radius: 16px;
-  padding: 20px 25px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  overflow: hidden;
-}
-
-/* --- Vertical Dots --- */
-.nav-track {
-  position: absolute;
-  left: 10px;
-  top: 15%;
-  bottom: 15%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.nav-dots div {
-  width: 6px;
-  height: 8px;
-  margin-bottom: 5px;
-  background: rgba(255, 255, 255, 0.25);
-  border-radius: 5px;
-  transition: height 0.3s, background 0.3s;
-  cursor: pointer;
-}
-
-.nav-dots div.active {
-  background: #fff;
-  height: 45px;
-}
-
-/* --- Scrollable Titles --- */
-.video-titles {
-  list-style: none;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255,255,255,0.3) transparent;
-  padding-left: 20px;
-  margin-top: 20px;
-}
-
-.video-titles li {
-  padding: 12px 0;
-  font-size: 1rem;
-  color: #aaa;
-  cursor: pointer;
-  transition: color 0.3s ease, font-weight 0.3s ease;
-  line-height: 1.5;
-}
-
-.video-titles li.active {
-  font-weight: 700;
-  color: #fff;
-}
-
-/* --- Scrollbar Customization --- */
-.video-titles::-webkit-scrollbar {
-  width: 6px;
-}
-.video-titles::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #999, #666);
-  border-radius: 10px;
-}
-.video-titles::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-/* ========== Main Video Section ========== */
-.main-video {
-  flex: 1;
-  position: relative;
-  background: #111;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border: none;
-}
-
-/* ========== Video Controls ========== */
-.video-controls {
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  padding: 8px 25px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
-}
-
-/* --- Play Button --- */
-.play-btn {
-  background: rgba(255, 255, 255, 0.2);
-  border: none;
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-size: 18px;
-  margin-right: 12px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.1s ease;
-}
-.play-btn:hover {
-  background: rgba(255, 255, 255, 0.35);
-  transform: scale(1.08);
-}
-
-/* --- Progress + Time --- */
-#progressBar {
-  flex: 1;
-  margin: 0 10px;
-  accent-color: white;
-}
-
-#currentTime, #totalTime {
-  font-size: 14px;
-  color: #ddd;
-}
-
-</style>
 <body>
   <div class="container">
+    <!-- Left Sidebar with Video Titles -->
     <aside class="sidebar">
       <div class="sidebar-box">
         <div class="nav-track">
           <div class="nav-dots" id="navDots"></div>
         </div>
-
         <ul class="video-titles" id="videoTitles"></ul>
       </div>
     </aside>
 
+    <!-- Main Video Area -->
     <main class="main-video">
       <video id="videoPlayer" autoplay muted playsinline></video>
 
+      <!-- Helpful Links Section - Shows for USB Debugging video -->
+      <div class="helpful-links-section" id="helpfulLinksSection" style="display: none;">
+        <h3>
+          <span class="icon">🔗</span>
+          USB Debugging Guides by Brand
+        </h3>
+        <div class="links-grid">
+          <a href="https://help.airdroid.com/hc/en-us/articles/360045329413-How-to-Enable-USB-debugging-on-Xiaomi"
+            target="_blank" rel="noopener" class="brand-link xiaomi">
+            <span class="brand-icon">📱</span>
+            <span>Xiaomi</span>
+            <span class="external-icon">↗</span>
+          </a>
+          <a href="https://help.airdroid.com/hc/en-us/articles/360044847394-How-to-Enable-USB-debugging-on-Huawei"
+            target="_blank" rel="noopener" class="brand-link huawei">
+            <span class="brand-icon">📱</span>
+            <span>Huawei</span>
+            <span class="external-icon">↗</span>
+          </a>
+          <a href="https://help.airdroid.com/hc/en-us/articles/360045374013-How-to-Enable-USB-debugging-on-Samsung"
+            target="_blank" rel="noopener" class="brand-link samsung">
+            <span class="brand-icon">📱</span>
+            <span>Samsung</span>
+            <span class="external-icon">↗</span>
+          </a>
+          <a href="https://help.airdroid.com/hc/en-us/articles/360045661674-How-to-Enable-USB-debugging-on-Vivo"
+            target="_blank" rel="noopener" class="brand-link vivo">
+            <span class="brand-icon">📱</span>
+            <span>Vivo</span>
+            <span class="external-icon">↗</span>
+          </a>
+          <a href="https://help.airdroid.com/hc/en-us/articles/360045202593-How-to-Enable-USB-debugging-on-Smartisan"
+            target="_blank" rel="noopener" class="brand-link smartisan">
+            <span class="brand-icon">📱</span>
+            <span>Smartisan</span>
+            <span class="external-icon">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Video Controls -->
       <div class="video-controls">
         <button id="playPauseBtn" class="play-btn">
           <span id="playIcon">⏸</span>
         </button>
-
-        <span id="currentTime">00:00</span>
-        <input type="range" id="progressBar" value="0" min="0" step="0.1">
-        <span id="totalTime">00:00</span>
+        <span id="currentTime">0:00</span>
+        <div class="progress-container" id="progressContainer">
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progressFill"></div>
+            <div class="progress-bar-thumb" id="progressThumb"></div>
+          </div>
+        </div>
+        <span id="totalTime">0:00</span>
       </div>
     </main>
   </div>
 
-  <script src="script.js"></script>
-</body>
-<script>
+  <script>
+    // Video data with URL hash IDs for deep linking
     const videos = [
-  { src: "videos/test_1.mp4", title: "1. How to Add New Devices" },
-  { src: "videos/test_2.mp4", title: "2. How to Turn On USB Debugging" },
-  { src: "videos/test_3.mp4", title: "3. How to Connect via ADB" },
-  { src: "videos/test_4.mp4", title: "4. How to Connect via App Mode" }
-];
+      { src: "videos/test_1.mp4", title: "1. How to Add New Devices", hasLinks: false, id: "add_devices" },
+      { src: "videos/test_2.mp4", title: "2. How to Turn On USB Debugging", hasLinks: true, id: "usb_debugging" },
+      { src: "videos/test_3.mp4", title: "3. How to Connect via ADB", hasLinks: false, id: "connect_adb" },
+      { src: "videos/test_4.mp4", title: "4. How to Connect via App Mode", hasLinks: false, id: "app_mode" }
+    ];
 
-const videoPlayer = document.getElementById("videoPlayer");
-const titlesContainer = document.getElementById("videoTitles");
-const dotsContainer = document.getElementById("navDots");
-const progressBar = document.getElementById("progressBar");
-const currentTimeEl = document.getElementById("currentTime");
-const totalTimeEl = document.getElementById("totalTime");
-const playPauseBtn = document.getElementById("playPauseBtn");
-const playIcon = document.getElementById("playIcon");
+    const videoPlayer = document.getElementById("videoPlayer");
+    const titlesContainer = document.getElementById("videoTitles");
+    const dotsContainer = document.getElementById("navDots");
+    const progressContainer = document.getElementById("progressContainer");
+    const progressFill = document.getElementById("progressFill");
+    const progressThumb = document.getElementById("progressThumb");
+    const currentTimeEl = document.getElementById("currentTime");
+    const totalTimeEl = document.getElementById("totalTime");
+    const playPauseBtn = document.getElementById("playPauseBtn");
+    const playIcon = document.getElementById("playIcon");
+    const helpfulLinksSection = document.getElementById("helpfulLinksSection");
 
-let currentIndex = 0;
+    let currentIndex = 0;
 
-// Create sidebar items
-videos.forEach((video, index) => {
-  const li = document.createElement("li");
-  li.textContent = video.title;
-  li.addEventListener("click", () => switchVideo(index));
-  titlesContainer.appendChild(li);
+    // Create sidebar items
+    videos.forEach((video, index) => {
+      const li = document.createElement("li");
+      li.textContent = video.title;
+      li.dataset.id = video.id;
+      li.addEventListener("click", () => {
+        switchVideo(index);
+        updateUrlHash(video.id);
+      });
+      titlesContainer.appendChild(li);
 
-  const dot = document.createElement("div");
-  dot.addEventListener("click", () => switchVideo(index));
-  dotsContainer.appendChild(dot);
-});
+      const dot = document.createElement("div");
+      dot.addEventListener("click", () => {
+        switchVideo(index);
+        updateUrlHash(video.id);
+      });
+      dotsContainer.appendChild(dot);
+    });
 
-function switchVideo(index) {
-  currentIndex = index;
-  videoPlayer.src = videos[index].src;
-  videoPlayer.play();
-  updateActive();
-  playIcon.textContent = "⏸"; // Reset to pause
-}
+    // Update URL hash when switching videos
+    function updateUrlHash(id) {
+      history.replaceState(null, null, '#' + id);
+    }
 
-function updateActive() {
-  document.querySelectorAll(".video-titles li").forEach((el, i) => {
-    el.classList.toggle("active", i === currentIndex);
-  });
-  document.querySelectorAll(".nav-dots div").forEach((el, i) => {
-    el.classList.toggle("active", i === currentIndex);
-  });
-}
+    // Get video index from URL hash
+    function getIndexFromHash() {
+      const hash = window.location.hash.slice(1); // Remove #
+      if (hash) {
+        const index = videos.findIndex(v => v.id === hash);
+        if (index !== -1) return index;
+      }
+      return 0; // Default to first video
+    }
 
-function formatTime(seconds) {
-  const m = Math.floor(seconds / 60);
-  const s = Math.floor(seconds % 60);
-  return `${m}:${s.toString().padStart(2, "0")}`;
-}
+    function switchVideo(index) {
+      currentIndex = index;
+      videoPlayer.src = videos[index].src;
+      videoPlayer.play();
+      updateActive();
+      updateHelpfulLinks();
+      updateProgress(0);
+      playIcon.textContent = "⏸";
+    }
 
-// Video time tracking
-videoPlayer.addEventListener("loadedmetadata", () => {
-  totalTimeEl.textContent = formatTime(videoPlayer.duration);
-});
+    function updateActive() {
+      document.querySelectorAll(".video-titles li").forEach((el, i) => {
+        el.classList.toggle("active", i === currentIndex);
+      });
+      document.querySelectorAll(".nav-dots div").forEach((el, i) => {
+        el.classList.toggle("active", i === currentIndex);
+      });
+    }
 
-videoPlayer.addEventListener("timeupdate", () => {
-  progressBar.value = (videoPlayer.currentTime / videoPlayer.duration) * 100;
-  currentTimeEl.textContent = formatTime(videoPlayer.currentTime);
-});
+    function updateHelpfulLinks() {
+      if (videos[currentIndex].hasLinks) {
+        helpfulLinksSection.style.display = "block";
+      } else {
+        helpfulLinksSection.style.display = "none";
+      }
+    }
 
-videoPlayer.addEventListener("ended", () => {
-  currentIndex = (currentIndex + 1) % videos.length;
-  switchVideo(currentIndex);
-});
+    function updateProgress(percent) {
+      progressFill.style.width = percent + '%';
+      progressThumb.style.left = percent + '%';
+    }
 
-// Progress bar seek
-progressBar.addEventListener("input", (e) => {
-  const newTime = (e.target.value / 100) * videoPlayer.duration;
-  videoPlayer.currentTime = newTime;
-});
+    function formatTime(seconds) {
+      if (isNaN(seconds)) return "0:00";
+      const m = Math.floor(seconds / 60);
+      const s = Math.floor(seconds % 60);
+      return `${m}:${s.toString().padStart(2, "0")}`;
+    }
 
-// Play / Pause toggle via button
-playPauseBtn.addEventListener("click", (e) => {
-  e.stopPropagation(); // Prevent click conflict
-  togglePlayPause();
-});
+    videoPlayer.addEventListener("loadedmetadata", () => {
+      totalTimeEl.textContent = formatTime(videoPlayer.duration);
+    });
 
-// Click on video to toggle play/pause
-videoPlayer.addEventListener("click", togglePlayPause);
+    videoPlayer.addEventListener("timeupdate", () => {
+      if (videoPlayer.duration) {
+        const percent = (videoPlayer.currentTime / videoPlayer.duration) * 100;
+        updateProgress(percent);
+        currentTimeEl.textContent = formatTime(videoPlayer.currentTime);
+      }
+    });
 
-function togglePlayPause() {
-  if (videoPlayer.paused) {
-    videoPlayer.play();
-    playIcon.textContent = "⏸";
-  } else {
-    videoPlayer.pause();
-    playIcon.textContent = "▶️";
-  }
-}
+    videoPlayer.addEventListener("ended", () => {
+      currentIndex = (currentIndex + 1) % videos.length;
+      switchVideo(currentIndex);
+      updateUrlHash(videos[currentIndex].id);
+    });
 
-// Initialize
-switchVideo(0);
+    // Progress bar click to seek
+    progressContainer.addEventListener("click", (e) => {
+      const rect = progressContainer.getBoundingClientRect();
+      const percent = ((e.clientX - rect.left) / rect.width) * 100;
+      const newTime = (percent / 100) * videoPlayer.duration;
+      videoPlayer.currentTime = newTime;
+      updateProgress(percent);
+    });
 
-</script>
+    // Progress bar drag
+    let isDragging = false;
+
+    progressThumb.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      e.preventDefault();
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      if (isDragging) {
+        const rect = progressContainer.getBoundingClientRect();
+        let percent = ((e.clientX - rect.left) / rect.width) * 100;
+        percent = Math.max(0, Math.min(100, percent));
+        updateProgress(percent);
+        videoPlayer.currentTime = (percent / 100) * videoPlayer.duration;
+      }
+    });
+
+    document.addEventListener("mouseup", () => {
+      isDragging = false;
+    });
+
+    // Touch support for mobile
+    progressContainer.addEventListener("touchstart", (e) => {
+      const rect = progressContainer.getBoundingClientRect();
+      const percent = ((e.touches[0].clientX - rect.left) / rect.width) * 100;
+      const newTime = (Math.max(0, Math.min(100, percent)) / 100) * videoPlayer.duration;
+      videoPlayer.currentTime = newTime;
+      updateProgress(Math.max(0, Math.min(100, percent)));
+    });
+
+    progressContainer.addEventListener("touchmove", (e) => {
+      const rect = progressContainer.getBoundingClientRect();
+      let percent = ((e.touches[0].clientX - rect.left) / rect.width) * 100;
+      percent = Math.max(0, Math.min(100, percent));
+      updateProgress(percent);
+      videoPlayer.currentTime = (percent / 100) * videoPlayer.duration;
+    });
+
+    playPauseBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      togglePlayPause();
+    });
+
+    videoPlayer.addEventListener("click", togglePlayPause);
+
+    function togglePlayPause() {
+      if (videoPlayer.paused) {
+        videoPlayer.play();
+        playIcon.textContent = "⏸";
+      } else {
+        videoPlayer.pause();
+        playIcon.textContent = "▶️";
+      }
+    }
+
+    // Handle hash change (when user navigates with browser back/forward)
+    window.addEventListener("hashchange", () => {
+      const index = getIndexFromHash();
+      if (index !== currentIndex) {
+        switchVideo(index);
+      }
+    });
+
+    // Initialize with URL hash or first video
+    const initialIndex = getIndexFromHash();
+    switchVideo(initialIndex);
+    if (videos[initialIndex].id) {
+      updateUrlHash(videos[initialIndex].id);
+    }
+  </script>
+</body>
+
 </html>

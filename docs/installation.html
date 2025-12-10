@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ========================= CORE META (SEO + MOBILE) ========================== -->
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO Description -->
+    <meta name="description"
+        content="Complete Installation Guide for ADB Device Manager — System requirements, Windows app setup, Android companion app installation, USB debugging, permissions, and troubleshooting.">
+
+    <!-- Keywords -->
+    <meta name="keywords"
+        content="ADB Device Manager installation, setup guide, Windows Android connection, USB debugging setup, Android companion app, system requirements, ADB drivers">
+
+    <meta name="author" content="ADB Device Manager">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://shrey113.github.io/Adb-Device-Manager-2/docs/installation">
+
+    <!-- ========================= TITLE ========================== -->
+    <title>Installation Guide — ADB Device Manager</title>
+
+    <!-- ========================= OPEN GRAPH (SOCIAL SHARE) ========================== -->
+    <meta property="og:title" content="Installation Guide — ADB Device Manager">
+    <meta property="og:description"
+        content="Step-by-step installation guide for ADB Device Manager. Learn how to set up Windows app, Android companion app, and configure USB debugging.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://shrey113.github.io/Adb-Device-Manager-2/docs/installation">
+    <meta property="og:image" content="https://shrey113.github.io/Adb-Device-Manager-2/images/app_png.png">
+    <meta property="og:site_name" content="ADB Device Manager">
+
+    <!-- ========================= TWITTER CARD ========================== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Installation Guide — ADB Device Manager">
+    <meta name="twitter:description"
+        content="Complete installation guide for ADB Device Manager with system requirements, setup steps, and troubleshooting.">
+    <meta name="twitter:image" content="https://shrey113.github.io/Adb-Device-Manager-2/images/app_png.png">
+
+    <!-- ========================= STRUCTURED DATA ========================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "ADB Device Manager — Installation Guide",
+      "description": "Complete installation guide for ADB Device Manager including system requirements, Windows and Android setup, USB debugging configuration, and troubleshooting.",
+      "author": {
+        "@type": "Organization",
+        "name": "ADB Device Manager"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "ADB Device Manager",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://shrey113.github.io/Adb-Device-Manager-2/images/app_png.png"
+        }
+      },
+      "mainEntityOfPage": "https://shrey113.github.io/Adb-Device-Manager-2/docs/installation"
+    }
+    </script>
+
+    <!-- ========================= FAVICONS ========================== -->
+    <link rel="icon" href="../images/app_png.png">
+    <link rel="apple-touch-icon" href="../images/app_png.png">
+
+    <!-- ========================= PERFORMANCE (DNS + PRECONNECT) ========================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- ========================= FONTS ========================== -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet">
+    </noscript>
+
+    <!-- ========================= STYLES ========================== -->
+    <link rel="stylesheet" href="installation.css">
+    <link rel="stylesheet" href="../head.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <picture>
+                    <source srcset="../images/app_webp_50.webp" type="image/webp">
+                    <img src="../images/app_webp_100.webp" class="logo-icon" alt="ADB Device Manager" width="49"
+                        height="49" loading="lazy">
+                </picture>
+
+                <span class="logo-text">ADB Device Manager</span>
+            </div>
+
+            <nav class="nav">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../features.html" class="nav-link">Features</a>
+                <a href="../Docs.html" class="nav-link">Docs</a>
+                <a href="../support.html" class="nav-link">Support</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="installation-container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Installation Guide
+                </h1>
+                <p class="hero-subtitle">Complete setup guide for ADB Device Manager on Windows and Android</p>
+            </div>
+        </section>
+
+        <!-- Quick Navigation -->
+        <nav class="quick-nav">
+            <a href="#system-requirements" class="quick-nav-item">
+                <span class="nav-icon">1️⃣</span>
+                <span>System Requirements</span>
+            </a>
+            <a href="#windows-install" class="quick-nav-item">
+                <span class="nav-icon">2️⃣</span>
+                <span>Windows Install</span>
+            </a>
+            <a href="#android-install" class="quick-nav-item">
+                <span class="nav-icon">3️⃣</span>
+                <span>Android Install</span>
+            </a>
+            <a href="#usb-debugging" class="quick-nav-item">
+                <span class="nav-icon">4️⃣</span>
+                <span>USB Debugging</span>
+            </a>
+            <a href="#connect-device" class="quick-nav-item">
+                <span class="nav-icon">5️⃣</span>
+                <span>Connect Device</span>
+            </a>
+            <a href="#permissions" class="quick-nav-item">
+                <span class="nav-icon">6️⃣</span>
+                <span>Permissions</span>
+            </a>
+        </nav>
+
+        <!-- ===================== SECTION 1: System Requirements ===================== -->
+        <section id="system-requirements" class="install-section">
+            <div class="section-header">
+                <span class="section-number">1</span>
+                <h2>System Requirements</h2>
+            </div>
+            <p class="section-intro">Make sure your devices meet these requirements before installation.</p>
+
+            <div class="requirements-grid">
+                <!-- Windows Requirements -->
+                <div class="requirement-card windows">
+                    <div class="card-header">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801" />
+                        </svg>
+                        <h3>Windows Requirements</h3>
+                    </div>
+                    <ul class="requirement-list">
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Windows 10 or Windows 11 (64-bit)</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Minimum RAM: 1GB</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Recommended RAM: 4GB+</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Internet not required (local only)</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>USB port (for USB debugging)</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Wi-Fi (for wireless ADB)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Android Requirements -->
+                <div class="requirement-card android">
+                    <div class="card-header">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24c-2.86-1.21-6.08-1.21-8.94 0L5.65 5.67c-.19-.29-.58-.38-.87-.2-.28.18-.37.54-.22.83L6.4 9.48C3.3 11.25 1.28 14.44 1 18h22c-.28-3.56-2.3-6.75-5.4-8.52zM7 15.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25zm10 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z" />
+                        </svg>
+                        <h3>Android Requirements</h3>
+                    </div>
+                    <ul class="requirement-list">
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Android 7.0 and above</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>USB Debugging enabled (for ADB mode)</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Notification access (for sync features)</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Battery optimization disabled (recommended)</span>
+                        </li>
+                        <li>
+                            <span class="check-icon">✓</span>
+                            <span>Background running allowed</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== SECTION 2: Windows Install ===================== -->
+        <section id="windows-install" class="install-section">
+            <div class="section-header">
+                <span class="section-number">2</span>
+                <h2>Download & Install — Windows (.exe)</h2>
+            </div>
+
+            <div class="steps-container">
+                <!-- Step 1 -->
+                <div class="install-step">
+                    <div class="step-marker">
+                        <span class="step-num">1</span>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Download the Windows Installer</h3>
+                        <p>Get the latest version of ADB Device Manager for Windows.</p>
+                        <a href="../windows_download.html" class="download-btn windows">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801" />
+                            </svg>
+                            Download Windows App
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="install-step">
+                    <div class="step-marker">
+                        <span class="step-num">2</span>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Install the App</h3>
+                        <ul class="step-list">
+                            <li>Double-click the downloaded installer</li>
+                            <li>Click "Install"</li>
+                            <li>Allow Administrator permission (if asked)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="install-step">
+                    <div class="step-marker">
+                        <span class="step-num">3</span>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3>First Launch</h3>
+                        <ul class="step-list">
+                            <li>Windows may prompt for firewall permission → click <strong>Allow</strong></li>
+                            <li>App will start and show "Waiting for device…"</li>
+                        </ul>
+                        <div class="alert-box info">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 16v-4M12 8h.01"></path>
+                            </svg>
+                            <p>Make sure to allow the app through Windows Firewall for network features to work
+                                properly.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="install-step">
+                    <div class="step-marker">
+                        <span class="step-num">4</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>Install USB Drivers (if needed)</h3>
+                        <p>If your device isn't detected, you may need to install USB drivers.</p>
+                        <div class="driver-links">
+                            <a href="https://developer.samsung.com/android-usb-driver" target="_blank"
+                                class="driver-link">Samsung USB Drivers</a>
+                            <a href="https://developer.android.com/studio/run/win-usb" target="_blank"
+                                class="driver-link">Google USB Drivers</a>
+                            <a href="https://developer.android.com/studio/run/oem-usb" target="_blank"
+                                class="driver-link">Other OEM Drivers</a>
+                        </div>
+                        <div class="alert-box tip">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 16v-4M12 8h.01"></path>
+                            </svg>
+                            <p><strong>Pro Tip:</strong> For Xiaomi, Vivo, Oppo, and other brands — the Google ADB
+                                driver usually works as a universal fallback.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== SECTION 3: Android Install ===================== -->
+        <section id="android-install" class="install-section">
+            <div class="section-header">
+                <span class="section-number">3</span>
+                <h2>Download & Install — Android Companion App (.apk)</h2>
+            </div>
+
+            <div class="steps-container">
+                <!-- Step 1 -->
+                <div class="install-step">
+                    <div class="step-marker">
+                        <span class="step-num">1</span>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Download APK</h3>
+                        <p>Download the companion app for your Android device.</p>
+                        <a href="../android_download.html" class="download-btn android">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24c-2.86-1.21-6.08-1.21-8.94 0L5.65 5.67c-.19-.29-.58-.38-.87-.2-.28.18-.37.54-.22.83L6.4 9.48C3.3 11.25 1.28 14.44 1 18h22c-.28-3.56-2.3-6.75-5.4-8.52z" />
+                            </svg>
+                            Download Android App
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="install-step">
+                    <div class="step-marker">
+                        <span class="step-num">2</span>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Allow Installation from Unknown Sources</h3>
+                        <ul class="step-list">
+                            <li>Go to <strong>Settings → Security</strong></li>
+                            <li>Enable <strong>"Install unknown apps"</strong> for your file manager or browser</li>
+                        </ul>
+                        <div class="alert-box warning">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                                </path>
+                                <line x1="12" y1="9" x2="12" y2="13"></line>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                            <p>This setting may vary by device manufacturer. Look for "Install unknown apps" or similar
+                                in Security settings.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="install-step">
+                    <div class="step-marker">
+                        <span class="step-num">3</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>Install the App</h3>
+                        <ul class="step-list">
+                            <li>Tap the downloaded APK file</li>
+                            <li>Tap <strong>Install</strong></li>
+                            <li>Open the app and grant necessary permissions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== SECTION 4: USB Debugging ===================== -->
+        <section id="usb-debugging" class="install-section">
+            <div class="section-header">
+                <span class="section-number">4</span>
+                <h2>Enable USB Debugging (Required for ADB Mode)</h2>
+            </div>
+
+            <p class="section-intro">
+                USB Debugging allows your Windows PC to communicate with your Android device through ADB.
+                It is required for features like screen mirroring, Android Dex mode, audio mirroring,
+                APK installation, logs, and more. <br>
+                <a href="../info_data.html#usb_debugging">Learn From Video Demo</a>
+            </p>
+
+            <div class="steps-container">
+
+                <!-- Step 1 -->
+                <div class="install-step">
+                    <div class="step-marker">
+                        <span class="step-num">1</span>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Enable Developer Options</h3>
+                        <ul class="step-list">
+                            <li>Open <strong>Settings → About Phone</strong></li>
+                            <li>Find <strong>Build Number</strong> (may be under "Software information")</li>
+                            <li>Tap it <strong>7 times</strong> until you see: “You are now a developer!”</li>
+                        </ul>
+                        <p class="step-note">Developer Options will now appear in your phone's settings.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="install-step">
+                    <div class="step-marker">
+                        <span class="step-num">2</span>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Turn On USB Debugging</h3>
+                        <ul class="step-list">
+                            <li>Go to <strong>Settings → Developer Options</strong></li>
+                            <li>Scroll down to <strong>USB Debugging</strong></li>
+                            <li>Toggle <strong>USB Debugging = ON</strong></li>
+                        </ul>
+
+                        <div class="alert-box warning">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                                </path>
+                                <line x1="12" y1="9" x2="12" y2="13"></line>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                            <p><strong>Note:</strong> Some devices require enabling
+                                <em>"USB Debugging (Security settings)"</em> as well, especially Xiaomi, Vivo, Oppo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="install-step">
+                    <div class="step-marker">
+                        <span class="step-num">3</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>Connect Your Phone to Your PC</h3>
+                        <ul class="step-list">
+                            <li>Use a <strong>high-quality USB cable</strong> (avoid charge-only cables)</li>
+                            <li>Connect your phone to the PC</li>
+                            <li>Your phone will show: <strong>"Allow USB Debugging?"</strong></li>
+                            <li>Tap <strong>Allow</strong></li>
+                            <li>Enable <strong>"Always allow from this computer"</strong> to avoid repeated prompts</li>
+                        </ul>
+
+                        <div class="alert-box success">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            <p><strong>Tip:</strong> If your phone doesn't show the prompt, try reconnecting the cable,
+                                switching USB mode to “File Transfer (MTP)”, or reinstalling phone drivers.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===================== SECTION 5: Connect Device ===================== -->
+        <section id="connect-device" class="install-section">
+            <div class="section-header">
+                <span class="section-number">5</span>
+                <h2>Connect Your Phone to Windows App</h2>
+            </div>
+
+            <div class="connection-options">
+                <!-- USB Mode -->
+                <div class="connection-card usb">
+                    <div class="connection-header">
+                        <span class="connection-icon">🔌</span>
+                        <div>
+                            <h3>USB Mode</h3>
+                            <span class="recommended-badge">Recommended</span>
+                        </div>
+                    </div>
+                    <div class="connection-content">
+                        <ol class="connection-steps">
+                            <li>Connect phone via USB</li>
+                            <li>Open Windows app</li>
+                            <li>Click <strong>"Add New Device"</strong></li>
+                            <li>Select <strong>"USB Connection"</strong></li>
+                            <li>Click <strong>"Connect Device"</strong></li>
+                        </ol>
+                        <div class="connection-tips">
+                            <h4>Troubleshooting Tips:</h4>
+                            <ul>
+                                <li>If device doesn't appear → Check USB drivers</li>
+                                <li>If asking permissions → Tap "Allow" on phone</li>
+                                <li>Try a different USB cable if issues persist</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wireless Mode -->
+                <div class="connection-card wireless">
+                    <div class="connection-header">
+                        <span class="connection-icon">📶</span>
+                        <div>
+                            <h3>Wireless Mode (Wi-Fi ADB)</h3>
+                        </div>
+                    </div>
+                    <div class="connection-content">
+                        <ol class="connection-steps">
+                            <li>Connect via USB one time first</li>
+                            <li>Open Windows app</li>
+                            <li>Click <strong>"Add New Device"</strong></li>
+                            <li>Select <strong>"QR Code Connection"</strong> OR <strong>"Pairing Code"</strong></li>
+                            <li>Device will stay connected over Wi-Fi</li>
+                        </ol>
+                        <div class="alert-box warning">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
+                                </path>
+                                <line x1="12" y1="9" x2="12" y2="13"></line>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                            </svg>
+                            <p><strong>Important:</strong> Android version must be <strong>11</strong> or higher
+                                for wireless
+                                mode to work.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== SECTION 6: Permissions ===================== -->
+        <section id="permissions" class="install-section">
+            <div class="section-header">
+                <span class="section-number">6</span>
+                <h2>Grant Required Permissions on Android</h2>
+            </div>
+            <p class="section-intro">These permissions enable different features in ADB Device Manager.</p>
+
+            <div class="permissions-table-wrapper">
+                <table class="permissions-table">
+                    <thead>
+                        <tr>
+                            <th>Permission</th>
+                            <th>Why Needed</th>
+                            <th>Required</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Notification Access</strong></td>
+                            <td>To sync notifications to PC</td>
+                            <td><span class="required-badge">Required</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Read Phone State</strong></td>
+                            <td>For call events & contact sync</td>
+                            <td><span class="required-badge">Required</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Media Projection</strong></td>
+                            <td>For screen mirroring</td>
+                            <td><span class="required-badge">Required</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Storage Access</strong></td>
+                            <td>For file sharing</td>
+                            <td><span class="required-badge">Required</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bluetooth</strong></td>
+                            <td>For audio streaming</td>
+                            <td><span class="optional-badge">Optional</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="alert-box info">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 16v-4M12 8h.01"></path>
+                </svg>
+                <p>The app will guide you through granting each permission when you first enable each feature.</p>
+            </div>
+        </section>
+
+        <!-- ===================== SECTION 7: Battery Optimization ===================== -->
+        <section id="battery-optimization" class="install-section">
+            <div class="section-header">
+                <span class="section-number">7</span>
+                <h2>Optional Setup: Battery Optimization Fix</h2>
+            </div>
+            <p class="section-intro">Important for notification/call sync to work reliably in the background.</p>
+
+            <div class="brand-guides">
+                <div class="brand-card samsung">
+                    <h4>Samsung</h4>
+                    <p>Settings → Battery → Background usage limits → <strong>Disable</strong> for ADB Device Manager
+                    </p>
+                </div>
+                <div class="brand-card xiaomi">
+                    <h4>Xiaomi / MIUI</h4>
+                    <p>Settings → Battery → App battery saver → Select <strong>"No restrictions"</strong></p>
+                </div>
+                <div class="brand-card vivo">
+                    <h4>Vivo / Oppo / Realme</h4>
+                    <p>Settings → App Management → <strong>Allow Auto-Start</strong></p>
+                </div>
+                <div class="brand-card pixel">
+                    <h4>Google Pixel</h4>
+                    <p>Works normally — <strong>no fix needed</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== SECTION 8: Troubleshooting ===================== -->
+        <section id="troubleshooting" class="install-section troubleshooting">
+            <div class="section-header">
+                <span class="section-number">8</span>
+                <h2>Troubleshooting Quick Links</h2>
+            </div>
+
+            <div class="troubleshooting-links">
+                <a href="../Docs.html#troubleshooting" class="troubleshoot-link">
+                    <span class="link-icon">🔍</span>
+                    <span class="link-text">Device not detected</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="../Docs.html#troubleshooting" class="troubleshoot-link">
+                    <span class="link-icon">⚙️</span>
+                    <span class="link-text">ADB not working — Driver fix</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="../Docs.html#troubleshooting" class="troubleshoot-link">
+                    <span class="link-icon">📶</span>
+                    <span class="link-text">Wi-Fi not connecting — Network guide</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="../Docs.html#troubleshooting" class="troubleshoot-link">
+                    <span class="link-icon">🔔</span>
+                    <span class="link-text">Notifications not syncing — Permission fix</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="#android-install" class="troubleshoot-link">
+                    <span class="link-icon">📦</span>
+                    <span class="link-text">APK not installing — Enable unknown apps</span>
+                    <span class="link-arrow">→</span>
+                </a>
+            </div>
+
+            <div class="back-to-docs">
+                <a href="../Docs.html" class="back-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"></path>
+                    </svg>
+                    Back to Documentation
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 ADB Device Manager. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
