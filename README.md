@@ -151,13 +151,15 @@ ADB Device Manager offers **two dynamic modes** that work independently or toget
 | Feature | ADB Device Manager | Vysor | Phone Link |
 |---------|:------------------:|:-----:|:----------:|
 | Screen Mirroring | ✅ Ultra-low latency | ✅ Slower | ✅ Best |
-| Full Device Control | ✅ | ✅ | ❌ Limited |
+| Multi-App | ✅ | ❌ | ✅ |
+| Multi-App-audio-On-OFF | ✅ | ❌ | ❌ |
+| Full Device Control | ✅ | ❌ Limited | ❌ Limited |
 | Notifications | ✅ | ❌ | ✅ |
 | SMS & Calls | ✅ | ❌ | ✅ |
 | APK Install | ✅ | ✅ | ❌ |
 | Remote Camera | ✅ | ✅ | ❌ |
-| Auto-Discovery | ✅ | ❌ | ✅ |
 | Android Dex | ✅ | ❌ | ❌ |
+| Bluetooth Audio Pairing | ✅ | ❌ | ✅ |
 
 ---
 
