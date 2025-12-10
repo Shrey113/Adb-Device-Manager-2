@@ -165,12 +165,12 @@ ADB Device Manager offers **two dynamic modes** that work independently or toget
 
 | Title | Link |
 |--------|------|
-| 📘 Main Documentation | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html |
-| 📥 Installation Guide | https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html |
-| 🛠️ Troubleshooting | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#troubleshooting |
-| 🔐 Security & Privacy | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#security-privacy |
-| ❓ FAQ | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#faq |
-| 🌍 Full Website | https://shrey113.github.io/Adb-Device-Manager-2/ |
+| Main Documentation | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html |
+| Installation Guide | https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html |
+| Troubleshooting | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#troubleshooting |
+| Security & Privacy | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#security-privacy |
+| FAQ | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#faq |
+| Full Website | https://shrey113.github.io/Adb-Device-Manager-2/ |
 
 ---
 
