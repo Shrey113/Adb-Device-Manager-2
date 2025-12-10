@@ -8,6 +8,8 @@ The project is not open-source, and security updates are delivered through new r
 ## 🛡 Supported Versions
 We only support the **latest public release** of the application.
 
+[For more](https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#security-privacy)
+
 Older versions may contain bugs or security issues and should be updated immediately.
 
 | Version | Status              |
