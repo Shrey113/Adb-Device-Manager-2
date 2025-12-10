@@ -1,20 +1,38 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
+name: Feature Request
+about: Suggest a new feature or improvement for ADB Device Manager
 title: ''
-labels: ''
+labels: enhancement
 assignees: ''
+---
+
+## 💡 Feature Description
+Clearly describe the feature you would like to see added to ADB Device Manager.
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+## 🤔 Why Is This Feature Needed?
+Explain the problem this feature solves, or how it improves your workflow.
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+Example:
+- “Transferring files requires too many steps…”
+- “Mirroring would be more useful if it had XYZ…”
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+---
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+## 🧩 Proposed Solution
+Describe what you want the app to do.
+
+Example:
+- “Add an option to auto-connect on startup”
+- “Add keyboard shortcuts for mirroring controls”
+
+---
+
+## 🔄 Alternative Ideas (Optional)
+If you have other possible solutions, list them here.
+
+---
+
+## 📸 Additional Context (Optional)
+Add screenshots, videos, or more explanation if it helps us understand the request.

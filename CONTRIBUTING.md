@@ -1,47 +1,56 @@
-# 🤝 Contributing to ADB Device Manager
+# 📝 Contributing / Support Guidelines
 
-Welcome! 🎉  
-Thanks for your interest in contributing to **ADB Device Manager** — an Android ↔ Windows integration tool built with **Flutter**, **Kotlin**, and **Python**, featuring ADB and App-based dual-mode communication.
+Thank you for your interest in **ADB Device Manager 2**.
 
-Your help makes this project better for everyone.  
-Please read these guidelines to get started quickly and keep contributions consistent.
+This project is **not open-source** and does not accept code contributions, pull requests, or modifications to the source code.
 
----
-
-## 🧭 Table of Contents
-- [📦 Project Overview](#-project-overview)
-- [🚀 How to Get Started](#-how-to-get-started)
-- [🔧 Setting Up the Development Environment](#-setting-up-the-development-environment)
-- [🧩 Code Structure Overview](#-code-structure-overview)
-- [💡 Contribution Types](#-contribution-types)
-- [🧠 Coding Standards](#-coding-standards)
-- [📂 Commit & Branch Naming](#-commit--branch-naming)
-- [🧾 Pull Request Process](#-pull-request-process)
-- [🧰 Issue Reporting](#-issue-reporting)
-- [🧑‍💻 Developer Communication](#-developer-communication)
-- [📜 License](#-license)
+However, you can still help improve the project by reporting issues or suggesting features.
 
 ---
 
-## 📦 Project Overview
+## 🐞 Reporting Issues
 
-**ADB Device Manager** connects **Android** and **Windows** systems through two integrated modes:
+If you experience bugs, crashes, or connection problems, please include:
 
-| Mode | Description | Tech Stack |
-|------|--------------|------------|
-| **ADB Mode** | Real-time Android control, mirroring, and automation via ADB + scrcpy | Python, Rust, Flutter |
-| **App Mode** | Wireless communication, media, calls, and notifications | Kotlin (Android), Flutter (Windows) |
+- Your Windows version  
+- Your Android device model  
+- Android version  
+- Connection type (USB / Wi-Fi)  
+- Steps to reproduce the issue  
+- Screenshots or logs (optional)
 
-The project aims to provide **a unified experience** for developers and users — blending ADB control with productivity tools.
+📧 **Support Email:** shreyp518@gmail.com  
+🐞 **Issue Tracker:** https://github.com/Shrey113/Adb-Device-Manager-2/issues
 
 ---
 
-## 🚀 How to Get Started
+## 💡 Suggesting Features
 
-1. **Fork** this repository.  
-   → [Click here to fork](https://github.com/Shrey113/Adb-Device-Manager-2/fork)
+We welcome ideas that make the project more useful.
 
-2. **Clone** your fork:
-   ```bash
-   git clone https://github.com/<your-username>/Adb-Device-Manager-2.git
-   cd Adb-Device-Manager-2
+When suggesting a new feature, please describe:
+
+- What the feature does  
+- Why it is useful  
+- Any similar apps that have it  
+
+---
+
+## 🔒 No Code Contributions
+
+This project distributes **compiled binaries (.exe, .apk)** only.  
+Source code is not publicly available and cannot be modified.
+
+Please do **not**:
+
+- Submit pull requests  
+- Submit code patches  
+- Attempt to fork or build the app  
+
+These actions will be closed automatically.
+
+---
+
+## 🙏 Thank You
+
+Your feedback helps us make **ADB Device Manager 2** better and more stable for everyone.

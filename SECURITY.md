@@ -1,21 +1,42 @@
-# Security Policy
+# 🔐 Security Policy
 
-## Supported Versions
+ADB Device Manager 2 is distributed as a compiled binary (.exe / .apk).  
+The project is not open-source, and security updates are delivered through new releases.
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+---
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+## 🛡 Supported Versions
+We only support the **latest public release** of the application.
 
-## Reporting a Vulnerability
+Older versions may contain bugs or security issues and should be updated immediately.
 
-Use this section to tell people how to report a vulnerability.
+| Version | Status              |
+|--------|----------------------|
+| Latest | ✔ Supported          |
+| Older  | ✘ Not Supported      |
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+---
+
+## 🐞 Reporting a Security Issue
+
+If you believe you’ve found a security vulnerability in the Windows app or Android companion:
+
+### 📧 Contact (Private & Confidential)
+**shreyp518@gmail.com**
+
+Please include:
+
+- A description of the issue  
+- Steps to reproduce  
+- Screenshots or logs (if available)  
+- Your device and OS information  
+
+We take security seriously.  
+Valid reports will be reviewed quickly, and fixes will be released in upcoming updates.
+
+---
+
+## 🔒 Disclosure Policy
+To keep users safe, please **do not disclose vulnerabilities publicly** until they are resolved.
+
+We appreciate responsible and private reporting.

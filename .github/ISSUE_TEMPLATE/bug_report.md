@@ -1,38 +1,72 @@
 ---
-name: Bug report
-about: Create a report to help us improve
+name: Bug Report
+about: Report an issue with the ADB Device Manager Windows app or Android companion app
 title: ''
-labels: ''
+labels: bug
 assignees: ''
+---
+
+## 🐞 Describe the Bug
+A clear and concise description of the problem you are experiencing.
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+## 🔁 Steps to Reproduce
+Please describe exactly how to reproduce the issue:
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+1. 
+2. 
+3. 
+4. 
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+---
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+## ✔️ Expected Behavior
+What you expected to happen instead.
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+---
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+## 📸 Screenshots / Screen Recording
+If possible, add screenshots or a short video showing the issue.
 
-**Additional context**
-Add any other context about the problem here.
+---
+
+## 💻 Windows System Information
+Please complete the following details:
+
+- Windows Version: (e.g., Windows 11 23H2)
+- App Version (.exe): (e.g., v1.0.3)
+- Connection Type: USB / Wi-Fi
+- Firewall or Antivirus Enabled? (Yes/No)
+
+---
+
+## 📱 Android Device Information
+Please complete the following:
+
+- Device Model: (e.g., Samsung S21, Xiaomi Redmi Note 10)
+- Android Version: (e.g., Android 13)
+- App Version (.apk): (e.g., 1.0.3)
+- USB Debugging enabled? (Yes/No)
+- Using App Mode or ADB Mode?
+
+---
+
+## 🔌 ADB Information (if applicable)
+If the issue relates to ADB Mode, please include:
+
+- Output of `adb devices`
+- Any ADB error messages
+
+---
+
+## 📂 Logs (Optional but Very Helpful)
+If you can, attach:
+
+- Windows logs (from the logs folder)
+- Android app logs (if available)
+
+---
+
+## 📝 Additional Context
+Add any other relevant details here (router type for Wi-Fi, special settings, etc.).
