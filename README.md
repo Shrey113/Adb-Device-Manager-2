@@ -117,8 +117,6 @@ Focused on **everyday users and productivity** — simple, wireless, and instant
 The application offers features in **three different modes**.  
 Choose a mode below to explore all available functionality.
 
----
-
 ### 🧩 ADB Mode
 System-level control using USB or Wireless Debugging.
 
@@ -135,8 +133,6 @@ System-level control using USB or Wireless Debugging.
 | 📄 [Call History](docs/adb/call-history.md) | View call logs |
 | 📄 [SMS](docs/adb/sms.md) | Extract SMS messages |
 
----
-
 ### 📱 APP Mode
 Features powered by the Companion Android App over Wi-Fi/LAN.
 
@@ -152,9 +148,7 @@ Features powered by the Companion Android App over Wi-Fi/LAN.
 | 📄 [Device Finder](docs/app/device-finder.md) | Auto-discover devices |
 | 📄 [Bluetooth](docs/app/bluetooth.md) | Bluetooth connectivity |
 
----
-
-### � Windows Integration
+### 📱 Windows Integration
 Windows-side tools and enhancements.
 
 | Feature | Description |
@@ -166,6 +160,26 @@ Windows-side tools and enhancements.
 | 📄 [Context Menu](docs/windows/context-menu.md) | Right-click integration |
 
 ---
+
+# 📊 Essential Comparison — ADB Device Manager vs Vysor vs Phone Link
+
+| Key Feature (Important Only)       | **ADB Device Manager** | **Vysor** | **Microsoft Phone Link** |
+|------------------------------------|-------------------------|-----------|---------------------------|
+| **Screen Mirroring**               | ✔️ Ultra-low latency (scrcpy) | ✔️ Yes (slower) | ❌ No interactive mirroring |
+| **Full Device Control**            | ✔️ Keyboard + Mouse | ✔️ Yes | ❌ Very limited |
+| **Wireless Mode**                  | ✔️ Wireless ADB + App | ✔️ Limited | ❌ No |
+| **Notifications on PC**            | ✔️ Real-time (App Mode) | ❌ No | ✔️ Yes |
+| **SMS & Calls from PC**            | ✔️ Yes | ❌ No | ✔️ Yes |
+| **File Transfer**                   | ✔️ Wi-Fi + QR File Server | ✔️ Basic | ✔️ Limited |
+| **APK Installation**               | ✔️ Direct ADB Install | ✔️ Yes | ❌ No |
+| **Remote Camera View**             | ✔️ Yes | ✔️ Yes | ❌ No |
+| **Local Device Auto-Discovery**    | ✔️ Zeroconf/mDNS | ❌ No | ✔️ Yes |
+
+| ⭐ **VIP Feature**                 | **ADB Device Manager** | Vysor | Phone Link |
+|------------------------------------|-------------------------|--------|------------|
+| **Android-Dex (Virtual Desktop Mode)** | 🟩 **Exclusive** — Multi-app desktop Android | ❌ No | ❌ No |
+
+
 
 ## ✨ Why Choose ADB Device Manager?
 
