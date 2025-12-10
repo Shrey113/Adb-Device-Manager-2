@@ -52,16 +52,8 @@ First step towards a full **desktop-style Android experience** inside ADB Device
 
 ![git_hub_3](https://github.com/user-attachments/assets/f11902ec-57e9-41e2-b9a6-1e71b8d8d23e)
 
-### About Android Dex
-- Auto-installs android_clone.apk
-- Gestures + nav keys + media events
-- Full keyboard & mouse
 
-**Performance**  
-• Fast — H.264, ~60 FPS, low latency  
-• Normal — Balanced, ~90 FPS  
-• High — H.265, ~120 FPS, high quality
-
+### 🔗 Learn More  [Android Dex](docs/adb/android-dex.md)  
 ---
 
 ## 🌐 Dual Mode Integration
@@ -143,7 +135,7 @@ Features powered by the Companion Android App over Wi-Fi/LAN.
 | 📄 [Photo Gallery](docs/app/photo-gallery.md) | Browse device photos |
 | 📄 [File Transfer](docs/app/file-transfer.md) | Wireless file transfer |
 | 📄 [Contacts](docs/app/contacts.md) | Access contacts with rich UI |
-| � [Calls](docs/app/calls.md) | Manage calls from Windows |
+| 📄 [Calls](docs/app/calls.md) | Manage calls from Windows |
 | 📄 [SMS Messages](docs/app/sms.md) | Send/receive SMS |
 | 📄 [Device Finder](docs/app/device-finder.md) | Auto-discover devices |
 | 📄 [Bluetooth](docs/app/bluetooth.md) | Bluetooth connectivity |
@@ -161,23 +153,28 @@ Windows-side tools and enhancements.
 
 ---
 
+## ⌨️ Keyboard Shortcuts
+
+A complete list of all global hotkeys supported by ADB Device Manager.
+
+> 📄 **Full List →** [`docs/shortcuts.md`](docs/shortcuts.md)
+
+---
+
+
 # 📊 Essential Comparison — ADB Device Manager vs Vysor vs Phone Link
 
 | Key Feature (Important Only)       | **ADB Device Manager** | **Vysor** | **Microsoft Phone Link** |
 |------------------------------------|-------------------------|-----------|---------------------------|
-| **Screen Mirroring**               | ✔️ Ultra-low latency (scrcpy) | ✔️ Yes (slower) | ❌ No interactive mirroring |
+| **Screen Mirroring**               | ✔️ Ultra-low latency  | ✔️ Yes (slower) | ✔️ Yes (Best) |
 | **Full Device Control**            | ✔️ Keyboard + Mouse | ✔️ Yes | ❌ Very limited |
-| **Wireless Mode**                  | ✔️ Wireless ADB + App | ✔️ Limited | ❌ No |
-| **Notifications on PC**            | ✔️ Real-time (App Mode) | ❌ No | ✔️ Yes |
+| **Notifications on PC**            | ✔️ Real-time| ❌ No | ✔️ Real-time |
 | **SMS & Calls from PC**            | ✔️ Yes | ❌ No | ✔️ Yes |
-| **File Transfer**                   | ✔️ Wi-Fi + QR File Server | ✔️ Basic | ✔️ Limited |
+| **File Transfer**                   | ✔️ File Sharing system | ✔️ Basic | ✔️ Limited |
 | **APK Installation**               | ✔️ Direct ADB Install | ✔️ Yes | ❌ No |
 | **Remote Camera View**             | ✔️ Yes | ✔️ Yes | ❌ No |
 | **Local Device Auto-Discovery**    | ✔️ Zeroconf/mDNS | ❌ No | ✔️ Yes |
-
-| ⭐ **VIP Feature**                 | **ADB Device Manager** | Vysor | Phone Link |
-|------------------------------------|-------------------------|--------|------------|
-| **Android-Dex (Virtual Desktop Mode)** | 🟩 **Exclusive** — Multi-app desktop Android | ❌ No | ❌ No |
+| **Android-Dex (Virtual Desktop Mode)** |✔️ desktop view Android | ❌ No | ❌ No |
 
 
 
