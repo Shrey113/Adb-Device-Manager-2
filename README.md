@@ -110,160 +110,60 @@ Focused on **everyday users and productivity** — simple, wireless, and instant
   <img src="https://github.com/user-attachments/assets/a68d832a-9d74-4c92-b4e3-a7469b628738" width="70%" alt="Dual Mode Diagram"/>
 </div>
 
+---
+
+## 📘 User Documentation
+
+The application offers features in **three different modes**.  
+Choose a mode below to explore all available functionality.
 
 ---
 
-## ⚡ ADB Mode — Developer & Power Control
+### 🧩 ADB Mode
+System-level control using USB or Wireless Debugging.
 
-<table>
-  <tr>
-    <td width="40%">
-      <img src="https://github.com/user-attachments/assets/77b2a31c-5271-4c08-834a-139eeb065dd9" width="100%" alt="Desktop Mode Preview" />
-    </td>
-    <td width="60%">
-      <h3>🖥️ Desktop & Virtual Display Mode</h3>
-      <p>
-        Transform your Android device into a full desktop experience on Windows — powered by <strong>scrcpy’s virtual display</strong>.  
-      </p>
-      <ul>
-        <li>Launch and control <strong>two or more Android apps</strong> simultaneously on Windows</li>
-        <li>Extend virtual Android windows across <strong>multiple monitors</strong> for a true desktop workspace</li>
-      </ul>
-    </td>
-  </tr>
-
-  <tr>
-    <td width="40%">
-      <img src="https://github.com/user-attachments/assets/2ee9564c-8e86-4271-92cc-2f336900bf61" width="100%" alt="Screen Cast Preview" />
-    </td>
-    <td width="60%">
-      <h3>📲 Screen Cast (Powered by scrcpy)</h3>
-      <p>
-        Stream your Android screen directly to Windows with ultra-low latency.  
-        Works via both USB and Wireless ADB connections for flexible setups.
-      </p>
-      <ul>
-        <li>Optimized scrcpy engine for smooth 60 FPS playback</li>
-        <li>Dynamic resolution and bitrate adjustment</li>
-      </ul>
-    </td>
-  </tr>
-
-  <tr>
-    <td width="40%">
-      <img src="https://github.com/user-attachments/assets/7f42e808-2be7-4911-9dad-f6e553baaaea" width="100%" alt="Audio Cast Preview" />
-    </td>
-    <td width="60%">
-      <h3>🔊 Audio Cast (Real-Time Streaming)</h3>
-      <p>
-        Stream Android audio to your Windows system in real time.  
-        Choose between <strong>Fast Mode</strong> for low latency or <strong>High Mode</strong> for studio-quality sound.
-      </p>
-      <ul>
-        <li>High-fidelity, low-latency sound playback</li>
-        <li>Perfect sync with mirrored screen output</li>
-      </ul>
-    </td>
-  </tr>
-
-  <tr>
-    <td width="40%">
-      <img src="https://github.com/user-attachments/assets/a78a2309-aea9-493b-887b-3114dbfde4ee" width="100%" alt="Smart Feedback Console" />
-    </td>
-    <td width="60%">
-      <h3>🧠 Smart Feedback & Developer Console</h3>
-      <p>
-        Get real-time feedback for every connected device.  
-        View live logs, command responses, and system performance insights for advanced debugging.
-      </p>
-      <ul>
-        <li>Live ADB command execution with instant feedback</li>
-        <li>Smart suggestions for commonly used ADB commands</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+| Feature | Description |
+|---------|-------------|
+| 📄 [Screen Mirroring](docs/adb/screen-mirroring.md) | Mirror Android screen to Windows |
+| 📄 [Audio Streaming](docs/adb/audio.md) | Stream device audio to PC |
+| 📄 [Input Control](docs/adb/input-control.md) | Keyboard & mouse control |
+| 📄 [Android Dex](docs/adb/android-dex.md) | Desktop-style Android experience |
+| 📄 [Desktop Mode](docs/adb/desktop-mode.md) | Multi-app virtual display |
+| 📄 [APK Installer](docs/adb/apk-installer.md) | Install apps via ADB |
+| 📄 [Camera View](docs/adb/camera.md) | View device camera on PC |
+| 📄 [Contacts](docs/adb/contacts.md) | Extract contacts via ADB |
+| 📄 [Call History](docs/adb/call-history.md) | View call logs |
+| 📄 [SMS](docs/adb/sms.md) | Extract SMS messages |
 
 ---
 
-## 🎧 App Mode — Real-Time Communication & Media Control
+### 📱 APP Mode
+Features powered by the Companion Android App over Wi-Fi/LAN.
 
-<table>
-  <tr>
-    <td width="40%">
-      <img src="https://github.com/user-attachments/assets/e5d5f503-6886-472e-b69a-77f69ddeabac" width="100%" />
-    </td>
-    <td width="60%">
-      <h3>🎵 Advanced Media Control Center</h3>
-      <p>
-        Control all your device’s audio and media sessions directly from Windows — with instant playback, pause, volume, and track management.
-      </p>
-      <ul>
-        <li>Universal control for Spotify, YouTube, Netflix, etc.</li>
-        <li>Equalizer-based audio adjustment</li>
-        <li>Live metadata, album art, and media sync</li>
-        <li>Multi-device audio synchronization</li>
-      </ul>
-    </td>
-  </tr>
-
-  <tr>
-    <td width="40%">
-      <img src="https://github.com/user-attachments/assets/13ba3b68-ddfe-4625-b939-27a741d58298" width="100%" />
-    </td>
-    <td width="60%">
-      <h3>🔔 Real-Time Call & Notification Manager</h3>
-      <p>
-        Access and respond to Android notifications and calls directly from Windows — in real-time, without switching devices.
-      </p>
-      <ul>
-        <li>Instant call alerts and controls</li>
-        <li>Notification mirroring and quick replies</li>
-        <li>Priority filters and silent-hour settings</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+| Feature | Description |
+|---------|-------------|
+| 📄 [Media Control](docs/app/media-control.md) | Control music playback |
+| 📄 [Notifications](docs/app/notifications.md) | Real-time notification sync |
+| 📄 [Photo Gallery](docs/app/photo-gallery.md) | Browse device photos |
+| 📄 [File Transfer](docs/app/file-transfer.md) | Wireless file transfer |
+| 📄 [Contacts](docs/app/contacts.md) | Access contacts with rich UI |
+| � [Calls](docs/app/calls.md) | Manage calls from Windows |
+| 📄 [SMS Messages](docs/app/sms.md) | Send/receive SMS |
+| 📄 [Device Finder](docs/app/device-finder.md) | Auto-discover devices |
+| 📄 [Bluetooth](docs/app/bluetooth.md) | Bluetooth connectivity |
 
 ---
 
-## 🤖 AI & Developer Features
+### � Windows Integration
+Windows-side tools and enhancements.
 
-<table>
-  <tr>
-    <td width="40%">
-      <img src="https://github.com/user-attachments/assets/c72be8a2-8bc5-46d2-a3c4-cab895e57d23" width="100%" />
-    </td>
-    <td width="60%">
-      <h3>🎙️ Voice Command Assistant</h3>
-      <p>
-        Control your Android device using natural language commands powered by AI. Manage calls, files, or apps through voice.
-      </p>
-      <ul>
-        <li>Conversational multi-language voice assistant</li>
-        <li>Customizable voice macros</li>
-        <li>Context-aware device operations</li>
-      </ul>
-    </td>
-  </tr>
-
-  <tr>
-    <td width="40%">
-      <img src="https://github.com/user-attachments/assets/4e2bcb26-0efc-4e44-a667-170ed5cd39ca" width="100%" />
-    </td>
-    <td width="60%">
-      <h3>⌨️ Intelligent ADB Terminal</h3>
-      <p>
-        An AI-enhanced terminal that simplifies ADB operations with predictive commands, syntax correction, and contextual help.
-      </p>
-      <ul>
-        <li>Real-time ADB feedback and logs</li>
-        <li>Command suggestions and macro support</li>
-        <li>Error detection and quick-fix insights</li>
-      </ul>
-    </td>
-  </tr>
-</table>
+| Feature | Description |
+|---------|-------------|
+| 📄 [File Sharing](docs/windows/file-sharing.md) | Browser-based file transfer |
+| 📄 [Bluetooth Pairing](docs/windows/bluetooth-pairing.md) | Stream audio to Windows |
+| 📄 [Screen Text Search](docs/windows/text-search.md) | OCR text capture & search |
+| 📄 [Tray Service](docs/windows/tray-service.md) | Background system tray |
+| 📄 [Context Menu](docs/windows/context-menu.md) | Right-click integration |
 
 ---
 

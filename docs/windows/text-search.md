@@ -1,3 +1,22 @@
 # 🔍 Screen Text Web Search
 
-Details coming soon.
+Capture on-screen text and search it instantly on Google.
+
+![Screen Text Search](../../images/section_4/Screen%20Text%20Web%20Search.gif)
+
+## Features
+
+- **OCR Capture** — Extract text from screen
+- **Instant Search** — Open Google with captured text
+- **Voice Typing** — Trigger voice input
+- **Quick Access** — Keyboard shortcut
+
+## Keyboard Shortcut
+
+| Shortcut | Action |
+|----------|--------|
+| `Alt + V` | Capture & Search |
+
+---
+
+[← Back to Documentation](../../README.md#-user-documentation)
