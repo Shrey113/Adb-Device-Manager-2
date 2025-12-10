@@ -2,7 +2,7 @@
 
 Full keyboard, mouse, and gesture control for your Android device.
 
-![Input Control](../../images/section_1/Keyboard%20%26%20Mouse%20Control.png)
+<img src="../../images/section_1/Keyboard%20%26%20Mouse%20Control.png" width="600">
 
 ## Features
 
@@ -24,4 +24,4 @@ Full keyboard, mouse, and gesture control for your Android device.
 
 ---
 
-[← Back to Documentation](../../README.md#-user-documentation)
+[← Back to Documentation](../../README.md#-documentation)

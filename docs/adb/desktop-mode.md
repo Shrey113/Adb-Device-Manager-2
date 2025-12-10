@@ -2,7 +2,7 @@
 
 Transform your Android into a full desktop experience with virtual display and multi-window control.
 
-![Desktop Mode](../../images/section_1/Multi-App%20Running.png)
+<img src="../../images/section_1/Multi-App%20Running.png" width="600">
 
 ## Features
 
@@ -26,4 +26,4 @@ Transform your Android into a full desktop experience with virtual display and m
 
 ---
 
-[← Back to Documentation](../../README.md#-user-documentation)
+[← Back to Documentation](../../README.md#-documentation)

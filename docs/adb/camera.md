@@ -2,7 +2,7 @@
 
 View the Android camera feed on Windows via ADB.
 
-![Camera View](../../images/section_3/Remote%20Camera%20Access.png)
+<img src="../../images/section_3/Remote%20Camera%20Access.png" width="600">
 
 ## Features
 
@@ -19,4 +19,4 @@ View the Android camera feed on Windows via ADB.
 
 ---
 
-[← Back to Documentation](../../README.md#-user-documentation)
+[← Back to Documentation](../../README.md#-documentation)

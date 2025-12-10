@@ -2,7 +2,7 @@
 
 Desktop-style Android experience inside ADB Device Manager — fast, smooth, and inspired by Samsung Dex.
 
-![Android Dex](../../images/section_1/Android%20Dex.gif)
+<img src="../../images/section_1/Android%20Dex.gif" width="600">
 
 ## Features
 
@@ -28,4 +28,4 @@ Desktop-style Android experience inside ADB Device Manager — fast, smooth, and
 
 ---
 
-[← Back to Documentation](../../README.md#-user-documentation)
+[← Back to Documentation](../../README.md#-documentation)

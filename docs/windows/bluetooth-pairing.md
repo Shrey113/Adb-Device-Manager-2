@@ -2,7 +2,7 @@
 
 Stream Android audio to Windows via Bluetooth.
 
-![Bluetooth Pairing](../../images/section_4/Bluetooth%20Audio%20Streaming.png)
+<img src="../../images/section_4/Bluetooth%20Audio%20Streaming.png" width="600">
 
 ## Features
 
@@ -22,4 +22,4 @@ Your Windows PC functions as a Bluetooth audio receiver. Once paired, your Andro
 
 ---
 
-[← Back to Documentation](../../README.md#-user-documentation)
+[← Back to Documentation](../../README.md#-documentation)

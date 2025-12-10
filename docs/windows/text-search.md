@@ -2,7 +2,7 @@
 
 Capture on-screen text and search it instantly on Google.
 
-![Screen Text Search](../../images/section_4/Screen%20Text%20Web%20Search.gif)
+<img src="../../images/section_4/Screen%20Text%20Web%20Search.gif" width="600">
 
 ## Features
 
@@ -19,4 +19,4 @@ Capture on-screen text and search it instantly on Google.
 
 ---
 
-[← Back to Documentation](../../README.md#-user-documentation)
+[← Back to Documentation](../../README.md#-documentation)

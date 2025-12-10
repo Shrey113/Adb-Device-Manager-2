@@ -130,8 +130,7 @@ ADB Device Manager offers **two dynamic modes** that work independently or toget
 | [File Sharing](docs/windows/file-sharing.md) | Browser-based file transfer |
 | [Bluetooth Pairing](docs/windows/bluetooth-pairing.md) | Stream audio to Windows |
 | [Text Search](docs/windows/text-search.md) | OCR text capture & search |
-| [Tray Service](docs/windows/tray-service.md) | Background system tray |
-| [Context Menu](docs/windows/context-menu.md) | Right-click integration |
+| [Device Finder](docs/windows/device-finder.md) | Auto-discover devices |
 
 ---
 

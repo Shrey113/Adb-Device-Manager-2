@@ -2,7 +2,7 @@
 
 Stream Android audio to Windows in real-time with ultra-low latency.
 
-![Audio Streaming](../../images/section_1/Audio%20Streaming.png)
+<img src="../../images/section_1/Audio%20Streaming.png" width="600">
 
 ## Features
 
@@ -31,4 +31,4 @@ Stream Android audio to Windows in real-time with ultra-low latency.
 
 ---
 
-[← Back to Documentation](../../README.md#-user-documentation)
+[← Back to Documentation](../../README.md#-documentation)

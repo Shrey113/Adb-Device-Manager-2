@@ -2,7 +2,7 @@
 
 Install Android applications directly from Windows via ADB.
 
-![APK Installer](../../images/section_3/App%20Installer.png)
+<img src="../../images/section_3/App%20Installer.png" width="600">
 
 ## Features
 
@@ -24,4 +24,4 @@ Install Android applications directly from Windows via ADB.
 
 ---
 
-[← Back to Documentation](../../README.md#-user-documentation)
+[← Back to Documentation](../../README.md#-documentation)

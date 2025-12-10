@@ -2,7 +2,7 @@
 
 Transfer files between Android and Windows with a built-in web interface.
 
-![File Sharing](../../images/section_4/Seamless%20File%20Sharing.png)
+<img src="../../images/section_4/Seamless%20File%20Sharing.png" width="600">
 
 ## Features
 
@@ -19,4 +19,4 @@ Transfer files between Android and Windows with a built-in web interface.
 
 ---
 
-[← Back to Documentation](../../README.md#-user-documentation)
+[← Back to Documentation](../../README.md#-documentation)

@@ -2,7 +2,7 @@
 
 Retrieve and view call logs from your Android device.
 
-![Call History](../../images/section_3/Call%20History.png)
+<img src="../../images/section_3/Call%20History.png" width="600">
 
 ## Features
 
@@ -22,4 +22,4 @@ Retrieve and view call logs from your Android device.
 
 ---
 
-[← Back to Documentation](../../README.md#-user-documentation)
+[← Back to Documentation](../../README.md#-documentation)
