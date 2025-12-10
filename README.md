@@ -10,9 +10,6 @@
   [![Android](https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=white)](#)
   [![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff)](#)
   [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](#)
-
-  [📥 Download](https://shrey113.github.io/Adb-Device-Manager-2/) • [📖 Docs](https://shrey113.github.io/Adb-Device-Manager-2/Docs.html) • [🎬 Demo](https://www.linkedin.com/posts/shrey-patel-207440318_adb-android-windowsintegration-activity-7313307027542278145-VUYt)
-
 </div>
 
 ---
@@ -24,7 +21,7 @@
 | **Windows** | [Download →](https://shrey113.github.io/Adb-Device-Manager-2/windows_download.html) |
 | **Android** | [Download →](https://shrey113.github.io/Adb-Device-Manager-2/android_download.html) |
 
-> 🌐 Visit [shrey113.github.io/Adb-Device-Manager-2](https://shrey113.github.io/Adb-Device-Manager-2/) for full documentation
+> 🌐 Visit [shrey113.github.io/Adb-Device-Manager-2](https://shrey113.github.io/Adb-Device-Manager-2/) full WebSite
 
 ---
 
@@ -67,9 +64,6 @@ ADB Device Manager offers **two dynamic modes** that work independently or toget
 </tr>
 </table>
 
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/a68d832a-9d74-4c92-b4e3-a7469b628738" width="75%" alt="Feature Overview"/>
-</div>
 
 ---
 
@@ -90,6 +84,12 @@ ADB Device Manager offers **two dynamic modes** that work independently or toget
 ---
 
 ## 📘 Documentation
+
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/a68d832a-9d74-4c92-b4e3-a7469b628738" width="75%" alt="Feature Overview"/>
+</div>
+
 
 ### 🧩 ADB Mode
 *System-level control via USB/Wireless debugging*
@@ -141,10 +141,7 @@ ADB Device Manager offers **two dynamic modes** that work independently or toget
 |----------|--------|
 | `Alt + S` | Screen Mirroring |
 | `Alt + A` | Audio Streaming |
-| `Alt + D` | Desktop Mode |
 | `Alt + Shift + D` | Android Dex |
-| `Alt + V` | Voice Assistant |
-| `Alt + O` | Toggle App Window |
 
 📄 [Full shortcut list →](docs/shortcuts.md)
 
@@ -156,56 +153,35 @@ ADB Device Manager offers **two dynamic modes** that work independently or toget
 |---------|:------------------:|:-----:|:----------:|
 | Screen Mirroring | ✅ Ultra-low latency | ✅ Slower | ✅ Best |
 | Full Device Control | ✅ | ✅ | ❌ Limited |
-| Notifications | ✅ Real-time | ❌ | ✅ |
+| Notifications | ✅ | ❌ | ✅ |
 | SMS & Calls | ✅ | ❌ | ✅ |
 | APK Install | ✅ | ✅ | ❌ |
 | Remote Camera | ✅ | ✅ | ❌ |
-| Auto-Discovery | ✅ mDNS | ❌ | ✅ |
+| Auto-Discovery | ✅ | ❌ | ✅ |
 | Android Dex | ✅ | ❌ | ❌ |
 
 ---
 
-## 💡 Key Features
+## 📚 Useful Links
 
-| | |
-|---|---|
-| 🔄 **Dual Control** | ADB Mode + App Mode work together |
-| 🎥 **Low Latency** | Perfect for demos & streaming |
-| 📶 **Wireless & USB** | No command-line complexity |
-| 🪟 **Windows Native** | Tray, context menu, shortcuts |
-| 🖥️ **Virtual Desktop** | Multi-app Android on PC |
-| 📱 **Real-Time Sync** | Calls & notifications |
-
----
-
-## ❓ FAQ
-
-<details>
-<summary><b>Do I need root access?</b></summary>
-<p>No. Root only enhances advanced automation features.</p>
-</details>
-
-<details>
-<summary><b>Can I use both modes together?</b></summary>
-<p>Yes! Run ADB Mode and App Mode simultaneously.</p>
-</details>
-
-<details>
-<summary><b>Does it support wireless ADB?</b></summary>
-<p>Yes. Connect via Wi-Fi using IP or QR code pairing.</p>
-</details>
-
-<details>
-<summary><b>Battery impact?</b></summary>
-<p>Minimal. Less than 3% battery per hour.</p>
-</details>
+| Title | Link |
+|--------|------|
+| 📘 Main Documentation | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html |
+| 📥 Installation Guide | https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html |
+| 🛠️ Troubleshooting | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#troubleshooting |
+| 🔐 Security & Privacy | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#security-privacy |
+| ❓ FAQ | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#faq |
+| 🌍 Full Website | https://shrey113.github.io/Adb-Device-Manager-2/ |
 
 ---
 
 <div align="center">
-  
-  **Made with ❤️ by [Shrey113](https://github.com/Shrey113)**
-  
-  [⭐ Star this repo](https://github.com/Shrey113/Adb-Device-Manager-2) • [🐛 Report Bug](https://github.com/Shrey113/Adb-Device-Manager-2/issues) • [💡 Request Feature](https://github.com/Shrey113/Adb-Device-Manager-2/issues)
+
+### 🙏 Thanks for using **ADB Device Manager**!
+
+**Made with ❤️ by [Shrey113](https://github.com/Shrey113)**  
+[⭐ Star this repo](https://github.com/Shrey113/Adb-Device-Manager-2) •  
+[🐛 Report Issue](https://github.com/Shrey113/Adb-Device-Manager-2/issues) •  
+[💡 Request Feature](https://github.com/Shrey113/Adb-Device-Manager-2/issues)
 
 </div>
