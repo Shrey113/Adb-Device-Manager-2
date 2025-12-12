@@ -30,3 +30,9 @@ node_modules/
 # 🧾 System files
 .DS_Store
 Thumbs.db
+
+# 🧾 OS / Editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
