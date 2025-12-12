@@ -1,10 +1,11 @@
 <div align="center">
   <img src="images/app_png.png" alt="ADB Device Manager" width="120"/>
-  
+
   # ADB Device Manager
-  
+
   **Connect Android & Windows into one seamless control system**
-  
+
+  <!-- Tech Badges -->
   [![Flutter](https://img.shields.io/badge/Flutter-02569B?logo=flutter&logoColor=fff)](#)
   [![Kotlin](https://img.shields.io/badge/Kotlin-%237F52FF.svg?logo=kotlin&logoColor=white)](#)
   [![Android](https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=white)](#)
@@ -20,78 +21,43 @@
 |----------|----------|
 | **Windows** | [Download →](https://shrey113.github.io/Adb-Device-Manager-2/windows_download.html) |
 | **Android** | [Download →](https://shrey113.github.io/Adb-Device-Manager-2/android_download.html) |
+| **Full Website** | [Visit WebSite →](https://shrey113.github.io/Adb-Device-Manager-2/) |
 
-> 🌐 Visit [shrey113.github.io/Adb-Device-Manager-2](https://shrey113.github.io/Adb-Device-Manager-2/) full WebSite
+---
+
+## ⚡ TL;DR (What This App Does)
+
+ADB Device Manager lets you — using two modes (ADB Mode & App Mode) — do things like:
+
+- Mirror your Android screen to Windows
+- Stream audio from device to PC
+- Control apps, notifications, calls & SMS
+- Run Android in desktop-style mode
+- Transfer files, browse photos, manage contacts
+- Connect via USB, Wi-Fi ADB, or LAN app mode
+
+Everything works **locally**, **private**, and **fast**.
 
 ---
 
 ## ✨ Overview
 
-ADB Device Manager offers **two dynamic modes** that work independently or together:
+ADB Device Manager offers **two powerful modes** that work independently or together:
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/fcb8da07-73f7-4f0a-92c2-9a0560686f36" width="75%" alt="Architecture Diagram"/>
+  <img src="images/Overview_img.png" width="75%" alt="Architecture Diagram"/>
 </div>
 
-<br>
-
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### 🧩 ADB Mode
-**For developers & power users**
-
-- Screen mirroring *(USB & Wi-Fi)*
-- Audio streaming with ultra-low latency
-- Virtual Android desktop
-- Smart ADB terminal
-- Device diagnostics
-
-</td>
-<td width="50%" valign="top">
-
-### ⚙️ APP Mode
-**For everyday productivity**
-
-- Call management from Windows
-- Notification mirroring
-- Media playback control
-- Contact & SMS access
-- Windows integration
-
-</td>
-</tr>
-</table>
-
-
----
-
-## 🖥️ Android Dex
-
-> Desktop-style Android experience — fast, smooth, inspired by Samsung Dex
-
-![Android Dex](https://github.com/user-attachments/assets/f11902ec-57e9-41e2-b9a6-1e71b8d8d23e)
-
-| Mode | Codec | FPS | Quality |
-|------|-------|-----|---------|
-| Fast | H.264 | ~60 | Low latency |
-| Normal | H.264 | ~90 | Balanced |
-| High | H.265 | ~120 | High quality |
-
-📄 [Learn more →](docs/adb/android-dex.md)
-
----
 
 ## 📘 Documentation
-
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/a68d832a-9d74-4c92-b4e3-a7469b628738" width="75%" alt="Feature Overview"/>
 </div>
 
+---
 
-### 🧩 ADB Mode
+# 🧩 ADB Mode  
 *System-level control via USB/Wireless debugging*
 
 | Feature | Description |
@@ -104,33 +70,36 @@ ADB Device Manager offers **two dynamic modes** that work independently or toget
 | [APK Installer](docs/adb/apk-installer.md) | Install apps via ADB |
 | [Camera View](docs/adb/camera.md) | View device camera on PC |
 | [Contacts](docs/adb/contacts.md) | Extract contacts via ADB |
-| [Call History](docs/adb/call-history.md) | View call logs |
+| [Call History](docs/adb/call-history.md) | Read call logs |
 | [SMS](docs/adb/sms.md) | Extract SMS messages |
 
-### 📱 APP Mode
+---
+
+# 📱 App Mode  
 *Companion app features over Wi-Fi/LAN*
 
 | Feature | Description |
 |---------|-------------|
 | [Media Control](docs/app/media-control.md) | Control music playback |
 | [Notifications](docs/app/notifications.md) | Real-time notification sync |
-| [Photo Gallery](docs/app/photo-gallery.md) | Browse device photos |
-| [File Transfer](docs/app/file-transfer.md) | Wireless file transfer |
-| [Contacts](docs/app/contacts.md) | Access contacts with rich UI |
+| [Photo Gallery](docs/app/photo-gallery.md) | Browse photos wirelessly |
+| [File Transfer](docs/app/file-transfer.md) | Fast LAN file transfer |
+| [Contacts](docs/app/contacts.md) | Rich UI contact access |
 | [Calls](docs/app/calls.md) | Manage calls from Windows |
 | [SMS Messages](docs/app/sms.md) | Send/receive SMS |
 | [Device Finder](docs/app/device-finder.md) | Auto-discover devices |
-| [Bluetooth](docs/app/bluetooth.md) | Bluetooth connectivity |
+| [Bluetooth](docs/app/bluetooth.md) | Bluetooth device tools |
 
-### 🪟 Windows Integration
-*Windows-side tools and enhancements*
+---
+
+# 🪟 Windows Integration
 
 | Feature | Description |
 |---------|-------------|
-| [File Sharing](docs/windows/file-sharing.md) | Browser-based file transfer |
+| [File Sharing](docs/windows/file-sharing.md) | Browser-based file sharing |
 | [Bluetooth Pairing](docs/windows/bluetooth-pairing.md) | Stream audio to Windows |
 | [Text Search](docs/windows/text-search.md) | OCR text capture & search |
-| [Device Finder](docs/windows/device-finder.md) | Auto-discover devices |
+| [Device Finder](docs/windows/device-finder.md) | Auto-discover connected devices |
 
 ---
 
@@ -140,7 +109,8 @@ ADB Device Manager offers **two dynamic modes** that work independently or toget
 |----------|--------|
 | `Alt + S` | Screen Mirroring |
 | `Alt + A` | Audio Streaming |
-| `Alt + Shift + D` | Android Dex |
+| `Alt + Shift + D` | Android DeX |
+| `Alt + F` | File Transfer |
 
 📄 [Full shortcut list →](docs/shortcuts.md)
 
@@ -161,28 +131,33 @@ ADB Device Manager offers **two dynamic modes** that work independently or toget
 | Android DeX Mode | ✅ | ❌ | ❌ |
 | Bluetooth Audio Pairing | ✅ | ❌ | ✅ |
 
----
-
-## 📚 Useful Links
-
-| Title | Link |
-|--------|------|
-| Main Documentation | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html |
-| Installation Guide | https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html |
-| Troubleshooting | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#troubleshooting |
-| Security & Privacy | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#security-privacy |
-| FAQ | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#faq |
-| Full Website | https://shrey113.github.io/Adb-Device-Manager-2/ |
-
----
+## 🌐 Official Resources
 
 <div align="center">
 
-### 🙏 Thanks for using **ADB Device Manager**!
+🔗 **Everything you need in one place — docs, guides, help, and website.**
 
-**Made with ❤️ by [Shrey113](https://github.com/Shrey113)**  
-[⭐ Star this repo](https://github.com/Shrey113/Adb-Device-Manager-2) •  
-[🐛 Report Issue](https://github.com/Shrey113/Adb-Device-Manager-2/issues) •  
-[💡 Request Feature](https://github.com/Shrey113/Adb-Device-Manager-2/issues)
+<br>
+
+| 📘 Resource | 🔗 Link |
+|------------|---------|
+| **Main Documentation** | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html |
+| **Installation Guide** | https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html |
+| **FAQ** | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#faq |
+| **Security & Privacy** | https://shrey113.github.io/Adb-Device-Manager-2/security/security_model.html |
+| **Transparency** | https://shrey113.github.io/Adb-Device-Manager-2/security/transparency_model.html |
+| **Privacy Policy** | https://shrey113.github.io/Adb-Device-Manager-2/security/privacy_policy.html |
+| **Troubleshooting** | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#troubleshooting |
+ 
+</div>
+
+---
+
+
+<div align="center">
+
+### Thanks for using **ADB Device Manager**!
+
+**Made with ❤️ by [Shrey113](https://github.com/Shrey113)**
 
 </div>
