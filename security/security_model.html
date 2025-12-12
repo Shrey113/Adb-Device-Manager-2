@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ADB Device Manager Security Model — Learn about our security-first architecture and local-only communication.">
+    <meta name="author" content="Shrey113">
+    <meta name="theme-color" content="#6366f1">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="security_model.css">
+    <title>Security Model — ADB Device Manager</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="https://cdn.jsdelivr.net/gh/shrey113/Adb-Device-Manager-2@latest/images/app_webp_50.webp"
+                    class="logo-icon" alt="ADB Device Manager" width="38" height="38">
+                <span>ADB Device Manager</span>
+            </a>
+            <nav class="nav">
+                <a href="../features.html" class="nav-link">Features</a>
+                <a href="../Docs.html" class="nav-link">Docs</a>
+                <a href="../support.html" class="nav-link">Support</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section class="hero">
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+                Security First
+            </div>
+            <h1 class="hero-title">Security Model</h1>
+            <p class="hero-subtitle">Learn how ADB Device Manager protects your data with local-only architecture.</p>
+        </section>
+
+        <!-- Section 1: Overview -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 16v-4M12 8h.01" />
+                    </svg></div>
+                <h2 class="section-title">1. Overview</h2>
+            </div>
+            <div class="section-content">
+                <p>ADB Device Manager is built with a <strong>security-first philosophy</strong>. Everything operates
+                    locally — no cloud servers, no external transmission, and full offline functionality.</p>
+                <div class="highlight-grid">
+                    <div class="highlight-card secure">
+                        <h4>No Cloud Servers</h4>
+                        <p>All communication stays local</p>
+                    </div>
+                    <div class="highlight-card secure">
+                        <h4>No External Transmission</h4>
+                        <p>Data never leaves your network</p>
+                    </div>
+                    <div class="highlight-card secure">
+                        <h4>Offline-First Design</h4>
+                        <p>Works without internet</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Architecture -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg></div>
+                <h2 class="section-title">2. Architecture Summary</h2>
+            </div>
+            <div class="section-content">
+                <p>Direct device-to-device communication with no intermediary servers.</p>
+                <div class="architecture-diagram">
+                    <div class="diagram-flow">
+                        <div class="diagram-box primary">
+                            <h4>Windows App</h4>
+                            <p>Desktop</p>
+                        </div>
+                        <span class="diagram-arrow">⟷</span>
+                        <div class="diagram-box">
+                            <h4>USB / LAN</h4>
+                            <p>Direct</p>
+                        </div>
+                        <span class="diagram-arrow">⟷</span>
+                        <div class="diagram-box primary">
+                            <h4>Android App</h4>
+                            <p>Companion</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Communication Channels -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12.55a11 11 0 0 1 14.08 0" />
+                        <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
+                        <line x1="12" y1="20" x2="12.01" y2="20" />
+                    </svg></div>
+                <h2 class="section-title">3. Communication Channels</h2>
+            </div>
+            <div class="section-content">
+                <div class="comm-grid">
+                    <div class="comm-card">
+                        <h4>ADB Mode (USB)</h4>
+                        <p>Direct USB connection via Android Debug Bridge. Uses local scrcpy server for mirroring.
+                            Cannot access Internet.</p>
+                    </div>
+                    <div class="comm-card">
+                        <h4>App Mode (WiFi)</h4>
+                        <p>Local network via WiFi/hotspot. Uses WebSocket/HTTP over LAN with mDNS discovery. TLS
+                            encryption where supported.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Data Handling -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                    </svg></div>
+                <h2 class="section-title">4. Data Handling</h2>
+            </div>
+            <div class="section-content">
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data Type</th>
+                                <th>Access</th>
+                                <th>Storage</th>
+                                <th>Uploaded</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Notifications</td>
+                                <td>Read</td>
+                                <td>Temporary (memory)</td>
+                                <td>Never</td>
+                            </tr>
+                            <tr>
+                                <td>SMS Messages</td>
+                                <td>Read</td>
+                                <td>Never stored</td>
+                                <td>Never</td>
+                            </tr>
+                            <tr>
+                                <td>Call Logs</td>
+                                <td>Read</td>
+                                <td>Never stored</td>
+                                <td>Never</td>
+                            </tr>
+                            <tr>
+                                <td>Contacts</td>
+                                <td>Read</td>
+                                <td>Never stored</td>
+                                <td>Never</td>
+                            </tr>
+                            <tr>
+                                <td>Files</td>
+                                <td>Read/Write</td>
+                                <td>User's devices</td>
+                                <td>Never</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Permissions -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                        <polyline points="14 2 14 8 20 8" />
+                    </svg></div>
+                <h2 class="section-title">5. Permissions & Purpose</h2>
+            </div>
+            <div class="section-content">
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Permission</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>NOTIFICATION_LISTENER</td>
+                                <td>Display notifications on Windows</td>
+                            </tr>
+                            <tr>
+                                <td>READ_SMS / SEND_SMS</td>
+                                <td>View and send SMS from Windows</td>
+                            </tr>
+                            <tr>
+                                <td>READ_CALL_LOG</td>
+                                <td>Display call history</td>
+                            </tr>
+                            <tr>
+                                <td>READ_CONTACTS</td>
+                                <td>Identify callers by name</td>
+                            </tr>
+                            <tr>
+                                <td>RECORD_AUDIO</td>
+                                <td>Audio forwarding during mirroring</td>
+                            </tr>
+                            <tr>
+                                <td>STORAGE</td>
+                                <td>File transfer access</td>
+                            </tr>
+                            <tr>
+                                <td>INTERNET / NETWORK</td>
+                                <td>Local WiFi communication</td>
+                            </tr>
+                            <tr>
+                                <td>FOREGROUND_SERVICE</td>
+                                <td>Background connection</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Local Storage -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4" />
+                        <path d="M3 15h6" />
+                        <path d="M6 18V12" />
+                    </svg></div>
+                <h2 class="section-title">6. Local Storage Security</h2>
+            </div>
+            <div class="section-content">
+                <p>Minimal configuration stored locally: window preferences, device profiles, and license status.
+                    <strong>No sensitive data (SMS, notifications, calls, contacts) is stored persistently.</strong>
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 7: Premium License -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon" style="background: linear-gradient(135deg, #d4af37, #c9a227);"><svg
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg></div>
+                <h2 class="section-title">7. Premium License Security</h2>
+            </div>
+            <div class="section-content">
+                <p>Local-only license validation. <strong>No cloud connection, no personal data
+                        collected.</strong> License key stored locally on your Windows PC.</p>
+            </div>
+        </section>
+
+        <!-- Section 8: Threat Model -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg></div>
+                <h2 class="section-title">8. Threat Model</h2>
+            </div>
+            <div class="section-content">
+                <div class="threat-grid">
+                    <div class="threat-card protects">
+                        <h4>✓ Protects Against</h4>
+                        <ul>
+                            <li>Cloud data breaches</li>
+                            <li>Third-party data sharing</li>
+                            <li>Unauthorized remote access</li>
+                            <li>Data mining and profiling</li>
+                        </ul>
+                    </div>
+                    <div class="threat-card limits">
+                        <h4>⚠ Limitations</h4>
+                        <ul>
+                            <li>Compromised local devices</li>
+                            <li>Physical device access</li>
+                            <li>Insecure public WiFi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="doc-info">
+            <div class="doc-info-item"><span>Last Updated</span><strong>December 2024</strong></div>
+            <div class="doc-info-item"><span>Version</span><strong>1.0</strong></div>
+        </div>
+
+        <div class="related-link">
+            <p>For data transparency information, see <a href="transparency_model.html">Transparency Report →</a></p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-nav">
+            <p>© 2025 ADB Device Manager. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="../features.html" class="footer-link">Features</a>
+                <a href="../Docs.html" class="footer-link">Docs</a>
+                <a href="../support.html" class="footer-link">Support</a>
+                <a href="transparency_model.html" class="footer-link">Transparency</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

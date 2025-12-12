@@ -1,0 +1,18 @@
+1. New Update Triggered From Cloud
+   Server → Sends FCM Message (notification + data)
+
+2. App Receives Cloud Message
+   FirebaseMessagingService → Builds Notification
+
+3. User Sees Notification With 2 Buttons
+   [ACCEPT]   [REJECT]
+
+4. User Taps a Button
+   Button → Sends Action to BroadcastReceiver
+
+5. Action Is Processed
+   ACCEPT → Start Activity / Background Task
+   REJECT → Stop / Ignore Request
+
+6. App Handles Final Result
+   Activity / Service runs with action = ACCEPT or REJECT
