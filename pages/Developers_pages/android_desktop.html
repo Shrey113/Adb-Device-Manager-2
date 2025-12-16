@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android Desktop — ADB Device Manager</title>
+    <link rel="icon" href="../images/app_png.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../head.css">
+    <link rel="stylesheet" href="android_desktop.css">
+</head>
+
+<body>
+    <div class="page-background"></div>
+
+    <div class="docs-container highlight-desktop">
+        <!-- Navigation Header -->
+        <header class="page-nav">
+            <button class="back-btn" onclick="window.location.href='../Developers.html'" title="Return to Hub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                <span>Developers Hub</span>
+            </button>
+            <div class="nav-breadcrumbs">
+                <span class="crumb-root">Core Modules</span>
+                <span class="crumb-sep">/</span>
+                <span class="crumb-current">Desktop</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-text">
+                    <h1>App<br>Orchestration</h1>
+                    <p class="hero-desc">
+                        Advanced per-app window management. Run individual Android applications in isolated virtual
+                        displays with independent audio streams.
+                    </p>
+                    <div class="tech-stack-pills">
+                        <span class="pill">lib/Android_Desktop/</span>
+                        <span class="pill">Virtual Display</span>
+                        <span class="pill">Sqlite DB</span>
+                    </div>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <span class="stat-value">Isolated</span>
+                        <span class="stat-label">Environment</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">Per-App</span>
+                        <span class="stat-label">Configs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mandatory Agreement -->
+            <div class="agreement-banner">
+                <div class="agreement-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z">
+                        </path>
+                        <line x1="12" y1="9" x2="12" y2="13"></line>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                </div>
+                <div class="agreement-content">
+                    <h3>Protocol: First-Run Agreement</h3>
+                    <p>Mandatory user responsibility acceptance required before module initialization.</p>
+                </div>
+                <div class="agreement-status">
+                    <span class="status-pill pending">Required</span>
+                </div>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="desktop-grid">
+
+                <!-- LEFT COLUMN: Workflow -->
+                <section class="workflow-column">
+                    <h2 class="section-heading">Lifecycle Architecture</h2>
+
+                    <div class="timeline">
+                        <!-- Step 1 -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker">1</div>
+                            <div class="timeline-content">
+                                <h3>Initialization Strategy</h3>
+                                <p>One-time deep fetch operation.</p>
+                                <div class="code-block-mini">
+                                    <code>ADB Shell</code> <span class="arrow">→</span> <code>Parse Manifest</code>
+                                    <span class="arrow">→</span> <code>Insert DB</code>
+                                </div>
+                                <ul class="step-details">
+                                    <li>Fetches Icon (Base64)</li>
+                                    <li>Parses Package Name</li>
+                                    <li>Stores in <span class="highlight-text">DeviceApp</span> Model</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker active">2</div>
+                            <div class="timeline-content">
+                                <h3>Runtime Execution</h3>
+                                <p>Cached loading for instant performance.</p>
+                                <div class="flow-diagram-mini">
+                                    <span class="box">Local DB</span>
+                                    <span class="line"></span>
+                                    <span class="box">Grid UI</span>
+                                    <span class="line"></span>
+                                    <span class="box active">Launch</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker launch">🚀</div>
+                            <div class="timeline-content">
+                                <h3>Virtual Launch</h3>
+                                <p>Scrcpy isolation command execution.</p>
+                                <div class="terminal-box">
+                                    <div class="terminal-header">
+                                        <span class="terminal-lang">bash</span>
+                                        <button class="copy-btn" onclick="copyCommand(this)">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
+                                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1">
+                                                </path>
+                                            </svg>
+                                            Copy
+                                        </button>
+                                    </div>
+                                    <div class="terminal-snippet">
+                                        <span class="cmd">scrcpy</span>
+                                        <span class="arg">--new-display</span>
+                                        <span class="arg">--start-app=com.example.android_clone</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- RIGHT COLUMN: Configuration -->
+                <section class="config-column">
+                    <h2 class="section-heading">Instance Configuration</h2>
+
+                    <div class="config-grid">
+                        <div class="config-card">
+                            <div class="cf-icon">📺</div>
+                            <div class="cf-info">
+                                <h4>Resolution</h4>
+                                <p>Custom viewport size per app.</p>
+                            </div>
+                        </div>
+
+                        <div class="config-card">
+                            <div class="cf-icon">🎬</div>
+                            <div class="cf-info">
+                                <h4>Bitrate</h4>
+                                <p>Quality modulation.</p>
+                            </div>
+                        </div>
+
+                        <div class="config-card">
+                            <div class="cf-icon">⚡</div>
+                            <div class="cf-info">
+                                <h4>Frame Rate</h4>
+                                <p>FPS capping for stability.</p>
+                            </div>
+                        </div>
+
+                        <div class="config-card highlight">
+                            <div class="cf-icon">🔊</div>
+                            <div class="cf-info">
+                                <h4>Audio Routing</h4>
+                                <p>Multi-stream audio support (Android 11+).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="comparison-widget">
+                        <h3>Dex vs Desktop</h3>
+                        <div class="comparison-row">
+                            <span class="label">Android Dex</span>
+                            <span class="bar dex-bar"></span>
+                            <span class="val">Full Environment</span>
+                        </div>
+                        <div class="comparison-row">
+                            <span class="label">Android Desktop</span>
+                            <span class="bar desktop-bar"></span>
+                            <span class="val">Single App Focus</span>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+    <script>
+        function copyCommand(button) {
+            const snippet = button.closest('.terminal-box').querySelector('.terminal-snippet');
+            const text = snippet.innerText.replace(/\s+/g, ' ').trim();
+
+            navigator.clipboard.writeText(text).then(() => {
+                const originalHtml = button.innerHTML;
+                button.innerHTML = '<span>Copied!</span>';
+                button.classList.add('copied');
+
+                setTimeout(() => {
+                    button.innerHTML = originalHtml;
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+</body>
+
+</html>

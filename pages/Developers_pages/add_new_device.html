@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connection Protocols — ADB Device Manager</title>
+    <link rel="icon" href="../images/app_png.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../head.css">
+    <link rel="stylesheet" href="add_new_device.css">
+</head>
+
+<body>
+    <div class="page-background"></div>
+
+    <div class="docs-container featured-page">
+        <!-- Navigation Header -->
+        <header class="page-nav">
+            <button class="back-btn" onclick="window.location.href='../Developers.html'" title="Return to Hub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                <span>Developers Hub</span>
+            </button>
+            <div class="nav-breadcrumbs">
+                <span class="crumb-root">Core Modules</span>
+                <span class="crumb-sep">/</span>
+                <span class="crumb-current">Connection</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1>Device<br>Connectivity</h1>
+                    <p class="hero-desc">
+                        The gateway to device management. Choose between the standard <strong>ADB Protocol</strong> for
+                        engineering control or the <strong>Companion App</strong> for seamless wireless integration.
+                    </p>
+                    <div class="tech-stack-pills">
+                        <span class="pill">Mdns Service</span>
+                        <span class="pill">TCP/IP</span>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="connection-diagram">
+                        <div class="node pc-node">
+                            <span class="icon">💻</span>
+                            <span class="label">Windows</span>
+                        </div>
+                        <div class="lines">
+                            <div class="line adb-line"><span>ADB</span></div>
+                            <div class="line app-line"><span>APP</span></div>
+                        </div>
+                        <div class="node android-node">
+                            <span class="icon">🤖</span>
+                            <span class="label">Android</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Protocols Grid -->
+            <div class="protocols-grid">
+
+                <!-- ADB TRACK -->
+                <section class="protocol-track adb-track">
+                    <div class="track-header">
+                        <div class="track-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                                <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                                <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                                <line x1="12" y1="20" x2="12" y2="20"></line>
+                            </svg>
+                        </div>
+                        <div class="track-info">
+                            <h2>ADB Mode</h2>
+                            <p>Native Android Debug Bridge integration.</p>
+                        </div>
+                    </div>
+
+                    <div class="features-list">
+                        <!-- Wireless -->
+                        <div class="feature-card">
+                            <div class="card-icon">🔐</div>
+                            <div class="card-content">
+                                <h3>Wireless Pairing</h3>
+                                <p>Standard Android 11+ pairing using IP & Pairing Code.</p>
+                                <ul class="specs-list">
+                                    <span class="tag">ADB mdns</span>
+                                    <span class="tag">Pairing Code</span>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- QR -->
+                        <div class="feature-card">
+                            <div class="card-icon">📷</div>
+                            <div class="card-content">
+                                <h3>QR Quick-Connect</h3>
+                                <p>Scan-to-pair functionality. Parses payload automatically.</p>
+                                <div class="tag-row">
+                                    <span class="tag">Zero-Config</span>
+                                    <span class="tag">Fast</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- USB -->
+                        <div class="feature-card">
+                            <div class="card-icon">🔌</div>
+                            <div class="card-content">
+                                <h3>USB Tethering</h3>
+                                <p>Legacy wired connection with auto-initialization.</p>
+                                <div class="tag-row">
+                                    <span class="tag">Fallback</span>
+                                    <span class="tag">Stable</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Developer Zone -->
+                    <div class="dev-terminal-wrapper">
+                        <div class="terminal-header">
+                            <span class="status-dot"></span>
+                            <span class="term-title">Developer Direct Connect</span>
+                        </div>
+                        <div class="terminal-body">
+                            <p class="comment"># Bypass pairing UI for known IPs</p>
+                            <div class="code-line">
+                                <span class="cmd">adb connect</span>
+                                <span class="arg">&lt;device_ip_address&gt;</span>
+                            </div>
+                            <div class="assumption-box">
+                                <strong>⚠️ Pre-requisites:</strong>
+                                <ul>
+                                    <li>Device in Debug Mode</li>
+                                    <li>Port 5555 Open</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- APP TRACK -->
+                <section class="protocol-track app-track">
+                    <div class="track-header">
+                        <div class="track-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                            </svg>
+                        </div>
+                        <div class="track-info">
+                            <h2>App Mode</h2>
+                            <p>Companion App Wireless Bridge.</p>
+                        </div>
+                    </div>
+
+                    <div class="features-list">
+                        <!-- App Handshake -->
+                        <div class="feature-card highlighted">
+                            <div class="card-icon">🌐</div>
+                            <div class="card-content">
+                                <h3>Companion Bridge</h3>
+                                <p>Proprietary TCP/HTTP handshake protocol.</p>
+                                <ul class="specs-list">
+                                    <span class="tag">Auto-Discovery</span>
+                                    <span class="tag">Auto-Connect</span>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Get App -->
+                        <div class="feature-card">
+                            <div class="card-icon">📲</div>
+                            <div class="card-content">
+                                <h3>Installation</h3>
+                                <p>Integrated deep-linking and QR generation to fetch the companion app.</p>
+                                <ul class="specs-list">
+                                    <span class="tag">Deep-Linking</span>
+                                    <span class="tag">QR-Code</span>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-widget">
+                        <div class="widget-icon">💡</div>
+                        <p><strong>Did you know?</strong> App Mode can bypass some ADB restrictions by acting as a
+                            normal network client.</p>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

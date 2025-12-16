@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Models Reference — ADB Device Manager</title>
+    <link rel="icon" href="../images/app_png.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../head.css">
+    <link rel="stylesheet" href="data_models.css">
+</head>
+
+<body>
+    <div class="page-background"></div>
+
+    <div class="docs-container highlight-models">
+        <!-- Navigation Header -->
+        <header class="page-nav">
+            <button class="back-btn" onclick="window.location.href='../Developers.html'" title="Return to Hub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                <span>Developers Hub</span>
+            </button>
+            <div class="nav-breadcrumbs">
+                <span class="crumb-root">Core Modules</span>
+                <span class="crumb-sep">/</span>
+                <span class="crumb-current">Data Reference</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Hero Section -->
+            <div class="hero-section center-hero">
+                <h1>Data Models</h1>
+                <p class="hero-desc">
+                    Comprehensive reference for Hive-persisted data structures used across the application.
+                </p>
+
+                <!-- Quick Nav Chips -->
+                <div class="quick-nav-pills">
+                    <a href="#model-device" class="pill-link">📱 Device</a>
+                    <a href="#model-app" class="pill-link">📦 DeviceApp</a>
+                    <a href="#model-wifi" class="pill-link">📡 WifiNetwork</a>
+                </div>
+            </div>
+
+            <!-- Intro Alert -->
+            <div class="persistence-alert">
+                <div class="alert-icon">💡</div>
+                <div class="alert-content">
+                    <h3>Persistence Layer</h3>
+                    <p>All models use <strong>Hive adapters</strong> for efficient local storage. Changes are
+                        automatically synced with Redux state and persisted to disk. <a target="_blank"
+                            href="https://pub.dev/packages/hive_flutter/versions">Learn More about Hive</a> </p>
+                </div>
+            </div>
+
+            <!-- MODELS STACK -->
+            <div class="models-stack">
+
+                <!-- DEVICE MODEL -->
+                <section id="model-device" class="model-section">
+                    <div class="model-header-bar">
+                        <div class="header-main">
+                            <div class="model-icon device-icon">📱</div>
+                            <div>
+                                <h2>Device Model</h2>
+                                <span class="badge primary">Primary Core</span>
+                            </div>
+                        </div>
+                        <p class="model-intro">Represents a connected Android device with all its identification,
+                            connection status, and user preferences.</p>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th width="25%">Property</th>
+                                    <th width="15%">Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="group-header">
+                                    <td colspan="3">Identification</td>
+                                </tr>
+                                <tr>
+                                    <td><code>name</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>Display name of the device</td>
+                                </tr>
+                                <tr>
+                                    <td><code>id</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>Unique identifier for the device</td>
+                                </tr>
+                                <tr>
+                                    <td><code>deviceId</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>Hardware device ID</td>
+                                </tr>
+                                <tr>
+                                    <td><code>android_id</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>Android system ID</td>
+                                </tr>
+                                <tr>
+                                    <td><code>device_fingerprint</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>Build fingerprint for verification</td>
+                                </tr>
+
+                                <tr class="group-header">
+                                    <td colspan="3">Connection State</td>
+                                </tr>
+                                <tr>
+                                    <td><code>isAdbConnected</code></td>
+                                    <td><span class="type bool">Boolean</span></td>
+                                    <td>ADB connection active</td>
+                                </tr>
+                                <tr>
+                                    <td><code>isAppConnected</code></td>
+                                    <td><span class="type bool">Boolean</span></td>
+                                    <td>Companion app connected</td>
+                                </tr>
+                                <tr>
+                                    <td><code>isAdbProgress</code></td>
+                                    <td><span class="type bool">Boolean</span></td>
+                                    <td>ADB connection in progress</td>
+                                </tr>
+                                <tr>
+                                    <td><code>isAPPProgress</code></td>
+                                    <td><span class="type bool">Boolean</span></td>
+                                    <td>App connection in progress</td>
+                                </tr>
+                                <tr>
+                                    <td><code>lastConnected</code></td>
+                                    <td><span class="type date">DateTime</span></td>
+                                    <td>Last successful connection time</td>
+                                </tr>
+
+                                <tr class="group-header">
+                                    <td colspan="3">Network & Pairing</td>
+                                </tr>
+                                <tr>
+                                    <td><code>ip</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>Current IP address</td>
+                                </tr>
+                                <tr>
+                                    <td><code>wifiName</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>Connected WiFi network name</td>
+                                </tr>
+                                <tr>
+                                    <td><code>pairing_code</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>Wireless ADB pairing code</td>
+                                </tr>
+
+                                <tr class="group-header">
+                                    <td colspan="3">Device Info</td>
+                                </tr>
+                                <tr>
+                                    <td><code>deviceModel</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>Device model name</td>
+                                </tr>
+                                <tr>
+                                    <td><code>manufacturer</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>Device manufacturer</td>
+                                </tr>
+                                <tr>
+                                    <td><code>androidVersion</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>Android OS version</td>
+                                </tr>
+                                <tr>
+                                    <td><code>isDefault</code></td>
+                                    <td><span class="type bool">Boolean</span></td>
+                                    <td>Set as default device</td>
+                                </tr>
+
+                                <tr class="group-header">
+                                    <td colspan="3">Google Account</td>
+                                </tr>
+                                <tr>
+                                    <td><code>google_email</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>Primary Google account email</td>
+                                </tr>
+                                <tr>
+                                    <td><code>google_display_name</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>Google account display name</td>
+                                </tr>
+                                <tr>
+                                    <td><code>google_profile_image_base64</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>Profile picture (Base64 encoded)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- APP MODEL -->
+                <section id="model-app" class="model-section">
+                    <div class="model-header-bar">
+                        <div class="header-main">
+                            <div class="model-icon app-icon">📦</div>
+                            <div>
+                                <h2>DeviceApp Model</h2>
+                                <span class="badge secondary">Application</span>
+                            </div>
+                        </div>
+                        <p class="model-intro">Represents an installed Android application with metadata and custom
+                            launch settings for Dex mode.</p>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th width="25%">Property</th>
+                                    <th width="15%">Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="group-header">
+                                    <td colspan="3">Metadata</td>
+                                </tr>
+                                <tr>
+                                    <td><code>packageName</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>Android package identifier</td>
+                                </tr>
+                                <tr>
+                                    <td><code>appName</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>Display label of the app</td>
+                                </tr>
+                                <tr>
+                                    <td><code>iconBase64</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>App icon (Base64 encoded)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>category</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>App category (Games, Tools, etc.)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>isSystemApp</code></td>
+                                    <td><span class="type bool">Boolean</span></td>
+                                    <td>Pre-installed system app</td>
+                                </tr>
+
+                                <tr class="group-header">
+                                    <td colspan="3">Versioning</td>
+                                </tr>
+                                <tr>
+                                    <td><code>versionName</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>Human-readable version</td>
+                                </tr>
+                                <tr>
+                                    <td><code>versionCode</code></td>
+                                    <td><span class="type number">Number</span></td>
+                                    <td>Internal version code</td>
+                                </tr>
+                                <tr>
+                                    <td><code>size</code></td>
+                                    <td><span class="type number">Number</span></td>
+                                    <td>App size in bytes</td>
+                                </tr>
+                                <tr>
+                                    <td><code>installDate</code></td>
+                                    <td><span class="type date">DateTime</span></td>
+                                    <td>When the app was installed</td>
+                                </tr>
+                                <tr>
+                                    <td><code>lastUpdateDate</code></td>
+                                    <td><span class="type date">DateTime</span></td>
+                                    <td>Last update timestamp</td>
+                                </tr>
+
+                                <tr class="group-header">
+                                    <td colspan="3">Dex Configuration</td>
+                                </tr>
+                                <tr>
+                                    <td><code>resolution</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>Display resolution (e.g., 1080p)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>bitRate</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>Video bitrate (e.g., 8M)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>maxFps</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>Max frame rate (e.g., 60)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>audio_Enabled</code></td>
+                                    <td><span class="type bool">Boolean</span></td>
+                                    <td>Enable audio for this app</td>
+                                </tr>
+                                <tr>
+                                    <td><code>is_high_performance_mode</code></td>
+                                    <td><span class="type bool">Boolean</span></td>
+                                    <td>Enable high performance</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- WIFI MODEL -->
+                <section id="model-wifi" class="model-section">
+                    <div class="model-header-bar">
+                        <div class="header-main">
+                            <div class="model-icon wifi-icon">📡</div>
+                            <div>
+                                <h2>WifiNetwork Model</h2>
+                                <span class="badge tertiary">Network</span>
+                            </div>
+                        </div>
+                        <p class="model-intro">Stores IP address mappings per WiFi network, enabling seamless
+                            reconnection when the device switches networks.</p>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th width="25%">Property</th>
+                                    <th width="15%">Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>wifiName</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>SSID of the WiFi network</td>
+                                </tr>
+                                <tr>
+                                    <td><code>wifiIp</code></td>
+                                    <td><span class="type string">String</span></td>
+                                    <td>Device IP on this network</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Control Service — ADB Device Manager</title>
+    <link rel="icon" href="../images/app_png.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../head.css">
+    <link rel="stylesheet" href="device_control.css">
+</head>
+
+<body>
+    <div class="page-background"></div>
+
+    <div class="docs-container highlight-control">
+        <!-- Navigation Header -->
+        <header class="page-nav">
+            <button class="back-btn" onclick="window.location.href='../Developers.html'" title="Return to Hub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                <span>Developers Hub</span>
+            </button>
+            <div class="nav-breadcrumbs">
+                <span class="crumb-root">Core Modules</span>
+                <span class="crumb-sep">/</span>
+                <span class="crumb-current">Device Control</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-text">
+                    <h1>Device Control<br>Service</h1>
+                    <p class="hero-desc">
+                        Granular control over device interaction subsystems. Independently manage screen mirroring,
+                        audio
+                        forwarding, and input peripherals.
+                    </p>
+                    <div class="tech-stack-pills">
+                        <span class="pill">Scrcpy_Control_Service</span>
+                        <span class="pill">Dart Stream/Process</span>
+                        <span class="pill">Low Latency</span>
+                    </div>
+                </div>
+
+                <div class="control-matrix-visual">
+                    <div class="matrix-node screen active">
+                        <span class="node-icon">🖥️</span>
+                        <span class="node-label">Screen</span>
+                    </div>
+                    <div class="matrix-conn"></div>
+                    <div class="matrix-core">
+                        <div class="core-ring"></div>
+                        <span class="core-label">ADB</span>
+                    </div>
+                    <div class="matrix-conn"></div>
+                    <div class="matrix-node audio">
+                        <span class="node-icon">🔊</span>
+                        <span class="node-label">Audio</span>
+                    </div>
+                    <div class="matrix-node input">
+                        <span class="node-icon">⌨️</span>
+                        <span class="node-label">Input</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Architecture -->
+            <section class="services-grid">
+
+                <!-- SERVICE 1: SCREEN -->
+                <div class="service-card screen-card">
+                    <div class="card-header">
+                        <div class="service-icon">📺</div>
+                        <h3>Screen Mirror</h3>
+                        <span class="status-toggle">Toggle</span>
+                    </div>
+                    <p class="service-desc">
+                        High-performance visual mirroring with configurable bitrate and resolution scaling.
+                    </p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <span class="check">✓</span> <span>H.264/H.265 Decoding</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check">✓</span> <span>Stateless Window Management</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check">✓</span> <span>Frame Buffer Optimization</span>
+                        </div>
+                    </div>
+                    <div class="code-preview">
+                        <code>toggleScreenMirror(device)</code>
+                    </div>
+                </div>
+
+                <!-- SERVICE 2: AUDIO -->
+                <div class="service-card audio-card">
+                    <div class="card-header">
+                        <div class="service-icon">🔊</div>
+                        <h3>Audio Forwarding</h3>
+                        <span class="status-toggle">Toggle</span>
+                    </div>
+                    <p class="service-desc">
+                        Independent audio stream processing using Opus codec for ultra-low latency.
+                    </p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <span class="check">✓</span> <span>Opus Codec (192Kbps)</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check">✓</span> <span>No-Video Mode</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check">✓</span> <span>Buffer Config (10ms-50ms)</span>
+                        </div>
+                    </div>
+                    <div class="code-preview">
+                        <code>toggleAudioControl(device)</code>
+                    </div>
+                </div>
+
+                <!-- SERVICE 3: INPUT -->
+                <div class="service-card input-card">
+                    <div class="card-header">
+                        <div class="service-icon">🎮</div>
+                        <h3>Input Bridge</h3>
+                        <span class="status-toggle">Toggle</span>
+                    </div>
+                    <p class="service-desc">
+                        UHID-based peripheral injection for seamless mouse and keyboard control without physical
+                        connection.
+                    </p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <span class="check">✓</span> <span>UHID Mouse Injection</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check">✓</span> <span>Keyboard Event Mapping</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="check">✓</span> <span>Shortcut Modifiers</span>
+                        </div>
+                    </div>
+                    <div class="code-preview">
+                        <code>toggleInputControl(device)</code>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Implementation Details -->
+            <section class="implementation-section">
+                <h2 class="section-title">Backend Implementation</h2>
+                <div class="impl-container">
+                    <div class="impl-sidebar">
+                        <div class="step-dot active">1</div>
+                        <div class="step-line"></div>
+                        <div class="step-dot">2</div>
+                        <div class="step-line"></div>
+                        <div class="step-dot">3</div>
+                    </div>
+                    <div class="impl-content">
+                        <div class="impl-step">
+                            <h3>Process Management</h3>
+                            <p>Each service runs in an isolated <code>Process.start()</code> instance. This prevents a
+                                crash in one subsystem (e.g., Audio) from affecting others (e.g., Screen Mirroring).</p>
+                        </div>
+                        <div class="impl-step">
+                            <h3>State Broadcasting</h3>
+                            <p>A central <code>ValueNotifier</code> emits real-time state changes for UI updates across
+                                the application.</p>
+                            <div class="code-mini">StateNotifier&lt;Map&lt;String, bool&gt;&gt;</div>
+                        </div>
+                        <div class="impl-step">
+                            <h3>Resource Cleanup</h3>
+                            <p>Strict <code>exitCode</code> listeners ensure PID termination and resource release when
+                                services are toggled off.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+
+</html>

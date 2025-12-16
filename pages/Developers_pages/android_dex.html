@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android Dex — ADB Device Manager</title>
+    <link rel="icon" href="../images/app_png.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../head.css">
+    <link rel="stylesheet" href="android_dex.css">
+</head>
+
+<body>
+    <div class="page-background"></div>
+
+    <div class="docs-container dex-theme">
+        <!-- Navigation Header -->
+        <header class="page-nav">
+            <button class="back-btn" onclick="window.location.href='../Developers.html'" title="Return to Hub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                <span>Developers Hub</span>
+            </button>
+            <div class="nav-breadcrumbs">
+                <span class="crumb-root">Core Modules</span>
+                <span class="crumb-sep">/</span>
+                <span class="crumb-current">Android Dex</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1>Desktop<br>Experience</h1>
+                    <p class="hero-desc">
+                        Transform your device into a powerhouse. A full desktop environment simulation mirroring Samsung
+                        DeX, with multi-window support and advanced audio routing.
+                    </p>
+                    <div class="tech-stack-pills">
+                        <span class="pill">lib/Android_Dex/</span>
+                        <span class="pill">Fullscreen</span>
+                        <span class="pill">Launcher Integration</span>
+                    </div>
+                </div>
+                <div class="hero-visual-dex">
+                    <div class="screen-frame">
+                        <div class="window-1"></div>
+                        <div class="window-2"></div>
+                        <div class="taskbar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workflow Visualizer: Vertical Tech Pipeline -->
+            <div class="workflow-container">
+                <h2 class="section-title">Execution Pipeline</h2>
+                <div class="vertical-pipeline">
+
+                    <!-- Step 1: Handshake -->
+                    <div class="v-step">
+                        <div class="v-marker"></div>
+                        <div class="v-content">
+                            <div class="step-header">
+                                <span class="step-num">01</span>
+                                <h3>Package Verification</h3>
+                            </div>
+                            <p>ADB verifies the helper package existence & status.</p>
+                            <div class="code-block-mini">
+                                <code>adb shell cmd package resolve-activity com.example.android_clone</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Display Injection -->
+                    <div class="v-step">
+                        <div class="v-marker"></div>
+                        <div class="v-content">
+                            <div class="step-header">
+                                <span class="step-num">02</span>
+                                <h3>Virtual Display Injection</h3>
+                            </div>
+                            <p>Spawns a secondary display surface managed by Scrcpy. It can change according to the
+                                selected mode.</p>
+                            <div class="code-block-mini">
+                                <code>scrcpy --new-display=1920x1080/280 -f --start-app=com.example.android_clone  --no-audio --window-title=AndroidDex</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Input Bridge -->
+                    <div class="v-step">
+                        <div class="v-marker"></div>
+                        <div class="v-content">
+                            <div class="step-header">
+                                <span class="step-num">03</span>
+                                <h3>Input Service Handshake</h3>
+                            </div>
+                            <p>Enables the accessibility service for touch injection.</p>
+                            <div class="code-block-mini">
+                                <code>adb shell settings put secure enabled_accessibility_services ...GlobalTouchService</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Session Loop -->
+                    <div class="v-step">
+                        <div class="v-marker"></div>
+                        <div class="v-content">
+                            <div class="step-header">
+                                <span class="step-num">04</span>
+                                <h3>Event Loop & Audio</h3>
+                            </div>
+                            <p>Establishes TCP socket for real-time control events.</p>
+                            <div class="data-badge-row">
+                                <span class="d-badge">TCP: 5555</span>
+                                <span class="d-badge">Audio: H.265</span>
+                                <span class="d-badge">Input: HID</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Technical Specifications Grid -->
+            <div class="features-grid spec-grid">
+
+                <!-- Performance Profiles -->
+                <div class="feature-card large-card perf-card">
+                    <div class="card-header">
+                        <span class="icon-box">⚡</span>
+                        <h3>Performance Profiles</h3>
+                    </div>
+                    <table class="spec-table">
+                        <thead>
+                            <tr>
+                                <th>Profile</th>
+                                <th>Res/FPS</th>
+                                <th>Encoder</th>
+                                <th>Bitrate</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Fast</strong></td>
+                                <td>1080p / 60</td>
+                                <td><span class="arg-pill">h264</span></td>
+                                <td>4M</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Normal</strong></td>
+                                <td>1080p / 90</td>
+                                <td><span class="arg-pill">h264</span></td>
+                                <td>Default</td>
+                            </tr>
+                            <tr>
+                                <td><strong>High</strong></td>
+                                <td>1080p / 120</td>
+                                <td><span class="arg-pill">h265</span></td>
+                                <td>40M</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Input Mapping -->
+                <div class="feature-card input-map-card">
+                    <div class="card-header">
+                        <span class="icon-box">🎮</span>
+                        <h3>Input Bridge Map</h3>
+                    </div>
+                    <div class="input-map">
+                        <div class="key-combo">
+                            <span class="k-box">Alt</span> + <span class="k-box">Shift</span> + <span
+                                class="k-box">D</span>
+                            <span class="arrow">➜</span>
+                            <span class="action">Launch Dex</span>
+                        </div>
+                        <div class="key-combo">
+                            <span class="k-box">Ctrl</span> + <span class="k-box">H</span>
+                            <span class="arrow">➜</span>
+                            <span class="action">Go Home</span>
+                        </div>
+                        <div class="key-combo">
+                            <span class="k-box">Ctrl</span> + <span class="k-box">B</span>
+                            <span class="arrow">➜</span>
+                            <span class="action">Go Back</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Integration Architecture -->
+                <div class="feature-card desktop-integration">
+                    <div class="card-header">
+                        <span class="icon-box">�</span>
+                        <h3>Scrcpy Arg Injection</h3>
+                    </div>
+                    <p>Runtime argument construction based on selected profile.</p>
+                    <div class="code-snippet-card">
+                        <code>--display-ime-policy=local</code><br>
+                        <code>--no-vd-system-decorations</code><br>
+                        <code>--shortcut-mod=lctrl</code>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communication Suite — ADB Device Manager</title>
+    <link rel="icon" href="../images/app_png.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../head.css">
+    <link rel="stylesheet" href="communication.css">
+</head>
+
+<body>
+    <div class="page-background"></div>
+
+    <div class="docs-container highlight-comm">
+        <!-- Navigation Header -->
+        <header class="page-nav">
+            <button class="back-btn" onclick="window.location.href='../Developers.html'" title="Return to Hub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                <span>Developers Hub</span>
+            </button>
+            <div class="nav-breadcrumbs">
+                <span class="crumb-root">Core Modules</span>
+                <span class="crumb-sep">/</span>
+                <span class="crumb-current">Communication</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-text">
+                    <h1>Communication<br>Suite</h1>
+                    <p class="hero-desc">
+                        Unified telephony interface for Calls, Contacts, and Messages. Powered by a custom on-device
+                        HTTP bridge for real-time data access.
+                    </p>
+                    <div class="tech-stack-pills">
+                        <span class="pill">HTTP REST API</span>
+                        <span class="pill">Port: 4567</span>
+                        <span class="pill">SharedPreferences Cache</span>
+                    </div>
+                </div>
+
+                <div class="network-visual">
+                    <div class="center-node">
+                        <div class="pulse-ring"></div>
+                        <span class="icon">📡</span>
+                    </div>
+                    <div class="satellite-node sat-1">
+                        <span class="icon">📞</span>
+                        <div class="connection-line"></div>
+                    </div>
+                    <div class="satellite-node sat-2">
+                        <span class="icon">👥</span>
+                        <div class="connection-line"></div>
+                    </div>
+                    <div class="satellite-node sat-3">
+                        <span class="icon">💬</span>
+                        <div class="connection-line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Tabs/Grid -->
+            <div class="features-container">
+
+                <!-- FEATURE 1: CALLS -->
+                <div class="feature-card call-card">
+                    <div class="card-header">
+                        <div class="icon-box call-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3>Call Manager</h3>
+                    </div>
+                    <p class="desc">
+                        Full access to system call logs including Incoming, Outgoing, and Missed calls.
+                    </p>
+                    <ul class="feature-list">
+                        <li><span>•</span> Make calls via HTTP request</li>
+                        <li><span>•</span> Delete call logs remotely</li>
+                        <li><span>•</span> Real-time search & filtering</li>
+                    </ul>
+                    <div class="api-endpoint">
+                        <span class="method">GET</span>
+                        <span class="url">/call_settings/get_all_calls</span>
+                    </div>
+                </div>
+
+                <!-- FEATURE 2: CONTACTS -->
+                <div class="feature-card contact-card">
+                    <div class="card-header">
+                        <div class="icon-box contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3>Smart Contacts</h3>
+                    </div>
+                    <p class="desc">
+                        Efficient contact management with local caching strategy to handle large phonebooks.
+                    </p>
+                    <ul class="feature-list">
+                        <li><span>•</span> Sync check via Total Count</li>
+                        <li><span>•</span> Base64 Photo Rendering</li>
+                        <li><span>•</span> One-tap dialing from profile</li>
+                    </ul>
+                    <div class="api-endpoint">
+                        <span class="method">GET</span>
+                        <span class="url">/contacts/get_all</span>
+                    </div>
+                </div>
+
+                <!-- FEATURE 3: SMS -->
+                <div class="feature-card sms-card">
+                    <div class="card-header">
+                        <div class="icon-box sms-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3>SMS Hub</h3>
+                    </div>
+                    <p class="desc">
+                        Complete messaging history access with "Inbox" and "Sent" classification.
+                    </p>
+                    <ul class="feature-list">
+                        <li><span>•</span> Full-body message viewing</li>
+                        <li><span>•</span> Thread visualization</li>
+                        <li><span>•</span> Type-based categorization</li>
+                    </ul>
+                    <div class="api-endpoint">
+                        <span class="method">GET</span>
+                        <span class="url">/sms_settings/get_all_sms</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Architecture Logic -->
+            <!-- Communication API Reference -->
+            <section class="api-reference-section">
+
+                <!-- CALLS ENDPOINT -->
+                <div class="endpoint-group">
+                    <div class="group-title group-call">
+                        <span class="icon">📞</span> Call Log API
+                    </div>
+
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="ep-method">GET</span>
+                            <span class="ep-url">/call_settings/get_all_calls</span>
+                            <span class="ep-desc">Retrieve unfiltered call history.</span>
+                        </div>
+                        <div class="json-box">
+                            <pre class="json-pre">{
+  <span class="j-key">"status"</span>: <span class="j-str">"success"</span>,
+  <span class="j-key">"count"</span>: <span class="j-num">1</span>,
+  <span class="j-key">"calls"</span>: [
+    {
+      <span class="j-key">"id"</span>: <span class="j-str">"1024"</span>,
+      <span class="j-key">"name"</span>: <span class="j-str">"Mom"</span>,
+      <span class="j-key">"number"</span>: <span class="j-str">"+15550199"</span>,
+      <span class="j-key">"type"</span>: <span class="j-str">"incoming"</span>,  <span class="j-cmt">// incoming | outgoing | missed</span>
+      <span class="j-key">"timestamp"</span>: <span class="j-num">1700000000000</span>,
+      <span class="j-key">"duration_seconds"</span>: <span class="j-num">45</span>
+    }
+  ]
+}</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONTACTS ENDPOINT -->
+                <div class="endpoint-group">
+                    <div class="group-title group-contact">
+                        <span class="icon">👥</span> Contacts API
+                    </div>
+
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="ep-method">GET</span>
+                            <span class="ep-url">/contacts/get_all</span>
+                            <span class="ep-desc">Fetch all contacts with optional photo data.</span>
+                        </div>
+                        <div class="json-box">
+                            <pre class="json-pre">{
+  <span class="j-key">"status"</span>: <span class="j-str">"success"</span>,
+  <span class="j-key">"count"</span>: <span class="j-num">250</span>,
+  <span class="j-key">"contacts"</span>: [
+    {
+      <span class="j-key">"id"</span>: <span class="j-str">"15"</span>,
+      <span class="j-key">"name"</span>: <span class="j-str">"Alice Smith"</span>,
+      <span class="j-key">"numbers"</span>: [
+        <span class="j-str">"555-0100"</span>,
+        <span class="j-str">"555-0101"</span>
+      ],
+      <span class="j-key">"photo_base64"</span>: <span class="j-str">"/9j/4AAQSkZJRg..."</span> <span class="j-cmt">// Optional JPEG stream</span>
+    }
+  ]
+}</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SMS ENDPOINT -->
+                <div class="endpoint-group">
+                    <div class="group-title group-sms">
+                        <span class="icon">💬</span> SMS API
+                    </div>
+
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <span class="ep-method">GET</span>
+                            <span class="ep-url">/sms_settings/get_all_sms</span>
+                            <span class="ep-desc">Get messaging history organized by type.</span>
+                        </div>
+                        <div class="json-box">
+                            <pre class="json-pre">{
+  <span class="j-key">"status"</span>: <span class="j-str">"success"</span>,
+  <span class="j-key">"count"</span>: <span class="j-num">42</span>,
+  <span class="j-key">"messages"</span>: [
+    {
+      <span class="j-key">"address"</span>: <span class="j-str">"+1555123456"</span>,
+      <span class="j-key">"body"</span>: <span class="j-str">"Hey, are we still on for lunch?"</span>,
+      <span class="j-key">"timestamp"</span>: <span class="j-num">1700001230000</span>,
+      <span class="j-key">"type"</span>: <span class="j-str">"inbox"</span> <span class="j-cmt">// inbox | sent | outbox | other</span>
+    }
+  ]
+}</pre>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+</body>
+
+</html>

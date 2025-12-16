@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media & Notifications — ADB Device Manager</title>
+    <link rel="icon" href="../images/app_png.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../head.css">
+    <link rel="stylesheet" href="media_notification.css">
+</head>
+
+<body>
+    <div class="page-background"></div>
+
+    <div class="docs-container highlight-media">
+        <!-- Navigation Header -->
+        <header class="page-nav">
+            <button class="back-btn" onclick="window.location.href='../Developers.html'" title="Return to Hub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                <span>Developers Hub</span>
+            </button>
+            <div class="nav-breadcrumbs">
+                <span class="crumb-root">Core Modules</span>
+                <span class="crumb-sep">/</span>
+                <span class="crumb-current">Media & Notifications</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-text">
+                    <h1>Live Sync<br>Engine</h1>
+                    <p class="hero-desc">
+                        Advanced IPC architecture using secondary executables for dedicated socket bridging.
+                        Facilitates high-performance, bidirectional event streaming between Android services and
+                        Windows.
+                    </p>
+                    <div class="tech-stack-pills">
+                        <span class="pill">ADB Intent Trigger</span>
+                        <span class="pill">Reverse TCP Socket</span>
+                        <span class="pill">Lifecycle Binding</span>
+                    </div>
+                </div>
+
+                <div class="process-visual">
+                    <div class="proc-node main-proc">
+                        <span class="proc-icon">⚡</span>
+                        <span class="proc-name">adb_devices.exe</span>
+                    </div>
+                    <div class="proc-arrow">Spawns</div>
+                    <div class="child-processes">
+                        <div class="proc-node child-proc media-proc">
+                            <span class="proc-icon">🎵</span>
+                            <span class="proc-name">media_server.exe</span>
+                        </div>
+                        <div class="proc-node child-proc notif-proc">
+                            <span class="proc-icon">🔔</span>
+                            <span class="proc-name">notification_server.exe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Architecture -->
+            <section class="tech-architecture">
+                <div class="arch-container">
+                    <div class="arch-box execution-flow">
+                        <h3><span class="icon">⚙️</span> Process Lifecycle & Initialization</h3>
+                        <p>
+                            To maintain stability and non-blocking UI in the main application, media and notification
+                            listeners are offloaded to separate child processes.
+                        </p>
+                        <br>
+                        <div class="timeline-steps">
+                            <!-- Step 1 -->
+                            <div class="step">
+                                <span class="step-num">01</span>
+                                <div class="step-content">
+                                    <h4>Process Orchestration</h4>
+                                    <p>The main engine <code>adb_devices.exe</code> spawns two dedicated
+                                        child executables: <strong><code>media_server.exe</code></strong>
+                                        and <strong><code>notification_server.exe</code></strong> <br>
+                                        This isolation ensures the main UI remains non-blocking.</p>
+                                </div>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div class="step">
+                                <span class="step-num">02</span>
+                                <div class="step-content">
+                                    <h4>Socket Initialization</h4>
+                                    <p>Both child processes immediately initialize their own independent <strong>TCP
+                                            Socket Servers</strong> on distinct ports and enter a listening state,
+                                        awaiting incoming connections.</p>
+                                </div>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="step">
+                                <span class="step-num">03</span>
+                                <div class="step-content">
+                                    <h4>Android Handshake Trigger</h4>
+                                    <p>
+                                        Once the Windows application is ready and listening, it sends explicit
+                                        handshake commands to the Android device. These commands instruct the
+                                        Android background services to establish socket connections and begin
+                                        streaming data.
+                                    </p>
+                                    <code class="cmd-block">http://$android_ip:$port/start_socket_io_for_media_sessions
+http://$android_ip:$port/start_socket_io_for_notifications</code>
+                                </div>
+                            </div>
+
+
+                            <!-- Step 4 -->
+                            <div class="step">
+                                <span class="step-num">04</span>
+                                <div class="step-content">
+                                    <h4>Reverse Connection</h4>
+                                    <p>Android receives the request and immediately establishes a <strong>TCP
+                                            Connection</strong> back to the respective sub-executable (Media → Media
+                                        Server, Notif → Notif Server).</p>
+                                </div>
+                            </div>
+
+                            <!-- Step 5 -->
+                            <div class="step">
+                                <span class="step-num">05</span>
+                                <div class="step-content">
+                                    <h4>Auto-Optimization & Lifecycle</h4>
+                                    <p><strong>Fail-Safe Closure:</strong> If the device disconnects, goes offline, or
+                                        detects a network change (e.g., WiFi switch), the connection is automatically
+                                        terminated on both sides. The Windows executables self-close to free up system
+                                        resources instantly.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- API PROTOCOL REFERENCE -->
+            <section class="api-protocol-section">
+
+                <!-- COLUMN 1: NOTIFICATION PROTOCOL -->
+                <div class="proto-column">
+                    <div class="col-header header-accent-notif">
+                        <span class="icon">🔔</span> Notification Protocol
+                    </div>
+
+                    <!-- Android -> Server -->
+                    <div class="direction-block">
+                        <div class="direction-badge dir-in">Android ➔ Server (Events)</div>
+
+                        <!-- Notification -->
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="ep-title">notification</span>
+                                <span class="ep-desc">Real-time event when a notification is posted.</span>
+                            </div>
+                            <div class="json-box">
+                                <pre class="json-pre"><span class="j-key">"type"</span>: <span class="j-str">"notification"</span>,
+<span class="j-key">"notification_id"</span>: <span class="j-str">"pkg|title|text"</span>,
+<span class="j-key">"app_name"</span>: <span class="j-str">"WhatsApp"</span>,
+<span class="j-key">"title"</span>: <span class="j-str">"Meta AI"</span>,
+<span class="j-key">"text"</span>: <span class="j-str">"Hello world"</span>,
+<span class="j-key">"sub_text"</span>: <span class="j-str">"Personal"</span>,
+<span class="j-key">"when"</span>: <span class="j-num">1700000000000</span>,
+<span class="j-key">"is_big_img"</span>: <span class="j-bool">true</span>,
+<span class="j-key">"actions"</span>: [
+  {
+    <span class="j-key">"title"</span>: <span class="j-str">"Reply"</span>,
+    <span class="j-key">"is_text_field"</span>: <span class="j-bool">true</span>
+  }
+]</pre>
+                            </div>
+                        </div>
+
+                        <!-- Notification List -->
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="ep-title">notification_list</span>
+                                <span class="ep-desc">Full sync sent on connection or set change.</span>
+                            </div>
+                            <div class="json-box">
+                                <pre class="json-pre"><span class="j-key">"type"</span>: <span class="j-str">"notification_list"</span>,
+<span class="j-key">"notifications"</span>: [ <span class="j-cmt">/* Array of notification objects */</span> ]</pre>
+                            </div>
+                        </div>
+
+                        <!-- Notification Update -->
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="ep-title">notification_update</span>
+                                <span class="ep-desc">Sent when an existing notification becomes richer.</span>
+                            </div>
+                            <div class="json-box">
+                                <pre class="json-pre"><span class="j-key">"type"</span>: <span class="j-str">"notification_update"</span>,
+<span class="j-key">"notification"</span>: { <span class="j-cmt">/* Full object */</span> }</pre>
+                            </div>
+                        </div>
+
+                        <!-- Notification Removed -->
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="ep-title">notification_removed</span>
+                                <span class="ep-desc">Sent when a notification is dismissed.</span>
+                            </div>
+                            <div class="json-box">
+                                <pre class="json-pre"><span class="j-key">"type"</span>: <span class="j-str">"notification_removed"</span>,
+<span class="j-key">"notification_id"</span>: <span class="j-str">"..."</span>,
+<span class="j-key">"app_package_name"</span>: <span class="j-str">"..."</span></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Server -> Android -->
+                    <div class="direction-block">
+                        <div class="direction-badge dir-out">Server ➔ Android (Commands)</div>
+
+                        <!-- Resend -->
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="ep-title">resend_notifications</span>
+                                <span class="ep-desc">Force refresh of all data.</span>
+                            </div>
+                            <div class="json-box">
+                                <pre
+                                    class="json-pre">{ <span class="j-key">"type"</span>: <span class="j-str">"resend_notifications"</span> }</pre>
+                            </div>
+                        </div>
+
+                        <!-- Reply -->
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="ep-title">send_reply</span>
+                                <span class="ep-desc">Trigger inline text reply.</span>
+                            </div>
+                            <div class="json-box">
+                                <pre class="json-pre"><span class="j-key">"type"</span>: <span class="j-str">"send_reply"</span>,
+<span class="j-key">"notification_id"</span>: <span class="j-str">"..."</span>,
+<span class="j-key">"text"</span>: <span class="j-str">"I'll be there soon!"</span></pre>
+                            </div>
+                        </div>
+
+                        <!-- Action Click -->
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="ep-title">action_click</span>
+                                <span class="ep-desc">Trigger a standard button action by title.</span>
+                            </div>
+                            <div class="json-box">
+                                <pre class="json-pre"><span class="j-key">"type"</span>: <span class="j-str">"action_click"</span>,
+<span class="j-key">"notification_id"</span>: <span class="j-str">"..."</span>,
+<span class="j-key">"title"</span>: <span class="j-str">"Mark as read"</span></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMN 2: MEDIA PROTOCOL -->
+                <div class="proto-column">
+                    <div class="col-header header-accent-media">
+                        <span class="icon">🎧</span> Media Protocol
+                    </div>
+
+                    <!-- Android -> Server -->
+                    <div class="direction-block">
+                        <div class="direction-badge dir-in">Android ➔ Server (Events)</div>
+
+                        <!-- Core Info -->
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="ep-title">core_info</span>
+                                <span class="ep-desc">Main playback state. Sent frequently on metadata/state
+                                    change.</span>
+                            </div>
+                            <div class="json-box">
+                                <pre class="json-pre"><span class="j-key">"type"</span>: <span class="j-str">"core_info"</span>,
+<span class="j-key">"package_name"</span>: <span class="j-str">"com.spotify.music"</span>,
+<span class="j-key">"song_title"</span>: <span class="j-str">"Believer"</span>,
+<span class="j-key">"song_subtitle"</span>: <span class="j-str">"Imagine Dragons"</span>,
+<span class="j-key">"is_currently_playing"</span>: <span class="j-bool">true</span>,
+<span class="j-key">"current_time"</span>: <span class="j-num">45231</span>,
+<span class="j-key">"end_time"</span>: <span class="j-num">204000</span>,
+<span class="j-key">"last_position_update_time"</span>: <span class="j-num">1700000000123</span></pre>
+                            </div>
+                        </div>
+
+                        <!-- App Icon -->
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="ep-title">app_icon</span>
+                                <span class="ep-desc">Sent once per package or on reset.</span>
+                            </div>
+                            <div class="json-box">
+                                <pre class="json-pre"><span class="j-key">"type"</span>: <span class="j-str">"app_icon"</span>,
+<span class="j-key">"package_name"</span>: <span class="j-str">"com.spotify.music"</span>,
+<span class="j-key">"app_icon_base64"</span>: <span class="j-str">"base64_png..."</span></pre>
+                            </div>
+                        </div>
+
+                        <!-- Album Art -->
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="ep-title">album_art</span>
+                                <span class="ep-desc">Sent only if track title/metadata changes.</span>
+                            </div>
+                            <div class="json-box">
+                                <pre class="json-pre"><span class="j-key">"type"</span>: <span class="j-str">"album_art"</span>,
+<span class="j-key">"song_title"</span>: <span class="j-str">"Believer"</span>,
+<span class="j-key">"album_art_base64"</span>: <span class="j-str">"base64_jpeg..."</span></pre>
+                            </div>
+                        </div>
+
+                        <!-- Remove Info -->
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="ep-title">remove_info</span>
+                                <span class="ep-desc">Sent when a media session ends.</span>
+                            </div>
+                            <div class="json-box">
+                                <pre class="json-pre"><span class="j-key">"type"</span>: <span class="j-str">"remove_info"</span>,
+<span class="j-key">"package_name"</span>: <span class="j-str">"com.spotify.music"</span></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Server -> Android -->
+                    <div class="direction-block">
+                        <div class="direction-badge dir-out">Server ➔ Android (Commands)</div>
+
+                        <!-- Playback Cmd -->
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="ep-title">playback_cmd</span>
+                                <span class="ep-desc">Transport controls.</span>
+                            </div>
+                            <div class="json-box">
+                                <pre
+                                    class="json-pre"><span class="j-key">"type"</span>: <span class="j-str">"playback_cmd"</span>,
+<span class="j-key">"package_name"</span>: <span class="j-str">"com.spotify.music"</span>,
+<span class="j-key">"cmd"</span>: <span class="j-str">"play"</span> <span class="j-cmt">// play | pause | next | prev</span></pre>
+                            </div>
+                        </div>
+
+                        <!-- Seek Update -->
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="ep-title">seek_update</span>
+                                <span class="ep-desc">Precise seek or relative skip.</span>
+                            </div>
+                            <div class="json-box">
+                                <pre class="json-pre"><span class="j-cmt">// SEEK</span>
+{
+  <span class="j-key">"type"</span>: <span class="j-str">"seek_update"</span>,
+  <span class="j-key">"cmd"</span>: <span class="j-str">"seek_to"</span>,
+  <span class="j-key">"position"</span>: <span class="j-num">60000</span>
+}
+<span class="j-cmt">// SKIP</span>
+{
+  <span class="j-key">"type"</span>: <span class="j-str">"seek_update"</span>,
+  <span class="j-key">"cmd"</span>: <span class="j-str">"skip"</span>,
+  <span class="j-key">"value"</span>: <span class="j-num">10000</span>
+}</pre>
+                            </div>
+                        </div>
+
+                        <!-- Resend All -->
+                        <div class="endpoint-card">
+                            <div class="endpoint-header">
+                                <span class="ep-title">resend_all</span>
+                                <span class="ep-desc">Request full resync of media sessions.</span>
+                            </div>
+                            <div class="json-box">
+                                <pre
+                                    class="json-pre">{ <span class="j-key">"type"</span>: <span class="j-str">"resend_all"</span> }</pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+</body>
+
+</html>

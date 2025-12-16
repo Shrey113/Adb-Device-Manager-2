@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Camera — ADB Device Manager</title>
+    <link rel="icon" href="../images/app_png.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../head.css">
+    <link rel="stylesheet" href="device_camera.css">
+</head>
+
+<body>
+    <div class="page-background"></div>
+
+    <div class="docs-container highlight-camera">
+        <!-- Navigation Header -->
+        <header class="page-nav">
+            <button class="back-btn" onclick="window.location.href='../Developers.html'" title="Return to Hub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                <span>Developers Hub</span>
+            </button>
+            <div class="nav-breadcrumbs">
+                <span class="crumb-root">Core Modules</span>
+                <span class="crumb-sep">/</span>
+                <span class="crumb-current">Device Camera</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-text">
+                    <h1>Device Camera<br>Mirroring</h1>
+                    <p class="hero-desc">
+                        Direct video feed access from device camera hardware. Supports high-speed capture, multiple
+                        resolutions, and physical camera selection via Scrcpy V2+.
+                    </p>
+                    <div class="tech-stack-pills">
+                        <span class="pill">Scrcpy V2+</span>
+                        <span class="pill">Video4Linux2</span>
+                        <span class="pill">H.264/AVC</span>
+                    </div>
+                </div>
+
+                <div class="camera-lens-visual">
+                    <div class="lens-outer-ring"></div>
+                    <div class="lens-mid-ring"></div>
+                    <div class="lens-inner-glass">
+                        <div class="lens-reflection"></div>
+                    </div>
+                    <div class="sensor-grid"></div>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-wrapper icon-resolution">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M8 21h8m-4-4v4" />
+                        </svg>
+                    </div>
+                    <h3>Multi-Resolution</h3>
+                    <p>Dynamic resolution switching from 176x144 up to 4K (4096x3072) based on hardware capability.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon-wrapper icon-fps">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <h3>High FPS Capture</h3>
+                    <p>Support for high-speed capture modes (60, 120, 240, 480 fps) for supported resolutions.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon-wrapper icon-source">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                            <circle cx="12" cy="13" r="4" />
+                        </svg>
+                    </div>
+                    <h3>Source Selection</h3>
+                    <p>Toggle between back and front-facing cameras with ID-based selection (Camera 0, Camera 1, etc.).
+                    </p>
+                </div>
+            </div>
+
+            <!-- UI Preview Section -->
+            <section class="ui-preview-section">
+                <h2 class="section-title">Interface Design</h2>
+                <div class="mockup-container">
+                    <!-- Fake Window Header -->
+                    <div class="mockup-window">
+                        <div class="window-header">
+                            <div class="window-controls">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="window-title">Camera 0 (back) - 1920x1080</span>
+                        </div>
+
+                        <!-- UI Components Mockup -->
+                        <div class="mockup-body">
+                            <div class="control-bar">
+                                <div class="cam-select">
+                                    <span class="cam-icon">📸</span>
+                                    <div class="cam-info">
+                                        <h4>Camera 0 (back)</h4>
+                                        <div class="tags">
+                                            <span class="tag res">4096x3072</span>
+                                            <span class="tag fps">30 FPS</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="start-btn">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                    Start
+                                </button>
+                            </div>
+
+                            <div class="section-label">Supported Resolutions</div>
+                            <div class="res-grid h-scroll">
+                                <span class="res-pill active">4096x3072</span>
+                                <span class="res-pill">3840x2160</span>
+                                <span class="res-pill">1920x1080</span>
+                                <span class="res-pill">1280x720</span>
+                                <span class="res-pill">800x600</span>
+                                <span class="res-pill">640x480</span>
+                            </div>
+
+                            <div class="section-label">High Speed Capture</div>
+                            <div class="speed-list">
+                                <div class="speed-row">
+                                    <span class="speed-res">1280x720</span>
+                                    <span class="speed-val">FPS: 120, 240</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Implementation Details -->
+            <section class="code-details">
+                <h2 class="section-title">Command Construction</h2>
+                <div class="terminal-box">
+                    <div class="terminal-header">
+                        <span class="terminal-lang">Dart Process</span>
+                    </div>
+                    <div class="terminal-snippet">
+                        <span class="cmd">scrcpy</span>
+                        <span class="arg">--video-source=camera</span>
+                        <span class="arg">--camera-id=0</span>
+                        <span class="arg">--camera-size=1920x1080</span>
+                        <span class="arg">--camera-fps=60</span>
+                        <span class="arg">--window-title="Camera 0"</span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+
+</html>

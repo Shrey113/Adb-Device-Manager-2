@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server & Network Architecture — ADB Device Manager</title>
+    <link rel="icon" href="../images/app_png.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../head.css">
+    <link rel="stylesheet" href="server_architecture.css">
+</head>
+
+<body>
+    <div class="page-background"></div>
+
+    <div class="docs-container highlight-server">
+        <!-- Navigation Header -->
+        <header class="page-nav">
+            <button class="back-btn" onclick="window.location.href='../Developers.html'" title="Return to Hub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                <span>Developers Hub</span>
+            </button>
+            <div class="nav-breadcrumbs">
+                <span class="crumb-root">System Reference</span>
+                <span class="crumb-sep">/</span>
+                <span class="crumb-current">Server Architecture</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-text">
+                    <h1>Server &<br>Network Layer</h1>
+                    <p class="hero-desc">
+                        The backbone of the application. A hybrid architecture combining a local HTTP control bridge
+                        with specialized WebSocket and TCP channels for real-time bidirectional communication.
+                    </p>
+                    <div class="tech-stack-pills">
+                        <span class="pill">Dart Shelf Server</span>
+                        <span class="pill">WebSockets</span>
+                        <span class="pill">Async TCP</span>
+                    </div>
+                </div>
+                <div class="server-visual">
+                    <div class="sv-node center">
+                        <span class="icon">🖥️</span>
+                        <span class="label">MainServer</span>
+                    </div>
+                    <div class="sv-orbit">
+                        <div class="sv-node satellite sat-1">
+                            <span class="icon">⚡</span>
+                            <span class="label">SocketManager</span>
+                        </div>
+                        <div class="sv-node satellite sat-2">
+                            <span class="icon">📞</span>
+                            <span class="label">CallUI</span>
+                        </div>
+                        <div class="sv-node satellite sat-3">
+                            <span class="icon">📱</span>
+                            <span class="label">DexTCP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1. MAIN SERVER -->
+            <section class="arch-module" id="main-server">
+                <div class="module-header">
+                    <div class="icon-box icon-http">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="header-text">
+                        <h2>MainServer (HTTP Control)</h2>
+                        <p class="sub-text">Local Control & Bridge Server • Dart Shelf • JSON</p>
+                    </div>
+                </div>
+                <div class="module-body">
+                    <p>Acts as the <strong>single source of truth</strong>, coordinating Android background services,
+                        ADB connections, and the Flutter UI.</p>
+
+                    <h4
+                        style="color: var(--text-muted); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                        Device & System Discovery</h4>
+                    <div class="endpoint-grid">
+                        <div class="ep-card">
+                            <span class="method">GET</span> <span class="url">/</span>
+                            <p>Serves the local HTML dashboard.</p>
+                        </div>
+                        <div class="ep-card">
+                            <span class="method">GET</span> <span class="url">/ping</span>
+                            <p>Health check to verify server status.</p>
+                        </div>
+                        <div class="ep-card">
+                            <span class="method">POST</span> <span class="url">/add_me_to_server</span>
+                            <p>Registers Android device (IP, ID, Fingerprint).</p>
+                        </div>
+                        <div class="ep-card">
+                            <span class="method">GET</span> <span class="url">/devices</span>
+                            <p>Returns all currently connected devices.</p>
+                        </div>
+                        <div class="ep-card">
+                            <span class="method">GET</span> <span class="url">/get_device_info</span>
+                            <p>Returns Windows host identity (Hostname, IP).</p>
+                        </div>
+                    </div>
+
+                    <h4
+                        style="color: var(--text-muted); margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                        Media & Actions</h4>
+                    <div class="endpoint-grid">
+                        <div class="ep-card">
+                            <span class="method">POST</span> <span class="url">/call_event</span>
+                            <p>Handles incoming/outgoing calls, launches UI.</p>
+                        </div>
+                        <div class="ep-card">
+                            <span class="method">POST</span> <span class="url">/Run_audio_bordcast</span>
+                            <p>Starts audio streaming (Fast/High Quality).</p>
+                        </div>
+                        <div class="ep-card">
+                            <span class="method">POST</span> <span class="url">/get_device_wallpaper</span>
+                            <p>Returns device wallpaper as Base64.</p>
+                        </div>
+                        <div class="ep-card">
+                            <span class="method">POST</span> <span class="url">/get_google_info</span>
+                            <p>Returns Google account details (Email, Photo).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. SOCKET MANAGER -->
+            <section class="arch-module" id="socket-manager">
+                <div class="module-header">
+                    <div class="icon-box icon-ws">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18V5l12-2v13"></path>
+                            <circle cx="6" cy="18" r="3"></circle>
+                            <circle cx="18" cy="16" r="3"></circle>
+                        </svg>
+                    </div>
+                    <div class="header-text">
+                        <h2>SocketManager (App Comms)</h2>
+                        <p class="sub-text">Real-time Android App Connection • WebSockets</p>
+                    </div>
+                </div>
+                <div class="module-body">
+                    <p>Maintains persistent stateful connections. Handles <strong>one connection per IP</strong>,
+                        ensuring reliability for live events like calls and logs.</p>
+
+                    <div class="lifecycle-steps" style="margin-bottom: 2rem;">
+                        <div class="l-step">
+                            <span class="num">1</span>
+                            <div class="txt"><strong>Connect:</strong> Client initiates WebSocket handshake.</div>
+                        </div>
+                        <div class="l-step">
+                            <span class="num">2</span>
+                            <div class="txt"><strong>Register:</strong> Client sends
+                                <code>{ "type": "register", "id": "..." }</code>.</div>
+                        </div>
+                        <div class="l-step">
+                            <span class="num">3</span>
+                            <div class="txt"><strong>Stream:</strong> Bi-directional JSON flow (Call Events, Logs).
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 style="color: var(--text-muted); margin-bottom: 1rem;">Server → Client Commands</h4>
+                    <div class="cmd-list" style="margin-bottom: 0;">
+                        <span>sendTo(ip, msg)</span>
+                        <span>broadcast(data)</span>
+                        <span>sendIpRaw(ip, json)</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. SPECIALIZED SOCKETS -->
+            <div class="dual-grid">
+                <!-- Call UI Socket -->
+                <section class="arch-module mini-module">
+                    <div class="module-header">
+                        <div class="icon-box icon-tcp">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="header-text">
+                            <h2>Call UI Socket</h2>
+                            <p class="sub-text">Ephemeral TCP • Localhost</p>
+                        </div>
+                    </div>
+                    <div class="module-body">
+                        <p>Lightweight socket active <strong>only</strong> during phone calls. Bridges the main
+                            background service with the floating Call Window UI.</p>
+                        <div class="cmd-list">
+                            <span>register_call_ui(ip, id)</span>
+                            <span>sendIp(ip, data)</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Dex Socket -->
+                <section class="arch-module mini-module">
+                    <div class="module-header">
+                        <div class="icon-box icon-dex">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <div class="header-text">
+                            <h2>AdbTcpServer (Dex)</h2>
+                            <p class="sub-text">Dex Control • TCP</p>
+                        </div>
+                    </div>
+                    <div class="module-body">
+                        <p>Specialized socket for Android Dex mode. Broadcasts UI events and manages app audio streams.
+                        </p>
+
+                        <h4 style="color: var(--text-muted);font-size: 0.8rem; margin-bottom: 0.5rem;">Navigation & UI
+                        </h4>
+                        <div class="cmd-list" style="margin-bottom: 1rem;">
+                            <span>go home</span> <span>go back</span> <span>go recent</span>
+                            <span>app_click</span> <span>Side Bar click event</span>
+                        </div>
+
+                        <h4 style="color: var(--text-muted);font-size: 0.8rem; margin-bottom: 0.5rem;">System Control
+                        </h4>
+                        <div class="cmd-list">
+                            <span>toggleBluetooth</span> <span>toggleMobileData</span>
+                            <span>req_app_audio</span> <span>stop_all_audio</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </main>
+    </div>
+</body>
+
+</html>

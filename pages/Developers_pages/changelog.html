@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changelog — ADB Device Manager</title>
+    <link rel="icon" href="../images/app_png.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../head.css">
+    <link rel="stylesheet" href="changelog.css">
+</head>
+
+<body>
+    <div class="page-background"></div>
+
+    <div class="docs-container highlight-changelog">
+
+        <!-- Navigation Header -->
+        <header class="page-nav">
+            <button class="back-btn" onclick="window.location.href='../Developers.html'" title="Return to Hub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                <span>Developers Hub</span>
+            </button>
+            <div class="nav-breadcrumbs">
+                <span class="crumb-root">System Reference</span>
+                <span class="crumb-sep">/</span>
+                <span class="crumb-current">Version History</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+
+            <!-- Hero Section -->
+            <div class="hero-section center-hero">
+                <h1>Version Changelog</h1>
+                <p class="hero-desc">
+                    A comprehensive historical record of architectural evolution, feature rollouts,
+                    performance optimizations, and system-level improvements across ADB Device Manager.
+                </p>
+                <div class="tech-stack-pills">
+                    <span class="pill">Current: v0.9</span>
+                    <span class="pill">Production-Ready</span>
+                </div>
+                <!-- Main GitHub Action -->
+                <div class="hero-actions">
+                    <a href="https://github.com/Shrey113/Adb-Device-Manager-2/releases" target="_blank"
+                        class="gh-main-btn">
+                        <svg height="20" viewBox="0 0 16 16" width="20" fill="currentColor">
+                            <path
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+                            </path>
+                        </svg>
+                        View All Releases
+                    </a>
+                </div>
+            </div>
+
+            <div class="timeline">
+
+                <!-- v0.9 -->
+                <div class="timeline-group latest">
+                    <div class="timeline-marker"></div>
+                    <div class="version-card">
+                        <div class="vc-header">
+                            <h2>v0.9</h2>
+                            <span class="tag-badge">LATEST</span>
+                        </div>
+                        <div class="vc-date">November 2025</div>
+
+                        <div class="vc-section">
+                            <h3>🚀 Platform-Level Enhancements</h3>
+                            <ul>
+                                <li>
+                                    <strong>Android Desktop (Dex-like) Mode:</strong>
+                                    Introduced a dedicated desktop-grade execution layer built on
+                                    custom virtual displays, enabling per-app window isolation,
+                                    independent lifecycle management, and desktop-style input routing.
+                                </li>
+                                <li>
+                                    <strong>Performance Profiles:</strong>
+                                    Implemented selectable rendering pipelines (Fast / Balanced / High-Quality)
+                                    to dynamically adjust encoding, resolution scaling, and frame pacing.
+                                </li>
+                                <li>
+                                    <strong>Advanced Virtual Display Stack:</strong>
+                                    Expanded input injection, window control, and surface management
+                                    using low-latency ADB streams.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="vc-section">
+                            <h3>🛠 Stability & Refinements</h3>
+                            <ul>
+                                <li>Reduced UI thread contention and optimized Flutter render scheduling.</li>
+                                <li>Improved Wi-Fi ADB handshake reliability under unstable network conditions.</li>
+                                <li>Multiple internal crash fixes and memory-safety improvements.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="vc-actions">
+                            <div class="contributor-meta">
+                                <span>Released by</span>
+                                <a href="https://github.com/Shrey113" target="_blank"
+                                    class="contributor-link">Shrey113</a>
+                            </div>
+                            <a href="https://github.com/Shrey113/Adb-Device-Manager-2/releases/tag/ADB-Device-Manager-v.0.9"
+                                target="_blank" class="gh-release-btn">
+                                View Release 0.9 &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- v0.8 -->
+                <div class="timeline-group">
+                    <div class="timeline-marker"></div>
+                    <div class="version-card">
+                        <div class="vc-header">
+                            <h2>v0.8</h2>
+                        </div>
+                        <div class="vc-date">November 2025</div>
+
+                        <div class="vc-section">
+                            <h3>✨ Core Architecture Expansion</h3>
+                            <ul>
+                                <li>
+                                    <strong>Dual-Mode Architecture:</strong>
+                                    Formal separation between pure ADB control mode and App-assisted
+                                    synchronization mode for scalable feature growth.
+                                </li>
+                                <li>
+                                    <strong>System Utilities Suite:</strong>
+                                    Added calls, SMS, media session control, file management,
+                                    and real-time notification mirroring.
+                                </li>
+                                <li>
+                                    <strong>Multi-Device Stability:</strong>
+                                    Reworked device registry and connection lifecycle handling
+                                    to support concurrent devices with fewer race conditions.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Actions -->
+                        <div class="vc-actions">
+                            <div class="contributor-meta">
+                                <span>Released by</span>
+                                <a href="https://github.com/Shrey113" target="_blank"
+                                    class="contributor-link">Shrey113</a>
+                            </div>
+                            <a href="https://github.com/Shrey113/Adb-Device-Manager-2/releases/tag/ADB-Device-Manager-v.0.8"
+                                target="_blank" class="gh-release-btn">
+                                View Release 0.8 &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- v0.7 -->
+                <div class="timeline-group">
+                    <div class="timeline-marker"></div>
+                    <div class="version-card">
+                        <div class="vc-header">
+                            <h2>v0.7</h2>
+                        </div>
+                        <div class="vc-date">September 2025</div>
+                        <div class="vc-section">
+                            <h3>📺 Display & Interaction Layer</h3>
+                            <ul>
+                                <li>Integrated <strong>scrcpy</strong> as the primary low-latency display backend.</li>
+                                <li>Implemented dynamic resolution scaling and orientation awareness.</li>
+                                <li>Initial keyboard and mouse input forwarding pipeline.</li>
+                            </ul>
+                        </div>
+                        <div class="vc-section">
+                            <h3>🔗 Device Services</h3>
+                            <ul>
+                                <li>Introduced contacts and call-log synchronization.</li>
+                                <li>Improved USB authorization and device trust detection.</li>
+                                <li>Stabilized ADB reconnect behavior during cable re-plug events.</li>
+                            </ul>
+                        </div>
+                        <div class="vc-actions">
+                            <div class="contributor-meta">
+                                <span>Released by</span>
+                                <a href="https://github.com/Shrey113" target="_blank"
+                                    class="contributor-link">Shrey113</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- v0.6 -->
+                <div class="timeline-group">
+                    <div class="timeline-marker"></div>
+                    <div class="version-card">
+                        <div class="vc-header">
+                            <h2>v0.6</h2>
+                        </div>
+                        <div class="vc-date">July 2025</div>
+                        <div class="vc-section">
+                            <h3>📁 Data & Transfer Systems</h3>
+                            <ul>
+                                <li>Added bidirectional file transfer with progress tracking.</li>
+                                <li>Introduced background task queue for long-running ADB operations.</li>
+                                <li>Handled partial failures and transfer resume logic.</li>
+                            </ul>
+                        </div>
+                        <div class="vc-section">
+                            <h3>🧩 Device Intelligence</h3>
+                            <ul>
+                                <li>Device metadata inspection (model, ABI, Android version, SDK).</li>
+                                <li>Cached device profiles for faster reconnect.</li>
+                            </ul>
+                        </div>
+                        <div class="vc-actions">
+                            <div class="contributor-meta">
+                                <span>Released by</span>
+                                <a href="https://github.com/Shrey113" target="_blank"
+                                    class="contributor-link">Shrey113</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- v0.5 -->
+                <div class="timeline-group">
+                    <div class="timeline-marker"></div>
+                    <div class="version-card">
+                        <div class="vc-header">
+                            <h2>v0.5</h2>
+                        </div>
+                        <div class="vc-date">May 2025</div>
+                        <div class="vc-section">
+                            <h3>🧪 Public Alpha Milestone</h3>
+                            <ul>
+                                <li>First stable multi-session ADB connection layer.</li>
+                                <li>Implemented command execution sandbox with error isolation.</li>
+                                <li>Introduced logging, diagnostics, and crash reporting hooks.</li>
+                            </ul>
+                        </div>
+                        <div class="vc-section">
+                            <h3>🎨 UI Foundation</h3>
+                            <ul>
+                                <li>Early Flutter desktop shell with modular navigation.</li>
+                                <li>Separated UI state from ADB backend services.</li>
+                            </ul>
+                        </div>
+                        <div class="vc-actions">
+                            <div class="contributor-meta">
+                                <span>Released by</span>
+                                <a href="https://github.com/Shrey113" target="_blank"
+                                    class="contributor-link">Shrey113</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- v0.4 -->
+                <div class="timeline-group">
+                    <div class="timeline-marker"></div>
+                    <div class="version-card">
+                        <div class="vc-header">
+                            <h2>v0.4</h2>
+                        </div>
+                        <div class="vc-date">March 2025</div>
+                        <div class="vc-section">
+                            <h3>🖥 Device Management Core</h3>
+                            <ul>
+                                <li>Introduced persistent device registry.</li>
+                                <li>Implemented robust connect / disconnect state machine.</li>
+                                <li>Handled offline, unauthorized, and recovery states.</li>
+                            </ul>
+                        </div>
+                        <div class="vc-section">
+                            <h3>⚙️ Reliability</h3>
+                            <ul>
+                                <li>Graceful handling of ADB daemon restarts.</li>
+                                <li>Reduced UI freezes during device polling.</li>
+                            </ul>
+                        </div>
+                        <div class="vc-actions">
+                            <div class="contributor-meta">
+                                <span>Released by</span>
+                                <a href="https://github.com/Shrey113" target="_blank"
+                                    class="contributor-link">Shrey113</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- v0.3 -->
+                <div class="timeline-group">
+                    <div class="timeline-marker"></div>
+                    <div class="version-card">
+                        <div class="vc-header">
+                            <h2>v0.3</h2>
+                        </div>
+                        <div class="vc-date">January 2025</div>
+                        <div class="vc-section">
+                            <h3>🔄 Backend Architecture</h3>
+                            <ul>
+                                <li>Re-architected backend into service-oriented modules.</li>
+                                <li>Introduced centralized command dispatcher.</li>
+                                <li>Added structured event bus for device updates.</li>
+                            </ul>
+                        </div>
+                        <div class="vc-section">
+                            <h3>🔔 Notification Bridge</h3>
+                            <ul>
+                                <li>Prototype Android-to-desktop notification sync.</li>
+                                <li>Basic filtering and categorization support.</li>
+                            </ul>
+                        </div>
+                        <div class="vc-actions">
+                            <div class="contributor-meta">
+                                <span>Released by</span>
+                                <a href="https://github.com/Shrey113" target="_blank"
+                                    class="contributor-link">Shrey113</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- v0.2 -->
+                <div class="timeline-group">
+                    <div class="timeline-marker"></div>
+                    <div class="version-card">
+                        <div class="vc-header">
+                            <h2>v0.2</h2>
+                        </div>
+                        <div class="vc-date">December 2024</div>
+                        <div class="vc-section">
+                            <h3>🔌 Connectivity Foundations</h3>
+                            <ul>
+                                <li>Initial ADB pairing and onboarding workflow.</li>
+                                <li>USB device discovery and authorization detection.</li>
+                                <li>Manual TCP/IP connection support.</li>
+                            </ul>
+                        </div>
+                        <div class="vc-section">
+                            <h3>🏗 Core Services</h3>
+                            <ul>
+                                <li>Bootstrapped backend service manager.</li>
+                                <li>Defined internal APIs for future modules.</li>
+                            </ul>
+                        </div>
+                        <div class="vc-actions">
+                            <div class="contributor-meta">
+                                <span>Released by</span>
+                                <a href="https://github.com/Shrey113" target="_blank"
+                                    class="contributor-link">Shrey113</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- v0.1 -->
+                <div class="timeline-group">
+                    <div class="timeline-marker"></div>
+                    <div class="version-card">
+                        <div class="vc-header">
+                            <h2>v0.1</h2>
+                        </div>
+                        <div class="vc-date">November 2024</div>
+                        <div class="vc-section">
+                            <h3>🌱 Project Bootstrap</h3>
+                            <ul>
+                                <li>Repository initialized and project structure defined.</li>
+                                <li>Technology stack finalized (Flutter, ADB, native bridges).</li>
+                                <li>Early proof-of-concept ADB command execution.</li>
+                            </ul>
+                        </div>
+                        <div class="vc-actions">
+                            <div class="contributor-meta">
+                                <span>Released by</span>
+                                <a href="https://github.com/Shrey113" target="_blank"
+                                    class="contributor-link">Shrey113</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- v0.0 -->
+                <div class="timeline-group">
+                    <div class="timeline-marker"></div>
+                    <div class="version-card">
+                        <div class="vc-header">
+                            <h2>v0.0</h2>
+                        </div>
+                        <div class="vc-date">October 2024</div>
+                        <div class="vc-section">
+                            <h3>🧠 Concept & Research</h3>
+                            <ul>
+                                <li>Explored limitations of existing Android desktop solutions.</li>
+                                <li>Defined long-term vision for unified Android-to-desktop control.</li>
+                                <li>Evaluated ADB, scrcpy, and virtual display capabilities.</li>
+                            </ul>
+                        </div>
+                        <div class="vc-actions">
+                            <div class="contributor-meta">
+                                <span>Released by</span>
+                                <a href="https://github.com/Shrey113" target="_blank"
+                                    class="contributor-link">Shrey113</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </main>
+    </div>
+</body>
+
+</html>

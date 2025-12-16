@@ -5,88 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Language" content="en" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="ADB Device Manager Developer Documentation — Complete architecture analysis, module breakdown, data flow, and contribution guide for developers.">
-    <meta name="keywords"
-        content="ADB developer docs, Flutter Windows app architecture, Android companion app, Redux state management, ADB Device Manager source code">
-    <meta name="author" content="ADB Device Manager">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://shrey113.github.io/Adb-Device-Manager-2/developers">
     <title>Developer Documentation — ADB Device Manager</title>
-
-    <meta property="og:title" content="ADB Device Manager — Developer Documentation">
-    <meta property="og:description"
-        content="Complete architecture analysis and contribution guide for ADB Device Manager.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://shrey113.github.io/Adb-Device-Manager-2/developers">
-    <meta property="og:image" content="https://shrey113.github.io/Adb-Device-Manager-2/images/app_png.png">
-
-    <link rel="icon" href="images/app_png.png">
+    <link rel="icon" href="../images/app_png.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="Developers.css">
     <link rel="stylesheet" href="head.css">
 </head>
 
 <body>
+    <div class="page-background"></div>
+
     <div class="docs-container">
         <!-- Sidebar Navigation -->
-        <nav class="docs-sidebar">
-            <div class="sidebar-content">
-                <div class="sidebar-section">
-                    <h3 class="sidebar-title">📚 DOCUMENTATION</h3>
-                    <a href="#architecture" class="sidebar-link">Architecture Overview</a>
-                </div>
-
-                <div class="sidebar-section">
-                    <h3 class="sidebar-title">🔧 CORE MODULES</h3>
-                    <a href="#modules" class="sidebar-link">Core Modules Overview</a>
-                    <div class="sidebar-subsection">
-                        <a href="#add-new-device" class="sidebar-sublink">1️⃣ Add New Device</a>
-                        <div class="sidebar-nested">
-                            <a href="#adb-mode" class="sidebar-nested-link">ADB Mode</a>
-                            <a href="#developer-mode" class="sidebar-nested-link">Developer Mode</a>
-                            <a href="#app-mode" class="sidebar-nested-link">APP Mode</a>
-                        </div>
-                        <a href="#android-dex" class="sidebar-sublink">2️⃣ Android_Dex</a>
-                        <div class="sidebar-nested">
-                            <a href="#dex-workflow" class="sidebar-nested-link">Workflow</a>
-                            <a href="#dex-audio" class="sidebar-nested-link">Audio Features</a>
-                        </div>
-                        <a href="#android-desktop" class="sidebar-sublink">3️⃣ Android_Desktop</a>
-                        <div class="sidebar-nested">
-                            <a href="#android-desktop" class="sidebar-nested-link">User Agreement</a>
-                            <a href="#android-desktop" class="sidebar-nested-link">Setup Flow</a>
-                            <a href="#android-desktop" class="sidebar-nested-link">Per-App Controls</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sidebar-section">
-                    <h3 class="sidebar-title">💾 DATA MODELS</h3>
-                    <a href="#data-classes" class="sidebar-link">Data Classes</a>
-                </div>
-
-                <div class="sidebar-section">
-                    <h3 class="sidebar-title">⚙️ DEVELOPMENT</h3>
-                    <a href="#workflow" class="sidebar-link">Developer Workflow</a>
-                    <a href="#changelog" class="sidebar-link">Version Changelog</a>
-                </div>
-            </div>
-        </nav>
+        <!-- Sidebar Removed -->
 
         <main class="docs-content">
-            <!-- Title Bar with Back Button -->
+            <!-- Title Bar -->
             <div class="title-bar">
-                <button class="back-button" onclick="window.history.back()" title="Go back">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M19 12H5M12 19l-7-7 7-7" />
-                    </svg>
-                </button>
                 <div class="title-content">
-                    <h1>🛠️ Developer Documentation</h1>
-                    <p>Complete architecture analysis of ADB Device Manager</p>
+                    <h1>Developer Hub</h1>
+                    <p>Architecture analysis and technical reference for ADB Device Manager.</p>
                 </div>
             </div>
 
@@ -99,60 +41,50 @@
                         <rect x="14" y="14" width="7" height="7"></rect>
                         <rect x="3" y="14" width="7" height="7"></rect>
                     </svg>
-                    Architecture Overview
+                    Architecture
                 </h2>
                 <p class="section-intro">The application follows a modular architecture with clear separation of
-                    concerns. Here's how the major components interact.</p>
+                    concerns, utilizing Redux for state management and Hive for persistence.</p>
 
                 <div class="flow-diagram">
                     <div class="flow-step">
                         <div class="step-number">1</div>
                         <div class="step-content">
-                            <div class="step-title">Entry Point — main.dart</div>
-                            <div class="step-desc">Initializes Flutter, sets up window manager, creates Redux store, and
-                                handles single instance management.</div>
+                            <div class="step-title">Open App</div>
+                            <div class="step-desc"> initializes Flutter And Start all Background Process</div>
                         </div>
                     </div>
                     <div class="flow-arrow">↓</div>
                     <div class="flow-step">
                         <div class="step-number">2</div>
                         <div class="step-content">
-                            <div class="step-title">Redux State Management</div>
-                            <div class="step-desc">Centralized state using <code>redux.dart</code> with Hive for
-                                persistent storage. Manages device list, connection states, and app preferences.</div>
+                            <div class="step-title">State & Storage</div>
+                            <div class="step-desc">Centralized state via <code>redux.dart</code> backed by Hive database
+                                for offline persistence.</div>
                         </div>
                     </div>
                     <div class="flow-arrow">↓</div>
                     <div class="flow-step">
                         <div class="step-number">3</div>
                         <div class="step-content">
-                            <div class="step-title">Connection Layer</div>
-                            <div class="step-desc">ADBManager and AppManager in <code>connection_manager.dart</code>
-                                handle device discovery, ADB connections, and companion app communication.</div>
+                            <div class="step-title">Device Connection</div>
+                            <div class="step-desc">Make a Connection with device via Stored Old Connection For ADB & APP
+                            </div>
                         </div>
                     </div>
                     <div class="flow-arrow">↓</div>
                     <div class="flow-step">
                         <div class="step-number">4</div>
                         <div class="step-content">
-                            <div class="step-title">HTTP Server</div>
-                            <div class="step-desc"><code>main_Http_server.dart</code> provides REST API endpoints for
-                                the Android companion app to sync notifications, calls, SMS, and media data.</div>
-                        </div>
-                    </div>
-                    <div class="flow-arrow">↓</div>
-                    <div class="flow-step">
-                        <div class="step-number">5</div>
-                        <div class="step-content">
-                            <div class="step-title">UI Components</div>
-                            <div class="step-desc">Device cards, Android Desktop mode, notification panels, and
-                                feature-specific pages render the synchronized data.</div>
+                            <div class="step-title">Modules</div>
+                            <div class="step-desc">Core feature modules interact with the store to render UI and manage
+                                device connections.</div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Core Modules -->
+            <!-- CORE MODULES GRID -->
             <section id="modules" class="doc-section">
                 <h2 class="section-title">
                     <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -160,1073 +92,226 @@
                     </svg>
                     Core Modules
                 </h2>
-                <p class="section-intro">This section documents the core modules of the system using a clean,
-                    developer-first approach. Currently, TWO modules are defined. Each module is explained with
-                    its components, workflow, and technical implementation details.</p>
+                <p class="section-intro">Explore the detailed technical documentation for each primary functional module
+                    of the application.</p>
 
-                <div class="alert-box tip" style="margin-bottom: 2rem;">
-                    <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path d="M12 16v-4M12 8h.01"></path>
-                    </svg>
-                    <div class="alert-content">
-                        <div class="alert-title">🔄 Module Rebuild</div>
-                        <p class="alert-text">This Core Modules section has been rebuilt from scratch. Only TWO modules
-                            are documented at this stage. Additional modules will be added as specified in future
-                            iterations.</p>
-                    </div>
-                </div>
-
-                <!-- MODULE 1: ADD NEW DEVICE -->
-                <div class="core-module-section" id="add-new-device">
-                    <div class="module-header-main">
-                        <div class="module-number">1️⃣</div>
-                        <div class="module-title-wrapper">
+                <div class="modules-grid">
+                    <!-- Module 1 -->
+                    <a href="Developers_pages/add_new_device.html" class="module-card mod-1">
+                        <div class="card-inner">
+                            <div class="module-icon-wrapper">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                                    <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                                    <line x1="12" y1="20" x2="12" y2="20"></line>
+                                </svg>
+                            </div>
                             <h3>Add New Device</h3>
-                            <span class="module-path">lib/Add_new_devices_ui/</span>
-                        </div>
-                    </div>
-
-                    <p class="module-description">
-                        Responsible for adding and connecting Android devices to Windows. This module provides
-                        TWO distinct connection modes: <strong>ADB Mode</strong> and <strong>APP Mode</strong>.
-                    </p>
-
-                    <!-- ADB MODE -->
-                    <div class="connection-mode-card" id="adb-mode">
-                        <div class="mode-header">
-                            <div class="mode-badge adb">ADB MODE</div>
-                            <h4>Android Debug Bridge Connection</h4>
-                        </div>
-                        <p>Connects Android devices using the Android Debug Bridge (ADB) protocol. Supports multiple
-                            connection methods for flexibility.</p>
-
-                        <div class="component-list">
-                            <div class="component-item">
-                                <div class="component-icon">🔐</div>
-                                <div class="component-details">
-                                    <h5>Pairing Connection</h5>
-                                    <code class="component-file">Pairing_connection.dart</code>
-                                    <p>Handles ADB wireless pairing using IP address and pairing code. Manages secure
-                                        ADB pairing flow with multi-step validation.</p>
-                                    <div class="component-tech">
-                                        <span class="tech-tag">Wireless Pairing</span>
-                                        <span class="tech-tag">Port Configuration</span>
-                                        <span class="tech-tag">Code Validation</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="component-item">
-                                <div class="component-icon">📷</div>
-                                <div class="component-details">
-                                    <h5>QR Connection</h5>
-                                    <code class="component-file">QR_connection.dart</code>
-                                    <p>QR-based ADB pairing for streamlined setup. Scans QR code from device, parses
-                                        payload, and initiates pairing automatically.</p>
-                                    <div class="component-tech">
-                                        <span class="tech-tag">QR Scanning</span>
-                                        <span class="tech-tag">Payload Parsing</span>
-                                        <span class="tech-tag">Auto-Pairing</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="component-item">
-                                <div class="component-icon">🔌</div>
-                                <div class="component-details">
-                                    <h5>USB Connection</h5>
-                                    <code class="component-file">USB_connection.dart</code>
-                                    <p>USB-based ADB connection for wired setup. Detects USB-attached devices and
-                                        initializes ADB session automatically.</p>
-                                    <div class="component-tech">
-                                        <span class="tech-tag">USB Detection</span>
-                                        <span class="tech-tag">Device Enumeration</span>
-                                        <span class="tech-tag">ADB Initialize</span>
-                                    </div>
-                                </div>
+                            <p>ADB connection protocols, wireless pairing logic (QR/Code), and fallback USB tethering
+                                mechanisms.</p>
+                            <div class="module-link-action">
+                                Read Documentation &rarr;
                             </div>
                         </div>
+                    </a>
 
-                        <!-- DEVELOPER OPTION -->
-                        <div class="developer-feature-box" id="developer-mode">
-                            <div class="dev-badge">DEVELOPER ONLY</div>
-                            <div class="">
-                                <div class="component-icon">👨‍💻</div>
-                                <div class="component-details">
-                                    <h5>I am Developer</h5>
-                                    <code class="component-file">I_am_developer.dart</code>
-                                    <p>Special developer-only connection mode. Allows direct connection using ONLY
-                                        the mobile IP address without any pairing UI.</p>
-
-                                    <div class="dev-workflow">
-                                        <strong>Automated Flow:</strong>
-                                        <ol>
-                                            <li>Developer provides IP address</li>
-                                            <li>Execute: <code>adb connect &lt;ip&gt;</code></li>
-                                            <li>Perform device validation</li>
-                                            <li>Register session automatically</li>
-                                        </ol>
-                                    </div>
-
-                                    <div class="alert-box tip" style="margin-top: 1rem;">
-                                        <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                            stroke-width="2">
-                                            <path
-                                                d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
-                                            </path>
-                                            <line x1="12" y1="9" x2="12" y2="13"></line>
-                                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                                        </svg>
-                                        <div class="alert-content">
-                                            <div class="alert-title">⚠️ Assumptions</div>
-                                            <p class="alert-text">
-                                                • Developer understands ADB networking<br>
-                                                • Device is already in ADB debugging mode<br>
-                                                • Network allows ADB connections on port 5555
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                    <!-- Module 2 -->
+                    <a href="Developers_pages/android_dex.html" class="module-card mod-2">
+                        <div class="card-inner">
+                            <div class="module-icon-wrapper">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                </svg>
+                            </div>
+                            <h3>Android Dex</h3>
+                            <p>Full desktop environment simulation. Audio routing engine, input injection, and window
+                                management.</p>
+                            <div class="module-link-action">
+                                Read Documentation &rarr;
                             </div>
                         </div>
-                    </div>
+                    </a>
 
-                    <!-- APP MODE -->
-                    <div class="connection-mode-card" id="app-mode">
-                        <div class="mode-header">
-                            <div class="mode-badge app">APP MODE</div>
-                            <h4>Companion Application Connection</h4>
-                        </div>
-                        <p>Connects using a companion Android application. Provides network-based communication
-                            between Android app and Windows client without relying on traditional ADB pairing UI.</p>
-
-                        <div class="component-list">
-                            <div class="component-item">
-                                <div class="component-icon">🌐</div>
-                                <div class="component-details">
-                                    <h5>APP Connection</h5>
-                                    <code class="component-file">APP_connection.dart</code>
-                                    <p>Manages network communication protocol between Android companion app and Windows.
-                                        Handles handshake, authentication, and session synchronization.</p>
-                                    <div class="component-tech">
-                                        <span class="tech-tag">TCP/HTTP</span>
-                                        <span class="tech-tag">Handshake Protocol</span>
-                                        <span class="tech-tag">Session Sync</span>
-                                    </div>
-                                </div>
+                    <!-- Module 3 -->
+                    <a href="Developers_pages/android_desktop.html" class="module-card mod-3">
+                        <div class="card-inner">
+                            <div class="module-icon-wrapper">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                                </svg>
                             </div>
-
-                            <div class="component-item">
-                                <div class="component-icon">📲</div>
-                                <div class="component-details">
-                                    <h5>Get App</h5>
-                                    <code class="component-file">Get_app.dart</code>
-                                    <p>Helps user install or locate the Android companion application. Generates QR
-                                        codes,
-                                        deep links, or download instructions.</p>
-                                    <div class="component-tech">
-                                        <span class="tech-tag">QR Generation</span>
-                                        <span class="tech-tag">Deep Links</span>
-                                        <span class="tech-tag">Download Guide</span>
-                                    </div>
-                                </div>
+                            <h3>Android Desktop</h3>
+                            <p>Per-app orchestration. Launching specific packages in isolated virtual displays with
+                                custom resolutions.</p>
+                            <div class="module-link-action">
+                                Read Documentation &rarr;
                             </div>
                         </div>
+                    </a>
 
-                        <div class="alert-box tip">
-                            <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M12 16v-4M12 8h.01"></path>
-                            </svg>
-                            <div class="alert-content">
-                                <div class="alert-title">ℹ️ Note</div>
-                                <p class="alert-text">APP Mode may still verify device presence using ADB internally,
-                                    but does not require the traditional pairing UI workflow.</p>
+                    <!-- Module 4 -->
+                    <a href="Developers_pages/device_control.html" class="module-card mod-4">
+                        <div class="card-inner">
+                            <div class="module-icon-wrapper">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                                    <rect x="9" y="9" width="6" height="6"></rect>
+                                    <line x1="9" y1="1" x2="9" y2="4"></line>
+                                    <line x1="15" y1="1" x2="15" y2="4"></line>
+                                    <line x1="9" y1="20" x2="9" y2="23"></line>
+                                    <line x1="15" y1="20" x2="15" y2="23"></line>
+                                    <line x1="20" y1="9" x2="23" y2="9"></line>
+                                    <line x1="20" y1="14" x2="23" y2="14"></line>
+                                    <line x1="1" y1="9" x2="4" y2="9"></line>
+                                    <line x1="1" y1="14" x2="4" y2="14"></line>
+                                </svg>
+                            </div>
+                            <h3>Device Control</h3>
+                            <p>Granular service management for Screen Mirroring, Audio Forwarding, and Input Injection
+                                subsystems.</p>
+                            <div class="module-link-action">
+                                Read Documentation &rarr;
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </a>
 
-                <!-- MODULE 2: ANDROID_DEX -->
-                <div class="core-module-section" id="android-dex">
-                    <div class="module-header-main">
-                        <div class="module-number">2️⃣</div>
-                        <div class="module-title-wrapper">
-                            <h3>Android_Dex</h3>
-                            <span class="module-path">lib/Android_Dex/</span>
-                        </div>
-                    </div>
-
-                    <div class="module-controller">
-                        <strong>Controller:</strong> <code>android_dex_controller.dart</code>
-                    </div>
-
-                    <p class="module-description">
-                        Creates a <strong>desktop Android experience similar to Samsung DeX</strong> — with the goal
-                        of being equal or better. Provides virtual display management, app launching, and advanced
-                        audio features.
-                    </p>
-
-
-                    <!-- WORKFLOW DIAGRAM -->
-                    <div class="workflow-section" id="dex-workflow">
-                        <h4 style="color: #60a5fa; margin-bottom: 1rem;">📋 Android_Dex Workflow</h4>
-
-                        <div class="workflow-step">
-                            <div class="workflow-number">① </div>
-                            <div class="workflow-content">
-                                <h5>Application Check</h5>
-                                <p>Use ADB to verify if the Android device has the required package installed:</p>
-                                <code class="workflow-code">com.example.android_clone</code>
+                    <!-- Module 5 -->
+                    <a href="Developers_pages/device_camera.html" class="module-card mod-5">
+                        <div class="card-inner">
+                            <div class="module-icon-wrapper">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z">
+                                    </path>
+                                    <circle cx="12" cy="13" r="4"></circle>
+                                </svg>
+                            </div>
+                            <h3>Device Camera</h3>
+                            <p>Direct video feed integration. High-speed capture, resolution switching, and multi-camera
+                                support via Scrcpy V2.</p>
+                            <div class="module-link-action">
+                                Read Documentation &rarr;
                             </div>
                         </div>
+                    </a>
 
-                        <div class="workflow-arrow">↓</div>
-
-                        <div class="workflow-step">
-                            <div class="workflow-number">②</div>
-                            <div class="workflow-content">
-                                <h5>If Application Exists</h5>
-                                <p>Start scrcpy with:</p>
-                                <ul style="margin-left: 1.5rem;">
-                                    <li>NEW virtual display</li>
-                                    <li>FULL SCREEN mode</li>
-                                </ul>
-                                <p style="margin-top: 0.5rem;">Automatically launch:
-                                    <code>com.example.android_clone</code>
-                                </p>
+                    <!-- Module 6 -->
+                    <a href="Developers_pages/communication.html" class="module-card mod-6">
+                        <div class="card-inner">
+                            <div class="module-icon-wrapper">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <h3>Communication</h3>
+                            <p>Unified telephony suite. Manage Calls, Contacts, and SMS via custom on-device HTTP
+                                bridge.</p>
+                            <div class="module-link-action">
+                                Read Documentation &rarr;
                             </div>
                         </div>
+                    </a>
 
-                        <div class="workflow-arrow">↓</div>
-
-                        <div class="workflow-step">
-                            <div class="workflow-number">③</div>
-                            <div class="workflow-content">
-                                <h5>Desktop Integration</h5>
-                                <p>Inside the scrcpy session:</p>
-                                <ul style="margin-left: 1.5rem;">
-                                    <li>Display small info panel related to <code>com.example.android_clone</code></li>
-                                    <li>Android app lists all installed applications</li>
-                                    <li>User can launch apps inside the desktop display</li>
-                                    <li>App sends server connection details to Windows <code>.exe</code></li>
-                                </ul>
+                    <!-- Module 7 -->
+                    <a href="Developers_pages/media_notification.html" class="module-card mod-7">
+                        <div class="card-inner">
+                            <div class="module-icon-wrapper">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M9 18V5l12-2v13"></path>
+                                    <circle cx="6" cy="18" r="3"></circle>
+                                    <circle cx="18" cy="16" r="3"></circle>
+                                </svg>
+                            </div>
+                            <h3>Media & Notifications</h3>
+                            <p>Live sync engine. Bidirectional control for media playback and notification interactions
+                                via TCP.</p>
+                            <div class="module-link-action">
+                                Read Documentation &rarr;
                             </div>
                         </div>
-
-                        <div class="workflow-arrow">↓</div>
-
-                        <div class="workflow-step advanced" id="dex-audio">
-                            <div class="workflow-number">④</div>
-                            <div class="workflow-content">
-                                <h5>Audio Handling (Advanced Feature)</h5>
-                                <p><strong>Target:</strong> Android 11+</p>
-                                <p><strong>Feature:</strong> Multiple app audio support</p>
-
-                                <div class="audio-workflow">
-                                    <p><strong>Behavior:</strong></p>
-                                    <ol style="margin-left: 1.5rem; line-height: 1.8;">
-                                        <li>Check if multi-audio service is available on device</li>
-                                        <li><strong>If available:</strong>
-                                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
-                                                <li>Enable the service</li>
-                                                <li>Allow 2 or more apps to play audio simultaneously</li>
-                                                <li>Prevent audio conflicts between apps</li>
-                                            </ul>
-                                        </li>
-                                        <li><strong>If not available:</strong>
-                                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
-                                                <li>Fallback gracefully to single-app audio</li>
-                                                <li>Inform user in the UI about limitation</li>
-                                            </ul>
-                                        </li>
-                                    </ol>
-                                </div>
-
-                                <div class="alert-box tip"
-                                    style="margin-top: 1rem; background: linear-gradient(135deg, #065f46 0%, #047857 100%);">
-                                    <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <path d="M12 16v-4M12 8h.01"></path>
-                                    </svg>
-                                    <div class="alert-content">
-                                        <div class="alert-title">🎵 Multi-Audio Advantage</div>
-                                        <p class="alert-text">
-                                            When enabled, users can run multiple Android apps in separate windows,
-                                            each with independent audio streams — similar to native Windows
-                                            applications.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- COMPONENT REFERENCE -->
-                    <div class="component-reference">
-                        <h4 style="color: #60a5fa; margin-bottom: 1rem;">📁 File Reference</h4>
-                        <table class="component-table">
-                            <thead>
-                                <tr>
-                                    <th>File</th>
-                                    <th>Purpose</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><code>android_dex_controller.dart</code></td>
-                                    <td>Main controller for scrcpy process management, virtual display creation, and
-                                        audio routing</td>
-                                </tr>
-                                <tr>
-                                    <td><code>com.example.android_clone</code></td>
-                                    <td>Android helper app package that provides desktop integration and app launcher
-                                        interface</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- MODULE 3: ANDROID_DESKTOP -->
-                <div class="core-module-section" id="android-desktop">
-                    <div class="module-header-main">
-                        <div class="module-number">3️⃣</div>
-                        <div class="module-title-wrapper">
-                            <h3>Android_Desktop</h3>
-                            <span class="module-path">lib/Android_Desktop/</span>
-                        </div>
-                    </div>
-
-                    <p class="module-description">
-                        Advanced per-app desktop launcher using ADB + scrcpy. Provides isolated application launching
-                        with independent virtual displays and audio control. <strong>This is NOT a replacement for
-                            Android_Dex</strong> — it serves a different purpose focused on per-app management.
-                    </p>
-
-                    <!-- FIRST-TIME USER AGREEMENT -->
-                    <div class="workflow-section">
-                        <h4 style="color: #f59e0b; margin-bottom: 1rem;">⚠️ First-Time User Agreement</h4>
-
-                        <div class="alert-box warning">
-                            <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path
-                                    d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z">
-                                </path>
-                                <line x1="12" y1="9" x2="12" y2="13"></line>
-                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                            </svg>
-                            <div class="alert-content">
-                                <div class="alert-title">Mandatory Agreement Required</div>
-                                <p class="alert-text">
-                                    On first open, users must accept a responsibility agreement for proper usage. The
-                                    module remains blocked until accepted.
-                                </p>
-                            </div>
-                        </div>
-
-                        <ul
-                            style="color: var(--color-gray-600); margin-top: 1rem; padding-left: 1.5rem; line-height: 1.8;">
-                            <li>Show mandatory user agreement dialog</li>
-                            <li>User accepts responsibility for misuse</li>
-                            <li>Module is blocked until accepted</li>
-                            <li>Agreement status stored in user preferences</li>
-                        </ul>
-                    </div>
-
-                    <!-- FIRST-TIME SETUP -->
-                    <div class="workflow-section">
-                        <h4 style="color: var(--color-primary); margin-bottom: 1rem;">🔧 First-Time Setup</h4>
-
-                        <div class="workflow-step">
-                            <div class="workflow-number">①</div>
-                            <div class="workflow-content">
-                                <h5>Device Connection Verification</h5>
-                                <p>Device must already be connected (via ADB or APP Mode). If no device is connected,
-                                    redirect user to Add New Device module.</p>
-                            </div>
-                        </div>
-
-                        <div class="flow-arrow">↓</div>
-
-                        <div class="workflow-step">
-                            <div class="workflow-number">②</div>
-                            <div class="workflow-content">
-                                <h5>Fetch Installed Applications</h5>
-                                <p>Retrieve all installed apps from the connected device via ADB or APP protocol:</p>
-                                <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
-                                    <li>Package name</li>
-                                    <li>Application name</li>
-                                    <li>Icon (base64 or resource)</li>
-                                    <li>Basic metadata</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="flow-arrow">↓</div>
-
-                        <div class="workflow-step">
-                            <div class="workflow-number">③</div>
-                            <div class="workflow-content">
-                                <h5>Store in Local Database</h5>
-                                <p>Save applications to <code
-                                        style="background: var(--color-primary-bg); color: var(--color-primary); padding: 0.2rem 0.5rem; border-radius: 4px;">DeviceApp</code>
-                                    database model:</p>
-                                <div class="component-tech" style="margin-top: 0.75rem;">
-                                    <span class="tech-tag">device_id</span>
-                                    <span class="tech-tag">package_name</span>
-                                    <span class="tech-tag">app_name</span>
-                                    <span class="tech-tag">icon</span>
-                                    <span class="tech-tag">last_used</span>
-                                    <span class="tech-tag">supports_audio</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="alert-box info" style="margin-top: 1.5rem;">
-                            <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M12 16v-4M12 8h.01"></path>
-                            </svg>
-                            <div class="alert-content">
-                                <div class="alert-title">Performance Note</div>
-                                <p class="alert-text">
-                                    App fetching occurs <strong>only on first run</strong> or manual refresh. This
-                                    prevents unnecessary network/ADB calls on every module launch.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- NORMAL FLOW -->
-                    <div class="workflow-section">
-                        <h4 style="color: var(--color-primary); margin-bottom: 1rem;">🔄 Normal Flow (After Setup)</h4>
-
-                        <ul style="color: var(--color-gray-600); padding-left: 1.5rem; line-height: 1.8;">
-                            <li>Load applications from <code
-                                    style="background: var(--color-primary-bg); color: var(--color-primary); padding: 0.2rem 0.5rem; border-radius: 4px;">DeviceApp</code>
-                                database</li>
-                            <li>Display app list/grid UI with icons and names</li>
-                            <li>No refetch on every launch — use cached data</li>
-                            <li>Provide manual refresh button for users to update app list</li>
-                        </ul>
-                    </div>
-
-                    <!-- APP LAUNCH -->
-                    <div class="workflow-section">
-                        <h4 style="color: var(--color-primary); margin-bottom: 1rem;">🚀 App Launch (Scrcpy)</h4>
-
-                        <div class="workflow-step">
-                            <div class="workflow-number">📱</div>
-                            <div class="workflow-content">
-                                <h5>Virtual Display Launch</h5>
-                                <p>Launch selected application in a <strong>second/virtual display</strong> — not
-                                    mirroring the main screen:</p>
-                                <div class="workflow-code">
-                                    scrcpy --new-display --start-app=com.example.app
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="alert-box tip" style="margin-top: 1rem;">
-                            <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <path d="M9 12l2 2 4-4"></path>
-                            </svg>
-                            <div class="alert-content">
-                                <div class="alert-title">Isolated Display</div>
-                                <p class="alert-text">
-                                    Each app runs in its own virtual display, keeping the device's main screen free and
-                                    preventing interference with other running apps.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- AUDIO HANDLING -->
-                    <div class="workflow-section">
-                        <h4 style="color: var(--color-primary); margin-bottom: 1rem;">🔊 Audio Handling</h4>
-
-                        <ul style="color: var(--color-gray-600); padding-left: 1.5rem; line-height: 1.8;">
-                            <li><strong>One app audio at a time</strong> — isolated audio per application</li>
-                            <li>Auto-enable multi-audio if device supports it (Android 11+)</li>
-                            <li>Fallback safely if not supported — inform user of limitation</li>
-                            <li>Audio state is managed per-app and stored in configuration</li>
-                        </ul>
-                    </div>
-
-                    <!-- USER CONTROLS -->
-                    <div class="workflow-section">
-                        <h4 style="color: var(--color-primary); margin-bottom: 1rem;">⚙️ User Controls</h4>
-
-                        <p style="color: var(--color-gray-600); margin-bottom: 1.5rem;">
-                            Each application launched in Android_Desktop supports <strong>independent, per-app
-                                configuration</strong>. All settings are stored per application and automatically
-                            re-applied on future launches.
-                        </p>
-
-                        <div class="component-list">
-                            <div class="component-item">
-                                <div class="component-icon">📺</div>
-                                <div class="component-details">
-                                    <h5>Display Resolution</h5>
-                                    <p>Virtual display size for the app session. Users can choose optimal resolution
-                                        based on their monitor and performance requirements.</p>
-                                </div>
-                            </div>
-
-                            <div class="component-item">
-                                <div class="component-icon">🎬</div>
-                                <div class="component-details">
-                                    <h5>Streaming Bitrate</h5>
-                                    <p>Video quality vs bandwidth balance. Higher bitrate provides better quality but
-                                        requires more network/USB bandwidth.</p>
-                                </div>
-                            </div>
-
-                            <div class="component-item">
-                                <div class="component-icon">⚡</div>
-                                <div class="component-details">
-                                    <h5>Frame Rate (FPS)</h5>
-                                    <p>Performance vs smoothness control. Adjust frame rate to balance responsiveness
-                                        and system resource usage.</p>
-                                </div>
-                            </div>
-
-                            <div class="component-item">
-                                <div class="component-icon">🚄</div>
-                                <div class="component-details">
-                                    <h5>Performance Mode</h5>
-                                    <p><strong>Safe</strong> (stable with conservative settings) or <strong>High
-                                            Performance</strong> (maximum quality and responsiveness).</p>
-                                </div>
-                            </div>
-
-                            <div class="component-item">
-                                <div class="component-icon">🔊</div>
-                                <div class="component-details">
-                                    <h5>Audio Control</h5>
-                                    <p>Enable or disable app-specific audio. Useful when running multiple apps or when
-                                        audio is not needed.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- DEVELOPER NOTES -->
-                    <div class="alert-box info" style="margin-top: 2rem;">
-                        <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <path d="M12 16v-4M12 8h.01"></path>
-                        </svg>
-                        <div class="alert-content">
-                            <div class="alert-title">Development Status</div>
-                            <p class="alert-text">
-                                Android_Desktop provides fine-grained control for individual app streaming, making it
-                                ideal for developers and power users who need isolated app environments with custom
-                                configurations.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- DEVELOPER NOTES -->
-                <div class="alert-box tip" style="margin-top: 3rem;">
-                    <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                        <line x1="16" y1="13" x2="8" y2="13"></line>
-                        <line x1="16" y1="17" x2="8" y2="17"></line>
-                    </svg>
-                    <div class="alert-content">
-                        <div class="alert-title">📚 Developer Notes</div>
-                        <p class="alert-text">
-                            <strong>Dart files are READ-ONLY references</strong> for understanding logic and flow.
-                            Real documentation work focuses on this HTML file and the accompanying CSS. No assumptions
-                            of beginner knowledge — this is technical, developer-facing documentation using professional
-                            terminology.
-                        </p>
-                    </div>
+                    </a>
                 </div>
             </section>
 
-            <!-- Data Classes -->
-            <section id="data-classes" class="doc-section">
+            <!-- System Reference Section -->
+            <section id="system-reference" class="doc-section">
                 <h2 class="section-title">
                     <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                     </svg>
-                    Data Models
+                    System Reference
                 </h2>
-                <p class="section-intro">Complete data structure reference for all models used in the application. These
-                    models are persisted using Hive for offline storage.</p>
+                <p class="section-intro">Core architectural documentation.</p>
 
-                <!-- Device Class -->
-                <div class="data-model-card">
-                    <div class="model-header">
-                        <div class="model-icon">📱</div>
-                        <div class="model-info">
-                            <h3>Device</h3>
-                            <span class="model-badge">Primary Model</span>
+                <div class="reference-grid">
+
+                    <!-- 1. Data Models Card -->
+                    <a href="Developers_pages/data_models.html" class="key-card data-card">
+                        <div class="k-icon-wrapper">
+                            <svg class="k-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                            </svg>
                         </div>
-                    </div>
-                    <p class="model-desc">Represents a connected Android device with all its identification, connection
-                        status, and user preferences.</p>
-
-                    <table class="simple-data-table">
-                        <thead>
-                            <tr>
-                                <th>Property</th>
-                                <th>Type</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Identification -->
-                            <tr>
-                                <td><code>name</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>Display name of the device</td>
-                            </tr>
-                            <tr>
-                                <td><code>id</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>Unique identifier for the device</td>
-                            </tr>
-                            <tr>
-                                <td><code>deviceId</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>Hardware device ID</td>
-                            </tr>
-                            <tr>
-                                <td><code>android_id</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>Android system ID</td>
-                            </tr>
-                            <tr>
-                                <td><code>device_fingerprint</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>Build fingerprint for verification</td>
-                            </tr>
-                            <!-- Connection Status -->
-                            <tr>
-                                <td><code>isAdbConnected</code></td>
-                                <td><span class="type-badge bool">Boolean</span></td>
-                                <td>ADB connection active</td>
-                            </tr>
-                            <tr>
-                                <td><code>isAppConnected</code></td>
-                                <td><span class="type-badge bool">Boolean</span></td>
-                                <td>Companion app connected</td>
-                            </tr>
-                            <tr>
-                                <td><code>isAdbProgress</code></td>
-                                <td><span class="type-badge bool">Boolean</span></td>
-                                <td>ADB connection in progress</td>
-                            </tr>
-                            <tr>
-                                <td><code>isAPPProgress</code></td>
-                                <td><span class="type-badge bool">Boolean</span></td>
-                                <td>App connection in progress</td>
-                            </tr>
-                            <tr>
-                                <td><code>isDefault</code></td>
-                                <td><span class="type-badge bool">Boolean</span></td>
-                                <td>Set as default device</td>
-                            </tr>
-                            <tr>
-                                <td><code>lastConnected</code></td>
-                                <td><span class="type-badge">DateTime</span></td>
-                                <td>Last successful connection time</td>
-                            </tr>
-                            <!-- Network Information -->
-                            <tr>
-                                <td><code>ip</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>Current IP address</td>
-                            </tr>
-                            <tr>
-                                <td><code>wifiName</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>Connected WiFi network name</td>
-                            </tr>
-                            <tr>
-                                <td><code>pairing_code</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>Wireless ADB pairing code</td>
-                            </tr>
-                            <!-- Device Details -->
-                            <tr>
-                                <td><code>deviceModel</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>Device model name</td>
-                            </tr>
-                            <tr>
-                                <td><code>manufacturer</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>Device manufacturer</td>
-                            </tr>
-                            <tr>
-                                <td><code>androidVersion</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>Android OS version</td>
-                            </tr>
-                            <!-- Google Account -->
-                            <tr>
-                                <td><code>google_email</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>Primary Google account email</td>
-                            </tr>
-                            <tr>
-                                <td><code>google_display_name</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>Google account display name</td>
-                            </tr>
-                            <tr>
-                                <td><code>google_profile_image_base64</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>Profile picture (Base64 encoded)</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- DeviceApp Class -->
-                <div class="data-model-card">
-                    <div class="model-header">
-                        <div class="model-icon">📦</div>
-                        <div class="model-info">
-                            <h3>DeviceApp</h3>
-                            <span class="model-badge secondary">Application Model</span>
+                        <div class="k-content">
+                            <h3>Data Classification</h3>
+                            <p>Schema definitions for Hive storage.</p>
+                            <span class="k-link">View Models &rarr;</span>
                         </div>
-                    </div>
-                    <p class="model-desc">Represents an installed Android application with metadata and custom launch
-                        settings for Dex mode.</p>
+                    </a>
 
-                    <table class="simple-data-table">
-                        <thead>
-                            <tr>
-                                <th>Property</th>
-                                <th>Type</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>packageName</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>Android package identifier</td>
-                            </tr>
-                            <tr>
-                                <td><code>appName</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>Display label of the app</td>
-                            </tr>
-                            <tr>
-                                <td><code>iconBase64</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>App icon (Base64 encoded)</td>
-                            </tr>
-                            <tr>
-                                <td><code>category</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>App category (Games, Tools, etc.)</td>
-                            </tr>
-                            <tr>
-                                <td><code>versionName</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>Human-readable version</td>
-                            </tr>
-                            <tr>
-                                <td><code>versionCode</code></td>
-                                <td><span class="type-badge">Number</span></td>
-                                <td>Internal version code</td>
-                            </tr>
-                            <tr>
-                                <td><code>size</code></td>
-                                <td><span class="type-badge">Number</span></td>
-                                <td>App size in bytes</td>
-                            </tr>
-                            <tr>
-                                <td><code>isSystemApp</code></td>
-                                <td><span class="type-badge bool">Boolean</span></td>
-                                <td>Pre-installed system app</td>
-                            </tr>
-                            <tr>
-                                <td><code>installDate</code></td>
-                                <td><span class="type-badge">DateTime</span></td>
-                                <td>When the app was installed</td>
-                            </tr>
-                            <tr>
-                                <td><code>lastUpdateDate</code></td>
-                                <td><span class="type-badge">DateTime</span></td>
-                                <td>Last update timestamp</td>
-                            </tr>
-                            <tr>
-                                <td><code>resolution</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>Display resolution (e.g., 1080p)</td>
-                            </tr>
-                            <tr>
-                                <td><code>bitRate</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>Video bitrate (e.g., 8M)</td>
-                            </tr>
-                            <tr>
-                                <td><code>maxFps</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>Max frame rate (e.g., 60)</td>
-                            </tr>
-                            <tr>
-                                <td><code>audio_Enabled</code></td>
-                                <td><span class="type-badge bool">Boolean</span></td>
-                                <td>Enable audio for this app</td>
-                            </tr>
-                            <tr>
-                                <td><code>is_high_performance_mode</code></td>
-                                <td><span class="type-badge bool">Boolean</span></td>
-                                <td>Enable high performance</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- WifiNetwork Class -->
-                <div class="data-model-card">
-                    <div class="model-header">
-                        <div class="model-icon">📡</div>
-                        <div class="model-info">
-                            <h3>WifiNetwork</h3>
-                            <span class="model-badge tertiary">Network Model</span>
+                    <!-- 2. Server Architecture Card -->
+                    <a href="Developers_pages/server_architecture.html" class="key-card server-card">
+                        <div class="k-icon-wrapper">
+                            <svg class="k-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                            </svg>
                         </div>
-                    </div>
-                    <p class="model-desc">Stores IP address mappings per WiFi network, enabling seamless reconnection
-                        when the device switches networks.</p>
+                        <div class="k-content">
+                            <h3>Server Architecture</h3>
+                            <p>HTTP Bridge, WebSocket & TCP layers.</p>
+                            <span class="k-link">View Protocols &rarr;</span>
+                        </div>
+                    </a>
 
-                    <table class="simple-data-table">
-                        <thead>
-                            <tr>
-                                <th>Property</th>
-                                <th>Type</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><code>wifiName</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>SSID of the WiFi network</td>
-                            </tr>
-                            <tr>
-                                <td><code>wifiIp</code></td>
-                                <td><span class="type-badge">String</span></td>
-                                <td>Device IP on this network</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                    <!-- 3. Changelog Card -->
+                    <a href="Developers_pages/changelog.html" class="key-card change-card">
+                        <div class="k-icon-wrapper">
+                            <svg class="k-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <div class="k-content">
+                            <h3>Version History</h3>
+                            <p>Release notes and timeline.</p>
+                            <span class="k-link">View Changelog &rarr;</span>
+                        </div>
+                    </a>
 
-                <div class="alert-box tip">
-                    <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                        <path d="M2 17l10 5 10-5"></path>
-                        <path d="M2 12l10 5 10-5"></path>
-                    </svg>
-                    <div class="alert-content">
-                        <div class="alert-title">💡 Persistence Layer</div>
-                        <p class="alert-text">All models use Hive adapters for efficient local storage. Changes are
-                            automatically synced with Redux state and persisted to disk.</p>
-                    </div>
                 </div>
             </section>
 
-            <!-- Working with the Code -->
-            <section id="workflow" class="doc-section">
-                <h2 class="section-title">
-                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="16 18 22 12 16 6"></polyline>
-                        <polyline points="8 6 2 12 8 18"></polyline>
-                    </svg>
-                    Developer Workflow
-                </h2>
-                <p class="section-intro">Follow these guidelines when working with the codebase.</p>
-
-                <div class="feature-detail">
-                    <div class="feature-header">
-                        <h3>🔄 State Management Pattern</h3>
-                    </div>
-                    <p>All device state flows through Redux. To update device data:</p>
-                    <ol style="margin-left: 1.5rem; line-height: 1.8;">
-                        <li>Dispatch an action (e.g., <code>UpdateDeviceAction(device)</code>)</li>
-                        <li>Reducer updates state and persists to Hive via <code>saveDevice()</code></li>
-                        <li>UI components rebuild via <code>StoreConnector</code></li>
-                    </ol>
-                </div>
-
-                <div class="feature-detail">
-                    <div class="feature-header">
-                        <h3>🔌 Adding New Features</h3>
-                    </div>
-                    <p>When adding new device features:</p>
-                    <ol style="margin-left: 1.5rem; line-height: 1.8;">
-                        <li>Add API endpoint in <code>main_Http_server.dart</code></li>
-                        <li>Create corresponding Android service in companion app</li>
-                        <li>Add UI component in <code>Device_card/ADB_Function/</code> or <code>APP_Function/</code>
-                        </li>
-                        <li>Update Device model if storing new data</li>
-                    </ol>
-                </div>
-
-                <div class="feature-detail">
-                    <div class="feature-header">
-                        <h3>🐛 Debugging Tips</h3>
-                    </div>
-                    <ul style="margin-left: 1.5rem; line-height: 1.8;">
-                        <li>Use <code>File_Log()</code> from All_data.dart for debug logging (only in debug mode)</li>
-                        <li>Check <code>dev.log</code> in app directory for runtime logs</li>
-                        <li>Monitor HTTP requests on port 5000 to debug Android communication</li>
-                        <li>Scrcpy logs appear in console when running in debug mode</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Version Changelog -->
-            <section id="changelog" class="doc-section">
-                <h2 class="section-title">
-                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                        <line x1="16" y1="13" x2="8" y2="13"></line>
-                        <line x1="16" y1="17" x2="8" y2="17"></line>
-                    </svg>
-                    Version Changelog
-                </h2>
-                <p class="section-intro">Track the evolution of ADB Device Manager.</p>
-
-                <div class="version-card latest">
-                    <div class="version-header">
-                        <h4>v2.0.0 — Major Release</h4>
-                        <span class="version-badge">LATEST</span>
-                    </div>
-                    <p class="version-date">December 2024</p>
-                    <ul>
-                        <li>Complete UI redesign with modern Flutter framework</li>
-                        <li>New Android Dex mode with virtual display support</li>
-                        <li>Multi-app running with independent audio channels</li>
-                        <li>Enhanced notification center with real-time sync</li>
-                        <li>Improved wireless ADB pairing</li>
-                        <li>QR-based file sharing system</li>
-                    </ul>
-                </div>
-
-                <div class="version-card">
-                    <div class="version-header">
-                        <h4>v1.5.0 — Feature Update</h4>
-                    </div>
-                    <p class="version-date">September 2024</p>
-                    <ul>
-                        <li>Added Bluetooth audio streaming to Windows</li>
-                        <li>Device finder with Zeroconf discovery</li>
-                        <li>Screen text recognition (OCR) with web search</li>
-                        <li>Performance optimizations for mirroring</li>
-                    </ul>
-                </div>
-
-                <div class="version-card">
-                    <div class="version-header">
-                        <h4>v1.0.0 — Initial Release</h4>
-                    </div>
-                    <p class="version-date">June 2024</p>
-                    <ul>
-                        <li>Core screen mirroring with scrcpy</li>
-                        <li>Audio mirroring support</li>
-                        <li>File manager and APK installer</li>
-                        <li>Basic notification sync</li>
-                        <li>Contacts, SMS, and call history access</li>
-                    </ul>
-                </div>
-
-                <div class="alert-box tip">
-                    <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path d="M12 16v-4M12 8h.01"></path>
-                    </svg>
-                    <div class="alert-content">
-                        <div class="alert-title">🔔 Stay Updated</div>
-                        <p class="alert-text">Watch our <a href="https://github.com/Shrey113/Adb-Device-Manager-2"
-                                target="_blank" style="color: inherit; text-decoration: underline;">GitHub
-                                repository</a> to get notified about new releases!</p>
-                    </div>
-                </div>
-            </section>
         </main>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Handle initial hash navigation
-            if (window.location.hash) {
-                setTimeout(() => {
-                    const element = document.querySelector(window.location.hash);
-                    if (element) {
-                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        element.classList.add('highlight');
-                        setTimeout(() => element.classList.remove('highlight'), 2000);
-                    }
-                }, 100);
-            }
-
-            // Smooth scroll for all anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        targetElement.classList.add('highlight');
-                        setTimeout(() => targetElement.classList.remove('highlight'), 2000);
-                        history.pushState(null, null, targetId);
-                    }
-                });
-            });
-
-            // Active navigation highlighting based on scroll position
-            const sections = document.querySelectorAll('section[id], div[id]');
-            const navLinks = document.querySelectorAll('.sidebar-link, .sidebar-sublink, .sidebar-nested-link');
-
-            function updateActiveNav() {
-                let currentSection = '';
-
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (window.pageYOffset >= sectionTop - 150) {
-                        currentSection = section.getAttribute('id');
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    const href = link.getAttribute('href');
-                    if (href === '#' + currentSection) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-
-            window.addEventListener('scroll', updateActiveNav);
-            updateActiveNav(); // Initial call
-        });
-    </script>
 </body>
 
 </html>
