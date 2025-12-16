@@ -2,7 +2,7 @@
 
 Real-time Android screen mirroring powered by **scrcpy**.
 
-<img src="../../images/section_1/Screen%20Mirroring.png" width="600">
+<img src="../../images/section_1/Screen%20Mirroring.gif" width="600">
 
 ## Features
 

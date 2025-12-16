@@ -24,7 +24,7 @@ Older versions may contain bugs or security issues and should be updated immedia
 If you believe you’ve found a security vulnerability in the Windows app or Android companion:
 
 ### 📧 Contact (Private & Confidential)
-**shreyp518@gmail.com**
+**adbdevicemanager@gmail.com**
 
 Please include:
 

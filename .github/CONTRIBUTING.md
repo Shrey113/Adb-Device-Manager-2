@@ -19,7 +19,7 @@ If you experience bugs, crashes, or connection problems, please include:
 - Steps to reproduce the issue  
 - Screenshots or logs (optional)
 
-📧 **Support Email:** shreyp518@gmail.com  
+📧 **Support Email:** adbdevicemanager@gmail.com  
 🐞 **Issue Tracker:** https://github.com/Shrey113/Adb-Device-Manager-2/issues
 
 ---
