@@ -32,6 +32,19 @@
             </div>
         </header>
 
+        <nav class="docs-sidebar">
+            <div class="sidebar-inner">
+                <div class="sidebar-label">Architecture</div>
+                <ul class="sidebar-links">
+                    <li><a href="#main-server">Main Server</a></li>
+                    <li><a href="#app-bridge-socket">App Bridge Socket</a></li>
+                    <li><a href="#socket-manager">Call Manager 1</a></li>
+                    <li><a href="#call-connection-socket">Call Manager 2</a></li>
+                    <li><a href="#adb-tcp-dex">AdbTcpServer (Dex)</a></li>
+                </ul>
+            </div>
+        </nav>
+
         <main class="main-content">
             <!-- Hero Section -->
             <div class="hero-section">
@@ -91,160 +104,546 @@
                     <h4
                         style="color: var(--text-muted); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
                         Device & System Discovery</h4>
-                    <div class="endpoint-grid">
+                    <div class="endpoint-list">
+                        <!-- GET / -->
                         <div class="ep-card">
-                            <span class="method">GET</span> <span class="url">/</span>
-                            <p>Serves the local HTML dashboard.</p>
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/</span>
+                                <span class="purpose">Serves the local HTML dashboard interface.</span>
+                            </div>
+                            <!-- No JSON to show for HTML response -->
                         </div>
+
+                        <!-- GET /ping -->
                         <div class="ep-card">
-                            <span class="method">GET</span> <span class="url">/ping</span>
-                            <p>Health check to verify server status.</p>
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/ping</span>
+                                <span class="purpose">Health check to verify server status.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Response Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>
+}</code>
+                            </div>
                         </div>
+
+                        <!-- POST /add_me_to_server -->
                         <div class="ep-card">
-                            <span class="method">POST</span> <span class="url">/add_me_to_server</span>
-                            <p>Registers Android device (IP, ID, Fingerprint).</p>
+                            <div class="ep-header">
+                                <span class="method post">POST</span>
+                                <span class="url">/add_me_to_server</span>
+                                <span class="purpose">Registers Android device (IP, ID, Fingerprint).</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Payload Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"android"</span>: {
+    <span class="json-key">"android_id"</span>: <span class="json-string">"7b74e4bf673dec04"</span>,
+    <span class="json-key">"device_name"</span>: <span class="json-string">"OnePlus 11 5G"</span>,
+    <span class="json-key">"ip_address"</span>: <span class="json-string">"192.168.29.168"</span>,
+    <span class="json-key">"manufacturer"</span>: <span class="json-string">"OnePlus"</span>,
+    <span class="json-key">"product"</span>: <span class="json-string">"string"</span>,
+    <span class="json-key">"model"</span>: <span class="json-string">"CPH2447"</span>,
+    <span class="json-key">"wallpaper"</span>: <span class="json-string">"base64_string..."</span>,
+    <span class="json-key">"pairing_code"</span>: <span class="json-string">"739129"</span>,
+    <span class="json-key">"google_email"</span>: <span class="json-string">"user@example.com"</span>,
+    <span class="json-key">"google_display_name"</span>: <span class="json-string">"Adb Devices Manager"</span>,
+    <span class="json-key">"google_profile_image_base64"</span>: <span class="json-string">"base64_string..."</span>,
+    <span class="json-key">"device_fingerprint"</span>: <span class="json-string">"OnePlus/CPH2447/..."</span>,
+    <span class="json-key">"id"</span>: <span class="json-string">"19def77c"</span>
+  }
+}</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>
+}</code>
+                            </div>
                         </div>
+
+                        <!-- GET /devices -->
                         <div class="ep-card">
-                            <span class="method">GET</span> <span class="url">/devices</span>
-                            <p>Returns all currently connected devices.</p>
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/devices</span>
+                                <span class="purpose">Returns all connected devices info.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Response Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"devices"</span>: [
+    {
+      <span class="json-key">"name"</span>: <span class="json-string">"OnePlus CPH2447"</span>,
+      <span class="json-key">"id"</span>: <span class="json-string">"OnePlus|CPH2447|qcom..."</span>,
+      <span class="json-key">"isAdbConnected"</span>: <span class="json-boolean">true</span>,
+      <span class="json-key">"isAppConnected"</span>: <span class="json-boolean">false</span>,
+      <span class="json-key">"isDefault"</span>: <span class="json-boolean">true</span>,
+      <span class="json-key">"ip"</span>: <span class="json-string">"192.168.29.168"</span>,
+      <span class="json-key">"wifiName"</span>: <span class="json-string">"Mobile Network"</span>,
+      <span class="json-key">"lastConnected"</span>: <span class="json-string">"2025-12-17T23:03:40..."</span>,
+      <span class="json-key">"device_id"</span>: <span class="json-string">"19def77c"</span>,
+      <span class="json-key">"device_image_id"</span>: <span class="json-string">"2"</span>,
+      <span class="json-key">"device_model"</span>: <span class="json-string">"CPH2447"</span>,
+      <span class="json-key">"android_version"</span>: <span class="json-string">"16"</span>,
+      <span class="json-key">"manufacturer"</span>: <span class="json-string">"OnePlus"</span>,
+      <span class="json-key">"device_name"</span>: <span class="json-string">"OnePlus 11 5G"</span>,
+      <span class="json-key">"android_id"</span>: <span class="json-string">"7b74e4bf673dec04"</span>,
+      <span class="json-key">"manufacturer_name"</span>: <span class="json-string">null</span>,
+      <span class="json-key">"product_name"</span>: <span class="json-string">null</span>,
+      <span class="json-key">"model_name"</span>: <span class="json-string">null</span>,
+      <span class="json-key">"wallpaper"</span>: <span class="json-string">"/9j/4AAQSkZJRg..."</span>,
+      <span class="json-key">"pairing_code"</span>: <span class="json-string">"739129"</span>,
+      <span class="json-key">"google_email"</span>: <span class="json-string">"user@example.com"</span>,
+      <span class="json-key">"google_display_name"</span>: <span class="json-string">"Adb Devices Manager"</span>,
+      <span class="json-key">"google_profile_image_base64"</span>: <span class="json-string">"/9j/4AAD//Z"</span>,
+      <span class="json-key">"device_fingerprint"</span>: <span class="json-string">"OnePlus/CPH2447/..."</span>,
+      <span class="json-key">"isAdbProgress"</span>: <span class="json-boolean">false</span>,
+      <span class="json-key">"isAPPProgress"</span>: <span class="json-boolean">false</span>,
+      <span class="json-key">"totalAppCount"</span>: <span class="json-string">null</span>,
+      <span class="json-key">"installedApps"</span>: []
+    }
+  ]
+}</code>
+                            </div>
                         </div>
+
+                        <!-- GET /get_device_info -->
                         <div class="ep-card">
-                            <span class="method">GET</span> <span class="url">/get_device_info</span>
-                            <p>Returns Windows host identity (Hostname, IP).</p>
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/get_device_info</span>
+                                <span class="purpose">Returns Windows host identity (Hostname, IP).</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Response Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"windows"</span>: {
+    <span class="json-key">"hostname"</span>: <span class="json-string">"DESKTOP-VA2142V"</span>,
+    <span class="json-key">"ip"</span>: <span class="json-string">"192.168.29.193"</span>,
+    <span class="json-key">"full_name"</span>: <span class="json-string">"DELL"</span>,
+    <span class="json-key">"microsoft_email"</span>: <span class="json-string">"user@example.com"</span>
+  }
+}</code>
+                            </div>
                         </div>
                     </div>
 
                     <h4
                         style="color: var(--text-muted); margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
                         Media & Actions</h4>
-                    <div class="endpoint-grid">
+                    <div class="endpoint-list">
+                        <!-- POST /Run_audio_bordcast -->
                         <div class="ep-card">
-                            <span class="method">POST</span> <span class="url">/call_event</span>
-                            <p>Handles incoming/outgoing calls, launches UI.</p>
+                            <div class="ep-header">
+                                <span class="method post">POST</span>
+                                <span class="url">/Run_audio_bordcast</span>
+                                <span class="purpose">Starts audio streaming (Fast/High Quality).</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Payload Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"ip"</span>: <span class="json-string">"192.168.29.168"</span>,
+  <span class="json-key">"command"</span>: <span class="json-string">"fast"</span>, <span style="color:#6e7681">// or "high"</span>
+  <span class="json-key">"getDeviceFullInfo"</span>: {
+    <span class="json-key">"id"</span>: <span class="json-string">"19def77c"</span>
+  }
+}</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"message"</span>: <span class="json-string">"Audio broadcast started"</span>,
+  <span class="json-key">"ip"</span>: <span class="json-string">"192.168.29.168"</span>,
+  <span class="json-key">"mode"</span>: <span class="json-string">"fast"</span>
+}</code>
+                            </div>
                         </div>
+
+                        <!-- POST /get_device_wallpaper -->
                         <div class="ep-card">
-                            <span class="method">POST</span> <span class="url">/Run_audio_bordcast</span>
-                            <p>Starts audio streaming (Fast/High Quality).</p>
+                            <div class="ep-header">
+                                <span class="method post">POST</span>
+                                <span class="url">/get_device_wallpaper</span>
+                                <span class="purpose">Returns device wallpaper as Base64.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Payload Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"id"</span>: <span class="json-string">"19def77c"</span>
+}</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"wallpaper"</span>: <span class="json-string">"/9j/4AAQSkZJRg.....QQSEf/2Q=="</span>
+}</code>
+                            </div>
                         </div>
+
+                        <!-- POST /get_google_info -->
                         <div class="ep-card">
-                            <span class="method">POST</span> <span class="url">/get_device_wallpaper</span>
-                            <p>Returns device wallpaper as Base64.</p>
-                        </div>
-                        <div class="ep-card">
-                            <span class="method">POST</span> <span class="url">/get_google_info</span>
-                            <p>Returns Google account details (Email, Photo).</p>
+                            <div class="ep-header">
+                                <span class="method post">POST</span>
+                                <span class="url">/get_google_info</span>
+                                <span class="purpose">Returns Google account details (Email, Photo).</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Payload Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"id"</span>: <span class="json-string">"19def77c"</span>
+}</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"google_email"</span>: <span class="json-string">"user@example.com"</span>,
+  <span class="json-key">"google_display_name"</span>: <span class="json-string">"Adb Devices Manager"</span>,
+  <span class="json-key">"google_profile_image_base64"</span>: <span class="json-string">"/9j/4AAD//Z"</span>
+}</code>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 2. SOCKET MANAGER -->
-            <section class="arch-module" id="socket-manager">
+            <!-- App Bridge Socket (Core Logic Connection) -->
+            <section class="arch-module" id="app-bridge-socket">
                 <div class="module-header">
                     <div class="icon-box icon-ws">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M9 18V5l12-2v13"></path>
-                            <circle cx="6" cy="18" r="3"></circle>
-                            <circle cx="18" cy="16" r="3"></circle>
+                            <path
+                                d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83">
+                            </path>
                         </svg>
                     </div>
                     <div class="header-text">
-                        <h2>SocketManager (App Comms)</h2>
-                        <p class="sub-text">Real-time Android App Connection • WebSockets</p>
+                        <h2>App Bridge Socket</h2>
+                        <p class="sub-text">Persistent Connection • Hardware Identity • Logic Relay</p>
                     </div>
                 </div>
                 <div class="module-body">
-                    <p>Maintains persistent stateful connections. Handles <strong>one connection per IP</strong>,
-                        ensuring reliability for live events like calls and logs.</p>
+                    <p>The primary persistent channel between the Android background service and the desktop bridge.
+                        for <b style="color: white;">multiple devices purpose</b> we will use this socket
+                        only for live app connection</p>
 
-                    <div class="lifecycle-steps" style="margin-bottom: 2rem;">
-                        <div class="l-step">
-                            <span class="num">1</span>
-                            <div class="txt"><strong>Connect:</strong> Client initiates WebSocket handshake.</div>
-                        </div>
-                        <div class="l-step">
-                            <span class="num">2</span>
-                            <div class="txt"><strong>Register:</strong> Client sends
-                                <code>{ "type": "register", "id": "..." }</code>.</div>
-                        </div>
-                        <div class="l-step">
-                            <span class="num">3</span>
-                            <div class="txt"><strong>Stream:</strong> Bi-directional JSON flow (Call Events, Logs).
+                    <p>If, in any case, Windows shuts down, turns off, or becomes disconnected, the Android socket will
+                        also be disconnected automatically. Android App will <b style="color: white;"> Kill it self
+                            For
+                            Battery Optimization</b></p>
+
+                    <div class="endpoint-list">
+                        <!-- Connection -->
+                        <div class="ep-card">
+                            <div class="ep-header" style="border-bottom: none;">
+                                <span class="method post"
+                                    style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">WS</span>
+                                <span class="url">ws://$ip:$port</span>
+                                <span class="purpose">Central stateful communication channel.</span>
                             </div>
                         </div>
                     </div>
 
-                    <h4 style="color: var(--text-muted); margin-bottom: 1rem;">Server → Client Commands</h4>
+                    <h4
+                        style="color: var(--text-muted); margin-top: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                        Handshake & Device Identity
+                    </h4>
+
+                    <div class="endpoint-list">
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="url" style="font-size: 0.9rem;">type: "register"</span>
+                                <span class="purpose">Authenticates device using hardware fingerprint.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Registration Payload (Android → Desktop)</span>
+                                <code class="json-block">{
+  <span class="json-key">"type"</span>: <span class="json-string">"register"</span>,
+  <span class="json-key">"id"</span>: <span class="json-string">"Build.MANUFACTURER|Build.MODEL|..."</span>,
+  <span class="json-key">"ip"</span>: <span class="json-string">"$hidden_address"</span>
+}</code>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- 2. Call Manager 1 (Start call_manager.exe for each ip) -->
+            <section class="arch-module" id="socket-manager">
+                <div class="module-header">
+                    <div class="icon-box icon-ws">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="header-text">
+                        <h2>Call Manager 1</h2>
+                        <p class="sub-text">Start call_manager.exe for each Ip</p>
+                    </div>
+                </div>
+                <div class="module-body">
+                    <p>Core WebSocket server for real-time app communication. Enforces <strong>Single Active Connection
+                            per IP</strong> (except localhost), ensuring strict 1:1 state mapping.</p>
+
+                    <div class="endpoint-list" style="margin-bottom: 2rem;">
+                        <div class="ep-card">
+                            <div class="ep-header" style="border-bottom: none;">
+                                <span class="method post"
+                                    style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3);">WS</span>
+                                <span class="url">ws://ip:$port</span>
+                                <span class="purpose">Primary app connection channel.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4
+                        style="color: var(--text-muted); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                        Client → Server Events
+                    </h4>
+                    <div class="endpoint-list" style="margin-bottom: 2rem;">
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="url" style="font-size: 0.9rem;">type: "call_event"</span>
+                                <span class="purpose">Forwards call state to CallManager.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Call Event Payload</span>
+                                <code class="json-block">{
+  <span class="json-key">"type"</span>: <span class="json-string">"call_event"</span>,
+  <span class="json-key">"event_type"</span>: <span class="json-string">"incoming_call"</span>,
+  <span class="json-key">"caller_number"</span>: <span class="json-string">"+1234567890"</span>,
+  <span class="json-key">"device_ip"</span>: <span class="json-string">"$hidden"</span>
+}</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4
+                        style="color: var(--text-muted); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                        Server Methods (Dart)
+                    </h4>
                     <div class="cmd-list" style="margin-bottom: 0;">
-                        <span>sendTo(ip, msg)</span>
-                        <span>broadcast(data)</span>
-                        <span>sendIpRaw(ip, json)</span>
+                        <span title="Send string to specific IP group">sendTo(ip, msg)</span>
+                        <span title="Send JSON/Dynamic to specific IP group">sendIpRaw(ip, json)</span>
+                        <span title="Send to all connected clients (except excluded)">broadcast(msg, {excludeIp})</span>
                     </div>
                 </div>
             </section>
 
-            <!-- 3. SPECIALIZED SOCKETS -->
-            <div class="dual-grid">
-                <!-- Call UI Socket -->
-                <section class="arch-module mini-module">
-                    <div class="module-header">
-                        <div class="icon-box icon-tcp">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path
-                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                                </path>
-                            </svg>
-                        </div>
-                        <div class="header-text">
-                            <h2>Call UI Socket</h2>
-                            <p class="sub-text">Ephemeral TCP • Localhost</p>
-                        </div>
+            <!-- Call Manager 2 (Controller for each call_manager.exe) -->
+            <section class="arch-module" id="call-connection-socket">
+                <div class="module-header">
+                    <div class="icon-box icon-ws">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83">
+                            </path>
+                        </svg>
                     </div>
-                    <div class="module-body">
-                        <p>Lightweight socket active <strong>only</strong> during phone calls. Bridges the main
-                            background service with the floating Call Window UI.</p>
-                        <div class="cmd-list">
-                            <span>register_call_ui(ip, id)</span>
-                            <span>sendIp(ip, data)</span>
-                        </div>
+                    <div class="header-text">
+                        <h2>Call Manager 2 </h2>
+                        <p class="sub-text">Localhost • Controller for each call_manager.exe</p>
                     </div>
-                </section>
+                </div>
+                <div class="module-body">
+                    <p>A specialized, ephemeral socket server established <strong>only</strong> when the Call UI window
+                        is active. It ensures secure, 1:1 data syncing between the specific user context and the UI
+                        window.</p>
 
-                <!-- Dex Socket -->
-                <section class="arch-module mini-module">
-                    <div class="module-header">
-                        <div class="icon-box icon-dex">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                <line x1="8" y1="21" x2="16" y2="21"></line>
-                                <line x1="12" y1="17" x2="12" y2="21"></line>
-                            </svg>
-                        </div>
-                        <div class="header-text">
-                            <h2>AdbTcpServer (Dex)</h2>
-                            <p class="sub-text">Dex Control • TCP</p>
-                        </div>
-                    </div>
-                    <div class="module-body">
-                        <p>Specialized socket for Android Dex mode. Broadcasts UI events and manages app audio streams.
-                        </p>
+                    <h4
+                        style="color: var(--text-muted); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                        Detailed Protocol Exchange
+                    </h4>
 
-                        <h4 style="color: var(--text-muted);font-size: 0.8rem; margin-bottom: 0.5rem;">Navigation & UI
-                        </h4>
-                        <div class="cmd-list" style="margin-bottom: 1rem;">
-                            <span>go home</span> <span>go back</span> <span>go recent</span>
-                            <span>app_click</span> <span>Side Bar click event</span>
+                    <div class="endpoint-list">
+                        <!-- Handshake -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method post"
+                                    style="background: rgba(139, 92, 246, 0.15); color: #a78bfa; border-color: rgba(139, 92, 246, 0.3);">CLIENT</span>
+                                <span class="url">→ REGISTER_CALL_UI</span>
+                                <span class="purpose">Full handshake identifying device and call context.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Registration Payload</span>
+                                <code class="json-block">{
+  <span class="json-key">"type"</span>: <span class="json-string">"register_call_ui"</span>,
+  <span class="json-key">"id"</span>: <span class="json-string">"192.168.1.5_+1234567890"</span>,
+  <span class="json-key">"ip"</span>: <span class="json-string">"192.168.1.5"</span>,
+  <span class="json-key">"phoneNumber"</span>: <span class="json-string">"+1234567890"</span>,
+  <span class="json-key">"deviceDisplayName"</span>: <span class="json-string">"OnePlus 11 5G"</span>,
+  <span class="json-key">"callerName"</span>: <span class="json-string">"John Doe"</span>,
+  <span class="json-key">"isIncoming"</span>: <span class="json-string">"1"</span>
+}</code>
+                            </div>
                         </div>
 
-                        <h4 style="color: var(--text-muted);font-size: 0.8rem; margin-bottom: 0.5rem;">System Control
-                        </h4>
-                        <div class="cmd-list">
-                            <span>toggleBluetooth</span> <span>toggleMobileData</span>
-                            <span>req_app_audio</span> <span>stop_all_audio</span>
+                        <!-- Update -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method post"
+                                    style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">SERVER</span>
+                                <span class="url">→ CALL_UPDATE</span>
+                                <span class="purpose">In-call state updates (e.g. call accepted/ended).</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Update Message</span>
+                                <code class="json-block">{
+  <span class="json-key">"type"</span>: <span class="json-string">"call_update"</span>,
+  <span class="json-key">"ip"</span>: <span class="json-string">"192.168.1.5"</span>,
+  <span class="json-key">"number"</span>: <span class="json-string">"+1234567890"</span>
+}</code>
+                            </div>
                         </div>
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
+
+            <!-- 4. ADB TCP SERVER (DEX) -->
+            <section class="arch-module" id="adb-tcp-dex">
+                <div class="module-header">
+                    <div class="icon-box icon-ws">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="header-text">
+                        <h2>AdbTcpServer (Dex)</h2>
+                        <p class="sub-text">Port Hidden • Global TCP Service • App Logic Sync</p>
+                    </div>
+                </div>
+                <div class="module-body">
+                    <p>A global service providing deep integration for Android Dex mode. It broadcasts UI events, system
+                        toggles, and manages high-performance app audio streams across all connected clients.</p>
+
+                    <h4
+                        style="color: var(--text-muted); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                        System Control & Navigation
+                    </h4>
+                    <div class="endpoint-list">
+                        <!-- Navigation -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">"go home" | "go back"</span>
+                                <span class="purpose">Triggers Android system navigation events.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Response Model (Server -> Client)</span>
+                                <code class="json-block">{
+  <span class="json-key">"type"</span>: <span class="json-string">"go home"</span>,
+  <span class="json-key">"ok"</span>: <span class="json-boolean">true</span>
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- Bluetooth Toggle -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method post">POST</span>
+                                <span class="url">"toggleBluetooth"</span>
+                                <span class="purpose">Remotely toggles hardware Bluetooth state.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Response Model (Server -> Client)</span>
+                                <code class="json-block">{
+  <span class="json-key">"type"</span>: <span class="json-string">"toggleBluetooth"</span>,
+  <span class="json-key">"status"</span>: <span class="json-boolean">true</span>
+}</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4
+                        style="color: var(--text-muted); margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                        App Audio Streaming Protocol
+                    </h4>
+                    <div class="endpoint-list">
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method post">CMD</span>
+                                <span class="url">req_app_audio={pkg}</span>
+                                <span class="purpose">Requests high-performance audio for package.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Server Response (Server -> Client)</span>
+                                <code class="json-block">{
+  <span class="json-key">"type"</span>: <span class="json-string">"set_app_audio"</span>,
+  <span class="json-key">"app"</span>: <span class="json-string">"com.spotify.music"</span>,
+  <span class="json-key">"status"</span>: <span class="json-boolean">true</span>
+}</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4
+                        style="color: var(--text-muted); margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                        App Data Sync (Client → Server)
+                    </h4>
+                    <div class="endpoint-list">
+                        <!-- Sync Favorites -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">SYNC</span>
+                                <span class="url">sync_all_favorites</span>
+                                <span class="purpose">Syncs user app favorites to the server.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Payload Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"type"</span>: <span class="json-string">"sync_all_favorites"</span>,
+  <span class="json-key">"data"</span>: [
+    { <span class="json-key">"name"</span>: <span class="json-string">"Spotify"</span>, <span class="json-key">"package"</span>: <span class="json-string">"com.spotify.music"</span> },
+    { <span class="json-key">"name"</span>: <span class="json-string">"YouTube"</span>, <span class="json-key">"package"</span>: <span class="json-string">"com.google.android.youtube"</span> }
+  ]
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- Sidebar Click -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">CLICK</span>
+                                <span class="url">Side Bar click event</span>
+                                <span class="purpose">Reports UI interactions in Dex Sidebar.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Payload Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"type"</span>: <span class="json-string">"Side Bar click event"</span>,
+  <span class="json-key">"data"</span>: <span class="json-string">"open app"</span>
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- Recent App -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method post">UPDATE</span>
+                                <span class="url">add_new_recent_app</span>
+                                <span class="purpose">Reports an app launch to the global state.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Payload Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"type"</span>: <span class="json-string">"add_new_recent_app"</span>,
+  <span class="json-key">"package"</span>: <span class="json-string">"com.whatsapp"</span>,
+  <span class="json-key">"label"</span>: <span class="json-string">"WhatsApp"</span>
+}</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
         </main>
     </div>
