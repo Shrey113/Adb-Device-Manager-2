@@ -1,0 +1,432 @@
+:root {
+    --bg-dark: #050505;
+    --primary: #ff3333;
+    --primary-glow: rgba(255, 51, 51, 0.4);
+    --secondary: #3333ff;
+    --text-main: #ffffff;
+    --text-muted: #888888;
+    --glass-bg: rgba(20, 20, 20, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    font-family: var(--font-body);
+    color: var(--text-main);
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Atmospheric Backgrounds --- */
+.background-globes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.globe {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: floating 20s infinite alternate ease-in-out;
+}
+
+.globe-1 {
+    top: -10%;
+    left: -10%;
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, var(--primary), transparent 70%);
+}
+
+.globe-2 {
+    bottom: -10%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, #2a0000, transparent 70%);
+    animation-delay: -5s;
+}
+
+.globe-3 {
+    top: 40%;
+    left: 40%;
+    width: 30vw;
+    height: 30vw;
+    background: radial-gradient(circle, #ff0000, transparent 80%);
+    opacity: 0.1;
+    animation-delay: -10s;
+}
+
+.noise-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    z-index: 1;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* --- Main Interface --- */
+.main-interface {
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+/* Top Bar */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.security-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 51, 51, 0.08);
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 51, 51, 0.3);
+    box-shadow: 0 0 20px rgba(255, 51, 51, 0.1);
+    backdrop-filter: blur(5px);
+    margin: 20px 0;
+    transition: all 0.3s ease;
+}
+
+
+.badge-text {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 2.4rem;
+    letter-spacing: 1.5px;
+}
+
+
+/* Split Content Grid */
+.content-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    height: 100%;
+    align-items: center;
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Visual Warning Side */
+.visual-warning {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 2rem;
+}
+
+.lock-assembly {
+    margin-bottom: 2rem;
+    color: var(--primary);
+    position: relative;
+}
+
+.lock-assembly svg {
+    width: 120px;
+    height: 120px;
+    filter: drop-shadow(0 0 20px var(--primary-glow));
+}
+
+.glitch-text {
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 0.9;
+    color: var(--text-main);
+    text-transform: uppercase;
+    position: relative;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-dark);
+}
+
+.glitch-text::before {
+    left: 2px;
+    text-shadow: -1px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+    left: -2px;
+    text-shadow: -1px 0 #00fff9;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+/* Info Panel Side */
+.info-panel {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2rem;
+}
+
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 30px;
+    padding: 3rem;
+    width: 100%;
+    max-width: 550px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.alert-banner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--primary);
+    font-weight: 700;
+    font-family: var(--font-heading);
+    background: rgba(255, 51, 51, 0.1);
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 51, 51, 0.2);
+}
+
+.text-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.text-content p {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+.highlight-text {
+    color: var(--text-main);
+    border-left: 3px solid var(--primary);
+    padding-left: 1rem;
+}
+
+/* Action Grid */
+.actions-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.action-card {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 1.2rem;
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid var(--glass-border);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Removed primary action card styles */
+
+.action-card.secondary {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-main);
+}
+
+.action-card.secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-3px);
+}
+
+.card-icon {
+    margin-right: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.card-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-label {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.card-sub {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.card-arrow {
+    font-size: 1.2rem;
+    font-weight: bold;
+    transform: translateX(0);
+    transition: transform 0.3s;
+}
+
+.action-card:hover .card-arrow {
+    transform: translateX(5px);
+}
+
+.panel-footer {
+    border-top: 1px solid var(--glass-border);
+    padding-top: 1.5rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Animations */
+@keyframes floating {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(30px, 30px);
+    }
+}
+
+@keyframes glitch-anim {
+    0% {
+        clip: rect(32px, 9999px, 88px, 0);
+    }
+
+    5% {
+        clip: rect(96px, 9999px, 34px, 0);
+    }
+
+    10% {
+        clip: rect(12px, 9999px, 5px, 0);
+    }
+
+    100% {
+        clip: rect(45px, 9999px, 63px, 0);
+    }
+}
+
+@keyframes glitch-anim2 {
+    0% {
+        clip: rect(65px, 9999px, 99px, 0);
+    }
+
+    5% {
+        clip: rect(23px, 9999px, 11px, 0);
+    }
+
+    10% {
+        clip: rect(89px, 9999px, 4px, 0);
+    }
+
+    100% {
+        clip: rect(12px, 9999px, 87px, 0);
+    }
+}
+
+@media (max-width: 1000px) {
+    body {
+        height: fit-content;
+        overflow: scroll;
+    }
+
+    .background-globes {
+        overflow: scroll;
+    }
+
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .content-split {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .visual-warning {
+        align-items: center;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .glitch-text {
+        font-size: 3rem;
+    }
+
+    .info-panel {
+        padding-right: 0;
+        justify-content: center;
+    }
+
+    .glass-panel {
+        padding: 2rem;
+    }
+
+    .security-badge {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 15px;
+        width: 100%;
+        max-width: 90vw;
+    }
+
+    .badge-text {
+        font-size: 1rem;
+        word-break: break-word;
+    }
+}

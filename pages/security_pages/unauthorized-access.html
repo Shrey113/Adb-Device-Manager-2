@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECURITY ALERT | UNAUTHORIZED</title>
+    <link rel="stylesheet" href="unauthorized-access.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <div class="noise-overlay"></div>
+
+    <main class="main-interface">
+
+
+        <div class="content-split">
+            <section class="visual-warning">
+                <div class="lock-assembly">
+                    <div class="lock-ring"></div>
+                    <div class="lock-body">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2.5l7.5 3.8v5.7c0 5.6-3.6 9.4-7.5 11-3.9-1.6-7.5-5.4-7.5-11V6.3L12 2.5z" />
+                            <path d="M9.5 12.5l1.8 1.8 3.7-3.7" />
+                        </svg>
+                    </div>
+
+                </div>
+                <h1 class="glitch-text" data-text="ACCESS DENIED">ACCESS DENIED</h1>
+                <br>
+                <br>
+
+                <span class="badge-text">
+                    For system Protected Of<br>
+                    ADB Device Manager (Windows)
+                </span>
+
+                <br>
+                <br>
+                <div class="session-id">TRACE ID: <span id="session-hash">INIT-SEC</span></div>
+            </section>
+
+            <section class="info-panel">
+                <div class="glass-panel">
+                    <div class="text-content">
+                        <h2>Access Control Violation</h2>
+                        <p>
+                            You have attempted to access a protected internal component. This interface is restricted to
+                            authenticated middleware processes and requires a valid security token.
+                            Direct user interaction with this endpoint is prohibited.
+                        </p>
+                        <p id="dynamic-warning" class="highlight-text"
+                            style="display: none; color: #ff3333; margin-top: 10px;">
+                            <!-- Dynamic content will be injected here -->
+                        </p>
+                        <p class="highlight-text">
+                            Unauthorized access, IPC misuse, or exploitation of this software is prohibited and may
+                            attract penalties under applicable Indian laws.
+                        </p>
+                    </div>
+
+                    <div class="actions-grid">
+                        <a href="https://github.com/Shrey113/" target="_blank" class="action-card secondary">
+                            <div class="card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                </svg>
+                            </div>
+
+                            <div class="card-text">
+                                <span class="card-label">Administrator Contact</span>
+                                <span class="card-sub">Report Security Incident</span>
+                            </div>
+                            <div class="card-arrow">→</div>
+                        </a>
+                    </div>
+
+                    <footer class="panel-footer">
+                        <span>SERVICE STATUS: <strong style="color: #00ff88;">ONLINE</strong></span>
+                        <span>ERROR CODE: <strong style="color: #ff3333;">403_FORBIDDEN</strong></span>
+                    </footer>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // TRACE ID generator
+        setInterval(() => {
+            const el = document.getElementById('session-hash');
+            if (el) el.innerText = 'TRC-' + Math.random().toString(16).substring(2, 10).toUpperCase();
+        }, 2000);
+
+        // URL Parameter Parsing
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const attemptArg = urlParams.get('attempt');
+
+            if (attemptArg) {
+                const warningEl = document.getElementById('dynamic-warning');
+                // Sanitize input to prevent XSS (basic)
+                const safeAttempt = attemptArg.replace(/[<>]/g, '');
+                warningEl.innerHTML = `Invalid Access Attempt detected for <br><strong style="color: white;">${safeAttempt}</strong>`;
+                warningEl.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+
+</html>
