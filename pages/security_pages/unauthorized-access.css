@@ -257,6 +257,86 @@ body {
     padding-left: 1rem;
 }
 
+.law-warning {
+    color: rgba(255, 255, 255, 0.9);
+    background: linear-gradient(90deg, rgba(255, 51, 51, 0.05) 0%, transparent 100%);
+    border-left: 3px solid var(--primary);
+    padding: 1.5rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    line-height: 1.5;
+    animation: alertStatusPulse 4s ease-in-out infinite;
+    -webkit-text-fill-color: initial;
+    background-clip: initial;
+    -webkit-background-clip: initial;
+    margin-top: 1.5rem;
+}
+
+.law-warning::before {
+    content: "LEGAL WARNING";
+    position: absolute;
+    top: -10px;
+    left: 1.2rem;
+    font-size: 0.65rem;
+    font-family: var(--font-heading);
+    color: var(--primary);
+    background: #111;
+    padding: 0 10px;
+    letter-spacing: 2.5px;
+    font-weight: 900;
+    border: 1px solid rgba(255, 51, 51, 0.3);
+    border-radius: 4px;
+}
+
+.law-warning::after {
+    content: '';
+    position: absolute;
+    left: -3px;
+    top: 0;
+    width: 3px;
+    height: 30%;
+    background: #ffffff;
+    box-shadow: 0 0 15px #ffffff, 0 0 30px rgba(255, 255, 255, 0.5);
+    animation: statusSweep 3s ease-in-out infinite;
+}
+
+@keyframes alertStatusPulse {
+
+    0%,
+    100% {
+        background-color: rgba(255, 51, 51, 0.03);
+        text-shadow: 0 0 10px rgba(255, 51, 51, 0);
+        border-left-color: var(--primary);
+    }
+
+    50% {
+        background-color: rgba(255, 51, 51, 0.1);
+        text-shadow: 0 0 15px rgba(255, 51, 51, 0.2);
+        color: #fff;
+        border-left-color: #ffffff;
+    }
+}
+
+@keyframes statusSweep {
+
+    0%,
+    100% {
+        top: 0;
+        opacity: 0;
+    }
+
+    10%,
+    90% {
+        opacity: 1;
+    }
+
+    50% {
+        top: 70%;
+    }
+}
+
 /* Action Grid */
 .actions-grid {
     display: grid;
@@ -381,11 +461,11 @@ body {
 @media (max-width: 1000px) {
     body {
         height: fit-content;
-        overflow: scroll;
+        overflow-y: scroll;
     }
 
     .background-globes {
-        overflow: scroll;
+        overflow-y: scroll;
     }
 
 }
