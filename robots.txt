@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /google*.html
 
 Sitemap: https://shrey113.github.io/Adb-Device-Manager-2/sitemap.xml
