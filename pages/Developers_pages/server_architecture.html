@@ -36,11 +36,24 @@
             <div class="sidebar-inner">
                 <div class="sidebar-label">Architecture</div>
                 <ul class="sidebar-links">
+                    <li class="sidebar-category">WINDOWS SERVER</li>
                     <li><a href="#main-server">Main Server</a></li>
                     <li><a href="#app-bridge-socket">App Bridge Socket</a></li>
                     <li><a href="#socket-manager">Call Manager 1</a></li>
                     <li><a href="#call-connection-socket">Call Manager 2</a></li>
                     <li><a href="#adb-tcp-dex">AdbTcpServer (Dex)</a></li>
+                    <li class="sidebar-category">ANDROID SERVER</li>
+                    <li><a href="#android-server-core">Core Server</a></li>
+                    <li><a href="#app-data-api">App Data API</a></li>
+                    <li><a href="#call-settings-api">Call Settings API</a></li>
+                    <li><a href="#contact-api">Contacts API</a></li>
+                    <li><a href="#file-manager-api">File Manager API</a></li>
+                    <li><a href="#photo-data-api">Photo Data API</a></li>
+                    <li><a href="#sms-api">SMS API</a></li>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
                 </ul>
             </div>
         </nav>
@@ -49,7 +62,7 @@
             <!-- Hero Section -->
             <div class="hero-section">
                 <div class="hero-text">
-                    <h1>Server &<br>Network Layer</h1>
+                    <h1>Server &<br><span>Network Layer</span></h1>
                     <p class="hero-desc">
                         The backbone of the application. A hybrid architecture combining a local HTTP control bridge
                         with specialized WebSocket and TCP channels for real-time bidirectional communication.
@@ -63,7 +76,6 @@
                 <div class="server-visual">
                     <div class="sv-node center">
                         <span class="icon">🖥️</span>
-                        <span class="label">MainServer</span>
                     </div>
                     <div class="sv-orbit">
                         <div class="sv-node satellite sat-1">
@@ -95,6 +107,12 @@
                     <div class="header-text">
                         <h2>MainServer (HTTP Control)</h2>
                         <p class="sub-text">Local Control & Bridge Server • Dart Shelf • JSON</p>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="badge-inner">
+                            <span class="badge-icon">🛡️</span>
+                            <span class="badge-text">Secure</span>
+                        </div>
                     </div>
                 </div>
                 <div class="module-body">
@@ -324,6 +342,12 @@
                     <div class="header-text">
                         <h2>App Bridge Socket</h2>
                         <p class="sub-text">Persistent Connection • Hardware Identity • Logic Relay</p>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="badge-inner">
+                            <span class="badge-icon">🛡️</span>
+                            <span class="badge-text">Secure</span>
+                        </div>
                     </div>
                 </div>
                 <div class="module-body">
@@ -644,9 +668,958 @@
                     </div>
                 </div>
             </section>
+            <!-- ANDROID SERVER -->
+            <section class="arch-module" id="android-server-core">
+                <div class="module-header android-module">
+                    <div class="icon-box icon-http">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="header-text">
+                        <h2>Android Server (HTTP)</h2>
+                        <p class="sub-text">Device-Side Server • Local Network Only • Secured</p>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="badge-inner">
+                            <span class="badge-icon">🛡️</span>
+                            <span class="badge-text">SECURE</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="module-body">
+                    <p>The Android device hosts a local HTTP server to handle requests from the Windows desktop app. All
+                        routes are
+                        <strong>local-network only</strong> and most require a <strong>security </strong>.
+                    </p>
 
+
+                    <h4
+                        style="color: var(--text-muted); margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                        Health & Connection
+                    </h4>
+                    <div class="endpoint-list">
+                        <!-- GET /ping -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/ping</span>
+                                <span class="purpose">Check if the server is running.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Response Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"timestamp"</span>: <span class="json-number">1730000000000</span>,
+  <span class="json-key">"message"</span>: <span class="json-string">"Server is running"</span>
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /i_am_connected_to -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/i_am_connected_to</span>
+                                <span class="purpose">Returns the currently connected Windows server IP
+                                    <br>(For mutiple device support).</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Response Model (Connected)</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"connected"</span>: <span class="json-boolean">true</span>,
+  <span class="json-key">"server_ip"</span>: <span class="json-string">"192.168.x.x"</span>,
+  <span class="json-key">"timestamp"</span>: <span class="json-number">1730000000000</span>
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /disconnect -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/disconnect</span>
+                                <span class="purpose">Disconnects and gracefully closes the Android app.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Response Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"message"</span>: <span class="json-string">"App will disconnect and close shortly."</span>,
+  <span class="json-key">"timestamp"</span>: <span class="json-number">1730000000000</span>
+}</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4
+                        style="color: var(--text-muted); margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                        Socket Services
+                    </h4>
+                    <div class="endpoint-list">
+                        <!-- POST /start_socket_io_for_media_sessions -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method post">POST</span>
+                                <span class="url">/start_socket_io_for_media_sessions</span>
+                                <span class="purpose">Starts media session socket streaming.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Payload</span>
+                                <code class="json-block">{
+  <span class="json-key">"ip"</span>: <span class="json-string">"192.168.x.x"</span>
+}</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"timestamp"</span>: <span class="json-number">1730000000000</span>,
+  <span class="json-key">"message"</span>: <span class="json-string">"Socket service started successfully."</span>
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- POST /start_socket_io_for_notifications -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method post">POST</span>
+                                <span class="url">/start_socket_io_for_notifications</span>
+                                <span class="purpose">Starts notification streaming socket.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Payload</span>
+                                <code class="json-block">{
+  <span class="json-key">"ip"</span>: <span class="json-string">"192.168.x.x"</span>
+}</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"timestamp"</span>: <span class="json-number">1730000000000</span>,
+  <span class="json-key">"message"</span>: <span class="json-string">"Notification socket service started successfully."</span>
+}</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4
+                        style="color: var(--text-muted); margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                        File Transfer
+                    </h4>
+                    <div class="endpoint-list">
+                        <!-- POST /upload_file -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method post">POST</span>
+                                <span class="url">/upload_file</span>
+                                <span class="purpose">Uploads a file to Android Downloads folder.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Body (Binary Stream)</span>
+                                <code class="json-block">&lt;Raw File Bytes&gt;</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"message"</span>: <span class="json-string">"File downloaded successfully"</span>,
+  <span class="json-key">"filePath"</span>: <span class="json-string">"/storage/emulated/0/Download/example.zip"</span>,
+  <span class="json-key">"fileSize"</span>: <span class="json-number">12.5</span>,
+  <span class="json-key">"duration"</span>: <span class="json-number">3.2</span>,
+  <span class="json-key">"speedMBps"</span>: <span class="json-number">3.9</span>
+}</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- APP DATA API -->
+            <section class="arch-module" id="app-data-api">
+                <div class="module-header android-module">
+                    <div class="icon-box icon-dex">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+                        </svg>
+                    </div>
+                    <div class="header-text">
+                        <h2>App Data API</h2>
+                        <p class="sub-text">/app_data • Installed Apps & Metadata</p>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="badge-inner">
+                            <span class="badge-icon">💎</span>
+                            <span class="badge-text">TRUSTED</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="module-body">
+                    <div class="endpoint-list">
+                        <!-- GET /app_data/get_all_apps -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/app_data/get_all_apps</span>
+                                <span class="purpose">Returns all launchable apps with metadata and icons.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Response Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"count"</span>: <span class="json-number">125</span>,
+  <span class="json-key">"apps"</span>: [
+    {
+      <span class="json-key">"app_name"</span>: <span class="json-string">"WhatsApp"</span>,
+      <span class="json-key">"package_name"</span>: <span class="json-string">"com.whatsapp"</span>,
+      <span class="json-key">"version_name"</span>: <span class="json-string">"2.24.1"</span>,
+      <span class="json-key">"is_system"</span>: <span class="json-boolean">false</span>,
+      <span class="json-key">"is_home_app"</span>: <span class="json-boolean">true</span>,
+      <span class="json-key">"source_dir"</span>: <span class="json-string">"/data/app/~~xyz/base.apk"</span>,
+      <span class="json-key">"icon_base64"</span>: <span class="json-string">"iVBORw0KGgoAAA..."</span>
+    }
+  ]
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /app_data/total_app_count -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/app_data/total_app_count</span>
+                                <span class="purpose">Returns the total number of launchable apps.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Response Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"total_app_count"</span>: <span class="json-number">125</span>
+}</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CALL SETTINGS API -->
+            <section class="arch-module" id="call-settings-api">
+                <div class="module-header android-module">
+                    <div class="icon-box icon-ws">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="header-text">
+                        <h2>Call Settings API</h2>
+                        <p class="sub-text">/call_settings • Call Logs, Control & Dialer Operations</p>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="badge-inner">
+                            <span class="badge-icon">🛡️</span>
+                            <span class="badge-text">Secure</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="module-body">
+
+                    <div class="endpoint-list">
+                        <!-- GET /call_settings/get_all_calls -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/call_settings/get_all_calls</span>
+                                <span class="purpose">Returns full call history with IDs.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Response Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"count"</span>: <span class="json-number">20</span>,
+  <span class="json-key">"calls"</span>: [
+    {
+      <span class="json-key">"id"</span>: <span class="json-number">42</span>,
+      <span class="json-key">"name"</span>: <span class="json-string">"John Doe"</span>,
+      <span class="json-key">"number"</span>: <span class="json-string">"+911234567890"</span>,
+      <span class="json-key">"type"</span>: <span class="json-string">"incoming"</span>,
+      <span class="json-key">"timestamp"</span>: <span class="json-number">1730000000000</span>,
+      <span class="json-key">"duration_seconds"</span>: <span class="json-number">120</span>
+    }
+  ]
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /call_settings/get_contact_calls -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/call_settings/get_contact_calls</span>
+                                <span class="purpose">Returns call logs filtered by phone number.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Params</span>
+                                <code class="json-block">?number=12345</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"count"</span>: <span class="json-number">3</span>,
+  <span class="json-key">"calls"</span>: [
+    {
+      <span class="json-key">"id"</span>: <span class="json-number">12</span>,
+      <span class="json-key">"name"</span>: <span class="json-string">"Unknown"</span>,
+      <span class="json-key">"number"</span>: <span class="json-string">"12345"</span>,
+      <span class="json-key">"type"</span>: <span class="json-string">"missed"</span>,
+      <span class="json-key">"timestamp"</span>: <span class="json-number">1730000000000</span>,
+      <span class="json-key">"duration_seconds"</span>: <span class="json-number">0</span>
+    }
+  ]
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /call_settings/make_call -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/call_settings/make_call</span>
+                                <span class="purpose">Initiates a phone call.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Params</span>
+                                <code class="json-block">?number=1234567890</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"message"</span>: <span class="json-string">"Placing call to 1234567890"</span>
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /call_settings/delete_call -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/call_settings/delete_call</span>
+                                <span class="purpose">Delete a single call log or all call logs.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Params</span>
+                                <code class="json-block">?id=42 (Optional, delete all if missing)</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"message"</span>: <span class="json-string">"Deleted call log with id: 42"</span>,
+  <span class="json-key">"rows_deleted"</span>: <span class="json-number">1</span>
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /call_settings/end_call -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/call_settings/end_call</span>
+                                <span class="purpose">Ends the currently ongoing call.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Response Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"message"</span>: <span class="json-string">"Call ended successfully"</span>
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /call_settings/answer_call -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/call_settings/answer_call</span>
+                                <span class="purpose">Answers a ringing call.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Response Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"message"</span>: <span class="json-string">"Answered incoming call"</span>
+}</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACTS API -->
+            <section class="arch-module" id="contact-api">
+                <div class="module-header android-module">
+                    <div class="icon-box icon-dex">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 00-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 010 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="header-text">
+                        <h2>Contacts API</h2>
+                        <p class="sub-text">/contacts • Address Book Access</p>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="badge-inner">
+                            <span class="badge-icon">🛡️</span>
+                            <span class="badge-text">PRIVATE</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="module-body">
+                    <div class="endpoint-list">
+                        <!-- GET /contacts/get_total -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/contacts/get_total</span>
+                                <span class="purpose">Get total number of contacts.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Response Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"total_contacts"</span>: <span class="json-number">50</span>
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /contacts/get_all -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/contacts/get_all</span>
+                                <span class="purpose">Get all contact details with photo.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Response Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"count"</span>: <span class="json-number">1</span>,
+  <span class="json-key">"contacts"</span>: [
+    {
+      <span class="json-key">"id"</span>: <span class="json-string">"1"</span>,
+      <span class="json-key">"name"</span>: <span class="json-string">"Alice"</span>,
+      <span class="json-key">"numbers"</span>: [<span class="json-string">"+123456789"</span>],
+      <span class="json-key">"photo_base64"</span>: <span class="json-string">"iVBORw0KGg..."</span>
+    }
+  ]
+}</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FILE MANAGER API -->
+            <section class="arch-module" id="file-manager-api">
+                <div class="module-header android-module">
+                    <div class="icon-box icon-http">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="header-text">
+                        <h2>File Manager API</h2>
+                        <p class="sub-text">/file_manager • Filesystem Operations</p>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="badge-inner">
+                            <span class="badge-icon">🛡️</span>
+                            <span class="badge-text">Secure</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="module-body">
+                    <div class="endpoint-list">
+                        <!-- GET /file_manager/list_dir -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/file_manager/list_dir</span>
+                                <span class="purpose">List all files/folders in a directory.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Params</span>
+                                <code class="json-block">?path=/storage/emulated/0 (Optional)</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"path"</span>: <span class="json-string">"/storage/emulated/0"</span>,
+  <span class="json-key">"count"</span>: <span class="json-number">10</span>,
+  <span class="json-key">"files"</span>: [
+    {
+      <span class="json-key">"name"</span>: <span class="json-string">"DCIM"</span>,
+      <span class="json-key">"path"</span>: <span class="json-string">"/storage/emulated/0/DCIM"</span>,
+      <span class="json-key">"is_directory"</span>: <span class="json-boolean">true</span>,
+      <span class="json-key">"size"</span>: <span class="json-number">0</span>,
+      <span class="json-key">"last_modified"</span>: <span class="json-number">1730000000</span>,
+      <span class="json-key">"type"</span>: <span class="json-string">"directory"</span>
+    }
+  ]
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /file_manager/get_file -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/file_manager/get_file</span>
+                                <span class="purpose">Get text file content.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Params</span>
+                                <code class="json-block">?path=/sdcard/note.txt</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"path"</span>: <span class="json-string">"/sdcard/note.txt"</span>,
+  <span class="json-key">"content"</span>: <span class="json-string">"Hello World"</span>
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /file_manager/file_info -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/file_manager/file_info</span>
+                                <span class="purpose">Get metadata (detailed).</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Params</span>
+                                <code class="json-block">?path=/sdcard/photo.jpg</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"info"</span>: { ...file_object... }
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /file_manager/delete -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/file_manager/delete</span>
+                                <span class="purpose">Delete file/folder recursively.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Params</span>
+                                <code class="json-block">?path=/sdcard/trash</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"message"</span>: <span class="json-string">"Deleted: /sdcard/trash"</span>
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /file_manager/rename -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/file_manager/rename</span>
+                                <span class="purpose">Rename / Move file.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Params</span>
+                                <code class="json-block">?old_path=...&new_path=...</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /file_manager/create_folder -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/file_manager/create_folder</span>
+                                <span class="purpose">Create new folder.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Params</span>
+                                <code class="json-block">?path=/sdcard&name=NewFolder</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /file_manager/search -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/file_manager/search</span>
+                                <span class="purpose">Search (files + folders) with full info.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Params</span>
+                                <code class="json-block">?query=invoice&path=/sdcard</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"query"</span>: <span class="json-string">"invoice"</span>,
+  <span class="json-key">"count"</span>: <span class="json-number">5</span>,
+  <span class="json-key">"results"</span>: [ ...file_objects... ]
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /file_manager/open_with -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/file_manager/open_with</span>
+                                <span class="purpose">Open file with system app.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Params</span>
+                                <code class="json-block">?path=/sdcard/video.mp4</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"message"</span>: <span class="json-string">"Opened: /sdcard/video.mp4"</span>
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /file_manager/copy_move -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/file_manager/copy_move</span>
+                                <span class="purpose">Copy or Move files.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Params</span>
+                                <code class="json-block">?src=...&dest=...&mode=copy|move</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"message"</span>: <span class="json-string">"Operation completed: copy"</span>
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- POST /file_manager/upload -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method post">POST</span>
+                                <span class="url">/file_manager/upload</span>
+                                <span class="purpose">Upload file.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Payload</span>
+                                <code class="json-block">Multipart: file=..., target_path=..., file_name=...</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"message"</span>: <span class="json-string">"Uploaded uploaded_file"</span>,
+  <span class="json-key">"saved_name"</span>: <span class="json-string">"uploaded_file"</span>,
+  <span class="json-key">"saved_path"</span>: <span class="json-string">"/storage/emulated/0/uploaded_file"</span>
+}</code>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- PHOTO DATA API -->
+            <section class="arch-module" id="photo-data-api">
+                <div class="module-header android-module">
+                    <div class="icon-box icon-photo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                    </div>
+                    <div class="header-text">
+                        <h2>Photo Data API</h2>
+                        <p class="sub-text">/photo_data • Media Library & Thumbnails</p>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="badge-inner">
+                            <span class="badge-icon">🛡️</span>
+                            <span class="badge-text">Secure</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="module-body">
+                    <p>Provides deep access to the Android MediaStore gallery. Supports pagination, album filtering, and
+                        high-performance thumbnail generation on-the-fly.</p>
+                    <div class="endpoint-list">
+                        <!-- GET /photo_data/get_photos -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/photo_data/get_photos</span>
+                                <span class="purpose">Returns paginated list of all photos.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Params</span>
+                                <code class="json-block">?page=1&limit=30</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"page"</span>: <span class="json-number">1</span>,
+  <span class="json-key">"limit"</span>: <span class="json-number">30</span>,
+  <span class="json-key">"count"</span>: <span class="json-number">30</span>,
+  <span class="json-key">"photos"</span>: [
+    {
+      <span class="json-key">"name"</span>: <span class="json-string">"IMG_2024.jpg"</span>,
+      <span class="json-key">"path"</span>: <span class="json-string">"/sdcard/DCIM/Camera/..."</span>,
+      <span class="json-key">"folder_name"</span>: <span class="json-string">"Camera"</span>,
+      <span class="json-key">"date_taken"</span>: <span class="json-number">1730000000000</span>,
+      <span class="json-key">"size"</span>: <span class="json-string">"2.4 MB"</span>,
+      <span class="json-key">"thumbnail_base64"</span>: <span class="json-string">"iVBORw0KG..."</span>
+    }
+  ]
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /photo_data/get_full_photo -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/photo_data/get_full_photo</span>
+                                <span class="purpose">Returns full image as Base64.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Params</span>
+                                <code class="json-block">?path=/sdcard/DCIM/Camera/IMG_1.jpg</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"path"</span>: <span class="json-string">"/sdcard/DCIM..."</span>,
+  <span class="json-key">"image_base64"</span>: <span class="json-string">"/9j/4AAQ..."</span>
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /photo_data/total_photo_count -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/photo_data/total_photo_count</span>
+                                <span class="purpose">Returns total number of photos on device.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Response Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"total_photo_count"</span>: <span class="json-number">1254</span>
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /photo_data/get_all_folders -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/photo_data/get_all_folders</span>
+                                <span class="purpose">Returns all media albums/folders.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Response Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"folder_count"</span>: <span class="json-number">5</span>,
+  <span class="json-key">"folders"</span>: [
+    { <span class="json-key">"folder_name"</span>: <span class="json-string">"Camera"</span> },
+    { <span class="json-key">"folder_name"</span>: <span class="json-string">"Screenshots"</span> }
+  ]
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /photo_data/get_folder_photos -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/photo_data/get_folder_photos</span>
+                                <span class="purpose">Returns photos for a specific album.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Params</span>
+                                <code class="json-block">?folder_name=Camera&page=1&limit=30</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"folder_name"</span>: <span class="json-string">"Camera"</span>,
+  <span class="json-key">"count"</span>: <span class="json-number">30</span>,
+  <span class="json-key">"photos"</span>: [ ... ]
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /photo_data/total_folder_photos_count -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/photo_data/total_folder_photos_count</span>
+                                <span class="purpose">Get photo count for a specific album.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Params</span>
+                                <code class="json-block">?folder_name=Camera</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"total_folder_photos_count"</span>: <span class="json-number">450</span>
+}</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SMS API -->
+            <section class="arch-module" id="sms-api">
+                <div class="module-header android-module">
+                    <div class="icon-box icon-sms">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                            </path>
+                        </svg>
+                    </div>
+                    <div class="header-text">
+                        <h2>SMS API</h2>
+                        <p class="sub-text">/sms_settings • Messaging & Conversations</p>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="badge-inner">
+                            <span class="badge-icon">🛡️</span>
+                            <span class="badge-text">Secure</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="module-body">
+                    <p>Enables full interaction with the device's SMS database. Supports reading the entire inbox/sent
+                        history, sending new messages, and deleting records.</p>
+                    <div class="endpoint-list">
+                        <!-- GET /sms_settings/get_all_sms -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/sms_settings/get_all_sms</span>
+                                <span class="purpose">Fetches full SMS history from device.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Response Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"count"</span>: <span class="json-number">150</span>,
+  <span class="json-key">"messages"</span>: [
+    {
+      <span class="json-key">"address"</span>: <span class="json-string">"+1234567890"</span>,
+      <span class="json-key">"body"</span>: <span class="json-string">"Hello from ADB Manager"</span>,
+      <span class="json-key">"timestamp"</span>: <span class="json-number">1730000000000</span>,
+      <span class="json-key">"type"</span>: <span class="json-string">"inbox"</span>
+    }
+  ]
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- POST /sms_settings/send_sms -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method post">POST</span>
+                                <span class="url">/sms_settings/send_sms</span>
+                                <span class="purpose">Sends a text message to a specified number.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Params</span>
+                                <code class="json-block">?number=+1234567890&message=Hello</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"sent_to"</span>: <span class="json-string">"+1234567890"</span>,
+  <span class="json-key">"message"</span>: <span class="json-string">"Hello"</span>
+}</code>
+                            </div>
+                        </div>
+
+                        <!-- GET /sms_settings/delete_sms -->
+                        <div class="ep-card">
+                            <div class="ep-header">
+                                <span class="method get">GET</span>
+                                <span class="url">/sms_settings/delete_sms</span>
+                                <span class="purpose">Deletes a specific SMS message by ID.</span>
+                            </div>
+                            <div class="ep-body">
+                                <span class="json-label">Request Params</span>
+                                <code class="json-block">?id=123</code>
+                                <span class="json-label" style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                    Model</span>
+                                <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"deleted_count"</span>: <span class="json-number">1</span>
+}</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <br>
+            <br>
+            <br>
+            <br>
         </main>
     </div>
+
+    <!-- Floating GitHub Discussion Box -->
+    <a href="https://github.com/Shrey113/Adb-Device-Manager-2/discussions/new/choose" target="_blank"
+        class="github-floating-box">
+        <div class="gh-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+            </svg>
+        </div>
+        <div class="gh-content">
+            <span class="gh-title">Have Questions?</span>
+            <span class="gh-desc">Ask on GitHub Discussions</span>
+        </div>
+
+    </a>
 </body>
 
 </html>
