@@ -321,7 +321,7 @@
                         control.
                         Perfect for presentations, demos, and remote device management.
                     </p>
-                    <img src="images/section_1/Screen Mirroring.gif" class="feature-image"
+                    <img src="images/section_1/Screen Mirroring.gif" class="feature-image lazy"
                         alt="Screen Mirroring Feature">
                 </div>
 
@@ -338,7 +338,8 @@
                         Stream device audio directly to Windows in real time. Listen to music, app sounds, or any audio
                         from your Android device through your PC speakers.
                     </p>
-                    <img src="images/section_1/Audio Streaming.gif" class="feature-image" alt="Audio Mirroring Feature">
+                    <img src="images/section_1/Audio Streaming.gif" class="feature-image lazy"
+                        alt="Audio Mirroring Feature">
                 </div>
 
                 <!-- Input Control -->
@@ -354,7 +355,7 @@
                         Use your PC keyboard and mouse to control your Android device. Type messages, navigate apps, and
                         interact with your device using familiar desktop peripherals.
                     </p>
-                    <img src="images/section_1/Keyboard & Mouse Control.gif" class="feature-image"
+                    <img src="images/section_1/Keyboard & Mouse Control.gif" class="feature-image lazy"
                         alt="Input Control Feature">
                 </div>
 
@@ -372,7 +373,7 @@
                         desktop experience with multi-window support,
                         virtual displays (1080p-4K), and three performance modes (60-120 FPS).
                     </p>
-                    <img src="images/section_1/Android Dex.gif" class="feature-image" alt="Android Dex Feature">
+                    <img src="images/section_1/Android Dex.gif" class="feature-image lazy" alt="Android Dex Feature">
                 </div>
 
                 <!-- Desktop Mode -->
@@ -388,7 +389,7 @@
                         Run multiple Android apps at once with independent audio channels. Each app window runs
                         separately, allowing true multitasking on your desktop.
                     </p>
-                    <img src="images/section_1/Multi-App Running.gif" class="feature-image"
+                    <img src="images/section_1/Multi-App Running.gif" class="feature-image lazy"
                         alt="Desktop Mode Multi-App">
                 </div>
             </section>
@@ -422,7 +423,7 @@
                         Control media playback with album art and track info. Play, pause, skip tracks, and adjust
                         volume directly from your Windows desktop.
                     </p>
-                    <img src="images/section_2/Synchronized Media Playback.gif" class="feature-image"
+                    <img src="images/section_2/Synchronized Media Playback.gif " class="feature-image lazy"
                         alt="Music Control Feature">
                 </div>
 
@@ -439,7 +440,7 @@
                         Receive and manage notifications from Android in real time. View all your phone notifications on
                         your PC, reply to messages, and dismiss alerts.
                     </p>
-                    <img src="images/section_2/Cross-Device Notifications.gif" class="feature-image"
+                    <img src="images/section_2/Cross-Device Notifications.gif" class="feature-image lazy"
                         alt="Notification Center Feature">
                 </div>
 
@@ -1312,6 +1313,17 @@
                 });
             });
         })();
+
+        const imgs = document.querySelectorAll('.lazy');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.src = e.target.dataset.src;
+                    observer.unobserve(e.target);
+                }
+            });
+        });
+        imgs.forEach(img => observer.observe(img));
 
     </script>
 </body>
