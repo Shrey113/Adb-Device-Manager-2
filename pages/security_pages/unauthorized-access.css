@@ -383,7 +383,6 @@ body {
 
 .action-card.secondary:hover {
     background: rgba(255, 255, 255, 0.08);
-    transform: translateY(-3px);
 }
 
 .card-icon {
@@ -409,16 +408,6 @@ body {
     opacity: 0.8;
 }
 
-.card-arrow {
-    font-size: 1.2rem;
-    font-weight: bold;
-    transform: translateX(0);
-    transition: transform 0.3s;
-}
-
-.action-card:hover .card-arrow {
-    transform: translateX(5px);
-}
 
 .panel-footer {
     border-top: 1px solid var(--glass-border);

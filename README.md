@@ -53,7 +53,7 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 ## 📘 Documentation
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/a68d832a-9d74-4c92-b4e3-a7469b628738" width="75%" alt="Feature Overview"/>
+  <img src="images/sample_tools.png" width="75%" alt="Feature Overview"/>
 </div>
 
 ---
