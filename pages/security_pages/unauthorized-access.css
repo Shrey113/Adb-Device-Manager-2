@@ -131,6 +131,8 @@ body {
     font-weight: 800;
     font-size: 2.4rem;
     letter-spacing: 1.5px;
+    margin-bottom: 2rem;
+    display: inline-block;
 }
 
 
@@ -175,6 +177,7 @@ body {
     color: var(--text-main);
     text-transform: uppercase;
     position: relative;
+    margin-bottom: 2rem;
 }
 
 .glitch-text::before,
@@ -511,63 +514,130 @@ body {
 
     .glass-panel {
         max-width: 100%;
+        background: rgba(20, 20, 20, 0.4);
     }
 }
 
 @media (max-width: 600px) {
     .main-interface {
-        padding: 1rem;
+        padding: 3rem 0;
+        /* Vertical padding 3rem, horizontal 0 */
+    }
+
+    .content-split {
+        gap: 2.5rem;
+    }
+
+    .visual-warning {
+        padding: 0 1.5rem;
+        width: 100%;
     }
 
     .lock-assembly svg {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
     }
 
     .glitch-text {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        /* Replaces <br> spacing */
     }
 
     .badge-text {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
+        line-height: 1.3;
+        display: block;
+        margin-bottom: 2.5rem;
+        /* Replaces <br> spacing */
     }
 
     .session-id {
         font-size: 0.7rem;
+        margin-top: 1.5rem;
+    }
+
+    .info-panel {
+        width: 100%;
     }
 
     .glass-panel {
-        padding: 1.5rem;
-        gap: 1.5rem;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
     }
 
     .panel-header {
-        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.2rem;
     }
 
     .app-logo {
-        width: 45px;
-        height: 45px;
+        width: 55px;
+        height: 55px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 5px;
+    }
+
+    .text-content {
+        width: 100%;
     }
 
     .text-content h2 {
-        font-size: 1.4rem;
+        font-size: 1.7rem;
+        text-align: center;
+        letter-spacing: -0.5px;
+        color: var(--primary);
+        /* Highlight title on mobile */
+        text-transform: uppercase;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
     }
 
     .text-content p {
-        font-size: 0.95rem;
+        font-size: 1rem;
+        text-align: center;
+        opacity: 0.9;
     }
 
     .law-warning {
-        padding: 1.2rem;
-        font-size: 0.9rem;
+        padding: 1.5rem;
+        font-size: 0.95rem;
+        margin-top: 2rem;
+        background: rgba(255, 51, 51, 0.05);
+        border: 1px solid rgba(255, 51, 51, 0.1);
+        border-left: 4px solid var(--primary);
+        text-align: left;
+    }
+
+    .law-warning::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .actions-grid {
+        padding: 0 0.5rem;
+    }
+
+    .action-card {
+        padding: 1.4rem;
     }
 
     .panel-footer {
         flex-direction: column;
-        gap: 0.8rem;
+        gap: 1rem;
         align-items: center;
         text-align: center;
+        padding: 2rem 1.5rem 0;
+        margin-top: 1rem;
     }
 }
 
