@@ -2,7 +2,7 @@
 
 Receive and manage Android notifications on Windows in real-time.
 
-<img src="../../images/section_2/Cross-Device%20Notifications.png" width="600">
+<img src="../../images/section_2/Cross-Device%20Notifications.gif" width="600">
 
 ## Features
 

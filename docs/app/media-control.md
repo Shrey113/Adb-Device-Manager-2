@@ -2,7 +2,7 @@
 
 Control media playback on your Android device from Windows.
 
-<img src="../../images/section_2/Synchronized%20Media%20Playback.png" width="600">
+<img src="../../images/section_2/Synchronized%20Media%20Playback.gif" width="600">
 
 ## Features
 

@@ -2,7 +2,7 @@
 
 Transform your Android into a full desktop experience with virtual display and multi-window control.
 
-<img src="../../images/section_1/Multi-App%20Running.png" width="600">
+<img src="../../images/section_1/Multi-App%20Running.gif" width="600">
 
 ## Features
 
