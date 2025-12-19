@@ -466,55 +466,118 @@ body {
     }
 }
 
-@media (max-width: 1000px) {
-    body {
-        height: fit-content;
-        overflow-y: scroll;
-    }
-
-    .background-globes {
-        overflow-y: scroll;
-    }
-
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 900px) {
+@media (max-width: 1400px) {
     .content-split {
-        grid-template-columns: 1fr;
         gap: 2rem;
-    }
-
-    .visual-warning {
-        align-items: center;
-        padding-left: 0;
-        text-align: center;
+        padding: 0 2rem;
     }
 
     .glitch-text {
-        font-size: 3rem;
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 1100px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+    }
+
+    .main-interface {
+        padding: 1.5rem;
+        height: auto;
+    }
+
+    .content-split {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        max-width: 700px;
+        align-items: flex-start;
+    }
+
+    .visual-warning {
+        padding-left: 0;
+        align-items: center;
+        text-align: center;
+        margin-top: 2rem;
     }
 
     .info-panel {
         padding-right: 0;
         justify-content: center;
+        width: 100%;
+    }
+
+    .glass-panel {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-interface {
+        padding: 1rem;
+    }
+
+    .lock-assembly svg {
+        width: 80px;
+        height: 80px;
+    }
+
+    .glitch-text {
+        font-size: 2.8rem;
+    }
+
+    .badge-text {
+        font-size: 1.8rem;
+    }
+
+    .session-id {
+        font-size: 0.7rem;
+    }
+
+    .glass-panel {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .panel-header {
+        gap: 1rem;
+    }
+
+    .app-logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    .text-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .text-content p {
+        font-size: 0.95rem;
+    }
+
+    .law-warning {
+        padding: 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .panel-footer {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-height: 700px) and (min-width: 1101px) {
+    .glitch-text {
+        font-size: 3.5rem;
     }
 
     .glass-panel {
         padding: 2rem;
-    }
-
-    .security-badge {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-        padding: 15px;
-        width: 100%;
-        max-width: 90vw;
-    }
-
-    .badge-text {
-        font-size: 1rem;
-        word-break: break-word;
+        gap: 1.5rem;
     }
 }
