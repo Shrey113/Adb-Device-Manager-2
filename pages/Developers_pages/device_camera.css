@@ -399,7 +399,7 @@ body {
     display: flex;
     gap: 0.75rem;
     margin-bottom: 1.5rem;
-    overflow-x: hidden;
+    flex-wrap: wrap;
     /* Hide scroll for mockup */
 }
 
