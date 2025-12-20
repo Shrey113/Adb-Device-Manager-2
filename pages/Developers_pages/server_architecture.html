@@ -340,6 +340,104 @@
                                 </div>
                             </div>
                         </div>
+
+                        <h4
+                            style="color: var(--text-muted); margin-top: 2rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                            Windows Integration & Device Control</h4>
+                        <div class="endpoint-list">
+                            <!-- POST /windows/copy_to_clipboard -->
+                            <div class="ep-card">
+                                <div class="ep-header">
+                                    <span class="method post">POST</span>
+                                    <span class="url">/windows/copy_to_clipboard</span>
+                                    <span class="purpose">Updates the Windows clipboard with text.</span>
+                                </div>
+                                <div class="ep-body">
+                                    <span class="json-label">Request Payload Model</span>
+                                    <code class="json-block">{
+  <span class="json-key">"text"</span>: <span class="json-string">"Copied text message"</span>
+}</code>
+                                    <span class="json-label"
+                                        style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                        Model</span>
+                                    <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"message"</span>: <span class="json-string">"Copied to clipboard"</span>
+}</code>
+                                </div>
+                            </div>
+
+                            <!-- POST /windows/open_url -->
+                            <div class="ep-card">
+                                <div class="ep-header">
+                                    <span class="method post">POST</span>
+                                    <span class="url">/windows/open_url</span>
+                                    <span class="purpose">Opens a valid URL on Windows default browser.</span>
+                                </div>
+                                <div class="ep-body">
+                                    <span class="json-label">Request Payload Model</span>
+                                    <code class="json-block">{
+  <span class="json-key">"url"</span>: <span class="json-string">"https://example.com"</span>
+}</code>
+                                    <span class="json-label"
+                                        style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                        Model</span>
+                                    <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"message"</span>: <span class="json-string">"URL opened"</span>
+}</code>
+                                </div>
+                            </div>
+
+                            <!-- POST /get_functions_status -->
+                            <div class="ep-card">
+                                <div class="ep-header">
+                                    <span class="method post">POST</span>
+                                    <span class="url">/get_functions_status</span>
+                                    <span class="purpose">Checks status of mirroring & control.</span>
+                                </div>
+                                <div class="ep-body">
+                                    <span class="json-label">Request Payload Model</span>
+                                    <code class="json-block">{
+  <span class="json-key">"ip"</span>: <span class="json-string">"192.168.29.168"</span>
+}</code>
+                                    <span class="json-label"
+                                        style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                        Model</span>
+                                    <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"functions"</span>: {
+    <span class="json-key">"Screen Mirroring"</span>: <span class="json-boolean">true</span>,
+    <span class="json-key">"Audio Cast"</span>: <span class="json-boolean">false</span>,
+    <span class="json-key">"Input Control"</span>: <span class="json-boolean">false</span>
+  }
+}</code>
+                                </div>
+                            </div>
+
+                            <!-- POST /run_function -->
+                            <div class="ep-card">
+                                <div class="ep-header">
+                                    <span class="method post">POST</span>
+                                    <span class="url">/run_function</span>
+                                    <span class="purpose">Toggles control functions (Mirror/Audio/Input).</span>
+                                </div>
+                                <div class="ep-body">
+                                    <span class="json-label">Request Payload Model</span>
+                                    <code class="json-block">{
+  <span class="json-key">"ip"</span>: <span class="json-string">"192.168.29.168"</span>,
+  <span class="json-key">"mode"</span>: <span class="json-string">"Screen Mirroring"</span>
+}</code>
+                                    <span class="json-label"
+                                        style="border-top: 1px solid rgba(255,255,255,0.05);">Response
+                                        Model</span>
+                                    <code class="json-block">{
+  <span class="json-key">"status"</span>: <span class="json-string">"success"</span>,
+  <span class="json-key">"message"</span>: <span class="json-string">"Function run"</span>
+}</code>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
