@@ -1314,16 +1314,7 @@
             });
         })();
 
-        const imgs = document.querySelectorAll('.lazy');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.src = e.target.dataset.src;
-                    observer.unobserve(e.target);
-                }
-            });
-        });
-        imgs.forEach(img => observer.observe(img));
+        
 
     </script>
 </body>
