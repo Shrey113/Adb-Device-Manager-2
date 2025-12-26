@@ -6,6 +6,17 @@ labels: bug
 assignees: ''
 ---
 
+> ⚠️ **IMPORTANT**
+> Please add a **screenshot or screen recording at the very top** of this report if possible.
+> This helps reproduce and fix issues much faster.
+
+---
+
+## 📸 Screenshot / Screen Recording (Highly Recommended)
+Attach a screenshot or short video showing the issue.
+
+---
+
 ## 🐞 Describe the Bug
 A clear and concise description of the problem you are experiencing.
 
@@ -14,10 +25,10 @@ A clear and concise description of the problem you are experiencing.
 ## 🔁 Steps to Reproduce
 Please describe exactly how to reproduce the issue:
 
-1. 
-2. 
-3. 
-4. 
+1.
+2.
+3.
+4.
 
 ---
 
@@ -26,28 +37,23 @@ What you expected to happen instead.
 
 ---
 
-## 📸 Screenshots / Screen Recording
-If possible, add screenshots or a short video showing the issue.
-
----
-
 ## 💻 Windows System Information
 Please complete the following details:
 
 - Windows Version: (e.g., Windows 11 23H2)
-- App Version (.exe): (e.g., v1.0.3)
+- App Version (.exe): (e.g., v1.1-prebuild)
 - Connection Type: USB / Wi-Fi
-- Firewall or Antivirus Enabled? (Yes/No)
+- Firewall or Antivirus Enabled? (Yes / No)
 
 ---
 
 ## 📱 Android Device Information
 Please complete the following:
 
-- Device Model: (e.g., Samsung S21, Xiaomi Redmi Note 10)
-- Android Version: (e.g., Android 13)
-- App Version (.apk): (e.g., 1.0.3)
-- USB Debugging enabled? (Yes/No)
+- Device Model: (e.g., Pixel 8, Samsung S21)
+- Android Version: (e.g., Android 14)
+- App Version (.apk): (e.g., v1.1-prebuild)
+- USB Debugging Enabled? (Yes / No)
 - Using App Mode or ADB Mode?
 
 ---
@@ -60,13 +66,6 @@ If the issue relates to ADB Mode, please include:
 
 ---
 
-## 📂 Logs (Optional but Very Helpful)
-If you can, attach:
-
-- Windows logs (from the logs folder)
-- Android app logs (if available)
-
----
-
 ## 📝 Additional Context
-Add any other relevant details here (router type for Wi-Fi, special settings, etc.).
+Add any other relevant details here  
+(e.g., Wi-Fi router type, network setup, special permissions, custom ROMs, etc.).
