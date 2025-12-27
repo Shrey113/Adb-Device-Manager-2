@@ -1,0 +1,4 @@
+ADB_Device_Manager_PC_Setup.exe
+ADB_Device_Manager_Portable.zip
+ADB_Device_Manager_ADB_Client.apk
+ADB_Device_Manager_Android_Installer.apk
