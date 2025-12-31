@@ -43,6 +43,7 @@ ADB Device Manager lets you — using two modes (ADB Mode & App Mode) — do thi
 - **Fully offline operation** — no internet connection required after installation
 - **No data collection** — we don't track, store, or transmit your personal information
 - **Local network only** — all communication stays within your private network
+- [VirusTotal Reports (For End Users) →](https://shrey113.github.io/Adb-Device-Manager-2/pages/security_pages/virustotal_reports.html) 
 
 
 ---
