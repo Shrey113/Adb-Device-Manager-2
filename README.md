@@ -186,15 +186,9 @@ Thanks to **[rom1v](https://github.com/rom1v)** and **[yume-chan](https://github
       <img src="images/section_1/Multi-App Running.gif" width="100%">
     </td>
   </tr>
-  <tr>
-    <td align="center">
-      <img src="images/Readme_files_gif/windows - gif.gif" width="100%">
-    </td>
-    <td align="center">
-      <img src="images/Readme_files_gif/adb - gif.gif" width="100%">
-    </td>
-  </tr>
 </table>
+
+For more details, visit the [official documentation](https://shrey113.github.io/Adb-Device-Manager-2/Docs.html).
 
 
 <div align="center">
