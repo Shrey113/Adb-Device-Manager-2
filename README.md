@@ -124,6 +124,8 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 | Android DeX Mode | ✅ | ❌ | ❌ |
 | Bluetooth Audio Pairing | ✅ | ❌ | ✅ |
 
+---
+
 ## 🌐 Official Resources
 
 <div align="center">
@@ -158,6 +160,8 @@ A set of tools and frameworks used for ADB communication, screen mirroring, UI r
 - **[Python](https://www.python.org/)** – Windows backend logic and background services
 
 Thanks to **[rom1v](https://github.com/rom1v)** and **[yume-chan](https://github.com/yume-chan)** for their work and insights that helped deepen understanding of **ADB**, **scrcpy**, and broader real-world use cases around Android device management.
+
+---
 
 ## ✨ Interface Highlights
 
