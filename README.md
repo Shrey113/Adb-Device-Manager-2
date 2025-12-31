@@ -22,7 +22,7 @@
 | **Windows** | [Download →](https://shrey113.github.io/Adb-Device-Manager-2/windows_download.html) |
 | **Android** | [Download →](https://shrey113.github.io/Adb-Device-Manager-2/android_download.html) |
 | **Full Website** | [Visit WebSite →](https://shrey113.github.io/Adb-Device-Manager-2/) |
-| **Installation** | [Visit For Developers →](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html) |
+| **Installation** | [Installation →](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html) |
 | **Developers** | [Visit For Developers →](https://shrey113.github.io/Adb-Device-Manager-2/pages/Developers.html) |
 
 ---
