@@ -145,11 +145,12 @@
 
     .video-background {
         position: absolute;
-        top: -3%;
+        top: 40px;
         left: 0;
         width: 100%;
         object-fit: cover;
-        z-index: 0
+        z-index: 0;
+        pointer-events: none
     }
 
     .nav {
@@ -222,13 +223,17 @@
         align-items: center;
         justify-content: center;
         padding: 4rem 2rem;
-        min-height: calc(100vh - 100px)
+        min-height: calc(100vh - 100px);
+        position: relative;
+        overflow: hidden
     }
 
     .hero-content {
         width: 100%;
         max-width: 1000px;
-        margin: 0 auto
+        margin: 0 auto;
+        position: relative;
+        z-index: 1
     }
 
     .hero-text {
@@ -507,14 +512,105 @@
     }
 
     .footer {
-        padding: 2rem;
-        text-align: center;
-        background: #ffffffb3;
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-top: 1px solid #00000014;
+        padding: 3.5rem 2rem 2rem;
+        background: linear-gradient(180deg, #f8f9fb 0%, #f1f3f8 100%);
+        border-top: 1px solid #e2e5eb;
         color: #6b7280;
         font-size: .9rem
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.75rem
+    }
+
+    .footer-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem
+    }
+
+    .footer-brand .logo-icon {
+        width: 52px;
+        height: 52px;
+        transition: transform 0.3s ease;
+        filter: drop-shadow(0 4px 12px rgba(99, 102, 241, 0.25))
+    }
+
+    .footer-brand .logo-icon:hover {
+        transform: scale(1.08) translateY(-2px)
+    }
+
+    .footer-brand-name {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #1f2937;
+        letter-spacing: -0.02em
+    }
+
+    .footer-tagline {
+        font-size: 0.85rem;
+        color: #6b7280;
+        margin-top: -0.25rem
+    }
+
+    .footer-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.25rem 0.5rem;
+        padding: 1.25rem 0;
+        width: 100%;
+        max-width: 700px
+    }
+
+    .footer-nav .nav-link {
+        font-size: 0.875rem;
+        font-weight: 500;
+        padding: 0.6rem 1rem;
+        color: #4b5563;
+        transition: color 0.25s ease;
+        position: relative
+    }
+
+    .footer-nav .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 0.35rem;
+        left: 50%;
+        width: calc(100% - 2rem);
+        height: 2px;
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        border-radius: 2px;
+        transform: translateX(-50%) scaleX(0);
+        transition: transform 0.3s ease
+    }
+
+    .footer-nav .nav-link:hover {
+        color: #6366f1
+    }
+
+    .footer-nav .nav-link:hover::after {
+        transform: translateX(-50%) scaleX(1)
+    }
+
+    .footer-divider {
+        width: 100%;
+        max-width: 500px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #d1d5db, transparent)
+    }
+
+    .footer-copyright {
+        font-size: 0.8rem;
+        color: #9ca3af;
+        text-align: center;
+        line-height: 1.6
     }
 
     @keyframes fadeInUp {
@@ -564,7 +660,11 @@
         }
 
         .footer {
-            padding: 1.75rem
+            padding: 2.5rem 1.5rem 1.75rem
+        }
+
+        .footer-nav {
+            gap: 0.5rem 1.25rem
         }
     }
 
@@ -642,8 +742,35 @@
         }
 
         .footer {
-            padding: 1.5rem;
+            padding: 2rem 1.25rem 1.5rem;
             font-size: .85rem
+        }
+
+        .footer-content {
+            gap: 1.25rem
+        }
+
+        .footer-brand .logo-icon {
+            width: 42px;
+            height: 42px
+        }
+
+        .footer-brand-name {
+            font-size: 1rem
+        }
+
+        .footer-nav {
+            gap: 0.4rem 1rem;
+            padding: 0.85rem 0
+        }
+
+        .footer-nav .nav-link {
+            font-size: 0.85rem;
+            padding: 0.4rem 0.6rem
+        }
+
+        .footer-copyright {
+            font-size: 0.8rem
         }
 
         .nav p {
@@ -762,8 +889,35 @@
         }
 
         .footer {
-            padding: 1.25rem 1rem;
+            padding: 1.75rem 1rem 1.25rem;
             font-size: .8rem
+        }
+
+        .footer-content {
+            gap: 1rem
+        }
+
+        .footer-brand .logo-icon {
+            width: 38px;
+            height: 38px
+        }
+
+        .footer-brand-name {
+            font-size: 0.95rem
+        }
+
+        .footer-nav {
+            gap: 0.35rem 0.75rem;
+            padding: 0.75rem 0
+        }
+
+        .footer-nav .nav-link {
+            font-size: 0.8rem;
+            padding: 0.35rem 0.5rem
+        }
+
+        .footer-copyright {
+            font-size: 0.75rem
         }
 
         .nav p {
@@ -955,12 +1109,6 @@
 </style>
 
 <body>
-    <!-- Video Background -->
-    <video class="video-background" autoplay muted playsinline preload="metadata">
-        <source src="https://cdn.jsdelivr.net/gh/shrey113/Adb-Device-Manager-2@latest/images/index_main_page.mp4"
-            type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
 
     <!-- Content Overlay -->
     <div class="content-overlay">
@@ -969,6 +1117,13 @@
         <main class="main-content">
             <!-- Hero Section -->
             <section class="hero-section">
+                <!-- Video Background (inside hero only) -->
+                <video class="video-background" autoplay muted playsinline preload="metadata">
+                    <source
+                        src="https://cdn.jsdelivr.net/gh/shrey113/Adb-Device-Manager-2@latest/images/index_main_page.mp4"
+                        type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
                 <div class="hero-content">
                     <!-- Main Text and Buttons -->
                     <article class="hero-text">
@@ -1267,27 +1422,36 @@
 
         <!-- Footer -->
         <footer class="footer">
-
-            <nav class="nav">
-                <div class="logo">
+            <div class="footer-content">
+                <!-- Brand Section -->
+                <div class="footer-brand">
                     <picture>
                         <source
                             srcset="https://cdn.jsdelivr.net/gh/shrey113/Adb-Device-Manager-2@latest/images/app_webp_50.webp"
                             type="image/webp">
                         <img src="https://cdn.jsdelivr.net/gh/shrey113/Adb-Device-Manager-2@latest/images/app_webp_100.webp"
-                            class="logo-icon" alt="ADB Device Manager" width="49" height="49" loading="lazy">
+                            class="logo-icon" alt="ADB Device Manager" width="48" height="48" loading="lazy">
                     </picture>
-
+                    <span class="footer-brand-name">ADB Device Manager</span>
                 </div>
-                <p>&copy; 2025 Adb Device Manager. All rights reserved.</p>
-                <a href="features.html" class="nav-link active">Features</a>
-                <a href="Docs.html" class="nav-link">Docs</a>
-                <a href="support.html" class="nav-link">Support</a>
-                <a href="security/security_model.html" class="nav-link">Security</a>
-                <a href="security/transparency_model.html" class="nav-link">Transparency</a>
-                <a href="security/privacy_policy.html" class="nav-link">Privacy</a>
-                <a href="pages/Developers.html" class="nav-link">Developers</a>
-            </nav>
+
+                <!-- Navigation Links -->
+                <nav class="footer-nav">
+                    <a href="features.html" class="nav-link active">Features</a>
+                    <a href="Docs.html" class="nav-link">Docs</a>
+                    <a href="support.html" class="nav-link">Support</a>
+                    <a href="security/security_model.html" class="nav-link">Security</a>
+                    <a href="security/transparency_model.html" class="nav-link">Transparency</a>
+                    <a href="security/privacy_policy.html" class="nav-link">Privacy</a>
+                    <a href="pages/Developers.html" class="nav-link">Developers</a>
+                </nav>
+
+                <!-- Divider -->
+                <div class="footer-divider"></div>
+
+                <!-- Copyright -->
+                <p class="footer-copyright">&copy; 2025 Adb Device Manager. All rights reserved.</p>
+            </div>
         </footer>
     </div>
 </body>

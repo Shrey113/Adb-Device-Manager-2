@@ -154,6 +154,27 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 
 ---
 
+## 🔧 Technologies & Dependencies
+
+A set of tools and frameworks used for ADB communication, screen mirroring, UI rendering, and OS-level integration.
+
+- **[ADB (Android Debug Bridge)](https://developer.android.com/tools/releases/platform-tools)** – Device connection, pairing, and command execution  
+- **[scrcpy](https://github.com/Genymobile/scrcpy)** – Android screen mirroring and auto casting over ADB  
+- **[nircmd_x64](https://www.nirsoft.net/utils/nircmd.html)** – Windows window control (open, focus, hide, close)  
+- **[Flutter](https://flutter.dev/)** – Cross-platform UI for Windows and Android  
+- **[Kotlin](https://kotlinlang.org/)** – Android backend and UI logic  
+- **[Python](https://www.python.org/)** – Windows backend logic and background services
+
+Thanks to **[rom1v](https://github.com/rom1v)** and **[yume-chan](https://github.com/yume-chan)** for their work and insights that helped deepen understanding of **ADB**, **scrcpy**, and broader real-world use cases around Android device management.
+
+
+## ✨ Interface Highlights
+
+| | |
+|---|---|
+| ![Preview 1](images/Readme_files_gif/Song - gif.gif) | ![Preview 2](images/Readme_files_gif/notification - gif.gif) |
+| ![Preview 3](images/Readme_files_gif/adb - gif.gif) | ![Preview 4](images/Readme_files_gif/app - gif.gif) |
+| ![Preview 5](images/Readme_files_gif/windows - gif.gif) | ![Preview 6](images/Readme_files_gif/adb - gif.gif) |
 
 <div align="center">
 
