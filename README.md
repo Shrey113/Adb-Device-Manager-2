@@ -22,7 +22,8 @@
 | **Windows** | [Download →](https://shrey113.github.io/Adb-Device-Manager-2/windows_download.html) |
 | **Android** | [Download →](https://shrey113.github.io/Adb-Device-Manager-2/android_download.html) |
 | **Full Website** | [Visit WebSite →](https://shrey113.github.io/Adb-Device-Manager-2/) |
-| **👨‍💻 Developers** | [Visit For Developers →](https://shrey113.github.io/Adb-Device-Manager-2/pages/Developers.html) |
+| **Installation** | [Visit For Developers →](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html) |
+| **Developers** | [Visit For Developers →](https://shrey113.github.io/Adb-Device-Manager-2/pages/Developers.html) |
 
 ---
 
@@ -37,11 +38,16 @@ ADB Device Manager lets you — using two modes (ADB Mode & App Mode) — do thi
 - Transfer files, browse photos, manage contacts
 - Connect via USB, Wi-Fi ADB, or LAN app mode
 
-Everything works **locally**, **private**, and **fast**.
+### 🔐 Security & Privacy
+
+- **Fully offline operation** — no internet connection required after installation
+- **No data collection** — we don't track, store, or transmit your personal information
+- **Local network only** — all communication stays within your private network
+
 
 ---
 
-## ✨ Overview
+## ✨ Overview & Documentation
 
 ADB Device Manager offers **two powerful modes** that work independently or together:
 
@@ -50,15 +56,7 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 </div>
 
 
-## 📘 Documentation
-
-<div align="center">
-  <img src="images/sample_tools.png" width="75%" alt="Feature Overview"/>
-</div>
-
----
-
-# 🧩 ADB Mode  
+### 🧩 ADB Mode  
 *System-level control via USB/Wireless debugging*
 
 | Feature | Description |
@@ -74,9 +72,7 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 | [Call History](docs/adb/call-history.md) | Read call logs |
 | [SMS](docs/adb/sms.md) | Extract SMS messages |
 
----
-
-# 📱 App Mode  
+### 📱 App Mode  
 *Companion app features over Wi-Fi/LAN*
 
 | Feature | Description |
@@ -91,9 +87,7 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 | [Device Finder](docs/app/device-finder.md) | Auto-discover devices |
 | [Bluetooth](docs/app/bluetooth.md) | Bluetooth device tools |
 
----
-
-# 🪟 Windows Integration
+### 🪟 Windows Integration
 
 | Feature | Description |
 |---------|-------------|
@@ -102,9 +96,7 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 | [Text Search](docs/windows/text-search.md) | OCR text capture & search |
 | [Device Finder](docs/windows/device-finder.md) | Auto-discover connected devices |
 
----
-
-## ⌨️ Keyboard Shortcuts
+### ⌨️ Keyboard Shortcuts
 
 | Shortcut | Action |
 |----------|--------|
