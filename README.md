@@ -167,14 +167,35 @@ A set of tools and frameworks used for ADB communication, screen mirroring, UI r
 
 Thanks to **[rom1v](https://github.com/rom1v)** and **[yume-chan](https://github.com/yume-chan)** for their work and insights that helped deepen understanding of **ADB**, **scrcpy**, and broader real-world use cases around Android device management.
 
-
 ## ✨ Interface Highlights
 
-| | |
-|---|---|
-| images/Readme_files_gif/Song - gif.gif  | images/Readme_files_gif/notification - gif.gif |
-| images/section_1/Android Dex.gif | images/section_1/Multi-App Running.gif |
-| images/Readme_files_gif/windows - gif.gif | images/Readme_files_gif/adb - gif.gif |
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="images/Readme_files_gif/Song - gif.gif" width="100%">
+    </td>
+    <td align="center">
+      <img src="images/Readme_files_gif/notification - gif.gif" width="100%">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="images/section_1/Android Dex.gif" width="100%">
+    </td>
+    <td align="center">
+      <img src="images/section_1/Multi-App Running.gif" width="100%">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="images/Readme_files_gif/windows - gif.gif" width="100%">
+    </td>
+    <td align="center">
+      <img src="images/Readme_files_gif/adb - gif.gif" width="100%">
+    </td>
+  </tr>
+</table>
+
 
 <div align="center">
 
