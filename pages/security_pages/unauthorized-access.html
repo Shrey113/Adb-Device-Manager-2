@@ -13,6 +13,37 @@
 </head>
 
 <body>
+    <!-- Animated Grid Background -->
+    <div class="grid-background"></div>
+
+    <!-- Floating Particles -->
+    <div class="particles-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
     <div class="background-globes">
         <div class="globe globe-1"></div>
         <div class="globe globe-2"></div>
@@ -22,39 +53,57 @@
     <div class="noise-overlay"></div>
 
     <main class="main-interface">
-
-
         <div class="content-split">
             <section class="visual-warning">
+                <!-- Enhanced Shield with Multiple Rings -->
                 <div class="lock-assembly">
-                    <div class="lock-ring"></div>
+                    <div class="shield-glow"></div>
+                    <div class="lock-ring ring-1"></div>
+                    <div class="lock-ring ring-2"></div>
+                    <div class="lock-ring ring-3"></div>
                     <div class="lock-body">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M12 2.5l7.5 3.8v5.7c0 5.6-3.6 9.4-7.5 11-3.9-1.6-7.5-5.4-7.5-11V6.3L12 2.5z" />
                             <path d="M9.5 12.5l1.8 1.8 3.7-3.7" />
                         </svg>
                     </div>
-
                 </div>
+
+                <!-- Enhanced Glitch Text -->
                 <h1 class="glitch-text" data-text="ACCESS DENIED">ACCESS DENIED</h1>
 
                 <span class="badge-text">
-                    For system Protected Of<br>
-                    ADB Device Manager (Windows)
+                    <span class="badge-line">For system Protected Of</span>
+                    <span class="badge-highlight">ADB Device Manager (Windows)</span>
                 </span>
 
-                <div class="session-id">TRACE ID: <span id="session-hash">INIT-SEC</span></div>
+                <!-- Enhanced Session ID with Cyber Look -->
+                <div class="session-id">
+                    <span class="session-label">TRACE ID:</span>
+                    <span id="session-hash" class="session-value">INIT-SEC</span>
+                    <span class="session-indicator"></span>
+                </div>
             </section>
 
             <section class="info-panel">
                 <div class="glass-panel">
+                    <!-- Decorative Corner Elements -->
+                    <div class="corner-deco top-left"></div>
+                    <div class="corner-deco top-right"></div>
+                    <div class="corner-deco bottom-left"></div>
+                    <div class="corner-deco bottom-right"></div>
+
+
+
                     <div class="panel-header">
-                        <img src="../../images/app_png_100.png" alt="ADB Device Manager Logo" class="app-logo">
+                        <div class="logo-container">
+                            <img src="../../images/app_png_100.png" alt="ADB Device Manager Logo" class="app-logo">
+                        </div>
                         <div class="text-content">
                             <h2>Access Control Violation</h2>
                         </div>
-
                     </div>
+
                     <div class="text-content">
                         <p>
                             You have attempted to access a protected internal component of
@@ -65,8 +114,9 @@
                             <!-- Dynamic content will be injected here -->
                         </p>
                         <p class="highlight-text law-warning">
-                            Unauthorized access, IPC misuse, or exploitation of this software is prohibited and may
-                            attract penalties under applicable Indian laws.
+                            Unauthorized access, IPC misuse, or exploitation of this software is strictly prohibited
+                            and may result in legal action under applicable international cybersecurity and computer
+                            fraud laws.
                         </p>
                     </div>
 
@@ -84,12 +134,25 @@
                                 <span class="card-label">Administrator Contact</span>
                                 <span class="card-sub">Report Security Incident</span>
                             </div>
+
+                            <div class="card-arrow">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </div>
                         </a>
                     </div>
 
                     <footer class="panel-footer">
-                        <span>SERVICE STATUS: <strong style="color: #00ff88;">ONLINE</strong></span>
-                        <span>ERROR CODE: <strong style="color: #ff3333;">403_FORBIDDEN</strong></span>
+                        <div class="status-item">
+                            <span class="status-dot online"></span>
+                            <span>SERVICE STATUS: <strong>ONLINE</strong></span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-dot error"></span>
+                            <span>ERROR CODE: <strong>403_FORBIDDEN</strong></span>
+                        </div>
                     </footer>
                 </div>
             </section>
@@ -97,11 +160,27 @@
     </main>
 
     <script>
-        // TRACE ID generator
+        // TRACE ID generator with typing effect
+        const chars = 'ABCDEF0123456789';
+        function generateTraceId() {
+            let result = 'TRC-';
+            for (let i = 0; i < 8; i++) {
+                result += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return result;
+        }
+
         setInterval(() => {
             const el = document.getElementById('session-hash');
-            if (el) el.innerText = 'TRC-' + Math.random().toString(16).substring(2, 10).toUpperCase();
-        }, 2000);
+            if (el) {
+                const newId = generateTraceId();
+                el.classList.add('updating');
+                setTimeout(() => {
+                    el.innerText = newId;
+                    el.classList.remove('updating');
+                }, 150);
+            }
+        }, 2500);
 
         // URL Parameter Parsing
         window.addEventListener('DOMContentLoaded', () => {
@@ -115,6 +194,14 @@
                 warningEl.innerHTML = `Invalid Access Attempt detected for <br><strong style="color: white;">${safeAttempt}</strong>`;
                 warningEl.style.display = 'block';
             }
+        });
+
+        // Particle animation enhancement
+        document.querySelectorAll('.particle').forEach((particle, index) => {
+            particle.style.setProperty('--delay', `${index * 0.5}s`);
+            particle.style.setProperty('--duration', `${15 + Math.random() * 10}s`);
+            particle.style.setProperty('--x-start', `${Math.random() * 100}%`);
+            particle.style.setProperty('--y-start', `${Math.random() * 100}%`);
         });
     </script>
 </body>

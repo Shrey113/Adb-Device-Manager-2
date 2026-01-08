@@ -389,16 +389,6 @@ body {
     margin-top: 2px
 }
 
-.footer {
-    padding: 2rem;
-    text-align: center;
-    background: #ffffffb3;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-top: 1px solid #00000014;
-    color: #6b7280;
-    font-size: .9rem
-}
 
 @keyframes fadeInUp {
     0% {
@@ -446,9 +436,7 @@ body {
         gap: 1.75rem
     }
 
-    .footer {
-        padding: 1.75rem
-    }
+
 }
 
 @media (max-width:768px) {
@@ -524,10 +512,7 @@ body {
         font-size: .95rem
     }
 
-    .footer {
-        padding: 1.5rem;
-        font-size: .85rem
-    }
+
 
     .nav p {
         font-size: .85rem
@@ -644,10 +629,7 @@ body {
         height: 18px
     }
 
-    .footer {
-        padding: 1.25rem 1rem;
-        font-size: .8rem
-    }
+
 
     .nav p {
         font-size: .8rem

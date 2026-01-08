@@ -23,6 +23,15 @@
     background: linear-gradient(90deg, transparent, #e2e5eb, transparent);
 }
 
+/* Main Footer Container */
+.footer {
+    padding: 0;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
+    border-top: none;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
 /* CTA Logo */
 .footer-cta-logo-wrap {
     display: block;
@@ -44,8 +53,8 @@
 
 
 .footer-cta h2 {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    font-weight: 800;
+    font-size: clamp(1.75rem, 4vw, 1.8rem);
+    font-weight: 700;
     color: #1f2937;
     margin-bottom: 0.75rem;
     letter-spacing: -0.03em;
@@ -89,22 +98,14 @@
     transform: translateX(4px);
 }
 
-/* Main Footer Container */
-.footer {
-    padding: 0;
-    background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
-    border-top: none;
-    color: #6b7280;
-    font-size: 0.9rem;
-}
 
 .footer-main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 3.5rem 2rem;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
 }
 
 /* Footer Contact Column */
@@ -292,12 +293,12 @@
 
 @media (max-width: 1024px) {
     .footer-main {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2.5rem 2rem;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem 1.5rem;
     }
 
     .footer-brand-section {
-        grid-column: span 3;
+        grid-column: span 4;
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;

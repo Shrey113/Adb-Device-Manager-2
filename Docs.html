@@ -193,76 +193,201 @@
 
 
             <!-- ===================== ARCHITECTURE OVERVIEW ===================== -->
-            <section id="architecture" class="architecture-section">
-                <h2>
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="3" width="7" height="7"></rect>
-                        <rect x="14" y="3" width="7" height="7"></rect>
-                        <rect x="14" y="14" width="7" height="7"></rect>
-                        <rect x="3" y="14" width="7" height="7"></rect>
-                        <path d="M10 6.5H14M17.5 10V14M10 17.5H14M6.5 10V14"></path>
-                    </svg>
-                    How It Works — Architecture Overview
-                </h2>
-                <p class="architecture-intro">
-                    ADB Device Manager uses a layered architecture to provide seamless connectivity between your Windows
-                    PC and Android devices.
-                    Understanding how the components work together will help you get the most out of the application.
-                    <a class="links" target="_blank" href="docs/installation.html">see the Installation Guide</a>
-                </p>
+            <section id="architecture" class="architecture-section-v2">
+                <div class="arch-header">
+                    <div class="arch-badge">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                        </svg>
+                        System Architecture
+                    </div>
+                    <h2>How It Works — Architecture Overview</h2>
+                    <p class="arch-subtitle">
+                        ADB Device Manager uses a layered architecture to provide seamless connectivity between your
+                        Windows
+                        PC and Android devices. <a class="links" target="_blank" href="docs/installation.html">See the
+                            Installation Guide →</a>
+                    </p>
+                </div>
 
-                <!-- Visual Architecture Diagram -->
-                <div class="architecture-diagram">
-                    <div class="arch-layer">
-                        <div class="arch-components">
-                            <div class="arch-box windows">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <!-- Enhanced Visual Architecture Diagram -->
+                <div class="arch-diagram-v2">
+                    <!-- Windows Layer -->
+                    <div class="arch-tier windows-tier">
+                        <div class="tier-label">
+                            <span class="tier-icon windows-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                                     <path
                                         d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801" />
                                 </svg>
-                                Windows App (Flutter)
+                            </span>
+                            Windows Desktop
+                        </div>
+                        <div class="tier-cards">
+                            <div class="arch-card primary">
+                                <div class="card-glow"></div>
+                                <div class="card-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <rect x="4" y="4" width="16" height="16" rx="2" />
+                                        <path d="M9 9h6M9 13h6M9 17h4" />
+                                    </svg>
+                                </div>
+                                <h4>Windows App</h4>
+                                <p>Flutter Desktop Application</p>
+                                <span class="card-tag">Main Controller</span>
                             </div>
-                            <div class="arch-box bridge">ADB Command</div>
-                            <div class="arch-box bridge">Send API Call</div>
+                            <div class="arch-card">
+                                <div class="card-icon orange">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M4 17l6-6-6-6M12 19h8" />
+                                    </svg>
+                                </div>
+                                <h4>ADB Commands</h4>
+                                <p>Execute shell & device operations</p>
+                            </div>
+                            <div class="arch-card">
+                                <div class="card-icon orange">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                                    </svg>
+                                </div>
+                                <h4>API Calls</h4>
+                                <p>RESTful & WebSocket requests</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="arch-connector">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 5v14M5 12l7 7 7-7" />
-                        </svg>
+                    <!-- Connection Flow Visualizer -->
+                    <div class="flow-connector">
+                        <div class="flow-line">
+                            <div class="flow-dot"></div>
+                            <div class="flow-dot"></div>
+                            <div class="flow-dot"></div>
+                        </div>
+                        <div class="flow-label">Data Flow</div>
                     </div>
 
-                    <div class="arch-layer">
-                        <div class="arch-components">
-                            <div class="arch-box protocol">TCP/WebSocket</div>
-                            <div class="arch-box protocol">Zeroconf/mDNS</div>
-                            <div class="arch-box protocol">USB/ADB Protocol</div>
+                    <!-- Protocol Layer -->
+                    <div class="arch-tier protocol-tier">
+                        <div class="tier-label">
+                            <span class="tier-icon protocol-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </span>
+                            Communication Protocols
+                        </div>
+                        <div class="protocol-strip">
+                            <div class="protocol-chip">
+                                <span class="chip-dot"></span>
+                                TCP/WebSocket
+                            </div>
+                            <div class="protocol-chip">
+                                <span class="chip-dot"></span>
+                                Zeroconf/mDNS
+                            </div>
+                            <div class="protocol-chip">
+                                <span class="chip-dot"></span>
+                                USB/ADB Protocol
+                            </div>
                         </div>
                     </div>
 
-                    <div class="arch-connector">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 5v14M5 12l7 7 7-7" />
-                        </svg>
+                    <!-- Connection Flow Visualizer -->
+                    <div class="flow-connector">
+                        <div class="flow-line">
+                            <div class="flow-dot"></div>
+                            <div class="flow-dot"></div>
+                            <div class="flow-dot"></div>
+                        </div>
                     </div>
 
-                    <div class="arch-layer">
-                        <div class="arch-components">
-                            <div class="arch-box android">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <!-- Android Layer -->
+                    <div class="arch-tier android-tier">
+                        <div class="tier-label">
+                            <span class="tier-icon android-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                                     <path
                                         d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24c-2.86-1.21-6.08-1.21-8.94 0L5.65 5.67c-.19-.29-.58-.38-.87-.2-.28.18-.37.54-.22.83L6.4 9.48C3.3 11.25 1.28 14.44 1 18h22c-.28-3.56-2.3-6.75-5.4-8.52zM7 15.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25zm10 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z" />
                                 </svg>
-                                Companion App (Flutter)
+                            </span>
+                            Android Device
+                        </div>
+                        <div class="tier-cards">
+                            <div class="arch-card primary android">
+                                <div class="card-glow android"></div>
+                                <div class="card-icon green">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <rect x="5" y="2" width="14" height="20" rx="2" />
+                                        <path d="M12 18h.01" />
+                                    </svg>
+                                </div>
+                                <h4>Companion App</h4>
+                                <p>Flutter Mobile Application</p>
+                                <span class="card-tag green">Device Agent</span>
                             </div>
-                            <div class="arch-box android">ADB Listener (TCP/Protocol)</div>
-                            <div class="arch-box android">APP Listener (API & WebSocket) </div>
+                            <div class="arch-card android">
+                                <div class="card-icon green">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M22 8.5c0-.28-.22-.5-.5-.5h-19c-.28 0-.5.22-.5.5v7c0 .28.22.5.5.5h19c.28 0 .5-.22.5-.5v-7z" />
+                                        <path d="M7 11v2M12 11v2M17 11v2" />
+                                    </svg>
+                                </div>
+                                <h4>ADB Listener</h4>
+                                <p>TCP/Protocol Handler</p>
+                            </div>
+                            <div class="arch-card android">
+                                <div class="card-icon green">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M12 6v6l4 2" />
+                                    </svg>
+                                </div>
+                                <h4>APP Listener</h4>
+                                <p>API & WebSocket Server</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-
+                <!-- Dual Mode Explanation Cards -->
+                <div class="mode-explanation">
+                    <div class="mode-exp-card adb">
+                        <div class="mode-exp-header">
+                            <span class="mode-exp-badge adb">ADB Mode</span>
+                            <span class="mode-exp-tag">USB Debugging Required</span>
+                        </div>
+                        <p>Direct device control via USB or wireless ADB. Best for screen mirroring, audio streaming,
+                            and system-level operations.</p>
+                        <ul class="mode-features">
+                            <li>Screen Mirroring & Control</li>
+                            <li>Audio Streaming</li>
+                            <li>App Installation</li>
+                        </ul>
+                    </div>
+                    <div class="mode-exp-card app">
+                        <div class="mode-exp-header">
+                            <span class="mode-exp-badge app">APP Mode</span>
+                            <span class="mode-exp-tag">Companion App Required</span>
+                        </div>
+                        <p>Wi-Fi based real-time sync via companion app. Best for notifications, media control, and file
+                            transfers.</p>
+                        <ul class="mode-features">
+                            <li>Real-time Notifications</li>
+                            <li>Media Playback Control</li>
+                            <li>Wireless File Transfer</li>
+                        </ul>
+                    </div>
+                </div>
             </section>
 
 

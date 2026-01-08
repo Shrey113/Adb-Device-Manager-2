@@ -763,12 +763,7 @@ body {
 /* ===================================
    Footer
    =================================== */
-.footer {
-    background: #1a1a2e;
-    color: #94a3b8;
-    padding: 2rem;
-    text-align: center;
-}
+
 
 .footer-content p {
     font-size: 0.9rem;

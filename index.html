@@ -511,107 +511,6 @@
         margin-top: 2px
     }
 
-    .footer {
-        padding: 3.5rem 2rem 2rem;
-        background: linear-gradient(180deg, #f8f9fb 0%, #f1f3f8 100%);
-        border-top: 1px solid #e2e5eb;
-        color: #6b7280;
-        font-size: .9rem
-    }
-
-    .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.75rem
-    }
-
-    .footer-brand {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.6rem
-    }
-
-    .footer-brand .logo-icon {
-        width: 52px;
-        height: 52px;
-        transition: transform 0.3s ease;
-        filter: drop-shadow(0 4px 12px rgba(99, 102, 241, 0.25))
-    }
-
-    .footer-brand .logo-icon:hover {
-        transform: scale(1.08) translateY(-2px)
-    }
-
-    .footer-brand-name {
-        font-size: 1.2rem;
-        font-weight: 700;
-        color: #1f2937;
-        letter-spacing: -0.02em
-    }
-
-    .footer-tagline {
-        font-size: 0.85rem;
-        color: #6b7280;
-        margin-top: -0.25rem
-    }
-
-    .footer-nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.25rem 0.5rem;
-        padding: 1.25rem 0;
-        width: 100%;
-        max-width: 700px
-    }
-
-    .footer-nav .nav-link {
-        font-size: 0.875rem;
-        font-weight: 500;
-        padding: 0.6rem 1rem;
-        color: #4b5563;
-        transition: color 0.25s ease;
-        position: relative
-    }
-
-    .footer-nav .nav-link::after {
-        content: "";
-        position: absolute;
-        bottom: 0.35rem;
-        left: 50%;
-        width: calc(100% - 2rem);
-        height: 2px;
-        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-        border-radius: 2px;
-        transform: translateX(-50%) scaleX(0);
-        transition: transform 0.3s ease
-    }
-
-    .footer-nav .nav-link:hover {
-        color: #6366f1
-    }
-
-    .footer-nav .nav-link:hover::after {
-        transform: translateX(-50%) scaleX(1)
-    }
-
-    .footer-divider {
-        width: 100%;
-        max-width: 500px;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, #d1d5db, transparent)
-    }
-
-    .footer-copyright {
-        font-size: 0.8rem;
-        color: #9ca3af;
-        text-align: center;
-        line-height: 1.6
-    }
 
     @keyframes fadeInUp {
         0% {
@@ -659,13 +558,7 @@
             gap: 1.75rem
         }
 
-        .footer {
-            padding: 2.5rem 1.5rem 1.75rem
-        }
 
-        .footer-nav {
-            gap: 0.5rem 1.25rem
-        }
     }
 
     @media (max-width:768px) {
@@ -741,10 +634,6 @@
             font-size: .95rem
         }
 
-        .footer {
-            padding: 2rem 1.25rem 1.5rem;
-            font-size: .85rem
-        }
 
         .footer-content {
             gap: 1.25rem
@@ -886,11 +775,6 @@
         .download-icon {
             width: 18px;
             height: 18px
-        }
-
-        .footer {
-            padding: 1.75rem 1rem 1.25rem;
-            font-size: .8rem
         }
 
         .footer-content {
@@ -1423,8 +1307,8 @@
         <!-- Footer -->
         <link rel="stylesheet" href="pages/footer.css">
         <footer class="footer">
-            <!-- Call To Action Section -->
-            <section class="footer-cta">
+
+            <!-- <section class="footer-cta">
                 <picture class="footer-cta-logo-wrap">
                     <source
                         srcset="https://cdn.jsdelivr.net/gh/shrey113/Adb-Device-Manager-2@latest/images/app_webp_50.webp"
@@ -1433,8 +1317,8 @@
                         class="footer-cta-logo" alt="ADB Device Manager" width="56" height="56" loading="lazy">
                 </picture>
                 <h2>Get Started with ADB Device Manager</h2>
-                <p>Control your Android device from Windows — completely free.</p>
-            </section>
+                <p>Control your Android device from Windows</p>
+            </section> -->
 
             <!-- Main Footer Content -->
             <div class="footer-main">
@@ -1449,17 +1333,33 @@
                                     d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"
                                     fill="currentColor" />
                             </svg>
-                            <span>GitHub Repository</span>
+                            <span>Repository</span>
                         </a>
-                        <a href="mailto:shrey1136@gmail.com" class="footer-contact-item">
+
+                    </div>
+                    <div class="footer-contact-list">
+                        <a href="https://github.com/Shrey113/Adb-Device-Manager-2/issues" class="footer-contact-item"
+                            target="_blank" rel="noopener">
                             <svg viewBox="0 0 24 24" fill="none">
-                                <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor"
-                                    stroke-width="2" />
-                                <path d="M2 7L12 13L22 7" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" />
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                                <circle cx="12" cy="12" r="3" fill="currentColor" />
                             </svg>
-                            <span>shrey1136@gmail.com</span>
+                            <span>Issues</span>
                         </a>
+
+                    </div>
+                    <div class="footer-contact-list">
+                        <a href="https://github.com/Shrey113/Adb-Device-Manager-2/releases" class="footer-contact-item"
+                            target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <circle cx="7" cy="7" r="1.5" fill="currentColor" />
+                            </svg>
+                            <span>App update</span>
+                        </a>
+
                     </div>
                 </div>
 
@@ -1478,7 +1378,7 @@
                     <h3 class="footer-column-title">Resources</h3>
                     <div class="footer-links">
                         <a href="Docs.html">Documentation</a>
-
+                        <a href="pages/Developers_pages/changelog.html">Changelog</a>
                         <a href="pages/Developers.html">Developers</a>
                         <a href="pages/security_pages/virustotal_reports.html">VirusTotal</a>
                     </div>
@@ -1491,19 +1391,6 @@
                         <a href="security/security_model.html">Security Model</a>
                         <a href="security/transparency_model.html">Transparency</a>
                         <a href="security/privacy_policy.html">Privacy Policy</a>
-                    </div>
-                </div>
-
-                <!-- Social Column -->
-                <div class="footer-column">
-                    <h3 class="footer-column-title">Connect</h3>
-                    <div class="footer-links">
-                        <a href="https://github.com/Shrey113/Adb-Device-Manager-2" target="_blank"
-                            rel="noopener">GitHub</a>
-                        <a href="https://github.com/Shrey113/Adb-Device-Manager-2/issues" target="_blank"
-                            rel="noopener">Report Issues</a>
-                        <a href="https://github.com/Shrey113/Adb-Device-Manager-2/releases" target="_blank"
-                            rel="noopener">Releases</a>
                     </div>
                 </div>
             </div>

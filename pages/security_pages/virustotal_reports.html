@@ -38,7 +38,7 @@
     <!-- Main Content -->
     <main class="main-content">
 
-        <!-- Page Header -->
+        <!-- Page Hero -->
         <section class="page-hero">
             <div class="hero-content">
                 <div class="hero-icon">
@@ -47,35 +47,21 @@
                             d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
                     </svg>
                 </div>
-                <h1>🛡️ VirusTotal Security Reports</h1>
-                <p class="hero-subtitle">For transparency and user safety, all release files are scanned on VirusTotal.
+                <h1>VirusTotal Security Reports</h1>
+                <p class="hero-subtitle">
+                    We believe in complete transparency. Every release file is scanned and verified
+                    through VirusTotal's comprehensive security analysis.
                 </p>
-                <span class="trust-badge">✓ Verified Safe & Trusted</span>
             </div>
         </section>
 
-        <!-- Transparency Banner -->
-        <div class="transparency-banner">
-            <div class="banner-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M12 16v-4M12 8h.01" />
-                </svg>
-            </div>
-            <div class="banner-content">
-                <strong>100% Transparent & Verifiable</strong>
-                <p>Don't just trust us — verify it yourself! Download our EXE or APK files and analyze the binary code.
-                    You'll find <strong>no cloud connections, no tracking servers, and no hidden network calls</strong>.
-                    Everything runs locally on your device.</p>
-            </div>
-        </div>
+
 
         <!-- Version 1.1 Section -->
         <section class="version-section">
             <div class="section-container">
                 <div class="version-header">
-                    <h2>Version 1.1 - Latest Release</h2>
+                    <h2>Version 1.1 — Latest Release</h2>
                     <span class="version-badge latest">Latest</span>
                 </div>
                 <div class="table-wrapper">
@@ -83,9 +69,9 @@
                         <thead>
                             <tr>
                                 <th>File Name</th>
-                                <th>File Type</th>
-                                <th>Scan Status</th>
-                                <th>VirusTotal Report</th>
+                                <th>Platform</th>
+                                <th>Security Status</th>
+                                <th>Detailed Report</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -140,7 +126,7 @@
                             <tr>
                                 <td class="file-name">ADB_Device_Manager_Portable.zip</td>
                                 <td><span class="file-type zip">Portable ZIP</span></td>
-                                <td><span class="status-badge safe">✓ Clean (Zip Error only)</span></td>
+                                <td><span class="status-badge safe">✓ Clean</span></td>
                                 <td>
                                     <a href="https://www.virustotal.com/gui/file/b8f71e35379846b974c6b5436867a28b11c2642743c5ea2b4e0b5c2ab58db869"
                                         class="report-link" target="_blank" rel="noopener noreferrer">
@@ -159,21 +145,41 @@
             </div>
         </section>
 
+        <!-- Transparency Banner -->
+        <div class="transparency-banner">
+            <div class="banner-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 16v-4M12 8h.01" />
+                </svg>
+            </div>
+            <div class="banner-content">
+                <strong>100% Transparent & Fully Verifiable</strong>
+                <p>
+                    Don't just take our word for it — verify everything yourself! Download our EXE or APK files and
+                    analyze the binary code. You'll discover <strong>zero cloud connections, zero tracking servers,
+                        and zero hidden network calls</strong>. Every operation runs locally on your device, ensuring
+                    your privacy is never compromised.
+                </p>
+            </div>
+        </div>
+
         <!-- Version 1.0.1 Section -->
         <section class="version-section">
             <div class="section-container">
                 <div class="version-header">
-                    <h2>Version 1.0.1 - Previous Release</h2>
-                    <span class="version-badge previous">Previous</span>
+                    <h2>Version 1.0.1 — Previous Release</h2>
+                    <span class="version-badge previous">Archived</span>
                 </div>
                 <div class="table-wrapper">
                     <table class="report-table">
                         <thead>
                             <tr>
-                                <th>Item</th>
-                                <th>File Type</th>
-                                <th>Scan Status</th>
-                                <th>VirusTotal Report</th>
+                                <th>File Name</th>
+                                <th>Platform</th>
+                                <th>Security Status</th>
+                                <th>Detailed Report</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -217,12 +223,17 @@
         <section class="info-section">
             <div class="section-container">
                 <div class="info-box">
-                    <h4>About VirusTotal</h4>
-                    <p>VirusTotal is a free online service that analyzes files and URLs for viruses, worms, trojans, and
-                        other kinds of malicious content using over 70 antivirus scanners and URL/domain blacklisting
-                        services.</p>
+                    <h4>What is VirusTotal?</h4>
+                    <p>
+                        VirusTotal is a trusted, free online service owned by Google that analyzes files and URLs
+                        for potential security threats. It uses over 70 leading antivirus scanners and URL/domain
+                        blacklisting services to provide comprehensive malware detection — giving you complete
+                        confidence in what you download.
+                    </p>
                 </div>
-                <p class="footer-note">Last updated: <time datetime="2025-12-28">December 28, 2025</time></p>
+                <p class="footer-note">
+                    Reports last verified: <time datetime="2025-12-28">December 28, 2025</time>
+                </p>
             </div>
         </section>
     </main>
@@ -230,7 +241,11 @@
     <!-- Footer -->
     <link rel="stylesheet" href="../../pages/footer.css">
     <footer class="footer">
+
+
+        <!-- Main Footer Content -->
         <div class="footer-main">
+            <!-- Contact Column -->
             <div class="footer-contact-section">
                 <h3 class="footer-column-title">Contact</h3>
                 <div class="footer-contact-list">
@@ -241,17 +256,36 @@
                                 d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"
                                 fill="currentColor" />
                         </svg>
-                        <span>GitHub Repository</span>
+                        <span>Repository</span>
                     </a>
-                    <a href="mailto:shrey1136@gmail.com" class="footer-contact-item">
+
+                </div>
+                <div class="footer-contact-list">
+                    <a href="https://github.com/Shrey113/Adb-Device-Manager-2/issues" class="footer-contact-item"
+                        target="_blank" rel="noopener">
                         <svg viewBox="0 0 24 24" fill="none">
-                            <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2" />
-                            <path d="M2 7L12 13L22 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                            <circle cx="12" cy="12" r="3" fill="currentColor" />
                         </svg>
-                        <span>shrey1136@gmail.com</span>
+                        <span>Issues</span>
                     </a>
+
+                </div>
+                <div class="footer-contact-list">
+                    <a href="https://github.com/Shrey113/Adb-Device-Manager-2/releases" class="footer-contact-item"
+                        target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="7" cy="7" r="1.5" fill="currentColor" />
+                        </svg>
+                        <span>App update</span>
+                    </a>
+
                 </div>
             </div>
+
+            <!-- Products Column -->
             <div class="footer-column">
                 <h3 class="footer-column-title">Products</h3>
                 <div class="footer-links">
@@ -260,15 +294,19 @@
                     <a href="../../features.html">All Features</a>
                 </div>
             </div>
+
+            <!-- Resources Column -->
             <div class="footer-column">
                 <h3 class="footer-column-title">Resources</h3>
                 <div class="footer-links">
                     <a href="../../Docs.html">Documentation</a>
-                    <a href="../../support.html">Support & FAQ</a>
+
                     <a href="../Developers.html">Developers</a>
                     <a href="virustotal_reports.html">VirusTotal</a>
                 </div>
             </div>
+
+            <!-- Security Column -->
             <div class="footer-column">
                 <h3 class="footer-column-title">Security</h3>
                 <div class="footer-links">
@@ -277,25 +315,20 @@
                     <a href="../../security/privacy_policy.html">Privacy Policy</a>
                 </div>
             </div>
-            <div class="footer-column">
-                <h3 class="footer-column-title">Connect</h3>
-                <div class="footer-links">
-                    <a href="https://github.com/Shrey113/Adb-Device-Manager-2" target="_blank" rel="noopener">GitHub</a>
-                    <a href="https://github.com/Shrey113/Adb-Device-Manager-2/issues" target="_blank"
-                        rel="noopener">Report Issues</a>
-                    <a href="https://github.com/Shrey113/Adb-Device-Manager-2/releases" target="_blank"
-                        rel="noopener">Releases</a>
-                </div>
-            </div>
         </div>
+
+        <!-- Footer Bottom -->
         <div class="footer-bottom">
-            <p class="footer-copyright">© 2025 <a href="https://github.com/Shrey113">Shrey113</a>. All rights reserved.
-            </p>
+            <p class="footer-copyright">© 2025 <a href="https://github.com/Shrey113">Shrey113</a>. All rights
+                reserved.</p>
             <div class="footer-bottom-links">
                 <a href="../../security/privacy_policy.html">Privacy Policy</a>
-                <a href="../../LICENSE">License</a>
+                <a href="app_terms.html">App Terms</a>
+                <a href="../../support.html">Support &amp; FAQ</a>
             </div>
         </div>
+
+        <!-- Gradient Border -->
         <div class="footer-gradient-border"></div>
     </footer>
 </body>
