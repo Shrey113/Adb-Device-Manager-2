@@ -13,7 +13,6 @@ When contacting support or opening an issue:
 
 ## Support Contact
 If you need help, please use:
-📧 Email: adbdevicemanager2@gmail.com  
 🐞 Issues: https://github.com/Shrey113/Adb-Device-Manager-2/issues
 
 ## Purpose

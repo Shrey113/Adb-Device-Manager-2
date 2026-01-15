@@ -23,8 +23,7 @@ Older versions may contain bugs or security issues and should be updated immedia
 
 If you believe you’ve found a security vulnerability in the Windows app or Android companion:
 
-### 📧 Contact (Private & Confidential)
-**adbdevicemanager2@gmail.com**
+🐞 Issues: https://github.com/Shrey113/Adb-Device-Manager-2/issues
 
 Please include:
 
