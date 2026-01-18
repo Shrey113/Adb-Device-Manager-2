@@ -2,8 +2,8 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "adb devices manager"
-#define MyAppVersion "1.1"
-#define MyAppPublisher "My Company, Inc."
+#define MyAppVersion "1.2"
+#define MyAppPublisher "ADB Devices Manager"
 #define MyAppURL "https://shrey113.github.io/Adb-Device-Manager-2/"
 #define MyAppExeName "adb_devices.exe"
 
