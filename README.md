@@ -127,6 +127,27 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 
 ---
 
+## Friendly Links
+[escrcpy](https://github.com/viarotel-org/escrcpy)
+
+---
+
+
+## 🔧 Technologies & Dependencies
+
+A set of tools and frameworks used for ADB communication, screen mirroring, UI rendering, and OS-level integration.
+
+- **[ADB (Android Debug Bridge)](https://developer.android.com/tools/releases/platform-tools)** – Device connection, pairing, and command execution  
+- **[scrcpy](https://github.com/Genymobile/scrcpy)** – Android screen mirroring and auto casting over ADB  
+- **[nircmd_x64](https://www.nirsoft.net/utils/nircmd.html)** – Windows window control (open, focus, hide, close)  
+- **[Flutter](https://flutter.dev/)** – Cross-platform UI for Windows and Android  
+- **[Kotlin](https://kotlinlang.org/)** – Android backend and UI logic  
+- **[Python](https://www.python.org/)** – Windows backend logic and background services
+
+Thanks to **[rom1v](https://github.com/rom1v)** and **[yume-chan](https://github.com/yume-chan)** for their work and insights that helped deepen understanding of **ADB**, **scrcpy**, and broader real-world use cases around Android device management.
+
+---
+
 ## 🌐 Official Resources
 
 <div align="center">
@@ -146,21 +167,6 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 | **Troubleshooting** | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#troubleshooting |
  
 </div>
-
----
-
-## 🔧 Technologies & Dependencies
-
-A set of tools and frameworks used for ADB communication, screen mirroring, UI rendering, and OS-level integration.
-
-- **[ADB (Android Debug Bridge)](https://developer.android.com/tools/releases/platform-tools)** – Device connection, pairing, and command execution  
-- **[scrcpy](https://github.com/Genymobile/scrcpy)** – Android screen mirroring and auto casting over ADB  
-- **[nircmd_x64](https://www.nirsoft.net/utils/nircmd.html)** – Windows window control (open, focus, hide, close)  
-- **[Flutter](https://flutter.dev/)** – Cross-platform UI for Windows and Android  
-- **[Kotlin](https://kotlinlang.org/)** – Android backend and UI logic  
-- **[Python](https://www.python.org/)** – Windows backend logic and background services
-
-Thanks to **[rom1v](https://github.com/rom1v)** and **[yume-chan](https://github.com/yume-chan)** for their work and insights that helped deepen understanding of **ADB**, **scrcpy**, and broader real-world use cases around Android device management.
 
 ---
 
