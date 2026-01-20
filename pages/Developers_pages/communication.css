@@ -450,21 +450,517 @@ body {
     font-style: italic;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
+/* RESPONSIVE - COMPREHENSIVE MOBILE FIRST */
+
+/* Tablets and smaller laptops */
+@media (max-width: 1024px) {
+    .docs-container {
+        padding: 1.5rem;
+    }
+
+    .features-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .network-visual {
+        width: 300px;
+        height: 300px;
+    }
+
+    .hero-section {
+        gap: 3rem;
+    }
+}
+
+/* Mobile devices - Large */
+@media (max-width: 768px) {
+    .docs-container {
+        padding: 1rem;
+    }
+
+    /* Navigation */
+    .page-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .nav-breadcrumbs {
+        font-size: 0.85rem;
+    }
+
+    /* Hero Section */
     .hero-section {
         flex-direction: column;
+        gap: 2.5rem;
+        margin-bottom: 3rem;
         text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-desc {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        max-width: 100%;
+    }
+
+    .tech-stack-pills {
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .pill {
+        padding: 0.3rem 0.7rem;
+        font-size: 0.75rem;
+    }
+
+    /* Network Visual */
+    .network-visual {
+        width: 280px;
+        height: 280px;
+    }
+
+    .center-node {
+        width: 70px;
+        height: 70px;
+    }
+
+    .center-node .icon {
+        font-size: 1.75rem;
+    }
+
+    .satellite-node {
+        width: 45px;
+        height: 45px;
+    }
+
+    .satellite-node .icon {
+        font-size: 1.1rem;
+    }
+
+    /* Feature Cards */
+    .features-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .feature-card {
+        padding: 1.5rem;
+    }
+
+    .card-header {
+        margin-bottom: 1.25rem;
+    }
+
+    .icon-box {
+        width: 44px;
+        height: 44px;
+    }
+
+    .icon-box svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .card-header h3 {
+        font-size: 1.15rem;
+    }
+
+    .desc {
+        font-size: 0.9rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .feature-list {
+        margin-bottom: 1.5rem;
+    }
+
+    .feature-list li {
+        font-size: 0.85rem;
+    }
+
+    .api-endpoint {
+        padding: 0.6rem;
+        font-size: 0.75rem;
+        flex-wrap: wrap;
+    }
+
+    /* API Reference Section */
+    .api-reference-section {
+        gap: 2rem;
+    }
+
+    .group-title {
+        font-size: 1.3rem;
+        margin-bottom: 1.25rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .endpoint-card {
+        margin-bottom: 1.25rem;
+    }
+
+    .endpoint-header {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .ep-method {
+        font-size: 0.75rem;
+    }
+
+    .ep-url {
+        font-size: 0.85rem;
+        word-break: break-all;
+    }
+
+    .ep-desc {
+        margin-left: 0;
+        font-size: 0.8rem;
+    }
+
+    .json-box {
+        padding: 1rem;
+    }
+
+    .json-pre {
+        font-size: 0.8rem;
+    }
+
+    /* Logic Section */
+    .logic-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
     }
 
     .flow-diagram {
         flex-direction: column;
         gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .flow-step {
+        width: 100%;
+        max-width: 250px;
     }
 
     .flow-arrow {
         transform: rotate(90deg);
         top: 0;
+    }
+
+    .code-preview-block {
+        max-width: 100%;
+    }
+
+    .code-content {
+        padding: 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Mobile devices - Small */
+@media (max-width: 480px) {
+    .docs-container {
+        padding: 0.75rem;
+    }
+
+    .page-nav {
+        margin-bottom: 2rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .back-btn {
+        font-size: 0.9rem;
+    }
+
+    .nav-breadcrumbs {
+        font-size: 0.8rem;
+    }
+
+    .hero-section {
+        gap: 2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-desc {
+        font-size: 0.9rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .tech-stack-pills {
+        gap: 0.4rem;
+    }
+
+    .pill {
+        padding: 0.25rem 0.6rem;
+        font-size: 0.7rem;
+    }
+
+    .network-visual {
+        width: 240px;
+        height: 240px;
+    }
+
+    .center-node {
+        width: 60px;
+        height: 60px;
+    }
+
+    .center-node .icon {
+        font-size: 1.5rem;
+    }
+
+    .satellite-node {
+        width: 40px;
+        height: 40px;
+    }
+
+    .satellite-node .icon {
+        font-size: 1rem;
+    }
+
+    .sat-1 {
+        top: 30px;
+    }
+
+    .sat-2 {
+        bottom: 50px;
+        left: 15px;
+    }
+
+    .sat-3 {
+        bottom: 50px;
+        right: 15px;
+    }
+
+    .features-container {
+        gap: 1.25rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .feature-card {
+        padding: 1.25rem;
+        border-radius: 12px;
+    }
+
+    .card-header {
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .icon-box {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+    }
+
+    .icon-box svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .card-header h3 {
+        font-size: 1.05rem;
+    }
+
+    .desc {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    .feature-list {
+        margin-bottom: 1.25rem;
+    }
+
+    .feature-list li {
+        font-size: 0.8rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .api-endpoint {
+        padding: 0.5rem;
+        font-size: 0.7rem;
+        gap: 0.5rem;
+    }
+
+    .api-reference-section {
+        gap: 1.75rem;
+    }
+
+    .group-title {
+        font-size: 1.15rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.6rem;
+        gap: 0.5rem;
+    }
+
+    .group-title .icon {
+        font-size: 1.1rem;
+    }
+
+    .endpoint-card {
+        margin-bottom: 1rem;
+        border-radius: 10px;
+    }
+
+    .endpoint-header {
+        padding: 0.85rem;
+        gap: 0.6rem;
+    }
+
+    .ep-method {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    .ep-url {
+        font-size: 0.8rem;
+    }
+
+    .ep-desc {
+        font-size: 0.75rem;
+    }
+
+    .json-box {
+        padding: 0.85rem;
+    }
+
+    .json-pre {
+        font-size: 0.75rem;
+    }
+
+    .logic-section {
+        padding: 1.5rem 1rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .flow-step {
+        padding: 1.25rem;
+        width: 100%;
+    }
+
+    .step-icon {
+        font-size: 1.5rem;
+    }
+
+    .step-label {
+        font-size: 0.95rem;
+    }
+
+    .step-sub {
+        font-size: 0.7rem;
+    }
+
+    .code-header {
+        padding: 0.6rem 0.85rem;
+        font-size: 0.75rem;
+    }
+
+    .code-content {
+        padding: 0.85rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+    .docs-container {
+        padding: 0.5rem;
+    }
+
+    .hero-text h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-desc {
+        font-size: 0.85rem;
+    }
+
+    .network-visual {
+        width: 200px;
+        height: 200px;
+    }
+
+    .center-node {
+        width: 50px;
+        height: 50px;
+    }
+
+    .center-node .icon {
+        font-size: 1.25rem;
+    }
+
+    .satellite-node {
+        width: 35px;
+        height: 35px;
+    }
+
+    .satellite-node .icon {
+        font-size: 0.9rem;
+    }
+
+    .feature-card {
+        padding: 1rem;
+    }
+
+    .card-header h3 {
+        font-size: 1rem;
+    }
+
+    .desc {
+        font-size: 0.8rem;
+    }
+
+    .feature-list li {
+        font-size: 0.75rem;
+    }
+
+    .api-endpoint {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .group-title {
+        font-size: 1.05rem;
+    }
+
+    .ep-url {
+        font-size: 0.75rem;
+    }
+
+    .json-pre {
+        font-size: 0.7rem;
+    }
+
+    .section-title {
+        font-size: 1.15rem;
+    }
+
+    .flow-step {
+        padding: 1rem;
     }
 }
 
