@@ -120,6 +120,7 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 | Multi-App Desktop Running | ✅ | ❌ | Limited ⚠️ |
 | Per-App Audio On/Off | ✅ | ❌ | ❌ |
 | Notifications | ✅ | ❌ | ✅ |
+| quick access | ✅ | ❌ | Limited ⚠️ |
 | SMS & Calls sync | ✅ | ❌ | ✅ |
 | Remote Camera | ✅ | Limited ⚠️ | ❌ |
 | Bluetooth Audio Pairing | ✅ | ❌ | ✅ |
@@ -149,26 +150,17 @@ A set of tools and frameworks used for ADB communication, screen mirroring, UI r
 Thanks to **[rom1v](https://github.com/rom1v)** and **[yume-chan](https://github.com/yume-chan)** for their work and insights that helped deepen understanding of **ADB**, **scrcpy**, and broader real-world use cases around Android device management.
 
 ---
-
 ## 🌐 Official Resources
 
-<div align="center">
-
-🔗 **Everything you need in one place — docs, guides, help, and website.**
-
-<br>
-
-| 📘 Resource | 🔗 Link |
-|------------|---------|
-| **Main Documentation** | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html |
-| **Installation Guide** | https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html |
-| **FAQ** | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#faq |
-| **Security & Privacy** | https://shrey113.github.io/Adb-Device-Manager-2/security/security_model.html |
-| **Transparency** | https://shrey113.github.io/Adb-Device-Manager-2/security/transparency_model.html |
-| **Privacy Policy** | https://shrey113.github.io/Adb-Device-Manager-2/security/privacy_policy.html |
-| **Troubleshooting** | https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#troubleshooting |
- 
-</div>
+| 📘 Resource | 🔗 Access |
+|------------|----------|
+| Main Documentation | [Open Docs](https://shrey113.github.io/Adb-Device-Manager-2/Docs.html) |
+| Installation Guide | [Install Guide](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html) |
+| FAQ | [View FAQ](https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#faq) |
+| Security & Privacy | [Security Model](https://shrey113.github.io/Adb-Device-Manager-2/security/security_model.html) |
+| Transparency | [Transparency Report](https://shrey113.github.io/Adb-Device-Manager-2/security/transparency_model.html) |
+| Privacy Policy | [Privacy Policy](https://shrey113.github.io/Adb-Device-Manager-2/security/privacy_policy.html) |
+| Troubleshooting | [Fix Issues](https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#troubleshooting) |
 
 ---
 
@@ -181,5 +173,6 @@ For more details, visit the [official documentation](https://shrey113.github.io/
 **Made with ❤️ by [Shrey113](https://github.com/Shrey113)**
 
 </div>
+
 
 
