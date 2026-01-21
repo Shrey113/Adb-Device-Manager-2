@@ -119,11 +119,9 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 | App-Audio-Only Mirroring | ✅ | ❌ | ✅ |
 | Multi-App Desktop Running | ✅ | ❌ | Limited ⚠️ |
 | Per-App Audio On/Off | ✅ | ❌ | ❌ |
-| Full Device Control | ✅ | Limited ⚠️ | Limited ⚠️ |
 | Notifications | ✅ | ❌ | ✅ |
 | SMS & Calls sync | ✅ | ❌ | ✅ |
 | Remote Camera | ✅ | Limited ⚠️ | ❌ |
-| Android DeX Mode | ✅ | ❌ | ❌ |
 | Bluetooth Audio Pairing | ✅ | ❌ | ✅ |
 | Full control Without ADB | Limited ⚠️ | ❌ | ✅ |
 | Call Audio Get | ❌ | ❌ | ✅ |
@@ -183,4 +181,5 @@ For more details, visit the [official documentation](https://shrey113.github.io/
 **Made with ❤️ by [Shrey113](https://github.com/Shrey113)**
 
 </div>
+
 
