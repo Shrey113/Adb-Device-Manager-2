@@ -5,6 +5,8 @@
 
   **Connect Android & Windows into one seamless control system**
 
+  Built for power users, developers, and Android enthusiasts
+
   <!-- Tech Badges -->
   [![Flutter](https://img.shields.io/badge/Flutter-02569B?logo=flutter&logoColor=fff)](#)
   [![Kotlin](https://img.shields.io/badge/Kotlin-%237F52FF.svg?logo=kotlin&logoColor=white)](#)
@@ -120,12 +122,12 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 | Multi-App Desktop Running | ✅ | ❌ | Limited ⚠️ |
 | Per-App Audio On/Off | ✅ | ❌ | ❌ |
 | Notifications | ✅ | ❌ | ✅ |
-| quick access | ✅ | ❌ | Limited ⚠️ |
+| Quick Access | ✅ | ❌ | Limited ⚠️ |
 | SMS & Calls sync | ✅ | ❌ | ✅ |
 | Remote Camera | ✅ | Limited ⚠️ | ❌ |
 | Bluetooth Audio Pairing | ✅ | ❌ | ✅ |
 | Full control Without ADB | Limited ⚠️ | ❌ | ✅ |
-| Call Audio Get | ❌ | ❌ | ✅ |
+| Call Audio Capture | ❌ | ❌ | ✅ |
 
 ---
 
