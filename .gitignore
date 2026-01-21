@@ -5,6 +5,7 @@
 # ⚙️ Windows Executables and Installers
 adb_devices.exe
 adb_devices.iss
+adb_devices_admin.iss
 inno_setup_sources.iss.txt
 
 # 🐍 Helper scripts (optional)
@@ -22,6 +23,7 @@ dist/
 build/
 output/
 release/
+temp_data/
 
 # 🧩 Node / Web build caches (if you ever use them)
 node_modules/

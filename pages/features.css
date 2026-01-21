@@ -1,0 +1,1342 @@
+/* ============================================
+   FULL CLEAN CSS — Purple Theme (uses your :root)
+   Drop this entire file into features.css
+   ============================================ */
+
+/* ----- Your provided variables (exactly) ----- */
+:root {
+    /* Base */
+    --color-bg: #f7f6f9;
+    --color-text: #1a1a2e;
+
+    /* Brand / Primary */
+    --color-primary: #6366f1;
+    --color-primary-light: #8b5cf6;
+    --color-primary-bg: #f0f4ff;
+    --color-primary-bg-2: #dee5fb;
+
+    /* Neutral Grays */
+    --color-gray-50: #f8fafc;
+    --color-gray-100: #f1f5f9;
+    --color-gray-200: #e2e8f0;
+    --color-gray-300: #cbd5e1;
+    --color-gray-400: #94a3b8;
+    --color-gray-500: #64748b;
+    --color-gray-600: #475569;
+
+    /* Shadows */
+    --shadow-light: rgba(0, 0, 0, 0.04);
+    --shadow-medium: rgba(0, 0, 0, 0.06);
+    --shadow-primary: rgba(99, 102, 241, 0.15);
+}
+
+/* ===== Basic reset ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== Page basics ===== */
+body {
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.45;
+    -webkit-text-size-adjust: 100%;
+}
+
+/* ===== Layout container ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== Global typographic rules (consistent titles & spacing) ===== */
+h1,
+h2,
+h3 {
+    font-weight: 800;
+    color: var(--color-text);
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    color: var(--color-gray-600);
+}
+
+/* Section spacing — consistent across page */
+section {
+    padding: 60px 0;
+}
+
+/* ===== Header area ===== */
+.header-section {
+    text-align: center;
+    padding: 56px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.main-title {
+    font-size: 46px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--color-text);
+    line-height: 1.05;
+    text-align: center;
+}
+
+/* Button row */
+.btn-row {
+    display: inline-flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+.btn.black {
+    background: #000;
+    color: #fff;
+}
+
+.btn.black:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px var(--shadow-medium);
+}
+
+.btn.gray {
+    background: var(--color-gray-100);
+    color: var(--color-text);
+}
+
+.btn.gray:hover {
+    transform: translateY(-2px);
+}
+
+/* small link under header */
+.view-devices {
+    color: var(--color-primary);
+    font-size: 14px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+/* ===== Full image wrapper ===== */
+.image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 18px 40px;
+}
+
+.full-image {
+    width: 100%;
+    max-width: 1400px;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px var(--shadow-light);
+}
+
+/* ===== Section titles (consistent look) ===== */
+.section-title,
+.section-title-blue {
+    text-align: center;
+    color: var(--color-primary);
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    letter-spacing: -0.4px;
+}
+
+/* Slight variant for smaller headings */
+.section-sub {
+    text-align: center;
+    color: var(--color-gray-500);
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+/* ===== Feature cards (two-column) ===== */
+.features-section {
+    padding: 60px 20px 80px;
+    background: var(--color-primary-bg);
+    width: 100vw;
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+.feature-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: stretch;
+    margin-bottom: 28px;
+}
+
+/* Card */
+.feature-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 36px 40px;
+    box-shadow: 0 8px 30px var(--shadow-light);
+    align-items: center;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    min-height: 260px;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 50px var(--shadow-medium);
+}
+
+/* Text content inside card */
+.feature-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.card-title {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--color-text);
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+}
+
+.card-copy {
+    font-size: 15px;
+    color: var(--color-gray-600);
+    line-height: 1.7;
+}
+
+/* Media side */
+.feature-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    transition: transform 0.28s ease;
+}
+
+.feature-card:hover .card-image {
+    transform: scale(1.02);
+}
+
+/* ===== Cross-device interaction section ===== */
+.cross-device-section {
+    padding: 60px 20px 80px;
+    background: transparent;
+}
+
+.interaction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.interaction-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.5));
+    border-radius: 20px;
+    padding: 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: center;
+    border: 1px solid rgba(99, 102, 241, 0.06);
+    box-shadow: 0 12px 40px var(--shadow-primary);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.interaction-card:hover {
+    transform: translateY(-6px);
+}
+
+.interaction-label {
+    display: inline-block;
+    color: var(--color-primary-light);
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.interaction-title {
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.interaction-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--color-gray-600);
+}
+
+.Cross_device_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Cross_device_img img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* ===== Content sync section ===== */
+.content-sync-section {
+    padding: 60px 20px 80px;
+}
+
+.sync-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.sync-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 36px;
+    box-shadow: 0 12px 40px var(--shadow-light);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sync-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px var(--shadow-medium);
+}
+
+.sync-card-title {
+    color: var(--color-primary);
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.sync-card-desc {
+    font-size: 15px;
+    color: var(--color-gray-600);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.Sync_device_img {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Sync_device_img img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* ===== Multi-app preview specifics (consistent sizes) ===== */
+.multi-app-section {
+    width: 100%;
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.multi-app-top {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+}
+
+.multi-app-top h2 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 12px;
+    color: var(--color-text);
+}
+
+.multi-app-top p {
+    font-size: 17px;
+    line-height: 1.6;
+    opacity: 0.9;
+    color: var(--color-gray-600);
+}
+
+/* bottom visual area */
+.multi-app-bottom {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+.multi-app-visual {
+    width: 80%;
+    max-width: 1350px;
+    position: relative;
+}
+
+.multi-app-bg {
+    width: 100%;
+    border-radius: 16px;
+    display: block;
+    box-shadow: 0 12px 40px var(--shadow-light);
+}
+
+/* phone floating windows */
+.phone-app {
+    position: absolute;
+    width: 16%;
+    border-radius: 12px;
+    top: 10%;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* precise positions */
+.phone-app-1 {
+    left: 20%;
+}
+
+.phone-app-2 {
+    left: 43%;
+}
+
+.phone-app-3 {
+    left: 66%;
+}
+
+/* ==========================================
+   RESPONSIVE MOBILE OPTIMIZATIONS
+   ========================================== */
+
+/* Tablet Landscape */
+@media (max-width: 1024px) {
+    .multi-app-top h2 {
+        font-size: 36px;
+    }
+
+    .feature-card,
+    .interaction-card {
+        padding: 32px 36px;
+    }
+}
+
+/* Tablet Portrait - Below 980px */
+@media (max-width: 980px) {
+    .main-title {
+        font-size: 36px;
+    }
+
+    .section-title,
+    .section-title-blue {
+        font-size: 32px;
+        margin-bottom: 32px;
+    }
+
+    .feature-card {
+        grid-template-columns: 1fr;
+        padding: 28px;
+        min-height: auto;
+    }
+
+    .interaction-card {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+
+    .sync-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .multi-app-top h2 {
+        font-size: 32px;
+    }
+
+    .phone-app {
+        width: 16%;
+        top: 8%;
+    }
+}
+
+/* Mobile Landscape */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    .main-title {
+        font-size: 32px;
+    }
+
+    .btn-row {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 11px 22px;
+        font-size: 14px;
+    }
+
+    .section-title,
+    .section-title-blue {
+        font-size: 28px;
+        margin-bottom: 28px;
+    }
+
+    .feature-card,
+    .interaction-card,
+    .sync-card {
+        padding: 24px;
+    }
+
+    .card-title,
+    .interaction-title,
+    .sync-card-title {
+        font-size: 22px;
+    }
+
+    .feature-row {
+        gap: 20px;
+    }
+
+    .image-wrapper {
+        padding: 10px 15px 32px;
+    }
+
+    .multi-app-top {
+        width: 95%;
+        margin-bottom: 32px;
+    }
+
+    .multi-app-top h2 {
+        font-size: 28px;
+    }
+
+    .multi-app-visual {
+        width: 90%;
+    }
+
+    .data h3 {
+        font-size: 20px;
+    }
+}
+
+/* Mobile Small */
+@media (max-width: 640px) {
+    .main-title {
+        font-size: 28px;
+    }
+
+    .btn {
+        padding: 10px 18px;
+        font-size: 13px;
+    }
+
+    .features-section {
+        padding: 50px 16px 70px;
+    }
+
+    .section-title,
+    .section-title-blue {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+
+    .feature-card,
+    .sync-card,
+    .interaction-card {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .card-title,
+    .interaction-title {
+        font-size: 20px;
+    }
+
+    .sync-card-title {
+        font-size: 19px;
+    }
+
+    .multi-app-top h2 {
+        font-size: 24px;
+    }
+
+    .multi-app-top p {
+        font-size: 15px;
+    }
+
+    .phone-app {
+        width: 16%;
+        top: 7%;
+    }
+
+    .multi-app-visual {
+        width: 95%;
+    }
+}
+
+/* Mobile Portrait - Extra small screens */
+@media (max-width: 520px) {
+    .main-title {
+        font-size: 26px;
+        margin-bottom: 6px;
+    }
+
+    .btn {
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .features-section {
+        padding: 40px 12px 60px;
+    }
+
+    .feature-card,
+    .sync-card,
+    .interaction-card {
+        padding: 18px;
+    }
+
+    .card-title {
+        font-size: 20px;
+    }
+
+    .section-title,
+    .section-title-blue {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .multi-app-top h2 {
+        font-size: 22px;
+    }
+
+    .multi-app-top p {
+        font-size: 14px;
+    }
+
+    .phone-app {
+        width: 16%;
+        top: 6%;
+    }
+
+    .multi-app-visual {
+        width: 100%;
+    }
+
+    .eyebrow,
+    .interaction-label {
+        font-size: 12px;
+    }
+
+    .card-copy,
+    .interaction-desc,
+    .sync-card-desc {
+        font-size: 14px;
+    }
+}
+
+/* Very Small Mobile */
+@media (max-width: 375px) {
+    .main-title {
+        font-size: 24px;
+    }
+
+    .btn {
+        padding: 9px 12px;
+        font-size: 13px;
+    }
+
+    .section-title,
+    .section-title-blue {
+        font-size: 20px;
+    }
+
+    .card-title,
+    .interaction-title,
+    .sync-card-title {
+        font-size: 18px;
+    }
+
+    .feature-card,
+    .sync-card,
+    .interaction-card {
+        padding: 16px;
+    }
+
+    .multi-app-top h2 {
+        font-size: 20px;
+    }
+
+    .phone-app {
+        top: 8%;
+        width: 16%;
+        border-radius: 1px;
+    }
+}
+
+/* Extra Small Mobile (320px and below) */
+@media (max-width: 320px) {
+    .main-title {
+        font-size: 22px;
+    }
+
+    .btn {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .section-title,
+    .section-title-blue {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+
+    .card-title,
+    .interaction-title {
+        font-size: 16px;
+    }
+
+    .feature-card,
+    .sync-card,
+    .interaction-card {
+        padding: 14px;
+    }
+
+    .multi-app-top h2 {
+        font-size: 18px;
+    }
+
+    .phone-app {
+        top: 8%;
+        width: 15%;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .btn {
+        min-height: 44px;
+        padding: 12px 24px;
+    }
+
+    .feature-card,
+    .interaction-card,
+    .sync-card {
+        -webkit-tap-highlight-color: rgba(99, 102, 241, 0.1);
+    }
+
+    /* Larger touch targets */
+    .card-image {
+        cursor: pointer;
+    }
+}
+
+/* ===== Small utility tweaks ===== */
+.center {
+    text-align: center;
+}
+
+.mt-8 {
+    margin-top: 8px;
+}
+
+.mb-8 {
+    margin-bottom: 8px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* for all screen fix */
+html,
+body {
+    overflow-x: hidden;
+    height: auto !important;
+    min-height: 100%;
+}
+
+/* =========================================
+   ANDROID DEX SECTION — VIP PREMIUM STYLING
+   ========================================= */
+.dex-section {
+    padding: 80px 20px;
+    background: linear-gradient(145deg, #fffef9 0%, #fefcf3 50%, #fef9e7 100%);
+    position: relative;
+    text-align: center;
+}
+
+.section-title-gold {
+    text-align: center;
+    color: #5c4a1f;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.dex-subtitle {
+    color: #6b5a2e;
+    font-size: 17px;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.dex-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.dex-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 8px 24px rgba(180, 140, 40, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dex-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(180, 140, 40, 0.15);
+}
+
+.dex-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #d4af37 0%, #c9a227 100%);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(180, 140, 40, 0.3);
+}
+
+.dex-icon svg {
+    width: 28px;
+    height: 28px;
+    color: #fff;
+}
+
+.dex-card h3 {
+    color: #5c4a1f;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.dex-card p {
+    color: #6b5a2e;
+    font-size: 14px;
+    line-height: 1.55;
+    margin-bottom: 14px;
+}
+
+.dex-mode-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dex-mode-badge.adb {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: #fff;
+}
+
+/* =========================================
+   MODE & HOTKEY BADGES
+   ========================================= */
+.feature-badges {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.mode-badge {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 14px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mode-badge.adb {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: #fff;
+}
+
+.mode-badge.app {
+    background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
+    color: #fff;
+}
+
+.mode-badge.windows {
+    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+    color: #fff;
+}
+
+.hotkey-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 12px;
+    background: #1f2937;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: monospace;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.hotkey-badge::before {
+    content: "⌨";
+    font-size: 12px;
+}
+
+/* =========================================
+   AUDIO VISUAL PLACEHOLDER
+   ========================================= */
+.audio-visual {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 8px;
+    height: 120px;
+    padding: 20px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border-radius: 16px;
+}
+
+.audio-wave {
+    width: 12px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 6px;
+    animation: audioWave 1.2s ease-in-out infinite;
+}
+
+.audio-wave:nth-child(1) {
+    height: 40%;
+    animation-delay: 0s;
+}
+
+.audio-wave:nth-child(2) {
+    height: 70%;
+    animation-delay: 0.15s;
+}
+
+.audio-wave:nth-child(3) {
+    height: 100%;
+    animation-delay: 0.3s;
+}
+
+.audio-wave:nth-child(4) {
+    height: 60%;
+    animation-delay: 0.45s;
+}
+
+.audio-wave:nth-child(5) {
+    height: 80%;
+    animation-delay: 0.6s;
+}
+
+@keyframes audioWave {
+
+    0%,
+    100% {
+        transform: scaleY(0.5);
+    }
+
+    50% {
+        transform: scaleY(1);
+    }
+}
+
+/* Music Control Visual */
+.music-control-visual {
+    background: linear-gradient(145deg, #f1f5f9, #e2e8f0);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+}
+
+.album-art {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 16px;
+    background: linear-gradient(135deg, #a855f7 0%, #8b5cf6 100%);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.3);
+}
+
+.music-info {
+    margin-bottom: 16px;
+}
+
+.music-title {
+    width: 70%;
+    height: 14px;
+    background: #94a3b8;
+    border-radius: 4px;
+    margin: 0 auto 8px;
+}
+
+.music-artist {
+    width: 50%;
+    height: 10px;
+    background: #cbd5e1;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+
+.music-controls {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.control-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 50%;
+    font-size: 14px;
+    color: #6366f1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.control-btn.play {
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: #fff;
+    font-size: 18px;
+}
+
+/* =========================================
+   NOTIFICATION VISUAL PLACEHOLDER
+   ========================================= */
+.notification-visual {
+    background: linear-gradient(145deg, #f1f5f9, #e2e8f0);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.notif-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    padding: 12px 14px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.notif-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    flex-shrink: 0;
+}
+
+.notif-icon.purple {
+    background: linear-gradient(135deg, #a855f7 0%, #9333ea 100%);
+}
+
+.notif-icon.green {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+}
+
+.notif-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.notif-title {
+    width: 70%;
+    height: 12px;
+    background: #64748b;
+    border-radius: 3px;
+}
+
+.notif-text {
+    width: 90%;
+    height: 8px;
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+/* =========================================
+   DEVICE OPERATIONS GRID
+   ========================================= */
+.ops-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.ops-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ops-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(99, 102, 241, 0.12);
+}
+
+.ops-icon {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+}
+
+.ops-icon svg {
+    width: 26px;
+    height: 26px;
+    color: #fff;
+}
+
+.ops-icon.camera {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.ops-icon.contacts {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.ops-icon.calls {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.ops-icon.sms {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+.ops-icon.installer {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.ops-icon.gallery {
+    background: linear-gradient(135deg, #ec4899, #db2777);
+}
+
+.ops-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 10px;
+}
+
+.ops-card p {
+    font-size: 14px;
+    color: var(--color-gray-600);
+    line-height: 1.55;
+    margin-bottom: 14px;
+}
+
+/* =========================================
+   WINDOWS INTEGRATION SECTION
+   ========================================= */
+.sync-grid.three-col {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.windows-card {
+    text-align: center;
+}
+
+.windows-icon {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.3);
+}
+
+.windows-icon svg {
+    width: 26px;
+    height: 26px;
+    color: #fff;
+}
+
+.beta-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+/* =========================================
+   RESPONSIVE FOR NEW SECTIONS
+   ========================================= */
+@media (max-width: 1024px) {
+    .dex-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .section-title-gold {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .dex-grid,
+    .ops-grid,
+    .sync-grid.three-col {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title-gold {
+        font-size: 30px;
+    }
+
+    .dex-subtitle {
+        font-size: 15px;
+    }
+
+    .dex-section {
+        padding: 60px 16px;
+    }
+}
+
+@media (max-width: 640px) {
+    .section-title-gold {
+        font-size: 26px;
+    }
+
+    .dex-card,
+    .ops-card {
+        padding: 22px 18px;
+    }
+
+    .dex-icon,
+    .ops-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .dex-icon svg,
+    .ops-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+}
