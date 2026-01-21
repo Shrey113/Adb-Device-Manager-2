@@ -112,9 +112,10 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 
 ## 📊 Comparison
 
-| Feature | ADB Device Manager | Vysor | Phone Link |
+| Feature | ADB Device Manager | Vysor Pro version | Link to Windows |
 |--------|:------------------:|:-----:|:----------:|
 | Screen Mirroring | **Ultra-low latency** ✅ | ⚠️ Slower | Good ✅ |
+| Screen off control | ✅ | Limited ⚠️ | ❌ |
 | App-Audio-Only Mirroring | ✅ | ❌ | ✅ |
 | Multi-App Desktop Running | ✅ | ❌ | Limited ⚠️ |
 | Per-App Audio On/Off | ✅ | ❌ | ❌ |
@@ -124,6 +125,8 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 | Remote Camera | ✅ | Limited ⚠️ | ❌ |
 | Android DeX Mode | ✅ | ❌ | ❌ |
 | Bluetooth Audio Pairing | ✅ | ❌ | ✅ |
+| Full control Without ADB | Limited ⚠️ | ❌ | ✅ |
+| Call Audio Get | ❌ | ❌ | ✅ |
 
 ---
 
@@ -131,7 +134,8 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 [escrcpy](https://github.com/viarotel-org/escrcpy)
 
 ---
-
+
+
 
 ## 🔧 Technologies & Dependencies
 
@@ -179,3 +183,4 @@ For more details, visit the [official documentation](https://shrey113.github.io/
 **Made with ❤️ by [Shrey113](https://github.com/Shrey113)**
 
 </div>
+
