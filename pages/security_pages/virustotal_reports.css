@@ -263,6 +263,38 @@ body {
 }
 
 /* ===================================
+   Detection Note - Compact
+   =================================== */
+.detection-note {
+    background: linear-gradient(135deg, #fef3c7 0%, #fef9c3 100%);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    border-left: 4px solid #f59e0b;
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.detection-note p {
+    font-size: 0.9rem;
+    color: #78350f;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.detection-note strong {
+    color: #92400e;
+}
+
+.detection-note code {
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.8rem;
+    color: #b45309;
+    background: rgba(180, 83, 9, 0.1);
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+}
+
+/* ===================================
    Transparency Banner - Attention Grabber
    =================================== */
 .transparency-banner {
@@ -510,6 +542,13 @@ body {
     color: #059669;
     border: 1px solid rgba(16, 185, 129, 0.2);
     box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
+}
+
+.status-badge.warning {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(245, 158, 11, 0.06) 100%);
+    color: #b45309;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.12);
 }
 
 /* Report Link Button */
