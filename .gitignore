@@ -6,6 +6,7 @@
 adb_devices.exe
 adb_devices.iss
 adb_devices_admin.iss
+adb_devices_admin_re_test.iss
 inno_setup_sources.iss.txt
 
 # 🐍 Helper scripts (optional)
