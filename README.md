@@ -138,7 +138,25 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 
 ---
 
+## 🎥 Live Preview: User Favorites
 
+<div align="center">
+
+### **Resizable Scrcpy**
+*(Experience Android like a Desktop App)*
+
+<img src="images/Most_imp/1_Scrcpy_resizable.gif" width="85%" alt="Resizable Scrcpy Demo">
+
+<br><br>
+
+### **Media Sessions**
+*(Control Android Audio directly from Windows)*
+
+<img src="images/Most_imp/2_media_sessions.gif" width="85%" alt="Media Sessions Demo">
+
+</div>
+
+---
 
 ## 🔧 Technologies & Dependencies
 
