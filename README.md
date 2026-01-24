@@ -67,6 +67,7 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 | [Screen Mirroring](docs/adb/screen-mirroring.md) | Mirror Android screen to Windows |
 | [Audio Streaming](docs/adb/audio.md) | Stream device audio to PC |
 | [Input Control](docs/adb/input-control.md) | Keyboard & mouse control |
+| [Scrcpy Control](docs/adb/scrcpy-control.md) | Customize & manage Scrcpy commands |
 | [Android Dex](docs/adb/android-dex.md) | Desktop-style experience |
 | [Desktop Mode](docs/adb/desktop-mode.md) | Multi-app virtual display |
 | [APK Installer](docs/adb/apk-installer.md) | Install apps via ADB |
@@ -89,6 +90,8 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 | [SMS Messages](docs/app/sms.md) | Send/receive SMS |
 | [Device Finder](docs/app/device-finder.md) | Auto-discover devices |
 | [Bluetooth](docs/app/bluetooth.md) | Bluetooth device tools |
+| [Audio Cast Copy](docs/app/audio-cast.md) | Low latency real-time audio casting |
+| [TV Control](docs/app/tv-control.md) | Control Android TV & Cast Media |
 
 ### 🪟 Windows Integration
 
@@ -96,7 +99,6 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 |---------|-------------|
 | [File Sharing](docs/windows/file-sharing.md) | Browser-based file sharing |
 | [Bluetooth Pairing](docs/windows/bluetooth-pairing.md) | Stream audio to Windows |
-| [Text Search](docs/windows/text-search.md) | OCR text capture & search |
 | [Device Finder](docs/windows/device-finder.md) | Auto-discover connected devices |
 
 ### ⌨️ Keyboard Shortcuts
