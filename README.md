@@ -172,6 +172,18 @@ A set of tools and frameworks used for ADB communication, screen mirroring, UI r
 Thanks to **[rom1v](https://github.com/rom1v)** and **[yume-chan](https://github.com/yume-chan)** for their work and insights that helped deepen understanding of **ADB**, **scrcpy**, and broader real-world use cases around Android device management.
 
 ---
+
+## Star History
+
+<a href="https://www.star-history.com/#Shrey113/Adb-Device-Manager-2&type=date&logscale&legend=bottom-right">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Shrey113/Adb-Device-Manager-2&type=date&theme=dark&logscale&legend=bottom-right" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Shrey113/Adb-Device-Manager-2&type=date&logscale&legend=bottom-right" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Shrey113/Adb-Device-Manager-2&type=date&logscale&legend=bottom-right" />
+ </picture>
+</a>
+
+---
 ## 🌐 Official Resources
 
 | 📘 Resource | 🔗 Access |
