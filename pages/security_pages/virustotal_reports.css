@@ -130,137 +130,9 @@ body {
     padding-top: 3rem;
 }
 
-/* ===================================
-   Page Hero - Stunning Header Section
-   =================================== */
-.page-hero {
-    background: linear-gradient(145deg, #1e293b 0%, #0f172a 50%, #1e1b4b 100%);
-    border-radius: var(--radius-xl);
-    margin: 2rem 0;
-    padding: 4rem 3rem;
-    text-align: center;
-    color: #ffffff;
-    position: relative;
-    overflow: hidden;
-    box-shadow: var(--shadow-lg), 0 0 80px rgba(99, 102, 241, 0.12);
-}
-
-/* Decorative mesh gradient background */
-.page-hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background:
-        radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.08) 0%, transparent 50%);
-    animation: meshFloat 20s ease-in-out infinite;
-}
-
-@keyframes meshFloat {
-
-    0%,
-    100% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-
-    50% {
-        transform: translate(-2%, 2%) rotate(1deg);
-    }
-}
-
-/* Subtle grid pattern */
-.page-hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image:
-        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 40px 40px;
-    pointer-events: none;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-}
-
-.hero-icon {
-    width: 88px;
-    height: 88px;
-    margin: 0 auto 2rem;
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    animation: iconPulse 4s ease-in-out infinite;
-}
-
-@keyframes iconPulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    }
-
-    50% {
-        transform: scale(1.03);
-        box-shadow: 0 12px 40px rgba(99, 102, 241, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
-    }
-}
-
-.hero-icon svg {
-    width: 42px;
-    height: 42px;
-    color: rgba(255, 255, 255, 0.95);
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-}
-
-.page-hero h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    letter-spacing: -0.03em;
-    line-height: 1.2;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-}
-
-.hero-subtitle {
-    font-size: 1.15rem;
-    opacity: 0.85;
-    margin-bottom: 2rem;
-    max-width: 540px;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: 400;
-    line-height: 1.7;
-}
 
 
-@keyframes badgeGlow {
 
-    0%,
-    100% {
-        box-shadow: 0 4px 16px rgba(16, 185, 129, 0.15);
-    }
-
-    50% {
-        box-shadow: 0 4px 24px rgba(16, 185, 129, 0.25);
-    }
-}
 
 /* ===================================
    Detection Note - Compact
@@ -291,81 +163,6 @@ body {
     color: #b45309;
     background: rgba(180, 83, 9, 0.1);
     padding: 0.15rem 0.4rem;
-    border-radius: 4px;
-}
-
-/* ===================================
-   Transparency Banner - Attention Grabber
-   =================================== */
-.transparency-banner {
-    display: flex;
-    gap: 1.25rem;
-    align-items: flex-start;
-    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-    border: 1px solid rgba(245, 158, 11, 0.25);
-    border-radius: var(--radius-lg);
-    padding: 1.5rem 1.75rem;
-    margin: 2rem 0;
-    box-shadow: 0 4px 24px rgba(245, 158, 11, 0.1);
-    position: relative;
-    overflow: hidden;
-}
-
-.transparency-banner::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 50%, #f59e0b 100%);
-}
-
-.banner-icon {
-    flex-shrink: 0;
-    width: 48px;
-    height: 48px;
-    background: linear-gradient(145deg, #ffffff 0%, #fef9e6 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
-    border: 1px solid rgba(245, 158, 11, 0.15);
-}
-
-.banner-icon svg {
-    color: #d97706;
-    width: 22px;
-    height: 22px;
-}
-
-.banner-content {
-    flex: 1;
-}
-
-.banner-content strong {
-    display: block;
-    font-size: 1.1rem;
-    color: #92400e;
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.01em;
-    font-weight: 700;
-}
-
-.banner-content p {
-    font-size: 0.95rem;
-    color: #78350f;
-    line-height: 1.7;
-    margin: 0;
-}
-
-.banner-content p strong {
-    display: inline;
-    font-size: inherit;
-    color: #b45309;
-    background: rgba(180, 83, 9, 0.1);
-    padding: 0.1rem 0.4rem;
     border-radius: 4px;
 }
 
@@ -734,36 +531,12 @@ body {
         padding-top: 2rem;
     }
 
-    .page-hero {
-        padding: 2.5rem 1.5rem;
-        margin: 1rem 0;
-        border-radius: var(--radius-lg);
-    }
-
-    .page-hero h1 {
-        font-size: 1.75rem;
-    }
 
     .hero-subtitle {
         font-size: 1rem;
     }
 
-    .hero-icon {
-        width: 68px;
-        height: 68px;
-    }
 
-    .hero-icon svg {
-        width: 32px;
-        height: 32px;
-    }
-
-    .transparency-banner {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 1.5rem 1.25rem;
-    }
 
     .section-container {
         padding: 1.5rem;
@@ -802,9 +575,6 @@ body {
         display: none;
     }
 
-    .page-hero h1 {
-        font-size: 1.4rem;
-    }
 
 }
 
@@ -835,15 +605,7 @@ body {
     }
 }
 
-.page-hero {
-    animation: fadeInUp 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-}
 
-.transparency-banner {
-    animation: fadeInUp 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-    animation-delay: 0.15s;
-    animation-fill-mode: both;
-}
 
 .version-section {
     animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1);
