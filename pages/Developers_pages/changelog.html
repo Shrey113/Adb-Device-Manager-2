@@ -43,7 +43,7 @@
                     performance optimizations, and system-level improvements across ADB Device Manager.
                 </p>
                 <div class="tech-stack-pills">
-                    <span class="pill">Current: v1.2</span>
+                    <span class="pill">Current: v1.3</span>
                     <span class="pill">Production-Ready</span>
                 </div>
                 <!-- Main GitHub Action -->
@@ -62,13 +62,96 @@
 
             <div class="timeline">
 
-                <!-- v1.2 -->
+                <!-- v1.3 -->
                 <div class="timeline-group latest">
                     <div class="timeline-marker"></div>
                     <div class="version-card">
                         <div class="vc-header">
-                            <h2>v1.2</h2>
+                            <h2>v1.3</h2>
                             <span class="tag-badge">LATEST</span>
+                        </div>
+                        <div class="vc-date">February 2026</div>
+
+                        <div class="vc-section">
+                            <h3>📂 Cross-Device File Management</h3>
+                            <ul>
+                                <li>Windows app now provides controlled access to the full file system for the Android
+                                    app.</li>
+                                <li>Users can <strong>approve or reject</strong> file access requests.</li>
+                                <li>Two access modes available: <strong>Read-Only</strong> and <strong>Full
+                                        Control</strong>.</li>
+                            </ul>
+                        </div>
+
+                        <div class="vc-section">
+                            <h3>🔌 USB-Only Full ADB System Support</h3>
+                            <ul>
+                                <li>Full system functionality now works entirely over <strong>USB</strong>.</li>
+                                <li>All <strong>ADB features</strong> and <strong>Desktop / DeX mode</strong> can run
+                                    via USB.</li>
+                                <li>No dependency on Wi-Fi or same network interface when using USB (*For ADB only).
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="vc-section">
+                            <h3>🖥️ Android DeX</h3>
+                            <ul>
+                                <li>Migrated core logic to <strong>Kotlin</strong> for better maintainability.</li>
+                                <li>Added <strong>game controller support</strong>.</li>
+                                <li>Enhanced UI for better DeX management.</li>
+                                <li>Added <strong>“Why this permission is needed”</strong> explanation for each
+                                    permission request.</li>
+                                <li>Created a separate server project for standalone use: <a
+                                        href="https://github.com/Shrey113/Android-Dex" target="_blank"
+                                        style="color: var(--accent-change);">Android-Dex</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="vc-section">
+                            <h3>🐞 Bug Fixes & Improvements</h3>
+                            <ul>
+                                <li><strong>Windows Context Menu:</strong> Fixed issue where <strong>“Share with Android
+                                        Device”</strong> appeared but had no effect (Issue #7).</li>
+                                <li><strong>Android DeX:</strong> Fixed notification remove action not working. Improved
+                                    Windows ↔ Android connection method.</li>
+                                <li><strong>App Connection & Sync:</strong> Improved stability. Fixed notification and
+                                    media control issues caused by Windows IP detection.</li>
+                                <li>⚠️ Known issue: VMware Network Adapter <strong>VMnet8 / VMnet</strong> may still
+                                    cause connection problems (Planned to be fully resolved in the next version).</li>
+                            </ul>
+                        </div>
+
+                        <div class="vc-section">
+                            <h3>🔐 User Trust & Permission Control</h3>
+                            <ul>
+                                <li>During ADB installation, users can now choose: Install <strong>with all permissions
+                                        granted</strong> or Install <strong>without auto-granting permissions</strong>.
+                                </li>
+                                <li>Improves transparency and user control over permissions.</li>
+                            </ul>
+                        </div>
+
+                        <div class="vc-actions">
+                            <div class="contributor-meta">
+                                <span>Released by</span>
+                                <a href="https://github.com/Shrey113" target="_blank"
+                                    class="contributor-link">Shrey113</a>
+                            </div>
+                            <a href="https://github.com/Shrey113/Adb-Device-Manager-2/releases/tag/ADB-Device-Manager-v.1.3"
+                                target="_blank" class="gh-release-btn">
+                                View Release 1.3 &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- v1.2 -->
+                <div class="timeline-group">
+                    <div class="timeline-marker"></div>
+                    <div class="version-card">
+                        <div class="vc-header">
+                            <h2>v1.2</h2>
                         </div>
                         <div class="vc-date">February 2026</div>
 
@@ -114,14 +197,6 @@
                                 <li><strong>Overall Improvements:</strong> Improved stability, performance, and cleaner
                                     internal architecture.</li>
                             </ul>
-                        </div>
-
-                        <div class="vc-section">
-                            <h3>🛡️ Security & Transparency</h3>
-                            <p>For transparency and user safety, all release files are scanned on VirusTotal. You can
-                                verify each file using the links <a
-                                    href="https://shrey113.github.io/Adb-Device-Manager-2/pages/security_pages/virustotal_reports.html"
-                                    style="color: var(--accent-change);">Click to go</a>.</p>
                         </div>
 
                         <div class="vc-actions">
