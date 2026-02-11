@@ -15,13 +15,15 @@
   [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](#)
 </div>
 
----
+--- 
 
 ## 🚀 Quick Start
 
 | Platform | Download |
 |----------|----------|
 | **Windows** | [Download →](https://shrey113.github.io/Adb-Device-Manager-2/windows_download.html) |
+| **Linux** | [Coming Soon] | 
+| **Mac** | [Coming Soon] |
 | **Android** | [Download →](https://shrey113.github.io/Adb-Device-Manager-2/android_download.html) |
 | **Full Website** | [Visit WebSite →](https://shrey113.github.io/Adb-Device-Manager-2/) |
 | **Installation** | [Installation →](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html) |
