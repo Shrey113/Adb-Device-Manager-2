@@ -22,7 +22,7 @@
 | Platform | Download |
 |----------|----------|
 | **Windows** | [Download →](https://shrey113.github.io/Adb-Device-Manager-2/windows_download.html) |
-| **Linux** | [Coming Soon] | 
+| **Linux** | [Download →](https://github.com/Shrey113/Adb-Device-Manager-2/releases/download/ADB-Device-Manager-v.1.4/ADB_Device_Manager_Linux.zip) |
 | **Mac** | [Coming Soon] |
 | **Android** | [Download →](https://shrey113.github.io/Adb-Device-Manager-2/android_download.html) |
 | **Full Website** | [Visit WebSite →](https://shrey113.github.io/Adb-Device-Manager-2/) |
@@ -94,6 +94,7 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 | [Bluetooth](docs/app/bluetooth.md) | Bluetooth device tools |
 | [Audio Cast Copy](docs/app/audio-cast.md) | Low latency real-time audio casting |
 | [TV Control](docs/app/tv-control.md) | Control Android TV & Cast Media |
+| [Access Windows/Linux Files](docs/app/access-windows-files.md) | Access Windows/Linux file from Android (Read/Write) |
 
 ### 🪟 Windows Integration
 
