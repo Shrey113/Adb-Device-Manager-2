@@ -43,7 +43,7 @@
                     performance optimizations, and system-level improvements across ADB Device Manager.
                 </p>
                 <div class="tech-stack-pills">
-                    <span class="pill">Current: v1.3</span>
+                    <span class="pill">Current: v1.5</span>
                     <span class="pill">Production-Ready</span>
                 </div>
                 <!-- Main GitHub Action -->
@@ -62,13 +62,148 @@
 
             <div class="timeline">
 
-                <!-- v1.3 -->
+                <!-- v1.5 -->
                 <div class="timeline-group latest">
                     <div class="timeline-marker"></div>
                     <div class="version-card">
                         <div class="vc-header">
-                            <h2>v1.3</h2>
+                            <h2>v1.5</h2>
                             <span class="tag-badge">LATEST</span>
+                        </div>
+                        <div class="vc-date">February 2026</div>
+
+                        <div class="vc-section">
+                            <h3>📱 Android Stream (Non-ADB* Control Architecture same as Scrcpy)</h3>
+                            <p style="margin-bottom: 10px;">Version 1.5 introduces a new Android-side streaming engine
+                                called <strong>Android Stream</strong>. Unlike traditional ADB-based control, this
+                                system operates independently of ADB and provides a full real-time streaming and control
+                                pipeline.</p>
+                            <h4 style="margin-top: 16px; margin-bottom: 8px;">Key Capabilities</h4>
+                            <ul>
+                                <li>Real-time screen capture using <strong>MediaProjection API</strong></li>
+                                <li>Internal audio capture (Android 11+)</li>
+                                <li>Hardware-accelerated H.264 video encoding</li>
+                                <li>Low-latency audio/video transmission</li>
+                                <li>Full remote input control via <strong>Accessibility Service API</strong></li>
+                            </ul>
+                            <p style="margin-top: 12px; margin-bottom: 8px;">This allows:</p>
+                            <ul>
+                                <li>Screen streaming</li>
+                                <li>Audio streaming</li>
+                                <li>Video decoding on Windows</li>
+                                <li>Remote touch and key injection</li>
+                                <li>App-level interaction (ADB Required)</li>
+                            </ul>
+                            <p style="margin-top: 12px;">All handled directly from the Android side without requiring
+                                ADB* to remain connected.</p>
+                        </div>
+
+                        <div class="vc-section">
+                            <h3>🔗 Separate Lightweight Project for Android Stream</h3>
+                            <ul>
+                                <li>If you prefer using only the streaming component as a standalone application, you
+                                    can check out the dedicated project here: <a
+                                        href="https://github.com/Shrey113/App-Scrcpy" target="_blank"
+                                        style="color: var(--accent-change);">App-Scrcpy</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="vc-section">
+                            <h3>🔧 Backend &amp; Network Improvements</h3>
+                            <ul>
+                                <li>Improved device IP detection</li>
+                                <li>Fixed VMware network IP debugging issues</li>
+                            </ul>
+                        </div>
+
+                        <div class="vc-section">
+                            <h3>⚡ Performance Improvements</h3>
+                            <ul>
+                                <li>Improved connection stability</li>
+                                <li>Faster device handshake and session initialization</li>
+                            </ul>
+                        </div>
+
+                        <div class="vc-actions">
+                            <div class="contributor-meta">
+                                <span>Released by</span>
+                                <a href="https://github.com/Shrey113" target="_blank"
+                                    class="contributor-link">Shrey113</a>
+                            </div>
+                            <a href="https://github.com/Shrey113/Adb-Device-Manager-2/releases/tag/ADB-Device-Manager-v.1.5"
+                                target="_blank" class="gh-release-btn">
+                                View Release 1.5 &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- v1.4 -->
+                <div class="timeline-group">
+                    <div class="timeline-marker"></div>
+                    <div class="version-card">
+                        <div class="vc-header">
+                            <h2>v1.4</h2>
+                        </div>
+                        <div class="vc-date">February 2026</div>
+
+                        <div class="vc-section">
+                            <h3>🔄 Linux Migration Update</h3>
+                            <p style="margin-bottom: 10px;">This release completes the migration of the project to a
+                                Linux environment. The codebase has been updated and optimized to ensure proper
+                                compatibility and stable performance on Linux systems.</p>
+                        </div>
+
+                        <div class="vc-section">
+                            <h3>✅ Changes</h3>
+                            <ul>
+                                <li>Migrated core application logic to Linux.</li>
+                                <li>Updated file path and environment handling.</li>
+                                <li>Improved ADB integration on Linux.</li>
+                                <li>Removed Windows-specific dependencies.</li>
+                            </ul>
+                        </div>
+
+                        <div class="vc-section">
+                            <h3>⚠️ Important Note</h3>
+                            <ul>
+                                <li>This is the first official Linux version of the project.</li>
+                                <li>Some features may still have minor bugs during the transition from Windows to Linux.
+                                </li>
+                                <li>Please report any issues to help improve stability in future releases.</li>
+                            </ul>
+                        </div>
+
+                        <div class="vc-section">
+                            <h3>🧪 Testing</h3>
+                            <ul>
+                                <li>Verified device detection and ADB communication.</li>
+                                <li>Tested across Linux systems for consistent performance from VM.</li>
+                            </ul>
+                            <p style="margin-top: 12px;">This version focuses primarily on Linux compatibility and
+                                foundational stability.</p>
+                        </div>
+
+                        <div class="vc-actions">
+                            <div class="contributor-meta">
+                                <span>Released by</span>
+                                <a href="https://github.com/Shrey113" target="_blank"
+                                    class="contributor-link">Shrey113</a>
+                            </div>
+                            <a href="https://github.com/Shrey113/Adb-Device-Manager-2/releases/tag/ADB-Device-Manager-v.1.4"
+                                target="_blank" class="gh-release-btn">
+                                View Release 1.4 &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- v1.3 -->
+                <div class="timeline-group">
+                    <div class="timeline-marker"></div>
+                    <div class="version-card">
+                        <div class="vc-header">
+                            <h2>v1.3</h2>
                         </div>
                         <div class="vc-date">February 2026</div>
 
