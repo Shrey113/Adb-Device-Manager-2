@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Installation Guide - ADB Device Manager</title>
+    <meta name="description" content="Step-by-step installation guide for ADB Device Manager on Windows">
+    <link rel="stylesheet" href="../head.css">
+    <link rel="stylesheet" href="interface-core.css">
+    <link rel="stylesheet" href="Full-setup.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <picture>
+                    <source srcset="../../images/app_webp_50.webp" type="image/webp">
+                    <img src="../../images/app_webp_100.webp" class="logo-icon" alt="ADB Device Manager" width="49"
+                        height="49" loading="lazy">
+                </picture>
+                <span class="logo-text">ADB Device Manager</span>
+            </div>
+
+            <nav class="nav">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../../features.html" class="nav-link">Features</a>
+                <a href="../../Docs.html" class="nav-link">Docs</a>
+                <a href="../../support.html" class="nav-link">Support</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-container" style="padding: 0px;padding-top: 60px;">
+        <div class="content-wrapper">
+            <!-- Wizard Card -->
+            <div class="wizard-container">
+                <div class="wizard-header">
+                    <div style="display: flex; align-items: center; gap: 16px;">
+                        <button class="back-button" onclick="history.back()"
+                            style="position: static; transform: none; margin-bottom: 0; padding: 8px 12px; font-size: 14px; border: none; background: #f3f4f6; color: #4b5563;">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                style="width: 16px; height: 16px;">
+                                <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            Back
+                        </button>
+                        <h2 class="step-title" id="flow-title" style="font-size: 20px; color: #1a1a1a; margin: 0;">
+                            Windows Installation Guide</h2>
+                    </div>
+                    <span class="step-indicator" id="step-count">Step 1 of 8</span>
+                </div>
+
+                <div class="step-content">
+                    <div class="step-info">
+                        <h1 class="step-title" id="step-title">Downloading Installer...</h1>
+                        <p class="step-description" id="step-desc">Please wait while we prepare the instructions.</p>
+
+                        <div id="action-container">
+                            <!-- Helper buttons will be injected here -->
+                        </div>
+                    </div>
+
+                    <div class="step-image-container">
+                        <img src="" alt="Step Preview" class="step-image" id="step-img">
+                    </div>
+                </div>
+
+                <div class="wizard-footer">
+                    <button class="nav-btn btn-prev" id="btn-prev" onclick="prevStep()" disabled>Previous</button>
+                    <button class="nav-btn btn-next" id="btn-next" onclick="nextStep()">Next Step</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data & Logic -->
+    <script>
+        // Sample Data embedded directly
+        const windows_data = {
+            "platform": "windows",
+            "flow_title": "Windows Installation Guide",
+            "flow_description": "Follow the steps below to install and launch ADB Device Manager on your Windows PC.",
+            "steps": [
+                {
+                    "id": "win_step_1",
+                    "title": "Download ADB Device Manager for Windows",
+                    "description": "Download the latest Windows installer (.exe) for ADB Device Manager from the official GitHub releases page.",
+                    "download_button": true,
+                    "download": {
+                        "label": "Download Windows Installer",
+                        "type": "direct_latest_from_github",
+                        "base_url": "https://github.com/Shrey113/Adb-Device-Manager-2/releases/latest/download/ADB_Device_Manager_PC_Setup.exe",
+                        "file_name": "ADB_Device_Manager_PC_Setup.exe",
+                        "auto_resolve_latest": true
+                    },
+                    "image": "windows_steps/win_step_1.png"
+                },
+                {
+                    "id": "win_step_2",
+                    "title": "Open the Downloaded File",
+                    "description": "Locate the downloaded installer file and double-click it to start the setup process.",
+                    "download_button": false,
+                    "image": "windows_steps/win_step_2.png"
+                },
+                {
+                    "id": "win_step_3",
+                    "title": "Click 'More Info' on Windows SmartScreen",
+                    "description": "If Windows displays a SmartScreen warning, click on 'More info' to proceed with running the installer.",
+                    "download_button": false,
+                    "image": "windows_steps/win_step_3.png"
+                },
+                {
+                    "id": "win_step_4",
+                    "title": "Click 'Run Anyway'",
+                    "description": "After expanding the SmartScreen details, click 'Run anyway' to continue launching the installer.",
+                    "download_button": false,
+                    "image": "windows_steps/win_step_4.png"
+                },
+                {
+                    "id": "win_step_5",
+                    "title": "Allow Administrator Permission",
+                    "description": "When prompted by User Account Control (UAC), click 'Yes' to grant administrator permissions and continue installation.",
+                    "download_button": false,
+                    "image": "windows_steps/win_step_5.png"
+                },
+                {
+                    "id": "win_step_6",
+                    "title": "Choose Installation Options",
+                    "description": "Click 'Next', optionally check 'Create a desktop shortcut', and continue by clicking 'Next' again.",
+                    "download_button": false,
+                    "image": "windows_steps/win_step_6.png"
+                },
+                {
+                    "id": "win_step_7",
+                    "title": "Click Install",
+                    "description": "Review the installation settings and click the 'Install' button to begin installing ADB Device Manager.",
+                    "download_button": false,
+                    "image": "windows_steps/win_step_7.png"
+                },
+                {
+                    "id": "win_step_8",
+                    "title": "Finish and Launch the Application",
+                    "description": "After installation completes, click 'Finish' to launch ADB Device Manager. The application will now open and be ready to use.",
+                    "download_button": false,
+                    "image": "windows_steps/win_step_8.png"
+                }
+            ]
+        };
+
+        // State
+        let currentStepIndex = 0;
+        const totalSteps = windows_data.steps.length;
+
+        // Elements
+        const elFlowTitle = document.getElementById('flow-title');
+        const elStepTitle = document.getElementById('step-title');
+        const elStepDesc = document.getElementById('step-desc');
+        const elStepImg = document.getElementById('step-img');
+        const elStepCount = document.getElementById('step-count');
+        const elActionContainer = document.getElementById('action-container');
+        const btnPrev = document.getElementById('btn-prev');
+        const btnNext = document.getElementById('btn-next');
+
+        // Init
+        function initWizard() {
+            elFlowTitle.textContent = windows_data.flow_title;
+            renderStep(0);
+        }
+
+        // Render Step
+        function renderStep(index) {
+            const step = windows_data.steps[index];
+
+            // Text Content
+            elStepTitle.textContent = step.title;
+            elStepDesc.textContent = step.description;
+            elStepCount.textContent = `Step ${index + 1} of ${totalSteps}`;
+
+            // Image
+            // We assume images are relative to the current folder or handled by the server. 
+            // Since the HTML is in Download_Helper/, and images are in Download_Helper/windows_steps/...
+            // The JSON says "windows_steps/win_step_1.png", which matches perfectly.
+            elStepImg.src = step.image;
+            elStepImg.alt = step.title;
+
+            // Actions (Download Button)
+            elActionContainer.innerHTML = ''; // Clear previous
+            if (step.download_button && step.download) {
+                const btn = document.createElement('a');
+                btn.className = 'download-btn';
+                btn.href = step.download.base_url; // Direct link for now, logic below
+                btn.target = '_blank';
+                btn.innerHTML = `
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    ${step.download.label}
+                `;
+                elActionContainer.appendChild(btn);
+            }
+
+            // Navigation Buttons State
+            btnPrev.disabled = index === 0;
+
+            if (index === totalSteps - 1) {
+                btnNext.textContent = 'Finish Setup';
+                btnNext.classList.add('finish');
+            } else {
+                btnNext.textContent = 'Next Step';
+                btnNext.classList.remove('finish');
+            }
+        }
+
+        // Navigation Handlers
+        function nextStep() {
+            if (currentStepIndex < totalSteps - 1) {
+                currentStepIndex++;
+                renderStep(currentStepIndex);
+            } else {
+                // Finish action
+                alert("Setup Complete! You can now use ADB Device Manager.");
+                window.location.href = '../../index.html'; // Go home or wherever
+            }
+        }
+
+        function prevStep() {
+            if (currentStepIndex > 0) {
+                currentStepIndex--;
+                renderStep(currentStepIndex);
+            }
+        }
+
+        // Keyboard Navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextStep();
+            if (e.key === 'ArrowLeft') prevStep();
+        });
+
+        // Initialize
+        initWizard();
+
+    </script>
+</body>
+
+</html>

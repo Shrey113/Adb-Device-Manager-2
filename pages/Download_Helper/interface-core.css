@@ -1,0 +1,316 @@
+/* ================================================
+   ADB Device Manager - Interface Core Styles
+   Clean, minimal, professional SaaS design
+   ================================================ */
+
+/* === Reset & Base === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+    background: #f8f9fa;
+    color: #1a1a1a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* === Page Container === */
+.page-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 20px 40px;
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+}
+
+/* === Typography === */
+.page-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+
+/* === Header Wrapper === */
+.page-header-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    /* Match card container width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* === Back Button === */
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #FFFFFF;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    color: #64748b;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+
+    /* Position absolutely to the left of the centered title */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.back-button:hover {
+    background: #f8f9fa;
+    border-color: #c7c9cc;
+    color: #1a1a1a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.back-button:active {
+    transform: translateY(-50%) scale(0.98);
+}
+
+.back-button svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* === Card Container === */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* === Platform Cards (Page 1) === */
+.platform-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 32px;
+    background: #FFFFFF;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 90px;
+    position: relative;
+}
+
+.platform-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border-color: #c7c9cc;
+    transform: translateY(-1px);
+}
+
+.platform-card:active {
+    transform: scale(0.98);
+}
+
+.platform-card.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #fafafa;
+}
+
+.platform-card.disabled:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: #e5e7eb;
+}
+
+.platform-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+}
+
+.platform-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #1a1a1a;
+    letter-spacing: -0.2px;
+}
+
+.coming-soon-badge {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fef3c7;
+    color: #92400e;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* === Setup Cards (Page 2) === */
+/* === Setup Cards (Page 2) === */
+.setup-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 32px;
+    background: #FFFFFF;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 90px;
+    position: relative;
+}
+
+.setup-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    border-color: #c7c9cc;
+    transform: translateY(-1px);
+}
+
+.setup-card:active {
+    transform: scale(0.98);
+}
+
+.setup-icon-img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.recommended-badge {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.setup-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #1a1a1a;
+    letter-spacing: -0.2px;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .page-header-wrapper {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+
+    .back-button {
+        position: static;
+        transform: none;
+        margin-bottom: 0;
+    }
+
+    .back-button:active {
+        transform: scale(0.98);
+    }
+
+    .page-title {
+        font-size: 28px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .card-container {
+        max-width: 100%;
+    }
+
+    .platform-card,
+    .setup-card {
+        padding: 20px 24px;
+        height: 80px;
+    }
+
+    .platform-icon,
+    .setup-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .setup-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .platform-name,
+    .setup-name {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-wrapper {
+        gap: 40px;
+    }
+
+    .page-title {
+        font-size: 24px;
+    }
+
+    .platform-card,
+    .setup-card {
+        padding: 18px 20px;
+        height: 72px;
+        gap: 16px;
+    }
+
+    .platform-icon,
+    .setup-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .setup-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .platform-name,
+    .setup-name {
+        font-size: 15px;
+    }
+}

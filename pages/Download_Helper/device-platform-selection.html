@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Computer OS - ADB Device Manager</title>
+    <meta name="description" content="Select your computer's operating system">
+    <link rel="stylesheet" href="../head.css">
+    <link rel="stylesheet" href="interface-core.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <picture>
+                    <source srcset="../../images/app_webp_50.webp" type="image/webp">
+                    <img src="../../images/app_webp_100.webp" class="logo-icon" alt="ADB Device Manager" width="49"
+                        height="49" loading="lazy">
+                </picture>
+                <span class="logo-text">ADB Device Manager</span>
+            </div>
+
+            <nav class="nav">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../../features.html" class="nav-link">Features</a>
+                <a href="../../Docs.html" class="nav-link">Docs</a>
+                <a href="../../support.html" class="nav-link">Support</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-container">
+        <div class="content-wrapper">
+            <h1 class="page-title">Choose Your Computer OS</h1>
+
+            <div class="card-container">
+                <div class="platform-card" data-platform="windows" onclick="selectPlatform('windows')">
+                    <img src="Img/ic_windows.png" alt="Windows" class="platform-icon">
+                    <span class="platform-name">Windows</span>
+                </div>
+
+                <div class="platform-card" data-platform="linux" onclick="selectPlatform('linux')">
+                    <img src="Img/ic_linux.png" alt="Linux" class="platform-icon">
+                    <span class="platform-name">Linux</span>
+                </div>
+
+                <div class="platform-card disabled" data-platform="macos">
+                    <img src="Img/ic_mac.png" alt="macOS" class="platform-icon">
+                    <span class="platform-name">macOS</span>
+                    <span class="coming-soon-badge">Coming Soon</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="interaction-controller.js"></script>
+</body>
+
+</html>

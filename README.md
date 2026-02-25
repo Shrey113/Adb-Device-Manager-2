@@ -35,16 +35,12 @@
 
 ADB Device Manager lets you — using two modes (ADB Mode & App Mode) — do things like:
 
-- Mirror your Android screen to Windows
-- Stream audio from device to PC
+- Mirror your Android screen Or audio to Windows
 - Control apps, notifications, calls & SMS
-- Run Android in desktop-style mode
 - Transfer files, browse photos, manage contacts
-- Connect via USB, Wi-Fi ADB, or LAN app mode
 
 ### 🔐 Security & Privacy
 
-- **Fully offline operation** — no internet connection required after installation
 - **No data collection** — we don't track, store, or transmit your personal information
 - **Local network only** — all communication stays within your private network
 - [VirusTotal Reports (For End Users) →](https://shrey113.github.io/Adb-Device-Manager-2/pages/security_pages/virustotal_reports.html) 
@@ -83,6 +79,7 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 
 | Feature | Description |
 |---------|-------------|
+| [Android Streaming](docs/app/android-streaming.md) | Mirror Android screen to Windows |
 | [Media Control](docs/app/media-control.md) | Control music playback |
 | [Notifications](docs/app/notifications.md) | Real-time notification sync |
 | [Photo Gallery](docs/app/photo-gallery.md) | Browse photos wirelessly |

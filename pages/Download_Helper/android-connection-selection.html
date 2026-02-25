@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Android Setup Type - ADB Device Manager</title>
+    <meta name="description" content="Select your Android connection method">
+    <link rel="stylesheet" href="../head.css">
+    <link rel="stylesheet" href="interface-core.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <picture>
+                    <source srcset="../../images/app_webp_50.webp" type="image/webp">
+                    <img src="../../images/app_webp_100.webp" class="logo-icon" alt="ADB Device Manager" width="49"
+                        height="49" loading="lazy">
+                </picture>
+                <span class="logo-text">ADB Device Manager</span>
+            </div>
+
+            <nav class="nav">
+                <a href="../../index.html" class="nav-link">Home</a>
+                <a href="../../features.html" class="nav-link">Features</a>
+                <a href="../../Docs.html" class="nav-link">Docs</a>
+                <a href="../../support.html" class="nav-link">Support</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-container">
+        <div class="content-wrapper">
+            <div class="page-header-wrapper">
+                <button class="back-button" onclick="goBack()">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Back
+                </button>
+
+                <h1 class="page-title">Choose Android Setup Type</h1>
+            </div>
+
+            <div class="card-container">
+                <div class="setup-card recommended-card" data-setup="adb" onclick="selectSetup('adb')">
+                    <img src="Img/ic_android.png" alt="Android Icon" class="setup-icon-img">
+                    <span class="setup-name">Android with ADB</span>
+                    <span class="recommended-badge">Recommended</span>
+                </div>
+
+                <div class="setup-card" data-setup="app-only" onclick="selectSetup('app-only')">
+                    <img src="Img/ic_android.png" alt="Android Icon" class="setup-icon-img">
+                    <span class="setup-name">Android with App Only</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="interaction-controller.js"></script>
+</body>
+
+</html>
