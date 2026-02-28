@@ -22,7 +22,7 @@
 | Platform | Download |
 |----------|----------|
 | **Windows** | [Download →](https://shrey113.github.io/Adb-Device-Manager-2/windows_download.html) |
-| **Linux** | [Coming Soon]  |
+| **Linux** | [Coming Soon] |
 | **Mac** | [Coming Soon] |
 | **Android** | [Download →](https://shrey113.github.io/Adb-Device-Manager-2/android_download.html) |
 | **Full Website** | [Visit WebSite →](https://shrey113.github.io/Adb-Device-Manager-2/) |
