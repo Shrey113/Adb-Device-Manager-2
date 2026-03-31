@@ -175,13 +175,8 @@ Thanks to **[rom1v](https://github.com/rom1v)** and **[yume-chan](https://github
 
 ## Star History
 
-<a href="https://www.star-history.com/#Shrey113/Adb-Device-Manager-2&type=date&logscale&legend=bottom-right">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Shrey113/Adb-Device-Manager-2&type=date&theme=dark&logscale&legend=bottom-right" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Shrey113/Adb-Device-Manager-2&type=date&logscale&legend=bottom-right" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Shrey113/Adb-Device-Manager-2&type=date&logscale&legend=bottom-right" />
- </picture>
-</a>
+[![Star History Chart](https://api.star-history.com/image?repos=Shrey113/Adb-Device-Manager-2&type=timeline&legend=bottom-right)](https://www.star-history.com/?repos=Shrey113%2FAdb-Device-Manager-2&type=timeline&legend=bottom-right)
+
 
 ---
 ## 🌐 Official Resources
