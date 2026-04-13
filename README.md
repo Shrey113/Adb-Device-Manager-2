@@ -29,6 +29,15 @@
 | **Installation** | [Installation →](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html) |
 | **Developers** | [Visit For Developers →](https://shrey113.github.io/Adb-Device-Manager-2/pages/Developers.html) |
 
+### For Android Dex (separate project)
+
+| Platform | Download |
+|----------|----------|
+| **Project** | [Visit project →](https://github.com/Shrey113/Android-Dex) |
+| **Windows** | [Download →](https://github.com/Shrey113/Android-Dex/releases/latest/download/android_dex_win.zip) |
+| **Linux** | [Download →](https://github.com/Shrey113/Android-Dex/releases/latest/download/android_dex_linux.tar.gz) |
+| **Mac** | [Coming Soon] |
+
 ---
 
 ## ⚡ TL;DR (What This App Does)
