@@ -25,19 +25,20 @@
 | **Linux** | [Coming Soon] |
 | **Mac** | [Coming Soon] |
 | **Android** | [Download →](https://shrey113.github.io/Adb-Device-Manager-2/android_download.html) |
+
+### Website
+| Pages | Visit |
+|----------|----------|
 | **Full Website** | [Visit WebSite →](https://shrey113.github.io/Adb-Device-Manager-2/) |
 | **Installation** | [Installation →](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html) |
 | **Developers** | [Visit For Developers →](https://shrey113.github.io/Adb-Device-Manager-2/pages/Developers.html) |
 
-### For Android Dex (separate project)
+### Separate Projects
 
-| Platform | Download |
+| Projects | Visit |
 |----------|----------|
-| **Project** | [Visit project →](https://github.com/Shrey113/Android-Dex) |
-| **Windows** | [Download →](https://github.com/Shrey113/Android-Dex/releases/latest/download/android_dex_win.zip) |
-| **Linux** | [Download →](https://github.com/Shrey113/Android-Dex/releases/latest/download/android_dex_linux.tar.gz) |
-| **Mac** | [Coming Soon] |
-
+| **Android-Dex** | [Visit project →](https://github.com/Shrey113/Android-Dex) |
+| **App-Scrcpy** | [Visit project →](https://github.com/Shrey113/App-Scrcpy) |
 ---
 
 ## ⚡ TL;DR (What This App Does)
@@ -48,22 +49,13 @@ ADB Device Manager lets you — using two modes (ADB Mode & App Mode) — do thi
 - Control apps, notifications, calls & SMS
 - Transfer files, browse photos, manage contacts
 
-### 🔐 Security & Privacy
-
-- **No data collection** — we don't track, store, or transmit your personal information
-- **Local network only** — all communication stays within your private network
-- [VirusTotal Reports (For End Users) →](https://shrey113.github.io/Adb-Device-Manager-2/pages/security_pages/virustotal_reports.html) 
-
-
 ---
 
 ## ✨ Overview & Documentation
 
 ADB Device Manager offers **two powerful modes** that work independently or together:
 
-<div align="center">
-  <img src="images/Overview_img.png" width="75%" alt="Architecture Diagram"/>
-</div>
+
 
 
 ### 🧩 ADB Mode  
@@ -184,8 +176,13 @@ Thanks to **[rom1v](https://github.com/rom1v)** and **[yume-chan](https://github
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/image?repos=Shrey113/Adb-Device-Manager-2&type=timeline&legend=bottom-right)](https://www.star-history.com/?repos=Shrey113%2FAdb-Device-Manager-2&type=timeline&legend=bottom-right)
-
+<a href="https://www.star-history.com/?repos=Shrey113%2FAdb-Device-Manager-2&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=Shrey113/Adb-Device-Manager-2&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=Shrey113/Adb-Device-Manager-2&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=Shrey113/Adb-Device-Manager-2&type=date&legend=top-left" />
+ </picture>
+</a>
 
 ---
 ## 🌐 Official Resources
