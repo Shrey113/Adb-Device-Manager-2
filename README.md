@@ -1,68 +1,82 @@
 <div align="center">
-  <img src="images/app_png.png" alt="ADB Device Manager" width="120"/>
+  <img src="images/app_png.png" alt="ADB Device Manager Logo" width="120" style="border-radius: 20%; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"/>
 
   # ADB Device Manager
 
   **Connect Android & Windows into one seamless control system**
 
-  Built for power users, developers, and Android enthusiasts
+  Built for power users, developers, and Android enthusiasts to bridge the gap between desktop and mobile ecosystems.
 
-  <!-- Tech Badges -->
-  [![Flutter](https://img.shields.io/badge/Flutter-02569B?logo=flutter&logoColor=fff)](#)
-  [![Kotlin](https://img.shields.io/badge/Kotlin-%237F52FF.svg?logo=kotlin&logoColor=white)](#)
-  [![Android](https://img.shields.io/badge/Android-3DDC84?logo=android&logoColor=white)](#)
-  [![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff)](#)
-  [![Windows](https://custom-icon-badges.demolab.com/badge/Windows-0078D6?logo=windows11&logoColor=white)](#)
+  <!-- Tech Stack & Project Badges -->
+  <p align="center">
+    <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=fff" alt="Flutter" />
+    <img src="https://img.shields.io/badge/Kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin" />
+    <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android" />
+    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=fff" alt="Python" />
+    <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows11&logoColor=white" alt="Windows" />
+  </p>
+  
+  <p align="center">
+    <a href="https://github.com/Shrey113/Adb-Device-Manager-2/releases">
+      <img src="https://img.shields.io/github/v/release/Shrey113/Adb-Device-Manager-2?style=flat-square&color=33CA56" alt="Latest Release" />
+    </a>
+    <a href="https://github.com/Shrey113/Adb-Device-Manager-2/stargazers">
+      <img src="https://img.shields.io/github/stars/Shrey113/Adb-Device-Manager-2?style=flat-square&logo=github" alt="GitHub Stars" />
+    </a>
+    <a href="https://github.com/Shrey113/Adb-Device-Manager-2/issues">
+      <img src="https://img.shields.io/github/issues/Shrey113/Adb-Device-Manager-2?style=flat-square&color=red" alt="GitHub Issues" />
+    </a>
+    <a href="https://github.com/Shrey113/Adb-Device-Manager-2/blob/main/LICENSE">
+      <img src="https://img.shields.io/github/license/Shrey113/Adb-Device-Manager-2?style=flat-square&color=blue" alt="License" />
+    </a>
+  </p>
 </div>
 
---- 
-
-## 🚀 Quick Start
-
-| Platform | Download |
-|----------|----------|
-| **Windows** | [Download →](https://shrey113.github.io/Adb-Device-Manager-2/windows_download.html) |
-| **Linux** | [Coming Soon] |
-| **Mac** | [Coming Soon] |
-| **Android** | [Download →](https://shrey113.github.io/Adb-Device-Manager-2/android_download.html) |
-
-### Website
-| Pages | Visit |
-|----------|----------|
-| **Full Website** | [Visit WebSite →](https://shrey113.github.io/Adb-Device-Manager-2/) |
-| **Installation** | [Installation →](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html) |
-| **Developers** | [Visit For Developers →](https://shrey113.github.io/Adb-Device-Manager-2/pages/Developers.html) |
-
-### Separate Projects
-
-| Projects | Visit |
-|----------|----------|
-| **Android-Dex** | [Visit project →](https://github.com/Shrey113/Android-Dex) |
-| **App-Scrcpy** | [Visit project →](https://github.com/Shrey113/App-Scrcpy) |
 ---
 
-## ⚡ TL;DR (What This App Does)
 
-ADB Device Manager lets you — using two modes (ADB Mode & App Mode) — do things like:
+### Quick Start & Downloads
+| Platform | Download Link | Status |
+| :--- | :--- | :--- |
+| Windows | [Download Installer →](https://shrey113.github.io/Adb-Device-Manager-2/windows_download.html) | Ready |
+| Android | [Download APK →](https://shrey113.github.io/Adb-Device-Manager-2/android_download.html) | Ready |
+| Linux | *Coming Soon* | Planning |
+| macOS | *Coming Soon* | Planning |
 
-- Mirror your Android screen Or audio to Windows
-- Control apps, notifications, calls & SMS
-- Transfer files, browse photos, manage contacts
+### Official Website & Portals
+| Section | Link |
+| :--- | :--- |
+| Official Website | [Visit Website →](https://shrey113.github.io/Adb-Device-Manager-2/) |
+| Documentation | [Read Installation Docs →](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html) |
+| Developer Portal | [Visit Developer Hub →](https://shrey113.github.io/Adb-Device-Manager-2/pages/Developers.html) |
+
+### Related Ecosystem Projects
+| Project | Repository Link |
+| :--- | :--- |
+| Android-Dex | [Visit Project →](https://github.com/Shrey113/Android-Dex) |
+| App-Scrcpy | [Visit Project →](https://github.com/Shrey113/App-Scrcpy) |
 
 ---
 
-## ✨ Overview & Documentation
+## Core Features
 
-ADB Device Manager offers **two powerful modes** that work independently or together:
+ADB Device Manager brings Android control directly to your desktop. Using two connection modes (ADB Mode and App Mode), you can:
 
+*   **Mirror & Stream**: Mirror your Android screen or stream device audio directly to Windows with ultra-low latency.
+*   **Control**: Control apps, notifications, answer calls, and send SMS using your PC keyboard and mouse.
+*   **Transfer & Share**: Wirelessly transfer files, browse photo galleries, and manage device contacts.
 
+---
 
+## Deep Dive: ADB & App Modes
 
-### 🧩 ADB Mode  
-*System-level control via USB/Wireless debugging*
+ADB Device Manager is designed around two modular modes that work seamlessly together or independently:
+
+### ADB Mode
+> **System-level control over USB or Wireless Debugging.**
 
 | Feature | Description |
-|---------|-------------|
+| :--- | :--- |
 | [Screen Mirroring](docs/adb/screen-mirroring.md) | Mirror Android screen to Windows |
 | [Audio Streaming](docs/adb/audio.md) | Stream device audio to PC |
 | [Input Control](docs/adb/input-control.md) | Keyboard & mouse control |
@@ -75,11 +89,13 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 | [Call History](docs/adb/call-history.md) | Read call logs |
 | [SMS](docs/adb/sms.md) | Extract SMS messages |
 
-### 📱 App Mode  
-*Companion app features over Wi-Fi/LAN*
+---
+
+### App Mode
+> **Real-time device controls and application data synchronization running seamlessly over Local Wi-Fi/LAN.**
 
 | Feature | Description |
-|---------|-------------|
+| :--- | :--- |
 | [Android Streaming](docs/app/android-streaming.md) | Mirror Android screen to Windows |
 | [Media Control](docs/app/media-control.md) | Control music playback |
 | [Notifications](docs/app/notifications.md) | Real-time notification sync |
@@ -88,126 +104,127 @@ ADB Device Manager offers **two powerful modes** that work independently or toge
 | [Contacts](docs/app/contacts.md) | Rich UI contact access |
 | [Calls](docs/app/calls.md) | Manage calls from Windows |
 | [SMS Messages](docs/app/sms.md) | Send/receive SMS |
-| [Device Finder](docs/app/device-finder.md) | Auto-discover devices |
 | [Bluetooth](docs/app/bluetooth.md) | Bluetooth device tools |
-| [Audio Cast Copy](docs/app/audio-cast.md) | Low latency real-time audio casting |
 | [TV Control](docs/app/tv-control.md) | Control Android TV & Cast Media |
-| [Access Windows/Linux Files](docs/app/access-windows-files.md) | Access Windows/Linux file from Android (Read/Write) |
 
-### 🪟 Windows Integration
-
-| Feature | Description |
-|---------|-------------|
-| [File Sharing](docs/windows/file-sharing.md) | Browser-based file sharing |
-| [Bluetooth Pairing](docs/windows/bluetooth-pairing.md) | Stream audio to Windows |
-| [Device Finder](docs/windows/device-finder.md) | Auto-discover connected devices |
-
-### ⌨️ Keyboard Shortcuts
-
-| Shortcut | Action |
-|----------|--------|
-| `Alt + S` | Screen Mirroring |
-| `Alt + A` | Audio Streaming |
-| `Alt + Shift + D` | Android DeX |
-| `Alt + F` | File Transfer |
-
-📄 [Full shortcut list →](docs/shortcuts.md)
 
 ---
 
-## 📊 Comparison
+### Windows Integration
+> **Native Windows integration capabilities.**
 
-| Feature | ADB Device Manager | Vysor Pro version | Link to Windows |
-|--------|:------------------:|:-----:|:----------:|
-| Screen Mirroring | **Ultra-low latency** ✅ | ⚠️ Slower | Good ✅ |
-| Screen off control | ✅ | Limited ⚠️ | ❌ |
-| App-Audio-Only Mirroring | ✅ | ❌ | ✅ |
-| Multi-App Desktop Running | ✅ | ❌ | Limited ⚠️ |
-| Per-App Audio On/Off | ✅ | ❌ | ❌ |
-| Notifications | ✅ | ❌ | ✅ |
-| Quick Access | ✅ | ❌ | Limited ⚠️ |
-| SMS & Calls sync | ✅ | ❌ | ✅ |
-| Remote Camera | ✅ | Limited ⚠️ | ❌ |
-| Bluetooth Audio Pairing | ✅ | ❌ | ✅ |
-| Full control Without ADB | Limited ⚠️ | ❌ | ✅ |
-| Call Audio Capture | ❌ | ❌ | ✅ |
+| Feature | Description |
+| :--- | :--- |
+| [File Sharing](docs/windows/file-sharing.md) | Browser-based file sharing |
+| [Bluetooth Pairing](docs/windows/bluetooth-pairing.md) | Stream audio to Windows |
+
+---
+
+## Keyboard Shortcuts
+
+Speed up your workflow using native hotkeys:
+
+| Shortcut | Action | Documentation |
+| :---: | :--- | :---: |
+| `Alt + S` | Screen Mirroring | [Mirroring Guide](docs/adb/screen-mirroring.md) |
+| `Alt + A` | Audio Streaming | [Audio Guide](docs/adb/audio.md) |
+| `Alt + Shift + D` | Android DeX | [DeX Guide](docs/adb/android-dex.md) |
+| `Alt + F` | File Transfer | [File Sharing Guide](docs/windows/file-sharing.md) |
+
+> See the [Full Shortcuts Reference](docs/shortcuts.md) for more options.
+
+---
+
+## 📊 Comparison Matrix
+
+| Feature | ADB Device Manager | Vysor (Pro) | Link to Windows |
+| :--- | :---: | :---: | :---: |
+| **Screen Mirroring** | **Ultra-low latency ✅** | Slower | Good ✅ |
+| **Screen Off Control** | ✅ | Limited | ❌ |
+| **App-Audio-Only Mirroring** | ✅ | ❌ | ✅ |
+| **Multi-App Desktop Running** | ✅ | ❌ | Limited |
+| **Per-App Audio On/Off** | ✅ | ❌ | ❌ |
+| **Notifications Sync** | ✅ | ❌ | ✅ |
+| **Quick Access** | ✅ | ❌ | Limited |
+| **SMS & Calls Sync** | ✅ | ❌ | ✅ |
+| **Remote Camera** | ✅ | Limited | ❌ |
+| **Bluetooth Audio Pairing** | ✅ | ❌ | ✅ |
+| **Full Control Without ADB** | Limited | ❌ | ✅ |
+| **Call Audio Capture** | ❌ | ❌ | ✅ |
 
 ---
 
 ## Friendly Links
-[escrcpy](https://github.com/viarotel-org/escrcpy)
+*   [escrcpy](https://github.com/viarotel-org/escrcpy) - A graphical wrapper for scrcpy.
 
 ---
 
-## 🎥 Live Preview: User Favorites
+## Live Preview & Demos
 
 <div align="center">
 
-### **Resizable Scrcpy**
-*(Experience Android like a Desktop App)*
+### Resizable Scrcpy
+*Run Android apps in windows like desktop apps*
 
-<img src="images/Most_imp/1_Scrcpy_resizable.gif" width="85%" alt="Resizable Scrcpy Demo">
+<img src="images/Most_imp/1_Scrcpy_resizable.gif" width="85%" alt="Resizable Scrcpy Demo" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
 
 <br><br>
 
-### **Media Sessions**
-*(Control Android Audio directly from Windows)*
+### Media Sessions
+*Control Android music directly from Windows media player/tray*
 
-<img src="images/Most_imp/2_media_sessions.gif" width="85%" alt="Media Sessions Demo">
+<img src="images/Most_imp/2_media_sessions.gif" width="85%" alt="Media Sessions Demo" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
 
 </div>
 
 ---
 
-## 🔧 Technologies & Dependencies
+## Technologies & Dependencies
 
-A set of tools and frameworks used for ADB communication, screen mirroring, UI rendering, and OS-level integration.
+ADB Device Manager leverages a combination of open-source libraries and native platform frameworks:
 
-- **[ADB (Android Debug Bridge)](https://developer.android.com/tools/releases/platform-tools)** – Device connection, pairing, and command execution  
-- **[scrcpy](https://github.com/Genymobile/scrcpy)** – Android screen mirroring and auto casting over ADB  
-- **[nircmd_x64](https://www.nirsoft.net/utils/nircmd.html)** – Windows window control (open, focus, hide, close)  
-- **[Flutter](https://flutter.dev/)** – Cross-platform UI for Windows and Android  
-- **[Kotlin](https://kotlinlang.org/)** – Android backend and UI logic  
-- **[Python](https://www.python.org/)** – Windows backend logic and background services
+*   **[ADB (Android Debug Bridge)](https://developer.android.com/tools/releases/platform-tools)** – Device communication, wireless pairing, and command execution.
+*   **[scrcpy](https://github.com/Genymobile/scrcpy)** – Low latency display mirroring and remote input casting.
+*   **[Flutter](https://flutter.dev/)** – Cross-platform UI framework for Windows and Android.
+*   **[Kotlin](https://kotlinlang.org/)** – Android companion agent logic.
+*   **[C#](https://learn.microsoft.com/en-us/dotnet/csharp/)** - Dekstop manager services, Tray APIs, and communication bridges.
 
-Thanks to **[rom1v](https://github.com/rom1v)** and **[yume-chan](https://github.com/yume-chan)** for their work and insights that helped deepen understanding of **ADB**, **scrcpy**, and broader real-world use cases around Android device management.
+> Special thanks to **[rom1v](https://github.com/rom1v)** for their contributions to the open-source ADB/scrcpy ecosystems, which provided critical insights for this project's architecture.
+
+---
+
+## Official Resources
+
+| Category | Resource Link |
+| :--- | :--- |
+| Documentation | [Read Documentation](https://shrey113.github.io/Adb-Device-Manager-2/Docs.html) |
+| Setup Instructions | [Installation Guide](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html) |
+| FAQ | [View FAQ & Troubleshooting](https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#faq) |
+| Security Model | [Read Security Specifications](https://shrey113.github.io/Adb-Device-Manager-2/security/security_model.html) |
+| Transparency | [View Transparency Report](https://shrey113.github.io/Adb-Device-Manager-2/security/transparency_model.html) |
+| Privacy Policy | [View Privacy Policy](https://shrey113.github.io/Adb-Device-Manager-2/security/privacy_policy.html) |
+| Troubleshooting | [Fix Connection Issues](https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#troubleshooting) |
 
 ---
 
 ## Star History
 
-<a href="https://www.star-history.com/?repos=Shrey113%2FAdb-Device-Manager-2&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=Shrey113/Adb-Device-Manager-2&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=Shrey113/Adb-Device-Manager-2&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=Shrey113/Adb-Device-Manager-2&type=date&legend=top-left" />
- </picture>
-</a>
+<div align="center">
+  <a href="https://www.star-history.com/?repos=Shrey113/Adb-Device-Manager-2&type=date&legend=top-left">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=Shrey113/Adb-Device-Manager-2&type=date&theme=dark&legend=top-left" />
+      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=Shrey113/Adb-Device-Manager-2&type=date&legend=top-left" />
+      <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=Shrey113/Adb-Device-Manager-2&type=date&legend=top-left" width="85%" />
+    </picture>
+  </a>
+</div>
 
 ---
-## 🌐 Official Resources
-
-| 📘 Resource | 🔗 Access |
-|------------|----------|
-| Main Documentation | [Open Docs](https://shrey113.github.io/Adb-Device-Manager-2/Docs.html) |
-| Installation Guide | [Install Guide](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html) |
-| FAQ | [View FAQ](https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#faq) |
-| Security & Privacy | [Security Model](https://shrey113.github.io/Adb-Device-Manager-2/security/security_model.html) |
-| Transparency | [Transparency Report](https://shrey113.github.io/Adb-Device-Manager-2/security/transparency_model.html) |
-| Privacy Policy | [Privacy Policy](https://shrey113.github.io/Adb-Device-Manager-2/security/privacy_policy.html) |
-| Troubleshooting | [Fix Issues](https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#troubleshooting) |
-
----
-
-For more details, visit the [official documentation](https://shrey113.github.io/Adb-Device-Manager-2/Docs.html).
 
 <div align="center">
 
-### Thanks for using **ADB Device Manager**!
+### Thanks for using ADB Device Manager! 🎉
 
-**Made with ❤️ by [Shrey113](https://github.com/Shrey113)**
+**Made by [Shrey113](https://github.com/Shrey113)**
 
 </div>
-
-
-
