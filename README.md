@@ -197,13 +197,13 @@ ADB Device Manager leverages a combination of open-source libraries and native p
 
 | Category | Resource Link |
 | :--- | :--- |
-| Documentation | [Read Documentation](https://shrey113.github.io/Adb-Device-Manager-2/Docs.html) |
+| Documentation | [Read Documentation](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html) |
 | Setup Instructions | [Installation Guide](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html) |
-| FAQ | [View FAQ & Troubleshooting](https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#faq) |
+| FAQ | [View FAQ & Troubleshooting](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#faq) |
 | Security Model | [Read Security Specifications](https://shrey113.github.io/Adb-Device-Manager-2/security/security_model.html) |
 | Transparency | [View Transparency Report](https://shrey113.github.io/Adb-Device-Manager-2/security/transparency_model.html) |
 | Privacy Policy | [View Privacy Policy](https://shrey113.github.io/Adb-Device-Manager-2/security/privacy_policy.html) |
-| Troubleshooting | [Fix Connection Issues](https://shrey113.github.io/Adb-Device-Manager-2/Docs.html#troubleshooting) |
+| Troubleshooting | [Fix Connection Issues](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#troubleshooting) |
 
 ---
 
