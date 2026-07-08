@@ -46,6 +46,7 @@
 ### Official Website & Portals
 | Section | Link |
 | :--- | :--- |
+| Virustotal Reports | [Visit Website →](https://shrey113.github.io/Adb-Device-Manager-2/pages/security_pages/virustotal_reports.html) |
 | Official Website | [Visit Website →](https://shrey113.github.io/Adb-Device-Manager-2/) |
 | Documentation | [Read Installation Docs →](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html) |
 | Developer Portal | [Visit Developer Hub →](https://shrey113.github.io/Adb-Device-Manager-2/pages/Developers.html) |
