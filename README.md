@@ -1,21 +1,13 @@
-<table>
-<tr  >
-<td width="70%" valign="top" style="border: 0; padding: 0; margin: 0;"  >
+<div align="center">
+  <img src="images/app_png.png" width="160" alt="ADB Device Manager Logo" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+</div>
 
-# ADB Device Manager — Mirror, Control & Sync Android on Windows & Linux
+# Control your Android with ADB Device Manager
 
 **One application. Two powerful connection modes.**
 
 ADB Device Manager is a free desktop application for **Windows and Linux** that lets you mirror your Android screen, transfer files, sync notifications, manage calls, control media playback, and run Android apps in resizable desktop windows — all using either **ADB Mode** (USB or wireless debugging) or **App Mode** (Wi-Fi over LAN) — or both simultaneously for the complete Android-to-desktop experience.
-</td>
 
-<td width="30%" align="center" style="border: 0; padding: 0; margin: 0;"  >
-
-<img src="images/app_png.png" width="220" alt="ADB Device Manager Logo" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
-
-</td>
-</tr>
-</table>
 
 <div align="center">
 <p>
