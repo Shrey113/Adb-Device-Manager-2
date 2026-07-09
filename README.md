@@ -35,84 +35,68 @@
 ---
 
 
-### Quick Start & Downloads
+#### Quick Start & Downloads
 | Platform | Download Link | Status |
 | :--- | :--- | :--- |
 | Windows | [Download Installer →](https://shrey113.github.io/Adb-Device-Manager-2/windows_download.html) | Ready |
 | Android | [Download APK →](https://shrey113.github.io/Adb-Device-Manager-2/android_download.html) | Ready |
-| Linux | *Coming Soon* | Planning |
+| Linux | [Download tar.gz →](https://shrey113.github.io/Adb-Device-Manager-2/pages/linux_download.html) | Ready |
 | macOS | *Coming Soon* | Planning |
 
-### Official Website & Portals
-| Section | Link |
-| :--- | :--- |
-| Virustotal Reports | [Visit Website →](https://shrey113.github.io/Adb-Device-Manager-2/pages/security_pages/virustotal_reports.html) |
-| Official Website | [Visit Website →](https://shrey113.github.io/Adb-Device-Manager-2/) |
-| Documentation | [Read Installation Docs →](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html) |
-| Developer Portal | [Visit Developer Hub →](https://shrey113.github.io/Adb-Device-Manager-2/pages/Developers.html) |
 
-### Related Ecosystem Projects
+#### Related Ecosystem Projects
 | Project | Repository Link |
 | :--- | :--- |
 | Android-Dex | [Visit Project →](https://github.com/Shrey113/Android-Dex) |
 | App-Scrcpy | [Visit Project →](https://github.com/Shrey113/App-Scrcpy) |
 
 ---
+## Two Ways to Connect Your Android Device
 
-## Core Features
-
-ADB Device Manager brings Android control directly to your desktop. Using two connection modes (ADB Mode and App Mode), you can:
-
-*   **Mirror & Stream**: Mirror your Android screen or stream device audio directly to Windows with ultra-low latency.
-*   **Control**: Control apps, notifications, answer calls, and send SMS using your PC keyboard and mouse.
-*   **Transfer & Share**: Wirelessly transfer files, browse photo galleries, and manage device contacts.
+ADB Device Manager offers **two powerful connection modes**, giving you the flexibility to choose the experience that best matches your needs. Whether you want **deep system-level control with ADB** or **wireless real-time communication through the companion app**, you can use either mode independently—or combine both for the best experience.
 
 ---
 
-## Deep Dive: ADB & App Modes
+#### ⚡ ADB Mode — System-Level Control via USB or Wireless Debugging
 
-ADB Device Manager is designed around two modular modes that work seamlessly together or independently:
-
-### ADB Mode
-> **System-level control over USB or Wireless Debugging.**
+ADB Mode uses Android Debug Bridge to give you deep system access over a USB cable or wireless ADB pairing. No app required on the phone.
 
 | Feature | Description |
 | :--- | :--- |
-| [Screen Mirroring](docs/adb/screen-mirroring.md) | Mirror Android screen to Windows |
-| [Audio Streaming](docs/adb/audio.md) | Stream device audio to PC |
-| [Input Control](docs/adb/input-control.md) | Keyboard & mouse control |
+| [Screen Mirroring](docs/adb/screen-mirroring.md) | Mirror Android screen to Windows with ultra-low latency |
+| [Audio Streaming](docs/adb/audio.md) | Stream device audio directly to PC |
+| [Input Control](docs/adb/input-control.md) | Control your phone using keyboard & mouse |
 | [Scrcpy Control](docs/adb/scrcpy-control.md) | Customize & manage Scrcpy commands |
-| [Android Dex](docs/adb/android-dex.md) | Desktop-style experience |
+| [Android Dex](docs/adb/android-dex.md) | Run apps in a desktop-style windowed experience |
 | [Desktop Mode](docs/adb/desktop-mode.md) | Multi-app virtual display |
-| [APK Installer](docs/adb/apk-installer.md) | Install apps via ADB |
-| [Camera View](docs/adb/camera.md) | View device camera on PC |
+| [APK Installer](docs/adb/apk-installer.md) | Sideload APKs via ADB |
+| [Camera View](docs/adb/camera.md) | View device camera feed on PC |
 | [Contacts](docs/adb/contacts.md) | Extract contacts via ADB |
 | [Call History](docs/adb/call-history.md) | Read call logs |
 | [SMS](docs/adb/sms.md) | Extract SMS messages |
 
 ---
 
-### App Mode
-> **Real-time device controls and application data synchronization running seamlessly over Local Wi-Fi/LAN.**
+#### 📡 App Mode — Real-Time Sync over Local Wi-Fi / LAN
+
+App Mode pairs the desktop client with the ADB Device Manager Android app over your local network. No USB cable needed — everything runs wirelessly.
 
 | Feature | Description |
 | :--- | :--- |
-| [Android Streaming](docs/app/android-streaming.md) | Mirror Android screen to Windows |
-| [Media Control](docs/app/media-control.md) | Control music playback |
+| [Android Streaming](docs/app/android-streaming.md) | Wireless screen mirroring to Windows |
+| [Media Control](docs/app/media-control.md) | Control music playback from your PC |
 | [Notifications](docs/app/notifications.md) | Real-time notification sync |
-| [Photo Gallery](docs/app/photo-gallery.md) | Browse photos wirelessly |
+| [Photo Gallery](docs/app/photo-gallery.md) | Browse & download photos wirelessly |
 | [File Transfer](docs/app/file-transfer.md) | Fast LAN file transfer |
 | [Contacts](docs/app/contacts.md) | Rich UI contact access |
-| [Calls](docs/app/calls.md) | Manage calls from Windows |
-| [SMS Messages](docs/app/sms.md) | Send/receive SMS |
+| [Calls](docs/app/calls.md) | Answer & manage calls from Windows |
+| [SMS Messages](docs/app/sms.md) | Send & receive SMS |
 | [Bluetooth](docs/app/bluetooth.md) | Bluetooth device tools |
-| [TV Control](docs/app/tv-control.md) | Control Android TV & Cast Media |
-
+| [TV Control](docs/app/tv-control.md) | Control Android TV & cast media |
 
 ---
 
-### Windows Integration
-> **Native Windows integration capabilities.**
+#### 🖥️ Windows Integration
 
 | Feature | Description |
 | :--- | :--- |
@@ -121,7 +105,7 @@ ADB Device Manager is designed around two modular modes that work seamlessly tog
 
 ---
 
-## Keyboard Shortcuts
+### Keyboard Shortcuts
 
 Speed up your workflow using native hotkeys:
 
@@ -154,6 +138,9 @@ Speed up your workflow using native hotkeys:
 | **Call Audio Capture** | ❌ | ❌ | ✅ |
 
 ---
+
+> 🛡️ **Security & Transparency** — Every release file (`.exe`, `.apk`, `.tar.gz`) is scanned on [VirusTotal](https://shrey113.github.io/Adb-Device-Manager-2/pages/security_pages/virustotal_reports.html) before publishing. Reports are kept up to date with each new release.
+
 
 ## Friendly Links
 *   [escrcpy](https://github.com/viarotel-org/escrcpy) - A graphical wrapper for scrcpy.

@@ -43,7 +43,7 @@
                     performance optimizations, and system-level improvements across ADB Device Manager.
                 </p>
                 <div class="tech-stack-pills">
-                    <span class="pill">Current: v1.6.1</span>
+                    <span class="pill">Current: v1.7</span>
                     <span class="pill">Production-Ready</span>
                 </div>
                 <!-- Main GitHub Action -->
@@ -62,58 +62,101 @@
 
             <div class="timeline">
 
-                <!-- v1.6.1 -->
+                <!-- v1.7 -->
                 <div class="timeline-group latest">
                     <div class="timeline-marker"></div>
                     <div class="version-card">
                         <div class="vc-header">
-                            <h2>v1.6.1</h2>
+                            <h2>v1.7</h2>
                             <span class="tag-badge">LATEST</span>
                         </div>
-                        <div class="vc-date">April 2026</div>
+                        <div class="vc-date">July 2026</div>
 
                         <div class="vc-section">
-                            <h3>🎮 Version Changelog - 1.6.1</h3>
-                            <p>This update moves Android-Dex a bit closer to a more usable desktop-style Android setup. Focus was mainly on improving performance and fixing how windows behave.</p>
+                            <h3>📋 What's New (since v1.6.1)</h3>
+                            <p>This release focuses on improving the overall stability, performance, and usability of
+                                ADB Device Manager. Numerous internal optimizations and workflow improvements have been
+                                made to provide a faster, smoother, and more reliable experience.</p>
                         </div>
 
                         <div class="vc-section">
-                            <h3>🪟 Window / Z-index changes</h3>
+                            <h3>📱 Device Management</h3>
                             <ul>
-                                <li>Reworked how window stacking works</li>
-                                <li>Taskbar now stays above everything</li>
-                                <li>Behavior is more consistent compared to older versions</li>
+                                <li>Improved new device setup workflow</li>
+                                <li>Improved device detection and synchronization</li>
+                                <li>Improved USB connection handling</li>
+                                <li>Enhanced multi-device management</li>
+                                <li>Improved overall connection reliability</li>
                             </ul>
                         </div>
 
                         <div class="vc-section">
-                            <h3>⌨️ Shortcuts</h3>
+                            <h3>🏝️ Media Island</h3>
                             <ul>
-                                <li><strong>Ctrl + T</strong>: Show taskbar in fullscreen (helps with quick switching)</li>
-                                <li><strong>Ctrl + F</strong>: Toggle fullscreen</li>
-                                <li><strong>Ctrl + G (beta)</strong>: Opens gaming controller panel</li>
+                                <li>Added Media Island size presets (Island, Large, Medium, Small)</li>
+                                <li>Redesigned Media Island controller interface</li>
+                                <li>Improved Media Island animations and transitions</li>
+                                <li>Optimized media playback backend</li>
+                                <li>Improved media session synchronization</li>
                             </ul>
                         </div>
 
                         <div class="vc-section">
-                            <h3>🕹️ Gaming controls (beta)</h3>
-                            <p style="margin-bottom: 10px;">Basic gaming control system added. Works inside scrcpy window using Ctrl + G. Added gyro-based controls (still early). Tested with games like Free Fire / PUBG — needs more work.</p>
-                            <img src="https://github.com/user-attachments/assets/16fec8db-c7ab-4c1d-87fe-2d5f4ca4651f" 
-                                 alt="Gaming Controls" style="width: 100%; border-radius: 12px; margin: 12px 0;">
+                            <h3>🔔 Notifications</h3>
+                            <ul>
+                                <li>Added a new system-level Toast notification interface</li>
+                                <li>Toast notifications now display the connected device name</li>
+                                <li>Improved notification synchronization</li>
+                                <li>Enhanced notification rendering and responsiveness</li>
+                                <li>Improved notification icons and overall appearance</li>
+                            </ul>
                         </div>
 
                         <div class="vc-section">
-                            <h3>📌 More Information</h3>
-                            <p>For more details, check out the Android-Dex project: 
-                               <a href="https://github.com/Shrey113/Android-Dex" target="_blank" style="color: var(--accent-change);">Android-Dex</a>
-                            </p>
+                            <h3>📁 File Sharing</h3>
+                            <ul>
+                                <li>Improved file sharing performance and stability</li>
+                                <li>Increased file transfer speed</li>
+                                <li>Redesigned file sharing web interface</li>
+                                <li>Added drag-and-drop file upload support</li>
+                                <li>Improved Android file sharing</li>
+                                <li>Fixed multiple issues in the file manager</li>
+                                <li>Improved overall file sharing workflow</li>
+                            </ul>
                         </div>
 
                         <div class="vc-section">
-                            <h3>🐧 Linux Support (Only for Android-Dex)</h3>
-                            <p>For Linux users, download and use the package below: 
-                               <a href="https://github.com/Shrey113/Android-Dex/releases/tag/Android-Dex-v.0.3" target="_blank" style="color: var(--accent-change);">Android-Dex v0.3 Release</a>
-                            </p>
+                            <h3>⌨️ Hotkey Manager</h3>
+                            <ul>
+                                <li>Redesigned Hotkey Manager</li>
+                                <li>Added runtime enable/disable controls for hotkeys</li>
+                                <li>Expanded available hotkey categories</li>
+                                <li>Improved hotkey management experience</li>
+                            </ul>
+                        </div>
+
+                        <div class="vc-section">
+                            <h3>⚙️ Backend &amp; Performance</h3>
+                            <ul>
+                                <li>Optimized backend architecture</li>
+                                <li>Improved communication between application components</li>
+                                <li>Reduced application storage usage</li>
+                                <li>Optimized cache management</li>
+                                <li>Reduced overall application size</li>
+                                <li>Improved service stability</li>
+                                <li>Improved continuous application workflow</li>
+                                <li>Fixed multiple backend and service-related issues</li>
+                                <li>Fixed numerous stability issues throughout the application</li>
+                                <li>General performance improvements</li>
+                            </ul>
+                        </div>
+
+                        <div class="vc-section">
+                            <h3>🔄 Updated Components</h3>
+                            <ul>
+                                <li>Upgraded ADB to <strong>36.0</strong></li>
+                                <li>Upgraded Scrcpy to <strong>4.0</strong></li>
+                            </ul>
                         </div>
 
                         <div class="vc-actions">
@@ -122,9 +165,9 @@
                                 <a href="https://github.com/Shrey113" target="_blank"
                                     class="contributor-link">Shrey113</a>
                             </div>
-                            <a href="https://github.com/Shrey113/Adb-Device-Manager-2/releases"
-                                target="_blank" class="gh-release-btn">
-                                View Release 1.6.1 &rarr;
+                            <a href="https://github.com/Shrey113/Adb-Device-Manager-2/releases" target="_blank"
+                                class="gh-release-btn">
+                                View Release 1.7 &rarr;
                             </a>
                         </div>
                     </div>
@@ -142,22 +185,27 @@
                         <div class="vc-section">
                             <h3>🚀 Init ADB-Device-Manager v1.6</h3>
                             <p><strong>Android DEX Manager — Major Upgrade</strong></p>
-                            <p>This release brings a significant upgrade to the Android DEX Manager experience, delivering a more refined UI, improved multi-app handling, and a smoother overall workflow.</p>
+                            <p>This release brings a significant upgrade to the Android DEX Manager experience,
+                                delivering a more refined UI, improved multi-app handling, and a smoother overall
+                                workflow.</p>
                         </div>
 
                         <div class="vc-section">
                             <h3>✨ Highlights</h3>
                             <div style="margin-bottom: 20px;">
                                 <h4>🖥️ Redesigned Home Screen</h4>
-                                <p>A cleaner, more structured interface for better usability and faster access to core features.</p>
-                                <img src="https://github.com/user-attachments/assets/0d4822a8-a98a-4c43-9a3d-a9189afb03b8" 
-                                     alt="Home Screen" style="width: 100%; border-radius: 12px; margin: 12px 0;">
+                                <p>A cleaner, more structured interface for better usability and faster access to core
+                                    features.</p>
+                                <img src="https://github.com/user-attachments/assets/0d4822a8-a98a-4c43-9a3d-a9189afb03b8"
+                                    alt="Home Screen" style="width: 100%; border-radius: 12px; margin: 12px 0;">
                             </div>
                             <div>
                                 <h4>📱 Improved Multi-App Experience</h4>
-                                <p>Run and manage multiple Android apps simultaneously with better stability and window handling.</p>
-                                <img src="https://github.com/user-attachments/assets/9c526fe4-90f4-4e1b-badd-0e496673f158" 
-                                     alt="Multi-App Experience" style="width: 100%; border-radius: 12px; margin: 12px 0;">
+                                <p>Run and manage multiple Android apps simultaneously with better stability and window
+                                    handling.</p>
+                                <img src="https://github.com/user-attachments/assets/9c526fe4-90f4-4e1b-badd-0e496673f158"
+                                    alt="Multi-App Experience"
+                                    style="width: 100%; border-radius: 12px; margin: 12px 0;">
                             </div>
                         </div>
 
@@ -174,14 +222,17 @@
 
                         <div class="vc-section">
                             <h3>💡 Explore More</h3>
-                            <p>If you're looking for a more advanced or command-driven experience, check out the full Android DEX project: 
-                               <a href="https://github.com/Shrey113/Android-Dex" target="_blank" style="color: var(--accent-change);">Android-Dex</a>
+                            <p>If you're looking for a more advanced or command-driven experience, check out the full
+                                Android DEX project:
+                                <a href="https://github.com/Shrey113/Android-Dex" target="_blank"
+                                    style="color: var(--accent-change);">Android-Dex</a>
                             </p>
                         </div>
 
                         <div class="vc-section">
                             <h3>⚡ Summary</h3>
-                            <p>A cleaner UI, better multi-app handling, and a stronger foundation — this update moves Android DEX Manager closer to a true desktop experience.</p>
+                            <p>A cleaner UI, better multi-app handling, and a stronger foundation — this update moves
+                                Android DEX Manager closer to a true desktop experience.</p>
                             <p><em>Built for performance. Designed for simplicity.</em></p>
                         </div>
 
@@ -191,8 +242,8 @@
                                 <a href="https://github.com/Shrey113" target="_blank"
                                     class="contributor-link">Shrey113</a>
                             </div>
-                            <a href="https://github.com/Shrey113/Adb-Device-Manager-2/releases"
-                                target="_blank" class="gh-release-btn">
+                            <a href="https://github.com/Shrey113/Adb-Device-Manager-2/releases" target="_blank"
+                                class="gh-release-btn">
                                 View Release 1.6 &rarr;
                             </a>
                         </div>
