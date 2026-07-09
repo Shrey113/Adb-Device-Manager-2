@@ -36,7 +36,7 @@ ADB Device Manager is a free desktop application for **Windows and Linux** that 
 
 ---
 
-#### Download ADB Device Manager
+### Download ADB Device Manager
 
 | Platform | Download | Status |
 | :--- | :--- | :--- |
@@ -46,7 +46,7 @@ ADB Device Manager is a free desktop application for **Windows and Linux** that 
 | macOS | *Coming Soon* | Planned |
 
 
-#### Related Ecosystem Projects
+### Related Ecosystem Projects
 
 | Project | Description | Repository |
 | :--- | :--- | :--- |
@@ -56,7 +56,7 @@ ADB Device Manager is a free desktop application for **Windows and Linux** that 
 
 ---
 
-####  ADB Mode — Deep System Control via USB or Wireless ADB
+###  ADB Mode — Deep System Control via USB or Wireless ADB
 
 ADB Mode uses the Android Debug Bridge (ADB) protocol to establish a direct, low-level connection to your Android device over a USB cable or wireless ADB pairing. This mode does **not** require any app to be installed on your phone and provides the deepest level of system access available.
 
@@ -76,7 +76,7 @@ ADB Mode uses the Android Debug Bridge (ADB) protocol to establish a direct, low
 
 ---
 
-####  App Mode — Wireless Real-Time Sync over Local Wi-Fi / LAN
+###  App Mode — Wireless Real-Time Sync over Local Wi-Fi / LAN
 
 App Mode pairs the ADB Device Manager desktop client with the ADB Device Manager companion Android app over your local Wi-Fi network (LAN). No USB cable is required — all data is transferred wirelessly at high speed within your local network.
 
@@ -95,7 +95,7 @@ App Mode pairs the ADB Device Manager desktop client with the ADB Device Manager
 
 ---
 
-#### Desktop Integration Features
+### Desktop Integration Features
 
 | Feature | Description |
 | :--- | :--- |
@@ -104,7 +104,7 @@ App Mode pairs the ADB Device Manager desktop client with the ADB Device Manager
 
 ---
 
-#### Keyboard Shortcuts
+### Keyboard Shortcuts
 
 Boost your productivity with built-in keyboard shortcuts for the most common actions:
 
@@ -119,7 +119,7 @@ Boost your productivity with built-in keyboard shortcuts for the most common act
 
 ---
 
-#### Feature Comparison — ADB Device Manager vs. Vysor vs. Link to Windows
+### Feature Comparison — ADB Device Manager vs. Vysor vs. Link to Windows
 
 | Feature | ADB Device Manager | Vysor (Pro) | Link to Windows |
 | :--- | :---: | :---: | :---: |
@@ -141,24 +141,24 @@ Boost your productivity with built-in keyboard shortcuts for the most common act
 > **Security & Transparency** — Every release file (`.exe`, `.apk`, `.tar.gz`) is scanned on [VirusTotal](https://shrey113.github.io/Adb-Device-Manager-2/pages/security_pages/virustotal_reports.html) before publishing. All scan reports are publicly available and kept up to date with each new release.
 
 
-#### Friendly Links
+### Friendly Links
 
 * [escrcpy](https://github.com/viarotel-org/escrcpy) – A graphical user interface wrapper for Scrcpy, offering a desktop-friendly way to mirror and control Android devices.
 
 ---
 
-#### Live Preview & Feature Demos
+### Live Preview & Feature Demos
 
 <div align="center">
 
-#### Resizable Android Apps on Windows (Android DeX / Scrcpy)
+### Resizable Android Apps on Windows (Android DeX / Scrcpy)
 *Run any Android app in a resizable, desktop-style window — just like a native Windows application*
 
 <img src="images/Most_imp/1_Scrcpy_resizable.gif" width="85%" alt="Resizable Scrcpy — Android apps running in desktop windows on Windows" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
 
 <br><br>
 
-#### Android Media Session Control on Windows
+### Android Media Session Control on Windows
 *Control Android music and media playback directly from the Windows media player and system tray*
 
 <img src="images/Most_imp/2_media_sessions.gif" width="85%" alt="Android Media Session Control from Windows PC" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
@@ -167,7 +167,7 @@ Boost your productivity with built-in keyboard shortcuts for the most common act
 
 ---
 
-#### Technologies & Open-Source Dependencies
+### Technologies & Open-Source Dependencies
 
 ADB Device Manager is built on top of industry-standard open-source libraries and native platform frameworks:
 
@@ -181,7 +181,7 @@ ADB Device Manager is built on top of industry-standard open-source libraries an
 
 ---
 
-#### Official Documentation & Resources
+### Official Documentation & Resources
 
 | Category | Resource |
 | :--- | :--- |
@@ -195,7 +195,7 @@ ADB Device Manager is built on top of industry-standard open-source libraries an
 
 ---
 
-#### Star History
+### Star History
 
 <div align="center">
   <a href="https://www.star-history.com/?repos=Shrey113/Adb-Device-Manager-2&type=date&legend=top-left">
