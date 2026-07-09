@@ -1,201 +1,209 @@
+<table>
+<tr  >
+<td width="70%" valign="top" style="border: 0; padding: 0; margin: 0;"  >
+
+# ADB Device Manager — Mirror, Control & Sync Android on Windows & Linux
+
+**One application. Two powerful connection modes.**
+
+ADB Device Manager is a free desktop application for **Windows and Linux** that lets you mirror your Android screen, transfer files, sync notifications, manage calls, control media playback, and run Android apps in resizable desktop windows — all using either **ADB Mode** (USB or wireless debugging) or **App Mode** (Wi-Fi over LAN) — or both simultaneously for the complete Android-to-desktop experience.
+</td>
+
+<td width="30%" align="center" style="border: 0; padding: 0; margin: 0;"  >
+
+<img src="images/app_png.png" width="220" alt="ADB Device Manager Logo" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+
+</td>
+</tr>
+</table>
+
 <div align="center">
-  <img src="images/app_png.png" alt="ADB Device Manager Logo" width="120" style="border-radius: 20%; box-shadow: 0 4px 8px rgba(0,0,0,0.15);"/>
+<p>
+  <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=fff" alt="Flutter" />
+  <img src="https://img.shields.io/badge/Kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin" />
+  <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=fff" alt="Python" />
+  <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows11&logoColor=white" alt="Windows" />
+</p>
 
-  # ADB Device Manager
-
-  **Connect Android & Windows into one seamless control system**
-
-  Built for power users, developers, and Android enthusiasts to bridge the gap between desktop and mobile ecosystems.
-
-  <!-- Tech Stack & Project Badges -->
-  <p align="center">
-    <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=fff" alt="Flutter" />
-    <img src="https://img.shields.io/badge/Kotlin-%237F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin" />
-    <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android" />
-    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=fff" alt="Python" />
-    <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows11&logoColor=white" alt="Windows" />
-  </p>
-  
-  <p align="center">
-    <a href="https://github.com/Shrey113/Adb-Device-Manager-2/releases">
-      <img src="https://img.shields.io/github/v/release/Shrey113/Adb-Device-Manager-2?style=flat-square&color=33CA56" alt="Latest Release" />
-    </a>
-    <a href="https://github.com/Shrey113/Adb-Device-Manager-2/stargazers">
-      <img src="https://img.shields.io/github/stars/Shrey113/Adb-Device-Manager-2?style=flat-square&logo=github" alt="GitHub Stars" />
-    </a>
-    <a href="https://github.com/Shrey113/Adb-Device-Manager-2/issues">
-      <img src="https://img.shields.io/github/issues/Shrey113/Adb-Device-Manager-2?style=flat-square&color=red" alt="GitHub Issues" />
-    </a>
-    <a href="https://github.com/Shrey113/Adb-Device-Manager-2/blob/main/LICENSE">
-      <img src="https://img.shields.io/github/license/Shrey113/Adb-Device-Manager-2?style=flat-square&color=blue" alt="License" />
-    </a>
-  </p>
+<p>
+  <a href="https://github.com/Shrey113/Adb-Device-Manager-2/releases">
+    <img src="https://img.shields.io/github/v/release/Shrey113/Adb-Device-Manager-2?style=flat-square&color=33CA56" />
+  </a>
+  <a href="https://github.com/Shrey113/Adb-Device-Manager-2/stargazers">
+    <img src="https://img.shields.io/github/stars/Shrey113/Adb-Device-Manager-2?style=flat-square&logo=github" />
+  </a>
+  <a href="https://github.com/Shrey113/Adb-Device-Manager-2/issues">
+    <img src="https://img.shields.io/github/issues/Shrey113/Adb-Device-Manager-2?style=flat-square&color=red" />
+  </a>
+  <a href="https://github.com/Shrey113/Adb-Device-Manager-2/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/Shrey113/Adb-Device-Manager-2?style=flat-square&color=blue" />
+  </a>
+</p>
 </div>
 
 ---
 
+#### Download ADB Device Manager
 
-#### Quick Start & Downloads
-| Platform | Download Link | Status |
+| Platform | Download | Status |
 | :--- | :--- | :--- |
-| Windows | [Download Installer →](https://shrey113.github.io/Adb-Device-Manager-2/windows_download.html) | Ready |
-| Android | [Download APK →](https://shrey113.github.io/Adb-Device-Manager-2/android_download.html) | Ready |
-| Linux | [Download tar.gz →](https://shrey113.github.io/Adb-Device-Manager-2/pages/linux_download.html) | Ready |
-| macOS | *Coming Soon* | Planning |
+| Windows | [Download Windows Installer →](https://shrey113.github.io/Adb-Device-Manager-2/windows_download.html) | Available |
+| Android | [Download Android APK →](https://shrey113.github.io/Adb-Device-Manager-2/android_download.html) | Available |
+| Linux | [Download Linux Package →](https://shrey113.github.io/Adb-Device-Manager-2/pages/linux_download.html) | Available |
+| macOS | *Coming Soon* | Planned |
 
 
 #### Related Ecosystem Projects
-| Project | Repository Link |
-| :--- | :--- |
-| Android-Dex | [Visit Project →](https://github.com/Shrey113/Android-Dex) |
-| App-Scrcpy | [Visit Project →](https://github.com/Shrey113/App-Scrcpy) |
 
----
-## Two Ways to Connect Your Android Device
+| Project | Description | Repository |
+| :--- | :--- | :--- |
+| Android-Dex | Run Android apps in desktop-style windows | [Visit →](https://github.com/Shrey113/Android-Dex) |
+| App-Scrcpy | Enhanced Scrcpy launcher and controller | [Visit →](https://github.com/Shrey113/App-Scrcpy) |
 
-ADB Device Manager offers **two powerful connection modes**, giving you the flexibility to choose the experience that best matches your needs. Whether you want **deep system-level control with ADB** or **wireless real-time communication through the companion app**, you can use either mode independently—or combine both for the best experience.
 
 ---
 
-#### ⚡ ADB Mode — System-Level Control via USB or Wireless Debugging
+####  ADB Mode — Deep System Control via USB or Wireless ADB
 
-ADB Mode uses Android Debug Bridge to give you deep system access over a USB cable or wireless ADB pairing. No app required on the phone.
+ADB Mode uses the Android Debug Bridge (ADB) protocol to establish a direct, low-level connection to your Android device over a USB cable or wireless ADB pairing. This mode does **not** require any app to be installed on your phone and provides the deepest level of system access available.
 
 | Feature | Description |
 | :--- | :--- |
-| [Screen Mirroring](docs/adb/screen-mirroring.md) | Mirror Android screen to Windows with ultra-low latency |
-| [Audio Streaming](docs/adb/audio.md) | Stream device audio directly to PC |
-| [Input Control](docs/adb/input-control.md) | Control your phone using keyboard & mouse |
-| [Scrcpy Control](docs/adb/scrcpy-control.md) | Customize & manage Scrcpy commands |
-| [Android Dex](docs/adb/android-dex.md) | Run apps in a desktop-style windowed experience |
-| [Desktop Mode](docs/adb/desktop-mode.md) | Multi-app virtual display |
-| [APK Installer](docs/adb/apk-installer.md) | Sideload APKs via ADB |
-| [Camera View](docs/adb/camera.md) | View device camera feed on PC |
-| [Contacts](docs/adb/contacts.md) | Extract contacts via ADB |
-| [Call History](docs/adb/call-history.md) | Read call logs |
-| [SMS](docs/adb/sms.md) | Extract SMS messages |
+| [Screen Mirroring](docs/adb/screen-mirroring.md) | Mirror your Android screen to Windows in real time with ultra-low latency |
+| [Audio Streaming](docs/adb/audio.md) | Stream your device's audio output directly to your PC speakers |
+| [Input Control](docs/adb/input-control.md) | Control your Android phone remotely using your PC keyboard and mouse |
+| [Scrcpy Control](docs/adb/scrcpy-control.md) | Customize, configure, and manage Scrcpy display and input options |
+| [Android DeX](docs/adb/android-dex.md) | Run Android apps in resizable desktop-style windows on your PC |
+| [Desktop Mode](docs/adb/desktop-mode.md) | Launch a multi-app virtual display for a full desktop-like experience |
+| [APK Installer](docs/adb/apk-installer.md) | Sideload and install APK files on your device directly via ADB |
+| [Camera View](docs/adb/camera.md) | View your Android device's live camera feed on your PC |
+| [Contacts](docs/adb/contacts.md) | Extract and browse your phone's contacts via ADB |
+| [Call History](docs/adb/call-history.md) | Read and export your device's call logs |
+| [SMS](docs/adb/sms.md) | Extract and read SMS messages from your Android device |
 
 ---
 
-#### 📡 App Mode — Real-Time Sync over Local Wi-Fi / LAN
+####  App Mode — Wireless Real-Time Sync over Local Wi-Fi / LAN
 
-App Mode pairs the desktop client with the ADB Device Manager Android app over your local network. No USB cable needed — everything runs wirelessly.
+App Mode pairs the ADB Device Manager desktop client with the ADB Device Manager companion Android app over your local Wi-Fi network (LAN). No USB cable is required — all data is transferred wirelessly at high speed within your local network.
 
 | Feature | Description |
 | :--- | :--- |
-| [Android Streaming](docs/app/android-streaming.md) | Wireless screen mirroring to Windows |
-| [Media Control](docs/app/media-control.md) | Control music playback from your PC |
-| [Notifications](docs/app/notifications.md) | Real-time notification sync |
-| [Photo Gallery](docs/app/photo-gallery.md) | Browse & download photos wirelessly |
-| [File Transfer](docs/app/file-transfer.md) | Fast LAN file transfer |
-| [Contacts](docs/app/contacts.md) | Rich UI contact access |
-| [Calls](docs/app/calls.md) | Answer & manage calls from Windows |
-| [SMS Messages](docs/app/sms.md) | Send & receive SMS |
-| [Bluetooth](docs/app/bluetooth.md) | Bluetooth device tools |
-| [TV Control](docs/app/tv-control.md) | Control Android TV & cast media |
+| [Android Streaming](docs/app/android-streaming.md) | Wireless screen mirroring from Android to Windows over local Wi-Fi |
+| [Media Control](docs/app/media-control.md) | Control Android music and media playback directly from your PC |
+| [Notifications](docs/app/notifications.md) | Real-time Android notification sync to your Windows desktop |
+| [Photo Gallery](docs/app/photo-gallery.md) | Wirelessly browse and download photos from your Android device |
+| [File Transfer](docs/app/file-transfer.md) | Fast bidirectional file transfer over your local area network |
+| [Contacts](docs/app/contacts.md) | View and manage your phone's contacts with a rich desktop UI |
+| [Calls](docs/app/calls.md) | Answer and manage incoming calls from your Windows PC |
+| [SMS Messages](docs/app/sms.md) | Send and receive SMS messages from your Windows desktop |
+| [Bluetooth](docs/app/bluetooth.md) | Manage Bluetooth device connections and settings remotely |
+| [TV Control](docs/app/tv-control.md) | Control Android TV devices and cast media from your PC |
 
 ---
 
-#### 🖥️ Windows Integration
+#### Desktop Integration Features
 
 | Feature | Description |
 | :--- | :--- |
-| [File Sharing](docs/windows/file-sharing.md) | Browser-based file sharing |
-| [Bluetooth Pairing](docs/windows/bluetooth-pairing.md) | Stream audio to Windows |
+| [File Sharing](docs/windows/file-sharing.md) | Browser-based local file sharing between your PC and Android |
+| [Bluetooth Pairing](docs/windows/bluetooth-pairing.md) | Pair Android audio and stream it directly to Windows audio output |
 
 ---
 
-### Keyboard Shortcuts
+#### Keyboard Shortcuts
 
-Speed up your workflow using native hotkeys:
+Boost your productivity with built-in keyboard shortcuts for the most common actions:
 
 | Shortcut | Action | Documentation |
 | :---: | :--- | :---: |
-| `Alt + S` | Screen Mirroring | [Mirroring Guide](docs/adb/screen-mirroring.md) |
-| `Alt + A` | Audio Streaming | [Audio Guide](docs/adb/audio.md) |
-| `Alt + Shift + D` | Android DeX | [DeX Guide](docs/adb/android-dex.md) |
-| `Alt + F` | File Transfer | [File Sharing Guide](docs/windows/file-sharing.md) |
+| `Alt + S` | Toggle Screen Mirroring | [Mirroring Guide](docs/adb/screen-mirroring.md) |
+| `Alt + A` | Toggle Audio Streaming | [Audio Guide](docs/adb/audio.md) |
+| `Alt + Shift + D` | Launch Android DeX | [DeX Guide](docs/adb/android-dex.md) |
+| `Alt + F` | Open File Transfer | [File Sharing Guide](docs/windows/file-sharing.md) |
 
-> See the [Full Shortcuts Reference](docs/shortcuts.md) for more options.
+> See the [Full Keyboard Shortcuts Reference](docs/shortcuts.md) for all available hotkeys.
 
 ---
 
-## 📊 Comparison Matrix
+#### Feature Comparison — ADB Device Manager vs. Vysor vs. Link to Windows
 
 | Feature | ADB Device Manager | Vysor (Pro) | Link to Windows |
 | :--- | :---: | :---: | :---: |
 | **Screen Mirroring** | **Ultra-low latency ✅** | Slower | Good ✅ |
-| **Screen Off Control** | ✅ | Limited | ❌ |
-| **App-Audio-Only Mirroring** | ✅ | ❌ | ✅ |
-| **Multi-App Desktop Running** | ✅ | ❌ | Limited |
-| **Per-App Audio On/Off** | ✅ | ❌ | ❌ |
-| **Notifications Sync** | ✅ | ❌ | ✅ |
-| **Quick Access** | ✅ | ❌ | Limited |
-| **SMS & Calls Sync** | ✅ | ❌ | ✅ |
-| **Remote Camera** | ✅ | Limited | ❌ |
+| **Screen-Off Device Control** | ✅ | Limited | ❌ |
+| **App-Specific Audio Mirroring** | ✅ | ❌ | ✅ |
+| **Multi-App Desktop Mode** | ✅ | ❌ | Limited |
+| **Per-App Audio Toggle** | ✅ | ❌ | ❌ |
+| **Notification Sync** | ✅ | ❌ | ✅ |
+| **Quick Access Panel** | ✅ | ❌ | Limited |
+| **SMS & Call Sync** | ✅ | ❌ | ✅ |
+| **Remote Camera View** | ✅ | Limited | ❌ |
 | **Bluetooth Audio Pairing** | ✅ | ❌ | ✅ |
 | **Full Control Without ADB** | Limited | ❌ | ✅ |
 | **Call Audio Capture** | ❌ | ❌ | ✅ |
 
 ---
 
-> 🛡️ **Security & Transparency** — Every release file (`.exe`, `.apk`, `.tar.gz`) is scanned on [VirusTotal](https://shrey113.github.io/Adb-Device-Manager-2/pages/security_pages/virustotal_reports.html) before publishing. Reports are kept up to date with each new release.
+> **Security & Transparency** — Every release file (`.exe`, `.apk`, `.tar.gz`) is scanned on [VirusTotal](https://shrey113.github.io/Adb-Device-Manager-2/pages/security_pages/virustotal_reports.html) before publishing. All scan reports are publicly available and kept up to date with each new release.
 
 
-## Friendly Links
-*   [escrcpy](https://github.com/viarotel-org/escrcpy) - A graphical wrapper for scrcpy.
+#### Friendly Links
+
+* [escrcpy](https://github.com/viarotel-org/escrcpy) – A graphical user interface wrapper for Scrcpy, offering a desktop-friendly way to mirror and control Android devices.
 
 ---
 
-## Live Preview & Demos
+#### Live Preview & Feature Demos
 
 <div align="center">
 
-### Resizable Scrcpy
-*Run Android apps in windows like desktop apps*
+#### Resizable Android Apps on Windows (Android DeX / Scrcpy)
+*Run any Android app in a resizable, desktop-style window — just like a native Windows application*
 
-<img src="images/Most_imp/1_Scrcpy_resizable.gif" width="85%" alt="Resizable Scrcpy Demo" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+<img src="images/Most_imp/1_Scrcpy_resizable.gif" width="85%" alt="Resizable Scrcpy — Android apps running in desktop windows on Windows" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
 
 <br><br>
 
-### Media Sessions
-*Control Android music directly from Windows media player/tray*
+#### Android Media Session Control on Windows
+*Control Android music and media playback directly from the Windows media player and system tray*
 
-<img src="images/Most_imp/2_media_sessions.gif" width="85%" alt="Media Sessions Demo" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+<img src="images/Most_imp/2_media_sessions.gif" width="85%" alt="Android Media Session Control from Windows PC" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
 
 </div>
 
 ---
 
-## Technologies & Dependencies
+#### Technologies & Open-Source Dependencies
 
-ADB Device Manager leverages a combination of open-source libraries and native platform frameworks:
+ADB Device Manager is built on top of industry-standard open-source libraries and native platform frameworks:
 
-*   **[ADB (Android Debug Bridge)](https://developer.android.com/tools/releases/platform-tools)** – Device communication, wireless pairing, and command execution.
-*   **[scrcpy](https://github.com/Genymobile/scrcpy)** – Low latency display mirroring and remote input casting.
-*   **[Flutter](https://flutter.dev/)** – Cross-platform UI framework for Windows and Android.
-*   **[Kotlin](https://kotlinlang.org/)** – Android companion agent logic.
-*   **[C#](https://learn.microsoft.com/en-us/dotnet/csharp/)** - Dekstop manager services, Tray APIs, and communication bridges.
+*   **[ADB — Android Debug Bridge](https://developer.android.com/tools/releases/platform-tools)** – Core protocol for device communication, wireless pairing, and ADB command execution.
+*   **[scrcpy](https://github.com/Genymobile/scrcpy)** – High-performance, low-latency screen mirroring and remote input control for Android devices.
+*   **[Flutter](https://flutter.dev/)** – Cross-platform UI framework used to build the Windows desktop client and the Android companion app.
+*   **[Kotlin](https://kotlinlang.org/)** – Used for the Android companion app's background services, system integrations, and business logic.
+*   **[C#](https://learn.microsoft.com/en-us/dotnet/csharp/)** – Powers the Windows desktop manager services, system tray integration, and inter-process communication bridges.
 
-> Special thanks to **[rom1v](https://github.com/rom1v)** for their contributions to the open-source ADB/scrcpy ecosystems, which provided critical insights for this project's architecture.
+> Special thanks to **[rom1v](https://github.com/rom1v)** for their foundational contributions to the open-source ADB and scrcpy ecosystems, which provided critical architectural insights for this project.
 
 ---
 
-## Official Resources
+#### Official Documentation & Resources
 
-| Category | Resource Link |
+| Category | Resource |
 | :--- | :--- |
-| Documentation | [Read Documentation](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html) |
-| Setup Instructions | [Installation Guide](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html) |
-| FAQ | [View FAQ & Troubleshooting](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#faq) |
-| Security Model | [Read Security Specifications](https://shrey113.github.io/Adb-Device-Manager-2/security/security_model.html) |
-| Transparency | [View Transparency Report](https://shrey113.github.io/Adb-Device-Manager-2/security/transparency_model.html) |
-| Privacy Policy | [View Privacy Policy](https://shrey113.github.io/Adb-Device-Manager-2/security/privacy_policy.html) |
-| Troubleshooting | [Fix Connection Issues](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#troubleshooting) |
+| Documentation | [Read the Full Documentation](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html) |
+| Setup & Installation | [View the Installation Guide](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html) |
+| FAQ & Troubleshooting | [View FAQ & Troubleshooting](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#faq) |
+| Security Model | [Read the Security Specifications](https://shrey113.github.io/Adb-Device-Manager-2/security/security_model.html) |
+| Transparency Report | [View the Transparency Report](https://shrey113.github.io/Adb-Device-Manager-2/security/transparency_model.html) |
+| Privacy Policy | [View the Privacy Policy](https://shrey113.github.io/Adb-Device-Manager-2/security/privacy_policy.html) |
+| Connection Issues | [Fix Common Connection Problems](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#troubleshooting) |
 
 ---
 
-## Star History
+#### Star History
 
 <div align="center">
   <a href="https://www.star-history.com/?repos=Shrey113/Adb-Device-Manager-2&type=date&legend=top-left">
