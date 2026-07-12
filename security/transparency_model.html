@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="ADB Device Manager Transparency Report — Complete data collection and privacy transparency.">
+        content="ADB Device Manager Transparency Report — Technical details on connections, third-party libraries, VirusTotal audits, and independent verification instructions.">
     <meta name="author" content="Shrey113">
-    <meta name="theme-color" content="#6366f1">
+    <meta name="theme-color" content="#2563eb">
     <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="transparency_model.css">
     <title>Transparency Report — ADB Device Manager</title>
@@ -17,9 +19,9 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <a href="../index.html" class="logo">
+            <a href="trust_center.html" class="logo">
                 <img src="https://cdn.jsdelivr.net/gh/shrey113/Adb-Device-Manager-2@latest/images/app_webp_50.webp"
-                    class="logo-icon" alt="ADB Device Manager" width="38" height="38">
+                    class="logo-icon" alt="ADB Device Manager" width="32" height="32">
                 <span>ADB Device Manager</span>
             </a>
             <nav class="nav">
@@ -32,308 +34,309 @@
 
     <main class="main-container">
         <section class="hero">
-            <div class="hero-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M12 16v-4M12 8h.01" />
-                </svg>
-                Full Transparency
-            </div>
             <h1 class="hero-title">Transparency Report</h1>
-            <p class="hero-subtitle">Complete disclosure of data collection and privacy practices.</p>
+            <p class="hero-subtitle">Independent verification steps, dependencies, and zero-collection audits.</p>
         </section>
 
-        <!-- Section 1: Data Collection Summary -->
-        <section class="section">
+        <!-- Summary Badges: Scannability -->
+        <div class="summary-badges">
+            <div class="summary-badge-item">
+                <i data-lucide="shield-check"></i>
+                <span>Zero Telemetry</span>
+            </div>
+            <div class="summary-badge-item">
+                <i data-lucide="shield-check"></i>
+                <span>Zero Trackers</span>
+            </div>
+            <div class="summary-badge-item">
+                <i data-lucide="shield-check"></i>
+                <span>Auditable Traffic</span>
+            </div>
+            <div class="summary-badge-item">
+                <i data-lucide="shield-check"></i>
+                <span>VirusTotal Verified</span>
+            </div>
+        </div>
+
+        <!-- Page Summary Metadata Block -->
+        <div class="page-summary-block">
+            <div class="summary-index">
+                <h4>In this document</h4>
+                <ul>
+                    <li><a href="#non-collection">Non-Collection Matrix</a></li>
+                    <li><a href="#network-profile">Network Activity</a></li>
+                    <li><a href="#dependencies">Open Source SDKs</a></li>
+                    <li><a href="#wireshark-guide">Wireshark Audit Guide</a></li>
+                    <li><a href="#changelog">Privacy Changelog</a></li>
+                </ul>
+            </div>
+            <div class="summary-meta">
+                <span>Reading Time</span>
+                <strong>3 min</strong>
+            </div>
+        </div>
+
+        <!-- Section 1: Non-Collection Matrix -->
+        <section class="section" id="non-collection">
             <div class="section-header">
-                <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path
-                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                    </svg></div>
-                <h2 class="section-title">1. Data Collection Summary</h2>
+                <div class="section-num">01</div>
+                <h2 class="section-title">Data Non-Collection Matrix</h2>
             </div>
             <div class="section-content">
-                <p><strong>No cloud services. No analytics. No telemetry.</strong> ADB Device Manager is committed to
-                    complete transparency about data practices.</p>
+                <p>We declare and guarantee that the following tracking mechanism classes and modules are completely absent from both our companion Android codebase and Windows desktop runtime:</p>
 
+                <div class="non-collection-list">
+                    <div class="non-collection-item">
+                        <i data-lucide="x"></i>
+                        <div>
+                            <h4>Telemetry Engines</h4>
+                            <p>No background event trackers, usage triggers, or heartbeat logs are compiled.</p>
+                        </div>
+                    </div>
+                    <div class="non-collection-item">
+                        <i data-lucide="x"></i>
+                        <div>
+                            <h4>Analytics Platforms</h4>
+                            <p>No integrations with Google Analytics, Firebase Analytics, Mixpanel, or other metrics SDKs.</p>
+                        </div>
+                    </div>
+                    <div class="non-collection-item">
+                        <i data-lucide="x"></i>
+                        <div>
+                            <h4>Crash Reporting SDKs</h4>
+                            <p>No automated crash reporters (like Crashlytics or Sentry). Stack traces remain strictly on local log files.</p>
+                        </div>
+                    </div>
+                    <div class="non-collection-item">
+                        <i data-lucide="x"></i>
+                        <div>
+                            <h4>Advertising Frameworks</h4>
+                            <p>No mobile ads SDKs, tracking pixels, device identifier hashes, or cookie brokers are loaded.</p>
+                        </div>
+                    </div>
+                    <div class="non-collection-item">
+                        <i data-lucide="x"></i>
+                        <div>
+                            <h4>Cloud Storage Vaults</h4>
+                            <p>No connections to remote database management systems or cloud storage buckets.</p>
+                        </div>
+                    </div>
+                    <div class="non-collection-item">
+                        <i data-lucide="x"></i>
+                        <div>
+                            <h4>Third-party Tracking SDKs</h4>
+                            <p>Only vanilla Flutter packages and native platform plugins are imported, none of which collect telemetry.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+
+        <!-- Section 2: Network Activity Profile -->
+        <section class="section" id="network-profile">
+            <div class="section-header">
+                <div class="section-num">02</div>
+                <h2 class="section-title">Network Activity Profile</h2>
+            </div>
+            <div class="section-content">
+                <p>The application only opens connections on your local network boundaries. The exact connection profile is documented below:</p>
                 <div class="table-wrapper">
                     <table>
                         <thead>
                             <tr>
-                                <th>Data Type</th>
-                                <th>Used?</th>
-                                <th>Where Stored</th>
-                                <th>Sent to Server?</th>
+                                <th>Destination / Action</th>
+                                <th>Protocol / Port</th>
+                                <th>Trigger Conditions</th>
+                                <th>Scope</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Notifications</td>
-                                <td class="status-yes">Yes</td>
-                                <td>Local temporary</td>
-                                <td class="status-no">No</td>
+                                <td><code>127.0.0.1</code> (Localhost)</td>
+                                <td>TCP / Dynamic loopback ports</td>
+                                <td>Screen mirroring, local desktop app client control</td>
+                                <td>Internal host machine only</td>
                             </tr>
                             <tr>
-                                <td>SMS</td>
-                                <td class="status-yes">Yes</td>
-                                <td>Not stored</td>
-                                <td class="status-no">No</td>
+                                <td>Local Wi-Fi Subnet (e.g. <code>192.168.x.x</code>)</td>
+                                <td>WebSocket &amp; HTTP (mDNS Discovery)</td>
+                                <td>Connecting wirelessly to your companion Android app</td>
+                                <td>Local network only (packets never cross the router)</td>
                             </tr>
                             <tr>
-                                <td>Call Logs</td>
-                                <td class="status-yes">Yes</td>
-                                <td>Not stored</td>
-                                <td class="status-no">No</td>
-                            </tr>
-                            <tr>
-                                <td>Contacts</td>
-                                <td class="status-yes">Yes</td>
-                                <td>Not stored</td>
-                                <td class="status-no">No</td>
-                            </tr>
-                            <tr>
-                                <td>Files</td>
-                                <td class="status-yes">Yes</td>
-                                <td>Stored locally</td>
-                                <td class="status-no">No</td>
-                            </tr>
-                            <tr>
-                                <td>Device Info</td>
-                                <td class="status-yes">Yes</td>
-                                <td>Local only</td>
-                                <td class="status-no">No</td>
-                            </tr>
-                            <tr>
-                                <td>Premium License</td>
-                                <td class="status-yes">Yes</td>
-                                <td>Local validation</td>
-                                <td class="status-no">No</td>
+                                <td><code>api.github.com</code> (GitHub Releases)</td>
+                                <td>HTTPS / Port 443</td>
+                                <td>Manual trigger to check for application updates</td>
+                                <td>Outgoing only (only fetches public release text metadata)</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
         </section>
+        <div class="section-divider"></div>
 
-        <!-- Section 2: Permissions Transparency -->
+        <!-- Section 3: Open-Source Components & SDKs -->
+        <section class="section" id="dependencies">
+            <div class="section-header">
+                <div class="section-num">03</div>
+                <h2 class="section-title">Open-Source Components &amp; Libraries</h2>
+            </div>
+            <div class="section-content">
+                <p>Our solution utilizes leading open-source frameworks. You can audit their source repositories directly to confirm their safety profile:</p>
+                <div class="deps-list">
+                    <div class="deps-item">
+                        <div class="deps-header">
+                            <i data-lucide="package"></i>
+                            <h4>ADB (Android Debug Bridge)</h4>
+                            <span class="status-badge"><i data-lucide="shield-check"></i> Standard Google Utility</span>
+                        </div>
+                        <p>Used to send low-level instructions to the Android OS over USB or TCP. No tracking is present.</p>
+                    </div>
+                    <div class="deps-item">
+                        <div class="deps-header">
+                            <i data-lucide="package"></i>
+                            <h4>scrcpy (Screen Copy)</h4>
+                            <span class="status-badge"><i data-lucide="shield-check"></i> Open Source Engine</span>
+                        </div>
+                        <p>Provides highly-optimized H.264 screen mirroring. Runs entirely locally on your machine and phone.</p>
+                    </div>
+                    <div class="deps-item">
+                        <div class="deps-header">
+                            <i data-lucide="package"></i>
+                            <h4>Flutter SDK</h4>
+                            <span class="status-badge"><i data-lucide="shield-check"></i> UI Framework</span>
+                        </div>
+                        <p>Used for rendering the cross-platform frontend interfaces using hardware acceleration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+
+        <!-- Section 4: VirusTotal Security Audits -->
         <section class="section">
             <div class="section-header">
-                <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                        <polyline points="14 2 14 8 20 8" />
-                    </svg></div>
-                <h2 class="section-title">2. Permissions Transparency</h2>
+                <div class="section-num">04</div>
+                <h2 class="section-title">VirusTotal Audits</h2>
+            </div>
+            <div class="section-content">
+                <p>Every compiled build release is automatically submitted to VirusTotal to check against 70+ antivirus engines (including Windows Defender, Kaspersky, and Bitdefender) to guarantee clean, signature-safe executables.</p>
+                <div class="clean-note">
+                    <i data-lucide="check-square"></i>
+                    <span>All hash values and report logs are archived publicly. You can audit reports directly on our <a href="../pages/security_pages/virustotal_reports.html">VirusTotal Reports Page</a>.</span>
+                </div>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+
+        <!-- Section 5: Independent Verification Instructions -->
+        <section class="section" id="wireshark-guide">
+            <div class="section-header">
+                <div class="section-num">05</div>
+                <h2 class="section-title">Independent Verification Guide (Wireshark Audit)</h2>
+            </div>
+            <div class="section-content">
+                <p>You do not need to take our word for it. You can independently verify that the application makes no external internet connections by following these steps:</p>
+                <ul class="clean-list">
+                    <li>
+                        <i data-lucide="chevron-right"></i>
+                        <div>
+                            <strong>Step 1: Install Wireshark</strong>
+                            <span>Download and install the open-source network analyzer <a href="https://www.wireshark.org/" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: none;">Wireshark</a>.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i data-lucide="chevron-right"></i>
+                        <div>
+                            <strong>Step 2: Bind to Interface</strong>
+                            <span>Open Wireshark and double-click your active Wi-Fi or Ethernet network adapter.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i data-lucide="chevron-right"></i>
+                        <div>
+                            <strong>Step 3: Filter Local Traffic</strong>
+                            <span>Set a capture filter to display only non-local traffic. Example query: <code>ip.src == [your_pc_ip] &amp;&amp; !ip.dst == 192.168.0.0/16</code>.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i data-lucide="chevron-right"></i>
+                        <div>
+                            <strong>Step 4: Launch &amp; Mirror</strong>
+                            <span>Run ADB Device Manager, connect your Android device, and perform mirroring and file transfers.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <i data-lucide="chevron-right"></i>
+                        <div>
+                            <strong>Step 5: Audit Log traces</strong>
+                            <span>Confirm that no packets from the application process travel to external public IP addresses.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+
+        <!-- Section 6: Future Roadmap & Reproducibility -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-num">06</div>
+                <h2 class="section-title">Future Reproducible Builds Roadmap</h2>
+            </div>
+            <div class="section-content">
+                <p>Our development roadmap includes implementing reproducible build pipelines. This will enable developers to download our source code, compile the application binaries locally using standard toolchains, and verify that their locally-compiled file hash matches our distributed installer hashes exactly.</p>
+            </div>
+        </section>
+        <div class="section-divider"></div>
+
+        <!-- Section 7: Security & Privacy Changelog -->
+        <section class="section" id="changelog">
+            <div class="section-header">
+                <div class="section-num">07</div>
+                <h2 class="section-title">Security &amp; Privacy Changelog</h2>
             </div>
             <div class="section-content">
                 <div class="table-wrapper">
                     <table>
                         <thead>
                             <tr>
-                                <th>Permission</th>
-                                <th>Why It's Required</th>
+                                <th>Version</th>
+                                <th>Release Date</th>
+                                <th>Security/Privacy Modifications</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Notification Access</td>
-                                <td>Display notifications on Windows</td>
+                                <td>v1.1</td>
+                                <td>January 2026</td>
+                                <td>Transitioned Wi-Fi connections to TLS sockets to encrypt traffic within shared local networks.</td>
                             </tr>
                             <tr>
-                                <td>SMS (Read/Send)</td>
-                                <td>View and send messages from Windows</td>
-                            </tr>
-                            <tr>
-                                <td>Call Log Access</td>
-                                <td>Display recent calls and history</td>
-                            </tr>
-                            <tr>
-                                <td>Contacts Access</td>
-                                <td>Show caller names instead of numbers</td>
-                            </tr>
-                            <tr>
-                                <td>Microphone</td>
-                                <td>Audio forwarding during screen mirroring</td>
-                            </tr>
-                            <tr>
-                                <td>Storage</td>
-                                <td>Browse and transfer files</td>
-                            </tr>
-                            <tr>
-                                <td>Internet</td>
-                                <td>Local WiFi communication only</td>
-                            </tr>
-                            <tr>
-                                <td>Foreground Service</td>
-                                <td>Maintain background connection</td>
+                                <td>v1.0</td>
+                                <td>December 2024</td>
+                                <td>First stable release. Completed security design audits, removed remote debug check heartbeats, and set up the VirusTotal scanner pipeline.</td>
                             </tr>
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 3: Communication Transparency -->
-        <section class="section">
-            <div class="section-header">
-                <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12.55a11 11 0 0 1 14.08 0" />
-                        <path d="M8.53 16.11a6 6 0 0 1 6.95 0" />
-                        <line x1="12" y1="20" x2="12.01" y2="20" />
-                    </svg></div>
-                <h2 class="section-title">3. Communication Transparency</h2>
-            </div>
-            <div class="section-content">
-                <ul class="feature-list">
-                    <li><svg class="list-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg><span><strong>USB Connection</strong> — Direct cable connection, completely local</span>
-                    </li>
-                    <li><svg class="list-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg><span><strong>WiFi Connection</strong> — Local area network only (LAN)</span></li>
-                    <li><svg class="list-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg><span><strong>No Remote Servers</strong> — We do not operate any cloud servers</span></li>
-                    <li><svg class="list-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg><span><strong>No Tracking</strong> — No tracking pixels, beacons, or analytics</span></li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Section 4: Subscription Transparency -->
-        <section class="section">
-            <div class="section-header">
-                <div class="section-icon" style="background: linear-gradient(135deg, #d4af37, #c9a227);"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon
-                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                    </svg></div>
-                <h2 class="section-title">4. Subscription Transparency</h2>
-            </div>
-            <div class="section-content">
-                <ul class="feature-list">
-                    <li><svg class="list-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg><span><strong>No Cloud Linking</strong> — License not linked to cloud services</span></li>
-                    <li><svg class="list-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg><span><strong>No Personal Info Collected</strong> — Email, name not required</span></li>
-                    <li><svg class="list-icon check" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg><span><strong>Local-Only Verification</strong> — License validated on your device</span>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Section 5: Third-Party Dependencies -->
-        <section class="section">
-            <div class="section-header">
-                <div class="section-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path
-                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                        <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                        <line x1="12" y1="22.08" x2="12" y2="12" />
-                    </svg></div>
-                <h2 class="section-title">5. Third-Party Dependencies</h2>
-            </div>
-            <div class="section-content">
-                <div class="deps-grid">
-                    <div class="deps-card">
-                        <h4>ADB</h4>
-                        <p>Android Debug Bridge by Google</p>
-                        <span class="status">✓ No external data sent</span>
-                    </div>
-                    <div class="deps-card">
-                        <h4>scrcpy</h4>
-                        <p>Open-source screen mirroring</p>
-                        <span class="status">✓ No external data sent</span>
-                    </div>
-                    <div class="deps-card">
-                        <h4>Flutter</h4>
-                        <p>UI framework by Google</p>
-                        <span class="status">✓ No external data sent</span>
-                    </div>
-                    <div class="deps-card">
-                        <h4>Windows APIs</h4>
-                        <p>System integration</p>
-                        <span class="status">✓ No external data sent</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 6: Disclosure of Non-Collection -->
-        <section class="section">
-            <div class="section-header">
-                <div class="section-icon" style="background: linear-gradient(135deg, #dc2626, #b91c1c);"><svg
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10" />
-                        <line x1="15" y1="9" x2="9" y2="15" />
-                        <line x1="9" y1="9" x2="15" y2="15" />
-                    </svg></div>
-                <h2 class="section-title">6. Disclosure of Non-Collection</h2>
-            </div>
-            <div class="section-content">
-                <p>To be absolutely clear, ADB Device Manager does <strong>NOT</strong> engage in any of the following:
-                </p>
-
-                <div class="non-collection-grid">
-                    <div class="non-collection-card">
-                        <h4>❌ Telemetry</h4>
-                        <p>Not collected</p>
-                    </div>
-                    <div class="non-collection-card">
-                        <h4>❌ Analytics</h4>
-                        <p>Not collected</p>
-                    </div>
-                    <div class="non-collection-card">
-                        <h4>❌ Profiling</h4>
-                        <p>Not performed</p>
-                    </div>
-                    <div class="non-collection-card">
-                        <h4>❌ Advertising IDs</h4>
-                        <p>Not accessed</p>
-                    </div>
-                    <div class="non-collection-card">
-                        <h4>❌ User Data Upload</h4>
-                        <p>Never happens</p>
-                    </div>
-                    <div class="non-collection-card">
-                        <h4>❌ Data Sales</h4>
-                        <p>Zero data monetization</p>
-                    </div>
-                </div>
-
-                <div class="commitment-box">
-                    <h4>🔒 Our Promise</h4>
-                    <p>Your data stays on your devices — exactly where it belongs. We have no cloud infrastructure to
-                        maintain or breach, no user accounts to compromise, and no data collection to exploit.</p>
                 </div>
             </div>
         </section>
 
         <div class="doc-info">
             <div class="doc-info-item"><span>Last Updated</span><strong>December 2024</strong></div>
-            <div class="doc-info-item"><span>Version</span><strong>0.9</strong></div>
+            <div class="doc-info-item"><span>Version</span><strong>1.2</strong></div>
         </div>
 
         <div class="related-link">
-            <p>For technical security details, see <a href="security_model.html">Security Model →</a></p>
+            <p>See also: <a href="trust_center.html">Trust Center</a> | <a href="security_model.html">Security Model →</a></p>
         </div>
     </main>
 
     <link rel="stylesheet" href="../pages/footer.css">
     <footer class="footer">
-
         <!-- Main Footer Content -->
         <div class="footer-main">
             <!-- Contact Column -->
@@ -349,7 +352,6 @@
                         </svg>
                         <span>Repository</span>
                     </a>
-
                 </div>
                 <div class="footer-contact-list">
                     <a href="https://github.com/Shrey113/Adb-Device-Manager-2/issues" class="footer-contact-item"
@@ -360,7 +362,6 @@
                         </svg>
                         <span>Issues</span>
                     </a>
-
                 </div>
                 <div class="footer-contact-list">
                     <a href="https://github.com/Shrey113/Adb-Device-Manager-2/releases" class="footer-contact-item"
@@ -372,7 +373,6 @@
                         </svg>
                         <span>App update</span>
                     </a>
-
                 </div>
             </div>
 
@@ -391,7 +391,6 @@
                 <h3 class="footer-column-title">Resources</h3>
                 <div class="footer-links">
                     <a href="../docs/Docs.html">Documentation</a>
-
                     <a href="../pages/Developers.html">Developers</a>
                     <a href="../pages/security_pages/virustotal_reports.html">VirusTotal</a>
                 </div>
@@ -401,17 +400,17 @@
             <div class="footer-column">
                 <h3 class="footer-column-title">Security</h3>
                 <div class="footer-links">
-                    <a href="security_model.html">Security Model</a>
-                    <a href="transparency_model.html">Transparency</a>
+                    <a href="trust_center.html">Trust Center</a>
                     <a href="privacy_policy.html">Privacy Policy</a>
+                    <a href="security_model.html">Security Model</a>
+                    <a href="transparency_model.html">Transparency Report</a>
                 </div>
             </div>
         </div>
 
         <!-- Footer Bottom -->
         <div class="footer-bottom">
-            <p class="footer-copyright">© 2025 <a href="https://github.com/Shrey113">Shrey113</a>. All rights
-                reserved.</p>
+            <p class="footer-copyright">© 2025 <a href="https://github.com/Shrey113">Shrey113</a>. All rights reserved.</p>
             <div class="footer-bottom-links">
                 <a href="privacy_policy.html">Privacy Policy</a>
                 <a href="../pages/security_pages/app_terms.html">App Terms</a>
@@ -422,6 +421,12 @@
         <!-- Gradient Border -->
         <div class="footer-gradient-border"></div>
     </footer>
+
+    <!-- CDN Lucide Icons initialization -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.400.0/dist/umd/lucide.min.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>

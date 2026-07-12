@@ -1,10 +1,11 @@
 /* ==========================================================================
-   ADB Device Manager - Terms of Service Stylesheet
+   ADB Device Manager - Premium Professional Documentation CSS
    Implements a strict editorial design system:
    - Narrower content (max-width: 820px)
    - Strict spacing scale (4px, 8px, 12px, 16px, 24px, 32px, 48px, 64px, 96px)
    - High visual rhythm and whitespace
-   - Clean card-like components and perfect icon alignments
+   - Clean cards for tables, diagrams, and section highlights
+   - Perfect list alignments with icons
    ========================================================================== */
 
 :root {
@@ -48,7 +49,6 @@ body {
 }
 
 .header-content {
-    width: 100%;
     max-width: 820px;
     margin: 0 auto;
     display: flex;
@@ -264,29 +264,6 @@ body {
     margin-bottom: 0;
 }
 
-.section-content ul {
-    list-style: none;
-    margin: 16px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.section-content ul li {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    font-size: 13px;
-    color: var(--color-text-muted);
-}
-
-.section-content ul li::before {
-    content: "•";
-    color: var(--color-primary);
-    font-size: 14px;
-    line-height: 1.2;
-}
-
 /* Lists and callouts with perfect icon-content alignment */
 .clean-list {
     list-style: none;
@@ -329,6 +306,123 @@ body {
     max-width: 680px;
 }
 
+/* Data grid items (without cards - simple structure) */
+.data-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.data-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.data-item-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-text-title);
+}
+
+.data-item-header h4 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.data-item-header i {
+    width: 16px;
+    height: 16px;
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.data-item p {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin: 0;
+    padding-left: 24px;
+}
+
+.status-badge {
+    font-size: 11px;
+    color: var(--color-text-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 2px;
+    padding-left: 24px;
+}
+
+.status-badge i {
+    width: 12px;
+    height: 12px;
+    color: var(--color-primary);
+}
+
+/* Storage & Comm list layouts */
+.storage-list,
+.comm-list,
+.deps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.storage-item,
+.comm-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.storage-item i,
+.comm-item i {
+    width: 16px;
+    height: 16px;
+    color: var(--color-primary);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.storage-item div,
+.comm-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.storage-item h4,
+.comm-item h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-text-title);
+    display: inline-flex;
+    align-items: center;
+}
+
+.storage-item p,
+.comm-item p {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin: 0;
+    max-width: 680px;
+}
+
+.badge-none {
+    font-size: 10px;
+    font-weight: 700;
+    color: #ef4444;
+    padding: 2px 6px;
+    border: 1px solid #fee2e2;
+    background: #fef2f2;
+    border-radius: 4px;
+    margin-left: 8px;
+}
+
 /* Callout clean-note (border only callout) */
 .clean-note {
     display: flex;
@@ -363,6 +457,326 @@ body {
 
 .clean-note span a:hover {
     text-decoration: underline;
+}
+
+/* Sharing of Data Grid */
+.no-share-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.no-share-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--color-text-body);
+    font-weight: 500;
+}
+
+.no-share-item i {
+    width: 14px;
+    height: 14px;
+    color: #ef4444;
+    flex-shrink: 0;
+}
+
+/* Highlight Items */
+.highlight-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.highlight-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.highlight-item i {
+    width: 16px;
+    height: 16px;
+    color: var(--color-primary);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.highlight-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.highlight-item h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-text-title);
+}
+
+.highlight-item p {
+    font-size: 13px;
+    color: var(--color-text-muted);
+}
+
+/* Architecture Diagram - spacious padding and background card */
+.architecture-diagram {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 48px;
+    margin: 40px 0;
+}
+
+.diagram-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.diagram-box {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 12px 24px;
+    text-align: center;
+    min-width: 140px;
+}
+
+.diagram-box.primary {
+    border-color: var(--color-primary);
+    background: #f0f7ff;
+}
+
+.diagram-box h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-text-title);
+    margin: 0;
+}
+
+.diagram-box p {
+    font-size: 11px;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+.diagram-arrow {
+    font-size: 16px;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* Threat Model List */
+.threat-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px;
+    margin-top: 24px;
+}
+
+.threat-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.protects-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #10b981;
+}
+
+.protects-title i {
+    width: 16px;
+    height: 16px;
+}
+
+.limits-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #f59e0b;
+}
+
+.limits-title i {
+    width: 16px;
+    height: 16px;
+}
+
+.clean-bullet-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.clean-bullet-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--color-text-muted);
+}
+
+.clean-bullet-list li::before {
+    content: "•";
+    color: var(--color-text-muted);
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+/* Non-Collection Items */
+.non-collection-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.non-collection-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.non-collection-item i {
+    width: 16px;
+    height: 16px;
+    color: #ef4444;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.non-collection-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.non-collection-item h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-text-title);
+}
+
+.non-collection-item p {
+    font-size: 13px;
+    color: var(--color-text-muted);
+}
+
+/* Third-Party Dependencies List */
+.deps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.deps-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.deps-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.deps-header i {
+    width: 16px;
+    height: 16px;
+    color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.deps-header h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-text-title);
+    margin: 0;
+}
+
+.deps-item p {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin: 0;
+    padding-left: 24px;
+}
+
+.deps-header .status-badge {
+    font-size: 11px;
+    color: var(--color-text-muted);
+    margin-left: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding-left: 0;
+}
+
+.deps-header .status-badge i {
+    width: 12px;
+    height: 12px;
+    color: var(--color-primary);
+}
+
+/* Table Style: Wrapped inside rounded cards */
+.table-wrapper {
+    overflow-x: auto;
+    margin: 24px 0;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-bg-card);
+    padding: 16px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+    color: var(--color-text-title);
+    font-size: 13px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-body);
+    font-size: 13px;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.status-yes {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.status-no {
+    color: var(--color-text-muted);
+    font-weight: 400;
 }
 
 /* Document Info and Metas */
@@ -424,19 +838,6 @@ i[data-lucide] {
     stroke-linejoin: round;
 }
 
-/* Notice badge helper for terms notice blocks */
-.notice-badge {
-    font-size: 11px;
-    font-weight: 700;
-    color: #b45309;
-    background: #fef3c7;
-    border: 1px solid rgba(245, 158, 11, 0.2);
-    padding: 2px 8px;
-    border-radius: 4px;
-    margin-top: 4px;
-    display: inline-block;
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .header {
@@ -472,8 +873,27 @@ i[data-lucide] {
         padding-top: 16px;
     }
 
+    .data-list-grid,
+    .no-share-list,
+    .threat-list,
+    .non-collection-list {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
     .doc-info {
         flex-direction: column;
         gap: 16px;
+    }
+
+    .diagram-flow {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .diagram-arrow {
+        text-align: center;
+        transform: rotate(90deg);
+        margin: 4px 0;
     }
 }

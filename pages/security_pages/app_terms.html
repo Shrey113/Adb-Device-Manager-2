@@ -9,6 +9,8 @@
     <meta name="author" content="Shrey113">
     <meta name="theme-color" content="#ffffff">
     <link rel="icon" href="../../images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="app_terms.css">
     <title>Terms of Service — ADB Device Manager</title>
@@ -17,9 +19,9 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <a href="../../index.html" class="logo">
+            <a href="../../security/trust_center.html" class="logo">
                 <img src="https://cdn.jsdelivr.net/gh/shrey113/Adb-Device-Manager-2@latest/images/app_webp_50.webp"
-                    class="logo-icon" alt="ADB Device Manager" width="34" height="34">
+                    class="logo-icon" alt="ADB Device Manager" width="32" height="32">
                 <span>ADB Device Manager</span>
             </a>
             <nav class="nav">
@@ -33,325 +35,177 @@
 
     <main class="main-container">
         <section class="hero">
-            <div class="hero-badge">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
-                Legal Compliance & Usage
-            </div>
             <h1 class="hero-title">Terms of Service</h1>
-            <p class="hero-subtitle">Understanding your rights and our commitment to local-only security, data
-                privacy, and transparent software practices.</p>
+            <p class="hero-subtitle">Understanding your rights and our commitment to local-only security, data privacy, and transparent software practices.</p>
         </section>
 
-        <!-- Table of Contents -->
-        <nav class="toc">
-            <h2 class="toc-title">Quick Navigation</h2>
-            <ol class="toc-list">
-                <li class="toc-item">
-                    <a href="#educational-purpose" class="toc-link">
-                        <span class="toc-number">01</span>
-                        Educational Purpose
-                    </a>
-                </li>
-                <li class="toc-item">
-                    <a href="#feature-acknowledgment" class="toc-link">
-                        <span class="toc-number">02</span>
-                        Feature Acknowledgment
-                    </a>
-                </li>
-                <li class="toc-item">
-                    <a href="#acceptance" class="toc-link">
-                        <span class="toc-number">03</span>
-                        Acceptance of Terms
-                    </a>
-                </li>
-                <li class="toc-item">
-                    <a href="#use-of-service" class="toc-link">
-                        <span class="toc-number">04</span>
-                        Use of Service
-                    </a>
-                </li>
-                <li class="toc-item">
-                    <a href="#security" class="toc-link">
-                        <span class="toc-number">05</span>
-                        Security & Local Operation
-                    </a>
-                </li>
-                <li class="toc-item">
-                    <a href="#responsibilities" class="toc-link">
-                        <span class="toc-number">06</span>
-                        User Responsibilities
-                    </a>
-                </li>
-                <li class="toc-item">
-                    <a href="#license" class="toc-link">
-                        <span class="toc-number">07</span>
-                        Software License
-                    </a>
-                </li>
-                <li class="toc-item">
-                    <a href="#liability" class="toc-link">
-                        <span class="toc-number">08</span>
-                        Limitation of Liability
-                    </a>
-                </li>
-                <li class="toc-item">
-                    <a href="#changes" class="toc-link">
-                        <span class="toc-number">09</span>
-                        Changes to Terms
-                    </a>
-                </li>
-                <li class="toc-item">
-                    <a href="#contact" class="toc-link">
-                        <span class="toc-number">10</span>
-                        Contact Information
-                    </a>
-                </li>
-            </ol>
-        </nav>
+        <!-- Summary Badges: Scannability -->
+        <div class="summary-badges">
+            <div class="summary-badge-item">
+                <i data-lucide="shield-check"></i>
+                <span>Educational Use Only</span>
+            </div>
+            <div class="summary-badge-item">
+                <i data-lucide="shield-check"></i>
+                <span>Local Execution</span>
+            </div>
+            <div class="summary-badge-item">
+                <i data-lucide="shield-check"></i>
+                <span>No Remote Liability</span>
+            </div>
+        </div>
+
+        <!-- Page Summary Metadata Block -->
+        <div class="page-summary-block">
+            <div class="summary-index">
+                <h4>In this document</h4>
+                <ul>
+                    <li><a href="#educational-purpose">01. Purpose</a></li>
+                    <li><a href="#feature-acknowledgment">02. Features</a></li>
+                    <li><a href="#acceptance">03. Acceptance</a></li>
+                    <li><a href="#use-of-service">04. Usage rules</a></li>
+                    <li><a href="#security">05. Security</a></li>
+                    <li><a href="#license">06. Software License</a></li>
+                </ul>
+            </div>
+            <div class="summary-meta">
+                <span>Reading Time</span>
+                <strong>4 min</strong>
+            </div>
+        </div>
 
         <div class="terms-content">
             <!-- Section 1: Educational Purpose -->
-            <section id="educational-purpose" class="section notice-section">
+            <section id="educational-purpose" class="section">
                 <div class="section-header">
-                    <div class="section-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                        </svg>
-                    </div>
-                    <h2 class="section-title">1. Educational Purpose</h2>
+                    <div class="section-num">01</div>
+                    <h2 class="section-title">Educational Purpose</h2>
                     <span class="notice-badge">Critical Notice</span>
                 </div>
-                <div class="section-body">
-                    <p>ADB Device Manager is developed and provided exclusively for <strong>educational, research, and
-                            personal testing purposes</strong>. By using this software, you acknowledge and agree that:
-                    </p>
+                <div class="section-content">
+                    <p>ADB Device Manager is developed and provided exclusively for educational, research, and personal testing purposes. By using this software, you acknowledge and agree that:</p>
                     <ul>
-                        <li>The tool is intended to help users understand Android internals, ADB protocols, and local
-                            network bridge communications.</li>
-                        <li>It must not be used for any form of unauthorized access, data misuse, or malicious
-                            activities against devices or networks.</li>
-                        <li>Users are encouraged to use the Software as a learning platform to explore how Windows and
-                            Android can integrate securely over local connections.</li>
+                        <li>The tool is intended to help users understand Android internals, ADB protocols, and local network bridge communications.</li>
+                        <li>It must not be used for any form of unauthorized access, data misuse, or malicious activities against devices or networks.</li>
+                        <li>Users are encouraged to use the Software as a learning platform to explore how Windows and Android can integrate securely over local connections.</li>
                     </ul>
                 </div>
             </section>
+            <div class="section-divider"></div>
 
             <!-- Section 2: Feature Acknowledgment -->
-            <section id="feature-acknowledgment" class="section notice-section">
+            <section id="feature-acknowledgment" class="section">
                 <div class="section-header">
-                    <div class="section-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M9 11l3 3L22 4"></path>
-                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
-                        </svg>
-                    </div>
-                    <h2 class="section-title">2. Feature Acknowledgment</h2>
-                    <span class="notice-badge">Important</span>
+                    <div class="section-num">02</div>
+                    <h2 class="section-title">Feature Acknowledgment</h2>
                 </div>
-                <div class="section-body">
-                    <p>Before proceeding, users must acknowledge the core nature of the Software's features:</p>
+                <div class="section-content">
+                    <p>The companion Android application handles operations (such as SMS management, call popups, screen capture, and notification reading) using Android platform APIs. You acknowledge that:</p>
                     <ul>
-                        <li><strong>Local-Only Architecture:</strong> All features (Mirroring, File Transfer, Remote
-                            Control) function exclusively over local Wi-Fi or USB. No cloud bypass is implemented.</li>
-                        <li><strong>ADB Dependency:</strong> Many features rely on the Android Debug Bridge. Enabling
-                            USB Debugging is a user-initiated security choice, and the Software only acts as a client
-                            for these standard Android commands.</li>
-                        <li><strong>Standard Protocols:</strong> The Software uses standard, documented Android APIs and
-                            protocols. It does not exploit vulnerabilities or perform "rooting" operations.</li>
+                        <li>These features are designed to emulate standard integration features over a direct local link.</li>
+                        <li>The application acts as a transmission medium between your phone and your PC over your own network and cables.</li>
+                        <li>All background processes, listeners, and frame encoders run purely locally on the hardware you own and control.</li>
                     </ul>
                 </div>
             </section>
+            <div class="section-divider"></div>
 
             <!-- Section 3: Acceptance of Terms -->
             <section id="acceptance" class="section">
                 <div class="section-header">
-                    <div class="section-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="12" y1="16" x2="12" y2="12"></line>
-                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                        </svg>
-                    </div>
-                    <h2 class="section-title">3. Acceptance of Terms</h2>
+                    <div class="section-num">03</div>
+                    <h2 class="section-title">Acceptance of Terms</h2>
                 </div>
-                <div class="section-body">
-                    <p>By downloading, installing, or using ADB Device Manager ("the Software"), you agree to be bound
-                        by these Terms of Service. If you do not agree, do not use the Software.</p>
-                    <p>These terms apply to both the Windows application and the Android companion app. The Software is
-                        designed for personal and professional use in managing Android devices via a Windows PC.</p>
+                <div class="section-content">
+                    <p>By downloading, installing, or using the Software (both the Windows desktop application and the companion Android installer files), you agree to be bound by these Terms of Service. If you do not agree to these terms, do not install or use the Software.</p>
                 </div>
             </section>
+            <div class="section-divider"></div>
 
             <!-- Section 4: Use of Service -->
             <section id="use-of-service" class="section">
                 <div class="section-header">
-                    <div class="section-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path
-                                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
-                            </path>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                        </svg>
-                    </div>
-                    <h2 class="section-title">4. Use of Service</h2>
+                    <div class="section-num">04</div>
+                    <h2 class="section-title">Use of Service</h2>
                 </div>
-                <div class="section-body">
-                    <p>ADB Device Manager provides a local interface for controlling Android devices. You are granted a
-                        non-exclusive, non-transferable license to use the Software under the following conditions:</p>
-                    <ul>
-                        <li>You will not use the Software for any illegal or unauthorized purpose.</li>
-                        <li>You are responsible for ensuring you have the legal right to access the Android devices
-                            connected to the Software.</li>
-                        <li>The Software must not be used to bypass security measures on devices not owned by the user.
-                        </li>
-                    </ul>
+                <div class="section-content">
+                    <p>You agree to use the Software only for purposes that are permitted by these Terms and any applicable law, regulation, or generally accepted practices in the relevant jurisdictions. You represent and warrant that your use of the Software does not violate any local laws or regulations.</p>
                 </div>
             </section>
+            <div class="section-divider"></div>
 
-            <!-- Section 5: Security & Local-Only Operation -->
+            <!-- Section 5: Security & Local Operation -->
             <section id="security" class="section">
                 <div class="section-header">
-                    <div class="section-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                        </svg>
-                    </div>
-                    <h2 class="section-title">5. Security & Local-Only Operation</h2>
+                    <div class="section-num">05</div>
+                    <h2 class="section-title">Security &amp; Local Operation</h2>
                 </div>
-                <div class="section-body">
-                    <p>The core architecture of ADB Device Manager is built on <strong>Local Execution</strong>. We do
-                        not use cloud servers for data processing or transmission.</p>
-                    <div class="highlight-box">
-                        <h4>Our Security Commitment</h4>
-                        <p>All data transmitted between your Windows PC and Android device occurs over your local
-                            network (Wi-Fi/LAN) or via physical USB connection. No personal data, including screen
-                            mirroring streams, audio packets, or file transfers, is ever uploaded to our servers or any
-                            third-party infrastructure.</p>
-                    </div>
-                    <p>Users are responsible for the security of their local network. Using the Software on public or
-                        unsecured Wi-Fi networks is done at the user's own risk.</p>
+                <div class="section-content">
+                    <p>The Software operates entirely offline on the devices on which it is installed. It does not establish connections with remote tracking or analytics servers. The security and integrity of the local network bridge are the sole responsibility of the user.</p>
+                    <p>We advise users to secure their Wi-Fi routers and endpoints, and avoid running wireless connection links on unsecured, public hotspot networks. For details on execution boundaries and encryption modes, refer to the <a href="../../security/security_model.html" style="color: var(--color-primary); text-decoration: none;">Security Model</a>.</p>
                 </div>
             </section>
+            <div class="section-divider"></div>
 
-            <!-- Section 6: User Responsibilities -->
-            <section id="responsibilities" class="section">
-                <div class="section-header">
-                    <div class="section-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                    </div>
-                    <h2 class="section-title">6. User Responsibilities</h2>
-                </div>
-                <div class="section-body">
-                    <p>As a user, you agree to:</p>
-                    <ul>
-                        <li>Maintain the confidentiality of any access tokens or security keys generated by the
-                            Software.</li>
-                        <li>Provide accurate information if choosing to register for premium updates or support.</li>
-                        <li>Comply with all applicable data protection and privacy laws in your jurisdiction.</li>
-                    </ul>
-                    <p>Interference with the Software's internal security checks or attempts to reverse-engineer
-                        proprietary components (excluding open-source dependencies) is strictly prohibited.</p>
-                </div>
-            </section>
-
-            <!-- Section 7: Software License & Ownership -->
+            <!-- Section 6: Software License -->
             <section id="license" class="section">
                 <div class="section-header">
-                    <div class="section-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                            <polyline points="14 2 14 8 20 8"></polyline>
-                            <line x1="16" y1="13" x2="8" y2="13"></line>
-                            <line x1="16" y1="17" x2="8" y2="17"></line>
-                            <polyline points="10 9 9 9 8 9"></polyline>
-                        </svg>
-                    </div>
-                    <h2 class="section-title">7. Software License & Ownership</h2>
+                    <div class="section-num">06</div>
+                    <h2 class="section-title">Software License</h2>
                 </div>
-                <div class="section-body">
-                    <p>ADB Device Manager is protected by copyright and other intellectual property laws. All rights not
-                        expressly granted to you are reserved by the developers.</p>
-                    <p>The Software utilizes several open-source libraries (e.g., scrcpy, ADB binaries). Your use of
-                        these components is subject to their respective licenses (GPL, Apache, etc.).</p>
+                <div class="section-content">
+                    <p>Subject to these Terms, you are granted a limited, personal, non-transferable, revocable license to run compiled versions of the Software on hardware you own. Premium features verified by local cryptographic checks are licensed strictly to the purchasing individual user and may not be repackaged or distributed.</p>
                 </div>
             </section>
+            <div class="section-divider"></div>
 
-            <!-- Section 8: Limitation of Liability -->
+            <!-- Section 7: Limitation of Liability -->
             <section id="liability" class="section">
                 <div class="section-header">
-                    <div class="section-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path
-                                d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
-                            </path>
-                            <line x1="12" y1="9" x2="12" y2="13"></line>
-                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                        </svg>
-                    </div>
-                    <h2 class="section-title">8. Limitation of Liability</h2>
+                    <div class="section-num">07</div>
+                    <h2 class="section-title">Limitation of Liability</h2>
                 </div>
-                <div class="section-body">
-                    <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. THE DEVELOPERS SHALL NOT BE
-                        LIABLE FOR ANY DAMAGES, INCLUDING BUT NOT LIMITED TO DATA LOSS, DEVICE BRICKING, OR SECURITY
-                        BREACHES ARISING FROM THE MISUSE OF THE SOFTWARE OR LOCAL NETWORK VULNERABILITIES.</p>
-                    <p>While we strive for stability, the interaction with system-level ADB commands carries inherent
-                        risks. Users are advised to back up sensitive data before performing advanced operations.</p>
+                <div class="section-content">
+                    <p>The Software is provided "AS IS" and "AS AVAILABLE", without warranties of any kind, either express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+                    <p>In no event shall the authors or copyright holders be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the Software or the use or other dealings in the Software.</p>
                 </div>
             </section>
+            <div class="section-divider"></div>
 
-            <!-- Section 9: Changes to Terms -->
+            <!-- Section 8: Changes to Terms -->
             <section id="changes" class="section">
                 <div class="section-header">
-                    <div class="section-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M23 4v6h-6"></path>
-                            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
-                        </svg>
-                    </div>
-                    <h2 class="section-title">9. Changes to Terms</h2>
+                    <div class="section-num">08</div>
+                    <h2 class="section-title">Changes to Terms</h2>
                 </div>
-                <div class="section-body">
-                    <p>We reserve the right to modify these terms at any time. Significant changes will be communicated
-                        through the Software's update notification system or via our official documentation pages.</p>
-                </div>
-            </section>
-
-            <!-- Section 10: Contact Information -->
-            <section id="contact" class="section">
-                <div class="section-header">
-                    <div class="section-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                            </path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                    </div>
-                    <h2 class="section-title">10. Contact Information</h2>
-                </div>
-                <div class="section-body">
-                    <p>For questions regarding these Terms or legal inquiries, please contact the developer via the
-                        official Repository or support channels.</p>
+                <div class="section-content">
+                    <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. We will post updates directly on this page. Your continued use of the Software after any changes constitute acceptance of the updated terms.</p>
                 </div>
             </section>
         </div>
 
-        <div class="last-updated">
-            <strong>Last Updated:</strong> January 2025
+        <div class="doc-info">
+            <div class="doc-info-item">
+                <span>Last Updated</span>
+                <strong>December 2024</strong>
+            </div>
+            <div class="doc-info-item">
+                <span>Document Version</span>
+                <strong>1.1</strong>
+            </div>
+            <div class="doc-info-item">
+                <span>Scope</span>
+                <strong>Companion Apps</strong>
+            </div>
+        </div>
+
+        <div class="related-link">
+            <p>See also: <a href="../../security/trust_center.html">Trust Center</a> | <a href="../../security/privacy_policy.html">Privacy Policy</a> | <a href="../../security/transparency_model.html">Transparency Report</a></p>
         </div>
     </main>
 
-    <link rel="stylesheet" href="../../pages/footer.css">
+    <link rel="stylesheet" href="../footer.css">
     <footer class="footer">
-
         <!-- Main Footer Content -->
         <div class="footer-main">
             <!-- Contact Column -->
@@ -367,7 +221,6 @@
                         </svg>
                         <span>Repository</span>
                     </a>
-
                 </div>
                 <div class="footer-contact-list">
                     <a href="https://github.com/Shrey113/Adb-Device-Manager-2/issues" class="footer-contact-item"
@@ -378,7 +231,6 @@
                         </svg>
                         <span>Issues</span>
                     </a>
-
                 </div>
                 <div class="footer-contact-list">
                     <a href="https://github.com/Shrey113/Adb-Device-Manager-2/releases" class="footer-contact-item"
@@ -390,7 +242,6 @@
                         </svg>
                         <span>App update</span>
                     </a>
-
                 </div>
             </div>
 
@@ -409,7 +260,6 @@
                 <h3 class="footer-column-title">Resources</h3>
                 <div class="footer-links">
                     <a href="../../docs/Docs.html">Documentation</a>
-
                     <a href="../Developers.html">Developers</a>
                     <a href="virustotal_reports.html">VirusTotal</a>
                 </div>
@@ -419,17 +269,17 @@
             <div class="footer-column">
                 <h3 class="footer-column-title">Security</h3>
                 <div class="footer-links">
-                    <a href="../../security/security_model.html">Security Model</a>
-                    <a href="../../security/transparency_model.html">Transparency</a>
+                    <a href="../../security/trust_center.html">Trust Center</a>
                     <a href="../../security/privacy_policy.html">Privacy Policy</a>
+                    <a href="../../security/security_model.html">Security Model</a>
+                    <a href="../../security/transparency_model.html">Transparency Report</a>
                 </div>
             </div>
         </div>
 
         <!-- Footer Bottom -->
         <div class="footer-bottom">
-            <p class="footer-copyright">© 2025 <a href="https://github.com/Shrey113">Shrey113</a>. All rights
-                reserved.</p>
+            <p class="footer-copyright">© 2025 <a href="https://github.com/Shrey113">Shrey113</a>. All rights reserved.</p>
             <div class="footer-bottom-links">
                 <a href="../../security/privacy_policy.html">Privacy Policy</a>
                 <a href="app_terms.html">App Terms</a>
@@ -440,6 +290,12 @@
         <!-- Gradient Border -->
         <div class="footer-gradient-border"></div>
     </footer>
+
+    <!-- CDN Lucide Icons initialization -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.400.0/dist/umd/lucide.min.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>
