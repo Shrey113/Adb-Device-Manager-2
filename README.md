@@ -123,18 +123,19 @@ Boost your productivity with built-in keyboard shortcuts for the most common act
 
 | Feature | ADB Device Manager | Vysor (Pro) | Link to Windows |
 | :--- | :---: | :---: | :---: |
-| **Screen Mirroring** | **Ultra-low latency ✅** | Slower | Good ✅ |
-| **Screen-Off Device Control** | ✅ | Limited | ❌ |
-| **App-Specific Audio Mirroring** | ✅ | ❌ | ✅ |
-| **Multi-App Desktop Mode** | ✅ | ❌ | Limited |
-| **Per-App Audio Toggle** | ✅ | ❌ | ❌ |
+| **Screen Mirroring** | **Ultra-low latency ✅** | ✅ | Good ✅ |
+| **Multi-App Desktop Mode** | ✅ | ❌ |  ✅ |
 | **Notification Sync** | ✅ | ❌ | ✅ |
-| **Quick Access Panel** | ✅ | ❌ | Limited |
 | **SMS & Call Sync** | ✅ | ❌ | ✅ |
 | **Remote Camera View** | ✅ | Limited | ❌ |
 | **Bluetooth Audio Pairing** | ✅ | ❌ | ✅ |
+|**Multiple Device Support**| ✅ | ❌ | Limited |
 | **Full Control Without ADB** | Limited | ❌ | ✅ |
-| **Call Audio Capture** | ❌ | ❌ | ✅ |
+| **Call Audio Capture** | ❌ | ❌ | ✅(system privileges) |
+| **App-Specific Audio Mirroring** | ✅ | ❌ | ❌ |
+| **Screen-Off Device Control** | ✅ | Limited | ❌ |
+|**Per-App Audio Toggle** | ✅ | ❌ | ❌ |
+| **Quick Control With Keyboard** | ✅ | ❌ | ❌ |
 
 ---
 
