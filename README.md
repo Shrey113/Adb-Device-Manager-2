@@ -64,17 +64,17 @@ ADB Mode uses the Android Debug Bridge (ADB) protocol to establish a direct, low
 
 | Feature | Description | Preview |
 | :--- | :--- | :--- |
-| Screen Mirroring | Mirror your Android screen to Windows in real time with ultra-low latency | [Preview](docs/Docs.html#screen-mirroring) |
-| Audio Streaming | Stream your device's audio output directly to your PC speakers | [Preview](docs/Docs.html#audio-mirroring) |
-| Input Control | Control your Android phone remotely using your PC keyboard and mouse | [Preview](docs/Docs.html#input-control) |
-| Scrcpy Control | Customize, configure, and manage Scrcpy display and input options | [Preview](docs/Docs.html#screen-mirroring) |
-| Android DeX | Run Android apps in resizable desktop-style windows on your PC | [Preview](docs/Docs.html#android-dex) |
-| Desktop Mode | Launch a multi-app virtual display for a full desktop-like experience | [Preview](docs/Docs.html#desktop-mode) |
-| APK Installer | Sideload and install APK files on your device directly via ADB | [Preview](docs/Docs.html#app-installer) |
-| Camera View | View your Android device's live camera feed on your PC | [Preview](docs/Docs.html#camera-view) |
-| Contacts | Extract and browse your phone's contacts via ADB | [Preview](docs/Docs.html#contacts) |
-| Call History | Read and export your device's call logs | [Preview](docs/Docs.html#call-history) |
-| SMS | Extract and read SMS messages from your Android device | [Preview](docs/Docs.html#sms-messages) |
+| [Screen Mirroring](docs/Docs.html#screen-mirroring) | Mirror your Android screen to Windows in real time with ultra-low latency | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#screen-mirroring) |
+| [Audio Streaming](docs/Docs.html#audio-mirroring) | Stream your device's audio output directly to your PC speakers | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#audio-mirroring) |
+| [Input Control](docs/Docs.html#input-control) | Control your Android phone remotely using your PC keyboard and mouse | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#input-control) |
+| [Scrcpy Control](docs/Docs.html#screen-mirroring) | Customize, configure, and manage Scrcpy display and input options | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#screen-mirroring) |
+| [Android DeX](docs/Docs.html#android-dex) | Run Android apps in resizable desktop-style windows on your PC | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#android-dex) |
+| [Desktop Mode](docs/Docs.html#desktop-mode) | Launch a multi-app virtual display for a full desktop-like experience | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#desktop-mode) |
+| [APK Installer](docs/Docs.html#app-installer) | Sideload and install APK files on your device directly via ADB | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#app-installer) |
+| [Camera View](docs/Docs.html#camera-view) | View your Android device's live camera feed on your PC | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#camera-view) |
+| [Contacts](docs/Docs.html#contacts) | Extract and browse your phone's contacts via ADB | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#contacts) |
+| [Call History](docs/Docs.html#call-history) | Read and export your device's call logs | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#call-history) |
+| [SMS](docs/Docs.html#sms-messages) | Extract and read SMS messages from your Android device | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#sms-messages) |
 
 ---
 
@@ -84,16 +84,16 @@ App Mode pairs the ADB Device Manager desktop client with the ADB Device Manager
 
 | Feature | Description | Preview |
 | :--- | :--- | :--- |
-| Android Streaming | Wireless screen mirroring from Android to Windows over local Wi-Fi | [Preview](docs/Docs.html#screen-mirroring) |
-| Media Control | Control Android music and media playback directly from your PC | [Preview](docs/Docs.html#music-control) |
-| Notifications | Real-time Android notification sync to your Windows desktop | [Preview](docs/Docs.html#notification-center) |
-| Photo Gallery | Wirelessly browse and download photos from your Android device | [Preview](docs/Docs.html#photo-gallery) |
-| File Transfer | Fast bidirectional file transfer over your local area network | [Preview](docs/Docs.html#device-files) |
-| Contacts | View and manage your phone's contacts with a rich desktop UI | [Preview](docs/Docs.html#contacts) |
-| Calls | Answer and manage incoming calls from your Windows PC | [Preview](docs/Docs.html#call-history) |
-| SMS Messages | Send and receive SMS messages from your Windows desktop | [Preview](docs/Docs.html#sms-messages) |
-| Bluetooth | Manage Bluetooth device connections and settings remotely | [Preview](docs/Docs.html#bluetooth-pairing) |
-| TV Control | Control Android TV devices and cast media from your PC | [Preview](docs/Docs.html) |
+| [Android Streaming](docs/Docs.html#screen-mirroring) | Wireless screen mirroring from Android to Windows over local Wi-Fi | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#screen-mirroring) |
+| [Media Control](docs/Docs.html#music-control) | Control Android music and media playback directly from your PC | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#music-control) |
+| [Notifications](docs/Docs.html#notification-center) | Real-time Android notification sync to your Windows desktop | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#notification-center) |
+| [Photo Gallery](docs/Docs.html#photo-gallery) | Wirelessly browse and download photos from your Android device | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#photo-gallery) |
+| [File Transfer](docs/Docs.html#device-files) | Fast bidirectional file transfer over your local area network | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#device-files) |
+| [Contacts](docs/Docs.html#contacts) | View and manage your phone's contacts with a rich desktop UI | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#contacts) |
+| [Calls](docs/Docs.html#call-history) | Answer and manage incoming calls from your Windows PC | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#call-history) |
+| [SMS Messages](docs/Docs.html#sms-messages) | Send and receive SMS messages from your Windows desktop | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#sms-messages) |
+| [Bluetooth](docs/Docs.html#bluetooth-pairing) | Manage Bluetooth device connections and settings remotely | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#bluetooth-pairing) |
+| [TV Control](docs/Docs.html) | Control Android TV devices and cast media from your PC | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html) |
 
 ---
 
@@ -101,8 +101,8 @@ App Mode pairs the ADB Device Manager desktop client with the ADB Device Manager
 
 | Feature | Description | Preview |
 | :--- | :--- | :--- |
-| File Sharing | Browser-based local file sharing between your PC and Android | [Preview](docs/Docs.html#file-sharing-system) |
-| Bluetooth Pairing | Pair Android audio and stream it directly to Windows audio output | [Preview](docs/Docs.html#bluetooth-pairing) |
+| [File Sharing](docs/Docs.html#file-sharing-system) | Browser-based local file sharing between your PC and Android | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#file-sharing-system) |
+| [Bluetooth Pairing](docs/Docs.html#bluetooth-pairing) | Pair Android audio and stream it directly to Windows audio output | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#bluetooth-pairing) |
 
 ---
 
@@ -112,10 +112,10 @@ Boost your productivity with built-in keyboard shortcuts for the most common act
 
 | Shortcut | Action | Preview |
 | :---: | :--- | :---: |
-| `Alt + S` | Toggle Screen Mirroring | [Preview](docs/Docs.html#screen-mirroring) |
-| `Alt + A` | Toggle Audio Streaming | [Preview](docs/Docs.html#audio-mirroring) |
-| `Alt + Shift + D` | Launch Android DeX | [Preview](docs/Docs.html#android-dex) |
-| `Alt + F` | Open File Transfer | [Preview](docs/Docs.html#file-sharing-system) |
+| `Alt + S` | [Toggle Screen Mirroring](docs/Docs.html#screen-mirroring) | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#screen-mirroring) |
+| `Alt + A` | [Toggle Audio Streaming](docs/Docs.html#audio-mirroring) | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#audio-mirroring) |
+| `Alt + Shift + D` | [Launch Android DeX](docs/Docs.html#android-dex) | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#android-dex) |
+| `Alt + F` | [Open File Transfer](docs/Docs.html#file-sharing-system) | [Preview](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#file-sharing-system) |
 
 > See the [Full Shortcuts Reference](docs/Docs.html) for all available hotkeys.
 
