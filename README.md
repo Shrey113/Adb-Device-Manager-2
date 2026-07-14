@@ -150,26 +150,6 @@ Boost your productivity with built-in keyboard shortcuts for the most common act
 
 ---
 
-### Live Preview & Feature Demos
-
-<div align="center">
-
-### Resizable Android Apps on Windows (Android DeX / Scrcpy)
-*Run any Android app in a resizable, desktop-style window — just like a native Windows application*
-
-<img src="images/Most_imp/1_Scrcpy_resizable.gif" width="85%" alt="Resizable Scrcpy — Android apps running in desktop windows on Windows" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
-
-<br><br>
-
-### Android Media Session Control on Windows
-*Control Android music and media playback directly from the Windows media player and system tray*
-
-<img src="images/Most_imp/2_media_sessions.gif" width="85%" alt="Android Media Session Control from Windows PC" style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
-
-</div>
-
----
-
 ### Technologies & Open-Source Dependencies
 
 ADB Device Manager is built on top of industry-standard open-source libraries and native platform frameworks:
@@ -196,19 +176,6 @@ ADB Device Manager is built on top of industry-standard open-source libraries an
 | Privacy Policy | [View the Privacy Policy](https://shrey113.github.io/Adb-Device-Manager-2/security/privacy_policy.html) |
 | Connection Issues | [Fix Common Connection Problems](https://shrey113.github.io/Adb-Device-Manager-2/docs/Docs.html#troubleshooting) |
 
----
-
-### Star History
-
-<div align="center">
-  <a href="https://www.star-history.com/?repos=Shrey113/Adb-Device-Manager-2&type=date&legend=top-left">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=Shrey113/Adb-Device-Manager-2&type=date&theme=dark&legend=top-left" />
-      <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=Shrey113/Adb-Device-Manager-2&type=date&legend=top-left" />
-      <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=Shrey113/Adb-Device-Manager-2&type=date&legend=top-left" width="85%" />
-    </picture>
-  </a>
-</div>
 
 ---
 
