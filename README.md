@@ -40,12 +40,12 @@ ADB Device Manager is a free desktop application for **Windows and Linux** that 
 
 ### Download ADB Device Manager
 
-| Platform | Download | Status |
+| Platform | Download | Setup Guide |
 | :--- | :--- | :--- |
-| Windows | [Download Windows Installer →](https://shrey113.github.io/Adb-Device-Manager-2/windows_download.html) | Available |
-| Android | [Download Android APK →](https://shrey113.github.io/Adb-Device-Manager-2/android_download.html) | Available |
-| Linux | [Download Linux Package →](https://shrey113.github.io/Adb-Device-Manager-2/pages/linux_download.html) | Available |
-| macOS | *Coming Soon* | Planned |
+| Windows | [Download](https://shrey113.github.io/Adb-Device-Manager-2/windows_download.html) | [Setup Guide →](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html#windows) |
+| Android | [Download](https://shrey113.github.io/Adb-Device-Manager-2/android_download.html) | [Setup Guide →](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html#android) |
+| Linux | [Download](https://shrey113.github.io/Adb-Device-Manager-2/pages/linux_download.html) | [Setup Guide →](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html#linux) |
+| macOS | *Coming Soon* | *Coming Soon* |
 
 
 ### Related Ecosystem Projects
@@ -62,19 +62,19 @@ ADB Device Manager is a free desktop application for **Windows and Linux** that 
 
 ADB Mode uses the Android Debug Bridge (ADB) protocol to establish a direct, low-level connection to your Android device over a USB cable or wireless ADB pairing. This mode does **not** require any app to be installed on your phone and provides the deepest level of system access available.
 
-| Feature | Description |
-| :--- | :--- |
-| [Screen Mirroring](docs/adb/screen-mirroring.md) | Mirror your Android screen to Windows in real time with ultra-low latency |
-| [Audio Streaming](docs/adb/audio.md) | Stream your device's audio output directly to your PC speakers |
-| [Input Control](docs/adb/input-control.md) | Control your Android phone remotely using your PC keyboard and mouse |
-| [Scrcpy Control](docs/adb/scrcpy-control.md) | Customize, configure, and manage Scrcpy display and input options |
-| [Android DeX](docs/adb/android-dex.md) | Run Android apps in resizable desktop-style windows on your PC |
-| [Desktop Mode](docs/adb/desktop-mode.md) | Launch a multi-app virtual display for a full desktop-like experience |
-| [APK Installer](docs/adb/apk-installer.md) | Sideload and install APK files on your device directly via ADB |
-| [Camera View](docs/adb/camera.md) | View your Android device's live camera feed on your PC |
-| [Contacts](docs/adb/contacts.md) | Extract and browse your phone's contacts via ADB |
-| [Call History](docs/adb/call-history.md) | Read and export your device's call logs |
-| [SMS](docs/adb/sms.md) | Extract and read SMS messages from your Android device |
+| Feature | Description | Preview |
+| :--- | :--- | :--- |
+| Screen Mirroring | Mirror your Android screen to Windows in real time with ultra-low latency | [Preview](docs/Docs.html#screen-mirroring) |
+| Audio Streaming | Stream your device's audio output directly to your PC speakers | [Preview](docs/Docs.html#audio-mirroring) |
+| Input Control | Control your Android phone remotely using your PC keyboard and mouse | [Preview](docs/Docs.html#input-control) |
+| Scrcpy Control | Customize, configure, and manage Scrcpy display and input options | [Preview](docs/Docs.html#screen-mirroring) |
+| Android DeX | Run Android apps in resizable desktop-style windows on your PC | [Preview](docs/Docs.html#android-dex) |
+| Desktop Mode | Launch a multi-app virtual display for a full desktop-like experience | [Preview](docs/Docs.html#desktop-mode) |
+| APK Installer | Sideload and install APK files on your device directly via ADB | [Preview](docs/Docs.html#app-installer) |
+| Camera View | View your Android device's live camera feed on your PC | [Preview](docs/Docs.html#camera-view) |
+| Contacts | Extract and browse your phone's contacts via ADB | [Preview](docs/Docs.html#contacts) |
+| Call History | Read and export your device's call logs | [Preview](docs/Docs.html#call-history) |
+| SMS | Extract and read SMS messages from your Android device | [Preview](docs/Docs.html#sms-messages) |
 
 ---
 
@@ -82,27 +82,27 @@ ADB Mode uses the Android Debug Bridge (ADB) protocol to establish a direct, low
 
 App Mode pairs the ADB Device Manager desktop client with the ADB Device Manager companion Android app over your local Wi-Fi network (LAN). No USB cable is required — all data is transferred wirelessly at high speed within your local network.
 
-| Feature | Description |
-| :--- | :--- |
-| [Android Streaming](docs/app/android-streaming.md) | Wireless screen mirroring from Android to Windows over local Wi-Fi |
-| [Media Control](docs/app/media-control.md) | Control Android music and media playback directly from your PC |
-| [Notifications](docs/app/notifications.md) | Real-time Android notification sync to your Windows desktop |
-| [Photo Gallery](docs/app/photo-gallery.md) | Wirelessly browse and download photos from your Android device |
-| [File Transfer](docs/app/file-transfer.md) | Fast bidirectional file transfer over your local area network |
-| [Contacts](docs/app/contacts.md) | View and manage your phone's contacts with a rich desktop UI |
-| [Calls](docs/app/calls.md) | Answer and manage incoming calls from your Windows PC |
-| [SMS Messages](docs/app/sms.md) | Send and receive SMS messages from your Windows desktop |
-| [Bluetooth](docs/app/bluetooth.md) | Manage Bluetooth device connections and settings remotely |
-| [TV Control](docs/app/tv-control.md) | Control Android TV devices and cast media from your PC |
+| Feature | Description | Preview |
+| :--- | :--- | :--- |
+| Android Streaming | Wireless screen mirroring from Android to Windows over local Wi-Fi | [Preview](docs/Docs.html#screen-mirroring) |
+| Media Control | Control Android music and media playback directly from your PC | [Preview](docs/Docs.html#music-control) |
+| Notifications | Real-time Android notification sync to your Windows desktop | [Preview](docs/Docs.html#notification-center) |
+| Photo Gallery | Wirelessly browse and download photos from your Android device | [Preview](docs/Docs.html#photo-gallery) |
+| File Transfer | Fast bidirectional file transfer over your local area network | [Preview](docs/Docs.html#device-files) |
+| Contacts | View and manage your phone's contacts with a rich desktop UI | [Preview](docs/Docs.html#contacts) |
+| Calls | Answer and manage incoming calls from your Windows PC | [Preview](docs/Docs.html#call-history) |
+| SMS Messages | Send and receive SMS messages from your Windows desktop | [Preview](docs/Docs.html#sms-messages) |
+| Bluetooth | Manage Bluetooth device connections and settings remotely | [Preview](docs/Docs.html#bluetooth-pairing) |
+| TV Control | Control Android TV devices and cast media from your PC | [Preview](docs/Docs.html) |
 
 ---
 
 ### Desktop Integration Features
 
-| Feature | Description |
-| :--- | :--- |
-| [File Sharing](docs/windows/file-sharing.md) | Browser-based local file sharing between your PC and Android |
-| [Bluetooth Pairing](docs/windows/bluetooth-pairing.md) | Pair Android audio and stream it directly to Windows audio output |
+| Feature | Description | Preview |
+| :--- | :--- | :--- |
+| File Sharing | Browser-based local file sharing between your PC and Android | [Preview](docs/Docs.html#file-sharing-system) |
+| Bluetooth Pairing | Pair Android audio and stream it directly to Windows audio output | [Preview](docs/Docs.html#bluetooth-pairing) |
 
 ---
 
@@ -110,14 +110,14 @@ App Mode pairs the ADB Device Manager desktop client with the ADB Device Manager
 
 Boost your productivity with built-in keyboard shortcuts for the most common actions:
 
-| Shortcut | Action | Documentation |
+| Shortcut | Action | Preview |
 | :---: | :--- | :---: |
-| `Alt + S` | Toggle Screen Mirroring | [Mirroring Guide](docs/adb/screen-mirroring.md) |
-| `Alt + A` | Toggle Audio Streaming | [Audio Guide](docs/adb/audio.md) |
-| `Alt + Shift + D` | Launch Android DeX | [DeX Guide](docs/adb/android-dex.md) |
-| `Alt + F` | Open File Transfer | [File Sharing Guide](docs/windows/file-sharing.md) |
+| `Alt + S` | Toggle Screen Mirroring | [Preview](docs/Docs.html#screen-mirroring) |
+| `Alt + A` | Toggle Audio Streaming | [Preview](docs/Docs.html#audio-mirroring) |
+| `Alt + Shift + D` | Launch Android DeX | [Preview](docs/Docs.html#android-dex) |
+| `Alt + F` | Open File Transfer | [Preview](docs/Docs.html#file-sharing-system) |
 
-> See the [Full Keyboard Shortcuts Reference](docs/shortcuts.md) for all available hotkeys.
+> See the [Full Shortcuts Reference](docs/Docs.html) for all available hotkeys.
 
 ---
 

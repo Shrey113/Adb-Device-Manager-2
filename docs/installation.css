@@ -454,6 +454,8 @@ body {
     color: inherit;
     padding: 0;
     font-size: inherit;
+    border: none;
+    border-radius: 0;
 }
 
 code {
@@ -768,4 +770,44 @@ code {
     .platform-icon {
         margin-bottom: 0;
     }
+}
+
+/* Copyable Code Blocks */
+.code-block-wrapper {
+    position: relative;
+    margin-top: 8px;
+    max-width: 100%;
+}
+
+.code-block-wrapper .code-box {
+    margin-top: 0;
+    padding-right: 48px;
+    /* space for copy button */
+}
+
+.copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #94a3b8;
+    padding: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.copy-btn svg {
+    width: 14px;
+    height: 14px;
 }

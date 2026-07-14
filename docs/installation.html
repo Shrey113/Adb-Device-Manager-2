@@ -541,27 +541,47 @@
                             <i data-lucide="download"></i>
                             <div>
                                 <strong>Step 1: Download the Tarball</strong>
-                                <span>Get <code>ADB_Device_Manager_Linux.tar.gz</code> from our GitHub releases page or
-                                    the official mirrors.</span>
+                                <span>Get <code>ADB_Device_Manager_Linux.tar.gz</code> from our GitHub releases page or the official mirrors.</span>
                             </div>
                         </li>
                         <li>
                             <i data-lucide="terminal"></i>
                             <div>
-                                <strong>Step 2: Extract the Package</strong>
-                                <span>Open a terminal emulator and extract the tarball using the following command:
-                                    <pre class="code-box"><code>tar -xzf ADB_Device_Manager_Linux.tar.gz</code></pre>
-                                </span>
+                                <strong>Step 2: Extract &amp; Navigate</strong>
+                                <span>Open a terminal and extract the tarball, then navigate into the extracted directory:</span>
+                                <div class="code-block-wrapper">
+                                    <pre class="code-box"><code>tar -xzf ADB_Device_Manager_Linux.tar.gz
+cd adb_devices</code></pre>
+                                    <button class="copy-btn" onclick="copyCode(this)" aria-label="Copy command">
+                                        <i data-lucide="copy" class="copy-icon"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <i data-lucide="shield"></i>
+                            <div>
+                                <strong>Step 3: Grant Script Execution Permission</strong>
+                                <span>Enable execution permission on the launch script:</span>
+                                <div class="code-block-wrapper">
+                                    <pre class="code-box"><code>chmod +x run_adb_devices.sh</code></pre>
+                                    <button class="copy-btn" onclick="copyCode(this)" aria-label="Copy command">
+                                        <i data-lucide="copy" class="copy-icon"></i>
+                                    </button>
+                                </div>
                             </div>
                         </li>
                         <li>
                             <i data-lucide="play"></i>
                             <div>
-                                <strong>Step 3: Execute the Client</strong>
-                                <span>Change directory into the extracted folder and run the client binary:
-                                    <pre class="code-box"><code>cd ADB_Device_Manager_Linux
-./adb_devices</code></pre>
-                                </span>
+                                <strong>Step 4: Execute the Script</strong>
+                                <span>Run the application using the setup shell script:</span>
+                                <div class="code-block-wrapper">
+                                    <pre class="code-box"><code>./run_adb_devices.sh</code></pre>
+                                    <button class="copy-btn" onclick="copyCode(this)" aria-label="Copy command">
+                                        <i data-lucide="copy" class="copy-icon"></i>
+                                    </button>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -583,18 +603,26 @@
                             <i data-lucide="shield"></i>
                             <div>
                                 <strong>Step 1: Add User to Plugdev Group</strong>
-                                <span>Execute the following group assignment command:
+                                <span>Execute the following group assignment command:</span>
+                                <div class="code-block-wrapper">
                                     <pre class="code-box"><code>sudo usermod -aG plugdev $USER</code></pre>
-                                </span>
+                                    <button class="copy-btn" onclick="copyCode(this)" aria-label="Copy command">
+                                        <i data-lucide="copy" class="copy-icon"></i>
+                                    </button>
+                                </div>
                             </div>
                         </li>
                         <li>
                             <i data-lucide="refresh-cw"></i>
                             <div>
                                 <strong>Step 2: Reload Rules</strong>
-                                <span>Restart the udev daemon to load configuration changes:
+                                <span>Restart the udev daemon to load configuration changes:</span>
+                                <div class="code-block-wrapper">
                                     <pre class="code-box"><code>sudo udevadm control --reload-rules</code></pre>
-                                </span>
+                                    <button class="copy-btn" onclick="copyCode(this)" aria-label="Copy command">
+                                        <i data-lucide="copy" class="copy-icon"></i>
+                                    </button>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -784,6 +812,21 @@
     <script>
         lucide.createIcons();
 
+        // Copy to Clipboard utility
+        function copyCode(button) {
+            const wrapper = button.closest('.code-block-wrapper');
+            const code = wrapper.querySelector('code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                const originalHTML = button.innerHTML;
+                button.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" style="width: 14px; height: 14px;"><path d="M20 6 9 17l-5-5"/></svg>`;
+                setTimeout(() => {
+                    button.innerHTML = originalHTML;
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+
         // Platform switching logic
         document.addEventListener('DOMContentLoaded', () => {
             const cards = document.querySelectorAll('.platform-card');
@@ -813,6 +856,7 @@
                 card.addEventListener('click', () => {
                     const platform = card.getAttribute('data-platform');
                     switchPlatform(platform);
+                    history.replaceState(null, null, '#' + platform);
                 });
             });
 
@@ -822,8 +866,21 @@
                     e.preventDefault();
                     const targetPlatform = link.getAttribute('data-target');
                     switchPlatform(targetPlatform);
+                    history.replaceState(null, null, '#' + targetPlatform);
                 });
             });
+
+            // Handle URL Hash Selection on load and hash change
+            function handleHashChange() {
+                const hash = window.location.hash.toLowerCase().replace('#', '');
+                const validPlatforms = ['windows', 'linux', 'android', 'mac'];
+                if (validPlatforms.includes(hash)) {
+                    switchPlatform(hash);
+                }
+            }
+
+            handleHashChange();
+            window.addEventListener('hashchange', handleHashChange);
         });
     </script>
 </body>
