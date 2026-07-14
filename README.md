@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="images/app_png.png" width="160" alt="ADB Device Manager Logo" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"/>
+  <img src="images/ADB%20Device%20Manager.png" width="95%" alt="ADB Device Manager Screenshot" />
 </div>
 
 # Control your Android with ADB Device Manager
@@ -33,6 +33,8 @@ ADB Device Manager is a free desktop application for **Windows and Linux** that 
   </a>
 </p>
 </div>
+
+
 
 ---
 
