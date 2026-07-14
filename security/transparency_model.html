@@ -14,6 +14,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="transparency_model.css">
     <title>Transparency Report — ADB Device Manager</title>
+    <script>
+        // Set theme as early as possible to prevent flashing
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+        })();
+    </script>
 </head>
 
 <body>
@@ -28,6 +40,10 @@
                 <a href="../pages/features.html" class="nav-link">Features</a>
                 <a href="../docs/Docs.html" class="nav-link">Docs</a>
                 <a href="../pages/support.html" class="nav-link">Support</a>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle Theme">
+                    <i data-lucide="sun" class="sun-icon"></i>
+                    <i data-lucide="moon" class="moon-icon"></i>
+                </button>
             </nav>
         </div>
     </header>
@@ -83,7 +99,8 @@
                 <h2 class="section-title">Data Non-Collection Matrix</h2>
             </div>
             <div class="section-content">
-                <p>We declare and guarantee that the following tracking mechanism classes and modules are completely absent from both our companion Android codebase and Windows desktop runtime:</p>
+                <p>We declare and guarantee that the following tracking mechanism classes and modules are completely
+                    absent from both our companion Android codebase and Windows desktop runtime:</p>
 
                 <div class="non-collection-list">
                     <div class="non-collection-item">
@@ -97,21 +114,24 @@
                         <i data-lucide="x"></i>
                         <div>
                             <h4>Analytics Platforms</h4>
-                            <p>No integrations with Google Analytics, Firebase Analytics, Mixpanel, or other metrics SDKs.</p>
+                            <p>No integrations with Google Analytics, Firebase Analytics, Mixpanel, or other metrics
+                                SDKs.</p>
                         </div>
                     </div>
                     <div class="non-collection-item">
                         <i data-lucide="x"></i>
                         <div>
                             <h4>Crash Reporting SDKs</h4>
-                            <p>No automated crash reporters (like Crashlytics or Sentry). Stack traces remain strictly on local log files.</p>
+                            <p>No automated crash reporters (like Crashlytics or Sentry). Stack traces remain strictly
+                                on local log files.</p>
                         </div>
                     </div>
                     <div class="non-collection-item">
                         <i data-lucide="x"></i>
                         <div>
                             <h4>Advertising Frameworks</h4>
-                            <p>No mobile ads SDKs, tracking pixels, device identifier hashes, or cookie brokers are loaded.</p>
+                            <p>No mobile ads SDKs, tracking pixels, device identifier hashes, or cookie brokers are
+                                loaded.</p>
                         </div>
                     </div>
                     <div class="non-collection-item">
@@ -125,7 +145,8 @@
                         <i data-lucide="x"></i>
                         <div>
                             <h4>Third-party Tracking SDKs</h4>
-                            <p>Only vanilla Flutter packages and native platform plugins are imported, none of which collect telemetry.</p>
+                            <p>Only vanilla Flutter packages and native platform plugins are imported, none of which
+                                collect telemetry.</p>
                         </div>
                     </div>
                 </div>
@@ -140,7 +161,8 @@
                 <h2 class="section-title">Network Activity Profile</h2>
             </div>
             <div class="section-content">
-                <p>The application only opens connections on your local network boundaries. The exact connection profile is documented below:</p>
+                <p>The application only opens connections on your local network boundaries. The exact connection profile
+                    is documented below:</p>
                 <div class="table-wrapper">
                     <table>
                         <thead>
@@ -184,7 +206,8 @@
                 <h2 class="section-title">Open-Source Components &amp; Libraries</h2>
             </div>
             <div class="section-content">
-                <p>Our solution utilizes leading open-source frameworks. You can audit their source repositories directly to confirm their safety profile:</p>
+                <p>Our solution utilizes leading open-source frameworks. You can audit their source repositories
+                    directly to confirm their safety profile:</p>
                 <div class="deps-list">
                     <div class="deps-item">
                         <div class="deps-header">
@@ -192,7 +215,8 @@
                             <h4>ADB (Android Debug Bridge)</h4>
                             <span class="status-badge"><i data-lucide="shield-check"></i> Standard Google Utility</span>
                         </div>
-                        <p>Used to send low-level instructions to the Android OS over USB or TCP. No tracking is present.</p>
+                        <p>Used to send low-level instructions to the Android OS over USB or TCP. No tracking is
+                            present.</p>
                     </div>
                     <div class="deps-item">
                         <div class="deps-header">
@@ -200,7 +224,8 @@
                             <h4>scrcpy (Screen Copy)</h4>
                             <span class="status-badge"><i data-lucide="shield-check"></i> Open Source Engine</span>
                         </div>
-                        <p>Provides highly-optimized H.264 screen mirroring. Runs entirely locally on your machine and phone.</p>
+                        <p>Provides highly-optimized H.264 screen mirroring. Runs entirely locally on your machine and
+                            phone.</p>
                     </div>
                     <div class="deps-item">
                         <div class="deps-header">
@@ -222,10 +247,13 @@
                 <h2 class="section-title">VirusTotal Audits</h2>
             </div>
             <div class="section-content">
-                <p>Every compiled build release is automatically submitted to VirusTotal to check against 70+ antivirus engines (including Windows Defender, Kaspersky, and Bitdefender) to guarantee clean, signature-safe executables.</p>
+                <p>Every compiled build release is automatically submitted to VirusTotal to check against 70+ antivirus
+                    engines (including Windows Defender, Kaspersky, and Bitdefender) to guarantee clean, signature-safe
+                    executables.</p>
                 <div class="clean-note">
                     <i data-lucide="check-square"></i>
-                    <span>All hash values and report logs are archived publicly. You can audit reports directly on our <a href="../pages/security_pages/virustotal_reports.html">VirusTotal Reports Page</a>.</span>
+                    <span>All hash values and report logs are archived publicly. You can audit reports directly on our
+                        <a href="../pages/security_pages/virustotal_reports.html">VirusTotal Reports Page</a>.</span>
                 </div>
             </div>
         </section>
@@ -238,13 +266,16 @@
                 <h2 class="section-title">Independent Verification Guide (Wireshark Audit)</h2>
             </div>
             <div class="section-content">
-                <p>You do not need to take our word for it. You can independently verify that the application makes no external internet connections by following these steps:</p>
+                <p>You do not need to take our word for it. You can independently verify that the application makes no
+                    external internet connections by following these steps:</p>
                 <ul class="clean-list">
                     <li>
                         <i data-lucide="chevron-right"></i>
                         <div>
                             <strong>Step 1: Install Wireshark</strong>
-                            <span>Download and install the open-source network analyzer <a href="https://www.wireshark.org/" target="_blank" rel="noopener" style="color: var(--color-primary); text-decoration: none;">Wireshark</a>.</span>
+                            <span>Download and install the open-source network analyzer <a
+                                    href="https://www.wireshark.org/" target="_blank" rel="noopener"
+                                    style="color: var(--color-primary); text-decoration: none;">Wireshark</a>.</span>
                         </div>
                     </li>
                     <li>
@@ -258,21 +289,24 @@
                         <i data-lucide="chevron-right"></i>
                         <div>
                             <strong>Step 3: Filter Local Traffic</strong>
-                            <span>Set a capture filter to display only non-local traffic. Example query: <code>ip.src == [your_pc_ip] &amp;&amp; !ip.dst == 192.168.0.0/16</code>.</span>
+                            <span>Set a capture filter to display only non-local traffic. Example query:
+                                <code>ip.src == [your_pc_ip] &amp;&amp; !ip.dst == 192.168.0.0/16</code>.</span>
                         </div>
                     </li>
                     <li>
                         <i data-lucide="chevron-right"></i>
                         <div>
                             <strong>Step 4: Launch &amp; Mirror</strong>
-                            <span>Run ADB Device Manager, connect your Android device, and perform mirroring and file transfers.</span>
+                            <span>Run ADB Device Manager, connect your Android device, and perform mirroring and file
+                                transfers.</span>
                         </div>
                     </li>
                     <li>
                         <i data-lucide="chevron-right"></i>
                         <div>
                             <strong>Step 5: Audit Log traces</strong>
-                            <span>Confirm that no packets from the application process travel to external public IP addresses.</span>
+                            <span>Confirm that no packets from the application process travel to external public IP
+                                addresses.</span>
                         </div>
                     </li>
                 </ul>
@@ -287,7 +321,10 @@
                 <h2 class="section-title">Future Reproducible Builds Roadmap</h2>
             </div>
             <div class="section-content">
-                <p>Our development roadmap includes implementing reproducible build pipelines. This will enable developers to download our source code, compile the application binaries locally using standard toolchains, and verify that their locally-compiled file hash matches our distributed installer hashes exactly.</p>
+                <p>Our development roadmap includes implementing reproducible build pipelines. This will enable
+                    developers to download our source code, compile the application binaries locally using standard
+                    toolchains, and verify that their locally-compiled file hash matches our distributed installer
+                    hashes exactly.</p>
             </div>
         </section>
         <div class="section-divider"></div>
@@ -312,12 +349,14 @@
                             <tr>
                                 <td>v1.1</td>
                                 <td>January 2026</td>
-                                <td>Transitioned Wi-Fi connections to TLS sockets to encrypt traffic within shared local networks.</td>
+                                <td>Transitioned Wi-Fi connections to TLS sockets to encrypt traffic within shared local
+                                    networks.</td>
                             </tr>
                             <tr>
                                 <td>v1.0</td>
                                 <td>December 2024</td>
-                                <td>First stable release. Completed security design audits, removed remote debug check heartbeats, and set up the VirusTotal scanner pipeline.</td>
+                                <td>First stable release. Completed security design audits, removed remote debug check
+                                    heartbeats, and set up the VirusTotal scanner pipeline.</td>
                             </tr>
                         </tbody>
                     </table>
@@ -331,7 +370,8 @@
         </div>
 
         <div class="related-link">
-            <p>See also: <a href="trust_center.html">Trust Center</a> | <a href="security_model.html">Security Model →</a></p>
+            <p>See also: <a href="trust_center.html">Trust Center</a> | <a href="security_model.html">Security Model
+                    →</a></p>
         </div>
     </main>
 
@@ -410,7 +450,8 @@
 
         <!-- Footer Bottom -->
         <div class="footer-bottom">
-            <p class="footer-copyright">© 2025 <a href="https://github.com/Shrey113">Shrey113</a>. All rights reserved.</p>
+            <p class="footer-copyright">© 2025 <a href="https://github.com/Shrey113">Shrey113</a>. All rights reserved.
+            </p>
             <div class="footer-bottom-links">
                 <a href="privacy_policy.html">Privacy Policy</a>
                 <a href="../pages/security_pages/app_terms.html">App Terms</a>
@@ -426,6 +467,21 @@
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.400.0/dist/umd/lucide.min.js"></script>
     <script>
         lucide.createIcons();
+
+        // Theme Toggle Click Handler
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                if (currentTheme === 'dark') {
+                    document.documentElement.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+        }
     </script>
 </body>
 

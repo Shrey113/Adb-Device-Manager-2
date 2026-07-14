@@ -76,6 +76,18 @@
 
     <!-- ========================= STYLES ========================== -->
     <link rel="stylesheet" href="Docs.css">
+    <script>
+        // Set theme as early as possible to prevent flashing
+        (function () {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+        })();
+    </script>
 </head>
 
 <body>
@@ -91,6 +103,10 @@
                 <a href="../pages/features.html" class="nav-link">Features</a>
                 <a href="Docs.html" class="nav-link active">Docs</a>
                 <a href="../pages/support.html" class="nav-link">Support</a>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle Theme">
+                    <i data-lucide="sun" class="sun-icon"></i>
+                    <i data-lucide="moon" class="moon-icon"></i>
+                </button>
             </nav>
         </div>
     </header>
@@ -233,7 +249,8 @@
                         control.
                         Perfect for presentations, demos, and remote device management.
                     </p>
-                    <img src="../images/section_1/Screen Mirroring.gif" class="feature-image lazy"
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        data-src="../images/section_1/Screen Mirroring.gif" class="feature-image lazy"
                         alt="Screen Mirroring Feature">
                 </div>
 
@@ -250,7 +267,8 @@
                         Stream device audio directly to Desktop in real time. Listen to music, app sounds, or any audio
                         from your Android device through your PC speakers.
                     </p>
-                    <img src="../images/section_1/Audio Streaming.gif" class="feature-image lazy"
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        data-src="../images/section_1/Audio Streaming.gif" class="feature-image lazy"
                         alt="Audio Mirroring Feature">
                 </div>
 
@@ -267,7 +285,8 @@
                         Use your PC keyboard and mouse to control your Android device. Type messages, navigate apps, and
                         interact with your device using familiar desktop peripherals.
                     </p>
-                    <img src="../images/section_1/Keyboard &amp; Mouse Control.gif" class="feature-image lazy"
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        data-src="../images/section_1/Keyboard &amp; Mouse Control.gif" class="feature-image lazy"
                         alt="Input Control Feature">
                 </div>
 
@@ -285,7 +304,9 @@
                         desktop experience with multi-window support,
                         virtual displays (1080p-4K), and three performance modes (60-120 FPS).
                     </p>
-                    <img src="../images/section_1/Android Dex.gif" class="feature-image lazy" alt="Android Dex Feature">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        data-src="../images/section_1/Android Dex.gif" class="feature-image lazy"
+                        alt="Android Dex Feature">
                 </div>
 
                 <!-- Desktop Mode -->
@@ -301,7 +322,8 @@
                         Run multiple Android apps at once with independent audio channels. Each app window runs
                         separately, allowing true multitasking on your desktop.
                     </p>
-                    <img src="../images/section_1/Multi-App Running.gif" class="feature-image lazy"
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        data-src="../images/section_1/Multi-App Running.gif" class="feature-image lazy"
                         alt="Desktop Mode Multi-App">
                 </div>
             </section>
@@ -330,7 +352,8 @@
                         Control media playback with album art and track info. Play, pause, skip tracks, and adjust
                         volume directly from your Desktop.
                     </p>
-                    <img src="../images/section_2/Synchronized Media Playback.gif " class="feature-image lazy"
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        data-src="../images/section_2/Synchronized Media Playback.gif " class="feature-image lazy"
                         alt="Music Control Feature">
                 </div>
 
@@ -347,7 +370,8 @@
                         Receive and manage notifications from Android in real time. View all your phone notifications on
                         your PC, reply to messages, and dismiss alerts.
                     </p>
-                    <img src="../images/section_2/Cross-Device Notifications.gif" class="feature-image lazy"
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        data-src="../images/section_2/Cross-Device Notifications.gif" class="feature-image lazy"
                         alt="Notification Center Feature">
                 </div>
 
@@ -975,10 +999,49 @@
     <!-- CDN Lucide Icons initialization -->
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.400.0/dist/umd/lucide.min.js"></script>
     <script>
-        // Smooth scroll and highlight on navigation
+        // Smooth scroll and highlight on navigation with prioritized lazy loading
         document.addEventListener('DOMContentLoaded', function () {
             // Initialize Lucide Icons
             lucide.createIcons();
+
+            // Theme Toggle Click Handler
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            if (themeToggleBtn) {
+                themeToggleBtn.addEventListener('click', () => {
+                    const currentTheme = document.documentElement.getAttribute('data-theme');
+                    if (currentTheme === 'dark') {
+                        document.documentElement.removeAttribute('data-theme');
+                        localStorage.setItem('theme', 'light');
+                    } else {
+                        document.documentElement.setAttribute('data-theme', 'dark');
+                        localStorage.setItem('theme', 'dark');
+                    }
+                });
+            }
+
+            // Function to load a specific lazy image
+            function loadImage(img) {
+                if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute('data-src');
+                    img.classList.remove('lazy');
+                }
+            }
+
+            // Priority load image for target hash immediately
+            if (window.location.hash) {
+                try {
+                    const targetElement = document.querySelector(window.location.hash);
+                    if (targetElement) {
+                        const targetImg = targetElement.querySelector('img.lazy');
+                        if (targetImg) {
+                            loadImage(targetImg);
+                        }
+                    }
+                } catch (e) {
+                    console.error('Failed to resolve hash element for priority lazy loading', e);
+                }
+            }
 
             // Handle hash navigation on page load
             if (window.location.hash) {
@@ -990,6 +1053,30 @@
                         setTimeout(() => element.classList.remove('highlight'), 2000);
                     }
                 }, 100);
+            }
+
+            // Set up IntersectionObserver for other lazy-loaded images
+            const lazyImages = document.querySelectorAll('img.lazy');
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            loadImage(img);
+                            observer.unobserve(img);
+                        }
+                    });
+                }, {
+                    rootMargin: '100px 0px 200px 0px'
+                });
+                lazyImages.forEach(img => {
+                    if (img.classList.contains('lazy')) {
+                        imageObserver.observe(img);
+                    }
+                });
+            } else {
+                // Fallback for older browsers
+                lazyImages.forEach(loadImage);
             }
 
             // Handle all anchor links
@@ -1100,12 +1187,12 @@
                 wrapper.appendChild(expandBtn);
 
                 // Open on image click
-                img.addEventListener('click', () => openLightbox(img.src));
+                img.addEventListener('click', () => openLightbox(img.dataset.src || img.src));
 
                 // Open on expand button click
                 expandBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    openLightbox(img.src);
+                    openLightbox(img.dataset.src || img.src);
                 });
             });
         })();

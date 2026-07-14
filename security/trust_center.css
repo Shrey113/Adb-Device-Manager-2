@@ -18,6 +18,36 @@
     --color-text-muted: #666666;
     --color-border: #eaeaea;
     --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    /* Theme tokens */
+    --color-header-bg: rgba(255, 255, 255, 0.85);
+    --color-img-bg: #ffffff;
+    --color-highlight-bg: #f0f7ff;
+    --color-nav-hover-bg: #f0f7ff;
+
+    /* Badge None */
+    --color-badge-none-bg: #fef2f2;
+    --color-badge-none-border: #fee2e2;
+    --color-badge-none-text: #ef4444;
+}
+
+[data-theme="dark"] {
+    --color-bg-page: #0b0f19;
+    --color-bg-card: #131b2e;
+    --color-text-title: #f8fafc;
+    --color-text-body: #cbd5e1;
+    --color-text-muted: #94a3b8;
+    --color-border: #1e293b;
+
+    --color-header-bg: rgba(11, 15, 25, 0.85);
+    --color-img-bg: #131b2e;
+    --color-highlight-bg: rgba(37, 99, 235, 0.15);
+    --color-nav-hover-bg: rgba(37, 99, 235, 0.12);
+
+    /* Badge None dark mode */
+    --color-badge-none-bg: rgba(239, 68, 68, 0.08);
+    --color-badge-none-border: rgba(239, 68, 68, 0.25);
+    --color-badge-none-text: #fca5a5;
 }
 
 * {
@@ -41,7 +71,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.85);
+    background: var(--color-header-bg);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border-bottom: 1px solid var(--color-border);
@@ -86,6 +116,46 @@ body {
 
 .nav-link:hover {
     color: var(--color-primary);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-muted);
+    transition: color 0.15s ease, transform 0.2s ease;
+    outline: none;
+    margin-left: 8px;
+}
+
+.theme-toggle-btn:hover {
+    color: var(--color-primary);
+    transform: translateY(-1px);
+}
+
+.theme-toggle-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Toggle visibility of sun/moon icons depending on the theme */
+[data-theme="dark"] .theme-toggle-btn .sun-icon {
+    display: block;
+}
+[data-theme="dark"] .theme-toggle-btn .moon-icon {
+    display: none;
+}
+
+:root:not([data-theme="dark"]) .theme-toggle-btn .sun-icon {
+    display: none;
+}
+:root:not([data-theme="dark"]) .theme-toggle-btn .moon-icon {
+    display: block;
 }
 
 /* Main Container: Narrow max-width for premium reading experience */
@@ -415,10 +485,10 @@ body {
 .badge-none {
     font-size: 10px;
     font-weight: 700;
-    color: #ef4444;
+    color: var(--color-badge-none-text);
     padding: 2px 6px;
-    border: 1px solid #fee2e2;
-    background: #fef2f2;
+    border: 1px solid var(--color-badge-none-border);
+    background: var(--color-badge-none-bg);
     border-radius: 4px;
     margin-left: 8px;
 }
@@ -540,7 +610,7 @@ body {
 }
 
 .diagram-box {
-    background: #ffffff;
+    background: var(--color-img-bg);
     border: 1px solid var(--color-border);
     border-radius: 6px;
     padding: 12px 24px;
@@ -550,7 +620,7 @@ body {
 
 .diagram-box.primary {
     border-color: var(--color-primary);
-    background: #f0f7ff;
+    background: var(--color-highlight-bg);
 }
 
 .diagram-box h4 {
