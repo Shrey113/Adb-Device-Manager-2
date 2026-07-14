@@ -13,7 +13,7 @@
 
     <!-- Keywords -->
     <meta name="keywords"
-        content="ADB documentation, ADB Device Manager guide, Android to PC guide, screen mirroring docs, ADB Mode tutorial, App Mode tutorial, file manager guide, Windows Android integration docs">
+        content="ADB documentation, ADB Device Manager guide, Android to PC guide, screen mirroring docs, ADB Mode tutorial, App Mode tutorial, file manager guide, Desktop Android integration docs">
 
     <meta name="author" content="ADB Device Manager">
     <meta name="robots" content="index, follow">
@@ -46,7 +46,7 @@
       "@context": "https://schema.org",
       "@type": "TechArticle",
       "headline": "ADB Device Manager — Official Documentation",
-      "description": "Complete documentation for ADB Device Manager including features, ADB Mode, App Mode, screen mirroring, notifications, multi-window, and Windows integration.",
+      "description": "Complete documentation for ADB Device Manager including features, ADB Mode, App Mode, screen mirroring, notifications, multi-window, and Desktop integration.",
       "author": {
         "@type": "Organization",
         "name": "ADB Device Manager"
@@ -72,37 +72,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- ========================= FONTS ========================== -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"
-        media="print" onload="this.media='all'">
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-            rel="stylesheet">
-    </noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- ========================= STYLES ========================== -->
     <link rel="stylesheet" href="Docs.css">
-    <link rel="stylesheet" href="../pages/head.css">
 </head>
-
 
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="header-container">
-            <div class="logo">
-                <picture>
-                    <source srcset="../images/app_webp_50.webp" type="image/webp">
-                    <img src="../images/app_webp_100.webp" class="logo-icon" alt="ADB Device Manager" width="49"
-                        height="49" loading="lazy">
-                </picture>
-
-                <span class="logo-text">ADB Device Manager</span>
-            </div>
-
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <img src="https://cdn.jsdelivr.net/gh/shrey113/Adb-Device-Manager-2@latest/images/app_webp_50.webp"
+                    class="logo-icon" alt="ADB Device Manager" width="32" height="32">
+                <span>ADB Device Manager</span>
+            </a>
             <nav class="nav">
-                <a href="../index.html" class="nav-link">Home</a>
                 <a href="../pages/features.html" class="nav-link">Features</a>
-                <a href="#" class="nav-link active">Docs</a>
+                <a href="Docs.html" class="nav-link active">Docs</a>
                 <a href="../pages/support.html" class="nav-link">Support</a>
             </nav>
         </div>
@@ -115,16 +102,13 @@
             <nav class="sidebar-nav">
                 <h3 class="sidebar-title">Documentation</h3>
 
-                <!-- Getting Started Section -->
-                <div class="nav-section">
-                    <a href="installation.html" class="nav-section-link">🚀 Getting Started</a>
-                    <ul class="nav-subsection">
-                        <li><a href="#architecture">How It Works</a></li>
-                    </ul>
-                </div>
+
 
                 <div class="nav-section">
-                    <a href="#projection-control" class="nav-section-link">Device Projection & Control</a>
+                    <a href="#projection-control" class="nav-section-link">
+                        <i data-lucide="monitor" class="sidebar-icon"></i>
+                        <span>Projection &amp; Control</span>
+                    </a>
                     <ul class="nav-subsection">
                         <li><a href="#screen-mirroring">Screen Mirroring</a></li>
                         <li><a href="#audio-mirroring">Audio Mirroring</a></li>
@@ -135,7 +119,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <a href="#companion-services" class="nav-section-link">Companion Services</a>
+                    <a href="#companion-services" class="nav-section-link">
+                        <i data-lucide="smartphone" class="sidebar-icon"></i>
+                        <span>Companion Services</span>
+                    </a>
                     <ul class="nav-subsection">
                         <li><a href="#music-control">Music Control</a></li>
                         <li><a href="#notification-center">Notification Center</a></li>
@@ -145,7 +132,10 @@
                 </div>
 
                 <div class="nav-section">
-                    <a href="#device-operations" class="nav-section-link">Device Operations</a>
+                    <a href="#device-operations" class="nav-section-link">
+                        <i data-lucide="settings" class="sidebar-icon"></i>
+                        <span>Device Operations</span>
+                    </a>
                     <ul class="nav-subsection">
                         <li><a href="#app-installer">App Installer</a></li>
                         <li><a href="#camera-view">Camera View</a></li>
@@ -156,22 +146,25 @@
                 </div>
 
                 <div class="nav-section">
-                    <a href="#windows-integration" class="nav-section-link">Windows Integration</a>
+                    <a href="#desktop-integration" class="nav-section-link">
+                        <i data-lucide="laptop" class="sidebar-icon"></i>
+                        <span>Desktop Integration</span>
+                    </a>
                     <ul class="nav-subsection">
                         <li><a href="#file-sharing-system">File Sharing System</a></li>
                         <li><a href="#bluetooth-pairing">Bluetooth Pairing</a></li>
-                        <li><a href="#screen-text-web-search">Screen Text Web Search</a></li>
-                        <li><a href="#device-finder">Device Finder</a></li>
                     </ul>
                 </div>
 
                 <!-- Help & Support Section -->
                 <div class="nav-section">
-                    <a href="#troubleshooting" class="nav-section-link">🔧 Help & Support</a>
+                    <a href="#known-limitations" class="nav-section-link">
+                        <i data-lucide="help-circle" class="sidebar-icon"></i>
+                        <span>Help &amp; Support</span>
+                    </a>
                     <ul class="nav-subsection">
-                        <li><a href="#troubleshooting">Troubleshooting</a></li>
                         <li><a href="#known-limitations">Known Limitations</a></li>
-                        <li><a href="#security-privacy">Security & Privacy</a></li>
+                        <li><a href="#security-privacy">Security &amp; Privacy</a></li>
                         <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
@@ -189,207 +182,11 @@
                     app).
                     Some features support both modes for flexibility.
                 </p>
+                <a href="installation.html" class="btn-primary">
+                    <i data-lucide="rocket" class="btn-icon"></i>
+                    Get Started with Installation Guide
+                </a>
             </article>
-
-
-            <!-- ===================== ARCHITECTURE OVERVIEW ===================== -->
-            <section id="architecture" class="architecture-section-v2">
-                <div class="arch-header">
-                    <div class="arch-badge">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                        </svg>
-                        System Architecture
-                    </div>
-                    <h2>How It Works — Architecture Overview</h2>
-                    <p class="arch-subtitle">
-                        ADB Device Manager uses a layered architecture to provide seamless connectivity between your
-                        Windows
-                        PC and Android devices. <a class="links" target="_blank" href="installation.html">See the
-                            Installation Guide →</a>
-                    </p>
-                </div>
-
-                <!-- Enhanced Visual Architecture Diagram -->
-                <div class="arch-diagram-v2">
-                    <!-- Windows Layer -->
-                    <div class="arch-tier windows-tier">
-                        <div class="tier-label">
-                            <span class="tier-icon windows-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801" />
-                                </svg>
-                            </span>
-                            Windows Desktop
-                        </div>
-                        <div class="tier-cards">
-                            <div class="arch-card primary">
-                                <div class="card-glow"></div>
-                                <div class="card-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <rect x="4" y="4" width="16" height="16" rx="2" />
-                                        <path d="M9 9h6M9 13h6M9 17h4" />
-                                    </svg>
-                                </div>
-                                <h4>Windows App</h4>
-                                <p>Flutter Desktop Application</p>
-                                <span class="card-tag">Main Controller</span>
-                            </div>
-                            <div class="arch-card">
-                                <div class="card-icon orange">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M4 17l6-6-6-6M12 19h8" />
-                                    </svg>
-                                </div>
-                                <h4>ADB Commands</h4>
-                                <p>Execute shell & device operations</p>
-                            </div>
-                            <div class="arch-card">
-                                <div class="card-icon orange">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-                                    </svg>
-                                </div>
-                                <h4>API Calls</h4>
-                                <p>RESTful & WebSocket requests</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Connection Flow Visualizer -->
-                    <div class="flow-connector">
-                        <div class="flow-line">
-                            <div class="flow-dot"></div>
-                            <div class="flow-dot"></div>
-                            <div class="flow-dot"></div>
-                        </div>
-                        <div class="flow-label">Data Flow</div>
-                    </div>
-
-                    <!-- Protocol Layer -->
-                    <div class="arch-tier protocol-tier">
-                        <div class="tier-label">
-                            <span class="tier-icon protocol-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M5 12h14M12 5l7 7-7 7" />
-                                </svg>
-                            </span>
-                            Communication Protocols
-                        </div>
-                        <div class="protocol-strip">
-                            <div class="protocol-chip">
-                                <span class="chip-dot"></span>
-                                TCP/WebSocket
-                            </div>
-                            <div class="protocol-chip">
-                                <span class="chip-dot"></span>
-                                Zeroconf/mDNS
-                            </div>
-                            <div class="protocol-chip">
-                                <span class="chip-dot"></span>
-                                USB/ADB Protocol
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Connection Flow Visualizer -->
-                    <div class="flow-connector">
-                        <div class="flow-line">
-                            <div class="flow-dot"></div>
-                            <div class="flow-dot"></div>
-                            <div class="flow-dot"></div>
-                        </div>
-                    </div>
-
-                    <!-- Android Layer -->
-                    <div class="arch-tier android-tier">
-                        <div class="tier-label">
-                            <span class="tier-icon android-icon">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                    <path
-                                        d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24c-2.86-1.21-6.08-1.21-8.94 0L5.65 5.67c-.19-.29-.58-.38-.87-.2-.28.18-.37.54-.22.83L6.4 9.48C3.3 11.25 1.28 14.44 1 18h22c-.28-3.56-2.3-6.75-5.4-8.52zM7 15.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25zm10 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z" />
-                                </svg>
-                            </span>
-                            Android Device
-                        </div>
-                        <div class="tier-cards">
-                            <div class="arch-card primary android">
-                                <div class="card-glow android"></div>
-                                <div class="card-icon green">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <rect x="5" y="2" width="14" height="20" rx="2" />
-                                        <path d="M12 18h.01" />
-                                    </svg>
-                                </div>
-                                <h4>Companion App</h4>
-                                <p>Flutter Mobile Application</p>
-                                <span class="card-tag green">Device Agent</span>
-                            </div>
-                            <div class="arch-card android">
-                                <div class="card-icon green">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <path
-                                            d="M22 8.5c0-.28-.22-.5-.5-.5h-19c-.28 0-.5.22-.5.5v7c0 .28.22.5.5.5h19c.28 0 .5-.22.5-.5v-7z" />
-                                        <path d="M7 11v2M12 11v2M17 11v2" />
-                                    </svg>
-                                </div>
-                                <h4>ADB Listener</h4>
-                                <p>TCP/Protocol Handler</p>
-                            </div>
-                            <div class="arch-card android">
-                                <div class="card-icon green">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                        stroke-width="2">
-                                        <circle cx="12" cy="12" r="10" />
-                                        <path d="M12 6v6l4 2" />
-                                    </svg>
-                                </div>
-                                <h4>APP Listener</h4>
-                                <p>API & WebSocket Server</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Dual Mode Explanation Cards -->
-                <div class="mode-explanation">
-                    <div class="mode-exp-card adb">
-                        <div class="mode-exp-header">
-                            <span class="mode-exp-badge adb">ADB Mode</span>
-                            <span class="mode-exp-tag">USB Debugging Required</span>
-                        </div>
-                        <p>Direct device control via USB or wireless ADB. Best for screen mirroring, audio streaming,
-                            and system-level operations.</p>
-                        <ul class="mode-features">
-                            <li>Screen Mirroring & Control</li>
-                            <li>Audio Streaming</li>
-                            <li>App Installation</li>
-                        </ul>
-                    </div>
-                    <div class="mode-exp-card app">
-                        <div class="mode-exp-header">
-                            <span class="mode-exp-badge app">APP Mode</span>
-                            <span class="mode-exp-tag">Companion App Required</span>
-                        </div>
-                        <p>Wi-Fi based real-time sync via companion app. Best for notifications, media control, and file
-                            transfers.</p>
-                        <ul class="mode-features">
-                            <li>Real-time Notifications</li>
-                            <li>Media Playback Control</li>
-                            <li>Wireless File Transfer</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
 
             <!-- Mode Legend -->
             <div class="mode-legend">
@@ -406,29 +203,19 @@
                     <span>Works with Both</span>
                 </div>
                 <div class="legend-item">
-                    <span class="mode-badge beta">Windows APP</span>
-                    <span>For Windows functionality</span>
+                    <span class="mode-badge desktop">Desktop APP</span>
+                    <span>For Desktop functionality</span>
                 </div>
             </div>
-
-            <br>
-            <br>
-
 
             <!-- ===================== SECTION 1: Device Projection & Interactive Control ===================== -->
             <section id="projection-control" class="doc-section">
                 <h2 class="section-title">
-                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" />
-                        <path d="M8 21H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                        <path d="M12 17V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                        <path d="M7 8L10 11L7 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                    Device Projection & Interactive Control
+                    <i data-lucide="monitor-play" class="section-icon"></i>
+                    Device Projection &amp; Interactive Control
                 </h2>
                 <p class="section-intro">
-                    Mirror your Android screen, stream audio, and control your device directly from your Windows PC with
+                    Mirror your Android screen, stream audio, and control your device directly from your Desktop PC with
                     low-latency performance.
                 </p>
 
@@ -442,7 +229,7 @@
                         </div>
                     </div>
                     <p>
-                        Mirror your Android screen onto Windows using low-latency scrcpy with full mouse and keyboard
+                        Mirror your Android screen onto Desktop using low-latency scrcpy with full mouse and keyboard
                         control.
                         Perfect for presentations, demos, and remote device management.
                     </p>
@@ -460,7 +247,7 @@
                         </div>
                     </div>
                     <p>
-                        Stream device audio directly to Windows in real time. Listen to music, app sounds, or any audio
+                        Stream device audio directly to Desktop in real time. Listen to music, app sounds, or any audio
                         from your Android device through your PC speakers.
                     </p>
                     <img src="../images/section_1/Audio Streaming.gif" class="feature-image lazy"
@@ -480,7 +267,7 @@
                         Use your PC keyboard and mouse to control your Android device. Type messages, navigate apps, and
                         interact with your device using familiar desktop peripherals.
                     </p>
-                    <img src="../images/section_1/Keyboard & Mouse Control.gif" class="feature-image lazy"
+                    <img src="../images/section_1/Keyboard &amp; Mouse Control.gif" class="feature-image lazy"
                         alt="Input Control Feature">
                 </div>
 
@@ -522,12 +309,7 @@
             <!-- ===================== SECTION 2: Real-Time Companion Service Framework ===================== -->
             <section id="companion-services" class="doc-section">
                 <h2 class="section-title">
-                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" stroke-width="2" />
-                        <circle cx="12" cy="18" r="1" fill="currentColor" />
-                        <path d="M9 6H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                        <path d="M12 9V13M10 11H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                    </svg>
+                    <i data-lucide="smartphone" class="section-icon"></i>
                     Real-Time Companion Services
                 </h2>
                 <p class="section-intro">
@@ -546,7 +328,7 @@
                     </div>
                     <p>
                         Control media playback with album art and track info. Play, pause, skip tracks, and adjust
-                        volume directly from your Windows desktop.
+                        volume directly from your Desktop.
                     </p>
                     <img src="../images/section_2/Synchronized Media Playback.gif " class="feature-image lazy"
                         alt="Music Control Feature">
@@ -579,7 +361,7 @@
                     </div>
                     <p>
                         Browse device photos via Wi-Fi using the helper app. View, download, and manage your phone's
-                        photo library directly from your Windows PC.
+                        photo library directly from your Desktop PC.
                     </p>
                 </div>
 
@@ -592,7 +374,7 @@
                         </div>
                     </div>
                     <p>
-                        Transfer files quickly from Windows to Android over local Wi-Fi. Drag and drop files to send
+                        Transfer files quickly from Desktop to Android over local Wi-Fi. Drag and drop files to send
                         them to your phone without cables or complicated setup.
                     </p>
                 </div>
@@ -601,15 +383,8 @@
             <!-- ===================== SECTION 3: Core Device Operations & System Utilities ===================== -->
             <section id="device-operations" class="doc-section">
                 <h2 class="section-title">
-                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
-                            stroke="currentColor" stroke-width="2" />
-                        <path
-                            d="M19.4 15C19.1277 15.6171 19.2583 16.3378 19.73 16.82L19.79 16.88C20.1656 17.2551 20.3766 17.7642 20.3766 18.295C20.3766 18.8258 20.1656 19.3349 19.79 19.71C19.4149 20.0856 18.9058 20.2966 18.375 20.2966C17.8442 20.2966 17.3351 20.0856 16.96 19.71L16.9 19.65C16.4178 19.1783 15.6971 19.0477 15.08 19.32C14.4755 19.5791 14.0826 20.1724 14.08 20.83V21C14.08 22.1046 13.1846 23 12.08 23C10.9754 23 10.08 22.1046 10.08 21V20.91C10.0642 20.2327 9.63587 19.6339 9 19.4C8.38291 19.1277 7.66219 19.2583 7.18 19.73L7.12 19.79C6.74486 20.1656 6.23582 20.3766 5.705 20.3766C5.17418 20.3766 4.66514 20.1656 4.29 19.79C3.91445 19.4149 3.70343 18.9058 3.70343 18.375C3.70343 17.8442 3.91445 17.3351 4.29 16.96L4.35 16.9C4.82167 16.4178 4.95228 15.6971 4.68 15.08C4.42093 14.4755 3.82764 14.0826 3.17 14.08H3C1.89543 14.08 1 13.1846 1 12.08C1 10.9754 1.89543 10.08 3 10.08H3.09C3.76733 10.0642 4.36613 9.63587 4.6 9C4.87228 8.38291 4.74167 7.66219 4.27 7.18L4.21 7.12C3.83445 6.74486 3.62343 6.23582 3.62343 5.705C3.62343 5.17418 3.83445 4.66514 4.21 4.29C4.58514 3.91445 5.09418 3.70343 5.625 3.70343C6.15582 3.70343 6.66486 3.91445 7.04 4.29L7.1 4.35C7.58219 4.82167 8.30291 4.95228 8.92 4.68H9C9.60447 4.42093 9.99738 3.82764 10 3.17V3C10 1.89543 10.8954 1 12 1C13.1046 1 14 1.89543 14 3V3.09C14.0026 3.74764 14.3955 4.34093 15 4.6C15.6171 4.87228 16.3378 4.74167 16.82 4.27L16.88 4.21C17.2551 3.83445 17.7642 3.62343 18.295 3.62343C18.8258 3.62343 19.3349 3.83445 19.71 4.21C20.0856 4.58514 20.2966 5.09418 20.2966 5.625C20.2966 6.15582 20.0856 6.66486 19.71 7.04L19.65 7.1C19.1783 7.58219 19.0477 8.30291 19.32 8.92V9C19.5791 9.60447 20.1724 9.99738 20.83 10H21C22.1046 10 23 10.8954 23 12C23 13.1046 22.1046 14 21 14H20.91C20.2524 14.0026 19.6591 14.3955 19.4 15Z"
-                            stroke="currentColor" stroke-width="2" />
-                    </svg>
-                    Core Device Operations & Utilities
+                    <i data-lucide="settings" class="section-icon"></i>
+                    Core Device Operations &amp; Utilities
                 </h2>
                 <p class="section-intro">
                     Essential device management features including app installation, camera access, contacts, call
@@ -640,7 +415,7 @@
                         </div>
                     </div>
                     <p>
-                        View the Android camera feed on Windows. Use your phone as a webcam, security camera, or for any
+                        View the Android camera feed on Desktop. Use your phone as a webcam, security camera, or for any
                         purpose requiring remote camera access.
                     </p>
                     <img src="../images/section_3/Remote Camera Access.png" class="feature-image"
@@ -691,23 +466,14 @@
                 </div>
             </section>
 
-            <!-- ===================== SECTION 4: Windows Integration Services ===================== -->
-            <section id="windows-integration" class="doc-section">
+            <!-- ===================== SECTION 4: Desktop Integration Services ===================== -->
+            <section id="desktop-integration" class="doc-section">
                 <h2 class="section-title">
-                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 3L10 3.5V11.5L3 12V3Z" stroke="currentColor" stroke-width="2"
-                            stroke-linejoin="round" />
-                        <path d="M11 3.5L21 4.5V11.5L11 12.5V3.5Z" stroke="currentColor" stroke-width="2"
-                            stroke-linejoin="round" />
-                        <path d="M3 13L10 12.5V20.5L3 21V13Z" stroke="currentColor" stroke-width="2"
-                            stroke-linejoin="round" />
-                        <path d="M11 12.5L21 11.5V19.5L11 20.5V12.5Z" stroke="currentColor" stroke-width="2"
-                            stroke-linejoin="round" />
-                    </svg>
-                    Windows Integration Services
+                    <i data-lucide="laptop" class="section-icon"></i>
+                    Desktop Integration Services
                 </h2>
                 <p class="section-intro">
-                    Deep integration features designed specifically for Windows users, enabling seamless connectivity
+                    Deep integration features designed specifically for Desktop users, enabling seamless connectivity
                     and file sharing between your Android device and PC.
                 </p>
 
@@ -716,11 +482,11 @@
                     <div class="feature-header">
                         <h3>File Sharing System</h3>
                         <div class="feature-badges">
-                            <span class="mode-badge windows">Windows APP</span>
+                            <span class="mode-badge desktop">Desktop APP</span>
                         </div>
                     </div>
                     <p>
-                        Handles all file transfers between the app and the Windows software.
+                        Handles all file transfers between the app and the Desktop software.
                         This system includes a built-in browser-based interface that allows users without the mobile app
                         to transfer files easily.
                         By scanning a QR code, users can open a secure web link to upload or download files directly
@@ -735,213 +501,24 @@
                     <div class="feature-header">
                         <h3>Bluetooth Pairing System</h3>
                         <div class="feature-badges">
-                            <span class="mode-badge windows">Windows APP</span>
+                            <span class="mode-badge desktop">Desktop APP</span>
                         </div>
                     </div>
                     <p>
-                        Enables wireless audio streaming from any Android device to Windows via Bluetooth.
+                        Enables wireless audio streaming from any Android device to Desktop via Bluetooth.
                         Your PC functions as an audio receiver, allowing your phone to stream media, calls, and
                         notification sounds directly to the desktop.
                     </p>
                     <img src="../images/section_4/Bluetooth Audio Streaming.png" class="feature-image"
                         alt="Bluetooth Pairing System">
                 </div>
-
-
-                <!-- Screen Text Web Search -->
-                <div id="screen-text-web-search" class="feature-detail">
-                    <div class="feature-header">
-                        <h3>Screen Text Web Search</h3>
-                        <div class="feature-badges">
-                            <span class="mode-badge adb">ADB</span>
-                            <span class="hotkey-badge">Alt + V</span>
-                        </div>
-                    </div>
-                    <p>
-                        Capture on-screen text and instantly search it on Google or trigger voice typing. Quick access
-                        to voice-powered features from your keyboard.
-                    </p>
-
-                    <img src="../images/section_4/Screen Text Web Search.gif" class="feature-image"
-                        alt="Screen Text Web Search">
-                </div>
-
-                <!-- Device Finder (Beta) -->
-                <div id="device-finder" class="feature-detail">
-                    <div class="feature-header">
-                        <h3>Device Finder</h3>
-                        <div class="feature-badges">
-                            <span class="mode-badge windows">Windows APP</span>
-                            <span class="mode-badge beta">BETA</span>
-                        </div>
-                    </div>
-                    <p>
-                        Automatically detects nearby Android devices on the same Wi-Fi network.
-                        Uses smart scanning and lightweight discovery protocols to locate available devices, making the
-                        pairing and setup process faster and more effortless.
-                    </p>
-                </div>
             </section>
 
-            <!-- ===================== TROUBLESHOOTING SECTION ===================== -->
-            <section id="troubleshooting" class="troubleshooting-section">
-                <h2>
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                        <path d="M12 17h.01"></path>
-                    </svg>
-                    Troubleshooting & Common Issues
-                </h2>
-                <p class="section-subtitle">Solutions for the most common problems users encounter</p>
-
-
-                <!-- Brand-Specific Issues -->
-                <h3 style="font-size: 1.15rem; color: #1a1a2e; margin: 2rem 0 1rem 0;">📱 Brand-Specific Known Issues
-                </h3>
-                <div class="brand-issues">
-                    <div class="brand-card">
-                        <h5>Samsung</h5>
-                        <p>DeX mode may conflict with screen mirroring. Disable Samsung DeX before using ADB mirroring.
-                        </p>
-                    </div>
-                    <div class="brand-card">
-                        <h5>Xiaomi / MIUI</h5>
-                        <p>Enable "USB Debugging (Security settings)" and "Install via USB" in Developer Options.</p>
-                    </div>
-                    <div class="brand-card">
-                        <h5>Vivo / Oppo / Realme</h5>
-                        <p>Disable aggressive battery optimization. Add app to "Background consumption management
-                            whitelist".</p>
-                    </div>
-                    <div class="brand-card">
-                        <h5>OnePlus</h5>
-                        <p>Enable "Disable Permission Monitoring" in Developer Options for smoother experience.</p>
-                    </div>
-                    <div class="brand-card">
-                        <h5>Huawei / Honor</h5>
-                        <p>Allow "Protected Apps" in battery settings. HDB mode may be required for some features.</p>
-                    </div>
-                    <div class="brand-card">
-                        <h5>Nothing Phone</h5>
-                        <p>Works well with stock Android. Ensure Developer Options are properly enabled.</p>
-                    </div>
-                </div>
-
-                <br>
-
-
-
-                <!-- Android 14+ Restrictions -->
-                <div class="error-card info">
-                    <div class="error-header">
-                        <div class="error-title">
-                            <span class="error-icon">ℹ️</span>
-                            Android 14+ Restricted Settings
-                        </div>
-                        <div class="error-tags">
-                            <span class="error-tag">Android 14</span>
-                            <span class="error-tag">Security</span>
-                        </div>
-                    </div>
-                    <p class="error-cause">
-                        Android 14 and newer versions restrict sideloaded apps from accessing sensitive permissions like
-                        Accessibility and Notification Listener directly.
-                    </p>
-                    <div class="error-solution">
-                        <h5>✓ Solution</h5>
-                        <ul>
-                            <li>Go to <strong>Settings → Apps → [App Name] → ⋮ menu → Allow restricted settings</strong>
-                            </li>
-                            <li>Re-open the app and grant the required permissions</li>
-                            <li>If using ADB install, the restriction may not apply</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- ADB Connection Issues -->
-                <div class="error-card">
-                    <div class="error-header">
-                        <div class="error-title">
-                            <span class="error-icon">❌</span>
-                            ADB Device Not Detected
-                        </div>
-                        <div class="error-tags">
-                            <span class="error-tag">ADB Mode</span>
-                            <span class="error-tag">Connection</span>
-                        </div>
-                    </div>
-                    <p class="error-cause">
-                        Your Windows PC cannot see the connected Android device. This usually happens when USB Debugging
-                        is disabled,
-                        the USB cable is faulty, or proper drivers are not installed.
-                    </p>
-                    <div class="error-solution">
-                        <h5>✓ Solution</h5>
-                        <ul>
-                            <li>Enable <strong>USB Debugging</strong> in Developer Options on your Android device</li>
-                            <li>Try a different USB cable (use data cables, not charge-only)</li>
-                            <li>Install <strong>Google USB Driver</strong> or your phone manufacturer's USB drivers</li>
-                            <li>Run <code class="code">adb devices</code> in terminal to verify connection</li>
-                            <li>Revoke USB debugging authorizations and re-authorize</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Wireless Pairing Failure -->
-                <div class="error-card warning">
-                    <div class="error-header">
-                        <div class="error-title">
-                            <span class="error-icon">⚠️</span>
-                            Wireless ADB Pairing Failed
-                        </div>
-                        <div class="error-tags">
-                            <span class="error-tag">Wi-Fi</span>
-                            <span class="error-tag">Pairing</span>
-                        </div>
-                    </div>
-                    <p class="error-cause">
-                        Wireless pairing requires Android 11+ and both devices must be on the same Wi-Fi network.
-                        Firewall settings or network isolation can block the connection.
-                    </p>
-                    <div class="error-solution">
-                        <h5>✓ Solution</h5>
-                        <ul>
-                            <li>Ensure both PC and phone are on the <strong>same Wi-Fi network</strong></li>
-                            <li>Enable <strong>Wireless debugging</strong> in Developer Options</li>
-                            <li>Disable Windows Firewall temporarily or add ADB to allowed apps</li>
-                            <li>Disable "AP isolation" or "Client isolation" in your router settings</li>
-                            <li>Try using the IP address and port shown on your phone</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Warning Alert -->
-                <div class="alert-box warning" style="margin-top: 2rem;">
-                    <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path
-                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z">
-                        </path>
-                        <line x1="12" y1="9" x2="12" y2="13"></line>
-                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                    </svg>
-                    <div class="alert-content">
-                        <div class="alert-title">⚠️ Still Having Issues?</div>
-                        <p class="alert-text">If you're still experiencing problems, please visit our <a
-                                href="../pages/support.html" style="color: inherit; text-decoration: underline;">Support page</a>
-                            to report issues or request help from our community.</p>
-                    </div>
-                </div>
-            </section>
 
             <!-- ===================== KNOWN LIMITATIONS SECTION ===================== -->
             <section id="known-limitations" class="doc-section">
                 <h2 class="section-title">
-                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="12" y1="8" x2="12" y2="12"></line>
-                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                    </svg>
+                    <i data-lucide="alert-octagon" class="section-icon"></i>
                     Known Limitations
                 </h2>
                 <p class="section-intro">We believe in transparency. Here are the current limitations you should be
@@ -949,7 +526,10 @@
 
                 <div class="feature-detail">
                     <div class="feature-header">
-                        <h3>🔒 Android 14+ Background Restrictions</h3>
+                        <h3>
+                            <i data-lucide="lock" class="limit-icon"></i>
+                            Android 14+ Background Restrictions
+                        </h3>
                     </div>
                     <p>
                         Android 14 and newer versions impose stricter background process limitations. Sideloaded apps
@@ -962,7 +542,10 @@
 
                 <div class="feature-detail">
                     <div class="feature-header">
-                        <h3>🔊 Audio Mirroring Delay</h3>
+                        <h3>
+                            <i data-lucide="volume-2" class="limit-icon"></i>
+                            Audio Mirroring Delay
+                        </h3>
                     </div>
                     <p>
                         Audio mirroring may have a slight delay (50-200ms) especially over Wi-Fi. This is inherent to
@@ -973,7 +556,10 @@
 
                 <div class="feature-detail">
                     <div class="feature-header">
-                        <h3>📱 SMS Access Varies by Brand</h3>
+                        <h3>
+                            <i data-lucide="message-square" class="limit-icon"></i>
+                            SMS Access Varies by Brand
+                        </h3>
                     </div>
                     <p>
                         Some Android manufacturers (especially Xiaomi MIUI, Samsung One UI) restrict SMS access to
@@ -984,7 +570,10 @@
 
                 <div class="feature-detail">
                     <div class="feature-header">
-                        <h3>🖼️ Multi-Window Behavior</h3>
+                        <h3>
+                            <i data-lucide="layers" class="limit-icon"></i>
+                            Multi-Window Behavior
+                        </h3>
                     </div>
                     <p>
                         Multi-window display behavior varies significantly between Android versions and OEM
@@ -996,7 +585,10 @@
 
                 <div class="feature-detail">
                     <div class="feature-header">
-                        <h3>📶 Wi-Fi Stability</h3>
+                        <h3>
+                            <i data-lucide="wifi" class="limit-icon"></i>
+                            Wi-Fi Stability
+                        </h3>
                     </div>
                     <p>
                         Wireless connections depend on your network quality. Unstable Wi-Fi, router issues, or network
@@ -1008,7 +600,10 @@
 
                 <div class="feature-detail">
                     <div class="feature-header">
-                        <h3>🔔 Notification Actions Limited</h3>
+                        <h3>
+                            <i data-lucide="bell-off" class="limit-icon"></i>
+                            Notification Actions Limited
+                        </h3>
                     </div>
                     <p>
                         While you can view and dismiss notifications, interactive notification actions (like "Reply" or
@@ -1020,7 +615,10 @@
 
                 <div class="feature-detail">
                     <div class="feature-header">
-                        <h3>🎮 Hardware Codec Support</h3>
+                        <h3>
+                            <i data-lucide="cpu" class="limit-icon"></i>
+                            Hardware Codec Support
+                        </h3>
                     </div>
                     <p>
                         Screen mirroring uses hardware video encoding. Some older devices or devices with limited codec
@@ -1033,21 +631,15 @@
             <!-- ===================== SECURITY & PRIVACY SECTION ===================== -->
             <section id="security-privacy" class="security-section">
                 <h2>
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                        <path d="M9 12l2 2 4-4"></path>
-                    </svg>
-                    Security & Privacy
+                    <i data-lucide="shield" class="section-icon"></i>
+                    Security &amp; Privacy
                 </h2>
                 <p class="section-subtitle">Your data stays with you. Here's how we protect your privacy.</p>
 
                 <div class="security-grid">
                     <div class="security-card">
                         <div class="card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                            </svg>
+                            <i data-lucide="database" style="width: 18px; height: 18px;"></i>
                         </div>
                         <h4>100% Local Storage</h4>
                         <p>All your data stays on your devices. We never upload contacts, messages, notifications, or
@@ -1056,13 +648,7 @@
 
                     <div class="security-card">
                         <div class="card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
-                                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
-                                <line x1="6" y1="1" x2="6" y2="4"></line>
-                                <line x1="10" y1="1" x2="10" y2="4"></line>
-                                <line x1="14" y1="1" x2="14" y2="4"></line>
-                            </svg>
+                            <i data-lucide="wifi-off" style="width: 18px; height: 18px;"></i>
                         </div>
                         <h4>No Cloud Required</h4>
                         <p>The app works entirely over your local network (LAN/Wi-Fi). There's no cloud service, no
@@ -1071,19 +657,21 @@
 
                     <div class="security-card">
                         <div class="card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                            </svg>
+                            <i data-lucide="shuffle" style="width: 18px; height: 18px;"></i>
                         </div>
                         <h4>Direct Device-to-PC</h4>
-                        <p>Communication happens directly between your Android device and Windows PC using TCP/WebSocket
+                        <p>Communication happens directly between your Android device and Desktop PC using TCP/WebSocket
                             over your local network.</p>
                     </div>
                 </div>
 
                 <!-- Permissions Explanation Table -->
                 <div class="permissions-table">
-                    <h4>📋 Why We Need These Permissions</h4>
+                    <h4>
+                        <i data-lucide="clipboard-list"
+                            style="width: 18px; height: 18px; display: inline-block; vertical-align: middle; margin-right: 6px;"></i>
+                        Why We Need These Permissions
+                    </h4>
                     <!-- Notifications -->
                     <div class="permission-item">
                         <span class="permission-name">Notification Access</span>
@@ -1092,7 +680,7 @@
 
                     <!-- Calls -->
                     <div class="permission-item">
-                        <span class="permission-name">Phone & Call Controls</span>
+                        <span class="permission-name">Phone &amp; Call Controls</span>
                         <span class="permission-reason">Lets the app detect incoming calls, show caller info, and allow
                             call answer/decline actions from the PC.</span>
                     </div>
@@ -1108,14 +696,14 @@
                     <div class="permission-item">
                         <span class="permission-name">SMS Access</span>
                         <span class="permission-reason">To view, send, and sync text messages between your phone and
-                            Windows.</span>
+                            Desktop.</span>
                     </div>
 
                     <!-- Storage / Files -->
                     <div class="permission-item">
                         <span class="permission-name">Storage Access</span>
                         <span class="permission-reason">Enables fast file transfer between your Android device and
-                            Windows.</span>
+                            Desktop.</span>
                     </div>
 
                     <!-- Special File Management -->
@@ -1134,7 +722,7 @@
                     <!-- Media & Music -->
                     <div class="permission-item">
                         <span class="permission-name">Media Control</span>
-                        <span class="permission-reason">Allows Windows to control your phone’s music playback.</span>
+                        <span class="permission-reason">Allows Desktop to control your phone’s music playback.</span>
                     </div>
 
                     <!-- Wallpaper -->
@@ -1161,14 +749,14 @@
                     <!-- Multicast / Network -->
                     <div class="permission-item">
                         <span class="permission-name">Local Network Discovery</span>
-                        <span class="permission-reason">Helps your phone auto-detect the Windows app on the same
+                        <span class="permission-reason">Helps your phone auto-detect the Desktop app on the same
                             WiFi.</span>
                     </div>
 
                     <!-- Boot Start -->
                     <div class="permission-item">
                         <span class="permission-name">Auto-Start on Boot</span>
-                        <span class="permission-reason">Ensures the app reconnects to Windows automatically after
+                        <span class="permission-reason">Ensures the app reconnects to Desktop automatically after
                             restarting the phone.</span>
                     </div>
 
@@ -1178,19 +766,14 @@
                         <span class="permission-reason">Prevents the app from being killed in the background for stable
                             connection.</span>
                     </div>
-
                 </div>
 
                 <!-- Privacy Commitment Alert -->
-                <div class="alert-box tip"
-                    style="margin-top: 2rem; background: rgba(34, 197, 94, 0.1); border-left-color: #22c55e;">
-                    <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2">
-                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                    </svg>
+                <div class="alert-box tip" style="margin-top: 2rem;">
+                    <i data-lucide="shield-check" class="alert-icon"></i>
                     <div class="alert-content">
-                        <div class="alert-title" style="color: #fff;">✓ Our Privacy Commitment</div>
-                        <p class="alert-text" style="color: rgba(255,255,255,0.85);">We will <strong>never</strong>
+                        <div class="alert-title">Our Privacy Commitment</div>
+                        <p class="alert-text">We will <strong>never</strong>
                             sell, share, or monetize your personal data. ADB Device Manager is designed as a
                             productivity tool that respects your privacy completely.</p>
                     </div>
@@ -1200,11 +783,7 @@
             <!-- ===================== FAQ SECTION ===================== -->
             <section id="faq" class="doc-section">
                 <h2 class="section-title">
-                    <svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                    </svg>
+                    <i data-lucide="help-circle" class="section-icon"></i>
                     Frequently Asked Questions
                 </h2>
                 <p class="section-intro">Quick answers to the most common questions.</p>
@@ -1215,7 +794,7 @@
                     </div>
                     <p>
                         Audio streaming involves encoding on the phone, transmitting over USB/Wi-Fi, and decoding on
-                        Windows.
+                        Desktop.
                         Network latency, encoding overhead, and buffer settings all contribute to delay. Try using USB
                         for lower latency,
                         or adjust the audio buffer in settings if available.
@@ -1253,7 +832,7 @@
                         <h3>Why does APP Mode require so many permissions?</h3>
                     </div>
                     <p>
-                        APP Mode provides deep integration: notifications require Notification Listener, automation
+                        App Mode provides deep integration: notifications require Notification Listener, automation
                         features use
                         Accessibility Service, file transfer needs Storage access, etc. Each permission directly maps to
                         a feature.
@@ -1293,22 +872,114 @@
                     </div>
                     <p>
                         All data stays completely local. Communication happens directly between your Android device and
-                        your Windows PC
+                        your Desktop PC
                         over your local network or USB. There is no cloud, no external servers, and no data
                         collection.
-                        See our <a href="#security-privacy" style="color: #6366f1;">Security & Privacy</a> section for
+                        See our <a href="#security-privacy"
+                            style="color: var(--color-primary); text-decoration: none; font-weight: 500;">Security &amp;
+                            Privacy</a> section for
                         details.
                     </p>
                 </div>
             </section>
-
         </main>
     </div>
 
-    <!-- Smooth Scroll Script -->
+    <!-- Unified Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <!-- Contact Column -->
+            <div class="footer-contact-section">
+                <h3 class="footer-column-title">Contact</h3>
+                <div class="footer-contact-list">
+                    <a href="https://github.com/Shrey113/Adb-Device-Manager-2" class="footer-contact-item"
+                        target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"
+                                fill="currentColor" />
+                        </svg>
+                        <span>Repository</span>
+                    </a>
+                </div>
+                <div class="footer-contact-list">
+                    <a href="https://github.com/Shrey113/Adb-Device-Manager-2/issues" class="footer-contact-item"
+                        target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                            <circle cx="12" cy="12" r="3" fill="currentColor" />
+                        </svg>
+                        <span>Issues</span>
+                    </a>
+                </div>
+                <div class="footer-contact-list">
+                    <a href="https://github.com/Shrey113/Adb-Device-Manager-2/releases" class="footer-contact-item"
+                        target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <circle cx="7" cy="7" r="1.5" fill="currentColor" />
+                        </svg>
+                        <span>App update</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Products Column -->
+            <div class="footer-column">
+                <h3 class="footer-column-title">Products</h3>
+                <div class="footer-links">
+                    <a href="../windows_download.html">Desktop App</a>
+                    <a href="../android_download.html">Android App</a>
+                    <a href="../pages/features.html">All Features</a>
+                </div>
+            </div>
+
+            <!-- Resources Column -->
+            <div class="footer-column">
+                <h3 class="footer-column-title">Resources</h3>
+                <div class="footer-links">
+                    <a href="Docs.html">Documentation</a>
+                    <a href="../pages/Developers.html">Developers</a>
+                    <a href="../pages/security_pages/virustotal_reports.html">VirusTotal</a>
+                </div>
+            </div>
+
+            <!-- Security Column -->
+            <div class="footer-column">
+                <h3 class="footer-column-title">Security</h3>
+                <div class="footer-links">
+                    <a href="../security/trust_center.html">Trust Center</a>
+                    <a href="../security/privacy_policy.html">Privacy Policy</a>
+                    <a href="../security/security_model.html">Security Model</a>
+                    <a href="../security/transparency_model.html">Transparency Report</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p class="footer-copyright">© 2025 <a href="https://github.com/Shrey113">Shrey113</a>. All rights reserved.
+            </p>
+            <div class="footer-bottom-links">
+                <a href="../security/privacy_policy.html">Privacy Policy</a>
+                <a href="../pages/security_pages/app_terms.html">App Terms</a>
+                <a href="../pages/support.html">Support &amp; FAQ</a>
+            </div>
+        </div>
+
+        <!-- Gradient Border -->
+        <div class="footer-gradient-border"></div>
+    </footer>
+
+    <!-- CDN Lucide Icons initialization -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.400.0/dist/umd/lucide.min.js"></script>
     <script>
         // Smooth scroll and highlight on navigation
         document.addEventListener('DOMContentLoaded', function () {
+            // Initialize Lucide Icons
+            lucide.createIcons();
+
             // Handle hash navigation on page load
             if (window.location.hash) {
                 setTimeout(() => {
@@ -1438,9 +1109,6 @@
                 });
             });
         })();
-
-
-
     </script>
 </body>
 
