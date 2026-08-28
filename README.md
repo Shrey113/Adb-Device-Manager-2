@@ -42,10 +42,10 @@ ADB Device Manager is a free desktop application for **Windows and Linux** that 
 
 | Platform | Download | Setup Guide |
 | :--- | :--- | :--- |
-| Windows | [Download](https://shrey113.github.io/Adb-Device-Manager-2/windows_download.html) | [Setup Guide →](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html#windows) |
-| Android | [Download](https://shrey113.github.io/Adb-Device-Manager-2/android_download.html) | [Setup Guide →](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html#android) |
-| Linux | [Download](https://shrey113.github.io/Adb-Device-Manager-2/pages/linux_download.html) | [Setup Guide →](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html#linux) |
-| macOS | *Coming Soon* | *Coming Soon* |
+| Windows | [Download](https://shrey113.github.io/Adb-Device-Manager-2/pages/download/windows_download.html) | [Setup Guide →](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html#windows) |
+| Android | [Download](https://shrey113.github.io/Adb-Device-Manager-2/pages/download/android_download.html) | [Setup Guide →](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html#android) |
+| Linux | [Download](https://shrey113.github.io/Adb-Device-Manager-2/pages/download/linux_download.html) | [Setup Guide →](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html#linux) |
+| macOS | [Download](https://shrey113.github.io/Adb-Device-Manager-2/pages/download/mac_download.html) | [Setup Guide →](https://shrey113.github.io/Adb-Device-Manager-2/docs/installation.html#mac) |
 
 
 ### Related Ecosystem Projects

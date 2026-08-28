@@ -20,7 +20,7 @@ If you are looking for a dedicated, standalone project for these features, check
 
 ## How to Use
 
-1. **Install App**: Download and install the app on your Android device from [here](https://shrey113.github.io/Adb-Device-Manager-2/android_download.html).
+1. **Install App**: Download and install the app on your Android device from [here](https://shrey113.github.io/Adb-Device-Manager-2/pages/download/android_download.html).
 2. **Find Device**: Open the "TV Control" section in the app and scan for Android TV devices on your local network.
 3. **Pair Remote**: Select your TV from the list and follow the pairing instructions (usually entering a code displayed on TV).
 4. **Control & Cast**: Use the digital remote to navigate your TV or select media to cast photos and videos.
